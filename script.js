@@ -1,11 +1,16 @@
-// let colorPalette = document.getElementById('color-palette');
 // let colors = document.querySelectorAll('.color');
 
 // let pixels = document.querySelectorAll('.pixel');
-const line = document.querySelector('.line');
+// const line = document.querySelector('.line');
 const pixelBoard = document.getElementById('pixel-board');
 
 const boardSize = 5;
+
+window.onload = function () {
+  const color1 = document.getElementById('color1');
+  const colorStorage = localStorage.setItem('backgroundColor', 'black');
+  color1.style.backgroundColor = colorStorage;
+};
 // Functions:
 
 function createLinePixel() {
@@ -26,11 +31,15 @@ function createPixels() {
     }
   }
 }
-
 createLinePixel();
 createPixels();
-// function fillBoard() {
-//   for (let i = 0; i < boardSize; i += 1) {
-//   }
-// }
-// fillBoard();
+
+
+
+// Events:
+let colorPalette = document.querySelector('#color-palette').children;
+for (let i = 0; i < colorPalette.length; i += 1) {
+  colorPalette[i].addEventListener('click', function() {
+    
+  });
+}
