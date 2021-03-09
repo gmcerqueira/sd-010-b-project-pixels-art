@@ -21,9 +21,6 @@ window.onload = function () {
   elemento2.id = 'pixel-board';
   elementos.appendChild(elemento2);
 
-  const sectionSelectColors = document.createElement('section');
-  elemento1.appendChild(sectionSelectColors);
-
   for (let index = 0; index < numberOfOption; index++) {
     const colorOption = document.createElement('div');
     if (index === 0) {        
@@ -32,16 +29,14 @@ window.onload = function () {
         colorOption.className = 'color';
     }
     colorOption.id = 'cor_' + (index + 1);
-    sectionSelectColors.appendChild(colorOption);
+    elemento1.appendChild(colorOption);
   }
-
-  const pixelBoard = document.createElement('section');
-  elemento2.appendChild(pixelBoard);
 
   for (let index = 0; index < numberOfItems; index++) {
     const itemOption = document.createElement('div');
     itemOption.className = 'pixel';
-    pixelBoard.appendChild(itemOption);
+    elemento2.appendChild(itemOption);
   }
+
 
 };
