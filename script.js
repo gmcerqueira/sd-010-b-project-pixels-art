@@ -45,9 +45,14 @@ for (let index1 = 0; index1 < 5; index1 += 1) {
         newColum.style.display = 'inline';
         newColum.style.width = '40px';
         newColum.style.height = '40px';
+        newColum.style.backgroundColor = 'white';
         newColum.style.borderColor = 'black';
         newColum.style.display = 'inline-block';
         newColum.style.borderStyle = 'solid';
         newColum.style.borderWidth = '1px';
     }
+}
+
+function clearPixels() {
+
 }
