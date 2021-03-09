@@ -47,3 +47,17 @@ pixelBoard.addEventListener('click', function (event) {
   const backgroundColor = document.querySelector('.selected').style.backgroundColor;
   event.target.style.backgroundColor = backgroundColor;
 });
+
+const makeDiv = document.createElement('div');
+document.body.appendChild(makeDiv);
+makeDiv.id = 'divButton';
+const makeButton = document.createElement('button');
+makeDiv.appendChild(makeButton);
+makeButton.innerText = 'Limpe Os Campos!';
+const button = document.querySelector('button');
+
+button.addEventListener('click', function() {
+  for (let counter = 0; counter < pixel.length; counter += 1) {
+    pixel[counter].style.backgroundColor = 'white';
+  }
+});
