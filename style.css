@@ -20,15 +20,18 @@
 }
 
 
-.pixel-board {
+#pixel-board {
   display: table;
 }
-.pixel-board > div { 
-  display: table-row; 
+#pixel-board > div { 
+  display: table-row;
+  padding: 40px;
+  
 }
-.pixel-board > div > .pixel { 
-  background-color: 'rgb(255, 255, 255)';
+#pixel-board > div > .pixel { 
   display: table-cell;
-  padding: 25px;
+  background-color: 'rgb(255, 255, 255)';
   border: 1px black solid;
+  height: 40px;
+  width: 40px;
 }
