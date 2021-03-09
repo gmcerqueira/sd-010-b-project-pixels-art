@@ -9,15 +9,15 @@
 
 #black , #second-color , #third-color , #fourth-color {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: solid 1px black;
 }
 
 .pixel {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: solid 1px black;
 }
 
