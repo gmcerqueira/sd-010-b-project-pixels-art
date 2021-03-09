@@ -1,13 +1,16 @@
 window.onload = document.getElementById("paleta1").className = "color selected";
 
-let lado = 5;
-let numeroPixels = lado * lado;
-
 const pixelBoard = document.getElementById("pixel-board");
 const paleta1 = document.getElementById("paleta1");
 const paleta2 = document.getElementById("paleta2");
 const paleta3 = document.getElementById("paleta3");
 const paleta4 = document.getElementById("paleta4");
+const selected = document.getElementsByClassName("selected");
+
+let lado = 5;
+let numeroPixels = lado * lado;
+let selectedColor = window.getComputedStyle(selected[0]).getPropertyValue("background-color");
+console.log(selectedColor);
 
 for (let index = 1; index <= lado; index++) {
     createLines("linha" + index);
