@@ -2,38 +2,15 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.color{
-    display: inline-block;
-    align-items: center;
+td {
     border: 1px solid black;
-    padding: 10px;
-    margin: 5px;
+    padding: 0px;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    
 }
 
 #title {
     margin: 5px;
-}
-
-#black {
-    background-color: black;
-    width: 40px;
-    height: 40px;
-}
-#first-color{
-    background-color: red;
-    color: red;
-    width: 40px;
-    height: 40px;
-}
-#second-color{
-    background-color: blue;
-    color: blue;
-    width: 40px;
-    height: 40px;
-}
-#third-color{
-    background-color: green;
-    color: green;
-    width: 40px;
-    height: 40px;
 }
