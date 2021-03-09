@@ -17,3 +17,13 @@
 #preto {
     background-color: black;
 }
+#pixel-board{
+    width: 125px;
+    height: 125px;
+    border: black solid 1px;
+}
+.pixel {
+    width: 25px;
+    
+    background-color: white;
+}
