@@ -49,7 +49,7 @@ selectColor();
 const allPixels = document.querySelectorAll(".pixel");
 function pixelAlive() {
   for (let i = 0; i < allPixels.length; i++) {
-    allPixels[i].addEventListener("click", function(){
+    allPixels[i].addEventListener("click", function() {
       let colorSelected = document.querySelector(".selected");
       allPixels[i].style.backgroundColor = colorSelected.style.backgroundColor;
     });    
@@ -58,6 +58,12 @@ function pixelAlive() {
 
 pixelAlive();
 
+const buttoncleaner = document.querySelector("#clear-board");
 function clearBoard() {
-
+  buttoncleaner.addEventListener("click", function() {
+    for (let pixel = 0; pixel < allPixels.length; pixel++) {
+      allPixels[pixel].style.backgroundColor = "white";      
+    }
+  });
 }
+clearBoard();
