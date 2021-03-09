@@ -1,5 +1,4 @@
 const colorPallete = document.querySelector('#color-palette');
-const colors = ['black', 'red', 'blue', 'green'];
 const pixelBoard = document.querySelector('#pixel-board');
 const clearBoardButton = document.querySelector('#clear-board');
 const boardSize = document.querySelector('#board-size');
