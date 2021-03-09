@@ -24,18 +24,9 @@ const pixelBoard = document.querySelector('#pixel-board');
 
 // Setting pallete colors
 const setPalleteColors = () => {
-  let r = Math.ceil(Math.random() * 84);
-  let g = Math.ceil(Math.random() * 84);
-  let b = Math.ceil(Math.random() * 84);
+  const colors = ['black', 'orange', 'red', 'blue', 'green', 'yellow'];
   palletes.map((pallete, index) => {
-    if (!index) {
-      pallete.style.backgroundColor = 'black';
-    } else {
-      pallete.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-      r += 84;
-      g += 84;
-      b += 84;
-    }
+    pallete.style.backgroundColor = colors[index];
   });
 };
 
@@ -102,7 +93,7 @@ const clearAllPixels = () => {
   clearBtn.addEventListener('click', () => {
     const pixelsBoxes = Array.from(document.querySelectorAll('.pixel'));
     pixelsBoxes.map((pixel) => {
-      pixel.style.backgroundColor = 'rgb(255, 255, 255)';
+      pixel.style.backgroundColor = 'white';
     });
     if (document.querySelector('.selected')) {
       document.querySelector('.selected').setAttribute('class', 'color');
