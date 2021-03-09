@@ -63,5 +63,5 @@ const setPixelGrid = (size) => {
 
 function start() {
   setPalleteColors();
-  setPixelGrid(8);
+  setPixelGrid(5);
 }
