@@ -1,25 +1,26 @@
 // Adicionando as cores
 
 let paleta = document.querySelector('#color-palette');
-let corBlack = document.createElement('div');
-corBlack.className = 'color'
+for (let box = 0; box < 4; box += 1){
+    let cor = document.createElement('div')
+    cor.className = 'color'
+    paleta.appendChild(cor);
+}
+
+let cores = document.querySelectorAll('.color')
+
+let corBlack = cores[0]
 corBlack.style.backgroundColor = 'black';
-paleta.appendChild(corBlack);
 
-let corRed = document.createElement('div');
-corRed.className = 'color'
+let corRed = cores[1]
 corRed.style.backgroundColor = 'red';
-paleta.appendChild(corRed);
 
-let corGreen = document.createElement('div');
-corGreen.className = 'color'
+let corGreen = cores [2]
 corGreen.style.backgroundColor = 'green';
-paleta.appendChild(corGreen);
 
-let corBLue = document.createElement('div');
-corBLue.className = 'color'
+let corBLue = cores[3]
 corBLue.style.backgroundColor = 'blue';
-paleta.appendChild(corBLue);
+
 
 // table Row - Criando as cinco linhas
 
