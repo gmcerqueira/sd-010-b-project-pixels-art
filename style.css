@@ -5,6 +5,8 @@
     display: inline-block;
     border: solid #000;
     border-width: 1px;
+    /* sources: https://stackoverflow.com/questions/5937148/css-border-not-working/5937570
+    https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-inline-block-4e6cba2f19d4 */
 }
 
 #color-palette{

@@ -1,6 +1,6 @@
 function addPaleta (){
     let ul = document.querySelector('#color-palette');
-    let cores = ['orange', 'green', 'pink', 'purple'];
+    let cores = ['black', 'green', 'pink', 'purple'];
     
     for(let i = 0; i < cores.length; i++){
         let li = document.createElement('li');
