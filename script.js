@@ -20,10 +20,10 @@ function verificaCoresUm() {
   if (pixelCores[1].style.background === pixelCores[3].style.background) {
     document.location.reload(true);
   }
-  if (pixelCores[1].style.background === '#000000') {
+  if (string(pixelCores[1].style.background) === '#000000') {
     document.location.reload(true);
   }
-  if (pixelCores[1].style.background === '#ffffff') {
+  if (string(pixelCores[1].style.background) === '#ffffff') {
     document.location.reload(true);
   }
 }
@@ -36,10 +36,10 @@ function verificaCoresDois() {
   if (pixelCores[2].style.background === pixelCores[3].style.background) {
     document.location.reload(true);
   }
-  if (pixelCores[2].style.background === '#000000') {
+  if (sting(pixelCores[2].style.background) === '#000000') {
     document.location.reload(true);
   }
-  if (pixelCores[2].style.background === '#ffffff') {
+  if (string(pixelCores[2].style.background) === '#ffffff') {
     document.location.reload(true);
   }
 }
@@ -52,10 +52,10 @@ function verificaCoresTres() {
   if (pixelCores[3].style.background === pixelCores[2].style.background) {
     document.location.reload(true);
   }
-  if (pixelCores[3].style.background === '#000000') {
+  if (string(pixelCores[3].style.background) === '#000000') {
     document.location.reload(true);
   }
-  if (pixelCores[3].style.background === '#ffffff') {
+  if (string(pixelCores[3].style.background) === '#ffffff') {
     document.location.reload(true);
   }
 }
