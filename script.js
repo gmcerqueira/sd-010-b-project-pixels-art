@@ -7,8 +7,9 @@ const buttonDiv = document.querySelector('#buttonDiv');
 const button = document.createElement('button');
 
 buttonDiv.appendChild(button);
+button.id = 'clear-board';
 button.innerText = 'limpar';
-button.addEventListener('click', function() {
+button.addEventListener('click', function () {
   for (let counter = 0; counter < pixel.length; counter += 1) {
     pixel[counter].style.backgroundColor = 'white';
   }
