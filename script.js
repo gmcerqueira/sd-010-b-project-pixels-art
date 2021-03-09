@@ -62,6 +62,8 @@ window.onload = function () {
     if (event.target.id === 'generate-board') {
       const size = document.getElementById('board-size');
       if (size.value && size.value > 0) {
+        if (size.value < 5) {size.value = 5}
+        if (size.value > 50) {size.value = 50}
         const parent = document.getElementById('pixel-board');
         removeAllChildNodes(parent);
         createGrid(Number(size.value));
