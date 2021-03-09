@@ -55,13 +55,14 @@ const greenButton = document.getElementById('verde');
 greenButton.addEventListener('click', selectGreen);
 
 function pintaPixel(event) {
-  const selecionaCor = document.querySelector('.color selected').style.backgroundColor;
+  const selecionaCor = document.querySelector('.selected');
+  const estilo = getComputedStyle(selecionaCor);
   const pixel = event.target;
-  pixel.style.backgroundColor = selecionaCor;
+  pixel.style.backgroundColor = estilo;
 }
 
 const colore = document.getElementById('pixel-board');
-colere.addEventListener('click', pintaPixel);
+colore.addEventListener('click', pintaPixel);
 
 function limpaGrid() {
   const pixel = document.getElementsByClassName('pixel');
