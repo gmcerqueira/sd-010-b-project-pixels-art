@@ -30,7 +30,7 @@ function clickPaletteBox(event) {
   event.target.classList.add('selected');
 }
 
-function addBoxClickEvent() {
+function addPaletteBoxClickEvent() {
   const boxes = document.getElementsByClassName('color');
   for (let index = 0; index < boxes.length; index += 1) {
     boxes[index].addEventListener('click', clickPaletteBox);
@@ -45,6 +45,6 @@ createBoxTable(5, 'pixel', 'pixel-board', 5);
 
 window.onload = () => {
   addClassToPaletteBox();
-  addBoxClickEvent();
+  addPaletteBoxClickEvent();
   // let selectedColor = document.querySelector('.selected').style.backgroundColor;
 };
