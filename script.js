@@ -6,8 +6,29 @@ function creatPixelBoard() {
     div.className = 'pixel';
     div.id = ('box' + (index + 1));
     pai.appendChild(div);
-
   }
+}
+
+function setColor(event) {
+  let idBox = event.target.id;
+  let idPaleta = document.querySelector('.selected');
+  let colorPaleta = window.getComputedStyle(idPaleta, null).backgroundColor;
+  // console.log('box a colorir ' + idBox);
+  // console.log(typeof (idBox));
+  // console.log('cor a colorir ' + colorPaleta);
+  // console.log(typeof (colorPaleta));
+  document.getElementById(idBox).style.backgroundColor = colorPaleta;
+  //document.getElementById(idBox).cl
+}
+
+function changeSelected(event) {
+  let identificador = event.target.id;
+  document.getElementById('blackBox').classList.remove('selected');
+  document.getElementById('blueBox').classList.remove('selected');
+  document.getElementById('pinkBox').classList.remove('selected');
+  document.getElementById('redBox').classList.remove('selected');
+  document.getElementById(identificador).classList.add('selected');
+  console.log(identificador);
 }
 
 function escutaClick() {
@@ -49,37 +70,16 @@ function escutaClick() {
 function inicializar() {
   creatPixelBoard();
   escutaClick();
-
 }
 
-function changeSelected(event) {
-  let identificador = event.target.id;
-  document.getElementById('blackBox').classList.remove('selected');
-  document.getElementById('blueBox').classList.remove('selected');
-  document.getElementById('pinkBox').classList.remove('selected');
-  document.getElementById('redBox').classList.remove('selected');
-  document.getElementById(identificador).classList.add('selected');
 
-  console.log(identificador);
+
+
+function clearBoard(event) {
+  let board = document.getElementsByClassName('pixel');
+  console.log('LIMPAR BOARD');
+  for (let index = 0; index < board.length; index += 1) {
+    board[index].style.backgroundColor = 'white';
+  }
 }
-
-function setColor(event) {
-
-  let idBox = event.target.id;
-  let idPaleta = document.querySelector('.selected');
-  let colorPaleta = window.getComputedStyle(idPaleta, null).backgroundColor;
-  
-
-  console.log('box a colorir ' + idBox);
-  console.log(typeof(idBox));
-  console.log('cor a colorir ' + colorPaleta);
-  console.log(typeof(colorPaleta));
-
-
- document.getElementById(idBox).style.backgroundColor = colorPaleta;
-  
- //document.getElementById(idBox).cl
-}
-
 window.onload = inicializar;
-
