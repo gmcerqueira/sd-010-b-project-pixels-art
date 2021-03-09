@@ -24,9 +24,9 @@ const pixelBoard = document.querySelector('#pixel-board');
 
 // Setting pallete colors
 const setPalleteColors = () => {
-  let r = Math.ceil(Math.random() * 84) + 1;
-  let g = Math.ceil(Math.random() * 84) + 1;
-  let b = Math.ceil(Math.random() * 84) + 1;
+  let r = Math.ceil(Math.random() * 84);
+  let g = Math.ceil(Math.random() * 84);
+  let b = Math.ceil(Math.random() * 84);
   palletes.map((pallete, index) => {
     if (!index) {
       pallete.style.backgroundColor = 'rgba(0, 0, 0, 1)';
