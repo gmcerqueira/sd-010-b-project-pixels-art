@@ -6,3 +6,17 @@
     display: inline-block;
     margin-right: 10px;
 }
+
+#pixel-board{
+    width: 212px;
+    height: 227px;
+    box-sizing: border-box;
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-bottom: -5px;
+}

@@ -24,7 +24,6 @@ colorPalette()
 function applyColor() {
   let getSession = document.querySelectorAll('#color-palette>div');
   let backgroundColor = ['black', 'red', 'blue','pink'];
-  getSession[0].style.backgroundColor='black'
   for(let index = 0; index < getSession.length; index +=1 ){
     for(let j = 0; j < backgroundColor.length; j +=1){
       if(index == j){
@@ -34,3 +33,28 @@ function applyColor() {
   }
 }
 applyColor()
+
+function createDivs() {
+  let getBody = document.querySelector('body')
+  let session = document.createElement('section')
+  getBody.appendChild(session)
+  session.id = "pixel-board"
+  }
+createDivs()
+
+function createPixel() {
+  let getSession = document.querySelector('#pixel-board')
+  let pixelSize = 5;
+  for (let index = 0; index < pixelSize * pixelSize; index += 1){
+    let createDiv = document.createElement('div')
+    createDiv.className = 'pixel'
+    getSession.appendChild(createDiv)
+  }
+}
+createPixel()
+
+
+
+
+
+
