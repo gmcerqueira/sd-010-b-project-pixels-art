@@ -58,7 +58,7 @@ for (let i = 0; i < linhas.length; i += 1){
     for (let index = 0; index < linhas.length; index += 1){
      let celulaColuna = document.createElement('td');
      celulaColuna.className = 'pixel';
-     celulaColuna.style.backgroundColor = 'black';
+     celulaColuna.style.backgroundColor = 'white';
      linhas[i].appendChild(celulaColuna);
     }
 }
