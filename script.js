@@ -9,7 +9,7 @@ body.appendChild(paletteBox);
 /*Cria as cores dinâmicamente */
 let colors = ['black'];
 
-for (let nColor = 1; nColor < 5; nColor += 1){
+for (let nColor = 1; nColor < 4; nColor += 1){
     let colorInt = Math.random()*4095;
 
     for (let n = 0; n < nColor; n += 1){
@@ -30,15 +30,30 @@ for (let nColor = 1; nColor < 5; nColor += 1){
     colors.push(colorHex);
 }
 console.log(colors);
-/*--------------------------------------------------------- */
+/*----------------------Paleta de Cores---------------------------------- */
 
-for (let color = 0; color < 5; color += 1) {
+for (let color = 0; color < 4; color += 1) {
     let colorElement = document.createElement('div');
-    colorElement.className = 'color';
+    
+    colorElement.className = color == 0 ? 'color selected': 'color';
+    
     colorElement.style.backgroundColor = colors[color];
     console.log(colors[color]);
     paletteBox.appendChild(colorElement);
 }
+
+function selected(event){
+    //limpar os selecionados
+    let elements = document.querySelectorAll('.color')
+    for(let index = 0; index < elements.length; index += 1){
+        elements[index].className = 'color';
+    }
+    event.target.className = 'color selected'
+}
+
+paletteBox.addEventListener('click',selected,false)
+
+
 
 //Criando o Quadro de Pixels
 
@@ -50,7 +65,7 @@ body.appendChild(pixelBoard);
 for (let linhas = 0; linhas < 5; linhas += 1){
     const line = document.createElement('div');
     pixelBoard.appendChild(line);
-    for(let colunas = 0; colunas < 5; colunas += 1){
+    for (let colunas = 0; colunas < 5; colunas += 1){
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
         pixel.style.backgroundColor = 'white';
@@ -61,3 +76,5 @@ for (let linhas = 0; linhas < 5; linhas += 1){
         line.appendChild(pixel);
     }
 }
+
+
