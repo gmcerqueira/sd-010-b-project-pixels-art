@@ -18,14 +18,13 @@ window.onload = function () {
   createPalette();
 
   // cria o grid de N por N
-  const n = 5;
   function createGrid(size) {
     const board = document.getElementById('pixel-board');
-    for (let index = 0; index < n; index += 1) {
+    for (let index = 0; index < size; index += 1) {
       let row = document.createElement('TR');
       row.id = `row${index}`;
       board.appendChild(row);
-      for (let index2 = 0; index2 < n; index2 += 1) {
+      for (let index2 = 0; index2 < size; index2 += 1) {
         let cell = document.createElement('TD');
         cell.className = 'pixel';
         cell.style.backgroundColor = 'white';
@@ -34,6 +33,12 @@ window.onload = function () {
     }
   }
   createGrid(5);
+
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+  }
 
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('color') && !event.target.classList.contains('selected')){
@@ -52,6 +57,14 @@ window.onload = function () {
       for (let pixel of pixelList) {
         pixel.style.backgroundColor = 'white';
       }
+    }
+
+    if (event.target.id === 'redefine') {
+      const parent = document.getElementById('pixel-board');
+      removeAllChildNodes(parent);
+      const size = document.getElementById('size');
+      number = Number(size.value);
+      createGrid(number);
     }
   }, false);
 };
