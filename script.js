@@ -1,8 +1,3 @@
-createPixelBoard(5);
-selected();
-colorPixels();
-
-
 function createPixelBoard(numberPixels) {
   const pixelBoard = document.getElementById('pixel-board');
   for (let column = 0; column < numberPixels; column += 1) {
@@ -18,14 +13,14 @@ function createPixelBoard(numberPixels) {
 }
 
 function selected() {
-  const colorBox = document.querySelectorAll('.color');  
+  const colorBox = document.querySelectorAll('.color');
   for (let index = 0; index < colorBox.length; index += 1) {
     colorBox[index].addEventListener('click', () => {
       for (let i = 0; i < colorBox.length; i += 1) {
         colorBox[i].classList.remove('selected');
       }
       colorBox[index].classList.add('selected');
-      changeColor();     
+      changeColor();    
       colorPixels();
     })
   }
@@ -33,8 +28,7 @@ function selected() {
 
 function changeColor() {
   const colorBox = document.querySelectorAll('.color');
-  const selected = document.querySelector('.selected');
-  
+  const selected = document.querySelector('.selected');  
   for (let index = 0; index < colorBox.length; index += 1) {   
     const classListColor = colorBox[index].classList;
     if (classListColor[2] === 'selected') {      
@@ -49,10 +43,17 @@ function changeColor() {
 function colorPixels() {  
   const box = document.querySelectorAll('.td');
   const selected = document.querySelector('.selected');
-
   for (let index = 0; index < box.length; index += 1) {
-    box[index].addEventListener('click', () => {
-      box[index].style.backgroundColor = selected.style.backgroundColor
+    box[index].addEventListener('click', () => {      
+      box[index].style.backgroundColor = selected.style.backgroundColor            
     })
-  }
+  }  
+  changeColor();
 }
+
+
+
+
+createPixelBoard(5);
+selected();
+colorPixels()
