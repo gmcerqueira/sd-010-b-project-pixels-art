@@ -123,3 +123,19 @@ function criarListenerCelulas() {
 }
 
 criarListenerCelulas();
+
+function limpar() {
+  const n = 5;
+  for (let linha = 0; linha < n; linha += 1) {
+    for (let celula = 0; celula < n; celula += 1) {
+     document.getElementById(`cell-${linha + 1}-${celula + 1}`).style.background = '#ffffff';
+    }
+  }
+}
+
+function adicionaLimpar() {
+  let botao = document.getElementById('clear-board');
+  botao.addEventListener('click',limpar);
+}
+
+adicionaLimpar();

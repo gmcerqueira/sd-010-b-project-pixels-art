@@ -26,3 +26,6 @@ table {
     border-collapse: collapse;
 }
 
+#botao {
+    display:flexbox;
+}
