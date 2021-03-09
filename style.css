@@ -1,4 +1,5 @@
 .color {
+    margin: 5px;
     display: inline-block;
     height: 50px;
     width: 50px;
@@ -18,9 +19,11 @@
     background-color: black;
 }
 #pixel-board{
-   height: 250px;
-   width: 250px;
+   
     border: black solid 1px;
+    width: 200px;
+    height: 200px;
+    display:table;
 }
  .pixel {
   
@@ -28,5 +31,9 @@
     height: 40px;
     border: solid black 1px;
     background-color: white;
-    display: inline-block;
+    display: table-cell;
+}
+#linha1{
+    width: 250px;
+    height: 40px;
 }
