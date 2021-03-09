@@ -1,62 +1,26 @@
-#title {
-  text-align: center;
+.colorPalette {
+  margin: 5px;
 }
 
-.black {
-  background-color: black;
-  border: 1px solid black;
-  color: black;
-  display: inline-block;
-  width: 60px;
-  height: 60px;
+.pixelBoard {
+  margin: 5px;
+  display: table;
 }
 
-.pixel-board {
-  border: 1px solid black;
+.color {
+  border: black solid 1px;
   display: inline-block;
-  margin-left: 5%;
-  margin-top: 5%;
-  padding: 2px;
+  padding: 30px;
+}
+
+.linePixel {
+  display: table-row;
 }
 
 .pixel {
-  border: 1px solid;
   background-color: white;
-  display: inline-block;
-  width: 40px;
+  border: 1px solid black;
+  display: table-cell;
   height: 40px;
-  padding: 1px;
-}
-
-.pixeEv {
-  background-color: black;
-}
-.paletaInput{
-  height: 60px;
-  width: 60px;
-  display: inline-block;
-}
-
-.red {
-  border: 1px solid;
-  background-color: red;
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-}
-
-.blue {
-  border: 1px solid;
-  background-color: blue;
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-}
-
-.green {
-  border: 1px solid;
-  background-color: green;
-  display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 40px;
 }

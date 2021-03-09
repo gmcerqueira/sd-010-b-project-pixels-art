@@ -1,68 +1,106 @@
-window.onload = function() {
-  const divPixel = document.querySelector('#pixel-board');
-  function addPixelTable() {
-    for (let index = 1; index <= 5; index += 1 ) {  
-      let lineDiv = document.createElement('div');
-      for (let k = 1; k <= 5; k += 1) {
-        const pixel = document.createElement('div');
-        pixel.className = 'pixel';
-        lineDiv.appendChild(pixel);
-      }
-      divPixel.appendChild(lineDiv);
-    }
-  }
-  addPixelTable();
+window.onload = function () {
+  document.querySelector('#black').className += ' selected';
+  document.querySelector('#black').style.backgroundColor = 'black';
+};
 
-  function addEvents() {
-    const divsPixels = document.querySelectorAll('.pixel');
-    const blackElement = document.querySelector('.black');
-    blackElement.className += ' selected'
+const pixelBoard = document.querySelector('#pixel-board');
+const colorPalette = document.querySelector('.colorPalette');
+const numberSquare = document.querySelector('#board-size');
 
-    for (let index = 0; index < divsPixels.length; index += 1) {
-      divsPixels[index].addEventListener('click', function() {
-        divsPixels[index].className += ' pixEv';
-      });
-    }
-  }
-  addEvents()
+let atualNumber = 5;
 
-  let selectedColor = '';
-  function changeColor() {
-    let color = document.querySelectorAll('.color');
-      for (let i = 0; i < color.length; i += 1) {
-        color[i].addEventListener('click', function(event) {
-          for(let k = 0; k < color.length; k += 1) {
-            color[k].classList.remove('selected')
-          }
-            color[i].classList.toggle('selected');
-            selectedColor = event.target.id;
-        })
-      }  
-    }
-   changeColor()
-
-  let pixel = document.querySelectorAll('.pixel');
-  function paintPixel(){
-    for(let i = 0; i < pixel.length; i += 1){
-      pixel[i].addEventListener('click', function(){
-        pixel[i].style.backgroundColor = selectedColor;
-      })
-    }
-  }
-  paintPixel()
-
-  function clearBoard() {
-    let clearButton = document.querySelector('#clear-board');
-      clearButton.addEventListener('click', function() {
-        for(let i = 0; i < pixel.length; i += 1) {
-          pixel[i].style.backgroundColor = 'white'
-        }
-      })      
-  }
-  clearBoard()
-
-  let buttonColor = document.querySelector('#buttonColor');
-    buttonColor.addEventListener('change', function(){
-      selectedColor = buttonColor.value
-    })
+function setColor() {
+  document.querySelector('#red').style.backgroundColor = 'red';
+  document.querySelector('#blue').style.backgroundColor = 'blue';
+  document.querySelector('#green').style.backgroundColor = 'green';
 }
+
+function linePixels(line, numbers) {
+  for (let index = 0; index < numbers; index += 1) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    line.appendChild(pixel);
+  }
+  atualNumber = numbers;
+}
+
+function boxPixels(numbers) {
+  for (let index = 0; index < numbers; index += 1) {
+    const pixelLine = document.createElement('div');
+    linePixels(pixelLine, numbers);
+    pixelLine.className = 'linePixel';
+    pixelBoard.appendChild(pixelLine);
+  }
+}
+
+function boxSize() {
+  let rightSize = parseInt(numberSquare.value, 10);
+  if (rightSize < 5) {
+    rightSize = 5;
+  } else if (rightSize > 50) {
+    rightSize = 50;
+  }
+  boxPixels(rightSize);
+}
+
+function boxSquare() {
+  if (numberSquare.value === '') {
+    alert('Board inválido!');
+  } else {
+    const childrenPixel = document.querySelectorAll('.linePixel');
+    for (let index = 0; index < atualNumber; index += 1) {
+      pixelBoard.removeChild(childrenPixel[index]);
+    }
+    boxSize();
+  }
+}
+
+function numbersSquares() {
+  const generateSquare = document.querySelector('#generate-board');
+  generateSquare.addEventListener('click', boxSquare);
+  
+}
+
+function changePixelColor(event) {
+  const color = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = color;
+}
+
+function colorizePixels() {
+  pixelBoard.addEventListener('click', changePixelColor);
+}
+
+function selectPalette(event) {
+  const pad1 = document.querySelector('#black');
+  pad1.className = 'color';
+  const pad2 = document.querySelector('#red');
+  pad2.className = 'color';
+  const pad3 = document.querySelector('#blue');
+  pad3.className = 'color';
+  const pad4 = document.querySelector('#green');
+  pad4.className = 'color';
+  event.target.className = 'color selected';
+}
+
+function setSelected() {
+  colorPalette.addEventListener('click', selectPalette);
+}
+
+function eraseAll() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+}
+
+function eraseScrean() {
+  const btnErase = document.querySelector('#clear-board');
+  btnErase.addEventListener('click', eraseAll);
+}
+
+boxPixels(5);
+setColor();
+colorizePixels();
+setSelected();
+eraseScrean();
+numbersSquares();
