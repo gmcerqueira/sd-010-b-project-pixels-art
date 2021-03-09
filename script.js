@@ -19,19 +19,34 @@ document.getElementsByClassName('color')[0].className += ' selected';
 
 // - Note que os elementos que deverão receber a classe `selected` devem ser os mesmos elementos que possuem a classe `color`, como especificado no **requisito 2**.
 
-function changeClass() {
-  let box = document.getElementsByClassName('color')
-  for (let index = 0; index < box.length; index += 1) {
-    box[index].addEventListener('click', (event) => {
-      if (box[index].className == "color selected") {
-        event.target.changeName = "color";
+box[0].addEventListener('click',function() {
+  box[0].className = 'color selected'
+  box[1].className = 'color'
+  box[2].className = 'color'
+  box[3].className = 'color'
 
-      } else {
-        event.target.className += ' selected';
+})
 
-  }}
-      )
-  }
-}
+box[1].addEventListener('click',function() {
+  box[1].className = 'color selected'
+  box[0].className = 'color'
+  box[2].className = 'color'
+  box[3].className = 'color'
 
-changeClass();
+})
+
+box[2].addEventListener('click',function() {
+  box[2].className = 'color selected'
+  box[1].className = 'color'
+  box[0].className = 'color'
+  box[3].className = 'color'
+
+})
+
+box[3].addEventListener('click',function() {
+  box[3].className = 'color selected'
+  box[1].className = 'color'
+  box[2].className = 'color'
+  box[0].className = 'color'
+
+})
