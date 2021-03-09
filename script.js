@@ -1,17 +1,14 @@
 
 function criaPixels() {
-  let secao = document.querySelector('#secao');
-  let novaLinha = document.createElement('div');
+    let quadro = document.getElementById('pixel-board');
   for (let j = 0; j < 5; j++) {
-    let quadro =document.createElement('div');
-    quadro.className = 'pixel-border' ;
+    let novaLinha =document.createElement('div');    
     for (let i = 0; i < 5; i++) {
       let divNova = document.createElement("div");
       divNova.className = 'pixel';
-      quadro.appendChild(divNova);
+      novaLinha.appendChild(divNova);
     }
-    document.body.appendChild(quadro);
+    quadro.appendChild(novaLinha);
   }
-  document.body.appendChild(quadro);
 }
 criaPixels();
