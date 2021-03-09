@@ -17,7 +17,7 @@ let purple = coresDaPaleta[1];
 let pink = coresDaPaleta[2];
 let magenta = coresDaPaleta[3];
 
-black.className = "selected";
+black.classList.add("selected");
 
 black.style.backgroundColor = "black";
 purple.style.backgroundColor = "purple";
@@ -43,3 +43,17 @@ for (i=0; i<linhasTabela.length; i++) {
         linhasTabela[i].appendChild(cedulasTabela);
     }
 }
+
+//Adiciona a classe "selected" para a cor clicada e retira das demais
+for (i=0; i<coresDaPaleta.length; i++) {
+    coresDaPaleta[i].addEventListener("click", selecionaCor)
+}
+
+function selecionaCor(){
+    black.classList.remove("selected");
+    purple.classList.remove("selected");
+    pink.classList.remove("selected");
+    magenta.classList.remove("selected");
+    this.classList.add("selected");
+}
+
