@@ -1,5 +1,8 @@
 let colors = ['black', 'red', 'green', 'blue', 'yellow'];
 const rowsAndCols = 5;
+
+sessionStorage.color = colors[0];
+
 let h1 = document.getElementById('title');
 h1.insertAdjacentHTML('afterend', '<div id="color-palette"></div>');
 fillLineColor();
@@ -10,6 +13,16 @@ function currentColorSelected(e) {
   sessionStorage.color = e.target.style.backgroundColor;
   e.target.className = 'color selected'; // ou e.target.className.add('selected'); ou ainda: e.target.className += ' selected'
 }
+
+function clearBoard() {
+  let pixels = document.querySelectorAll('.pixel');
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+}
+
+let btn = document.getElementById('clear-board');
+btn.addEventListener('click', clearBoard);
 
 function fillLineColor() {
   let colorPalette = document.getElementById('color-palette');

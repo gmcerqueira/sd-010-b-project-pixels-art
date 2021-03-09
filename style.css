@@ -25,3 +25,7 @@
   margin-right: 4px;
   border: 1px solid;
 }
+
+#clear-board {
+  font-weight: 700;
+}
