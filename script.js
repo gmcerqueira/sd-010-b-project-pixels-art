@@ -61,7 +61,21 @@ const setPixelGrid = (size) => {
   }
 };
 
+// Set Color to paint
+
+const selectPalleteColor = () => {
+  palletes.map((pallete) => {
+    pallete.addEventListener('click', (event) => selectColor(event.target));
+  });
+};
+
+const selectColor = (element) => {
+  document.querySelector('.selected').setAttribute('class', 'color');
+  element.classList.add('selected');
+};
+
 function start() {
   setPalleteColors();
   setPixelGrid(5);
+  selectPalleteColor();
 }
