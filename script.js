@@ -24,7 +24,7 @@ window.onload = function () {
 
   const pixelBoard = document.createElement('section');
   pixelBoard.id = 'pixel-board';
-  document.body.appendChild(pixelBoard);
+  sectionSelectColors.appendChild(pixelBoard);
 
   for (let index = 0; index < numberOfItems; index++) {
     const itemOption = document.createElement('div');
