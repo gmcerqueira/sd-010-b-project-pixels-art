@@ -3,6 +3,7 @@ function inicializeColor() {
   for (let color = 0; color < colorsPalet.length; color++) {
     if(color == 0){
       colorsPalet[color].style.backgroundColor = "black";
+      colorsPalet[color].className+= " selected"
     }else if (color == 1) {
       colorsPalet[color].style.backgroundColor = "red";
     }else if(color == 2){
@@ -24,7 +25,7 @@ function createBorad(height, width) {
     for (let boardWidth = 0; boardWidth < width; boardWidth++) {
       let lineToAdd = theBorad.lastElementChild;
       let mkPixel = document.createElement("td");
-      mkPixel.className = "pixels";
+      mkPixel.className = "pixel";
       mkPixel.style.background = "white"
       lineToAdd.appendChild(mkPixel);
     }
@@ -32,3 +33,4 @@ function createBorad(height, width) {
 }
 
 createBorad(5,5);
+
