@@ -1,35 +1,28 @@
-#color-palette {
-  display: inline-block;
-}
-
-#color-palette .black {
+.color {
   display: inline-block;
   border: black solid 1px;
   width: 100px;
   height: 100px;
+}
+
+#black {
   background-color: black;
 }
 
-#color-palette .greenyellow {
-  display: inline-block;
-  border: black solid 1px;
-  width: 100px;
-  height: 100px;
+#greenyellow {
   background-color: greenyellow;
 }
 
-#color-palette .blue {
-  display: inline-block;
-  border: black solid 1px;
-  width: 100px;
-  height: 100px;
+#blue {
   background-color: blue;
 }
 
-#color-palette .orangered {
-  display: inline-block;
+#orangered {
+  background-color: orangered;
+}
+
+#pixel-board .pixel {
   border: black solid 1px;
   width: 100px;
   height: 100px;
-  background-color: orangered;
 }
