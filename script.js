@@ -47,13 +47,13 @@ const setPixelGrid = (size) => {
 
     for (let column = 0; column < size; column += 1) {
       const td = createGenElement('td', 'pixel');
-      if (column > 0) {
-        td.style.borderLeft = 0;
-      }
-      if (row > 0) {
-        td.style.borderTop = 0;
-        td.style.height = '39px';
-      }
+      // if (column > 0) {
+      //   td.style.borderLeft = 0;
+      // }
+      // if (row > 0) {
+      //   td.style.borderTop = 0;
+      //   // td.style.height = '39px';
+      // }
       tr.appendChild(td);
     }
 
