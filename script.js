@@ -27,3 +27,15 @@ for(let index = 0; index < lines; index +=1){
         divTr.appendChild(divBox);
     }
 }
+
+console.log(document.querySelector('.color').className)
+
+let colorArray = document.querySelectorAll(".color")
+for (let i = 0; i < colorArray.length; i += 1) {
+    colorArray[i].addEventListener("click", function(event) {
+        for (let j = 0; j < colorArray.length; j += 1){
+            colorArray[j].className = 'color';
+        }
+        event.target.className = 'color selected';
+    }) 
+}
