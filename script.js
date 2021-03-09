@@ -25,6 +25,7 @@ window.onload = function createPixelsBoard() {
     for (let i3 = 0; i3 < 5; i3 += 1) {
       const pixel = document.createElement('li');
       pixel.className = 'pixel';
+      pixel.style.backgroundColor = 'white';
       tableRows[i2].appendChild(pixel);
     }
   }
