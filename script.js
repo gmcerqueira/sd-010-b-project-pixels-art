@@ -13,7 +13,7 @@ const setColor = () => {
 
     btnColor[0].style.backgroundColor = 'black';
 
-    btnColor[i].style.backgroundColor = 'rgb(' + first + ', ' + second + ', ' + third + ')';
+    btnColor[i].style.backgroundColor = `rgb(${first},${second},${third})`;
 
     btnColor[i].addEventListener('click', (e) => {
       for (let j = 0; j < btnColor.length; j += 1) {
@@ -27,9 +27,10 @@ const setColor = () => {
 setColor();
 
 const paintPixel = (pixel) => {
+  const element = pixel;
   for (let i = 0; i < btnColor.length; i += 1) {
     if (btnColor[i].className === 'color selected') {
-      pixel.style.backgroundColor = btnColor[i].style.backgroundColor;
+      element.style.backgroundColor = btnColor[i].style.backgroundColor;
     }
   }
 };
@@ -59,14 +60,22 @@ const createRow = (value, board) => {
 
 const setSize = (value) => {
   checkEmptyValue(value);
+  let valor;
 
-  value > 50 ? (value = 50) : null;
-  value < 5 ? (value = 5) : null;
+  if (value > 50) {
+    valor = 50;
+  } else if (value < 5) {
+    valor = 5;
+  }
+  valor = value;
+
+  // value > 50 ? (valor = 50) : null;
+  // value < 5 ? (valor = 5) : null;
 
   const board = document.getElementById('pixel-board');
   board.innerText = '';
 
-  createRow(value, board);
+  createRow(valor, board);
 };
 
 btnBoardSIze.addEventListener('click', () => {
