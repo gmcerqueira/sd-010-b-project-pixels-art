@@ -32,26 +32,26 @@ for (let nColor = 1; nColor < 4; nColor += 1){
     if (colorInt == 4095) colorInt = colorInt - 1;
 
     colorInt = Math.floor(colorInt)
-    let colorHex = Number(colorInt).toString(16)
+    let colorHex = Number (colorInt).toString (16)
     if (colorHex.length < 3) colorHex += '0';
     colorHex = '#'+colorHex;
 
-    colors.push(colorHex);
+    colors.push (colorHex);
 }
-console.log(colors);
+console.log (colors);
 /*----------------------Paleta de Cores---------------------------------- */
 
 for (let color = 0; color < 4; color += 1) {
-    let colorElement = document.createElement('div');
+    let colorElement = document.createElement ('div');
     
     colorElement.className = color == 0 ? 'color selected': 'color';
     
     colorElement.style.backgroundColor = colors[color];
-    console.log(colors[color]);
-    paletteBox.appendChild(colorElement);
+    console.log (colors[color]);
+    paletteBox.appendChild (colorElement);
 }
 
-function selected(event){
+function selected (event) {
     //limpar os selecionados
     let elements = document.querySelectorAll('.color')
     for(let index = 0; index < elements.length; index += 1){
@@ -60,7 +60,7 @@ function selected(event){
     event.target.className = 'color selected';
 }
 
-paletteBox.addEventListener('click',selected,false);
+paletteBox.addEventListener ('click',selected,false);
 
 /*Criando o Input */
 
@@ -71,14 +71,14 @@ const btn = document.createElement('div');
 btn.innerHTML = 'Limpar'
 btn.id = 'clear-board';
 
-containerHeader.appendChild(btn);
+containerHeader.appendChild (btn);
 
-const entry = document.createElement('div');
+const entry = document.createElement ('div');
 
-containerHeader.appendChild(entry);
+containerHeader.appendChild (entry);
 
 
-const value = document.createElement('input');
+const value = document.createElement ('input');
 
 value.type = "number";
 value.min = '1';
@@ -86,14 +86,15 @@ value.max = '50';
 value.id = 'board-size'
 
 entry.appendChild(value);
-entry.id = 'generate-board';
+entry.id = 'form';
 
-const submit = document.createElement('button');
+const submit = document.createElement ('button');
 
 entry.appendChild(submit);
 submit.innerHTML = 'VQV';
+submit.className = 'generate-board'
 
-submit.addEventListener('click',function(){
+submit.addEventListener ('click',function(){
 
     if(value.value == "") {
         alert('Board inválido!');
@@ -101,26 +102,25 @@ submit.addEventListener('click',function(){
     }
     killQuadro();
 
-   if(value.value > 50){
+   if (value.value > 50) {
     N = 50;
     value.value = N;
    } 
-   else  if(value.value < 5){
+   else  if (value.value < 5) {
         N = 5;
         value.value = N;
    } 
-   else{
+   else {
     N = value.value;
     value.value = N;
 
    } 
-    criarQuadro ()
+    criarQuadro ();
     
 
 })
+
 //Criar um botão
-
-
 
 btn.addEventListener('click', function(){
     const pixels = document.getElementsByClassName('pixel');
@@ -166,9 +166,7 @@ function criarQuadro (){
 
 }
 
-
 //Lógica para Preenchimento dos pixels
-
 
 function fillColor(event){
     //Procurar o Selecionado
@@ -177,4 +175,3 @@ function fillColor(event){
 }
 
 pixelBoard.addEventListener('click',fillColor,false)
-
