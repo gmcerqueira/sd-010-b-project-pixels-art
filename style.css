@@ -5,18 +5,18 @@
   display: inline-block;
 }
 
-.black {
+#black-color {
   background-color: black;
 }
 
-.red {
+#second-color {
   background-color: red;
 }
 
-.blue {
+#third-color {
   background-color: blue;
 }
 
-.green {
+#fourth-color {
   background-color: green;
 }
