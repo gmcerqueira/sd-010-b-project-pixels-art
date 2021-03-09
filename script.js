@@ -1,7 +1,7 @@
 function selectBlack(event) {
-  const colorRed = document.getElementById('vermelho');
-  const colorBlue = document.getElementById('azul');
-  const colorGreen = document.getElementById('verde');
+  const colorRed = document.getElementById('red');
+  const colorBlue = document.getElementById('blue');
+  const colorGreen = document.getElementById('green');
 
   colorRed.className = 'color';
   colorBlue.className = 'color';
@@ -10,9 +10,9 @@ function selectBlack(event) {
 }
 
 function selectRed(event) {
-  const corPreto = document.getElementById('preto');
-  const corAzul = document.getElementById('azul');
-  const corVerde = document.getElementById('verde');
+  const corPreto = document.getElementById('black');
+  const corAzul = document.getElementById('blue');
+  const corVerde = document.getElementById('green');
 
   corPreto.className = 'color';
   corAzul.className = 'color';
@@ -21,9 +21,9 @@ function selectRed(event) {
 }
 
 function selectBlue(event) {
-  const corPreto = document.getElementById('preto');
-  const corVermelho = document.getElementById('vermelho');
-  const corVerde = document.getElementById('verde');
+  const corPreto = document.getElementById('black');
+  const corVermelho = document.getElementById('red');
+  const corVerde = document.getElementById('green');
   
   corPreto.className = 'color';
   corVermelho.className = 'color';
@@ -32,9 +32,9 @@ function selectBlue(event) {
 }
 
 function selectGreen(event) {
-  const corPreto = document.getElementById('preto');
-  const corVermelho = document.getElementById('vermelho');
-  const corAzul = document.getElementById('azul');
+  const corPreto = document.getElementById('black');
+  const corVermelho = document.getElementById('red');
+  const corAzul = document.getElementById('blue');
 
   corPreto.className = 'color';
   corVermelho.className = 'color';
@@ -42,27 +42,24 @@ function selectGreen(event) {
   event.target.className = 'color selected';
 }
 
-const blackButton = document.getElementById('preto');
+const blackButton = document.getElementById('black');
 blackButton.addEventListener('click', selectBlack);
 
-const redButton = document.getElementById('vermelho');
+const redButton = document.getElementById('red');
 redButton.addEventListener('click', selectRed);
 
-const blueButton = document.getElementById('azul');
+const blueButton = document.getElementById('blue');
 blueButton.addEventListener('click', selectBlue);
 
-const greenButton = document.getElementById('verde');
+const greenButton = document.getElementById('green');
 greenButton.addEventListener('click', selectGreen);
 
-function pintaPixel(event) {
-  const selecionaCor = document.querySelector('.selected');
-  const estilo = getComputedStyle(selecionaCor);
-  const pixel = event.target;
-  pixel.style.backgroundColor = estilo;
-}
-
-const colore = document.getElementById('pixel-board');
-colore.addEventListener('click', pintaPixel);
+const pixelBoard = document.getElementById('pixel-board');
+pixelBoard.addEventListener('click', function (event) {
+  const backgroundColor = document.querySelector('.selected');  
+  const estilo = backgroundColor.getAttribute('id');
+  event.target.style.backgroundColor = estilo;  
+});
 
 function limpaGrid() {
   const pixel = document.getElementsByClassName('pixel');
