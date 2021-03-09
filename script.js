@@ -16,7 +16,6 @@ function criaPaleta() {
 criaPaleta();
 
 function criaQuadro() {
-
   for (let index = 0; index < 5; index += 1) {
     const quadro = document.querySelector('#pixel-board');
     const criaRow = document.createElement('div');
