@@ -1,14 +1,9 @@
-let lines;
-let columns;
+let tr = document.createElement('tr'); // lines
+let td = document.createElement('td'); // collumns
 
 //recuperando a tabela para criar linhas e colunas
 
-for( let i = 0; i>5 ; i += 1){
-    document.createElement('tr');
-    
-    
-                    
-    }
+td.className('pixel');
 
 
-}
+
