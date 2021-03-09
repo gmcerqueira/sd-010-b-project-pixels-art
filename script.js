@@ -1,3 +1,5 @@
+window.onload = document.getElementById("paleta1").className = "color selected";
+
 let lado = 5;
 let numeroPixels = lado * lado;
 
