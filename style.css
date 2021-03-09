@@ -18,4 +18,29 @@ header {
 section {
   background-color: aliceblue;
   padding: 2px;
+  display: inline;
+}
+
+#preto {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+}
+
+#preto {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+}
+
+#preto {
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+}
+
+#preto {
+  background-color: green;
+  width: 40px;
+  height: 40px;
 }
