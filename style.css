@@ -1,0 +1,11 @@
+.table {
+  display: table;
+}
+
+.pixel-board {
+  display: table-row;
+}
+
+.pixel {
+  display: table-cell;
+}
