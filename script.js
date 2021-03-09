@@ -14,6 +14,8 @@ colunaPaleta[1].style.backgroundColor = "green";
 colunaPaleta[2].style.backgroundColor = "blue";
 colunaPaleta[3].style.backgroundColor = "yellow";
 
+/////////////////////////////////////////////////////////////////////////////////////////
+
 let quadrado = document.createElement("table");
 quadrado.id = "pixel-board";
 document.body.appendChild(quadrado);
