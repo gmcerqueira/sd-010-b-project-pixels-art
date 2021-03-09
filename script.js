@@ -79,7 +79,8 @@ function selectPalette(event) {
   pad3.className = 'color';
   const pad4 = document.querySelector('#green');
   pad4.className = 'color';
-  event.target.className = 'color selected';
+  let eve= event;
+  eve.target.className = 'color selected';
 }
 
 function setSelected() {
