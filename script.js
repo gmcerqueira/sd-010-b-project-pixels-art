@@ -5,6 +5,15 @@ const blue = document.getElementsByClassName('blue')[0];
 
 const paletaCores = [black, orangered, green, blue];
 
+function selectColor(event) {
+  for (index in paletaCores ) {
+    if (paletaCores[index].classList.contains('selected')) {
+        deselectColor();
+    }
+  }
+  
+  event.target.classList.add('selected');
+}
 
 black.addEventListener('click', selectColor);
 orangered.addEventListener('click', selectColor);
@@ -16,8 +25,3 @@ function deselectColor() {
     currentColor.className = 'color';
   }
   
-  function selectColor(event) {
-    const selectedColor = event.target;
-    deselectColor();
-    selectedColor.className += ' selected';
-  }
