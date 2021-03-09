@@ -1,0 +1,33 @@
+#color-palette{ 
+    display: table; 
+}
+
+#paleta1 {
+    background-color: blueviolet;
+}
+
+#paleta2 {
+    background-color: aquamarine;
+}
+
+#paleta3 {
+    background-color: brown;
+}
+
+#paleta4 {
+    background-color: yellowgreen;
+}
+
+
+.tr{ 
+    display: table-row; 
+}
+
+.color{ 
+    display: table-cell;
+    width: 10px;
+    border: 1px solid black;
+    padding: 30px;
+    margin: 10px;
+}
+
