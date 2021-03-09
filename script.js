@@ -27,21 +27,20 @@ let pixels = document.querySelectorAll('.pixel');
 
 const selectedColor = document.getElementsByClassName('selected');
 const black = document.querySelector('.black');
-const second = document.querySelector('.second-color');
-const third = document.querySelector('.third-color');
-const fourth = document.querySelector('.fourth-color');
+const color1 = document.querySelector('.color1');
+const color2 = document.querySelector('.color2');
+const color3s = document.querySelector('.color3');
 
 function classChange() {
   const selectedElement = document.querySelector('.selected');
   selectedElement.classList.remove('selected');
   this.classList.add('selected');
-  console.log(selectedColor[0].classList[1]);
 }
 
 black.addEventListener('click', classChange);
-second.addEventListener('click', classChange);
-third.addEventListener('click', classChange);
-fourth.addEventListener('click', classChange);
+color1.addEventListener('click', classChange);
+color2.addEventListener('click', classChange);
+color3s.addEventListener('click', classChange);
 
 // ---------------------------------------------------
 // Utilizando a classe .selected para pintar os pixels
@@ -61,8 +60,6 @@ for (let i = 0; i < pixels.length; i += 1) {
 
 const btn = document.querySelector('#clear-board');
 
-console.log(btn);
-
 function clearBoard() {
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
@@ -76,12 +73,10 @@ btn.addEventListener('click', clearBoard);
 
 // Criação da div .row
 function createRows(n) {
-  const newPixelBoard = document.getElementById('pixel-board');
-
   for (let i = 0; i < n; i += 1) {
     const newRowDiv = document.createElement('div');
     newRowDiv.className = 'row';
-    newPixelBoard.appendChild(newRowDiv);
+    pixelBoard.appendChild(newRowDiv);
   }
 }
 // Criação da div .pixel
@@ -99,7 +94,7 @@ function createPixels() {
 
 // Remoção do board anterior
 function removeBoard() {
-  document.getElementById('pixel-board').innerHTML = '';
+  pixelBoard.innerHTML = '';
 }
 
 // Criação do board
@@ -119,7 +114,7 @@ const button = document.getElementById('generate-board');
 
 function board() {
   boardSize = document.getElementById('board-size').value;
-  if (boardSize === "") {
+  if (boardSize === '') {
     alert('Board inválido!');
   } else if (boardSize < 5) {
     createBoard(5);
@@ -131,3 +126,14 @@ function board() {
 }
 
 button.addEventListener('click', board);
+
+// ---------------------------------------------------
+// CREATE NEW BOARD
+// https://css-tricks.com/snippets/javascript/random-hex-color/
+const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
+const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
+const randomColor3 = Math.floor(Math.random() * 16777215).toString(16);
+
+color1.style.backgroundColor = `#${randomColor1}`;
+color2.style.backgroundColor = `#${randomColor2}`;
+color3s.style.backgroundColor = `#${randomColor3}`;
