@@ -1,0 +1,29 @@
+.color{
+    border-style:solid;
+    border-color: black;
+    border-width: 1px;
+    
+}
+div{
+    margin:12px ;
+    display: inline-table;
+    border-style: solid;
+    width: 200px;
+    height: 200px;
+    position: static;
+    
+}
+
+#vermelho{
+    background-color: red;
+}
+#azul{
+    background-color: blue;
+}
+#verde{
+    background-color: green;
+}
+#preto{
+    background-color: black;
+}
+
