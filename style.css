@@ -24,20 +24,5 @@ td {
   height: 40px;
   border: 1px solid black;
   display: inline-block;
-}
-
-#paletteBlack {
-  background-color: black;
-}
-
-#paletteGreen {
-  background-color: green;
-}
-
-#paletteYellow {
-  background-color: yellow;
-}
-
-#paletteBlue {
-  background-color: blue;
+  margin-right: 5px;
 }
