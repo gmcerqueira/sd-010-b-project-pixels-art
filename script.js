@@ -3,10 +3,10 @@ function selectBlack(event) {
   let colorBlue = document.getElementById('azul');
   let colorGreen = document.getElementById('verde');
 
-  colorRed.classList.remove('selected');
-  colorBlue.classList.remove('selected');
-  colorGreen.classList.remove('selected');
-  event.target.classList.add('selected');
+  colorRed.className = 'color';
+  colorBlue.className = 'color';
+  colorGreen.className = 'color';
+  event.target.className = 'color selected'
 }
 
 function selectRed(event) {
@@ -14,10 +14,10 @@ function selectRed(event) {
   let corAzul = document.getElementById('azul');
   let corVerde = document.getElementById('verde');
 
-  corPreto.classList.remove('selected');
-  corAzul.classList.remove('selected');
-  corVerde.classList.remove('selected');
-  event.target.classList.add('selected');
+  corPreto.className = 'color';
+  corAzul.className = 'color';
+  corVerde.className = 'color';
+  event.target.className = 'color selected'
 }
 
 function selectBlue(event) {
@@ -25,10 +25,10 @@ function selectBlue(event) {
   let corVermelho = document.getElementById('vermelho');
   let corVerde = document.getElementById('verde');
   
-  corPreto.classList.remove('selected');
-  corVermelho.classList.remove('selected');
-  corVerde.classList.remove('selected');
-  event.target.classList.add('selected');
+  corPreto.className = 'color';
+  corVermelho.className = 'color';
+  corVerde.className = 'color';
+  event.target.className = 'color selected'
 }
 
 function selectGreen(event) {
@@ -36,10 +36,10 @@ function selectGreen(event) {
   let corVermelho = document.getElementById('vermelho');
   let corAzul = document.getElementById('azul');
 
-  corPreto.classList.remove('selected');
-  corVermelho.classList.remove('selected');
-  corAzul.classList.remove('selected');
-  event.target.classList.add('selected');
+  corPreto.className = 'color';
+  corVermelho.className = 'color';
+  corAzul.className = 'color';
+  event.target.className = 'color selected'
 }
 
 let blackButton = document.getElementById('preto');
@@ -53,3 +53,12 @@ blueButton.addEventListener('click', selectBlue);
 
 let greenButton = document.getElementById('verde');
 greenButton.addEventListener('click', selectGreen);
+
+function pintaPixel(event) {
+  let selecionaCor = document.querySelector('.selected').id;
+  let pixel = event.target;
+  pixel.style.backgroundColor = selecionaCor.style.backgroundColor;
+}
+
+let colore = document.querySelector('.pixel');
+colore.addEventListener('click', pintaPixel);

@@ -23,7 +23,7 @@
 
 #pixel-board {
   display: grid;  
-  grid-template-columns: repeat(5, 40px);
+  grid-template-columns: repeat(5, 42px);
 }
 
 .pixel {
