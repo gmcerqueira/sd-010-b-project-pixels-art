@@ -9,5 +9,5 @@
 .palette-table div div {
   display: table-cell;
   padding: 5px;
-  border: solid 1px #000000;
+  border: solid 1px #000;
 }
