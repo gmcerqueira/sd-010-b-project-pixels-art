@@ -5,12 +5,21 @@ const clearBoardButton = document.querySelector('#clear-board');
 const boardSize = document.querySelector('#board-size');
 const generateBoard = document.querySelector('#generate-board');
 
+// Criando core aleatória
+function randomColor() {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 // Criando e adicionando cores a paleta
-function createColorPalette(colorList) {
-  for (let i = 0; i < colorList.length; i += 1) {
+function createColorPalette(numberOfColors) {
+  for (let i = 0; i < numberOfColors; i += 1) {
     const colorPixel = document.createElement('div');
     colorPixel.className = 'color';
-    colorPixel.style.backgroundColor = colorList[i];
+    colorPixel.style.backgroundColor = randomColor();
     colorPallete.appendChild(colorPixel);
   }
 }
@@ -45,6 +54,7 @@ function createBoard(size) {
 // Definindo cor preta como inicial
 function defaultColor() {
   colorPallete.firstElementChild.classList.add('selected');
+  colorPallete.firstElementChild.style.backgroundColor = 'black';
 }
 
 // Selecionando uma cor quando clicar em cima dela na paleta de cores
@@ -82,7 +92,7 @@ function resizeBoard() {
 }
 
 window.onload = () => {
-  createColorPalette(colors);
+  createColorPalette(4);
   defaultColor();
   createBoard(5);
   selectColor();
