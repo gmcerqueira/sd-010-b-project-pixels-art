@@ -39,3 +39,11 @@ h1 {
   background-color: white;
 
 }
+
+.selected {
+  width: 40px;
+  height: 40px;
+  border: black solid 1px;
+  display: inline-block;
+  margin: 10px;
+}
