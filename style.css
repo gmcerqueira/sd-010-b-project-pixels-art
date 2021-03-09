@@ -11,10 +11,17 @@
 
 #color-palette{
 
-
 }
 
 .paleta-container{
 
+}
 
+.pixel{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    border: solid #000;
+    border-width: 1px;
+    margin-right: 4px;
 }
