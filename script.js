@@ -29,7 +29,7 @@ const setPalleteColors = () => {
   let b = Math.ceil(Math.random() * 84);
   palletes.map((pallete, index) => {
     if (!index) {
-      pallete.style.backgroundColor = 'rgb(0, 0, 0)';
+      pallete.style.backgroundColor = 'black';
     } else {
       pallete.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
       r += 84;
