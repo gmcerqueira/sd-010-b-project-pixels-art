@@ -4,3 +4,19 @@
   height: 40px;
   display: inline-block;
 }
+
+#preto {
+  background-color: black;
+}
+
+#vermelho{
+  background-color: red;
+}
+
+#azul {
+  background-color: blue;
+}
+
+#verde {
+  background-color: green;
+}
