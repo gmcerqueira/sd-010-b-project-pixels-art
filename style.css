@@ -1,9 +1,9 @@
-#color-palette{ 
+#color-palette { 
     display: table; 
 }
 
 #paleta1 {
-    background-color: blueviolet;
+    background-color: black;
 }
 
 #paleta2 {
@@ -18,16 +18,14 @@
     background-color: yellowgreen;
 }
 
-
-.tr{ 
+.tr { 
     display: table-row; 
 }
 
-.color{ 
+.color {  
     display: table-cell;
     width: 10px;
     border: 1px solid black;
     padding: 30px;
     margin: 10px;
 }
-
