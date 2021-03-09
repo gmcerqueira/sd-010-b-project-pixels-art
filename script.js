@@ -28,7 +28,7 @@ for(let index = 0; index < lines; index +=1){
     }
 }
 
-console.log(document.querySelector('.color').className)
+
 
 let colorArray = document.querySelectorAll(".color")
 for (let i = 0; i < colorArray.length; i += 1) {
@@ -39,3 +39,14 @@ for (let i = 0; i < colorArray.length; i += 1) {
         event.target.className = 'color selected';
     }) 
 }
+
+
+// console.log(document.querySelector('.color').className)
+let pixelArray = document.querySelectorAll(".pixel");
+for (let i = 0; i < pixelArray.length; i += 1) {
+    pixelArray[i].addEventListener("click", function(event) {
+        let selectedColor = document.querySelector(".color.selected")
+        event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    }) 
+}
+
