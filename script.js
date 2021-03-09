@@ -48,7 +48,7 @@ for (let index = 0; index < 4; index += 1) {
 }
 injectMain(colorPalette);
 
-//recupera as divs da paleta de cores e coloca o id para colorir
+//recupera as divs da paleta de cores e coloca o id para colorir.
 let firstDiv = document.querySelector('#color-palette').firstChild;
 firstDiv.id = 'black';
 let secondDiv = document.querySelector('#color-palette').firstChild.nextSibling;
