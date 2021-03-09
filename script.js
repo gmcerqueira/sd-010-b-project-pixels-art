@@ -1,16 +1,31 @@
 window.onload = function() {
-  let firstDiv = document.querySelector("#pixel-board")
-  
-  function addPixelTable() {
-    for (let i = 0; i <= 5; i += 1){
-      let linePixel = document.createElement('div');
-      for (let columPixel = 1 columPixel <= 5; columPixel += 1) {
-        let pixel = document.createElement('div');
-        pixel.className = 'pixel';
-        linePixel.appendChild(pixel);
+  let divPixel = document.querySelector('#pixel-board');
+  function addPixelTable(){
+    for (let index = 1; index <= 5; index += 1 ){
+      let lineDiv = document.createElement('div');
+        for (let k = 1; k <= 5; k += 1){
+          let pixel = document.createElement('div');
+            pixel.className = 'pixel';
+            lineDiv.appendChild(pixel)
       }
-      firstDiv.appendChild(linePixel);
+      divPixel.appendChild(lineDiv)
     }
   }
+
   addPixelTable();
+
+  function addEvents(){
+    let divsPixels = document.querySelectorAll('.pixel');
+    let elementoBlack = document.querySelector('.black');
+    elementoBlack.className += ' selected'
+
+    for (let index = 0; index < divsPixels.length; index += 1){
+        divsPixels[index].addEventListener('click', function(){
+            divsPixels[index].className += ' pixEv';
+        });
+    }
+  }
+  addEvents();
+
+  
 }
