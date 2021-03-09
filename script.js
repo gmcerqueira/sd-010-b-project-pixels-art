@@ -17,7 +17,7 @@ function selectRed(event) {
   corPreto.className = 'color';
   corAzul.className = 'color';
   corVerde.className = 'color';
-  event.target.className = 'color selected'
+  event.target.className = 'color selected';
 }
 
 function selectBlue(event) {
@@ -28,7 +28,7 @@ function selectBlue(event) {
   corPreto.className = 'color';
   corVermelho.className = 'color';
   corVerde.className = 'color';
-  event.target.className = 'color selected'
+  event.target.className = 'color selected';
 }
 
 function selectGreen(event) {
@@ -39,7 +39,7 @@ function selectGreen(event) {
   corPreto.className = 'color';
   corVermelho.className = 'color';
   corAzul.className = 'color';
-  event.target.className = 'color selected'
+  event.target.className = 'color selected';
 }
 
 const blackButton = document.getElementById('preto');
@@ -55,16 +55,15 @@ const greenButton = document.getElementById('verde');
 greenButton.addEventListener('click', selectGreen);
 
 function pintaPixel(event) {
-  let pixel = event.target;
-  let selecionaCor = document.querySelector('.selected').style.backgroundColor;
-  pixel.style.backgroundColor = selecionaCor;
+  let selecionaCor = document.querySelector('.color selected');
+  event.target.style.backgroundColor = selecionaCor.style.backgroundColor;  
 }
 
 let colore = document.querySelector('.pixel');
 colore.addEventListener('click', pintaPixel);
 
 function limpaGrid() {
-  const pixel = document.getElementsByClassName('pixel');
+  let pixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixel.length; index += 1) {
       pixel[index].style.backgroundColor = 'white';
   }
