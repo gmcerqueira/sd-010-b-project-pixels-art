@@ -51,3 +51,7 @@
 .selected {
   background-color: black;
 }
+
+#clear-board{
+  display: block;
+}

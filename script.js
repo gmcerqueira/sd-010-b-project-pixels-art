@@ -34,7 +34,7 @@ function changeColor() {
     if (classListColor[2] === 'selected') {      
       selected.style.backgroundColor = `${classListColor[1]}`;       
     }
-    else if (classListColor.length <= 2){
+    else if (classListColor.length <= 2) {
       colorBox[index].style.backgroundColor = classListColor[index];
     }      
   }
@@ -52,8 +52,6 @@ function colorPixels() {
 }
 
 
-
-
 createPixelBoard(5);
 selected();
-colorPixels()
+colorPixels();
