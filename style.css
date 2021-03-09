@@ -20,6 +20,11 @@
   background-color: black;
 }
 
+.selected {
+  background-color: black;
+
+}
+
 .blue {
   background-color: blue;
 }
@@ -44,6 +49,4 @@
   height: 40px;
   display: inline-block;
   background-color: white;
-
-
 }
