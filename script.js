@@ -17,9 +17,11 @@ window.onload = function () {
   localStorage.setItem('color', boxColorBlackStyle);
 };
 
-function changeClass() {
-  const boxColor = document.querySelector('#color-palette').children;
-
-  console.log(boxColor);
+function selectedPalette() {
+  const color = document.querySelector('#color-palette');
+  color.addEventListener('click', function (event) {
+    event.target.className = 'color selected';
+    document.querySelector('.selected').className = 'color';
+  });
 }
-changeClass();
+selectedPalette();
