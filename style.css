@@ -31,20 +31,20 @@
   background-color: white;
 }
 
-.preto{
-    background-color: black;
+.preto {
+  background-color: black;
 }
 
 .vermelho {
-    background-color: red;
+  background-color: red;
 }
 
 .azul {
-    background-color: blue;
+  background-color: blue;
 }
 
 .verde {
-    background-color: green;
+  background-color: green;
 }
 
 #pixel-board {
@@ -52,7 +52,7 @@
   border-collapse: collapse;
 }
 
-.pixelalign {
+.align {
   display: table-cell;
 }
 
