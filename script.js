@@ -18,6 +18,7 @@ function createBox() {
     createDiv.className = 'pixel';
     containerQuadro.appendChild(createDiv);
   }
+  return containerQuadro;
 }
 
 createBox();
