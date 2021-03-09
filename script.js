@@ -163,3 +163,5 @@ function fillColor(event) {
 }
 
 pixelBoard.addEventListener('click', fillColor, false);
+
+// soluções contruídas com ajuda dos plantões e salas de estudo.
