@@ -1,19 +1,29 @@
-const black = document.getElementsByClassName('black')[0];
-const orangered = document.getElementsByClassName('orangered')[0];
-const green = document.getElementsByClassName('green')[0];
-const blue = document.getElementsByClassName('blue')[0];
+const black = document.getElementById('black');
+const orangered = document.getElementById('orangered');
+const green = document.getElementById('green');
+const blue = document.getElementById('blue');
 
-const paletaCores = [black, orangered, green, blue];
+const palette = [black, orangered, green, blue];
 
 function selectColor(event) {
-  for (index in paletaCores ) {
-    if (paletaCores[index].classList.contains('selected')) {
-        deselectColor();
+  for (index in palette ) {
+    if (palette[index].classList.contains('selected')) {
+        palette[index].classList.remove('selected');
     }
   }
   
   event.target.classList.add('selected');
+  console.log(event.target.className)
 }
+
+
+/*paletteListener (){
+    for(color in paletaCores){
+        color.addEventListener('click', selectColor)
+    }
+}
+
+paletteListener ()*/
 
 black.addEventListener('click', selectColor);
 orangered.addEventListener('click', selectColor);
@@ -27,7 +37,7 @@ function paintingPixel(event) {
   function boardListener() {
     const pixels = document.getElementsByClassName('pixel');
     for (index in pixels) {
-      arrayDePixels[index].addEventListener('click', paintingPixel);
+      pixels[index].addEventListener('click', paintingPixel);
     }
   }
 
