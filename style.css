@@ -22,12 +22,13 @@
 }
 
 #pixel-board {
-  display: grid;  
+  display: grid;
   grid-template-columns: repeat(5, 40px);
 }
 
 .pixel {
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: white;
 }
