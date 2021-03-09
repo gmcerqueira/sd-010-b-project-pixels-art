@@ -10,10 +10,16 @@ function createPaletteColors() {
 }
 createPaletteColors();
 
-function blackColorInitial() {
+window.onload = function () {
   const boxColorBlack = document.querySelectorAll('.color')[0];
-  boxColorBlack.className = 'selected';
+  boxColorBlack.className = 'color selected';
   const boxColorBlackStyle = boxColorBlack.style.backgroundColor;
   localStorage.setItem('color', boxColorBlackStyle);
+};
+
+function changeClass() {
+  const boxColor = document.querySelector('#color-palette').children;
+
+  console.log(boxColor);
 }
-blackColorInitial();
+changeClass();
