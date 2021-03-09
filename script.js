@@ -52,6 +52,7 @@ const setPixelGrid = (size) => {
       }
       if (row > 0) {
         td.style.borderTop = 0;
+        td.style.height = '39px';
       }
       tr.appendChild(td);
     }
@@ -62,5 +63,5 @@ const setPixelGrid = (size) => {
 
 function start() {
   setPalleteColors();
-  setPixelGrid(5);
+  setPixelGrid(8);
 }
