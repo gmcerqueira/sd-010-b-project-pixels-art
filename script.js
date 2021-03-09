@@ -16,6 +16,23 @@ function selecionaPreto(){
     let encontraPreto = document.getElementsByClassName("color")[0];
     encontraPreto.classList.add("selected");
 }
-function pintarQuadrado(){
-    console.log("teste");
+function pintarQuadrado(cor){
+    let encontraSelected = document.getElementsByClassName("selected")[0];
+    encontraSelected.classList.remove("selected");
+    if(cor === "blue") {
+        let encontraDiv2 = document.getElementsByClassName("div2")[0];
+        encontraDiv2.classList.add("selected");
+    }
+    else if(cor === "black") {
+        let encontraDiv1 = document.getElementsByClassName("div1")[0];
+        encontraDiv1.classList.add("selected");
+    }
+    else if(cor === "brown") {
+        let encontraDiv3 = document.getElementsByClassName("div3")[0];
+        encontraDiv3.classList.add("selected");
+    }
+    else if(cor === "cadetblue") {
+        let encontraDiv4 = document.getElementsByClassName("div4")[0];
+        encontraDiv4.classList.add("selected");
+    }
 }
