@@ -2,6 +2,8 @@ const colorPallete = document.querySelector('#color-palette');
 const colors = ['black', 'red', 'blue', 'green'];
 const pixelBoard = document.querySelector('#pixel-board');
 const clearBoardButton = document.querySelector('#clear-board');
+const boardSize = document.querySelector('#board-size');
+const generateBoard = document.querySelector('#generate-board');
 
 // Criando e adicionando cores a paleta
 function createColorPalette(colorList) {
@@ -34,6 +36,7 @@ function createRow(size) {
 }
 
 function createBoard(size) {
+  pixelBoard.innerHTML = '';
   for (let i = 0; i < size; i += 1) {
     pixelBoard.appendChild(createRow(size));
   }
@@ -68,8 +71,21 @@ function clearBoard() {
   });
 }
 
-createColorPalette(colors);
-defaultColor();
-createBoard(5);
-selectColor();
-clearBoard();
+function resizeBoard() {
+  generateBoard.addEventListener('click', () => {
+    let size = boardSize.value;
+    if (!size) return alert('Board inválido!');
+    if (size < 5) size = 5;
+    if (size > 50) size = 50;
+    createBoard(size);
+  });
+}
+
+window.onload = () => {
+  createColorPalette(colors);
+  defaultColor();
+  createBoard(5);
+  selectColor();
+  clearBoard();
+  resizeBoard();
+};
