@@ -58,3 +58,18 @@ function paintPixel() {
 for (let i = 0; i < pixels.length; i += 1) {
   pixels[i].addEventListener('click', paintPixel);
 }
+
+// ---------------------------------------------------
+// Botão para limpar o board
+
+const btn = document.querySelector('#clear-board');
+
+console.log(btn);
+
+function clearBoard() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+}
+
+btn.addEventListener('click', clearBoard);

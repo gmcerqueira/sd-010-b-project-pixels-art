@@ -5,8 +5,6 @@
 /* ------------------------------------ */
 
 /* TITLE */
-
-/* ------------------------------------ */
 #title {
   text-align: center;
   margin: 20px;
@@ -15,8 +13,6 @@
 /* ------------------------------------ */
 
 /* COLOR-PALETTE */
-
-/* ------------------------------------ */
 #color-palette {
   align-self: center;
   width: 100%;
@@ -52,14 +48,12 @@
 /* ------------------------------------ */
 
 /* PIXEL BOARD */
-
-/* ------------------------------------ */
 #pixel-board {
   display: table;
   border: 1px black solid;
   width: auto;
   height: auto;
-  margin: 15px auto;
+  margin: 30px auto;
 }
 
 .row {
@@ -72,4 +66,12 @@
   background-color: white;
   width: 40px;
   height: 40px;
+}
+
+/* ------------------------------------ */
+
+/* CLEAR BUTTON */
+#clear-board {
+  display: block;
+  margin: 30px auto;
 }
