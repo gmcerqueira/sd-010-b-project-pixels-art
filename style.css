@@ -18,3 +18,15 @@
 #green {
     background-color: green;    
 }
+.pixel {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    padding: 5px;  
+    box-sizing: border-box;
+    display: inline-block;
+}
+#pixel-board {
+    width: 550px;
+    display: table;
+}
