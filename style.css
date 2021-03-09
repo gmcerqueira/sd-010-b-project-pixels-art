@@ -1,0 +1,6 @@
+#color-palette div {
+  border: solid 1px;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
