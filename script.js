@@ -18,15 +18,24 @@ const createGenElement = (
 };
 
 // Elements
-const clearBtn = document.querySelector('#clear-board');
+
 const palletes = Array.from(document.querySelectorAll('.color'));
 const pixelBoard = document.querySelector('#pixel-board');
 
 // Setting pallete colors
 const setPalleteColors = () => {
-  const colors = ['black', 'orange', 'red', 'blue', 'green', 'yellow'];
+  let r = Math.ceil(Math.random() * 84);
+  let g = Math.ceil(Math.random() * 84);
+  let b = Math.ceil(Math.random() * 84);
   palletes.map((pallete, index) => {
-    pallete.style.backgroundColor = colors[index];
+    if (!index) {
+      pallete.style.backgroundColor = 'black';
+    } else {
+      pallete.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      r += 84;
+      g += 84;
+      b += 84;
+    }
   });
 };
 
@@ -52,59 +61,7 @@ const setPixelGrid = (size) => {
   }
 };
 
-// Set Color to paint
-
-const selectPalleteColor = () => {
-  palletes.map((pallete) => {
-    pallete.addEventListener('click', (event) => selectColor(event.target));
-  });
-};
-
-const selectColor = (element) => {
-  if (document.querySelector('.selected')) {
-    document.querySelector('.selected').setAttribute('class', 'color');
-    element.classList.add('selected');
-  } else {
-    element.classList.add('selected');
-  }
-};
-
-// Adding listeners to pixels
-const setPixelColor = () => {
-  const pixelsBoxes = Array.from(document.querySelectorAll('.pixel'));
-  pixelsBoxes.map((pixel) => {
-    pixel.addEventListener('click', (event) => paintFunction(event.target));
-    pixel.addEventListener('click', (event) => {});
-  });
-};
-
-// Paint Function
-
-const paintFunction = (pixel) => {
-  if (!document.querySelector('.selected')) {
-    return;
-  }
-  const color = document.querySelector('.selected').style.backgroundColor;
-  pixel.style.backgroundColor = color;
-};
-
-// clear button
-const clearAllPixels = () => {
-  clearBtn.addEventListener('click', () => {
-    const pixelsBoxes = Array.from(document.querySelectorAll('.pixel'));
-    pixelsBoxes.map((pixel) => {
-      pixel.style.backgroundColor = 'white';
-    });
-    if (document.querySelector('.selected')) {
-      document.querySelector('.selected').setAttribute('class', 'color');
-    }
-  });
-};
-
 function start() {
   setPalleteColors();
   setPixelGrid(5);
-  selectPalleteColor();
-  setPixelColor();
-  clearAllPixels();
 }
