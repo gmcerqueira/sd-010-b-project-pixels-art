@@ -14,6 +14,8 @@ for (lines = 0; lines < 5; lines += 1) {
     for (columns = 0; columns < 5; columns += 1) {
         let tableCell = window.document.createElement('th')
         tableCell.style.background = "white";
+        tableCell.style.width = "40px";
+        tableCell.style.height = "40px";
         tableCell.className = "pixel"
         tableCell.style.border = "solid black 1px"
         tableRow.appendChild(tableCell)
