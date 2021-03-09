@@ -1,3 +1,6 @@
+createPixelBoard(5);
+selected();
+
 function createPixelBoard(numberPixels) {
   const pixelBoard = document.getElementById('pixel-board');
   for (let column = 0; column < numberPixels; column += 1) {
@@ -11,4 +14,17 @@ function createPixelBoard(numberPixels) {
     }
   }
 }
-createPixelBoard(5);
+
+function selected() {
+  const colorBox = document.querySelectorAll('.color');
+  const pixelBoard = document.getElementById('pixel-board');
+  
+  for (let index = 0; index < colorBox.length; index += 1) {
+    colorBox[index].addEventListener('click', () => {
+      for (let i = 0; i < colorBox.length; i += 1) {
+        colorBox[i].classList.remove('selected');
+      }
+      colorBox[index].classList.add('selected');
+    })
+  }
+}
