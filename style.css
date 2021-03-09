@@ -22,14 +22,12 @@
 
 .pixel-board {
   display: table;
-  padding: 25px;
 }
 .pixel-board > div { 
   display: table-row; 
-  
-  background-color: 'rgb(255, 255, 255)';
 }
-.pixel-board > div > div { 
+.pixel-board > div > .pixel { 
+  background-color: 'rgb(255, 255, 255)';
   display: table-cell;
   padding: 25px;
   border: 1px black solid;
