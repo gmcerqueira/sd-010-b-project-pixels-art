@@ -1,4 +1,43 @@
 #color-palette {
-    border: black solid 1px;
+  display: inline-block;
+}
+
+#color-palette .black {
     display: inline-block;
+
+    border: black solid 1px;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+#color-palette .greenyellow {
+    display: inline-block;
+
+    border: black solid 1px;
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+}
+
+#color-palette .blue {
+    display: inline-block;
+
+    border: black solid 1px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+#color-palette .orangered{
+    display: inline-block;
+
+    border: black solid 1px;
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+}
+
+#pixel-board {
+    
 }
