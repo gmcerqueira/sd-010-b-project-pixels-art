@@ -1,0 +1,28 @@
+.class {
+    border: 1px;
+    border-style:solid;
+}
+
+#black {
+    color: black;
+    border: 1px;
+    border-style:solid
+}
+
+#blue {
+    color: blue;
+    border: 1px;
+    border-style:solid
+}
+
+#green {
+    color: green;
+    border: 1px;
+    border-style:solid
+}
+
+#red {
+    color: red;
+    border: 1px;
+    border-style:solid
+}
