@@ -12,6 +12,6 @@ td {
   border: 1px solid black;
 }
 
-body, table{
+body , table, #resizeBoard {
   padding: 5px;
 }
