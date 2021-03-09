@@ -16,6 +16,12 @@
 .c4 {
   background-color: green;
 }
-.divn {
-  padding: 25px; 
+.pixel {
+  padding: 50px; 
+  display: table-cell;
+  background-color: brown;
+}
+.divH {
+  padding: 50px;
+  display: table;
 }
