@@ -10,6 +10,7 @@ header {
 table {
   margin: 0 auto;
   margin-bottom: 10px;
+  border-collapse: collapse;
 }
 
 .color , .pixel {

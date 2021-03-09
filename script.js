@@ -15,8 +15,7 @@ function createBoxTable(numOfItems, itemClass, parentId, numOfLines = 1) {
 }
 
 function addClassToPaletteBox() {
-  const paletteBox = document.getElementById('color-palette');
-  const boxes = paletteBox.children[0].children[0].children;
+  const boxes = document.getElementsByClassName('color')
   for (let index = 0; index < boxes.length; index += 1) {
     boxes[index].classList.add(`color${index + 1}`);
     if (index === 0) {
@@ -25,6 +24,10 @@ function addClassToPaletteBox() {
     }
   }
 }
+
+/* function clickPaletteBox() {
+  const boxes =
+} */
 
 const colorPalette = 'color-palette';
 
