@@ -29,11 +29,16 @@ function pixelColor() {
   }
 }
 
+function pixelColorChange(e) {
+  e.target.style.backgroundColor = sessionStorage.color;
+}
+
 function fillLinePixel(rowPixel) {
   for (let i = 0; i < rowsAndCols; i += 1) {
     let pixel = document.createElement('div');
     pixel.className = 'pixel';
     rowPixel.appendChild(pixel);
+    pixel.addEventListener('click', pixelColorChange);
   }
 }
 
