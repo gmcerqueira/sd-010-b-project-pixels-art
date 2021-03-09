@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 #color-palette {
@@ -32,11 +32,11 @@ body {
 
 .tr {
   display: table-row;
-  width: 0px;
 }
 
 .pixel {
   display: table-cell;
-  padding: 39px;
+  padding: 40px;
   border: black solid 1px;
+  background-color: white;
 }
