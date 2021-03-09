@@ -54,6 +54,10 @@ for (let linhas = 0; linhas < 5; linhas += 1){
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
         pixel.style.backgroundColor = 'white';
+
+        pixel.style.width = '40px';
+        pixel.style.height = '40px';
+
         line.appendChild(pixel);
     }
 }
