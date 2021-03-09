@@ -10,10 +10,10 @@ let paletas = document.createElement('tr')
 }
 
 let paleta = document.getElementsByClassName('color')
-let black = paleta[0];
-let green = paleta[1];
-let red = paleta[2];
-let blue = paleta[3];
+const black = paleta[0];
+const green = paleta[1];
+const red = paleta[2];
+const blue = paleta[3];
 
 
 black.style.backgroundColor = 'black'
