@@ -1,3 +1,14 @@
+#title{
+text-align: center;
+}
+
+#color-palette{
+    border: 1px solid black;
+    width: 190px;
+    padding: 30px;
+    text-align: center;
+}
+
 .color {
   border: 1px solid black;
   width: 40px;
