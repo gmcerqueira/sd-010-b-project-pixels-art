@@ -18,7 +18,7 @@ const createGenElement = (
 };
 
 // Elements
-
+const clearBtn = document.querySelector('#clear-board');
 const palletes = Array.from(document.querySelectorAll('.color'));
 const pixelBoard = document.querySelector('#pixel-board');
 
@@ -89,9 +89,20 @@ const paintFunction = (pixel) => {
   pixel.style.backgroundColor = color;
 };
 
+// clear button
+const clearAllPixels = () => {
+  clearBtn.addEventListener('click', () => {
+    const pixelsBoxes = Array.from(document.querySelectorAll('.pixel'));
+    pixelsBoxes.map((pixel) => {
+      pixel.style.backgroundColor = 'white';
+    });
+  });
+};
+
 function start() {
   setPalleteColors();
   setPixelGrid(5);
   selectPalleteColor();
   setPixelColor();
+  clearAllPixels();
 }
