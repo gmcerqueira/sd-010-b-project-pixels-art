@@ -6,6 +6,8 @@ window.onload = function () {
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('.colorPalette');
 const numberSquare = document.querySelector('#board-size');
+const pixel = document.querySelectorAll('.pixel');
+const btnErase = document.querySelector('#clear-board');
 
 let atualNumber = 5;
 
@@ -58,7 +60,6 @@ function boxSquare() {
 function numbersSquares() {
   const generateSquare = document.querySelector('#generate-board');
   generateSquare.addEventListener('click', boxSquare);
-  
 }
 
 function changePixelColor(event) {
@@ -87,14 +88,12 @@ function setSelected() {
 }
 
 function eraseAll() {
-  const pixel = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
   }
 }
 
 function eraseScrean() {
-  const btnErase = document.querySelector('#clear-board');
   btnErase.addEventListener('click', eraseAll);
 }
 
