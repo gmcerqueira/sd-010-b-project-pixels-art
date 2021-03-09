@@ -5,16 +5,17 @@
   width: 25px;
   height: 25px;
   border: 1px solid black;
-  padding: 5px;
+  padding: 9px;
 }
 
-li:hover {
-  width: 50px;
-  height: 50px;
-}
-
-li:active {
+.pixel {
+  display: inline-table;
   width: 25px;
   height: 25px;
-
+  border: 1px solid black;
+  padding: 3px;
 }
+
+li:hover {}
+
+li:active {}
