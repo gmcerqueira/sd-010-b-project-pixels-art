@@ -1,5 +1,5 @@
+const colorsPalet = document.querySelectorAll(".color");
 function inicializeColor() {
-  const colorsPalet = document.querySelectorAll(".color");
   for (let color = 0; color < colorsPalet.length; color++) {
     if(color == 0){
       colorsPalet[color].style.backgroundColor = "black";
@@ -34,3 +34,14 @@ function createBorad(height, width) {
 
 createBorad(5,5);
 
+function selectColor(){
+  for (let color = 0; color < colorsPalet.length; color++) {
+    colorsPalet[color].addEventListener("click", function(){
+      let lastSelected = document.querySelector(".selected");
+      lastSelected.className = lastSelected.className.replace(" selected", "");
+      colorsPalet[color].className += " selected";
+    });    
+  }
+}
+
+selectColor();
