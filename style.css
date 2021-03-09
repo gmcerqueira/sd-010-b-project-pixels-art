@@ -20,3 +20,7 @@
   height: 100px;
   width: 100px;
 }
+
+.inlineDivs {
+  max-height: 100px;
+}
