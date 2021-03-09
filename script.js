@@ -1,4 +1,4 @@
-
+// Cria os Pixels que vão ser coloridos 
 function criaPixels() {
     let quadro = document.getElementById('pixel-board');
   for (let j = 0; j < 5; j++) {
@@ -11,11 +11,18 @@ function criaPixels() {
     quadro.appendChild(novaLinha);
   }
 }
-criaPixels();
+// Pega a cor selecionada para preencher o pixel
 function pegaCor() {
   let cor = document.getElementsByClassName('color');
 }
+// Inicia com a cor preta para preenchimento dos pixels
 function corInicial() {
-  document.querySelector('.c1');
+  let corPreta = document.querySelector('.c1');
+  corPreta.className = corPreta.className + ' selected';
 }
+
+
+
+// Inicialização do site 
 corInicial();
+criaPixels();
