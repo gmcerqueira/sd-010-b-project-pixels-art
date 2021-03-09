@@ -1,11 +1,12 @@
-let paletaRed = window.document.getElementsByClassName('color')[0];
-paletaRed.style.background = 'black';
-let paletaBlue = window.document.getElementsByClassName('color')[1];
-paletaBlue.style.background = 'red';
-let paletaGreen = window.document.getElementsByClassName('color')[2];
-paletaGreen.style.background = 'blue';
-let paletaPurple = window.document.getElementsByClassName('color')[3];
-paletaPurple.style.background = 'green';
+let paletaBlack = window.document.getElementsByClassName('color')[0];
+paletaBlack.style.background = 'black';
+paletaBlack.className += " selected";
+let paletaRed = window.document.getElementsByClassName('color')[1];
+paletaRed.style.background = 'red';
+let paletaBlue = window.document.getElementsByClassName('color')[2];
+paletaBlue.style.background = 'blue';
+let paletaGreen = window.document.getElementsByClassName('color')[3];
+paletaGreen.style.background = 'green';
 
 let pixelBoard = window.document.getElementById('pixel-board');
 for (lines = 0; lines < 5; lines += 1) {
