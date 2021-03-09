@@ -50,3 +50,10 @@ for (let i = 0; i < pixelArray.length; i += 1) {
     }) 
 }
 
+let clearButton = document.querySelector("#clear-board");
+clearButton.addEventListener("click", function(event) {
+    for (let i = 0; i < pixelArray.length; i += 1) {
+        pixelArray[i].style.backgroundColor = 'white';
+        
+    } 
+})
