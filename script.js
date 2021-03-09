@@ -3,8 +3,12 @@ const body = document.body;
 const paletteBox = document.createElement('div');
 
 paletteBox.id = 'color-palette';
+paletteBox.style.marginTop = '50px';
 
 body.appendChild(paletteBox);
+
+let N = 5;
+
 
 /*Cria as cores dinâmicamente */
 let colors = ['black'];
@@ -48,53 +52,45 @@ function selected(event){
     for(let index = 0; index < elements.length; index += 1){
         elements[index].className = 'color';
     }
-    event.target.className = 'color selected'
+    event.target.className = 'color selected';
 }
 
-paletteBox.addEventListener('click',selected,false)
+paletteBox.addEventListener('click',selected,false);
 
+/*Criando o Input */
 
+const entry = document.createElement('div');
 
-//Criando o Quadro de Pixels
+body.appendChild(entry);
 
-let pixelBoard = document.createElement('div');
-pixelBoard.id = "pixel-board";
-pixelBoard.className = "display-table"
+const value = document.createElement('input');
 
-body.appendChild(pixelBoard);
+entry.appendChild(value);
+entry.id = 'generate-board';
 
-for (let linhas = 0; linhas < 5; linhas += 1){
-    const line = document.createElement('div');
-    line.className = 'line'
-    pixelBoard.appendChild(line);
+const submit = document.createElement('button');
 
-    for (let colunas = 0; colunas < 5; colunas += 1){
-        let pixel = document.createElement('div');
-        pixel.className = 'pixel';
-        pixel.style.backgroundColor = 'white';
+entry.appendChild(submit);
+submit.innerHTML = 'VQV';
 
-        pixel.style.width = '40px';
-        pixel.style.height = '40px';
+submit.addEventListener('click',function(){
 
-        line.appendChild(pixel);
+    if(value.value == "") {
+        alert('Board inválido!');
+        return
     }
-}
+    killQuadro();
 
-//Lógica para Preenchimento dos pixels
+    if(value.value > 50) N = 50;
+   else  if(value.value < 5) N = 5;
+   else N = value.value;
+    criarQuadro ()
+    
 
-
-function fillColor(event){
-    //Procurar o Selecionado
-    const color = document.querySelector('.selected').style.backgroundColor
-    event.target.style.backgroundColor = color
-}
-
-pixelBoard.addEventListener('click',fillColor,false)
-
+})
 //Criar um botão
 
 const btn = document.createElement('div');
-
 btn.innerHTML = 'Limpar'
 btn.id = 'clear-board';
 
@@ -108,3 +104,51 @@ btn.addEventListener('click', function(){
     }
 
 })
+
+let pixelBoard = document.createElement('div');
+pixelBoard.id = "pixel-board";
+pixelBoard.className = "display-table"
+
+function killQuadro(){
+    while(pixelBoard.lastChild != null){
+        pixelBoard.removeChild(pixelBoard.lastElementChild)
+    }
+   
+}
+
+//Criando o Quadro de Pixels
+function criarQuadro (){
+    body.appendChild(pixelBoard);
+    
+    for (let linhas = 0; linhas < N; linhas += 1){
+        const line = document.createElement('div');
+        line.className = 'line'
+        pixelBoard.appendChild(line);
+    
+        for (let colunas = 0; colunas < N; colunas += 1){
+            let pixel = document.createElement('div');
+            pixel.className = 'pixel';
+            pixel.style.backgroundColor = 'white';
+    
+            pixel.style.width = '40px';
+            pixel.style.height = '40px';
+    
+            line.appendChild(pixel);
+        }
+    }
+
+
+}
+
+
+//Lógica para Preenchimento dos pixels
+
+
+function fillColor(event){
+    //Procurar o Selecionado
+    const color = document.querySelector('.selected').style.backgroundColor
+    event.target.style.backgroundColor = color
+}
+
+pixelBoard.addEventListener('click',fillColor,false)
+
