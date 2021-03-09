@@ -1,12 +1,12 @@
-#title{
-text-align: center;
+#title {
+  text-align: center;
 }
 
-#color-palette{
-    border: 1px solid black;
-    width: 190px;
-    padding: 30px;
-    text-align: center;
+#color-palette {
+  border: 1px solid black;
+  width: 190px;
+  padding: 30px;
+  text-align: center;
 }
 
 .color {
@@ -30,4 +30,20 @@ text-align: center;
 
 .red {
   background-color: red;
+}
+
+#pixel-board {
+    padding-top: 25px;
+    padding-left: 20px;
+    width: 220px;
+}
+
+.pixel{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: white;
+  
+
 }
