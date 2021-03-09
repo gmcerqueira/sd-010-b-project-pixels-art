@@ -1,0 +1,21 @@
+td {
+    border: 1px solid black;
+    width: 70px;
+    height: 70px;
+}
+#red {
+    background-color: red;
+    color: red;
+}
+#green {
+    background-color: green;
+    color: green;
+}
+#blue {
+    background-color: blue;
+    color: blue;
+}
+#yellow {
+    background-color: yellow;
+    color: yellow;
+}
