@@ -1,1 +1,10 @@
+.color {
+  border: 1px solid black;
+  border-radius: 0;
+  display: inline-block;
+  height: 35px;
+  margin-left: 0;
+  vertical-align: middle;
+  width: 35px;
 
+}
