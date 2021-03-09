@@ -8,7 +8,7 @@ function fillLineColor() {
   let colorPalette = document.getElementById('color-palette');
   for (let i = 0; i < colors.length; i += 1) {
     let color = document.createElement('div');
-    color.className = 'color';
+    color.className = (i !== 0 ? 'color' : 'color selected');
     colorPalette.appendChild(color);
   }
   pixelColor();
