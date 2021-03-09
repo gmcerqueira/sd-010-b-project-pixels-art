@@ -72,9 +72,23 @@ for (let index = 0; index < pixelTamanho; index += 1) {
   }
 }
 
-// eventos
+// evento selecionar cor
 
+function selecionaCor(corAtual) {
+  const selecionar = corAtual.target;
+  deslecionaCor();
+  selecionar.className += ' selected';
+}
 
+function deslecionaCor() {
+  const atualSelecionada = document.querySelector('.selected');
+  atualSelecionada.className = 'color';
+
+}
+
+const corDaPaleta = document.getElementById('color-palette');
+
+corDaPaleta.addEventListener('click', selecionaCor);
 
 window.onload = function () {
   adicionarBgcolor();
