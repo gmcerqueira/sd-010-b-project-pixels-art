@@ -14,7 +14,21 @@ function blackSquareSelected() {
   const blackSquare = document.querySelector('.color');
   blackSquare.className += ' selected';
 }
-window.onload = function createPixelsBoard() {
+
+function createClearBtn() {
+  const clearBtn = document.createElement('button');
+  clearBtn.id = 'clear-board';
+  clearBtn.innerText = 'Limpar';
+  const allPixels = document.getElementsByClassName('pixel');
+  document.body.appendChild(clearBtn);
+  clearBtn.addEventListener('click', () => {
+    for (let i = 0; i < allPixels.length; i += 1) {
+      allPixels[i].style.backgroundColor = 'white';
+    }
+  });
+}
+
+function createPixelsBoard() {
   const board = document.createElement('ul');
   board.id = 'pixel-board';
   document.body.appendChild(board);
@@ -32,7 +46,11 @@ window.onload = function createPixelsBoard() {
       tableRows[i2].appendChild(pixel);
     }
   }
+}
+
+window.onload = function onBoard() {
   blackSquareSelected();
+  createPixelsBoard();
 };
 
 function selectColor() {
@@ -47,5 +65,16 @@ function selectColor() {
   }
 }
 
+function applySelectedColor() {
+  const allPixels = document.getElementsByClassName('pixel');
+  console.log(allPixels);
+  console.log(allPixels.length);
+  for (let i = 0; i < 25; i += 1) {
+    console.log(allPixels[i]);
+  }
+}
+
 createColorPalette();
+createClearBtn();
 selectColor();
+applySelectedColor();
