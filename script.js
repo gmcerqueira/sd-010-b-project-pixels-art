@@ -63,7 +63,8 @@ function numbersSquares() {
 
 function changePixelColor(event) {
   const color = document.querySelector('.selected').style.backgroundColor;
-  event.target.style.backgroundColor = color;
+  const eve = event;
+  eve.target.style.backgroundColor = color;
 }
 
 function colorizePixels() {
@@ -79,7 +80,7 @@ function selectPalette(event) {
   pad3.className = 'color';
   const pad4 = document.querySelector('#green');
   pad4.className = 'color';
-  let eve= event;
+  const eve = event;
   eve.target.className = 'color selected';
 }
 
