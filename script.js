@@ -1,9 +1,8 @@
 const containerPalette = document.querySelector('#color-palette');
-const tamanhoPalette = [1, 2, 3, 4];
-const containerQuadro = document.querySelector('#pixels-board');
+const containerQuadro = document.querySelector('#pixel-board');
 
 function createPalette() {
-  for (let index = 0; index < tamanhoPalette.length; index += 1) {
+  for (let index = 0; index < 4; index += 1) {
     let selectors = document.createElement('div');
     selectors.className = 'color';
     containerPalette.appendChild(selectors);
@@ -14,9 +13,9 @@ function createPalette() {
 createPalette();
 
 function createBox() {
-  for (let index = 0; index < 50; index += 1) {
+  for (let index = 0; index < 25; index += 1) {
     let createDiv = document.createElement('div');
-    createDiv.className = 'pixels';
+    createDiv.className = 'pixel';
     containerQuadro.appendChild(createDiv);
   }
 }

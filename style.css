@@ -22,13 +22,13 @@ body {
   border: 1px solid black;
 }
 
-#pixels-board {
-  max-width: 30%;
+#pixel-board {
+  max-width: 20%;
   margin: 0 auto;
   margin-top: 50px;
 }
 
-.pixels {
+.pixel {
   margin: 1px;
   display: inline-block;
   width: 50px;
