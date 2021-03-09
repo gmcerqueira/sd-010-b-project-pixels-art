@@ -9,7 +9,6 @@ h1 {
 }
 
 section {
-  
   display: flex;
   justify-content: center;
 }
@@ -33,7 +32,7 @@ section > .color-palette {
   align-items: center;
 }
 
-.section-pixel-board{
+.section-pixel-board {
   display: flex;
   margin-top: 10px;
   justify-content: center;
