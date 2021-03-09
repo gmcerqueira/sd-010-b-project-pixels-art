@@ -31,9 +31,9 @@ window.onload = function createPixelsBoard() {
   }
 };
 
-window.onload = function {
-  let blackSquare = document.querySelector('.color');
+window.onload = function blackSquareSelected() {
+  const blackSquare = document.querySelector('.color');
   blackSquare.className += ' selected';
-}
+};
 
 createColorPalette();
