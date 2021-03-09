@@ -15,8 +15,11 @@
 }
 
 #color-palette #pixel-board { 
-    margin-top: 20px;
     display: table; 
+}
+
+#pixel-board {
+    margin-top: 50px;
 }
 
 .tr { 

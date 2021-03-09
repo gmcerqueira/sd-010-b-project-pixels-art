@@ -6,11 +6,13 @@ const paleta2 = document.getElementById("paleta2");
 const paleta3 = document.getElementById("paleta3");
 const paleta4 = document.getElementById("paleta4");
 const selected = document.getElementsByClassName("selected");
+const pixels = document.getElementsByClassName("pixel");
 
 let lado = 5;
 let numeroPixels = lado * lado;
 let selectedColor = window.getComputedStyle(selected[0]).getPropertyValue("background-color");
-console.log(selectedColor);
+
+
 
 for (let index = 1; index <= lado; index++) {
     createLines("linha" + index);
@@ -24,20 +26,31 @@ for (let index = 1; index <= lado; index++) {
     }
 }
 
+for (let index = 0; index < pixels.length; index++) {
+    pixels[index].id = "pix" + (index + 1);
+}
+
+
+
+
 paleta1.addEventListener("click", function() {
     selectColor("paleta1");
+    updateSelectedColor()
 })
 
 paleta2.addEventListener("click", function() {
     selectColor("paleta2");
+    updateSelectedColor()
 })
 
 paleta3.addEventListener("click", function() {
     selectColor("paleta3");
+    updateSelectedColor()
 })
 
 paleta4.addEventListener("click", function() {
     selectColor("paleta4");
+    updateSelectedColor()
 })
 
 function selectColor(corPaleta) {
@@ -64,6 +77,10 @@ function selectColor(corPaleta) {
     }
 }
 
+function updateSelectedColor() {
+    selectedColor = window.getComputedStyle(selected[0]).getPropertyValue("background-color");
+}
+
 function createLines(id) {
     let line = document.createElement("div");
     line.className = "tr";
@@ -75,4 +92,8 @@ function createPixel(pai) {
     let pixel = document.createElement("div");
     pixel.className = "pixel";
     pai.appendChild(pixel);
+}
+
+function changeColor(pixel) {
+    pixels[pixel].style.backgroundColor = selectedColor;
 }
