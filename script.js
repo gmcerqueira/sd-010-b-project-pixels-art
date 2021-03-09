@@ -9,8 +9,6 @@ let paletas = document.createElement('tr')
     cores.appendChild(paletas);
 }
 
-ClearButton();
-
 //buttonReset
 let pixelsReset = document.getElementsByClassName('pixel');
 
@@ -20,13 +18,11 @@ function resetPixel(){
     }
 }
 
-function ClearButton(){
-    let botao = document.createElement('button')
-    botao.id = 'clear-board'
-    botao.innerHTML = 'Limpar'
-    document.body.appendChild(botao)
-    botao.addEventListener('click', resetPixel)
-}
+let botao = document.createElement('button')
+botao.id = 'clear-board'
+botao.innerHTML = 'Limpar'
+document.body.appendChild(botao)
+botao.addEventListener('click', resetPixel)
 
 let paleta = document.querySelectorAll('.color')
 const black = paleta[0];
