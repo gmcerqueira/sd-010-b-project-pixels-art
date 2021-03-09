@@ -26,7 +26,11 @@ window.onload = function () {
 
   for (let index = 0; index < numberOfOption; index++) {
     const colorOption = document.createElement('div');
-    colorOption.className = 'color';
+    if (index === 0) {        
+        colorOption.className = 'color selected';
+    } else {        
+        colorOption.className = 'color';
+    }
     colorOption.id = 'cor_' + (index + 1);
     sectionSelectColors.appendChild(colorOption);
   }

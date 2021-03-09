@@ -7,6 +7,10 @@
   display: inline-block;
 }
 
+.selected {
+  background-color: black;
+}
+
 #cor_1 {
   background-color: black;
   display: inline-block;
