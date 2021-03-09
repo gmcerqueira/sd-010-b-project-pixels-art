@@ -3,6 +3,11 @@ body {
   background-color: rgb(181, 182, 182);
 }
 
+h1 {
+margin-left: 70px;
+margin-bottom: 30px;
+}
+
 .color {
   border: black solid 1px;
   height: 80px;
@@ -24,14 +29,12 @@ body {
   display: table-row;
 }
 
-section {
-  padding-bottom: 50px;
-}
-
 #color-palette {
   width: fit-content;
+  padding-bottom: 60px;
 }
 
 #pixel-board {
   display: table;
+  margin-left: 60px;
 }

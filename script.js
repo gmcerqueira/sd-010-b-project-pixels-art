@@ -94,10 +94,10 @@ corDaPaleta.addEventListener('click', selecionaCor);
 
 function pintaPixel(pixelAtual) {
   const selecionarPixel = pixelAtual.target;
-  if (selecionarPixel === document.getElementsByClassName('pixel')) {
-    const corSelecionada = document.getElementsByClassName('selected');
+  
+    const corSelecionada = document.querySelector('.selected');
     selecionarPixel.style.backgroundColor = corSelecionada.style.backgroundColor;
-  }
+  
 }
 const escolhePixel = document.querySelector('#pixel-board');
 
