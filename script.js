@@ -11,29 +11,40 @@ let selectedColor = 'black';
 
 let allPalettes = window.document.querySelectorAll('.color');
 let colorPalette = window.document.getElementById('color-palette');
-colorPalette.addEventListener('click', function(event) {
-    for (i = 0; i < allPalettes.length; i += 1) {
-        allPalettes[i].classList.remove('selected')
-    }
-    event.target.className += ' selected'
-    selectedColor = event.target.style.background;
+colorPalette.addEventListener('click', function (event) {
+  for (i = 0; i < allPalettes.length; i += 1) {
+    allPalettes[i].classList.remove('selected')
+  }
+  event.target.className += ' selected'
+  selectedColor = event.target.style.background;
 })
 
 let pixelBoard = window.document.getElementById('pixel-board');
 for (lines = 0; lines < 5; lines += 1) {
-    let tableRow = window.document.createElement('tr');
-    pixelBoard.appendChild(tableRow)
-    for (columns = 0; columns < 5; columns += 1) {
-        let tableCell = window.document.createElement('th')
-        tableCell.style.background = "white";
-        tableCell.style.width = "40px";
-        tableCell.style.height = "40px";
-        tableCell.className = "pixel"
-        tableCell.style.border = "solid black 1px"
-        tableRow.appendChild(tableCell)
-    }
+  let tableRow = window.document.createElement('tr');
+  pixelBoard.appendChild(tableRow)
+  for (columns = 0; columns < 5; columns += 1) {
+    let tableCell = window.document.createElement('th')
+    tableCell.style.background = "white";
+    tableCell.style.width = "40px";
+    tableCell.style.height = "40px";
+    tableCell.className = "pixel"
+    tableCell.style.border = "solid black 1px"
+    tableRow.appendChild(tableCell)
+  }
 }
 
-pixelBoard.addEventListener('click', function(event) {
-    event.target.style.background = selectedColor;
+pixelBoard.addEventListener('click', function (event) {
+  event.target.style.background = selectedColor;
 })
+
+function clearColors() {
+  let clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', function () {
+    let getThs = window.document.querySelectorAll('.pixel');
+    for (let i = 0; i < getThs.length; i += 1) {
+      getThs[i].style.background = 'white';
+    }
+  })
+}
+clearColors();
