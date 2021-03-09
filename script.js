@@ -1,26 +1,35 @@
 // ---------------------------------------------------
-// BOARD
+// CREATE BOARD
 // Criação da div .row
 
-const pixelBoard = document.getElementById('pixel-board');
+function createRows(n) {
+  const pixelBoard = document.getElementById('pixel-board');
 
-for (let i = 0; i < 5; i += 1) {
-  const rowDiv = document.createElement('div');
-  rowDiv.className = 'row';
-  pixelBoard.appendChild(rowDiv);
-}
-
-// Criação da div .pixel
-
-const rowDiv = document.getElementsByClassName('row');
-
-for (let i = 0; i < rowDiv.length; i += 1) {
-  for (let j = 0; j < rowDiv.length; j += 1) {
-    const pixelDiv = document.createElement('div');
-    pixelDiv.className = 'pixel';
-    rowDiv[i].appendChild(pixelDiv);
+  for (let i = 0; i < n; i += 1) {
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'row';
+    pixelBoard.appendChild(rowDiv);
   }
 }
+// Criação da div .pixel
+function createPixels() {
+  const rowDiv = document.getElementsByClassName('row');
+
+  for (let i = 0; i < rowDiv.length; i += 1) {
+    for (let j = 0; j < rowDiv.length; j += 1) {
+      const pixelDiv = document.createElement('div');
+      pixelDiv.className = 'pixel';
+      rowDiv[i].appendChild(pixelDiv);
+    }
+  }
+}
+
+function createBoard(n) {
+  createRows(n);
+  createPixels();
+}
+
+createBoard(8);
 
 // ---------------------------------------------------
 // Mudança da Classe .selected

@@ -75,3 +75,13 @@
   display: block;
   margin: 30px auto;
 }
+
+/* ------------------------------------ */
+
+/* INPUT AND BUTTON */
+#input {
+  display: flex;
+  width: 20%;
+  justify-content: space-around;
+  margin: 15px auto;
+}
