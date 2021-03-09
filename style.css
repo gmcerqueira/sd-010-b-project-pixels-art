@@ -6,7 +6,7 @@
   height: 40px;
 }
 
-.display-table{
+.display-table {
   display: table;
 }
 .display-table > div { 
@@ -22,12 +22,14 @@
   border-width: 1px;
 
 }
-.line{
+.line {
   margin:0;
   padding: 0;
 }
-
-#clear-board{
+#generate-board{
+  display: inline-block;
+}
+#clear-board {
   display: inline-block;
   padding: 10px;
   margin: 10px;

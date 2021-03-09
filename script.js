@@ -64,9 +64,13 @@ paletteBox.addEventListener('click',selected,false);
 
 /*Criando o Input */
 
+const containerHeader = document.createElement('div');
+body.appendChild(containerHeader);
+
 const entry = document.createElement('div');
 
-body.appendChild(entry);
+containerHeader.appendChild(entry);
+
 
 const value = document.createElement('input');
 
@@ -114,7 +118,7 @@ const btn = document.createElement('div');
 btn.innerHTML = 'Limpar'
 btn.id = 'clear-board';
 
-entry.appendChild(btn);
+containerHeader.appendChild(btn);
 
 btn.addEventListener('click', function(){
     const pixels = document.getElementsByClassName('pixel');
