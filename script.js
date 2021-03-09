@@ -1,8 +1,8 @@
 const pallete = document.getElementById('color-palette');
-const arrayPallete = [1, 2, 3, 4];
+const squearePixel = document.getElementById('pixel-board');
 
 function viewPallete() {
-  for (let index = 0; index < arrayPallete.length; index += 1) {
+  for (let index = 0; index < 4; index += 1) {
     const box = document.createElement('div');
     box.className = 'color';
     pallete.appendChild(box);
@@ -10,6 +10,16 @@ function viewPallete() {
   return pallete;
 }
 viewPallete();
+
+function createSquarePixel() {
+  for (let index = 0; index < 25; index += 1) {
+    const box2 = document.createElement('div');
+    box2.className = 'pixel';
+    squearePixel.appendChild(box2);  
+  }
+  return squearePixel;
+}
+createSquarePixel();
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'red';

@@ -9,18 +9,14 @@
   height: 40px;
 }
 
-.black {
-  background-color: black;
+.pixel {
+  border: solid 1px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: white;
 }
 
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
+#pixel-board {
+  max-width: 225px;
 }
