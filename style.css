@@ -1,4 +1,4 @@
-.color {
+.color, .selected {
   border: 1px solid black;
   height: 40px;
   width: 40px;
