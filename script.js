@@ -80,8 +80,8 @@ function powerfulUser() {
         theBorad.removeChild(theBorad.lastElementChild);        
       }
       
-      if(inputResize.value < 4) inputResize.value = 5;
-      if(inputResize.value > 51) inputResize.value = 50;
+      if(inputResize.value <= 4) inputResize.value = 5;
+      if(inputResize.value >= 51) inputResize.value = 50;
       
       createBorad(inputResize.value, inputResize.value);
       allPixels = document.querySelectorAll('.pixel');
