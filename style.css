@@ -55,3 +55,17 @@ section #verde {
   display: inline-block;
   margin-left: 5px;
 }
+
+table {
+  pad: 2px;
+  background-color: grey;
+  text-align: center;
+  display: inline-block;
+}
+
+table .pixel {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  padding: 5;
+}
