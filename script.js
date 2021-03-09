@@ -94,14 +94,33 @@ corDaPaleta.addEventListener('click', selecionaCor);
 
 function pintaPixel(pixelAtual) {
   const selecionarPixel = pixelAtual.target;
-  
-    const corSelecionada = document.querySelector('.selected');
-    selecionarPixel.style.backgroundColor = corSelecionada.style.backgroundColor;
-  
+  const corSelecionada = document.querySelector('.selected');
+  selecionarPixel.style.backgroundColor = corSelecionada.style.backgroundColor;
 }
 const escolhePixel = document.querySelector('#pixel-board');
 
+escolhePixel.addEventListener('click', pintaPixel);
+
+// criar botão de limpeza
+
+function criaBotao() {
+  const novoBotao = document.createElement('button');
+  novoBotao.id = 'clear-board';
+  novoBotao.innerText = 'Limpar';
+  return novoBotao;
+}
+
+document.querySelector('#button-cleaner').appendChild(criaBotao());
+
+function limparPixels() {
+  const pegarPixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pegarPixels.length; index += 1) {
+    pegarPixels[index].style.backgroundColor = 'white';
+  }
+}
+
+document.getElementById('clear-board').addEventListener('click', limparPixels);
+
 window.onload = function () {
   adicionarBgcolor();
-  escolhePixel.addEventListener('click', pintaPixel);
 };

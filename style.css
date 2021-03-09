@@ -4,8 +4,8 @@ body {
 }
 
 h1 {
-margin-left: 70px;
-margin-bottom: 30px;
+  margin-left: 70px;
+  margin-bottom: 30px;
 }
 
 .color {
@@ -31,10 +31,15 @@ margin-bottom: 30px;
 
 #color-palette {
   width: fit-content;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 #pixel-board {
   display: table;
-  margin-left: 60px;
+  margin-left: 68px;
+  margin-top: 40px;
+}
+
+#button-cleaner {
+  margin-left: 145px;
 }
