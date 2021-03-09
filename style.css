@@ -1,32 +1,40 @@
 .class {
     border: 1px;
     border-style:solid;
+    
 }
 
 #black {
     color: black;
     border: 1px;
     border-color: black;
-    border-style:solid
+    border-style: solid;
+    left: 10px;
 }
 
 #blue {
     color: blue;
     border: 1px;
-    border-color: black
-    border-style:solid
+    border-color: black;
+    border-style: solid;
+    left: 25px;
+    
 }
 
 #green {
     color: green;
     border: 1px;
-    border-color: black
-    border-style:solid
+    border-color: black;
+    border-style: solid;
+    display: inline;
+    right: 25px;
 }
 
 #red {
     color: red;
     border: 1px;
-    border-color: black
-    border-style:solid
+    border-color: black;
+    border-style:solid;
+    display: inline;
+    right: 10px;
 }
