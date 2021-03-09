@@ -23,8 +23,8 @@ display: flex;
 #pixel-board{
    
     border: black solid 1px;
-    width: 200px;
-    height: 200px;
+    width: 25px;
+    height: 25px;
     display:table;
 }
  .pixel {
