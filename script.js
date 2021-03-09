@@ -10,7 +10,10 @@ function createColorPalette() {
     pallet.appendChild(newColor);
   }
 }
-
+function blackSquareSelected() {
+  const blackSquare = document.querySelector('.color');
+  blackSquare.className += ' selected';
+}
 window.onload = function createPixelsBoard() {
   const board = document.createElement('ul');
   board.id = 'pixel-board';
@@ -29,11 +32,20 @@ window.onload = function createPixelsBoard() {
       tableRows[i2].appendChild(pixel);
     }
   }
+  blackSquareSelected();
 };
 
-window.onload = function blackSquareSelected() {
-  const blackSquare = document.querySelector('.color');
-  blackSquare.className += ' selected';
-};
+function selectColor() {
+  const allColors = document.getElementsByClassName('color');
+  for (let i = 0; i < allColors.length; i += 1) {
+    allColors[i].addEventListener('click', (evt) => {
+      for (let i2 = 0; i2 < allColors.length; i2 += 1) {
+        allColors[i2].className = 'color';
+      }
+      evt.target.className += ' selected';
+    });
+  }
+}
 
 createColorPalette();
+selectColor();
