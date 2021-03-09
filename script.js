@@ -59,12 +59,15 @@ paletteBox.addEventListener('click',selected,false)
 
 let pixelBoard = document.createElement('div');
 pixelBoard.id = "pixel-board";
+pixelBoard.className = "display-table"
 
 body.appendChild(pixelBoard);
 
 for (let linhas = 0; linhas < 5; linhas += 1){
     const line = document.createElement('div');
+    line.className = 'line'
     pixelBoard.appendChild(line);
+
     for (let colunas = 0; colunas < 5; colunas += 1){
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
@@ -87,3 +90,21 @@ function fillColor(event){
 }
 
 pixelBoard.addEventListener('click',fillColor,false)
+
+//Criar um botão
+
+const btn = document.createElement('div');
+
+btn.innerHTML = 'Limpar'
+btn.id = 'clear-board';
+
+body.appendChild(btn);
+
+btn.addEventListener('click', function(){
+    const pixels = document.getElementsByClassName('pixel');
+
+    for(let index = 0; index < pixels.length; index += 1){
+        pixels[index].style.backgroundColor = 'white';
+    }
+
+})
