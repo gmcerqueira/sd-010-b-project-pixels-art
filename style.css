@@ -9,7 +9,7 @@
   background-color: black;
 }
 
-#vermelho{
+#vermelho {
   background-color: red;
 }
 
@@ -23,7 +23,7 @@
 
 #pixel-board {
   display: grid;  
-  grid-template-columns: repeat(5, 42px);
+  grid-template-columns: repeat(5, 40px);
 }
 
 .pixel {
