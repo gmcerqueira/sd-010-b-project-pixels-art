@@ -1,0 +1,23 @@
+#color-pallete {
+
+}
+
+.color {
+    border 1px;
+}
+
+#one {
+background-color: red;
+}
+
+#two {
+background-color: blue;
+}
+
+#three {
+background-color: green;    
+}
+
+#four {
+background-color: yellow;    
+}
