@@ -18,4 +18,13 @@ function whitePixels () {
 function blackColorSelected () {
   let element = document.querySelectorAll(".color")[0];
   element.classList.add("selected");
-} 
+  // Para essa função pesquisei no seguinte artigo da W3Schools: https://www.w3schools.com/howto/howto_js_add_class.asp
+}
+
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("color") && !event.target.classList.contains("selected") ) {
+    document.querySelectorAll(".selected")[0].className = "color";
+    event.target.className = "color selected";
+  }
+  //Recebi um grande auxílio do Thiago Marchini nessa questão, ele realmente me ajudou a compreender esse código.
+})
