@@ -21,14 +21,26 @@ green.style.backgroundColor = 'green'
 red.style.backgroundColor = 'red'
 blue.style.backgroundColor = 'blue'
 
-let pixelboard = document.createElement('table')
-pixelboard.id = 'pixel-board'
-document.body.appendChild(pixelboard)
+let pixelBoard = document.createElement('table')
+pixelBoard.id = 'pixel-board'
+document.body.appendChild(pixelBoard)
 
 
 for (let i = 0; i < 5; i += 1){
-    let celula = document.createElement('tr')
-    celula.className = 'pixel'
-    pixelboard.appendChild(celula)
+    let primeiraLinha = document.createElement('tr')
+    pixelBoard.appendChild(primeiraLinha)
 }
+
+let linhas = document.querySelectorAll('#pixel-board tr')
+
+for (let i = 0; i < linhas.length; i += 1){
+    for (let index = 0; index < linhas.length; index += 1){
+     let celulaColuna = document.createElement('td')
+     celulaColuna.className = 'pixel'
+     linhas[i].style.backgroundColor = 'white';
+     linhas[i].appendChild(celulaColuna)
+    }
+}
+
+
 
