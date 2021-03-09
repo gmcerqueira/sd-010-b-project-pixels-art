@@ -33,10 +33,10 @@
   border-collapse: collapse;
 }
 
-#pixelalign {
+.pixelalign {
   display: table-cell;
 }
 
-#pixeltable {
+.pixeltable {
   display: table-row;
 }
