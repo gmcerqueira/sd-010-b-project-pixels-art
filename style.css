@@ -6,9 +6,9 @@ body {
   background-color: rgb(110, 133, 110);
 }
 
-#color-palette {
-  width: 300px;
+#palette {
   text-align: center;
+  width: 300px;
   margin: 10px auto;
 }
 
