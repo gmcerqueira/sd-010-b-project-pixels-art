@@ -17,7 +17,7 @@ function createColorPaletteDisplay() {
     }
 }
 
-https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+//https:wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
 function randomColor() {
     let r = Math.random() * 255;
     let g = Math.random() * 255;
