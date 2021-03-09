@@ -72,6 +72,7 @@ const value = document.createElement('input');
 
 value.type = "number";
 value.min = '1';
+value.max = '50';
 value.id = 'board-size'
 
 entry.appendChild(value);
@@ -90,9 +91,19 @@ submit.addEventListener('click',function(){
     }
     killQuadro();
 
-    if(value.value > 50) N = 50;
-   else  if(value.value < 5) N = 5;
-   else N = value.value;
+   if(value.value > 50){
+    N = 50;
+    value.value = N;
+   } 
+   else  if(value.value < 5){
+        N = 5;
+        value.value = N;
+   } 
+   else{
+    N = value.value;
+    value.value = N;
+
+   } 
     criarQuadro ()
     
 
