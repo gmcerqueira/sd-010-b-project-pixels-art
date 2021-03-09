@@ -41,15 +41,16 @@ window.onload = function () {
 // Funções utilizadas
 function createPalette() {
   const paletteDiv = document.getElementById('color-palette');
-  const colors = ['yellow', 'blue', 'green'];
+  const colors = ['yellow', 'blue', 'green', 'red', 'orange', 'brown', 'grey', 'aqua', 'khaki','lime'];
   const paletteBlack = document.createElement('div');
   paletteBlack.className = 'color selected';
   paletteBlack.style.backgroundColor = 'black';
   paletteDiv.appendChild(paletteBlack);
-  for (let color of colors) {
+  for (let index = 0; index < 4; index += 1) {
     let palette = document.createElement('div');
     palette.className = 'color';
-    palette.style.backgroundColor = color;
+    let number = Math.ceil((Math.random())*10);
+    palette.style.backgroundColor = colors[number];
     paletteDiv.appendChild(palette);
   }
 }
