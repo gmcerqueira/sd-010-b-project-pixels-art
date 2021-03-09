@@ -4,9 +4,14 @@ body {
   box-sizing: border-box;
 }
 
+#title {
+  text-align: center;
+}
+
 
 #color-palette {
   display: flex;
+  justify-content: center;
 }
 
 .color {
@@ -14,5 +19,19 @@ body {
   height: 40px;
   border: 1px solid black;
   margin: 2px;
+  border: 1px solid black;
+}
+
+#pixels-board {
+  max-width: 30%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.pixels {
+  margin: 1px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
   border: 1px solid black;
 }
