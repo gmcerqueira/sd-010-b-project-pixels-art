@@ -1,10 +1,12 @@
-let pixelBoarder= document.getElementById("pixel-board");
+let lines;
+let columns;
 
 //recuperando a tabela para criar linhas e colunas
 
 for( let i = 0; i>5 ; i += 1){
-    pixelBoarder = document.createElement('tr');
-    pixelBoarder.appendChild('pixelBoarder');
+    document.createElement('tr');
+    
+    
                     
     }
 
