@@ -1,0 +1,26 @@
+#color-palette{
+    display: table;
+    padding: auto;
+}
+.color{
+    display: table-cell;
+    padding: 25px;
+    width: 150px;
+    border: #000000 solid 1px;
+}
+
+#firstColor{
+    background-color: #000000;
+}
+
+#secondColor{
+    background-color: aqua;
+}
+
+#thirdColor{
+    background-color: blueviolet;
+}
+
+#fourthColor{
+    background-color: chartreuse;
+}
