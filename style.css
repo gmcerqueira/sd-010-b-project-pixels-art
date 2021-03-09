@@ -26,3 +26,11 @@ div{
     background-color: black;
 }
 
+.pixel{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}
