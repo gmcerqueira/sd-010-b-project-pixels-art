@@ -1,4 +1,22 @@
+#color-palette {
+  height: 47px;
+}
+
+
 .color {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  margin: 0 5px 5px 0;
+}
+
+.row {
+  height: 42px;
+}
+
+.pixel {
+  display: inline-block;
   width: 40px;
   height: 40px;
   border: 1px solid black;
