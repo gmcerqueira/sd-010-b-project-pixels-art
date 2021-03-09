@@ -20,15 +20,15 @@
   background-color: green;
 }
 
-#pixel-board{
-    display:flex;
+#pixel-board {
+    display: flex;
     flex-wrap: wrap;
     width:250px;
     margin-left: 20px;
 }
-.pixel{
+.pixel {
     width: 40px;
-    height:40px;
+    height: 40px;
     border: black solid 1px;
     background-color: white;
 }
