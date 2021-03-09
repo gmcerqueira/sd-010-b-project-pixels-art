@@ -9,7 +9,7 @@ let paletas = document.createElement('tr')
     cores.appendChild(paletas);
 }
 
-let paleta = document.getElementsByClassName('color')
+let paleta = document.querySelectorAll('.color')
 const black = paleta[0];
 const green = paleta[1];
 const red = paleta[2];
@@ -43,5 +43,3 @@ for (let i = 0; i < linhas.length; i += 1){
      linhas[i].appendChild(celulaColuna)
     }
 }
-
-
