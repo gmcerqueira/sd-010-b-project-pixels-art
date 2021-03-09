@@ -1,0 +1,15 @@
+td {
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+}
+
+td .pixel {
+    height: 5px;
+    width: 5px;
+    background-color: white;
+}
+
+td #pixel-board{
+   padding: 25px
+}
