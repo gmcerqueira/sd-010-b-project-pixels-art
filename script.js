@@ -11,12 +11,3 @@ function selectColor(event){
     event.target.classList.add('selected');
 }
 
-
-
-
-
-
-//-----------------------
-//Botão
-let button = document.querySelector(".clear-board");
-let select = document.querySelectorAll(".color");
