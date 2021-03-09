@@ -14,13 +14,23 @@ for (let counterDiv = 0; counterDiv < 5; counterDiv += 1) {
 }
 
 localStorage.setItem('cor', 'white');
-
 for (let counter = 0; counter < 25; counter += 1) {
   pixel[counter].style.backgroundColor = (localStorage.getItem('cor'));
   pixel[counter].style.border = '1px solid black';
   pixel[counter].style.height = '40px';
   pixel[counter].style.width = '40px';
   pixel[counter].style.display = 'inline-block';
+}
+
+/* document.getElementById('paletteTwo').style.backgroundColor = '#fec5bb'
+document.getElementById('paletteThree').style.backgroundColor = '#d8e2dc'
+document.getElementById('paletteFour').style.backgroundColor = '#fec89a'
+ */
+
+const colorsBackground = ['#fec5bb', '#d8e2dc', '#fec89a'];
+for (let counter = 0; counter < colorsBackground.length; counter += 1) {
+  const getColorsClass = document.querySelectorAll('.color');
+  getColorsClass[counter + 1].style.backgroundColor = colorsBackground[counter];
 }
 
 localStorage.setItem('initialColor', 'black');
@@ -31,4 +41,9 @@ paletteColors[0].className += (localStorage.getItem('Selected'));
 paletteBoard.addEventListener('click', function (event) {
   document.querySelector('.selected').className = 'color';
   event.target.className += ' selected';
+});
+
+pixelBoard.addEventListener('click', function (event) {
+  const backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = backgroundColor;
 });
