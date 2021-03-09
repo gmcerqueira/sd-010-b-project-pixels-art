@@ -11,4 +11,23 @@ function createColorPalette() {
   }
 }
 
+window.onload = function createPixelsBoard() {
+  const board = document.createElement('ul');
+  board.id = 'pixel-board';
+  document.body.appendChild(board);
+  for (let i = 0; i < 5; i += 1) {
+    const tableRow = document.createElement('div');
+    tableRow.className = 'board-tr';
+    board.appendChild(tableRow);
+  }
+  const tableRows = document.getElementsByClassName('board-tr');
+  for (let i2 = 0; i2 < tableRows.length; i2 += 1) {
+    for (let i3 = 0; i3 < 5; i3 += 1) {
+      const pixel = document.createElement('li');
+      pixel.className = 'pixel';
+      tableRows[i2].appendChild(pixel);
+    }
+  }
+};
+
 createColorPalette();
