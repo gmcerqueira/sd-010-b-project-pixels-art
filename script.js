@@ -4,8 +4,8 @@ const inputBoardSize = document.querySelector('#board-size');
 const btnBoardSIze = document.querySelector('#generate-board');
 
 const setColor = () => {
-  for (let btn of btnColor) {
-    const [firstColor, secondColor, thirdColor] = [
+  for (let i = 0; i < btnColor.length; i += 1) {
+    const [first, second, third] = [
       Math.floor(Math.random() * 256),
       Math.floor(Math.random() * 256),
       Math.floor(Math.random() * 256),
@@ -13,11 +13,11 @@ const setColor = () => {
 
     btnColor[0].style.backgroundColor = 'black';
 
-    btn.style.backgroundColor = 'rgb(' + firstColor + ', ' + secondColor + ', ' + thirdColor + ')';
+    btnColor[i].style.backgroundColor = 'rgb(' + first + ', ' + second + ', ' + third + ')';
 
-    btn.addEventListener('click', (e) => {
-      for (btn of btnColor) {
-        btn.classList.remove('selected');
+    btnColor[i].addEventListener('click', (e) => {
+      for (let j = 0; j < btnColor.length; j += 1) {
+        btnColor[j].classList.remove('selected');
       }
       e.target.classList.add('selected');
     });
@@ -27,15 +27,16 @@ const setColor = () => {
 setColor();
 
 const paintPixel = (pixel) => {
-  for (const btn of btnColor) {
-    if (btn.className === 'color selected') {
-      pixel.style.backgroundColor = btn.style.backgroundColor;
+  for (let i = 0; i < btnColor.length; i += 1) {
+    if (btnColor[i].className === 'color selected') {
+      pixel.style.backgroundColor = btnColor[i].style.backgroundColor;
     }
   }
 };
 
 const checkEmptyValue = (value) => {
-  value === '' ? alert('Board inválido!') : null;
+  const valor = value === '' ? alert('Board inválido!') : null;
+  return valor;
 };
 
 const createRow = (value, board) => {
@@ -75,8 +76,8 @@ btnBoardSIze.addEventListener('click', () => {
 
 const clearBoard = () => {
   const pixels = document.querySelectorAll('.pixel');
-  for (const pixel of pixels) {
-    pixel.style.backgroundColor = '';
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
   }
 };
 
