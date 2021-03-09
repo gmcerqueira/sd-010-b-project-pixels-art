@@ -11,7 +11,8 @@ function criaPixels() {
     tabela.appendChild(criaLinha);
     for (let celula = 0; celula < n; celula += 1) {
       const criaCelula = document.createElement('td');
-      tabela.appendChild(criaCelula).className = 'pixel';
+      let linhaApoio = document.getElementsByTagName('tr');
+      linhaApoio[linhaApoio.length - 1].appendChild(criaCelula).className = 'pixel';
       document.getElementsByClassName('pixel');
       const apoio = document.getElementsByClassName('pixel');
       apoio[apoio.length - 1].id = `cell-${linha + 1}-${celula + 1}`;
