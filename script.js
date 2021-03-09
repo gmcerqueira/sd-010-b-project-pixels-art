@@ -1,4 +1,4 @@
-window.onload = document.getElementById("paleta1").className = "color selected";
+document.getElementById("paleta1").className = "color selected";
 
 const pixelBoard = document.getElementById("pixel-board");
 const paleta1 = document.getElementById("paleta1");
@@ -30,8 +30,10 @@ for (let index = 0; index < pixels.length; index++) {
     pixels[index].id = (index + 1);
 }
 
-
-
+pixelBoard.addEventListener("click", function(event) {
+    pixel = event.target.id;
+    changeColor(pixel - 1);
+})
 
 paleta1.addEventListener("click", function() {
     selectColor("paleta1");
@@ -97,8 +99,3 @@ function createPixel(pai) {
 function changeColor(pixel) {
     pixels[pixel].style.backgroundColor = selectedColor;
 }
-
-pixelBoard.addEventListener("click", function(event) {
-    pixel = event.target.id;
-    changeColor(pixel - 1);
-})
