@@ -2,7 +2,13 @@
 function createPalette() {
   const paletteDiv = document.getElementById('color-palette');
   const colors = ['yellow', 'blue', 'green', 'red',
-    'orange', 'brown', 'grey', 'aqua', 'khaki', 'lime'];
+    'orange', 'brown', 'grey', 'aqua', 'khaki', 'lime',
+  'beige', 'coral', 'cyan', 'crimson', 'gray', 'ivory',
+  'lavender', 'magenta', 'linen', 'maroon', 'moccasin',
+  'navy', 'olive', 'orchid', 'pink', 'plum', 'peru',
+  'purple', 'salmon', 'sienna', 'silver', 'tan',
+  'thistle', 'teal', 'tomato', 'turquoise', 'violet',
+  'wheat', ];
   const paletteBlack = document.createElement('div');
   paletteBlack.className = 'color selected';
   paletteBlack.style.backgroundColor = 'black';
@@ -10,7 +16,7 @@ function createPalette() {
   for (let index = 0; index < 3; index += 1) {
     const palette = document.createElement('div');
     palette.className = 'color';
-    const number = Math.ceil((Math.random()) * 10);
+    const number = Math.ceil((Math.random()) * colors.length);
     console.log(number);
     palette.style.backgroundColor = colors[number];
     paletteDiv.appendChild(palette);
