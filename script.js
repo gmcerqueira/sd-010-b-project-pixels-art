@@ -17,7 +17,6 @@ function createBoxTable(numOfItems, itemClass, parentId, numOfLines = 1) {
 function addClassToPaletteBox() {
   const paletteBox = document.getElementById('color-palette');
   const boxes = paletteBox.children[0].children[0].children;
-  console.log(boxes);
   for (let index = 0; index < boxes.length; index += 1) {
     boxes[index].classList.add(`color${index + 1}`);
   }
@@ -25,3 +24,4 @@ function addClassToPaletteBox() {
 
 createBoxTable(4, 'color', 'color-palette');
 addClassToPaletteBox();
+createBoxTable(5, 'pixel', 'pixel-board', 5);
