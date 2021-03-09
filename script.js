@@ -77,4 +77,13 @@ for (let linhas = 0; linhas < 5; linhas += 1){
     }
 }
 
+//Lógica para Preenchimento dos pixels
 
+
+function fillColor(event){
+    //Procurar o Selecionado
+    const color = document.querySelector('.selected').style.backgroundColor
+    event.target.style.backgroundColor = color
+}
+
+pixelBoard.addEventListener('click',fillColor,false)
