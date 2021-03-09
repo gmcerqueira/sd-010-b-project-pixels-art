@@ -6,3 +6,30 @@ body {
 header {
   text-align: center;
 }
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.color {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
+
+.color1 {
+  background-color: black;
+}
+
+.color2 {
+  background-color: purple;
+}
+
+.color3 {
+  background-color: mediumspringgreen;
+}
+
+.color4 {
+  background-color: orange;
+}
