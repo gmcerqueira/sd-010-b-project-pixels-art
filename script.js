@@ -1,10 +1,11 @@
 let selectedColor = 'black';
+let oldColor;
 
-document.addEventListener('click', function (event) {
+document.addEventListener('click', event => {
   if (event.target.classList.contains('color')) {
-      let oldColor = document.getElementById(selectedColor);
+      oldColor = document.getElementById(selectedColor);
       oldColor.classList.remove('selected');
       selectedColor = event.target.id;
       event.target.classList.add('selected');
   }
-}, false);
+});
