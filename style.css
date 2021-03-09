@@ -25,14 +25,14 @@ section {
   justify-content: center;
 }
 
-section > .color-palette {
-  margin-bottom: 5px;
-}
-
 .color-palette {
   display: inline-block;
   align-items: center;
   text-align: center;
+}
+
+section > .color-palette {
+  margin-bottom: 5px;
 }
 
 .color {
