@@ -20,6 +20,19 @@ orangered.addEventListener('click', selectColor);
 green.addEventListener('click', selectColor);
 blue.addEventListener('click', selectColor);
 
+function paintingPixel(event) {
+    event.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+  }
+  
+  function boardListener() {
+    const pixels = document.getElementsByClassName('pixel');
+    for (index in pixels) {
+      arrayDePixels[index].addEventListener('click', paintingPixel);
+    }
+  }
+
+  boardListener()
+
 function deselectColor() {
     const currentColor = document.querySelector('.selected');
     currentColor.className = 'color';
