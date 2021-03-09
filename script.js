@@ -1,6 +1,8 @@
 window.onload = function () {
   let numberOfOption = 4;
   let numberOfItems = 25;
+  let paletOfColors = null;
+  let selectedColor = null;
 
   const elementHeader = document.createElement('header');
   document.body.appendChild(elementHeader);
@@ -16,6 +18,7 @@ window.onload = function () {
   const elemento1 = document.createElement('section');
   elemento1.id = 'color-palette';
   elementos.appendChild(elemento1);
+  paletOfColors = document.querySelector('#color-palette');
 
   const elemento2 = document.createElement('section');
   elemento2.id = 'pixel-board';
@@ -23,10 +26,10 @@ window.onload = function () {
 
   for (let index = 0; index < numberOfOption; index++) {
     const colorOption = document.createElement('div');
-    if (index === 0) {        
-        colorOption.className = 'color selected';
-    } else {        
-        colorOption.className = 'color';
+    if (index === 0) {
+      colorOption.className = 'color selected';
+    } else {
+      colorOption.className = 'color';
     }
     colorOption.id = 'cor_' + (index + 1);
     elemento1.appendChild(colorOption);
@@ -38,5 +41,25 @@ window.onload = function () {
     elemento2.appendChild(itemOption);
   }
 
+  selectedColor = document.querySelectorAll('.color');
 
+  function defaultClass() {
+    selectedColor[0].className = 'color';
+    selectedColor[1].className = 'color';
+    selectedColor[2].className = 'color';
+    selectedColor[3].className = 'color';
+    return true;
+  }
+
+  paletOfColors.addEventListener('click', function (props) {
+    if (defaultClass()) {
+      if (props.target.className == 'color') {
+        props.target.className = 'color selected';
+      } else {
+        console.log('selecionado');
+        props.target.className = 'color';
+      }
+    }
+  });
+  console.log(selectedColor);
 };
