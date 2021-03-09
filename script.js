@@ -11,6 +11,23 @@ let paletas = document.createElement('tr')
 
 ClearButton();
 
+//buttonReset
+let pixelsReset = document.getElementsByClassName('pixel');
+
+function resetPixel(){
+    for (let i = 0; i < pixelsReset.length; i += 1){
+        pixelsReset[i].style.backgroundColor = 'white';
+    }
+}
+
+function ClearButton(){
+    let botao = document.createElement('button')
+    botao.id = 'clear-board'
+    botao.innerHTML = 'Limpar'
+    document.body.appendChild(botao)
+    botao.addEventListener('click', resetPixel)
+}
+
 let paleta = document.querySelectorAll('.color')
 const black = paleta[0];
 const green = paleta[1];
@@ -41,24 +58,8 @@ for (let i = 0; i < linhas.length; i += 1){
     for (let index = 0; index < linhas.length; index += 1){
      let celulaColuna = document.createElement('td');
      celulaColuna.className = 'pixel';
-     celulaColuna.style.backgroundColor = 'white';
+     celulaColuna.style.backgroundColor = 'black';
      linhas[i].appendChild(celulaColuna);
     }
 }
 
-//buttonReset
-let pixelsReset = document.getElementsByClassName('pixel');
-
-function resetPixel(){
-    for (let i = 0; i < pixelsReset.length; i += 1){
-        pixelsReset[i].style.backgroundColor = 'white';
-    }
-}
-
-function ClearButton(){
-    let botao = document.createElement('button')
-    botao.id = 'clear-board'
-    botao.innerHTML = 'Limpar'
-    document.body.appendChild(botao)
-    botao.addEventListener('click', resetPixel)
-}
