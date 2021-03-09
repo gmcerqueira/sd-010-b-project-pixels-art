@@ -1,39 +1,30 @@
-#color-palette { 
+#color-palette {
   display: table;
 }
 
-.color-palette-tr { 
+.color-palette-tr {
   display: table-row;
 }
 
-.black {
+.color {
   display: table-cell;
   border: 1px solid black;
   height: 25px;
   width: 25px;
+}
+
+#black {
   background-color: black;
 }
 
-.red {
-  display: table-cell;
-  border: 1px solid black;
-  height: 25px;
-  width: 25px;
+#red {
   background-color: red;
 }
 
-.green {
-  display: table-cell;
-  border: 1px solid black;
-  height: 25px;
-  width: 25px;
+#green {
   background-color: green;
 }
 
-.blue {
-  display: table-cell;
-  border: 1px solid black;
-  height: 25px;
-  width: 25px;
+#blue {
   background-color: blue;
 }
