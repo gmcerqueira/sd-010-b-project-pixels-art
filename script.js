@@ -5,7 +5,7 @@ function structureTable () {
     line1.id = "color-palette";
     table.appendChild(line1);
   
-  for (let columns = 0; columns < 3; columns += 1) {
+  for (let columns = 0; columns < 4; columns += 1) {
     let column = document.createElement("td");
     column.className = "color";
     line1.appendChild(column);
@@ -34,5 +34,11 @@ function styleTable () {
     column[0].style.backgroundColor = "black";
     column[1].style.backgroundColor = "green";
     column[2].style.backgroundColor = "red";
+    column[3].style.backgroundColor = "blue";
   }
 } styleTable();
+function selectColor () {
+  for (let index = 0; index < column.length; column += 1){
+    column.className = "select-color";
+  }
+}
