@@ -12,7 +12,7 @@ function createPalette() {
 
 createPalette();
 
-function createBox() {
+function createPixels() {
   for (let index = 0; index < 25; index += 1) {
     let createDiv = document.createElement('div');
     createDiv.className = 'pixel';
@@ -21,7 +21,7 @@ function createBox() {
   return containerQuadro;
 }
 
-createBox();
+createPixels();
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
