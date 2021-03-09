@@ -10,11 +10,11 @@
 
 }
 
-#pixel-board{
-padding:0px;
-width: 200px;
-height: 200px;
-margin: 30px;
+#pixel-board {
+  padding: 0px;
+  width: 200px;
+  height: 200px;
+  margin: 30px;
 }
 
 .pixel {
