@@ -70,11 +70,11 @@ function clearBoard() {
 }
 clearBoard();
 
-function powerfulClient() {
+function powerfulUser() {
   const buttonResize = document.querySelector("#generate-board");
   const inputResize = document.querySelector("#board-size");
   buttonResize.addEventListener("click", function () {
-    if(!inputResize.value == "" || inputResize.value > 0){
+    if(!inputResize.value == "" && parseInt(inputResize.value) > 0){
       const childsToRemove = theBorad.childElementCount;
       for (let i = 0; i < childsToRemove; i++) {
         theBorad.removeChild(theBorad.lastElementChild);        
@@ -89,4 +89,4 @@ function powerfulClient() {
   });
 }
 
-powerfulClient();
+powerfulUser();
