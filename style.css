@@ -1,3 +1,7 @@
+#title {
+  text-align: center;
+}
+
 .black {
   background-color: black;
   border: 1px solid black;
@@ -26,4 +30,33 @@
 
 .pixeEv {
   background-color: black;
+}
+.paletaInput{
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+}
+
+.red {
+  border: 1px solid;
+  background-color: red;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+.blue {
+  border: 1px solid;
+  background-color: blue;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+.green {
+  border: 1px solid;
+  background-color: green;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
 }
