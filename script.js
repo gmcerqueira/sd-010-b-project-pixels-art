@@ -55,17 +55,18 @@ const greenButton = document.getElementById('verde');
 greenButton.addEventListener('click', selectGreen);
 
 function pintaPixel(event) {
-  let selecionaCor = document.querySelector('.color selected');
-  event.target.style.backgroundColor = selecionaCor.style.backgroundColor;  
+  const selecionaCor = document.querySelector('.color selected').style.backgroundColor;
+  const pixel = event.target;
+  pixel.style.backgroundColor = selecionaCor;
 }
 
-let colore = document.querySelector('.pixel');
-colore.addEventListener('click', pintaPixel);
+const colore = document.getElementById('pixel-board');
+colere.addEventListener('click', pintaPixel);
 
 function limpaGrid() {
-  let pixel = document.getElementsByClassName('pixel');
+  const pixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixel.length; index += 1) {
-      pixel[index].style.backgroundColor = 'white';
+    pixel[index].style.backgroundColor = 'white';
   }
 }
 
