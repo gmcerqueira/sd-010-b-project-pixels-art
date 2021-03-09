@@ -39,7 +39,7 @@ function addQuadradoPixels() {
 }
 addQuadradoPixels();
 
-function colorPixels() {
+function addClassSelected() {
   const paletaCores = document.getElementById('color-palette').getElementsByTagName('th');
   // Relembrando: Nesse trexo de codigo e iniciado um loop para encontrar o evento click, encontrado a add na tag clicada um class e removida da que ja tinha a class selected.
   for (let i = 0; i < paletaCores.length; i += 1) {
@@ -55,4 +55,25 @@ function colorPixels() {
     })
   }
 }
+addClassSelected();
+
+function colorPixels() {
+  const quadradoPixels = document.getElementById('pixel-board').getElementsByTagName('td');
+  const paletaCores = document.getElementById('color-palette').getElementsByTagName('th');
+  for (let i = 0; i < quadradoPixels.length; i += 1) {
+    quadradoPixels[i].addEventListener('click', function (){
+      for (let j = 0; j < paletaCores.length; j += 1) {
+        if (paletaCores[j].className.indexOf('selected') > 0) {
+          quadradoPixels[i].style.background = paletaCores[j].style.background;
+        }
+      }
+    })
+  }
+}
 colorPixels();
+
+function buttonClear() {
+  const criarButton = document.body;
+  console.log(criarButton);
+}
+buttonClear();
