@@ -1,14 +1,12 @@
 #color-palette {
-  height: 47px;
+  height: 42px;
 }
-
 
 .color {
   display: inline-block;
   width: 40px;
   height: 40px;
   border: 1px solid black;
-  margin: 0 5px 5px 0;
 }
 
 .row {
@@ -21,4 +19,8 @@
   width: 40px;
   height: 40px;
   border: 1px solid black;
+}
+
+#clear-board {
+  margin: 15px 0;
 }
