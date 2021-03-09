@@ -1,4 +1,25 @@
-.color{
+.color {
   border: 1px solid black;
-  color: blue
+  color: blue;
+  margin: 2px;
+  padding : 20px;
 }
+
+#blue {
+  background-color: blue;
+}
+#red {
+  background-color: red;
+}
+#pink {
+  background-color: pink;
+}
+#green {
+  background-color: green;
+}
+
+
+
+
+
+
