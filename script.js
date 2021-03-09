@@ -12,6 +12,19 @@ function createPixelBoard(numberPixels) {
   }
 }
 
+function changeColor() {
+  const colorBox = document.querySelectorAll('.color');
+  const selected = document.querySelector('.selected');  
+  for (let index = 0; index < colorBox.length; index += 1) {   
+    const classListColor = colorBox[index].classList;
+    if (classListColor[2] === 'selected') {      
+      selected.style.backgroundColor = `${classListColor[1]}`;       
+    } else if (classListColor.length <= 2) {
+      colorBox[index].style.backgroundColor = classListColor[index];
+    }
+  }
+}
+
 function selected() {
   const colorBox = document.querySelectorAll('.color');
   for (let index = 0; index < colorBox.length; index += 1) {
@@ -26,32 +39,29 @@ function selected() {
   }
 }
 
-function changeColor() {
-  const colorBox = document.querySelectorAll('.color');
-  const selected = document.querySelector('.selected');  
-  for (let index = 0; index < colorBox.length; index += 1) {   
-    const classListColor = colorBox[index].classList;
-    if (classListColor[2] === 'selected') {      
-      selected.style.backgroundColor = `${classListColor[1]}`;       
-    }
-    else if (classListColor.length <= 2) {
-      colorBox[index].style.backgroundColor = classListColor[index];
-    }      
-  }
-}
-
 function colorPixels() {  
   const box = document.querySelectorAll('.td');
   const selected = document.querySelector('.selected');
   for (let index = 0; index < box.length; index += 1) {
-    box[index].addEventListener('click', () => {      
-      box[index].style.backgroundColor = selected.style.backgroundColor            
+    box[index].addEventListener('click', () => {
+      box[index].style.backgroundColor = selected.style.backgroundColor;
     })
-  }  
+  }
   changeColor();
 }
 
+function clear(){
+  const box = document.getElementsByClassName('td');
+  const button = document.getElementById('clear-board');
 
+  button.addEventListener('click', () => {
+    for (let i = 0; i < box.length; i += 1) {
+      box[i].style.backgroundColor = 'white';
+    }
+  })
+}
+
+clear();
 createPixelBoard(5);
 selected();
 colorPixels();
