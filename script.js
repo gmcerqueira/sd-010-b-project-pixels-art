@@ -12,7 +12,7 @@ function criaPixels() {
       divNova.className = 'pixel';
       novaLinha.appendChild(divNova);
     }
-    document.body.appendChild(novaLinha);
+    document.pixel-border.appendChild(novaLinha);
   }
   document.body.appendChild(quadro);
 }
