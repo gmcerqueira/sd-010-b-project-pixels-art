@@ -1,23 +1,35 @@
+//Cria a tabela de paleta de cores
 let paletaDeCores = document.createElement("table");
 paletaDeCores.id = "color-pallete"
 document.body.appendChild(paletaDeCores);
 
+//Cria a célula para cada uma das cores selecionaveis
 for (i=0; i<4; i++) {
     let coresDaPaleta = document.createElement("td");
     coresDaPaleta.className = "color";
     paletaDeCores.appendChild(coresDaPaleta);
 }
 
+//Determina as cores que fazem parte da paleta
 let coresDaPaleta = document.getElementsByClassName("color");
-coresDaPaleta[0].style.backgroundColor = "black";
-coresDaPaleta[1].style.backgroundColor = "purple";
-coresDaPaleta[2].style.backgroundColor = "pink";
-coresDaPaleta[3].style.backgroundColor = "magenta";
+let black = coresDaPaleta[0];
+let purple = coresDaPaleta[1];
+let pink = coresDaPaleta[2];
+let magenta = coresDaPaleta[3];
 
+black.className = "selected";
+
+black.style.backgroundColor = "black";
+purple.style.backgroundColor = "purple";
+pink.style.backgroundColor = "pink";
+magenta.style.backgroundColor = "magenta";
+
+//Cria o quadro onde iremos pintar
 let quadroDePixels = document.createElement("table");
 quadroDePixels.id = "pixel-board";
 document.body.appendChild(quadroDePixels);
 
+//Cria cada uma das células a serem pintadas
 for (i=0; i<5; i++) {
     let tr = document.createElement("tr");
     quadroDePixels.appendChild(tr);
