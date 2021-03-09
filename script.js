@@ -92,7 +92,7 @@ const submit = document.createElement ('button');
 
 entry.appendChild(submit);
 submit.innerHTML = 'VQV';
-submit.className = 'generate-board'
+submit.id = 'generate-board'
 
 submit.addEventListener ('click',function(){
 
