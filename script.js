@@ -72,6 +72,7 @@ const value = document.createElement('input');
 
 value.type = "number";
 value.min = '1';
+value.id = 'board-size'
 
 entry.appendChild(value);
 entry.id = 'generate-board';
