@@ -27,7 +27,7 @@ for (let index = 1; index <= lado; index++) {
 }
 
 for (let index = 0; index < pixels.length; index++) {
-    pixels[index].id = "pix" + (index + 1);
+    pixels[index].id = (index + 1);
 }
 
 
@@ -97,3 +97,8 @@ function createPixel(pai) {
 function changeColor(pixel) {
     pixels[pixel].style.backgroundColor = selectedColor;
 }
+
+pixelBoard.addEventListener("click", function(event) {
+    pixel = event.target.id;
+    changeColor(pixel - 1);
+})
