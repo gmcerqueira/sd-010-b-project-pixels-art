@@ -1,1 +1,1 @@
-let title = document.getElementById('tittle').innerText = 'Paleta de Cores';
+let title = document.getElementById('title').innerText = 'Paleta de Cores';
