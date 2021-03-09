@@ -12,3 +12,10 @@ function criaPixels() {
   }
 }
 criaPixels();
+function pegaCor() {
+  let cor = document.getElementsByClassName('color');
+}
+function corInicial() {
+  document.querySelector('.c1');
+}
+corInicial();
