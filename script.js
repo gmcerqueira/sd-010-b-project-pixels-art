@@ -18,6 +18,7 @@ function gerar_cor() {
 
         preencherCor[cont].style.backgroundColor = randomColor;
         preencherCor[0].style.backgroundColor = "rgba(0,0,0)";
+        preencherCor[0].className = "selected";
 
 
     }
@@ -28,11 +29,12 @@ function geraPixel() {
     let numeroPixels = 25;
     let pixels = document.getElementById("pixel-board");
 
-
-    for (let cont = 0; cont < numeroPixels; cont++) {
+    for (let cont = 0; cont < numeroPixels; cont += 1) {
         let itemPixel = document.createElement('div');
+        itemPixel.id = 'teste';
         itemPixel.className = 'pixel';
         pixels.appendChild(itemPixel);
+      
     }
 }
 geraPixel();
