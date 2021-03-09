@@ -1,2 +1,31 @@
 #title {
+
+}
+.color-palette {
+
+}
+
+.color {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    width:70px;
+    height:70px;
+    display: inline-block
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: yellow;
 }
