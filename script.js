@@ -1,1 +1,1 @@
-console.log("Xablau! Hello World!");
+window.onload 
