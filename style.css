@@ -1,3 +1,15 @@
 header {
   text-align: center;
 }
+
+#color-palette {
+  display: flex;
+  margin-left: 550px;
+  margin-top: 50px;
+}
+
+.color {
+  border: black solid 1px;
+  width: 40px;
+  height: 40px;
+}
