@@ -1,4 +1,42 @@
-// cria a tabela 5x5 dinamicamente
+// Funções utilizadas
+function createPalette() {
+  const paletteDiv = document.getElementById('color-palette');
+  const colors = ['yellow', 'blue', 'green', 'red', 'orange', 'brown', 'grey', 'aqua', 'khaki','lime'];
+  const paletteBlack = document.createElement('div');
+  paletteBlack.className = 'color selected';
+  paletteBlack.style.backgroundColor = 'black';
+  paletteDiv.appendChild(paletteBlack);
+  for (let index = 0; index < 3; index += 1) {
+    let palette = document.createElement('div');
+    palette.className = 'color';
+    let number = Math.ceil((Math.random())*10);
+    console.log(number);
+    palette.style.backgroundColor = colors[number];
+    paletteDiv.appendChild(palette);
+  }
+}
+
+function createGrid(size) {
+  const board = document.getElementById('pixel-board');
+  for (let index = 0; index < size; index += 1) {
+    let row = document.createElement('TR');
+    row.id = `row${index}`;
+    board.appendChild(row);
+    for (let index2 = 0; index2 < size; index2 += 1) {
+      let cell = document.createElement('TD');
+      cell.className = 'pixel';
+      cell.style.backgroundColor = 'white';
+      row.appendChild(cell);
+    }
+  }
+}
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
+
 window.onload = function () {
   // cria a paleta de cores
   createPalette();
@@ -38,41 +76,3 @@ window.onload = function () {
     }
   }, false);
 };
-// Funções utilizadas
-function createPalette() {
-  const paletteDiv = document.getElementById('color-palette');
-  const colors = ['yellow', 'blue', 'green', 'red', 'orange', 'brown', 'grey', 'aqua', 'khaki','lime'];
-  const paletteBlack = document.createElement('div');
-  paletteBlack.className = 'color selected';
-  paletteBlack.style.backgroundColor = 'black';
-  paletteDiv.appendChild(paletteBlack);
-  for (let index = 0; index < 3; index += 1) {
-    let palette = document.createElement('div');
-    palette.className = 'color';
-    let number = Math.ceil((Math.random())*10);
-    console.log(number);
-    palette.style.backgroundColor = colors[number];
-    paletteDiv.appendChild(palette);
-  }
-}
-
-function createGrid(size) {
-  const board = document.getElementById('pixel-board');
-  for (let index = 0; index < size; index += 1) {
-    let row = document.createElement('TR');
-    row.id = `row${index}`;
-    board.appendChild(row);
-    for (let index2 = 0; index2 < size; index2 += 1) {
-      let cell = document.createElement('TD');
-      cell.className = 'pixel';
-      cell.style.backgroundColor = 'white';
-      row.appendChild(cell);
-    }
-  }
-}
-
-function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-  }
-}
