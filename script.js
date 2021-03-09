@@ -15,19 +15,27 @@ function createBoxTable(numOfItems, itemClass, parentId, numOfLines = 1) {
 }
 
 function addClassToPaletteBox() {
-  const boxes = document.getElementsByClassName('color')
+  const boxes = document.getElementsByClassName('color');
   for (let index = 0; index < boxes.length; index += 1) {
     boxes[index].classList.add(`color${index + 1}`);
-    if (index === 0) {
-      boxes[index].style.backgroundColor = 'black';
+    if (getComputedStyle(boxes[index]).backgroundColor === 'rgb(0, 0, 0)') {
       boxes[index].classList.add('selected');
     }
   }
 }
 
-/* function clickPaletteBox() {
-  const boxes =
-} */
+function clickPaletteBox(event) {
+  const selectedBox = document.querySelector('.selected');
+  selectedBox.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+function addBoxClickEvent() {
+  const boxes = document.getElementsByClassName('color');
+  for (let index = 0; index < boxes.length; index += 1) {
+    boxes[index].addEventListener('click', clickPaletteBox);
+  }
+}
 
 const colorPalette = 'color-palette';
 
@@ -37,5 +45,6 @@ createBoxTable(5, 'pixel', 'pixel-board', 5);
 
 window.onload = () => {
   addClassToPaletteBox();
+  addBoxClickEvent();
   // let selectedColor = document.querySelector('.selected').style.backgroundColor;
 };
