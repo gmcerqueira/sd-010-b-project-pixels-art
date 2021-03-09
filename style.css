@@ -1,26 +1,42 @@
-#color-palette{
-    display: table;
-    padding: auto;
-}
-.color{
-    display: table-cell;
-    padding: 25px;
-    width: 150px;
-    border: #000000 solid 1px;
+body {
+  background-color: white;
 }
 
-#firstColor{
-    background-color: #000000;
+#color-palette {
+  display: table;
+  margin: auto;
 }
 
-#secondColor{
-    background-color: aqua;
+.color {
+  display: table-cell;
+  padding: 25px;
+  width: 40px;
+  border: black solid 1px;
 }
 
-#thirdColor{
-    background-color: blueviolet;
+#firstColor {
+  background-color: black;
 }
 
-#fourthColor{
-    background-color: chartreuse;
+#secondColor {
+  background-color: aqua;
+}
+
+#thirdColor {
+  background-color: blueviolet;
+}
+
+#fourthColor {
+  background-color: chartreuse;
+}
+
+.tr {
+  display: table-row;
+  width: 0px;
+}
+
+.pixel {
+  display: table-cell;
+  padding: 39px;
+  border: black solid 1px;
 }
