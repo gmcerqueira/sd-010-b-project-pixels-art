@@ -1,3 +1,25 @@
+#color-palette div {
+  display: inline-block;
+  border: 1px black solid;
+  padding: 50px;
+}
+.color:nth-child(1) {
+  background-color: black;
+}
+
+.color:nth-child(2) {
+  background-color: darkblue;
+}
+
+.color:nth-child(3) {
+  background-color: yellow;
+}
+
+.color:nth-child(4) {
+  background-color: red;
+}
+
+
 /* .display-table {
   display: table; 
 }
