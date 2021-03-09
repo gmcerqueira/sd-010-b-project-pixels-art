@@ -8,6 +8,15 @@ paletaBlue.style.background = 'blue';
 let paletaGreen = window.document.getElementsByClassName('color')[3];
 paletaGreen.style.background = 'green';
 
+let allPalettes = window.document.querySelectorAll('.color');
+let colorPalette = window.document.getElementById('color-palette');
+colorPalette.addEventListener('click', function(event) {
+    for (i = 0; i < allPalettes.length; i += 1) {
+        allPalettes[i].classList.remove('selected')
+    }
+    event.target.className += ' selected'
+})
+
 let pixelBoard = window.document.getElementById('pixel-board');
 for (lines = 0; lines < 5; lines += 1) {
     let tableRow = window.document.createElement('tr');
@@ -22,3 +31,7 @@ for (lines = 0; lines < 5; lines += 1) {
         tableRow.appendChild(tableCell)
     }
 }
+
+// pixelBoard.addEventListener(click, function(event) {
+
+// })
