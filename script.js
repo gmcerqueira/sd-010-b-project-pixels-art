@@ -14,7 +14,7 @@ function createPalette() {
 
 function colorSquare() {
   const square = document.querySelectorAll('.color');
-  square[0].className = 'selected';
+  square[0].className = 'color selected';
   square[0].style.backgroundColor = 'black';
   square[1].style.backgroundColor = 'blue';
   square[2].style.backgroundColor = 'green';
