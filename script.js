@@ -7,5 +7,7 @@ document.addEventListener('click', (event) => {
     oldColor.classList.remove('selected');
     selectedColor = event.target.id;
     event.target.classList.add('selected');
+  } else if (event.target.classList.contains('pixel')) {
+      event.target.style.backgroundColor = selectedColor;
   }
 });
