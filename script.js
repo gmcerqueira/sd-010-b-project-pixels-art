@@ -10,8 +10,12 @@
     let criaBr = document.createElement("br");
     encotraQuadro.appendChild(criaBr);
 }
-window.onload = pintarQuadrados;
+window.onload = selecionaPreto;
 
-function pintarQuadrados(){
-    console.log("teste")
+function selecionaPreto(){
+    let encontraPreto = document.getElementsByClassName("color")[0];
+    encontraPreto.classList.add("selected");
+}
+function pintarQuadrado(){
+    console.log("teste");
 }
