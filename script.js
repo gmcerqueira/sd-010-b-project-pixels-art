@@ -6,8 +6,8 @@ for (let index = 0; index < select.length; index +=1){
 
 
 function selectColor(event){
-    let elementSelecionado = document.querySelector('.selected'); 
-    elementSelecionado.classList.remove('selected');
-    event.target.classList.add('selected');
+    let elementSelecionado = document.querySelector('.color .selected'); 
+    elementSelecionado.classList.remove('color selected');
+    event.target.classList.add('color selected');
 }
 
