@@ -1,9 +1,29 @@
 
-.color{
+.color {
     display: inline-block;
     border-style: solid;
-    border-radius: 1px;
+    border-width: 1px;
     width: 40px;
     height: 40px;
     margin-left: 1%; 
+}
+
+#pixel-board{ 
+    display: table; 
+    border: solid;
+    border-width: 2px;
+    margin-top: 3%;
+    margin-left: 1%; 
+   
+}
+.tr{ 
+    display: table-row; 
+
+}
+.pixel{ 
+    display: table-cell;
+    border: solid; 
+    border-width: 2px;
+    width: 60px;
+    height: 60px;
 }
