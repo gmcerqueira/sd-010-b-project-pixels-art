@@ -19,9 +19,20 @@ function addClassToPaletteBox() {
   const boxes = paletteBox.children[0].children[0].children;
   for (let index = 0; index < boxes.length; index += 1) {
     boxes[index].classList.add(`color${index + 1}`);
+    if (index === 0) {
+      boxes[index].style.backgroundColor = 'black';
+      boxes[index].classList.add('selected');
+    }
   }
 }
 
-createBoxTable(4, 'color', 'color-palette');
-addClassToPaletteBox();
+const colorPalette = 'color-palette';
+
+createBoxTable(4, 'color', colorPalette);
+
 createBoxTable(5, 'pixel', 'pixel-board', 5);
+
+window.onload = () => {
+  addClassToPaletteBox();
+  // let selectedColor = document.querySelector('.selected').style.backgroundColor;
+};
