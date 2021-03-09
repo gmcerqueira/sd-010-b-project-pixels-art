@@ -2,7 +2,10 @@ window.onload = function () {
   let numberOfOption = 4;
   let numberOfItems = 25;
   let paletOfColors = null;
+  let paletOfPixel = null;
   let selectedColor = null;
+  let targetColor = null;
+  let colorChanged = 'cor_1';
 
   const elementHeader = document.createElement('header');
   document.body.appendChild(elementHeader);
@@ -23,6 +26,7 @@ window.onload = function () {
   const elemento2 = document.createElement('section');
   elemento2.id = 'pixel-board';
   elementos.appendChild(elemento2);
+  paletOfPixel = document.querySelector('#pixel-board');
 
   for (let index = 0; index < numberOfOption; index++) {
     const colorOption = document.createElement('div');
@@ -34,27 +38,38 @@ window.onload = function () {
     colorOption.id = 'cor_' + (index + 1);
     elemento1.appendChild(colorOption);
   }
+  selectedColor = document.querySelectorAll('.color');
 
   for (let index = 0; index < numberOfItems; index++) {
     const itemOption = document.createElement('div');
     itemOption.className = 'pixel';
     elemento2.appendChild(itemOption);
   }
-
-  selectedColor = document.querySelectorAll('.color');
+  targetColor = document.querySelectorAll('.pixel');
 
   function defaultClass() {
-    selectedColor[0].className = 'color';
-    selectedColor[1].className = 'color';
-    selectedColor[2].className = 'color';
-    selectedColor[3].className = 'color';
+    for (let index = 0; index < selectedColor.length; index++) {
+      selectedColor[index].className = 'color';
+    }
+    return true;
+  }
+  function defaultClassPixel() {
+    for (let index = 0; index < paletOfPixel.length; index++) {
+      paletOfPixel[index].style.backgroundColor = 'white';
+    }
     return true;
   }
 
   paletOfColors.addEventListener('click', function (props) {
     if (defaultClass()) {
       props.target.className = 'color selected';
+      colorChanged = props.target.id;
     }
   });
-  
+
+  paletOfPixel.addEventListener('click', function (props) {
+    if (defaultClassPixel()) {
+      props.target.id = colorChanged;
+    }
+  });
 };

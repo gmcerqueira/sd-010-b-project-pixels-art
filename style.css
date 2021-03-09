@@ -11,6 +11,31 @@
   background-color: black;
 }
 
+.cor_1 {
+  background-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+.cor_2 {
+  background-color: #6c5ce7;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+.cor_3 {
+  background-color: #e17055;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+.cor_4 {
+  background-color: #81ecec;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
 #cor_1 {
   background-color: black;
   display: inline-block;
