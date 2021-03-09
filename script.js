@@ -6,13 +6,11 @@ function setPixelClass() {
     colorPalette[item];
     // console.log(seletecColorPalette);
     colorPalette[item].addEventListener('click', function (event) {
-      // console.log(event.target);
-      //console.log(colorPalette[item].style);
+      console.log(event.target);
+      console.log(colorPalette[item].style);
 
-      if (colorPalette[item].length === 0) {
-        event.target.className = 'color';
-      }
-      console.log(colorPalette[item]);
+      colorPalette[item].classList.add('selected');
+      // colorPalette[item].classList.remove('selected');
     });
   }
 }
