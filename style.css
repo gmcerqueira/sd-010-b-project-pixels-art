@@ -4,6 +4,7 @@
 }
 
 #pixel-board {
+  width: 210px;
   border: 1px solid;
 }
 
@@ -15,15 +16,11 @@
   display: inline-block;
   width: 40px;
   height: 40px;
-}
-
-.pixel:not( :last-child ) {
-  border-right: 1px solid;
+  border: 1px solid;
 }
 
 .color {
   margin-right: 4px;
-  border: 1px solid;
 }
 
 #clear-board {

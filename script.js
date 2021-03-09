@@ -1,4 +1,4 @@
-let colors = ['black', 'red', 'green', 'blue', 'yellow'];
+let colors = ['black', 'green', 'blue', 'yellow'];
 const rowsAndCols = 5;
 
 sessionStorage.color = colors[0];
@@ -46,14 +46,16 @@ function pixelColorChange(e) {
   e.target.style.backgroundColor = sessionStorage.color;
 }
 
-function fillLinePixel(rowPixel) {
-  for (let i = 0; i < rowsAndCols; i += 1) {
+function fillLinePixel() {
+  let pixelBoard = document.getElementById('pixel-board');
+  for (let i = 0; i < rowsAndCols ** 2; i += 1) {
     let pixel = document.createElement('div');
     pixel.className = 'pixel';
-    rowPixel.appendChild(pixel);
+    pixelBoard.appendChild(pixel);
     pixel.addEventListener('click', pixelColorChange);
   }
 }
+fillLinePixel();
 
 function lines() {
   let pixelBoard = document.getElementById('pixel-board');
@@ -64,4 +66,4 @@ function lines() {
     fillLinePixel(rowPixel);
   }
 }
-lines();
+// lines();
