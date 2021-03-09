@@ -46,10 +46,11 @@ function createPalette() {
   paletteBlack.className = 'color selected';
   paletteBlack.style.backgroundColor = 'black';
   paletteDiv.appendChild(paletteBlack);
-  for (let index = 0; index < 4; index += 1) {
+  for (let index = 0; index < 3; index += 1) {
     let palette = document.createElement('div');
     palette.className = 'color';
     let number = Math.ceil((Math.random())*10);
+    console.log(number);
     palette.style.backgroundColor = colors[number];
     paletteDiv.appendChild(palette);
   }
