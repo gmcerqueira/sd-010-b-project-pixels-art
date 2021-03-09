@@ -121,6 +121,10 @@ function board() {
   boardSize = document.getElementById('board-size').value;
   if (boardSize === "") {
     alert('Board inválido!');
+  } else if (boardSize < 5) {
+    createBoard(5);
+  } else if (boardSize > 50) {
+    createBoard(50);
   } else {
     createBoard(boardSize);
   }
