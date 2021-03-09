@@ -1,0 +1,27 @@
+#title {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#color-palette div {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+#paletteBlack {
+  background-color: black;
+}
+
+#paletteGreen {
+  background-color: green;
+}
+
+#paletteYellow {
+  background-color: yellow;
+}
+
+#paletteBlue {
+  background-color: blue;
+}
