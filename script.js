@@ -4,12 +4,20 @@ let h1 = document.getElementById('title');
 h1.insertAdjacentHTML('afterend', '<div id="color-palette"></div>');
 fillLineColor();
 
+function currentColorSelected(e) {
+  let color = document.querySelector('.selected');
+  color.className = 'color'; // ou color.classList.remove('selected');
+  sessionStorage.color = e.target.style.backgroundColor;
+  e.target.className = 'color selected'; // ou e.target.className.add('selected'); ou ainda: e.target.className += ' selected'
+}
+
 function fillLineColor() {
   let colorPalette = document.getElementById('color-palette');
   for (let i = 0; i < colors.length; i += 1) {
     let color = document.createElement('div');
     color.className = (i !== 0 ? 'color' : 'color selected');
     colorPalette.appendChild(color);
+    color.addEventListener('click', currentColorSelected);
   }
   pixelColor();
 }
