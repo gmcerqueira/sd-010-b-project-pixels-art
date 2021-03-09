@@ -40,7 +40,10 @@ const checkEmptyValue = (value) => {
   return valor;
 };
 
-const createRow = (value, board) => {
+const createRow = (value) => {
+  const board = document.getElementById('pixel-board');
+  board.innerText = '';
+
   for (let i = 0; i < value; i += 1) {
     const newRow = document.createElement('div');
     newRow.className = 'row';
@@ -60,22 +63,15 @@ const createRow = (value, board) => {
 
 const setSize = (value) => {
   checkEmptyValue(value);
-  let valor;
 
+  let valor = value;
   if (value > 50) {
     valor = 50;
   } else if (value < 5) {
     valor = 5;
   }
-  valor = value;
 
-  // value > 50 ? (valor = 50) : null;
-  // value < 5 ? (valor = 5) : null;
-
-  const board = document.getElementById('pixel-board');
-  board.innerText = '';
-
-  createRow(valor, board);
+  createRow(valor);
 };
 
 btnBoardSIze.addEventListener('click', () => {
