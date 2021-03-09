@@ -6,10 +6,25 @@
 #color-palette {
   text-align: center;
 }
+
 .color {
   border: 1px solid black;
   display: inline-block;
   height: 50px;
   margin: 50px 10px;
   width: 50px;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  border-spacing: 0px;
+  margin: 0 auto;
+  height: 300px;
+  width: 300px;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  padding: 0px;
 }
