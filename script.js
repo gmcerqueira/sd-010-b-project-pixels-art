@@ -78,3 +78,33 @@ function criaPixels() {
 }
 
 criaPixels();
+let pixelPreto = document.getElementById('black');
+let pixelCorUm = document.getElementById('corUm');
+let pixelCorDois = document.getElementById('corDois');
+let pixelCorTres = document.getElementById('corTres');
+
+function pegaCorPreta() {
+  let elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  pixelPreto.classList.add('selected');
+}
+function pegaCorUm() {
+  let elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  pixelCorUm.classList.add('selected');
+}
+function pegaCorDois() {
+  let elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  pixelCorDois.classList.add('selected');
+}
+function pegaCorTres() {
+  let elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  pixelCorTres.classList.add('selected');
+}
+
+pixelPreto.addEventListener('click', pegaCorPreta);
+pixelCorUm.addEventListener('click', pegaCorUm);
+pixelCorDois.addEventListener('click', pegaCorDois);
+pixelCorTres.addEventListener('click', pegaCorTres);
