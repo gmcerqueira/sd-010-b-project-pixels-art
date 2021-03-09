@@ -40,7 +40,7 @@ function createColorBoard() {
 }
 
 function reselectColor() {
-  let select = document.getElementsByClassName('color');
+  const select = document.getElementsByClassName('color');
   for (let index = 0; index < select.length; index += 1) {
     select[index].addEventListener('click', function (event) {
       select[0].classList.remove('selected');
@@ -52,7 +52,30 @@ function reselectColor() {
   }
 }
 
+function printSquare() {
+  const color = document.getElementsByClassName('color');
+  const pixel = document.getElementsByClassName('pixel');
+  const color1 = color[0]; 
+  const color2 = color[1];
+  const color3 = color[2];
+  const color4 = color[3];
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].addEventListener('click', function (event) {
+      if (color1.className === 'color selected') {
+        event.target.style.backgroundColor = 'black';
+      } else if (color2.className === 'color selected') {
+        event.target.style.backgroundColor = 'blue';
+      } else if( color3.className === 'color selected') {
+        event.target.style.backgroundColor = 'green';
+      } else if (color4.className === 'color selected') {
+        event.target.style.backgroundColor = 'red';
+      }
+    })
+  }
+}
+
 createPalette();
 colorSquare();
 createColorBoard();
 reselectColor();
+printSquare();
