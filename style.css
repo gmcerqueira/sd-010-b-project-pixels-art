@@ -20,12 +20,9 @@
     padding: 0;
     margin: 0;
     border-collapse: collapse;
+    border-spacing: 0px
 }
 
 table {
     border-collapse: collapse;
-}
-
-#botao {
-    display:flexbox;
 }

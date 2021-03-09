@@ -13,8 +13,8 @@ function criaPixels() {
       const criaCelula = document.createElement('td');
       tabela.appendChild(criaCelula).className = 'pixel';
       document.getElementsByClassName('pixel');
-      let apoio = document.getElementsByClassName('pixel');
-      apoio[apoio.length - 1].id = `cell-${linha+1}-${celula+1}`;
+      const apoio = document.getElementsByClassName('pixel');
+      apoio[apoio.length - 1].id = `cell-${linha + 1}-${celula + 1}`;
       apoio[apoio.length - 1].style.background = '#ffffff';
     }
   }
@@ -84,28 +84,28 @@ verificaCoresUm();
 verificaCoresDois();
 verificaCoresTres();
 
-let pixelPreto = document.getElementById('black');
-let pixelCorUm = document.getElementById('corUm');
-let pixelCorDois = document.getElementById('corDois');
-let pixelCorTres = document.getElementById('corTres');
+const pixelPreto = document.getElementById('black');
+const pixelCorUm = document.getElementById('corUm');
+const pixelCorDois = document.getElementById('corDois');
+const pixelCorTres = document.getElementById('corTres');
 
 function pegaCorPreta() {
-  let elemento = document.querySelector('.selected');
+  const elemento = document.querySelector('.selected');
   elemento.classList.remove('selected');
   pixelPreto.classList.add('selected');
 }
 function pegaCorUm() {
-  let elemento = document.querySelector('.selected');
+  const elemento = document.querySelector('.selected');
   elemento.classList.remove('selected');
   pixelCorUm.classList.add('selected');
 }
 function pegaCorDois() {
-  let elemento = document.querySelector('.selected');
+  const elemento = document.querySelector('.selected');
   elemento.classList.remove('selected');
   pixelCorDois.classList.add('selected');
 }
 function pegaCorTres() {
-  let elemento = document.querySelector('.selected');
+  const elemento = document.querySelector('.selected');
   elemento.classList.remove('selected');
   pixelCorTres.classList.add('selected');
 }
@@ -116,8 +116,8 @@ pixelCorDois.addEventListener('click', pegaCorDois);
 pixelCorTres.addEventListener('click', pegaCorTres);
 
 function criarListenerCelulas() {
-  let quadro = document.getElementById('pixel-board');
-  quadro.addEventListener('click', function pintar(event){
+  const quadro = document.getElementById('pixel-board');
+  quadro.addEventListener('click', function (event) {
     event.target.style.background = document.getElementsByClassName('selected')[0].style.background;
   });
 }
@@ -128,14 +128,14 @@ function limpar() {
   const n = 5;
   for (let linha = 0; linha < n; linha += 1) {
     for (let celula = 0; celula < n; celula += 1) {
-     document.getElementById(`cell-${linha + 1}-${celula + 1}`).style.background = '#ffffff';
+      document.getElementById(`cell-${linha + 1}-${celula + 1}`).style.background = '#ffffff';
     }
   }
 }
 
 function adicionaLimpar() {
-  let botao = document.getElementById('clear-board');
-  botao.addEventListener('click',limpar);
+  const botao = document.getElementById('clear-board');
+  botao.addEventListener('click', limpar);
 }
 
 adicionaLimpar();
