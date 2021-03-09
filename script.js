@@ -1,5 +1,26 @@
+window.onload = function createPixelBoard(){
+  // usei como consulta para resolver o problema, a propriedade display do CSS deste site para posicionar os elementos. URL => https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css | Usei a propriedade display do CSS deste site para posicionar os elementos.
+
+  let boardPixel = document.createElement('div');
+  boardPixel.id = 'pixel-board';
+
+  for (let column = 0; column < 5; column += 1){
+    let lineDiv = document.createElement('div');
+      lineDiv.className = 'line';
+    
+      for (let line = 0; line < 5; line += 1){
+        let pixel = document.createElement('div');
+        pixel.className = 'pixel white';
+        
+        lineDiv.appendChild(pixel);
+      }
+    boardPixel.appendChild(lineDiv);
+  }
+  injectMain(boardPixel);
+}
+
 //cria uma div com a classe color
-function createDiv(idElement) {
+function createDivPalette() {
   let paletteDiv = document.createElement('div');
   paletteDiv.className = 'color'
   return paletteDiv
@@ -23,7 +44,7 @@ colorPalette.id = 'color-palette';
 
 //cria divs e injeta em section e injeta section na main
 for (let index = 0; index < 4; index += 1) {
-  colorPalette.appendChild(createDiv());
+  colorPalette.appendChild(createDivPalette());
 }
 injectMain(colorPalette);
 
@@ -36,4 +57,15 @@ let thirdDiv = document.querySelector('#color-palette').firstChild.nextSibling.n
 thirdDiv.id = 'red';
 let fourthDiv = document.querySelector('#color-palette').lastChild;
 fourthDiv.id = 'yellow';
+
+
+
+
+
+
+
+    
+    
+    
+    
 
