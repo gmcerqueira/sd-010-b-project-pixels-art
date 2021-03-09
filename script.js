@@ -1,8 +1,8 @@
 // Funções utilizadas
 function createPalette() {
   const paletteDiv = document.getElementById('color-palette');
-  const colors = ['yellow', 'blue', 'green', 'red', 
-  'orange', 'brown', 'grey', 'aqua', 'khaki', 'lime'];
+  const colors = ['yellow', 'blue', 'green', 'red',
+    'orange', 'brown', 'grey', 'aqua', 'khaki', 'lime'];
   const paletteBlack = document.createElement('div');
   paletteBlack.className = 'color selected';
   paletteBlack.style.backgroundColor = 'black';
@@ -20,11 +20,11 @@ function createPalette() {
 function createGrid(size) {
   const board = document.getElementById('pixel-board');
   for (let index = 0; index < size; index += 1) {
-    let row = document.createElement('TR');
+    const row = document.createElement('TR');
     row.id = `row${index}`;
     board.appendChild(row);
     for (let index2 = 0; index2 < size; index2 += 1) {
-      let cell = document.createElement('TD');
+      const cell = document.createElement('TD');
       cell.className = 'pixel';
       cell.style.backgroundColor = 'white';
       row.appendChild(cell);
@@ -51,8 +51,8 @@ window.onload = function () {
       event.target.className = 'color selected';
     }
 
-    if (event.target.classList.contains('pixel') ) {
-      let selected = document.getElementsByClassName('selected');
+    if (event.target.classList.contains('pixel')) {
+      const selected = document.getElementsByClassName('selected');
       event.target.style.backgroundColor = selected[0].style.backgroundColor;
     }
 
@@ -66,8 +66,8 @@ window.onload = function () {
     if (event.target.id === 'generate-board') {
       const size = document.getElementById('board-size');
       if (size.value && size.value > 0) {
-        if (size.value < 5) { size.value = 5 };
-        if (size.value > 50) { size.value = 50 };
+        if (size.value < 5) { size.value = 5; }
+        if (size.value > 50) { size.value = 50; }
         const parent = document.getElementById('pixel-board');
         removeAllChildNodes(parent);
         createGrid(Number(size.value));
