@@ -1,4 +1,3 @@
-let quadrado2 = document.querySelectorAll('.color')[1]
-document.getElementById('#button1').addEventListener('click', function(){
-    quadrado2.style.backgroundColor = 'yellow';
+document.querySelectorAll('#button1')[0].addEventListener('click', function(){
+    document.querySelectorAll('.color')[1].style.backgroundColor = 'yellow';
 });

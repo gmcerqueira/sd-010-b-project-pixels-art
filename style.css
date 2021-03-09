@@ -30,7 +30,7 @@ p {
 }
 
 .pixel {
-  background-color: 'white';
+  background-color: 'rgb(255, 255, 255)';
   width: 40px;
   height: 40px;
   border: solid 1px black;
