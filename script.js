@@ -1,7 +1,13 @@
-let quadroPixels = document.getElementById('pixel-board');
-let pixels = document.createElement('div');
-
-for (let i = 0; i < 25; i += 1){
-  quadroPixels.appendChild(pixels);
-  pixels.className = 'pixel';
+function adicionandoPixels() {
+  const quadroPixels = document.getElementById('pixel-board');
+  for (let j = 0; j < 5; j += 1) {
+    const linhasQuadro = document.createElement('div');
+    quadroPixels.appendChild(linhasQuadro);
+    for (let i = 0; i < 5; i += 1) {
+      const pixels = document.createElement('div');
+      linhasQuadro.appendChild(pixels);
+      pixels.className = 'pixel';
+    }
+  }
 }
+adicionandoPixels();
