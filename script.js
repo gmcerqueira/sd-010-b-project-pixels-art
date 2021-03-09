@@ -1,11 +1,11 @@
-var corBlack = document.querySelectorAll('.color')[0];
-corBlack.style.backgroundColor = 'black';
+let cores = ['black', 'red', 'blue', 'green'];
+let colorPalette = document.querySelector('#color-palette');
 
-var corRed = document.querySelectorAll('.color')[1];
-corRed.style.backgroundColor = 'red';
+for(let i=0; i<cores.length; i++){
+  let cor = cores[i];
+  let criarCor = document.createElement("div");
+  criarCor.className = "color";
+  criarCor.style.backgroundColor = cor;
+  colorPalette.appendChild(criarCor);
+}
 
-var corBlue = document.querySelectorAll('.color')[2];
-corBlue.style.backgroundColor = 'blue';
-
-var corGreen = document.querySelectorAll('.color')[3];
-corGreen.style.backgroundColor = 'green';
