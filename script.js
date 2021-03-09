@@ -25,20 +25,36 @@ for (let i = 0; i < rowDiv.length; i += 1) {
 // ---------------------------------------------------
 // Mudança da Classe .selected
 
+const selectedColor = document.getElementsByClassName('selected');
 const black = document.querySelector('.black');
 const second = document.querySelector('.second-color');
 const third = document.querySelector('.third-color');
 const fourth = document.querySelector('.fourth-color');
 
-function teste () {
-  black.classList.remove('selected');
-  second.classList.remove('selected');
-  third.classList.remove('selected');
-  fourth.classList.remove('selected');
+function classChange() {
+  const selectedElement = document.querySelector('.selected');
+  selectedElement.classList.remove('selected');
   this.classList.add('selected');
-};
+  console.log(selectedColor[0].classList[1]);
+}
 
-black.addEventListener('click', teste);
-second.addEventListener('click', teste);
-third.addEventListener('click', teste);
-fourth.addEventListener('click', teste);
+black.addEventListener('click', classChange);
+second.addEventListener('click', classChange);
+third.addEventListener('click', classChange);
+fourth.addEventListener('click', classChange);
+
+// ---------------------------------------------------
+// Utilizando a classe .selected para pintar os pixels
+// Referência: https://zellwk.com/blog/css-values-in-js/
+
+const pixels = document.querySelectorAll('.pixel');
+
+function paintPixel() {
+  const style = getComputedStyle(selectedColor[0]);
+  const color = style.backgroundColor;
+  this.style.backgroundColor = color;
+}
+
+for (let i = 0; i < pixels.length; i += 1) {
+  pixels[i].addEventListener('click', paintPixel);
+}
