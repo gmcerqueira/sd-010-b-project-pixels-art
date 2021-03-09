@@ -20,3 +20,12 @@
 .color:nth-of-type(4) {
   background-color: green;
 }
+table {
+  border-collapse: collapse;
+}
+
+tr, td {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
