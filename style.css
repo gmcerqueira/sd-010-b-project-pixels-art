@@ -15,7 +15,6 @@
   width: 200px;
   height: 200px;
   margin: 0px;
-  ;
   margin-top: 40px;
 }
 
@@ -26,5 +25,5 @@
   display: inline-block;
   width: 38px;
   height: 38px;
-  background-color: rgb(255, 255, 255)
+  background-color: rgb(255, 255, 255);
 }
