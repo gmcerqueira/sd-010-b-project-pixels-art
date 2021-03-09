@@ -1,6 +1,6 @@
 //Cria a tabela de paleta de cores
 let paletaDeCores = document.createElement("table");
-paletaDeCores.id = "color-pallete"
+paletaDeCores.id = "color-palette"
 document.body.appendChild(paletaDeCores);
 
 //Cria a célula para cada uma das cores selecionaveis
@@ -56,6 +56,7 @@ for (i=0; i<linhasTabela.length; i++) {
     for (j=0; j<linhasTabela.length; j++) {
         let cedulasTabela = document.createElement("td");
         cedulasTabela.className = "pixel"
+        linhasTabela[i].style.backgroundColor = "white";
         linhasTabela[i].appendChild(cedulasTabela);
     }
 }
