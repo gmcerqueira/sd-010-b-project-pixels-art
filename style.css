@@ -1,3 +1,8 @@
+#color-palette {
+  max-height: 102px;
+  max-width: 408px;
+}
+
 #paletteTwo {
   background-color: #f4d06f;
 }
@@ -20,3 +25,4 @@
 .inlineDivs {
   max-height: 40px;
 }
+

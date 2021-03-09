@@ -27,3 +27,8 @@ localStorage.setItem('initialColor', 'black');
 localStorage.setItem('Selected', ' selected');
 paletteColors[0].style.backgroundColor = (localStorage.getItem('initialColor'));
 paletteColors[0].className += (localStorage.getItem('Selected'));
+
+paletteBoard.addEventListener('click', function (event) {
+  document.querySelector('.selected').className = 'color';
+  event.target.className += ' selected';
+});
