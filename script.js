@@ -20,3 +20,15 @@ black.style.backgroundColor = 'black'
 green.style.backgroundColor = 'green'
 red.style.backgroundColor = 'red'
 blue.style.backgroundColor = 'blue'
+
+let pixelboard = document.createElement('table')
+pixelboard.id = 'pixel-board'
+document.body.appendChild(pixelboard)
+
+
+for (let i = 0; i < 5; i += 1){
+    let celula = document.createElement('tr')
+    celula.className = 'pixel'
+    pixelboard.appendChild(celula)
+}
+
