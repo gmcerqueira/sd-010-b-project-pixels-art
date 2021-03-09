@@ -5,11 +5,11 @@ box[1].style.backgroundColor = 'blue';
 box[2].style.backgroundColor = 'red';
 box[3].style.backgroundColor = 'green';
 
-const ul = document.querySelector('#pixel-board');
+const div = document.querySelector('#pixel-board');
 for (let index = 0; index < 25; index += 1) {
-  const li = document.createElement('div');
-  li.className = 'pixel';
-  ul.appendChild(li);
+  const newdiv = document.createElement('div');
+  newdiv.className = 'pixel';
+  div.appendChild(newdiv);
 }
 document.getElementsByClassName('color')[0].className += ' selected';
 
@@ -35,4 +35,3 @@ function changeClass() {
 }
 
 changeClass();
-paleta[1].addEventListener('click')
