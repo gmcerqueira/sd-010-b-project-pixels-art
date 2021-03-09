@@ -7,6 +7,15 @@ body {
   text-align: center;
 }
 
+button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 4px 10px;
+  font-size: 1.2em;
+  background: none;
+}
+
+
 #title {
   margin: 2vh 0;
 }
@@ -22,6 +31,7 @@ body {
   width: 70px;
   display: inline-block;
   border: 1px solid black;
+  transition: 0.3s;
 }
 
 #pixel-board {
