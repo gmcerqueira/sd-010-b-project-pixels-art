@@ -70,3 +70,19 @@ function changeFourthColor(element) {
 inpSecond.addEventListener('change', changeSecondColor);
 inpThird.addEventListener('change', changeThirdColor);
 inpFourth.addEventListener('change', changeFourthColor);
+
+/* Criando quadro de pixels dinamicamente: */
+let pixelBoard = null;
+pixelBoard = document.getElementById('pixel-board');
+for (let index = 0; index < 25; index += 1) {
+  if (index % 5 === 0) {
+    let breakRow = null;
+    breakRow = document.createElement('br');
+    pixelBoard.appendChild(breakRow);
+  }
+  let pixel = null;
+  pixel = document.createElement('span');
+  pixel.setAttribute('id', index + 1);
+  pixel.className = 'pixel';
+  pixelBoard.appendChild(pixel);
+}
