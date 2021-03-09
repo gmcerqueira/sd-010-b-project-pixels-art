@@ -1,6 +1,8 @@
+#color-palette{
+display: flex;
+}
 .color {
     margin: 5px;
-    display: inline-block;
     height: 50px;
     width: 50px;
     background-color:white;
