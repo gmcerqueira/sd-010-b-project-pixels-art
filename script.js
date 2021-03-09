@@ -3,6 +3,16 @@ const pixel = document.getElementsByClassName('pixel');
 const inlineDivs = document.getElementsByClassName('inlineDivs');
 const paletteColors = document.getElementsByClassName('color');
 const paletteBoard = document.getElementById('color-palette');
+const buttonDiv = document.querySelector('#buttonDiv');
+const button = document.createElement('button');
+
+buttonDiv.appendChild(button);
+button.innerText = 'limpar';
+button.addEventListener('click', function() {
+  for (let counter = 0; counter < pixel.length; counter += 1) {
+    pixel[counter].style.backgroundColor = 'white';
+  }
+});
 
 for (let counterDiv = 0; counterDiv < 5; counterDiv += 1) {
   pixelBoard.appendChild(document.createElement('div'));
@@ -46,18 +56,4 @@ paletteBoard.addEventListener('click', function (event) {
 pixelBoard.addEventListener('click', function (event) {
   const backgroundColor = document.querySelector('.selected').style.backgroundColor;
   event.target.style.backgroundColor = backgroundColor;
-});
-
-const makeDiv = document.createElement('div');
-document.body.appendChild(makeDiv);
-makeDiv.id = 'divButton';
-const makeButton = document.createElement('button');
-makeDiv.appendChild(makeButton);
-makeButton.innerText = 'Limpe Os Campos!';
-const button = document.querySelector('button');
-
-button.addEventListener('click', function() {
-  for (let counter = 0; counter < pixel.length; counter += 1) {
-    pixel[counter].style.backgroundColor = 'white';
-  }
 });
