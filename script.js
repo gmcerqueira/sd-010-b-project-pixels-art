@@ -14,12 +14,17 @@ function buildingColorPalletes (){
     }
 
     //Insere as cores
-    let arrColorPallete = ["black", "orange", "lightblue", "salmon"];
     colorPallete = document.querySelectorAll(".color");
-    for (let i in colorPallete){
-        colorPallete[i].style.backgroundColor = arrColorPallete[i];
-    }
-    
+    colorPallete[0].style.backgroundColor = "black";
+    colorPallete[1].style.backgroundColor = "orange";
+    colorPallete[2].style.backgroundColor = "lightblue";
+    colorPallete[3].style.backgroundColor = "salmon"; 
+    colorPallete[0].classList.add("selected");
+
+    // let arrColorPallete = ["black", "orange", "lightblue", "salmon"]; // Algoritmo com dinamisco, embora incompleto
+    // for (let i in colorPallete){
+    // colorPallete[i].style.backgroundColor = arrColorPallete[i];
+    // }
 }
 
 //Construindo Quadro de Cores a Pintar
@@ -39,15 +44,35 @@ function buildingBoard (){
             let tdTableBoard = document.createElement("td");
             tdTableBoard.className = "pixel";
             tdTableBoard.style.backgroundColor = "white";
-            tdTableBoard.style.width = "40px";
-            tdTableBoard.style.height = "40px";
-            tdTableBoard.style.border = "1px solid black"
             trTableBoard.appendChild(tdTableBoard);
             boardPixels.appendChild(trTableBoard);  
         }
     }
 }
+
+//Adicionando a classe selected na cor clicada e retirando das demais
+ function removeAddClassSelected (){
+    let colorClass = document.querySelectorAll(".color");
+    for (let i = 0; i < colorClass.length; i += 1){
+        colorClass[i].addEventListener("click",removeAddSelected);
+     }
+    function removeAddSelected(){
+        for (let i = 0; i < colorClass.length; i += 1){
+            colorClass[i].classList.remove("selected");
+// Uso do parâmetro classList baseado no conteúdo no site https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList            
+        }
+        this.classList.add("selected");
+// Uso do parâmetro this baseada no conteúdo do site https://desenvolvimentoparaweb.com/javascript/this-javascript-dominando/
+    }
+ }
+
+
+
+
+
 window.onload = function (){
     buildingBoard();
     buildingColorPalletes();
+    removeAddClassSelected();
+        
 }
