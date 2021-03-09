@@ -30,7 +30,6 @@ function geraPixel() {
 
 	for (let cont = 0; cont < numeroPixels; cont += 1) {
 		let itemPixel = document.createElement('div');
-		itemPixel.id = 'teste';
 		itemPixel.className = 'pixel';
 		pixels.appendChild(itemPixel);
 
@@ -42,12 +41,21 @@ geraPixel();
 function escolheCor() {
 	let corDaVez = document.querySelectorAll(".color");
 	for (let cont = 0; cont < corDaVez.length; cont += 1) {
-		corDaVez[cont].addEventListener("click", selectColor())
+		corDaVez[cont].addEventListener("click", function(event) {
+			corDaVez[cont].className = "color selected";
+		})
 	}
 }
 
 escolheCor();
 
-function selectColor(event) {
-	corDaVez[cont].className = "color selected";
+function clear(){
+	let limpaPixel = document.querySelectorAll(".color");
+	for (let cont = 0; cont < itemPixel.length; cont += 1){
+		itemPixel[cont] = itemPixel[cont].style.backgroundColor = "rgb(255 , 255 , 255)";
+	}
+	
 }
+document.getElementById("clear-board").addEventListener("click", clear());
+
+
