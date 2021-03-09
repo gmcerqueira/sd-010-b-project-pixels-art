@@ -59,12 +59,15 @@ window.onload = function () {
       }
     }
 
-    if (event.target.id === 'redefine') {
-      const parent = document.getElementById('pixel-board');
-      removeAllChildNodes(parent);
-      const size = document.getElementById('size');
-      number = Number(size.value);
-      createGrid(number);
+    if (event.target.id === 'generate-board') {
+      const size = document.getElementById('board-size');
+      if (size.value && size.value > 0) {
+        const parent = document.getElementById('pixel-board');
+        removeAllChildNodes(parent);
+        createGrid(Number(size.value));
+      } else {
+        alert("Board inválido!");
+      }
     }
   }, false);
 };
