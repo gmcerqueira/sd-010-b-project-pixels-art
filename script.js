@@ -27,6 +27,7 @@ magenta.style.backgroundColor = "magenta";
 //Cria o botão que limpa todos os pixels
 let button = document.createElement("button");
 button.innerHTML = "Limpar"
+button.id = "clear-board";
 document.body.appendChild(button)
 button.style.padding = "auto";
 button.style.marginLeft = "98px"
