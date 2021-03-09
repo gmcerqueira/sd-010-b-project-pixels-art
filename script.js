@@ -9,3 +9,11 @@ function createPaletteColors() {
   }
 }
 createPaletteColors();
+
+function blackColorInitial() {
+  const boxColorBlack = document.querySelectorAll('.color')[0];
+  boxColorBlack.className = 'selected';
+  const boxColorBlackStyle = boxColorBlack.style.backgroundColor;
+  localStorage.setItem('color', boxColorBlackStyle);
+}
+blackColorInitial();
