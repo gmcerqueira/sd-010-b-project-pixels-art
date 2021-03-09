@@ -3,29 +3,26 @@
   border-radius: 0;
   display: inline-block;
   height: 35px;
-  margin-left: 0;
+
   vertical-align: middle;
   width: 35px;
-  margin: 0;
-  padding: 0;
+
 
 
 }
 
 #pixel-board {
-  padding: 0;
+
   width: 200px;
   height: 200px;
-
-
-
+  margin-top: 30px;
 }
 
 .pixel {
-
   border: 1px solid black;
   display: inline-block;
   width: 38px;
   height: 38px;
   background-color: rgb (255, 255, 255);
+
 }
