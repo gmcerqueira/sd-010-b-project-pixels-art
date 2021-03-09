@@ -52,6 +52,7 @@
   height: 40px;
   border-width: 1px;
   border-style: solid;
+  border-color: black;
 }
 #pixel-board {
   display: inline-block;
