@@ -1,0 +1,25 @@
+.display-table {
+  display: table; 
+}
+.display-table > div { 
+  display: table-row;   
+}
+.display-table > div > div { 
+  display: table-cell;
+  padding: 50px;  
+}
+#c1 {
+  background-color: black;
+}
+#c2 {
+  background-color: blue;
+}
+#c3 {
+  background-color: red;
+}
+#c4 {
+  background-color: green;
+}
+#color-palette {
+  margin: 50px;
+}
