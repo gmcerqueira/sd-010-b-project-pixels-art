@@ -12,23 +12,25 @@
 }
 
 .black {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
 }
 
 .blue {
-  background-color: rgb(0, 0, 255);
+  background-color: blue;
 }
 
 .red {
-  background-color: rgb(255, 0, 0);
+  background-color: red;
 }
 
 .green {
-  background-color: rgb(0, 255, 0);
+  background-color: green;
 }
 
-.pixel {
+.pixel-board {
   display: table;
+  width: 200px;
+  height: 200px;
 }
 
 .tr {
@@ -43,5 +45,6 @@
   border: 1px solid rgb(0, 0, 0);
   width: 40px;
   height: 40px;
+  background-color: white;
 }
 
