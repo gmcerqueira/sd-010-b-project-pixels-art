@@ -18,29 +18,40 @@ header {
 section {
   background-color: aliceblue;
   padding: 2px;
-  display: inline;
+  text-align: center;
 }
 
-#preto {
+section #preto {
   background-color: black;
   width: 40px;
   height: 40px;
+  border: solid 1px black;
+  display: inline-block;
 }
 
-#vermelho {
+section #vermelho {
   background-color: red;
   width: 40px;
   height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  margin-left: 5px;
 }
 
-#azul {
+section #azul {
   background-color: blue;
   width: 40px;
   height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  margin-left: 5px;
 }
 
-#verde {
+section #verde {
   background-color: green;
   width: 40px;
   height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  margin-left: 5px;
 }
