@@ -1,22 +1,42 @@
 .color {
-    display: inline-block;
-    border: 1px solid black;
-    width: 90px;
-    height: 90px;
+  display: inline-block;
+  border: 1px solid black;
+  width: 90px;
+  height: 90px;
 }
 
 #black {
-    background-color:black;
+  background-color: black;
 }
 
 #red {
-    background-color: red;
+  background-color: red;
 }
 
 #blue {
-    background-color: blue;
+  background-color: blue;
 }
 
 #green {
-    background-color:green;
+  background-color: green;
+}
+
+.pixel {
+  border: 1px solid black;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+}
+
+#pixel-board {
+  display: table;
+  border-collapse: collapse;
+}
+
+#pixelalign {
+  display: table-cell;
+}
+
+#pixeltable {
+  display: table-row;
 }
