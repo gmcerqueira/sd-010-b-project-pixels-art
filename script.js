@@ -74,8 +74,24 @@ const selectColor = (element) => {
   element.classList.add('selected');
 };
 
+// Adding listeners to pixels
+const setPixelColor = () => {
+  const pixelsBoxes = Array.from(document.querySelectorAll('.pixel'));
+  pixelsBoxes.map((pixel) => {
+    pixel.addEventListener('click', (event) => paintFunction(event.target));
+  });
+};
+
+// Paint Function
+
+const paintFunction = (pixel) => {
+  const color = document.querySelector('.selected').style.backgroundColor;
+  pixel.style.backgroundColor = color;
+};
+
 function start() {
   setPalleteColors();
   setPixelGrid(5);
   selectPalleteColor();
+  setPixelColor();
 }
