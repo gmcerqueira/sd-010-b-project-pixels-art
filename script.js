@@ -38,6 +38,23 @@ function reatribuiClassSelected(){
     this.classList.add("selected")
 }
 
+let botaoReset = document.createElement("button");
+botaoReset.innerHTML = "Limpar"
+botaoReset.id = "clear-board";
+document.body.appendChild(botaoReset)
+botaoReset.addEventListener("click", resetaQuadro)
+
+let auxClearPixels = document.getElementsByClassName("pixel");
+console.log(auxClearPixels)
+
+function resetaQuadro(){
+    for(p=0;p<auxClearPixels.length;p++){
+        auxClearPixels[p].style.backgroundColor = "white"
+    }
+}
+
+
+
 let quadro = document.createElement("table");
 quadro.id = "pixel-board";
 document.body.appendChild(quadro);
