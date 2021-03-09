@@ -53,13 +53,8 @@ window.onload = function () {
 
   paletOfColors.addEventListener('click', function (props) {
     if (defaultClass()) {
-      if (props.target.className == 'color') {
-        props.target.className = 'color selected';
-      } else {
-        console.log('selecionado');
-        props.target.className = 'color';
-      }
+      props.target.className = 'color selected';
     }
   });
-  console.log(selectedColor);
+  
 };
