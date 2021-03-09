@@ -37,6 +37,18 @@ function addPaletteBoxClickEvent() {
   }
 }
 
+function changeBgColor(event, color) {
+  const element = event;
+  element.target.style.backgroundColor = color;
+}
+
+function addPixelClickEvent(eventFunction) {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', eventFunction);
+  }
+}
+
 const colorPalette = 'color-palette';
 
 createBoxTable(4, 'color', colorPalette);
@@ -46,5 +58,8 @@ createBoxTable(5, 'pixel', 'pixel-board', 5);
 window.onload = () => {
   addClassToPaletteBox();
   addPaletteBoxClickEvent();
-  // let selectedColor = document.querySelector('.selected').style.backgroundColor;
+  addPixelClickEvent((event) => {
+    const selectedColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+    changeBgColor(event, selectedColor);
+  });
 };
