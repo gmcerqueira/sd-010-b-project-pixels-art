@@ -13,11 +13,11 @@ height: 70px;
 
 }
 li:nth-child(1){
-    background-color: red;
+    background-color:black;
     margin-left: 5px;
 }
 li:nth-child(2){
-background-color: green;
+background-color: red;
 margin-left: 8px;
 }
 li:nth-child(3){
