@@ -1,29 +1,40 @@
 body {
-    text-align: center;
-    font-family: sans-serif;
+  text-align: center;
+  font-family: sans-serif;
 }
 
 .color {
-    border: 1px solid black;
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    margin: 10px;
-    display: inline-block;
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 10px;
+  display: inline-block;
 }
 
 #black {
-    background-color: black;
+  background-color: black;
 }
 
 #red {
-    background-color: red;
+  background-color: red;
 }
 
 #green {
-    background-color: green;
+  background-color: green;
 }
 
 #blue {
-    background-color: blue;
+  background-color: blue;
+}
+
+.pixel {
+    border: 1px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: white;
+    width: 67px;
+    height: 67px;
+    display: inline-block;
 }
