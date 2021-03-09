@@ -3,27 +3,27 @@
 } */
 
 .color {
-  height: 57px;
-  width: 57px;
+  height: 53px;
+  width: 53px;
   border: solid;
   border-width: 1px;
   border-color: black;
   display: inline-block;
 }
 
-#color-black {
+#black {
   background-color: black;
 }
 
-#color-green {
+#green {
   background-color: green;
 }
 
-#color-red {
+#red {
   background-color: red;
 }
 
-#color-blue {
+#blue {
   background-color: blue;
 }
 
@@ -35,6 +35,16 @@
   height: 40px;
   width: 40px;
   border: solid;
+  border-width: 1px;
   border-color: black;
   background-color: white;
+}
+
+.selected {
+  height: 53px;
+  width: 53px;
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+  display: inline-block;
 }
