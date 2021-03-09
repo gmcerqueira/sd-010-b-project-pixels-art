@@ -24,6 +24,21 @@ purple.style.backgroundColor = "purple";
 pink.style.backgroundColor = "pink";
 magenta.style.backgroundColor = "magenta";
 
+//Cria o botão que limpa todos os pixels
+let button = document.createElement("button");
+button.innerHTML = "Limpar"
+document.body.appendChild(button)
+button.style.padding = "auto";
+button.style.marginLeft = "98px"
+button.addEventListener("click", limpaQuadro);
+
+
+function limpaQuadro() {
+    for (i=0; i<pixels.length; i++) {
+        pixels[i].style.backgroundColor = "white";
+    }
+}
+
 //Cria o quadro onde iremos pintar
 let quadroDePixels = document.createElement("table");
 quadroDePixels.id = "pixel-board";
@@ -49,11 +64,27 @@ for (i=0; i<coresDaPaleta.length; i++) {
     coresDaPaleta[i].addEventListener("click", selecionaCor)
 }
 
-function selecionaCor(){
-    black.classList.remove("selected");
-    purple.classList.remove("selected");
-    pink.classList.remove("selected");
-    magenta.classList.remove("selected");
+function selecionaCor() {
+    for (i=0; i<coresDaPaleta.length; i++) {
+        coresDaPaleta[i].classList.remove("selected")
+    }
     this.classList.add("selected");
 }
 
+//Determina que, ao ser clicado, o pixel é colorido com a cor da classe selected
+let pixels = document.getElementsByClassName("pixel");
+for (i=0; i<pixels.length; i++){
+    pixels[i].addEventListener("click", pintaPixel);
+}
+
+function pintaPixel() {
+    if (black.className == "color selected") {
+        this.style.backgroundColor = "black";
+    } else if (purple.className == "color selected") {
+        this.style.backgroundColor = "purple";
+    } else if (pink.className == "color selected") {
+        this.style.backgroundColor = "pink";
+    } else if (magenta.className == "color selected") {
+        this.style.backgroundColor = "magenta";
+    } 
+}
