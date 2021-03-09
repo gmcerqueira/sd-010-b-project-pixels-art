@@ -16,8 +16,8 @@ localStorage.setItem('cor', 'white');
 for (let counter = 0; counter < 25; counter += 1) {
   pixel[counter].style.backgroundColor = (localStorage.getItem('cor'));
   pixel[counter].style.border = '1px solid black';
-  pixel[counter].style.height = '100px';
-  pixel[counter].style.width = '100px';
+  pixel[counter].style.height = '40px';
+  pixel[counter].style.width = '40px';
   pixel[counter].style.display = 'inline-block';
 }
 
