@@ -23,8 +23,7 @@ body {
 
 #pixel-board {
   text-align: center;
-  border: solid black 1px;
-  border-collapse: collapse;
+  /* border: solid black 1px; */
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
