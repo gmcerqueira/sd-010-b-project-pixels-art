@@ -1,3 +1,8 @@
+window.onload = function(){
+    criarQuadro ()
+}
+
+
 const body = document.body;
 
 const paletteBox = document.createElement('div');
@@ -64,6 +69,9 @@ const entry = document.createElement('div');
 body.appendChild(entry);
 
 const value = document.createElement('input');
+
+value.type = "number";
+value.min = '1';
 
 entry.appendChild(value);
 entry.id = 'generate-board';
