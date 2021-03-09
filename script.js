@@ -1,7 +1,8 @@
 const pixelBoard = document.getElementById('pixel-board');
 const pixel = document.getElementsByClassName('pixel');
 const inlineDivs = document.getElementsByClassName('inlineDivs');
-const paletteOne = document.getElementsByClassName('color');
+const paletteColors = document.getElementsByClassName('color');
+const paletteBoard = document.getElementById('color-palette');
 
 for (let counterDiv = 0; counterDiv < 5; counterDiv += 1) {
   pixelBoard.appendChild(document.createElement('div'));
@@ -22,7 +23,7 @@ for (let counter = 0; counter < 25; counter += 1) {
   pixel[counter].style.display = 'inline-block';
 }
 
-localStorage.setItem('corInicial', 'black');
-sessionStorage.setItem('selectedPalette', 'selected');
-paletteOne[0].className += (sessionStorage.getItem('initialClassPaletteOne'));
-paletteOne[0].style.backgroundColor = (localStorage.getItem('corInicial'));
+localStorage.setItem('initialColor', 'black');
+localStorage.setItem('Selected', ' selected');
+paletteColors[0].style.backgroundColor = (localStorage.getItem('initialColor'));
+paletteColors[0].className += (localStorage.getItem('Selected'));
