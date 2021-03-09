@@ -1,8 +1,6 @@
 .color {
   padding: 50px;
-  border-width: 3%;
-  border-style: solid;
-  border-color: black;
+  border: 1px solid black;
 }
 .c1 {
   background-color: black;
