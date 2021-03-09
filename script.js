@@ -43,7 +43,6 @@ function adicionarBgcolor() {
 function criarPixels() {
   const novoPixel = document.createElement('div');
   novoPixel.className = 'pixel';
-  novoPixel.style.backgroundColor = 'white';
   return novoPixel;
 }
 
@@ -74,22 +73,35 @@ for (let index = 0; index < pixelTamanho; index += 1) {
 
 // evento selecionar cor
 
-function selecionaCor(corAtual) {
-  const selecionar = corAtual.target;
-  deslecionaCor();
-  selecionar.className += ' selected';
-}
-
-function deslecionaCor() {
+function desselecionaCor() {
   const atualSelecionada = document.querySelector('.selected');
   atualSelecionada.className = 'color';
+}
 
+function selecionaCor(corAtual) {
+  const selecionarCor = corAtual.target;
+  if (selecionarCor !== document.getElementById('color-palette')) {
+    desselecionaCor();
+    selecionarCor.className += ' selected';
+  }
 }
 
 const corDaPaleta = document.getElementById('color-palette');
 
 corDaPaleta.addEventListener('click', selecionaCor);
 
+// evento de pintar o pixel
+
+function pintaPixel(pixelAtual) {
+  const selecionarPixel = pixelAtual.target;
+  if (selecionarPixel === document.getElementsByClassName('pixel')) {
+    const corSelecionada = document.getElementsByClassName('selected');
+    selecionarPixel.style.backgroundColor = corSelecionada.style.backgroundColor;
+  }
+}
+const escolhePixel = document.querySelector('#pixel-board');
+
 window.onload = function () {
   adicionarBgcolor();
+  escolhePixel.addEventListener('click', pintaPixel);
 };
