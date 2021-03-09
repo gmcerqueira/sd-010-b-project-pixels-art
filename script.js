@@ -119,7 +119,11 @@ const button = document.getElementById('generate-board');
 
 function board() {
   boardSize = document.getElementById('board-size').value;
-  createBoard(boardSize);
+  if (boardSize === "") {
+    alert('Board inválido!');
+  } else {
+    createBoard(boardSize);
+  }
 }
 
 button.addEventListener('click', board);
