@@ -7,6 +7,7 @@ let paletaBlue = window.document.getElementsByClassName('color')[2];
 paletaBlue.style.background = 'blue';
 let paletaGreen = window.document.getElementsByClassName('color')[3];
 paletaGreen.style.background = 'green';
+let selectedColor = 'black';
 
 let allPalettes = window.document.querySelectorAll('.color');
 let colorPalette = window.document.getElementById('color-palette');
@@ -15,6 +16,7 @@ colorPalette.addEventListener('click', function(event) {
         allPalettes[i].classList.remove('selected')
     }
     event.target.className += ' selected'
+    selectedColor = event.target.style.background;
 })
 
 let pixelBoard = window.document.getElementById('pixel-board');
@@ -32,6 +34,6 @@ for (lines = 0; lines < 5; lines += 1) {
     }
 }
 
-// pixelBoard.addEventListener(click, function(event) {
-
-// })
+pixelBoard.addEventListener('click', function(event) {
+    event.target.style.background = selectedColor;
+})
