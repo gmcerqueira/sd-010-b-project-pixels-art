@@ -20,10 +20,10 @@ function verificaCoresUm() {
   if (pixelCores[1].style.background === pixelCores[3].style.background) {
     document.location.reload(true);
   }
-  if (string(pixelCores[1].style.background) === '#000000') {
+  if (String(pixelCores[1].style.background) === '#000000') {
     document.location.reload(true);
   }
-  if (string(pixelCores[1].style.background) === '#ffffff') {
+  if (String(pixelCores[1].style.background) === '#ffffff') {
     document.location.reload(true);
   }
 }
@@ -36,10 +36,10 @@ function verificaCoresDois() {
   if (pixelCores[2].style.background === pixelCores[3].style.background) {
     document.location.reload(true);
   }
-  if (sting(pixelCores[2].style.background) === '#000000') {
+  if (String(pixelCores[2].style.background) === '#000000') {
     document.location.reload(true);
   }
-  if (string(pixelCores[2].style.background) === '#ffffff') {
+  if (String(pixelCores[2].style.background) === '#ffffff') {
     document.location.reload(true);
   }
 }
@@ -52,10 +52,10 @@ function verificaCoresTres() {
   if (pixelCores[3].style.background === pixelCores[2].style.background) {
     document.location.reload(true);
   }
-  if (string(pixelCores[3].style.background) === '#000000') {
+  if (String(pixelCores[3].style.background) === '#000000') {
     document.location.reload(true);
   }
-  if (string(pixelCores[3].style.background) === '#ffffff') {
+  if (String(pixelCores[3].style.background) === '#ffffff') {
     document.location.reload(true);
   }
 }
@@ -63,3 +63,18 @@ function verificaCoresTres() {
 verificaCoresUm();
 verificaCoresDois();
 verificaCoresTres();
+
+function criaPixels() {
+  const n = 5;
+  const tabela = document.getElementById('pixel-board');
+  for (let linha = 0; linha < n; linha += 1) {
+    const criaLinha = document.createElement('tr');
+    tabela.appendChild(criaLinha);
+    for (let celula = 0; celula < n; celula += 1) {
+      const criaCelula = document.createElement('td');
+      tabela.appendChild(criaCelula).className = 'pixel';
+    }
+  }
+}
+
+criaPixels();
