@@ -6,23 +6,27 @@
 #black {
     color: black;
     border: 1px;
+    border-color: black;
     border-style:solid
 }
 
 #blue {
     color: blue;
     border: 1px;
+    border-color: black
     border-style:solid
 }
 
 #green {
     color: green;
     border: 1px;
+    border-color: black
     border-style:solid
 }
 
 #red {
     color: red;
     border: 1px;
+    border-color: black
     border-style:solid
 }
