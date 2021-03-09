@@ -70,8 +70,12 @@ const selectPalleteColor = () => {
 };
 
 const selectColor = (element) => {
-  document.querySelector('.selected').setAttribute('class', 'color');
-  element.classList.add('selected');
+  if (document.querySelector('.selected')) {
+    document.querySelector('.selected').setAttribute('class', 'color');
+    element.classList.add('selected');
+  } else {
+    element.classList.add('selected');
+  }
 };
 
 // Adding listeners to pixels
@@ -79,12 +83,18 @@ const setPixelColor = () => {
   const pixelsBoxes = Array.from(document.querySelectorAll('.pixel'));
   pixelsBoxes.map((pixel) => {
     pixel.addEventListener('click', (event) => paintFunction(event.target));
+    pixel.addEventListener('click', (event) => {
+      console.log(event.target.style.backgroundColor);
+    });
   });
 };
 
 // Paint Function
 
 const paintFunction = (pixel) => {
+  if (!document.querySelector('.selected')) {
+    return;
+  }
   const color = document.querySelector('.selected').style.backgroundColor;
   pixel.style.backgroundColor = color;
 };
@@ -96,6 +106,9 @@ const clearAllPixels = () => {
     pixelsBoxes.map((pixel) => {
       pixel.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     });
+    if (document.querySelector('.selected')) {
+      document.querySelector('.selected').setAttribute('class', 'color');
+    }
   });
 };
 
