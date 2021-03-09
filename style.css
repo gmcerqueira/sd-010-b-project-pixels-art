@@ -19,3 +19,7 @@ body {
   height: 40px;
   background-color: white;
 }
+
+.clear-board {
+  background-color: white;
+}

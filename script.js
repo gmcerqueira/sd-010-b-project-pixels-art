@@ -73,7 +73,21 @@ function colorPixels() {
 colorPixels();
 
 function buttonClear() {
-  const criarButton = document.body;
-  console.log(criarButton);
+
+  const body = document.body;
+  const criaButton = document.createElement('button');
+  criaButton.type = 'button';
+  criaButton.innerText = 'Clear';
+  criaButton.id = 'clear-board';
+  body.appendChild(criaButton);
+
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', function (){
+    const quadradoPixels = document.getElementById('pixel-board').getElementsByTagName('td');
+    for (let i = 0; i < quadradoPixels.length; i += 1) {
+      quadradoPixels[i].style.background = button.style.background;
+    }
+  })
+  
 }
 buttonClear();
