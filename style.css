@@ -15,7 +15,8 @@
   background-color: green;
 }
 .pixel {
-  padding: 50px; 
+  width: 40px;
+  height: 40px; 
   display: table-cell;
   border: 1px solid black;
   background-color: white;
