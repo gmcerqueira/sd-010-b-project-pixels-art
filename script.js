@@ -24,6 +24,7 @@ for(let index = 0; index < lines; index +=1){
     for(let index = 0; index < columns; index +=1){
         divBox = document.createElement('div');
         divBox.className = 'pixel';
+        divBox.style.backgroundColor = 'rgb(255, 255, 255)';
         divTr.appendChild(divBox);
     }
 }
