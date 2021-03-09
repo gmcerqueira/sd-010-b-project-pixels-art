@@ -1,4 +1,4 @@
-window.onload = function clicarCor() {
+window.onload = function clicaCor () {
   let button = document.getElementById('#black');
 
   button.addEventListener('click', function () {
