@@ -5,11 +5,11 @@ function inicializeColor() {
       colorsPalet[color].style.backgroundColor = 'black';
       colorsPalet[color].className += ' selected';
     } else if (color === 1) {
-      colorsPalet[color].style.backgroundColor = 'red';
+      colorsPalet[color].style.backgroundColor = randomColor();
     } else if (color === 2) {
-      colorsPalet[color].style.backgroundColor = 'green';
+      colorsPalet[color].style.backgroundColor = randomColor();
     } else if (color === 3) {
-      colorsPalet[color].style.backgroundColor = 'blue';
+      colorsPalet[color].style.backgroundColor = randomColor();
     }
   }
 }
@@ -59,7 +59,6 @@ function pixelAlive() {
 
 pixelAlive();
 
-
 const buttoncleaner = document.querySelector('#clear-board');
 function clearBoard() {
   buttoncleaner.addEventListener('click', function () {
@@ -68,6 +67,7 @@ function clearBoard() {
     }
   });
 }
+
 clearBoard();
 
 function powerfulUser() {
@@ -80,6 +80,9 @@ function powerfulUser() {
         theBorad.removeChild(theBorad.lastElementChild);        
       }
       
+      if(inputResize.value < 4) inputResize.value = 5;
+      if(inputResize.value > 51) inputResize.value = 50;
+      
       createBorad(inputResize.value, inputResize.value);
       allPixels = document.querySelectorAll('.pixel');
       pixelAlive();
@@ -90,3 +93,11 @@ function powerfulUser() {
 }
 
 powerfulUser();
+
+function randomColor() {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  
+  return `rgb(${r}, ${g}, ${b})`;
+}
