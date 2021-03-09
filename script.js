@@ -19,15 +19,17 @@ palletCollor();
 
 function pallets () {
   let pallet = [];
+  getColor = document.getElementsByClassName('pixel');
   for (let indexHor = 0; indexHor < 5; indexHor += 1) {
     let criarDiv = document.createElement('div');
-    pallet[indexHor] = document.getElementById('pixel-board').appendChild(criarDiv);
+    pallet = document.getElementById('pixel-board').appendChild(criarDiv);
     for (let indexVer = 0; indexVer < 5; indexVer += 1) {
       let criarDiv = document.createElement('div');
       criarDiv.className = 'pixel';
-      pallet[indexHor] = document.getElementById('pixel-board').appendChild(criarDiv);
+      pallet = document.getElementById('pixel-board').appendChild(criarDiv);
     }
   }
+  getColor[0].style.backgroundColor = 'white';
 }
 pallets();
 
