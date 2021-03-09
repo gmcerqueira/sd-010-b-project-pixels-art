@@ -16,4 +16,23 @@ function generatorPixels(qttPixel) {
   }
 }
 
+function clearSelected() {
+  let colorDiv = document.querySelectorAll('.color');
+  colorDiv.forEach((e) => {
+    if(e.className === 'color selected') e.className = "color";
+  })
+}
+
+function addEventColorSelected() {
+  let colorDivEvent = document.querySelectorAll('.color');
+  colorDivEvent.forEach((element) => {
+    element.addEventListener('click', (event) =>{
+      clearSelected()
+      event.target.className += " selected";
+      console.log(event.target.className);
+    })
+  })
+}
+
+addEventColorSelected();
 generatorPixels(5);
