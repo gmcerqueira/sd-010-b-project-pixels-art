@@ -20,8 +20,8 @@ window.onload = function () {
 function selectedPalette() {
   const color = document.querySelector('#color-palette');
   color.addEventListener('click', function (event) {
-    event.target.className = 'color selected';
     document.querySelector('.selected').className = 'color';
+    event.target.className = 'color selected';
   });
 }
 selectedPalette();
