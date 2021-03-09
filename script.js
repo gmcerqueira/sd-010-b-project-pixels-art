@@ -36,4 +36,18 @@ function geraPixel() {
 
 	}
 }
+
 geraPixel();
+
+function escolheCor() {
+	let corDaVez = document.querySelectorAll(".color");
+	for (let cont = 0; cont < corDaVez.length; cont += 1) {
+		corDaVez[cont].addEventListener("click", selectColor())
+	}
+}
+
+escolheCor();
+
+function selectColor(event) {
+	corDaVez[cont].className = "color selected";
+}
