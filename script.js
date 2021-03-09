@@ -2,7 +2,7 @@ const body = document.body;
 
 const paletteBox = document.createElement('div');
 
-paletteBox.id = '#color-palette';
+paletteBox.id = 'color-palette';
 
 body.appendChild(paletteBox);
 
@@ -39,3 +39,8 @@ for (let color = 0; color < 5; color += 1) {
     console.log(colors[color]);
     paletteBox.appendChild(colorElement);
 }
+
+//Criando o Quadro de Pixels
+
+let pixelBoard = document.createElement(div)
+pixelBoard.id = "pixel-board"
