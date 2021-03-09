@@ -50,8 +50,6 @@
 #pixel-board {
   display: table;
   border-collapse: collapse;
-  width: 25px;
-  height: 25px;
 }
 
 .pixelalign {
