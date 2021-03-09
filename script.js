@@ -94,7 +94,7 @@ const btn = document.createElement('div');
 btn.innerHTML = 'Limpar'
 btn.id = 'clear-board';
 
-body.appendChild(btn);
+entry.appendChild(btn);
 
 btn.addEventListener('click', function(){
     const pixels = document.getElementsByClassName('pixel');
