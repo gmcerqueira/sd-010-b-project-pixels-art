@@ -14,6 +14,12 @@ celulaPaleta[1].style.backgroundColor = "saddlebrown";
 celulaPaleta[2].style.backgroundColor = "papayawhip";
 celulaPaleta[3].style.backgroundColor = "lightblue";
 
+let celula1 = celulaPaleta[0];
+let celula2 = celulaPaleta[1];
+let celula3 = celulaPaleta[2];
+let celula4 = celulaPaleta[3];
+
+
 window.addEventListener("load", selectSelected)
 
 function selectSelected(){
@@ -46,3 +52,21 @@ for(k=0;k<5;k++){
 }
 }
 
+
+let celulaQuadro = document.getElementsByClassName("pixel");
+
+for(m=0;m<celulaQuadro.length;m++){
+    celulaQuadro[m].addEventListener("click", pintaPaleta)
+}
+
+function pintaPaleta(){
+    if(celula1.className == "color selected"){
+        this.style.backgroundColor="black";
+    } else if (celula2.className == "color selected"){
+        this.style.backgroundColor="saddlebrown";
+    } else if (celula3.className == "color selected"){
+        this.style.backgroundColor="papayawhip";
+    } else if (celula4.className == "color selected"){
+        this.style.backgroundColor="lightblue";
+    }
+}
