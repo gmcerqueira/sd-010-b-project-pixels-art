@@ -1,6 +1,20 @@
+body {
+	text-align: center;
+}
+
 #color-palette div {
   border: solid 1px;
-  height: 25px;
-  width: 25px;
+  height: 40px;
+  width: 40px;
   display: inline-block;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+#pixel-board .pixel {
+	border: solid 1px;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+	margin-left: 5px;
 }
