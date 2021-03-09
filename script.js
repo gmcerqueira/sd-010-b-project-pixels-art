@@ -37,11 +37,22 @@ window.onload = function() {
 
   // monitora os clicks na página
 
-  let selected = document.getElementsByClassName('selected');
-  console.log(selected);
+  // let selected = document.getElementsByClassName('selected');
+  // console.log(selected);
   document.addEventListener('click', function (event) {
+    //verifica a cor selecionada e troca se for o caso
+    if (event.target.classList.contains('color') && !event.target.classList.contains('selected')){
+      document.querySelectorAll('.selected')[0].className = 'color';
+      //console.log(selected[0].className);
+      event.target.className = 'color selected';
+      console.log(event.target.className);
+      //console.log(selected[0].className);
+    }
+
+    // preenche o pixel com a cor selecionada
     if (event.target.classList.contains('pixel') ) {
-        event.target.style.backgroundColor = selected[0].style.backgroundColor;
+      let selected = document.getElementsByClassName('selected');
+      event.target.style.backgroundColor = selected[0].style.backgroundColor;
     }
   }, false);
 
