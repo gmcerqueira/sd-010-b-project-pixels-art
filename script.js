@@ -1,13 +1,13 @@
 const colorPallete = document.querySelector('#color-palette');
-const colorsPalette = ['black', 'red', 'blue', 'green'];
+const colors = ['black', 'red', 'blue', 'green'];
 const pixelBoard = document.querySelector('#pixel-board');
 
 // Criando e adicionando cores a paleta
-function createColorPalette(colors) {
-  for (let i = 0; i < colors.length; i += 1) {
+function createColorPalette(colorList) {
+  for (let i = 0; i < colorList.length; i += 1) {
     const colorPixel = document.createElement('div');
     colorPixel.className = 'color';
-    colorPixel.style.backgroundColor = colors[i];
+    colorPixel.style.backgroundColor = colorList[i];
     colorPallete.appendChild(colorPixel);
   }
 }
@@ -30,5 +30,23 @@ function createBoard(size) {
   }
 }
 
-createColorPalette(colorsPalette);
+// Definindo cor preta como inicial
+function defaultColor() {
+  colorPallete.firstElementChild.classList.add('selected');
+}
+
+// Selecionando uma cor quando clicar em cima dela na paleta de cores
+function selectColor() {
+  const children = colorPallete.childNodes;
+  colorPallete.addEventListener('click', (event) => {
+    for (let i = 0; i < children.length; i += 1) {
+      children[i].classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  });
+}
+
+createColorPalette(colors);
+defaultColor();
 createBoard(5);
+selectColor();
