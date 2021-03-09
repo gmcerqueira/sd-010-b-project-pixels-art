@@ -4,9 +4,9 @@
   padding: 50px;
 }
 
-
 #pixel-board {
   display: table;
+  padding: 10px;
 }
 #pixel-board > div { 
   display: table-row;

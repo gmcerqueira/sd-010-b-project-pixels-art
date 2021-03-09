@@ -1,5 +1,5 @@
 let corSalva = 'black';
-
+let aux;
 let corDivBoard = document.querySelector('#color-palette');
 let cor = document.querySelectorAll('.color');
 //cores nas paletas
@@ -7,10 +7,9 @@ cor[0].style.backgroundColor = 'black';
 cor[1].style.backgroundColor = 'red';
 cor[2].style.backgroundColor = 'orange';
 cor[3].style.backgroundColor = 'green';
-//
+//Paleta
 function clickPalette(eventoDeOrigem) {
-  
-  let aux = eventoDeOrigem.target;
+  aux = eventoDeOrigem.target;
   cor[0].className = 'color';
   cor[1].className = 'color';
   cor[2].className = 'color';
@@ -19,18 +18,16 @@ function clickPalette(eventoDeOrigem) {
   if(aux.className == 'color') {
     aux.className = 'color selected';
     corSalva = aux.style.backgroundColor;
-    console.log(corSalva);
   }else {
     aux.className = 'color';
   }
 }
 corDivBoard.addEventListener('click', clickPalette);
-
+//Tabela
 let corDivPixel = document.querySelector('#pixel-board');
 let corPixel = document.querySelectorAll('.pixel');
 function clickPixel(eventoDeOrigem) {
-  let aux = eventoDeOrigem.target;
-  console.log(aux);
+  aux = eventoDeOrigem.target;
   if (corPixel.className == 'color') {
     aux.style.backgroundColor = corSalva;
   } else {
@@ -38,3 +35,11 @@ function clickPixel(eventoDeOrigem) {
   }
 }
 corDivPixel.addEventListener('click', clickPixel);
+//Criando button
+let buttonBoard = document.querySelector('#clear-board');
+function limparBoard() {
+  for (let i = 0; i < 25; i += 1){
+    corPixel[i].style.backgroundColor = 'white';
+  }
+}
+buttonBoard.addEventListener('click', limparBoard);
