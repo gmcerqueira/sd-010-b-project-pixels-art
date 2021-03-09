@@ -109,8 +109,9 @@ function criaBotao() {
   novoBotao.innerText = 'Limpar';
   return novoBotao;
 }
+const detalhaSessao = document.querySelector('#button-cleaner');
 
-document.querySelector('#button-cleaner').appendChild(criaBotao());
+detalhaSessao.appendChild(criaBotao());
 
 function limparPixels() {
   const pegarPixels = document.querySelectorAll('.pixel');
@@ -118,6 +119,25 @@ function limparPixels() {
     pegarPixels[index].style.backgroundColor = 'white';
   }
 }
+
+// BONUS
+// cria input
+
+function criarInput() {
+  const novoInput = document.createElement('input');
+  novoInput.id = 'board-size';
+  return novoInput;
+}
+
+function criarBotao() {
+  const novoBotao = document.createElement('button');
+  novoBotao.id = 'generate-board';
+  novoBotao.innerText = 'VQV';
+  return novoBotao;
+}
+
+detalhaSessao.appendChild(criarInput());
+detalhaSessao.appendChild(criarBotao());
 
 document.getElementById('clear-board').addEventListener('click', limparPixels);
 

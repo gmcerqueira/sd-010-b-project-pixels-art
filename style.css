@@ -41,5 +41,11 @@ h1 {
 }
 
 #button-cleaner {
-  margin-left: 145px;
+  margin-left: 65px;
+}
+
+input {
+  margin-left: 65px;
+  margin-right: 5px;
+  width: 30px;
 }
