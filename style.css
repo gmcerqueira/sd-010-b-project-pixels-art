@@ -3,7 +3,10 @@
 }
 
 .color {
-    border 1px;
+    border: solid 1px black;
+    height: 150px;
+    width: 150px;
+    display: inline-block;
 }
 
 #one {
