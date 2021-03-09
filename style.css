@@ -4,7 +4,7 @@ body {
 }
 
 .color {
-  border:black solid 1px;
+  border: black solid 1px;
   height: 80px;
   width: 80px;
   display: inline-block;
@@ -13,7 +13,7 @@ body {
 }
 
 .pixel {
-  border:black solid 1px;
+  border: black solid 1px;
   height: 40px;
   width: 40px;
   display: table-cell;
@@ -27,6 +27,6 @@ section {
   padding-bottom: 50px;
 }
 
-#pixel-board{
+#pixel-board {
   display: table;
 }

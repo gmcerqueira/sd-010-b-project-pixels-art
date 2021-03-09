@@ -58,7 +58,12 @@ function criarTabelaPixel(pixel) {
   tabelaPixel.appendChild(pixel);
 }
 
-const pixelTamanho = 5;
+let pixelTamanho = 5;
+if (pixelTamanho < 5) {
+  pixelTamanho = 5;
+} else if (pixelTamanho > 50) {
+  pixelTamanho = 50;
+}
 
 for (let index = 0; index < pixelTamanho; index += 1) {
   criarTabelaPixel(criaLinhas());
@@ -66,6 +71,10 @@ for (let index = 0; index < pixelTamanho; index += 1) {
     criarTabelaPixel(criarPixels());
   }
 }
+
+// eventos
+
+
 
 window.onload = function () {
   adicionarBgcolor();
