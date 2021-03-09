@@ -1,18 +1,19 @@
-let table = document.querySelector("#color-palette");
+let table = document.getElementById("color-palette");
+let pixel = document.getElementById("pixel-board");
 
 function structureTable () {
-  let line1 = document.createElement("tr");
-    line1.id = "color-palette";
+  let line1 = document.createElement("div");
+    line1.className = "palette"
     table.appendChild(line1);
   
   for (let columns = 0; columns < 4; columns += 1) {
-    let column = document.createElement("td");
+    let column = document.createElement("div");
     column.className = "color";
     line1.appendChild(column);
   } 
 } structureTable();
-let line = document.getElementsByTagName("tr");
-let column = document.getElementsByTagName("td");
+let line = document.getElementsByTagName("div");
+let column = document.querySelectorAll(".color");
 
 // function randomColor () {
 //   let numbers = "0123456789ABCDEF";
@@ -37,8 +38,21 @@ function styleTable () {
     column[3].style.backgroundColor = "blue";
   }
 } styleTable();
-function selectColor () {
-  for (let index = 0; index < column.length; column += 1){
-    column.className = "select-color";
+// function selectColor () {
+//   for (let index = 0; index < column.length; column += 1){
+//     column.className = "select-color";
+//   }
+// }
+
+function pixelStructure () {
+  for (let lines = 0; lines < 5; lines += 1) {  
+    let pixelLine = document.createElement("div");
+    pixel.appendChild(pixelLine);
+    
+    for (let columns = 0; columns < 5; columns += 1) {
+      let column1 = document.createElement("div");
+      column1.className = "pixel";
+      pixelLine.appendChild(column1);
+    }
   }
-}
+} pixelStructure();
