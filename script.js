@@ -1,9 +1,9 @@
 const pallete = document.getElementById('color-palette');
-let arrayPallete = [1, 2, 3, 4];
+const arrayPallete = [1, 2, 3, 4];
 
 function viewPallete() {
   for (let index = 0; index < arrayPallete.length; index += 1) {
-    let box = document.createElement('div');
+    const box = document.createElement('div');
     box.className = 'color';
     pallete.appendChild(box);
   }
