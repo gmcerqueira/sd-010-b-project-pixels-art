@@ -6,7 +6,6 @@ window.onload = function () {
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('.colorPalette');
 const numberSquare = document.querySelector('#board-size');
-const pixel = document.querySelectorAll('.pixel');
 const btnErase = document.querySelector('#clear-board');
 
 let atualNumber = 5;
@@ -88,6 +87,7 @@ function setSelected() {
 }
 
 function eraseAll() {
+  const pixel = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
   }
