@@ -5,16 +5,19 @@ const blue = document.getElementsByClassName('blue')[0];
 
 const paletaCores = [black, orangered, green, blue];
 
-function selectColor(event) {
-  for (index in paletaCores ) {
-    if (paletaCores[index].classList.contains('selected')) {
-      paletaCores[index].classList.remove('selected');
-    }
-  }
-  event.target.classList.add('selected');
-}
 
 black.addEventListener('click', selectColor);
 orangered.addEventListener('click', selectColor);
 green.addEventListener('click', selectColor);
 blue.addEventListener('click', selectColor);
+
+function deselectColor() {
+    const currentColor = document.querySelector('.selected');
+    currentColor.className = 'color';
+  }
+  
+  function selectColor(event) {
+    const selectedColor = event.target;
+    deselectColor();
+    selectedColor.className += ' selected';
+  }
