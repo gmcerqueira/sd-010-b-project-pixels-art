@@ -29,9 +29,9 @@ const setPalleteColors = () => {
   let b = Math.ceil(Math.random() * 84);
   palletes.map((pallete, index) => {
     if (!index) {
-      pallete.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+      pallete.style.backgroundColor = 'rgb(0, 0, 0)';
     } else {
-      pallete.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 1)`;
+      pallete.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
       r += 84;
       g += 84;
       b += 84;
@@ -83,9 +83,7 @@ const setPixelColor = () => {
   const pixelsBoxes = Array.from(document.querySelectorAll('.pixel'));
   pixelsBoxes.map((pixel) => {
     pixel.addEventListener('click', (event) => paintFunction(event.target));
-    pixel.addEventListener('click', (event) => {
-      console.log(event.target.style.backgroundColor);
-    });
+    pixel.addEventListener('click', (event) => {});
   });
 };
 
@@ -104,7 +102,7 @@ const clearAllPixels = () => {
   clearBtn.addEventListener('click', () => {
     const pixelsBoxes = Array.from(document.querySelectorAll('.pixel'));
     pixelsBoxes.map((pixel) => {
-      pixel.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+      pixel.style.backgroundColor = 'rgb(255, 255, 255)';
     });
     if (document.querySelector('.selected')) {
       document.querySelector('.selected').setAttribute('class', 'color');
