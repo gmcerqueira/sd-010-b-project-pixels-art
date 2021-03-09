@@ -20,14 +20,17 @@
 }
 
 
-/* .display-table {
-  display: table; 
+.pixel-board {
+  display: table;
+  padding: 25px;
 }
-.display-table > div { 
+.pixel-board > div { 
   display: table-row; 
+  
+  background-color: 'rgb(255, 255, 255)';
 }
-.display-table > div > div { 
+.pixel-board > div > div { 
   display: table-cell;
-  padding: 5px;
-  background-color: aqua;
-} */
+  padding: 25px;
+  border: 1px black solid;
+}
