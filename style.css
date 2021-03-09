@@ -1,0 +1,37 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.color-select {
+  display: inline-block;
+}
+
+#cor_1 {
+  background-color: #00b894;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+#cor_2 {
+  background-color: #6c5ce7;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+#cor_3 {
+  background-color: #e17055;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+#cor_4 {
+  background-color: #81ecec;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
