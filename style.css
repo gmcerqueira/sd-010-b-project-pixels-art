@@ -36,7 +36,12 @@ body {
 
 .pixel {
   display: table-cell;
-  padding: 40px;
+  height: 40px;
+  width: 40px;
   border: black solid 1px;
   background-color: white;
+}
+#pixel-board{
+    padding-top: 100px;
+    padding-left: 560px;
 }
