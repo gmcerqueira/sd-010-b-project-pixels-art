@@ -1,5 +1,5 @@
-let containerPalette = document.querySelector('#color-palette');
-let tamanhoPalette = [1, 2, 3, 4];
+const containerPalette = document.querySelector('#color-palette');
+const tamanhoPalette = [1, 2, 3, 4];
 
 function createPalette() {
   for (let index = 0; index < tamanhoPalette.length; index += 1) {
@@ -9,9 +9,7 @@ function createPalette() {
   }
   return containerPalette;
 }
-
 createPalette();
-
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
 document.getElementsByClassName('color')[2].style.backgroundColor = 'green';
