@@ -9,16 +9,15 @@
 </head>
 <body>
   <h1 id="title">Paleta de Cores</h1>
-  <div class="display-table">
-    <div id="color-palette">
-        <div id="c1" class="color"></div>
-        <div id="c2" class="color"></div>
-        <div id="c3" class="color"></div>
-        <div id="c4" class="color"></div>
-    </div>    
-</div>
-
-
+  <button type="button" onclick="criaPixels()">Nova tabela</button>
+  <section id="secao">
+    <table class="color-palette">    
+        <td class="color c1" onclick="pegaCor"></td>
+        <td class="color c2"></td>
+        <td class="color c3"></td>
+        <td class="color c4"></td>    
+    </table>
+  </section>
   <script type="text/javaScript" src="script.js"></script>  
 </body>
 </html>
