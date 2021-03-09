@@ -8,7 +8,7 @@ for (let index = 0; index < 4; index += 1) {
 }
 
 const caixasPaleta = document.querySelectorAll('.color');
-caixasPaleta[0].style.backgroundColor = 'yellow';
+caixasPaleta[0].style.backgroundColor = 'black';
 caixasPaleta[1].style.backgroundColor = 'red';
 caixasPaleta[2].style.backgroundColor = 'green';
 caixasPaleta[3].style.backgroundColor = 'blue';
