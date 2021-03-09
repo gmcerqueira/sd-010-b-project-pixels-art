@@ -1,6 +1,6 @@
 function setPixelClass() {
-  const colorPalette = document.querySelectorAll('.color-palette');
-  const pixel = document.getElementsByClassName('pixel');
+  let colorPalette = document.querySelectorAll('.color-palette');
+  let colorSelected = document.querySelectorAll('.color');
 
   for (let item = 0; item < colorPalette.length; item += 1) {
     colorPalette[item];
@@ -8,6 +8,10 @@ function setPixelClass() {
     colorPalette[item].addEventListener('click', function (event) {
       console.log(event.target);
       console.log(colorPalette[item].style);
+
+      colorPalette[item].style = colorSelected;
+
+      console.log((colorSelected.className = 'selected'));
     });
   }
 }
