@@ -32,9 +32,9 @@ function createBorad(height, width) {
   }
 }
 
-createBorad(5,5);
+createBorad(10,10);
 
-function selectColor(){
+function selectColor() {
   for (let color = 0; color < colorsPalet.length; color++) {
     colorsPalet[color].addEventListener("click", function(){
       let lastSelected = document.querySelector(".selected");
@@ -45,3 +45,15 @@ function selectColor(){
 }
 
 selectColor();
+
+const allPixels = document.querySelectorAll(".pixel");
+function pixelAlive() {
+  for (let i = 0; i < allPixels.length; i++) {
+    allPixels[i].addEventListener("click", function(){
+      let colorSelected = document.querySelector(".selected");
+      allPixels[i].style.backgroundColor = colorSelected.style.backgroundColor;
+    });    
+  }
+}
+
+pixelAlive();
