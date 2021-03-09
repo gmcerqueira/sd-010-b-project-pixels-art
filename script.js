@@ -32,7 +32,7 @@ function createBorad(height, width) {
   }
 }
 
-createBorad(10,10);
+createBorad(5,5);
 
 function selectColor() {
   for (let color = 0; color < colorsPalet.length; color++) {
@@ -57,3 +57,7 @@ function pixelAlive() {
 }
 
 pixelAlive();
+
+function clearBoard() {
+
+}

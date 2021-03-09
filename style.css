@@ -3,11 +3,15 @@
   height: 40px;
   border: 1px solid black;
   display: inline-block;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 td {
   width: 40px;
   height: 40px;
   border: 1px solid black;
+}
+
+body, table{
+  padding: 5px;
 }
