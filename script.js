@@ -39,22 +39,20 @@ function createColorBoard() {
   }
 }
 
-let select = document.getElementsByClassName('color');
-for (let index = 0; index < select.length; index += 1) {
-  select[index].addEventListener('click', reselectColor);
-}
-
 function reselectColor() {
-  select[0].classList.remove('selected');
-  select[1].classList.remove('selected');
-  select[2].classList.remove('selected');
-  select[3].classList.remove('selected');
-  this.classList.add('selected');
+  let select = document.getElementsByClassName('color');
+  for (let index = 0; index < select.length; index += 1) {
+    select[index].addEventListener('click', function (event) {
+      select[0].classList.remove('selected');
+      select[1].classList.remove('selected');
+      select[2].classList.remove('selected');
+      select[3].classList.remove('selected');
+      event.target.className = 'color selected';
+    });
+  }
 }
-
-
-
 
 createPalette();
 colorSquare();
 createColorBoard();
+reselectColor();
