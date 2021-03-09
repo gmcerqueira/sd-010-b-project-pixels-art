@@ -1,7 +1,7 @@
 const colorPallete = document.querySelector('#color-palette');
 const colors = ['black', 'red', 'blue', 'green'];
 const pixelBoard = document.querySelector('#pixel-board');
-
+const clearBoardButton = document.querySelector('#clear-board');
 // Criando e adicionando cores a paleta
 function createColorPalette(colorList) {
   for (let i = 0; i < colorList.length; i += 1) {
@@ -38,11 +38,33 @@ function defaultColor() {
 // Selecionando uma cor quando clicar em cima dela na paleta de cores
 function selectColor() {
   const children = colorPallete.childNodes;
-  colorPallete.addEventListener('click', (event) => {
-    for (let i = 0; i < children.length; i += 1) {
-      children[i].classList.remove('selected');
+  children.forEach((child) => {
+    child.addEventListener('click', (event) => {
+      for (let i = 0; i < children.length; i += 1) {
+        children[i].classList.remove('selected');
+      }
+      event.target.classList.add('selected');
+    });
+  });
+}
+
+// Desenhando no quadro
+function drawPixels() {
+  pixelBoard.addEventListener('click', (event) => {
+    const colorSelected = document.querySelector('.selected').style
+      .backgroundColor;
+    event.target.style.backgroundColor = colorSelected;
+  });
+}
+
+// Limpando o quadro
+function clearBoard() {
+  clearBoardButton.addEventListener('click', () => {
+    const board = document.querySelectorAll('.pixel');
+    console.log(board);
+    for (let i = 0; i < board.length; i += 1) {
+      board[i].style.backgroundColor = 'white';
     }
-    event.target.classList.add('selected');
   });
 }
 
@@ -50,3 +72,5 @@ createColorPalette(colors);
 defaultColor();
 createBoard(5);
 selectColor();
+drawPixels();
+clearBoard();
