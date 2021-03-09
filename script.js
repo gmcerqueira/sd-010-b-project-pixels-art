@@ -67,6 +67,12 @@ paletteBox.addEventListener('click',selected,false);
 const containerHeader = document.createElement('div');
 body.appendChild(containerHeader);
 
+const btn = document.createElement('div');
+btn.innerHTML = 'Limpar'
+btn.id = 'clear-board';
+
+containerHeader.appendChild(btn);
+
 const entry = document.createElement('div');
 
 containerHeader.appendChild(entry);
@@ -114,11 +120,7 @@ submit.addEventListener('click',function(){
 })
 //Criar um botão
 
-const btn = document.createElement('div');
-btn.innerHTML = 'Limpar'
-btn.id = 'clear-board';
 
-containerHeader.appendChild(btn);
 
 btn.addEventListener('click', function(){
     const pixels = document.getElementsByClassName('pixel');
