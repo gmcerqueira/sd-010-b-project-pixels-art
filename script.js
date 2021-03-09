@@ -42,5 +42,17 @@ for (let color = 0; color < 5; color += 1) {
 
 //Criando o Quadro de Pixels
 
-let pixelBoard = document.createElement(div)
-pixelBoard.id = "pixel-board"
+let pixelBoard = document.createElement('div');
+pixelBoard.id = "pixel-board";
+
+body.appendChild(pixelBoard);
+
+for (let linhas = 0; linhas < 5; linhas += 1){
+    const line = document.createElement('div');
+    pixelBoard.appendChild(line);
+    for(let colunas = 0; colunas < 5; colunas += 1){
+        let pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        line.appendChild(pixel);
+    }
+}
