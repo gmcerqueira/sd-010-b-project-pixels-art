@@ -1,0 +1,8 @@
+.color-palette {
+  display: inline-block;
+}
+
+.color {
+  border-style: solid 1px;
+  border-color: black;
+}
