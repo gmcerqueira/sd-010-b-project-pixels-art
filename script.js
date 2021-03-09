@@ -23,6 +23,6 @@ for (let counter = 0; counter < 25; counter += 1) {
 }
 
 localStorage.setItem('corInicial', 'black');
-localStorage.setItem('initialClassPaletteOne', 'selected');
-paletteOne[0].className += (localStorage.getItem('initialClassPaletteOne'));
+sessionStorage.setItem('selectedPalette', 'selected');
+paletteOne[0].className += (sessionStorage.getItem('initialClassPaletteOne'));
 paletteOne[0].style.backgroundColor = (localStorage.getItem('corInicial'));
