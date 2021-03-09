@@ -11,3 +11,22 @@ body {
   border-radius: 50%;
   margin-right: 8px;
 }
+
+.pixel {
+  border:black solid 1px;
+  height: 40px;
+  width: 40px;
+  display: table-cell;
+}
+
+.linha {
+  display: table-row;
+}
+
+section {
+  padding-bottom: 50px;
+}
+
+#pixel-board{
+  display: table;
+}

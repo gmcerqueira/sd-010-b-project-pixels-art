@@ -12,8 +12,9 @@ function atribuirPaleta(divs) {
 }
 
 // definir numero de paletas de cores
+const paletaNumber = 4;
 
-for (let index = 0; index < 4; index += 1) {
+for (let index = 0; index < paletaNumber; index += 1) {
   atribuirPaleta(criarDiv());
 }
 
@@ -37,6 +38,35 @@ function adicionarBgcolor() {
   return getDiv;
 }
 
+// adiciona os pixels
+
+function criarPixels() {
+  const novoPixel = document.createElement('div');
+  novoPixel.className = 'pixel';
+  novoPixel.style.backgroundColor = 'white';
+  return novoPixel;
+}
+
+function criaLinhas() {
+  const novaLinha = document.createElement('div');
+  novaLinha.className = 'linha';
+  return novaLinha;
+}
+
+function criarTabelaPixel(pixel) {
+  const tabelaPixel = document.querySelector('#pixel-board');
+  tabelaPixel.appendChild(pixel);
+}
+
+const pixelTamanho = 5;
+
+for (let index = 0; index < pixelTamanho; index += 1) {
+  criarTabelaPixel(criaLinhas());
+  for (let index2 = 0; index2 < pixelTamanho; index2 += 1) {
+    criarTabelaPixel(criarPixels());
+  }
+}
+
 window.onload = function () {
   adicionarBgcolor();
-}
+};
