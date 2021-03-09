@@ -1,8 +1,6 @@
-.color-palette {
-  display: inline-block;
-}
-
 .color {
-  border-style: solid 1px;
-  border-color: black;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
 }
