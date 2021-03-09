@@ -7,6 +7,10 @@ tr {
   display: table-row;
 }
 
+.pixel {
+  border: 1px solid black;
+}
+
 td {
   display: table-cell;
   border: 1px solid black;
@@ -25,4 +29,9 @@ td {
   border: 1px solid black;
   display: inline-block;
   margin-right: 5px;
+}
+
+#clear-board {
+  margin: 5px;
+  margin-bottom: 10px;
 }

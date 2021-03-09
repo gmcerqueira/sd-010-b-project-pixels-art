@@ -36,9 +36,6 @@ window.onload = function() {
   createGrid(5);
 
   // monitora os clicks na página
-
-  // let selected = document.getElementsByClassName('selected');
-  // console.log(selected);
   document.addEventListener('click', function (event) {
     //verifica a cor selecionada e troca se for o caso
     if (event.target.classList.contains('color') && !event.target.classList.contains('selected')){
@@ -53,6 +50,14 @@ window.onload = function() {
     if (event.target.classList.contains('pixel') ) {
       let selected = document.getElementsByClassName('selected');
       event.target.style.backgroundColor = selected[0].style.backgroundColor;
+    }
+
+    //verifica se o botão limpar foi clicado e limpa os pixels
+    if (event.target.id === 'clear-board') {
+      let pixelList = document.querySelectorAll('.pixel');
+      for (let pixel of pixelList) {
+        pixel.style.backgroundColor = 'white';
+      }
     }
   }, false);
 
