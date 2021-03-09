@@ -14,3 +14,12 @@
   margin-top: 5%;
   padding: 2px;
 }
+
+.pixel {
+  border: 1px solid;
+  background-color: white;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 1px;
+}
