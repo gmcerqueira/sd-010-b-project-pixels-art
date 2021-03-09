@@ -1,0 +1,22 @@
+.caixa {
+    display: inline-block;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+  }
+
+  #firstbox {
+    background-color: black;
+  }
+  #secondbox {
+    background-color:red;
+  }
+  #thirdbox {
+    background-color: blue;
+  }
+  #fourthbox {
+    background-color: green;
+  }
