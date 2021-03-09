@@ -35,9 +35,7 @@
   border-style: solid;
   border-color: black;
 }
-#color-palette {
-  display: inline-block;;
-}
+
 .pixel {
   background-color: white;
   display: inline-block;

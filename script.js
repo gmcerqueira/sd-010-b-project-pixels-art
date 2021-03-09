@@ -14,15 +14,14 @@ window.onload = function () {
   document.body.appendChild(elementos);
 
   const elemento1 = document.createElement('section');
+  elemento1.id = 'color-palette';
   elementos.appendChild(elemento1);
 
   const elemento2 = document.createElement('section');
+  elemento2.id = 'pixel-board';
   elementos.appendChild(elemento2);
 
-
-
   const sectionSelectColors = document.createElement('section');
-  sectionSelectColors.id = 'color-palette';
   elemento1.appendChild(sectionSelectColors);
 
   for (let index = 0; index < numberOfOption; index++) {
@@ -32,9 +31,7 @@ window.onload = function () {
     sectionSelectColors.appendChild(colorOption);
   }
 
-
-    const pixelBoard = document.createElement('section');
-  pixelBoard.id = 'pixel-board';
+  const pixelBoard = document.createElement('section');
   elemento2.appendChild(pixelBoard);
 
   for (let index = 0; index < numberOfItems; index++) {
