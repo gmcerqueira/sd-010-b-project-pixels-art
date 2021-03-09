@@ -1,12 +1,30 @@
-// Colocando as cores na paleta de cores --> Amazon App
+//Criando uma função que escolhe a cor
+
+function gerar_cor_hexadecimal()
+{
+  return '#' + parseInt((Math.random() * 0xFFFFFF))
+    .toString(16)
+    .padStart(6, '0');
+}
 
 firstBoxColor = document.querySelector('.color');
 
 firstBoxColor.style.backgroundColor = 'black';
-firstBoxColor.nextElementSibling.style.backgroundColor = '#CEA968';
-firstBoxColor.nextElementSibling.nextElementSibling.style.backgroundColor = '#E4C083';
-firstBoxColor.nextElementSibling.nextElementSibling.nextElementSibling.style.backgroundColor = '#08AAE3';
+firstBoxColor.nextElementSibling.style.backgroundColor = gerar_cor_hexadecimal();
+firstBoxColor.nextElementSibling.nextElementSibling.style.backgroundColor = gerar_cor_hexadecimal();
+firstBoxColor.nextElementSibling.nextElementSibling.nextElementSibling.style.backgroundColor = gerar_cor_hexadecimal();
 // Pegando os elementos de depois
+
+// Colocando as cores na paleta de cores --> Amazon App
+
+let amazonButton = document.querySelector("#amazon-app");
+amazonButton.addEventListener("click", function(){
+    firstBoxColor.nextElementSibling.style.backgroundColor = '#CEA968';
+    firstBoxColor.nextElementSibling.nextElementSibling.style.backgroundColor = '#E4C083';
+    firstBoxColor.nextElementSibling.nextElementSibling.nextElementSibling.style.backgroundColor = '#08AAE3';
+});
+
+// Pegando os elementos de depois 
 
 //Criando um quadro de pixels dinamicamente
 const inputNumber = document.querySelector("#board-size")
