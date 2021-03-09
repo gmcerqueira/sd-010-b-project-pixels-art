@@ -1,10 +1,10 @@
 // cria a tabela 5x5 dinamicamente
-window.onload = function() {
+window.onload = function () {
   // cria a paleta de cores
   function createPalette() {
-    let paletteDiv = document.getElementById('color-palette');
-    let colors = ['yellow', 'blue', 'green'];
-    let paletteBlack = document.createElement('div');
+    const paletteDiv = document.getElementById('color-palette');
+    const colors = ['yellow', 'blue', 'green'];
+    const paletteBlack = document.createElement('div');
     paletteBlack.className = 'color selected';
     paletteBlack.style.backgroundColor = 'black';
     paletteDiv.appendChild(paletteBlack);
@@ -18,16 +18,16 @@ window.onload = function() {
   createPalette();
 
   // cria o grid de N por N
-  let n = 5;
+  const n = 5;
   function createGrid(size) {
-    let board = document.getElementById('pixel-board');
+    const board = document.getElementById('pixel-board');
     for (let index = 0; index < n; index += 1) {
       let row = document.createElement('TR');
       row.id = `row${index}`;
       board.appendChild(row);
       for (let index2 = 0; index2 < n; index2 += 1) {
         let cell = document.createElement('TD');
-        cell.className = "pixel";
+        cell.className = 'pixel';
         cell.style.backgroundColor = 'white';
         row.appendChild(cell);
       }
@@ -35,24 +35,18 @@ window.onload = function() {
   }
   createGrid(5);
 
-  // monitora os clicks na página
   document.addEventListener('click', function (event) {
-    //verifica a cor selecionada e troca se for o caso
     if (event.target.classList.contains('color') && !event.target.classList.contains('selected')){
       document.querySelectorAll('.selected')[0].className = 'color';
-      //console.log(selected[0].className);
       event.target.className = 'color selected';
       console.log(event.target.className);
-      //console.log(selected[0].className);
     }
 
-    // preenche o pixel com a cor selecionada
     if (event.target.classList.contains('pixel') ) {
       let selected = document.getElementsByClassName('selected');
       event.target.style.backgroundColor = selected[0].style.backgroundColor;
     }
 
-    //verifica se o botão limpar foi clicado e limpa os pixels
     if (event.target.id === 'clear-board') {
       let pixelList = document.querySelectorAll('.pixel');
       for (let pixel of pixelList) {
@@ -60,5 +54,4 @@ window.onload = function() {
       }
     }
   }, false);
-
 };
