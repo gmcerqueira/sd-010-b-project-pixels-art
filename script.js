@@ -120,27 +120,36 @@ function limparPixels() {
   }
 }
 
+document.getElementById('clear-board').addEventListener('click', limparPixels);
+
 // BONUS
 // cria input
 
 function criarInput() {
   const novoInput = document.createElement('input');
   novoInput.id = 'board-size';
+  novoInput.type = 'number';
+  novoInput.min = '1';
   return novoInput;
 }
 
 function criarBotao() {
-  const novoBotao = document.createElement('button');
-  novoBotao.id = 'generate-board';
-  novoBotao.innerText = 'VQV';
-  return novoBotao;
+  const botaoInput = document.createElement('button');
+  botaoInput.id = 'generate-board';
+  botaoInput.innerText = 'VQV';
+  botaoInput.type = 'button';
+  return botaoInput;
 }
 
 detalhaSessao.appendChild(criarInput());
 detalhaSessao.appendChild(criarBotao());
 
-document.getElementById('clear-board').addEventListener('click', limparPixels);
+function aumentarPixels() {
+  const tabelaPixel = document.querySelector('#pixel-board');
+  const tamanhoTabela = document.querySelector('#generate-board');
+}
 
 window.onload = function () {
   adicionarBgcolor();
+  aumentarPixels();
 };
