@@ -27,10 +27,10 @@ function adicionarBgcolor() {
     const randomizer3 = Math.round(Math.random() * 255);
     const randomRgb = `rgb(${randomizer}, ${randomizer2}, ${randomizer3})`;
     if (index === 0) {
-      getDiv[0].style.backgroundColor = 'black';
+      getDiv[index].style.backgroundColor = 'black';
       getDiv[index].id = 'black';
-    }
-    else {
+      getDiv[index].className += ' selected';
+    } else {
       getDiv[index].style.backgroundColor = randomRgb;
       getDiv[index].id = randomRgb;
     }
