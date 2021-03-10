@@ -1,14 +1,11 @@
-/* #title {
-
-} */
-
 .color {
-  height: 53px;
-  width: 53px;
+  height: 50px;
+  width: 50px;
   border: solid;
   border-width: 1px;
   border-color: black;
   display: inline-block;
+  margin-right: 0.5%;
 }
 
 #black {
@@ -29,9 +26,17 @@
 
 #pixel-board {
   margin-top: 20px;
+  width: 300px;
+  height: 250px;
+}
+
+#pixel-row {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .pixel {
+  display: inline-block;
   height: 40px;
   width: 40px;
   border: solid;
@@ -41,10 +46,11 @@
 }
 
 .selected {
-  height: 53px;
-  width: 53px;
+  height: 50px;
+  width: 50px;
   border: solid;
   border-width: 1px;
   border-color: black;
   display: inline-block;
+  margin-right: 0.5%
 }
