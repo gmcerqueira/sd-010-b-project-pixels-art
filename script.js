@@ -17,6 +17,7 @@ function addElementoSection() {
       const newDivCelula = document.createElement('div');
       newDivCelula.className = 'pixel td';
       newDivLinha.appendChild(newDivCelula);
+      newDivLinha.className = 'pixel tr';
     }
     newSection.className = 'table';
     newSection.appendChild(newDivLinha);
@@ -40,6 +41,9 @@ function selecionarCorPreta() {
   classColor[3].className = 'color';
   return classColor;
 }
+
+window.onload = selecionarCorPreta;
+
 function selecionarCorVermelha() {
   classColor[0].className = 'color';
   classColor[1].className = colorSelected;
