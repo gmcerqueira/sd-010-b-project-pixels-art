@@ -21,12 +21,13 @@
   background-color: orangered;
 }
 
-#pixel-board {
+/* #pixel-board {
   background-color: white;
-}
+} */
 
 .pixel {
   border: black solid 1px;
   width: 40px;
   height: 40px;
+  background-color: white;
 }
