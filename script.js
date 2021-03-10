@@ -17,3 +17,15 @@ function createPixelGrid(gridSize) {
 }
 
 createPixelGrid(5); 
+
+function selectColor() {
+  let colorSelection = document.querySelector('#color-palette');
+  colorSelection.addEventListener('click', function(event) {
+    let selected = event;
+    document.querySelector('.selected').className = 'color';
+    selected.target.event = 'color selected';
+  });
+}
+
+console.log(selectColor());
+
