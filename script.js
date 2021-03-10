@@ -26,21 +26,27 @@ function pixelStructure() {
     pixelLine.className = 'pixelLine';
     pixel.appendChild(pixelLine);  
     for (let columns = 0; columns < 5; columns += 1) {
-      const column1 = document.createElement('div');
+      column1 = document.createElement('div');
       column1.className = 'pixel';
       pixelLine.appendChild(column1);
       column1.style.backgroundColor = "white";
     }
   }
 } pixelStructure();
-
-function transSelect() {
-  for (let index = 0; index < column.length; index += 1) {
-    column[index].classList.remove('selected');
-  }
-//column[?].classList.add('selected');
-} transSelect();
-
-window.onload = function() {
+function blackSelect () {
   column[0].classList.add('selected');
-}
+} blackSelect();
+document.addEventListener('click', function (event) {
+  if(event.target.classList.contains('color') && !event.target.classList.contains(".selected")) {
+    document.querySelectorAll(".selected")[0].className = "color";
+    event.target.classList.add('selected');
+  }
+  if (event.target.classList.contains('pixel')){
+  event.target.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
+  }
+})
+// function pintarPixel () {
+//   table.addEventListener("click", (event) => {
+//   const element = event;
+//   });
+// }
