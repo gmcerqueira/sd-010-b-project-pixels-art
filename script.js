@@ -53,12 +53,12 @@ const pixelBoard = document.getElementById('table-body');
 
 generateButton.addEventListener('click', () => {
   const inputValue = document.getElementById('board-size').value;
-  if (inputValue === '' || inputValue < 0) {
+  if (inputValue === '') {
     alert('Board inválido!');
   } else {
     clear();
     pixelBoard.innerText = '';
-    if (inputValue >= 5 && inputValue <= 50) {
+    if (inputValue >= 1 && inputValue <= 50) {
       for (let index = 1; index <= inputValue; index += 1) {
         const createTr = document.createElement('tr');
         createTr.className = 'line';
