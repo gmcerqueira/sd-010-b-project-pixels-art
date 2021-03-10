@@ -15,7 +15,7 @@ matrix();
 // questão resolvida com a ajuda do colega durante grupo de estudos;
 
 function SelectColor() {
-  const firstColorSelected = document.querySelector('.color selected');
+  const firstColorSelected = document.getElementsByClassName('selected');
 
   const Colors = document.querySelectorAll('.color');
 
@@ -25,7 +25,7 @@ function SelectColor() {
       firstColorSelected.className = 'color';
     });
   }
-  const SelectedColor = document.querySelector('.color selected');
+  const SelectedColor = document.getElementsByClassName('selected');
   return SelectedColor;
 }
 SelectColor();
