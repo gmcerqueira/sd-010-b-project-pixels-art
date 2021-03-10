@@ -5,14 +5,14 @@ const pixelBoard = document.querySelector('#pixel-board');
 // const pixel = document.querySelector('.pixel');
 
 colorPalette.addEventListener('click', event => { // https://www.w3schools.com/js/js_htmldom_eventlistener.asp
-  const colorSelected = document.getElementById(event.target.id);
-  const verify = colorSelected.className;
+  const colorPaletteSelected = document.getElementById(event.target.id);
+  const verify = colorPaletteSelected.className;
   verify === 'color-palette' ? (
   event.stopPropagation()
   ) : (
     document.querySelector('.selected').className = 'color',
-    colorSelected.className = 'color selected')
-}, false);
+    colorPaletteSelected.className = 'color selected')
+});
 
 pixelBoard.addEventListener('click', event => {
   const selectedPixel = event.target;
