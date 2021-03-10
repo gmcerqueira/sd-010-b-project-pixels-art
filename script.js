@@ -15,13 +15,13 @@ matrix();
 // questão resolvida com a ajuda do colega durante grupo de estudos;
 
 function SelectColor() {
-  const firstColorSelected = document.getElementsByClassName('selected');
-
+  
   const Colors = document.querySelectorAll('.color');
-
+  
   for (let index = 0; index < Colors.length; index += 1) {
     Colors[index].addEventListener('click', function () {
-      Colors[index].classList.add = 'selected';
+      const firstColorSelected = document.getElementsByClassName('selected')[0];
+      Colors[index].classList.add('selected');
       firstColorSelected.className = 'color';
     });
   }
