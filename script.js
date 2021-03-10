@@ -1,26 +1,6 @@
-window.onload = function createPixelBoard(){
-  // usei como consulta para resolver o problema, a propriedade display do CSS deste site para posicionar os elementos. URL => https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css | Usei a propriedade display do CSS deste site para posicionar os elementos.
 
-  let boardPixel = document.createElement('div');
-  boardPixel.id = 'pixel-board';
-
-  for (let column = 0; column < 5; column += 1){
-    let lineDiv = document.createElement('div');
-      lineDiv.className = 'line';
-    
-      for (let line = 0; line < 5; line += 1){
-        let pixel = document.createElement('div');
-        pixel.className = 'pixel white';
-        
-        lineDiv.appendChild(pixel);
-      }
-    boardPixel.appendChild(lineDiv);
-  }
-  injectMain(boardPixel);
-}
-
-//cria uma div com a classe color
-function createDivPalette() {
+  //cria uma div com a classe color
+  function createDivPalette() {
   let paletteDiv = document.createElement('div');
   paletteDiv.className = 'color'
   return paletteDiv
@@ -42,7 +22,7 @@ injectMain(title);
 let colorPalette = document.createElement('section');
 colorPalette.id = 'color-palette';
 
-//cria divs e injeta em section e injeta section na main
+//cria divs, injeta em section e injeta section na main
 for (let index = 0; index < 4; index += 1) {
   colorPalette.appendChild(createDivPalette());
 }
@@ -57,15 +37,28 @@ let thirdDiv = document.querySelector('#color-palette').firstChild.nextSibling.n
 thirdDiv.id = 'red';
 let fourthDiv = document.querySelector('#color-palette').lastChild;
 fourthDiv.id = 'yellow';
+document.querySelector('#black').classList = 'color selected';
 
 
+// usei como consulta para resolver o problema, a propriedade display do CSS deste site para posicionar os elementos. URL => https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css | Usei a propriedade display do CSS deste site para posicionar os elementos.
 
+// Cria board de pixels
+let boardPixel = document.createElement('div');
+boardPixel.id = 'pixel-board';
 
-
-
-
+for (let column = 0; column < 5; column += 1){
+  let lineDiv = document.createElement('div');
+    lineDiv.className = 'line';
+  for (let line = 0; line < 5; line += 1){
+    let pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixel.id = 'white';
     
-    
-    
-    
+    lineDiv.appendChild(pixel);
+  }
+boardPixel.appendChild(lineDiv);
+}
+injectMain(boardPixel);
 
+const color = document.querySelectorAll('.line').nodeChild;
+const pixel = document.getElementsByClassName('.pixel');
