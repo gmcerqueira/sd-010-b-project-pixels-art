@@ -53,7 +53,8 @@ function applySelectedColor() {
   console.log(allPixels.length);
   for (let i = 0; i < allPixels.length; i += 1) {
     allPixels[i].addEventListener('click', (evt) => {
-      evt.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+      const { target } = evt;
+      target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
     });
   }
 }
@@ -70,7 +71,8 @@ function selectColor() {
       for (let i2 = 0; i2 < allColors.length; i2 += 1) {
         allColors[i2].className = 'color';
       }
-      evt.target.className += ' selected';
+      const { target } = evt;
+      target.className += ' selected';
     });
   }
 }
