@@ -3,9 +3,9 @@
   margin: 0;
 }
 
-.input-colors {
+/* .input-colors {
   display: none;
-}
+} */
 
 #black , #second-color , #third-color , #fourth-color {
   display: inline-block;
