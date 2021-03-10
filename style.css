@@ -1,10 +1,16 @@
+button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .color{
     border: 1px solid black;
-    display: table-cell
+    display: table-cell;
 }
 
 #color-palette{
-    display: table-row;
+    width: 180px;
+    height: 47px;
 }
 
 #black{
@@ -24,9 +30,11 @@
 }
 
 #pixel-board{
-   
+   border-collapse: collapse;
 }
 
 .pixel{
-    border: 1px solid black;   
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
 }
