@@ -12,15 +12,35 @@ function adicionandoPixels() {
   }
 }
 adicionandoPixels();
-//Deixando o quadrado preto quando carregar a página
+//Definindo variaveis as cores
+const paletaDeCores = document.getElementById('color-palette');
+const quadradoPreto = document.getElementsByClassName('color')[0];
+const quadradoAzul = document.getElementsByClassName('color')[1];
+const quadradoAmarelo = document.getElementsByClassName('color')[2];
+const quadradoVerde = document.getElementsByClassName('color')[3];
+const todasAsCores = document.querySelectorAll('color');
+
 function deixarQuadradoPreto() {
-  const quadradoPreto = document.getElementsByClassName('color')[0];
   quadradoPreto.className = 'color selected';
 }
-window.onload = deixarQuadradoPreto;
+window.onload = deixarQuadradoPreto();
 
-//let selecionar = document.querySelectorAll('color');
 
-//function selecionarCor() {}
+function trocaCor(){
+  for (let i = 0; i < todasAsCores.length; i += 1){
+    if(todasAsCores[i].classList.contains('selected')) {
+      todasAsCores[i].classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  }
+}
+
+paletaDeCores.addEventListener('click', trocaCor());
+
+
+
+
+
+
 
 
