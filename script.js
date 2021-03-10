@@ -70,11 +70,6 @@ function createPixel() {
 }
 createPixel()
 
-// function allWhite() {
-//   let getFirstDiv = document.getElementById('color-palette')
-//   let 
-// }
-
 
 
 window.onload = function () {
@@ -83,9 +78,17 @@ window.onload = function () {
   newBlack.className += ' selected'
 }
 
-function getPaint() {
-
+function changeSelect() {
+  let setPaleta = document.querySelector('#color-palette');
+  setPaleta.addEventListener('click', function(evt){
+    if(evt.target.className === 'color'){
+      let newClass = document.querySelector('.selected')
+      newClass.className='color'
+      evt.target.className += ' selected'
+    }
+  })
 }
+changeSelect()
 
 
 
