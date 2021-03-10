@@ -7,11 +7,9 @@ const pixelBoard = document.querySelector('#pixel-board');
 colorPalette.addEventListener('click', event => { // https://www.w3schools.com/js/js_htmldom_eventlistener.asp
   const colorPaletteSelected = document.getElementById(event.target.id);
   const verify = colorPaletteSelected.className;
-  verify === 'color-palette' ? (
-  event.stopPropagation()
-  ) : (
-    document.querySelector('.selected').className = 'color',
-    colorPaletteSelected.className = 'color selected')
+  verify === 'color-palette' ? (event.stopPropagation()): 
+  (document.querySelector('.selected').className = 'color',
+  colorPaletteSelected.className = 'color selected')
 });
 
 pixelBoard.addEventListener('click', event => {
