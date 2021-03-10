@@ -61,12 +61,14 @@ function paintingPixel(event) {
     alert('Board inválido!');
     return null;
   }
-
   if(valueFromInput.value < 6){
       valueFromInput.value = 5;
-  } else if (valueFromInput.value > 50){
+  }
+  
+  if (valueFromInput.value > 50){
     valueFromInput.value = 50;
-  } else {
+  } 
+
 
   const tabela = document.getElementById('pixel-board');
   tabela.innerHTML = '';
@@ -79,9 +81,7 @@ function paintingPixel(event) {
       elementByTable.appendChild(td);
     }
   }
-
   boardListener()
-}
 }
 
 const btGenBoard = document.getElementById('generate-board');
