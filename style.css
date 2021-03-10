@@ -1,4 +1,4 @@
-#color-palette1 {
+#black {
   background-color: #080606;
   position: relative;
   width: 100px;
@@ -7,7 +7,7 @@
   border: 1px solid black;
 }
 
-#color-palette2 {
+#green {
   background-color: #ff0800;
   position: relative;
   width: 100px;
@@ -16,7 +16,7 @@
   border: 1px solid black;
 }
 
-#color-palette3 {
+#blue {
   background-color: #60e607;
   position: relative;
   width: 100px;
@@ -25,7 +25,7 @@
   border: 1px solid black;
 }
 
-#color-palette4 {
+#yellom {
   background-color: #2240eb;
   width: 100px;
   height: 100px;

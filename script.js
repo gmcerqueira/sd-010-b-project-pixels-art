@@ -1,4 +1,1 @@
-let paletaCores = document.getElementById('color-palette');
-function criarDivis(){
-    
-}
+let pixel = document.getElementById("pixel-board");
