@@ -1,1 +1,1 @@
-window.onload = load;
+/* window.onload = load; */
