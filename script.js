@@ -2,8 +2,19 @@ window.onload = function (){
    
 function addPaleta (){
     let ul = document.querySelector('#color-palette');
-    let cores = ['black', '#92E6A0', 'pink', 'purple'];
-    
+    let cores = ['black'];
+    for(index = 0; index < 3; index++){
+        let c = 'rgb(';
+        for(let i = 0; i < 3; i++){
+        let rnd1 = Math.ceil(Math.random()*260);
+        c += rnd1;
+        if(i < 2){
+            c += ',';
+        }
+        }
+        c += ')';
+        cores.push(c);
+    }
     for(let i = 0; i < cores.length; i++){
         let li = document.createElement('li');
         li.className = 'color';

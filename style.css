@@ -18,7 +18,7 @@
 }
 
 .paleta-container{
-
+/* color: rgb(2, green, blue); */
 }
 
 .pixel{
@@ -40,4 +40,8 @@
 
 #clear-board{
     margin-bottom: 10px;
+    text-align: center;
+    width: 12%;
+    border: solid 1px black;
+    background-color: rgb(230, 230, 230);
 }
