@@ -35,9 +35,9 @@ function paintingPixel(event) {
   }
   
   function boardListener() {
-    const pixel = document.getElementsByClassName('pixel');
-    for (index in pixel) {
-      pixel[index].addEventListener('click', paintingPixel);
+    const pixels = document.getElementsByClassName('pixel');
+    for (index in pixels) {
+      pixels[index].addEventListener('click', paintingPixel);
     }
   }
 
@@ -45,16 +45,14 @@ function paintingPixel(event) {
 
 
   function clearBoard() {
-    const pixel = document.getElementsByClassName('pixel');
-    console.log('pixel')
-    for (index in pixel) {
-      pixel[index].style.backgroundColor = 'white';
-      
+    const pixels = document.getElementsByClassName('pixel');
+    for (index in pixels) {
+      pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
     }
   }
   
-  const clickBtn = document.getElementById('clear-board');
-  clickBtn.addEventListener('click', clearBoard);
+  const clickButton = document.getElementById('clear-board');
+  clickButton.addEventListener('click', clearBoard);
 
 
   
