@@ -11,9 +11,6 @@ function criaPixels() {
     quadro.appendChild(novaLinha);
   }
 }
-function click(){
-
-}
 // Pega a cor selecionada para preencher o pixel
 function pegaCor() {
   let cores = document.querySelector('.selected');
@@ -30,8 +27,14 @@ function corInicial() {
   let corPreta = document.querySelector('.c1');
   corPreta.className = corPreta.className + ' selected';
 }
-
-
+function pintarPixel() {
+  let pintar = document.getElementsByClassName('pixel');
+  for(var i=0; i<pintar.length; i++) {
+		pintar[i].addEventListener("click", function() {
+			// this.style.backgroundcolor = '';
+  });
+}
+}
 
 // Inicialização do site 
 corInicial();
