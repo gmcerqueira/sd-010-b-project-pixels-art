@@ -74,3 +74,16 @@ divsColorPalette[0].addEventListener('click', selecionarCorPreta);
 divsColorPalette[1].addEventListener('click', selecionarCorVermelha);
 divsColorPalette[2].addEventListener('click', selecionarCorAzul);
 divsColorPalette[3].addEventListener('click', selecionarCorVerde);
+
+function limparPixels() {
+  const newSection = document.querySelectorAll('#pixel-board .tr .pixel');
+  for (let index = 0; index < 5; index += 1) {
+    for (let index2 = 0; index2 < 5; index2 += 1) {
+      newSection[index].style.backgroundColor = 'withe';
+    }
+  }
+  return newSection;
+}
+
+const buttomLimparCores = document.querySelector('.buttom');
+buttomLimparCores.addEventListener('click', limparPixels);
