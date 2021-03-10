@@ -45,7 +45,7 @@ changeColorPalette()
 
 
 function createAllPixels(size) {
- if (size <= 50 && size >= 5) {
+ if (size <= 50 && size >= 1) {
   for (lines = 0; lines < size; lines += 1) {
     let tableRow = window.document.createElement('tr');
     pixelBoard.appendChild(tableRow)
