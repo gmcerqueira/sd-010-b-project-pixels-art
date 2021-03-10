@@ -45,8 +45,4 @@ document.addEventListener('click', function (event) {
   event.target.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
   }
 })
-// function pintarPixel () {
-//   table.addEventListener("click", (event) => {
-//   const element = event;
-//   });
-// }
+// Com o auxilio de Andre de Bem e Henrique Zozimo
