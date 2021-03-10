@@ -1,28 +1,36 @@
-window.onload = addEventListener('click', function selecionar() {
-  document.getElementsByClassName('selected')[0].classList.remove('selected');
-  event.target.classList.add('selected')
-})
-
-let quadradinhos = document.getElementsByClassName('pixels')[0];
-quadradinhos.addEventListener('click', function () {
-
-  let pixels = getElementsByClassName('pixel')[index];
-  for (let index = 0; index <= pixels.length; index += 1) {
-
-    if (document.getElementsByClassName('preto')[0].classList.contains('selected')){
-    event.target.classList.add(' preto');
-  }
-  if (document.getElementsByClassName('vermelho')[0].classList.contains('selected')) {
-    event.target.classList.add(' vermelho');
-  }
-  if (document.getElementsByClassName('azul')[0].classList.contains('selected')) {
-    event.target.classList.add(' azul');
-  }
-  if (document.getElementsByClassName('verde')[0].classList.contains('selected')) {
-    event.target.classList.add(' verde');
-  }
+let palet = document.getElementsByClassName('color');
+for (let index = 0; index < palet.length; index +=1) {
+  palet[index].addEventListener('click', function() {
+    document.getElementsByClassName('selected')[0].classList.remove('selected');
+    event.target.classList.add('selected');
+  })
 }
-})
+
+
+
+
+
+// let quadradinhos = document.getElementsByClassName('pixels')[0];
+// quadradinhos.addEventListener('click', function () {
+
+//   let pixels = getElementsByClassName('pixel')[index];
+//   for (let index = 0; index <= pixels.length; index += 1) {
+
+//     if (document.getElementsByClassName('preto')[0].classList.contains('selected')){
+//       document.getElementsByClassName('pixels')[0].classList.remove('cor');
+//       document.getElementsByClassName('pixels')[0].classList.add('preto')
+//   }
+//   if (document.getElementsByClassName('vermelho')[0].classList.contains('selected')) {
+//     event.target.classList.add(' vermelho');
+//   }
+//   if (document.getElementsByClassName('azul')[0].classList.contains('selected')) {
+//     event.target.classList.add(' azul');
+//   }
+//   if (document.getElementsByClassName('verde')[0].classList.contains('selected')) {
+//     event.target.classList.add(' verde');
+//   }
+// }
+// })
 
 
 //   let corButon = document.querySelector('.preto');
