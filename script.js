@@ -3,17 +3,20 @@
 function setColorClass() {
   const colorSelected = document.querySelectorAll('.selected');
   const color = document.querySelectorAll('.color');
-  for (let item = 0; item < colorSelected.length; item += 1) {
-    colorSelected[item].classList.remove('selected');
-  }
 
   for (let index = 0; index < color.length; index += 1) {
+    // color[index].classList.remove('selected');
     color[index].addEventListener('click', function (event) {
       console.log(event.target);
       console.log(color[index].style);
-
-      if (event.target.classList.contains('color')) {
-        event.target.classList.add('selected');
+      color[0].classList.remove('selected');
+      color[1].classList.remove('selected');
+      color[2].classList.remove('selected');
+      color[3].classList.remove('selected');
+      if (color[index].classList.contains('selected')) {
+        color[index].classList.remove('selected');
+      } else {
+        color[index].classList.add('selected');
       }
       // procurar tirar o elemeto que esta selecionado previamente
       // esta selecionado pela classe
