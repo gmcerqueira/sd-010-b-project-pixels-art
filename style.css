@@ -26,3 +26,8 @@
   height: 210px;
   margin-top: 10px;
 }
+
+#clear-board {
+  display: inline-block;
+}
+
