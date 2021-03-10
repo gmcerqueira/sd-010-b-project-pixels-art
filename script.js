@@ -36,6 +36,17 @@ function selectedPaletaCores(){
 }
 selectedPaletaCores();
 
+function cleanBoard() {
+  const boton =document.querySelector('#clear-board');
+  boton.addEventListener('click', function(event){
+    const cleanPixel= document.getElementsByClassName('pixel');
+    for(let index =0; index < cleanPixel.length; index+=1){
+      let capture = cleanPixel[index];
+      capture.style.backgroundColor = 'white';
+    }
+  })
+}
+cleanBoard();
 
 
 
