@@ -8,10 +8,10 @@ function Quadro () {
   }
 }
 Quadro();
-//Agradecimentos ao Renato GSolza Turma 10 - Tribo B, por ter me auxiliado a entender melhor o objetivo do desafio
+//Agradecimentos ao Renato GSolza Turma 10 - Tribo B, por ter me auxiliado a entender melhor o objetivo do desafio 7;
 function clickNasPaletas () {
-let getPixel = document.getElementsByClassName('selected')[0];
-getPixel.classList.remove('selected');
+let getSelected = document.getElementsByClassName('selected')[0];
+getSelected.classList.remove('selected');
 event.target.classList.add('selected');
 }
 
@@ -19,4 +19,9 @@ let getColor = document.getElementsByClassName('color');
 for(let index = 0; index < getColor.length; index+=1) {
  
   getColor[index].addEventListener('click',clickNasPaletas); 
+}
+
+function clickNoQuadro () {
+  let getPixel = document.getElementsByClassName('pixel')[0];
+  getPixel.classList.target.add('black');
 }
