@@ -1,22 +1,20 @@
 let cores = document.createElement('table')
 cores.id = 'color-palette'
 document.body.appendChild(cores)
-console.log(cores)
 
 for (i = 0; i < 4; i += 1){
-let paletas = document.createElement('tr')
-    paletas.className = 'color'
-    cores.appendChild(paletas);
+let paletaDasCores = document.createElement('td')
+    paletaDasCores.className = 'color'
+    cores.appendChild(paletaDasCores);
 }
-
-//buttonReset
-let pixelsReset = document.getElementsByClassName('pixel');
 
 function resetPixel(){
-    for (let i = 0; i < pixelsReset.length; i += 1){
-        pixelsReset[i].style.backgroundColor = 'white';
+    for (let i = 0; i < pixels.length; i += 1){
+        pixels[i].style.backgroundColor = 'white';
     }
 }
+
+let pixels = document.getElementsByClassName('pixel');
 
 let botao = document.createElement('button')
 botao.id = 'clear-board'
@@ -24,19 +22,18 @@ botao.innerHTML = 'Limpar'
 document.body.appendChild(botao)
 botao.addEventListener('click', resetPixel)
 
-let paleta = document.querySelectorAll('.color')
-const black = paleta[0];
-const green = paleta[1];
-const red = paleta[2];
-const blue = paleta[3];
+let paleta = document.getElementsByClassName('color')
+let black = paleta[0];
+let green = paleta[1];
+let red = paleta[2];
+let blue = paleta[3];
 
+black.classList.add ('selected')
 
 black.style.backgroundColor = 'black'
 green.style.backgroundColor = 'green'
 red.style.backgroundColor = 'red'
 blue.style.backgroundColor = 'blue'
-
-black.classList.add ('selected')
 
 let pixelBoard = document.createElement('table')
 pixelBoard.id = 'pixel-board'
@@ -59,3 +56,42 @@ for (let i = 0; i < linhas.length; i += 1){
     }
 }
 
+//selecionando a cor
+
+selecionarAoClicar();
+
+function selecionarAoClicar(){
+    for (let i = 0; i < paleta.length; i += 1){
+        paleta[i].addEventListener('click', changeClass)
+    }
+}
+
+function changeClass (){
+    for (let i = 0; i < paleta.length; i += 1){
+        paleta[i].classList.remove('selected')
+        }
+        this.classList.add('selected')
+    }
+    
+function clickToPaint(){
+        for(let i = 0; i < pixels.length; i += 1){
+        pixels[i].addEventListener('click', pintar)
+    }
+}
+
+clickToPaint();
+    
+function pintar(){
+    if (black.className == 'color selected'){
+            this.style.backgroundColor = 'black'
+     } else 
+        if (green.className == 'color selected'){
+            this.style.backgroundColor = 'green'
+        } else 
+            if (red.className == 'color selected'){
+                this.style.backgroundColor = 'red'
+            } else
+                if (blue.className == 'color selected'){
+                    this.style.backgroundColor = 'blue'
+                }
+    }
