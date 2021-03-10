@@ -1,5 +1,5 @@
-window.onload = load;
-
+/* window.onload = load;
 function load() {
-  document.querySelectorAll('pixel-board').style.background = 'white';
-}
+  return document.querySelectorAll('pixel-board').style.background = 'white';
+} */
+
