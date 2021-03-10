@@ -12,6 +12,15 @@ function adicionandoPixels() {
   }
 }
 adicionandoPixels();
+//Deixando o quadrado preto quando carregar a página
+function deixarQuadradoPreto() {
+  const quadradoPreto = document.getElementsByClassName('color')[0];
+  quadradoPreto.className = 'color selected';
+}
+window.onload = deixarQuadradoPreto;
 
-let quadradoPreto = document.getElementsByClassName('color')[0];
-quadradoPreto.className = 'color selected';
+//let selecionar = document.querySelectorAll('color');
+
+//function selecionarCor() {}
+
+
