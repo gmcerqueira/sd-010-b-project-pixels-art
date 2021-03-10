@@ -19,7 +19,7 @@
 }
 
 #pixel-board {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .tr { 
@@ -42,4 +42,8 @@
     padding: 40px;
     margin: 10px;
     background-color: white;
+}
+
+button {
+    margin-top: 10px;
 }

@@ -7,6 +7,7 @@ const paleta3 = document.getElementById("paleta3");
 const paleta4 = document.getElementById("paleta4");
 const selected = document.getElementsByClassName("selected");
 const pixels = document.getElementsByClassName("pixel");
+const botaoLimpa = document.getElementById("clear-board");
 
 let lado = 5;
 let numeroPixels = lado * lado;
@@ -30,6 +31,8 @@ for (let index = 1; index <= lado; index++) {
 for (let index = 0; index < pixels.length; index++) {
     pixels[index].id = (index + 1);
 }
+
+botaoLimpa.addEventListener("click", clear);
 
 pixelBoard.addEventListener("click", function(event) {
     pixel = event.target.id;
@@ -99,4 +102,10 @@ function createPixel(pai) {
 
 function changeColor(pixel) {
     pixels[pixel].style.backgroundColor = selectedColor;
+}
+
+function clear() {
+    for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = "white";
+    }
 }
