@@ -18,10 +18,11 @@
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin: 1px;
   background-color: white;
 }
 
 #pixel-board {
- max-width: 225px;
+  max-width: 210px;
+  margin-top: 20px;
+  font-size: 0;
 }
