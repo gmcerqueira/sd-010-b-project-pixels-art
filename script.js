@@ -33,9 +33,15 @@ criarQuadro()
 
 function CorPretaSelected() {
   let blackColor = document.getElementsByClassName('color')[0];
-  blackColor.className = 'selected';  
+  blackColor.className = 'color selected';  
 } 
 CorPretaSelected()
+
+function selectedClass() {
+  
+}
+
+
 
 
   
