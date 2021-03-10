@@ -11,16 +11,18 @@ function criaPixels() {
     quadro.appendChild(novaLinha);
   }
 }
+// Evento para ouvir o chamado de pegar a cor
+function chamado() {
+  let corSelecionada = document.getElementsByClassName('color');
+  for(let i = 0; i < corSelecionada.length; i++) {
+  corSelecionada[i].addEventListener('click', function(){
+  this.classList.add('Selected');
+  });
+  }
+}
 // Pega a cor selecionada para preencher o pixel
 function pegaCor() {
-  let cores = document.querySelector('.selected');
-  cores.classList.remove('selected');
-  var divs = document.getElementsByClassName('color');	
-	for(var i=0; i<divs.length; i++) {
-		divs[i].addEventListener("click", function() {
-			this.classList.add("selected");
-    });
-	}
+  
 }
 // Inicia com a cor preta para preenchimento dos pixels
 function corInicial() {
@@ -29,7 +31,7 @@ function corInicial() {
 }
 function pintarPixel() {
   let pintar = document.getElementsByClassName('pixel');
-  for(var i=0; i<pintar.length; i++) {
+  for(let i = 0; i < pintar.length; i++) {
 		pintar[i].addEventListener("click", function() {
 			// this.style.backgroundcolor = '';
   });
