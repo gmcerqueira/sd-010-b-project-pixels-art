@@ -26,7 +26,7 @@ function pixelStructure() {
     pixelLine.className = 'pixelLine';
     pixel.appendChild(pixelLine);  
     for (let columns = 0; columns < 5; columns += 1) {
-      column1 = document.createElement('div');
+      const column1 = document.createElement('div');
       column1.className = 'pixel';
       pixelLine.appendChild(column1);
       column1.style.backgroundColor = "white";
@@ -46,3 +46,13 @@ document.addEventListener('click', function (event) {
   }
 })
 // Com o auxilio de Andre de Bem e Henrique Zozimo
+const btnReset = document.querySelector("#clear-board");
+function resetPixel () {
+  btnReset.innerHTML = "Limpar";
+} resetPixel()
+btnReset.addEventListener("click", () => {
+  const column1 = document.querySelectorAll('.pixel');
+  for (let index = 0; index < column1.length; index += 1) {
+    column1[index].style.backgroundColor = "white";
+  }
+})

@@ -31,3 +31,13 @@
   border: 1px solid black;
   display: table-cell;
 }
+#clear-board {
+  margin-left: 70px;
+  padding: 5px;
+  margin-top: 5px;
+  background-color: cornsilk;
+  border-radius: 5px; 
+}
+#clear-board:hover {
+  background-color: cyan;
+}
