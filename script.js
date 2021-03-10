@@ -14,14 +14,16 @@ let pixelBoard = window.document.getElementById('pixel-board');
 createAllPixels(boardSizeInt);
 
 
-let boardSizeLength = window.document.getElementById('board-size');
 let button = window.document.getElementById('generate-board');
 button.addEventListener('click', converter)
 
 function converter() {
+  let boardSizeLength = window.document.getElementById('board-size').value;
+  let boardSizeInt = parseInt(boardSizeLength);
+  console.log(typeof(boardSizeInt));
   boardSize = boardSizeLength.value;
-  let boardSizeInt = parseInt(boardSize)
   createAllPixels(boardSizeInt);
+
   }
 
 
