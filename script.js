@@ -1,14 +1,16 @@
 // Funções utilizadas
-function createPalette() {
-  const paletteDiv = document.getElementById('color-palette');
-  const colors = ['yellow', 'blue', 'green', 'red',
-    'orange', 'brown', 'grey', 'aqua', 'khaki', 'lime',
+
+// Array de cores para a paleta
+const colors = ['yellow', 'blue', 'green', 'red',
+  'orange', 'brown', 'grey', 'aqua', 'khaki', 'lime',
   'beige', 'coral', 'cyan', 'crimson', 'gray', 'ivory',
   'lavender', 'magenta', 'linen', 'maroon', 'moccasin',
   'navy', 'olive', 'orchid', 'pink', 'plum', 'peru',
   'purple', 'salmon', 'sienna', 'silver', 'tan',
-  'thistle', 'teal', 'tomato', 'turquoise', 'violet',
-  'wheat', ];
+  'thistle', 'teal', 'tomato', 'turquoise', 'violet', 'wheat'];
+
+function createPalette() {
+  const paletteDiv = document.getElementById('color-palette');
   const paletteBlack = document.createElement('div');
   paletteBlack.className = 'color selected';
   paletteBlack.style.backgroundColor = 'black';
