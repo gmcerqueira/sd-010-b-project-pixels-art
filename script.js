@@ -35,6 +35,8 @@ box[1].addEventListener('click',function() {
 
 })
 
+
+
 box[2].addEventListener('click',function() {
   box[2].className = 'color selected'
   box[1].className = 'color'
@@ -50,3 +52,6 @@ box[3].addEventListener('click',function() {
   box[0].className = 'color'
 
 })
+
+let color = document.getElementsByClassName('.coler selected')
+
