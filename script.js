@@ -61,7 +61,12 @@ function paintingPixel(event) {
     alert('Board inválido!');
     return null;
   }
-  if(valueFromInput.value < 6){
+
+  if(valueFromInput.value < 0 ){
+    valueFromInput.value = 0;
+}
+
+  if(valueFromInput.value < 6 ){
       valueFromInput.value = 5;
   }
   
