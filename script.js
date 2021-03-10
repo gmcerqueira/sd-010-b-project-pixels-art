@@ -10,7 +10,7 @@ const pixels = document.getElementsByClassName("pixel");
 
 let lado = 5;
 let numeroPixels = lado * lado;
-let selectedColor = window.getComputedStyle(selected[0]).getPropertyValue("background-color");
+let selectedColor = 0;
 
 
 
