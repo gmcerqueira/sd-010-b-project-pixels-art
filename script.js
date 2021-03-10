@@ -17,21 +17,27 @@ function createDivpixel(){
 }
 createDivpixel()
 
-// let corInicial = "black"
-// let selecao;
-// function corSelected(corSelected){
-//   selecao = addEventListener.target
-//   cor[0].style.backgroundColor = 'black';
-//   cor[1].style.backgroundColor = rgb();
-//   cor[2].style.backgroundColor = rgb();
-//   cor[3].style.backgroundColor = rgb();
-//   if(selecao.style.backgroundColor === 'color'){
-//     corInicial.style.background = 'color selected'
-//   }else {
-//     corInicial.style.background = 'color'
-//   }
-// }
-// corSelected('click')
+function selectedPaletaCores(){
+  let colorSelection = document.querySelector('#color-palette ');
+  cor[0].style.backgroundColor = 'black';
+  cor[1].style.backgroundColor = 'purple';
+  cor[2].style.backgroundColor = 'orange';
+  cor[3].style.backgroundColor = 'green';
+
+  colorSelection.addEventListener('click', function(event){
+  let collorSelected =document.querySelector('.selected');
+    if(collorSelected){
+      collorSelected.classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  })
+}
+selectedPaletaCores();
+
+
+
+
+
 
 
 // function rgb(){
