@@ -11,7 +11,7 @@ function paleta() {
 }
 paleta();
 function quadrado() {
-  const pixelsBoard = document.querySelector('#pixels-board');
+  const pixelsBoard = document.querySelector('#pixel-board');
   for (let index = 0; index < 25; index += 1) {
     let pixelcreate = document.createElement('div');
     pixelcreate.className = 'pixel';
