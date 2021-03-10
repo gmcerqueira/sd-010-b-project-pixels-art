@@ -51,9 +51,31 @@ function claerPixels() {
   });
 }
 
+function clearChildsPixelBoard() {
+  const pixelBoard = document.querySelector('#pixel-board');
+  const qtt = pixelBoard.childNodes.length;
+  for(let i = qtt; i > 0; i--) {
+    pixelBoard.lastElementChild.remove()
+  }
+}
+
+function generatePixels() {
+  let qttBorderSize = document.querySelector("#board-size").value;
+  if(qttBorderSize === ''){
+    alert('Board inválido!');
+  } else {
+    claerPixels();
+    clearChildsPixelBoard();
+    generatorPixels(qttBorderSize);
+    addEventColorInPixel();
+  }
+}
+
 function btnConfig() {
   const btnclear = document.getElementById('clear-board');
+  const btngGnerateboard = document.getElementById('generate-board');
   btnclear.addEventListener('click', claerPixels);
+  btngGnerateboard.addEventListener('click', generatePixels)
 }
 
 generatorPixels(5);
