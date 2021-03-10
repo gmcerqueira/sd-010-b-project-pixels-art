@@ -1,4 +1,4 @@
-window.onload = function() {
+
 
 const pixelBoard = document.getElementById("pixel-board");
 const paleta1 = document.getElementById("paleta1");
@@ -99,5 +99,4 @@ function createPixel(pai) {
 
 function changeColor(pixel) {
     pixels[pixel].style.backgroundColor = selectedColor;
-}
 }
