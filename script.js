@@ -88,9 +88,9 @@ window.onload = function () {
     if (event.target.id === 'clear-board') { clearBoard(); }
     if (event.target.id === 'generate-board') {
       const size = document.getElementById('board-size');
-      if (size.value && size.value > 0) { 
+      if (size.value && size.value > 0) {
         recreateBoard(size.value);
-      } else { alert('Board inválido!'); } 
+      } else { alert('Board inválido!'); }
     }
   }, false);
 };
