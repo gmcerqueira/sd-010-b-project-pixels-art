@@ -1,5 +1,3 @@
-//selecionaCor();
-
 function criaPaleta() {
   const paletaDeCores = document.querySelector('#color-palette');
 
@@ -42,22 +40,16 @@ function criaQuadro() {
 criaQuadro();
 
 function seleciona() {
-  let cores = document.getElementsByClassName('color');
-  cores[0].className = 'color selected';
+  const cores = document.getElementsByClassName('color');
+  cores[0].classList.add('selected');
 }
 
 seleciona();
 
-function trocaCor() {
-  let cores = document.getElementsByClassName('color');
-  for (let index = 0; index < cores.length; index += 1) {
-    cores[index].addEventListener('click', function (event) {
-      if (cores[index].className === 'selected') {
-        event.target.className = 'color';
-      } else {
-        event.target.className = 'color selected';
-      }
-    });
-  }
+function trocaCores(cores) {
+  let corSelecionada = document.querySelector('.selected');
+  let novaCorSelecionada = cores.target;
+  corSelecionada.classList.remove('selected');
+  novaCorSelecionada.classList.add('selected');
 }
-trocaCor();
+console.log(document.querySelector('#color-palette').addEventListener('click', trocaCores));
