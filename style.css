@@ -6,8 +6,8 @@
     height: 45px;
 }
 .board {
-    width: 220px;
     margin-top: 10px;
+    width: 200px;
 }
 .pixel {
     border: 1px solid black;
