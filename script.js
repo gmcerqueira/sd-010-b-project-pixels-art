@@ -48,10 +48,10 @@ box[3].addEventListener('click', () => {
 });
 
 // 9
-pixels = document.getElementsByClassName('pixel')
+pixels = document.getElementsByClassName('pixel');
 button = document.querySelector('#clear-board');
 button.addEventListener('click',function() {
-
-  for (let index = 0; index < 25; index += 1){
-   pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';}
+  for (let index = 0; index < pixels.length; index += 1){
+    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';}
 });
+
