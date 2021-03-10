@@ -7,7 +7,6 @@ window.onload = function () {
   let targetColor = null;
   let colorChanged = 'cor_1';
   let buttonLimpar = null;
-  let aleatoryColors = colorGenerator();
 
   const elementHeader = document.createElement('header');
   document.body.appendChild(elementHeader);
@@ -45,14 +44,10 @@ window.onload = function () {
       colorOption.className = 'color selected';
     } else {
       colorOption.className = 'color';
-      colorOption.style.background = "rgb("+aleatoryColors[index-1][0]+", "+aleatoryColors[index-1][1]+", "+aleatoryColors[index-1][2]+")";
-    }    
+    }
     colorOption.id = 'cor_' + (index + 1);
     elemento1.appendChild(colorOption);
   }
-    console.log("rgb("+aleatoryColors[0][0]+", "+aleatoryColors[0][1]+", "+aleatoryColors[0][2]+")");  
-    console.log("rgb("+aleatoryColors[1][0]+", "+aleatoryColors[1][1]+", "+aleatoryColors[1][2]+")");  
-    console.log("rgb("+aleatoryColors[2][0]+", "+aleatoryColors[2][1]+", "+aleatoryColors[2][2]+")");  
   selectedColor = document.querySelectorAll('.color');
 
   for (let index = 0; index < numberOfItems; index++) {
@@ -94,13 +89,4 @@ window.onload = function () {
       pixel.style.backgroundColor = 'white';
     });
   });
-
-  function colorGenerator() {
-    let generatedColors = [];
-    for (let index = 0; index < 3; index++) {
-        generatedColors[index]= [Math.ceil(Math.random() * 100), Math.ceil(Math.random() * 150), Math.ceil(Math.random() * 200)]
-    }
-    return generatedColors;
-  }
-    
 };
