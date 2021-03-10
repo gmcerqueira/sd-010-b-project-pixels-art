@@ -1,6 +1,6 @@
 let color = ['black', 'red', 'blue', 'green'];
 const trocarCor = document.querySelector('#color-palette');
-function paleta() {
+function palette() {
   for (let index = 0; index < color.length; index += 1) {
     let colorGround = color[index];
     let paletteItem = document.createElement('div');
@@ -9,7 +9,7 @@ function paleta() {
     trocarCor.appendChild(paletteItem);
   }
 }
-paleta();
+palette();
 function quadrado() {
   const pixelsBoard = document.querySelector('#pixel-board');
   for (let index = 0; index < 25; index += 1) {
@@ -21,35 +21,43 @@ function quadrado() {
 quadrado();
 function corInicial() {
   let cores = document.querySelectorAll('.color')[0];
-  let padrao = cores.classList;
-  padrao.add('selected');
+  cores.classList.add('selected');
 }
 corInicial();
 function trocar () {
   let trocarCor = document.querySelectorAll('.color');
-    trocarCor[0].addEventListener('click', function() {
-      trocarCor[0].classList.add('selected');
-      trocarCor[1].classList.remove('selected');
-      trocarCor[2].classList.remove('selected');
-      trocarCor[3].classList.remove('selected');
-    });
-    trocarCor[1].addEventListener('click', function() {
-      trocarCor[1].classList.add('selected');
-      trocarCor[0].classList.remove('selected');
-      trocarCor[2].classList.remove('selected');
-      trocarCor[3].classList.remove('selected');
-    });
-    trocarCor[2].addEventListener('click', function() {
-      trocarCor[2].classList.add('selected');
-      trocarCor[0].classList.remove('selected');
-      trocarCor[1].classList.remove('selected');
-      trocarCor[3].classList.remove('selected');
-    });
-    trocarCor[3].addEventListener('click', function() {
-      trocarCor[3].classList.add('selected');
-      trocarCor[0].classList.remove('selected');
-      trocarCor[1].classList.remove('selected');
-      trocarCor[2].classList.remove('selected');
-    });
+  trocarCor[0].addEventListener('click', function() {
+    trocarCor[0].classList.add('selected');
+    trocarCor[1].classList.remove('selected');
+    trocarCor[2].classList.remove('selected');
+    trocarCor[3].classList.remove('selected');
+  });
+  trocarCor[1].addEventListener('click', function() {
+    trocarCor[1].classList.add('selected');
+    trocarCor[0].classList.remove('selected');
+    trocarCor[2].classList.remove('selected');
+    trocarCor[3].classList.remove('selected');
+  });
+  trocarCor[2].addEventListener('click', function() {
+    trocarCor[2].classList.add('selected');
+    trocarCor[0].classList.remove('selected');
+    trocarCor[1].classList.remove('selected');
+    trocarCor[3].classList.remove('selected');
+  });
+  trocarCor[3].addEventListener('click', function() {
+    trocarCor[3].classList.add('selected');
+    trocarCor[0].classList.remove('selected');
+    trocarCor[1].classList.remove('selected');
+    trocarCor[2].classList.remove('selected');
+  });
 }
 trocar();
+function pintar() {
+  // let selected = document.querySelector('.select');
+  let divCor = document.querySelectorAll('.pixel');
+  let cor;
+  divCor[0] = cor
+  console.log(cor);
+}
+pintar();
+alert(document.getElementsByClassName('color').style.background);
