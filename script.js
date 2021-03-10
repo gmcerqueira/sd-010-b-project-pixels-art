@@ -8,7 +8,7 @@
       let criaLinha = document.createElement("div")
       criaLinha.className = "pixel";
       pixelBoard.appendChild(criaLinha);
-            
+
       for (let coluna = 0; coluna < 5; coluna++) {
 
         let criaColuna = document.createElement("div");
