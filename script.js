@@ -1,12 +1,20 @@
 function creatPixelBoard() {
   const pai = document.getElementById('pixel-board');
+  const tamanho = document.getElementById('board-size').value;
+  let tamanhoTotal = tamanho * tamanho;
+ // console.log(tamanhoTotal);
+  let tamanhoPixelBoard = pai.style.width = ((43 * tamanho) + 'px');
+ // console.log(tamanhoPixelBoard);
 
-  for (let index = 0; index < 25; index += 1) {
+  //console.log(tamanhoTotal);
+
+  for (let index = 0; index < tamanhoTotal; index += 1) {
     const div = document.createElement('div');
     div.className = 'pixel';
     div.id = ('box' + (index + 1));
     pai.appendChild(div);
   }
+  escutaClick();
 }
 
 function setColor(event) {
@@ -18,8 +26,7 @@ function setColor(event) {
   // console.log('cor a colorir ' + colorPaleta);
   // console.log(typeof (colorPaleta));
   document.getElementById(idBox).style.backgroundColor = colorPaleta;
-  // document.getElementById(idBox).cl
-}
+ }
 
 function changeSelected(event) {
   const identificador = event.target.id;
@@ -37,37 +44,14 @@ function escutaClick() {
   document.getElementById('pinkBox').addEventListener('click', changeSelected);
   document.getElementById('redBox').addEventListener('click', changeSelected);
   // Escuta box de pixels
-  document.getElementById('box1').addEventListener('click', setColor);
-  document.getElementById('box2').addEventListener('click', setColor);
-  document.getElementById('box3').addEventListener('click', setColor);
-  document.getElementById('box4').addEventListener('click', setColor);
-  document.getElementById('box5').addEventListener('click', setColor);
-  document.getElementById('box6').addEventListener('click', setColor);
-  document.getElementById('box7').addEventListener('click', setColor);
-  document.getElementById('box8').addEventListener('click', setColor);
-  document.getElementById('box9').addEventListener('click', setColor);
-  document.getElementById('box10').addEventListener('click', setColor);
-  document.getElementById('box11').addEventListener('click', setColor);
-  document.getElementById('box12').addEventListener('click', setColor);
-  document.getElementById('box13').addEventListener('click', setColor);
-  document.getElementById('box14').addEventListener('click', setColor);
-  document.getElementById('box15').addEventListener('click', setColor);
-  document.getElementById('box16').addEventListener('click', setColor);
-  document.getElementById('box17').addEventListener('click', setColor);
-  document.getElementById('box18').addEventListener('click', setColor);
-  document.getElementById('box19').addEventListener('click', setColor);
-  document.getElementById('box20').addEventListener('click', setColor);
-  document.getElementById('box21').addEventListener('click', setColor);
-  document.getElementById('box22').addEventListener('click', setColor);
-  document.getElementById('box23').addEventListener('click', setColor);
-  document.getElementById('box24').addEventListener('click', setColor);
-  document.getElementById('box25').addEventListener('click', setColor);
+
+  const boxes = document.getElementsByClassName('pixel');
+  for (let index = 0;index < boxes.length; index += 1 ){
+    boxes[index].addEventListener('click', setColor);
+  }
 }
 
-function inicializar() {
-  creatPixelBoard();
-  escutaClick();
-}
+
 
 function clearBoard() {
   const board = document.getElementsByClassName('pixel');
@@ -75,4 +59,11 @@ function clearBoard() {
     board[index].style.backgroundColor = 'white';
   }
 }
-window.onload = inicializar;
+
+// function inicializar() {
+//   creatPixelBoard();
+//   escutaClick();
+  
+// }
+
+// window.onload = inicializar;
