@@ -10,14 +10,12 @@ function paleta() {
   }
 }
 paleta();
-const quadro = document.querySelectorAll(".quadro");
 function quadrado() {
-  for (let index = 0; index < quadro.length; index += 1) {
-    for (let indexQ = 1; indexQ == 5; indexQ += 1) {
-      let pixelCreado = document.createElement('div');
-      pixelCreado.className = 'pixel';
-      quadro[index].appendChild(pixelCreado);
-    }
+  const pixelsBoard = document.querySelector('#pixels-board');
+  for (let index = 0; index < 25; index += 1) {
+    let pixelcreate = document.createElement('div');
+    pixelcreate.className = 'pixel';
+    pixelsBoard.appendChild(pixelcreate);
   }
 }
 quadrado();
