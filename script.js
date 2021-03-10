@@ -55,32 +55,47 @@ function resizeMinMax(parameter) {
   }
   return parameter;
 }
-
+function clearBoard() {
+  const pixelList = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixelList.length; index += 1) {
+      pixelList[index].style.backgroundColor = 'white';
+    }
+}
+function paintPixel(pixel) {
+  const selected = document.getElementsByClassName('selected');
+  pixel.style.backgroundColor = selected[0].style.backgroundColor;
+}
+function selectColor(selected) {
+  document.querySelectorAll('.selected')[0].className = 'color';
+  selected.className = 'color selected';
+}
+function recreateBoard(size) {
+  size = resizeMinMax(size);
+  const parent = document.getElementById('pixel-board');
+  removeAllChildNodes(parent);
+  createGrid(Number(size));
+}
 window.onload = function () {
   createPalette();
   createGrid(5);
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('color') && !event.target.classList.contains('selected')) {
-      document.querySelectorAll('.selected')[0].className = 'color';
-      event.target.className = 'color selected';
+      selectColor(event.target);
     }
     if (event.target.classList.contains('pixel')) {
-      const selected = document.getElementsByClassName('selected');
-      event.target.style.backgroundColor = selected[0].style.backgroundColor;
+      paintPixel(event.target);
     }
     if (event.target.id === 'clear-board') {
-      const pixelList = document.querySelectorAll('.pixel');
-      for (let pixel of pixelList) {
-        pixel.style.backgroundColor = 'white';
-      }
+      clearBoard();
     }
     if (event.target.id === 'generate-board') {
       const size = document.getElementById('board-size');
       if (size.value && size.value > 0) {
-        size.value = resizeMinMax(size.value);
-        const parent = document.getElementById('pixel-board');
-        removeAllChildNodes(parent);
-        createGrid(Number(size.value));
+        recreateBoard(size.value);
+        // size.value = resizeMinMax(size.value);
+        // const parent = document.getElementById('pixel-board');
+        // removeAllChildNodes(parent);
+        // createGrid(Number(size.value));
       } else {
         alert('Board inválido!');
       }
