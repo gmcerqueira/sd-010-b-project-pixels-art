@@ -54,14 +54,14 @@ function claerPixels() {
 function clearChildsPixelBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
   const qtt = pixelBoard.childNodes.length;
-  for(let i = qtt; i > 0; i--) {
-    pixelBoard.lastElementChild.remove()
+  for (let i = qtt; i > 0; i -= 1 ) {
+    pixelBoard.lastElementChild.remove();
   }
 }
 
 function generatePixels() {
-  let qttBorderSize = document.querySelector("#board-size").value;
-  if(qttBorderSize === ''){
+  const qttBorderSize = document.querySelector('#board-size').value;
+  if (qttBorderSize === '') {
     alert('Board inválido!');
   } else {
     claerPixels();
@@ -75,7 +75,7 @@ function btnConfig() {
   const btnclear = document.getElementById('clear-board');
   const btngGnerateboard = document.getElementById('generate-board');
   btnclear.addEventListener('click', claerPixels);
-  btngGnerateboard.addEventListener('click', generatePixels)
+  btngGnerateboard.addEventListener('click', generatePixels);
 }
 
 generatorPixels(5);
