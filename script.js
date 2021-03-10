@@ -107,6 +107,14 @@ function inputEvent() {
   });
 }
 
+function inputButtonEvent() {
+  const button = document.getElementById('generate-board');
+  const input = document.getElementById('board-size');
+  button.addEventListener('click', () => {
+    changeBoardSize(input.value);
+  });
+}
+
 createBoxTable(4, 'color', colorPalette);
 createBoxTable(5, 'pixel', pixelBoard, 5);
 
@@ -119,4 +127,5 @@ window.onload = () => {
     changeBgColor(event, selectedColor);
   });
   clearBoardButton();
+  inputButtonEvent();
 };
