@@ -1,12 +1,24 @@
 let palet = document.getElementsByClassName('color');
 for (let index = 0; index < palet.length; index +=1) {
-  palet[index].addEventListener('click', function() {
+  palet[index].addEventListener('click', function(event) {
     document.getElementsByClassName('selected')[0].classList.remove('selected');
     event.target.classList.add('selected');
   })
 }
-
-
+let quadro = document.getElementsByClassName('pixel');
+for (let quadroIndex = 0; quadroIndex < quadro.length; quadroIndex += 1){
+  quadro[quadroIndex].addEventListener('click', function(event){
+    if (document.getElementsByClassName('color')[0].classList.contains('selected')) {
+      event.target.style.background = 'black';
+    } if (document.getElementsByClassName('color')[1].classList.contains('selected')) {
+      event.target.style.background = 'red';
+    } if (document.getElementsByClassName('color')[2].classList.contains('selected')) {
+      event.target.style.background = 'blue';
+    } if (document.getElementsByClassName('color')[3].classList.contains('selected')) {
+      event.target.style.background = 'green';
+    }
+  })
+}
 
 
 
@@ -76,9 +88,9 @@ for (let index = 0; index < palet.length; index +=1) {
 
 
 
-//     if (document.getElementsByClassName('pixel')[0].classList.contains('cor')) {
-//       document.getElementsByClassName('cor')[0].classList.add('preto');
-//       document.getElementsByClassName('preto')[0].classList.remove('cor');
+    // if (document.getElementsByClassName('pixel')[0].classList.contains('cor')) {
+    //   document.getElementsByClassName('cor')[0].classList.add('preto');
+    //   document.getElementsByClassName('preto')[0].classList.remove('cor');
 //     } else if (document.getElementsByClassName('pixel')[0].classList.contains('red')) {
 //       document.getElementsByClassName('red')[0].classList.add('preto');
 //       document.getElementsByClassName('preto')[0].classList.remove('red');
@@ -94,4 +106,3 @@ for (let index = 0; index < palet.length; index +=1) {
 //     }
 
 //   })
-// }
