@@ -53,5 +53,5 @@ button = document.querySelector('#clear-board');
 button.addEventListener('click',function() {
 
   for (let index = 0; index < 25; index += 1){
-   pixels[index].style.backgroundColor = 'rgb(0, 0, 255)';}
+   pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';}
 });
