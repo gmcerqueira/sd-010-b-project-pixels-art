@@ -30,21 +30,21 @@ createBox();
 
 function getPallete(event) {
   const palette = event.target;
-    if (!palette.id) {
+  if (!palette.id) {
     const pixelColor = document.querySelectorAll('.color');
     pixelColor.forEach((element) => element.classList.remove('selected'));
     palette.classList.add('selected');
   }
   sessionStorage.color = palette.style.backgroundColor;
- }
- 
- function paintBoard(event) {
-   const palette = event.target;
-   if (!palette.id) {
-     const paintPixel = sessionStorage.color;
-     palette.style.backgroundColor = paintPixel;
-   }
- }
- 
- document.getElementById('color-palette').addEventListener('click', getPallete);
- document.getElementById('pixel-board').addEventListener('click', paintBoard);
+}
+
+function paintBoard(event) {
+  const palette = event.target;
+  if (!palette.id) {
+    const paintPixel = sessionStorage.color;
+    palette.style.backgroundColor = paintPixel;
+  }
+}
+
+document.getElementById('color-palette').addEventListener('click', getPallete);
+document.getElementById('pixel-board').addEventListener('click', paintBoard);
