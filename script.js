@@ -13,19 +13,7 @@ let paletaDasCores = document.createElement('td')
     cores.appendChild(paletaDasCores);
 }
 
-let pixels = document.getElementsByClassName('pixel');
-function resetButton(){
-    let botao = document.createElement('button')
-        botao.id = 'clear-board'
-        botao.innerHTML = 'Limpar'
-        document.body.appendChild(botao)
-        botao.addEventListener('click', resetPixel)
-    function resetPixel(){
-        for (let i = 0; i < pixels.length; i += 1){
-            pixels[i].style.backgroundColor = 'white';
-        }
-    }
-}
+
 
 resetButton()
 
@@ -75,6 +63,8 @@ function selecionarAoClicar(){
             this.classList.add('selected')
         }
 }
+
+let pixels = document.getElementsByClassName('pixel');
  
 function clickToPaint(){
         for(let i = 0; i < pixels.length; i += 1){
@@ -96,4 +86,17 @@ function clickToPaint(){
         }
 }
 
-    
+
+function resetButton(){
+    let botao = document.createElement('button')
+        botao.id = 'clear-board'
+        botao.innerHTML = 'Limpar'
+        document.body.appendChild(botao)
+        botao.addEventListener('click', resetPixel)
+    function resetPixel(){
+        for (let i = 0; i < pixels.length; i += 1){
+            pixels[i].style.backgroundColor = 'white';
+        }
+    }
+}
+
