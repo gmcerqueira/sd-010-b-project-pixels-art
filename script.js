@@ -61,7 +61,19 @@ const setPixelGrid = (size) => {
   }
 };
 
+//
+function selectColor() {
+  palletes.map((pallete) => {
+    pallete.addEventListener('click', (event) => {
+      console.log(document.querySelector('.selected'));
+      document.querySelector('.selected').classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  });
+}
+
 function start() {
   setPalleteColors();
   setPixelGrid(5);
+  selectColor();
 }
