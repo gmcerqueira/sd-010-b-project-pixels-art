@@ -3,6 +3,8 @@ let palette = document.getElementById('color-palette');
 let colors = document.getElementsByClassName('color');
 let columns = document.getElementById('pixel-board');
 let pixels = document.getElementsByClassName("pixel");
+	
+
 
 //
 let tableLines = function () {
@@ -49,5 +51,19 @@ function paint() {
 		this.style.backgroundColor = "red";
 	} else if (colors[3].className == "color selected") {
 		this.style.backgroundColor = "blue";
+	}
+}
+//
+let bt1 = document.createElement("button");
+	bt1.innerText = 'Limpar';
+	bt1.id = 'clear-board';
+	bt1.addEventListener("click", reset);
+
+let divPai = columns.parentNode;
+	divPai.insertBefore(bt1, columns);
+
+function reset() {		
+	for(let index = 0; index < pixels.length; index += 1){
+		pixels[index].style.backgroundColor = "white";
 	}
 }
