@@ -41,7 +41,7 @@
 #clear-board{
     margin-bottom: 10px;
     text-align: center;
-    width: 12%;
+    width: 50px;
     border: solid 1px black;
     background-color: rgb(230, 230, 230);
 }

@@ -87,15 +87,5 @@ function limparFunction(){
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 }//window.onload close
 
