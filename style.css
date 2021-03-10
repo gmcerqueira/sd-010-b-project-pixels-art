@@ -38,10 +38,9 @@
 }
 
 .pixel {
-  border: black solid 1px;
   width: 40px;
   height: 40px;
   display: inline-block;
   background-color: white;
-  border: 1px solid black 
-} 
+  border: 1px solid black;
+}
