@@ -1,0 +1,35 @@
+#color-palette1 {
+  background-color: #2240eb;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 1px solid black;
+}
+
+#color-palette2 {
+  background-color: #ff0800;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 1px solid black;
+}
+
+#color-palette3 {
+  background-color: #60e607;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 1px solid black;
+}
+
+#color-palette4 {
+  background-color: #080606;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  float: left;
+  border: 1px solid black;
+}
