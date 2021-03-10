@@ -70,6 +70,11 @@ function boardSize () {
       while (tableP.firstChild) {
         tableP.removeChild(tableP.lastChild);
       }
+      if (input.value > 50) {
+          input.value = 50;
+      } else if (input.value < 5){
+          input.value = 5;
+      }
       createTable(number = input.value);
       paintPixel();
     }
@@ -77,3 +82,12 @@ function boardSize () {
 }
 
 boardSize();
+
+function palletColors() {
+  let colors = document.getElementsByClassName('color');
+  for (let indexColor = 1; indexColor < colors.length ; indexColor += 1){
+    colors[indexColor].style.backgroundColor = `rgb(${Math.ceil(Math.random()*255)}, ${Math.ceil(Math.random()*255)}, ${Math.ceil(Math.random()*255)})`;
+  }
+}
+
+palletColors();
