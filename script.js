@@ -14,7 +14,7 @@ for(index = 0; index < 4; index += 1){
 
 // letcolunaPaleta = document.getElementsByClassName("color");
 colunaPaleta[0].style.backgroundColor = "black";
-colunaPaleta[0].className = "select color";
+colunaPaleta[0].className = "selected color";
 
 colunaPaleta[1].style.backgroundColor = "green";
 colunaPaleta[2].style.backgroundColor = "blue";
