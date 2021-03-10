@@ -36,12 +36,14 @@ function getPalette(event) {
 }
 
 function paintBoard(event) {
-const paintPixel = document.querySelector('#pixel-board');
-  paintPixel.addEventListener('click', (event) => {
+const paintPixel = document.querySelectorAll('.pixel');
+for (let index = 0; index < paintPixel.length; index += 1){
+   paintPixel[index].addEventListener('click', (event) => {
     const elem = event;
     const pintaPixel = document.querySelector('.selected').style.backgroundColor;
     elem.target.style.backgroundColor = pintaPixel;
   });
+}
 }
 
 paintBoard();
