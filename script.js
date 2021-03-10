@@ -13,8 +13,6 @@ let paletteNumber = 4;
 let boxNumber = 25;
 let colorArray = ['black', 'cyan', 'yellow', 'red'];
 
-document.getElementById('pixel-board').style.width = document.get + 'px';
-
 for (let index = 0; index < paletteNumber; index += 1) {
   document.getElementById('color-palette').appendChild(createItem('color','td'));
   document.getElementsByClassName('color')[index].id = 'box'+[index];
@@ -22,15 +20,12 @@ for (let index = 0; index < paletteNumber; index += 1) {
 
 for (let index = 0; index < boxNumber; index += 1) {
   document.getElementById('pixel-board').appendChild(createItem('pixel','td'));
-  document.getElementsByClassName('pixel')[index].id = 'paint'+[index];
 } 
 
 let box0 = document.getElementById('box0');
 let box1 = document.getElementById('box1');
 let box2 = document.getElementById('box2');
 let box3 = document.getElementById('box3');
-
-// window.onload(changeClassBox0());
 
 function changeClassBox0() {
   box0.className = 'color selected';
@@ -62,13 +57,25 @@ box1.addEventListener('click', changeClassBox1);
 box2.addEventListener('click', changeClassBox2);
 box3.addEventListener('click', changeClassBox3);
 
+
+
+let boardArray = document.getElementsByClassName('pixel');
+
+function colorChange (event) {
+  let selectBackground = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = selectBackground;
+}
+
+for (let index = 0; index < boardArray.length; index += 1) {
+  boardArray[index].addEventListener('click', colorChange);
+}
+
 function resetBoard () {
   let pixelArray = document.getElementsByClassName('pixel');
   for (index = 0; index < pixelArray.length; index += 1) {
     pixelArray[index].style.backgroundColor = 'white';
   }
 }
+
 document.getElementById('clear-board').addEventListener('click',resetBoard);
 palleteBox('color');
-
-
