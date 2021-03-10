@@ -2,6 +2,7 @@ const paletteDiv = document.getElementById('color-palette');
 const colorsPalette = document.getElementsByClassName('color');
 const colorsPaletteLenght = colorsPalette.length;
 const boardOfPixels = document.getElementById('pixel-board');
+const button = document.getElementById('btn-reset');
 
 //create dynamically the class selected
 function firstPaletteSelected() {
@@ -68,6 +69,13 @@ function setColor(element) {
     }
 }
 
+function reset() {
+    const arrayPixels = document.getElementsByClassName('pixel');
+    for (let i = 0; i < arrayPixels.length; i++) {
+        arrayPixels[i].style.backgroundColor = '';
+    }
+}
+
 window.onload = function init() {
     createColorPaletteDisplay();
     setColor(colorsPalette);
@@ -75,4 +83,5 @@ window.onload = function init() {
     firstPaletteSelected();
     paletteDiv.addEventListener('click', selectColor);
     boardOfPixels.addEventListener('click', pixelColor);
+    button.addEventListener('click', reset);
 }
