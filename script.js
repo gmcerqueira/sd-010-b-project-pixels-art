@@ -36,7 +36,7 @@ function paintingPixel(event) {
   
   function boardListener() {
     const pixels = document.getElementsByClassName('pixel');
-    for (index in pixels) {
+    for (let index = 0; index < pixels.length; index++) {
       pixels[index].addEventListener('click', paintingPixel);
     }
   }
@@ -46,7 +46,7 @@ function paintingPixel(event) {
 
   function clearBoard() {
     const pixels = document.getElementsByClassName('pixel');
-    for (index in pixels) {
+    for (let index = 0; index < pixels.length; index++) {
       pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
     }
   }
