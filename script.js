@@ -9,3 +9,5 @@ vermelho.style.backgroundColor = 'red';
 verde.style.backgroundColor = 'green';
 azul.style.backgroundColor = 'blue';
 
+preto.classList.add('selected');
+
