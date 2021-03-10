@@ -6,7 +6,6 @@ let box4 = document.getElementById("color4");
 box2.addEventListener("click",selectColor);
 box3.addEventListener("click",selectColor);
 box4.addEventListener("click",selectColor);
-box5.addEventListener("click",selectColor);
 
 
 function selectColor(event){
