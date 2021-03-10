@@ -39,6 +39,7 @@ window.onload = function () {
 
   const elementInput = document.createElement('input');
   elementInput.id = 'board-size';
+  elementInput.min = 1;
   sectionBotoes.appendChild(elementInput);
 
   const buttonInput1 = document.createElement('button');
