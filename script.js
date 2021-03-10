@@ -9,8 +9,9 @@ const button = document.createElement('button');
 buttonDiv.appendChild(button);
 button.id = 'clear-board';
 button.innerText = 'Limpar';
+
 button.addEventListener('click', function () {
-  pixelBoard.style.backgroundColor = 'white' 
+  pixelBoard.style.backgroundColor = 'white';
   for (let counter = 0; counter < pixel.length; counter += 1) {
     pixel[counter].style.backgroundColor = 'white';
   }
@@ -25,14 +26,53 @@ for (let counterDiv = 0; counterDiv < 5; counterDiv += 1) {
   }
 }
 
-localStorage.setItem('cor', 'white');
-for (let counter = 0; counter < 25; counter += 1) {
-  pixel[counter].style.backgroundColor = (localStorage.getItem('cor'));
-  pixel[counter].style.border = '1px solid black';
-  pixel[counter].style.height = '40px';
-  pixel[counter].style.width = '40px';
-  pixel[counter].style.display = 'inline-block';
+const buttonPixel = document.getElementById('generate-board');
+const input = document.getElementById('board-size');
+
+buttonPixel.addEventListener('click', function(){
+ if (input.value === "") {
+    alert('Board inválido!')
+  }
+
+  const pixelBoard = document.getElementById('pixel-board');
+  document.getElementById('board-container').removeChild(pixelBoard);
+
+  const divMotherOfPixel = document.getElementById('board-container');
+  const createBoard = document.createElement('div')
+  divMotherOfPixel.appendChild(createBoard)
+  createBoard.id = 'pixel-board';
+
+  for (let counterInline = 0; counterInline < input.value; counterInline += 1) {
+    createBoard.appendChild(document.createElement('div'));
+    createBoard.lastChild.className = 'inlineDivs';
+    for (let counterPixel = 0; counterPixel < input.value; counterPixel += 1) {
+      const getInlineDiv = document.getElementsByClassName('inlineDivs');
+      getInlineDiv[counterInline].appendChild(document.createElement('div'));
+      getInlineDiv[counterInline].lastChild.className = 'pixel'
+    }
+  }
+})
+
+if (input.value == ""){
+  const getPixel = document.getElementsByClassName('pixel');
+  for (let counter = 0; counter < getPixel.length; counter += 1) {
+    getPixel[counter].style.backgroundColor = (localStorage.getItem('cor'));
+    getPixel[counter].style.border = '1px solid black';
+    getPixel[counter].style.height = '40px';
+    getPixel[counter].style.width = '40px';
+    getPixel[counter].style.display = 'inline-block';
+  }
+} 
+/* else {
+
+    const pixelPicker = document.getElementsByClassName('pixel');
+    localStorage.setItem('cor', 'white');
+    pixelPicker[0].style.height= '40px';
+    pixelPicker[0].style.width= '40px';
+    pixelPicker[0].style.display
+  }
 }
+ */
 
 const colorsBackground = ['#fec5bb', '#d8e2dc', '#fec89a'];
 for (let counter = 0; counter < colorsBackground.length; counter += 1) {
