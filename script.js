@@ -55,6 +55,9 @@ function paintingPixel(event) {
   clickButton.addEventListener('click', clearBoard);
 
 
+
+  
+
   function createTabPixels() {
   const valueFromInput = document.getElementById('board-size');
   if (valueFromInput.value === ''){
@@ -62,14 +65,13 @@ function paintingPixel(event) {
     return null;
   }
 
-  if(valueFromInput.value < 0 ){
-    valueFromInput.value = 0;
+  if(valueFromInput.value < 6 ){
+    valueFromInput.value = 5;
 }
 
-  if(valueFromInput.value < 6 ){
-      valueFromInput.value = 5;
-  }
-  
+
+  if(valueFromInput.value > 0 ){
+
   if (valueFromInput.value > 50){
     valueFromInput.value = 50;
   } 
@@ -87,6 +89,7 @@ function paintingPixel(event) {
     }
   }
   boardListener()
+}
 }
 
 const btGenBoard = document.getElementById('generate-board');
