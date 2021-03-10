@@ -13,5 +13,5 @@ function adicionandoPixels() {
 }
 adicionandoPixels();
 
-let quadradoPreto = document.getElementsByTagName('color')[0];
+let quadradoPreto = document.getElementsByClassName('color')[0];
 quadradoPreto.className = 'color selected';
