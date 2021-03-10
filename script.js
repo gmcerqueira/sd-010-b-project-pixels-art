@@ -61,9 +61,20 @@ for(let i = 0; i < selectPixel.length; i++){
 function pintar(elementoEmQuestao){
     let cor = document.querySelector('.selected').style.backgroundColor;
     elementoEmQuestao.srcElement.style.backgroundColor = cor;
+    console.log(cor);
 }
 
+//add event listener LIMPAR
+let limpar = document.querySelector('#clear-board');
+limpar.addEventListener('click', limparFunction);
 
+function limparFunction(){
+    let pixels = document.querySelectorAll('.pixel');
+    pixelColor = 'white';
+    for(let i = 0; i < pixels.length; i++){
+        pixels[i].style.backgroundColor = "white";
+    }
+}
 
 
 

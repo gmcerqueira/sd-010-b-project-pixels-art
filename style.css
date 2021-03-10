@@ -37,3 +37,7 @@
 .table-row{
     height: 42px;
 }
+
+#clear-board{
+    margin-bottom: 10px;
+}
