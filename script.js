@@ -3,12 +3,12 @@ let n = 5;
 
 for (let indexLinhas = 0; indexLinhas < n; indexLinhas += 1) {
   let linha = document.createElement('tr');
-  for (let indexColunas = 0; indexColunas < n;indexColunas += 1) {
+  for (let indexColunas = 0; indexColunas < n; indexColunas += 1) {
     let coluna = document.createElement('td');
     coluna.className = 'pixel';
     linha.appendChild(coluna);
     quadros.appendChild(linha);
   }
-};
+}
 
 document.getElementsByClassName('color')[0].className = 'color selected';
