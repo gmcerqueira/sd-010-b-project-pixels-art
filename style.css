@@ -5,7 +5,6 @@ h1 {
 #color-palette {
   margin: auto;
   margin-top: 60px;
-  background-color: aqua;
  }
 
 .color {
@@ -16,7 +15,6 @@ h1 {
   
 #botão {
   margin-top: 20px;
-  background-color: aquamarine;
 }
   
 #clear-board {
