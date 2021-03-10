@@ -28,17 +28,19 @@ function paletaSelecionada() {
   const elemento = event;
   document.querySelector('.selected').className = 'color';
   elemento.target.className = 'color selected';
-  });
+  })
   }
   paletaSelecionada();
-  
+
 function pintar() {
-  const selecionaCor = document.querySelector('#pixel-board');
-  selecionaCor.addEventListener('click', (event) => {
-    const elemento = event;
-    const corSelecionada = document.querySelector('.selected').style.backgroundColor;
-    elemento.target.style.backgroundColor = corSelecionada;
-  });
+  const selecionaCor = document.querySelectorAll('.pixel');
+  for (let index = 0; index < selecionaCor.length; index += 1) {
+    selecionaCor[index].addEventListener('click', (event) => {
+      const elemento = event;
+      const corSelecionada = document.querySelector('.selected').style.backgroundColor;
+      elemento.target.style.backgroundColor = corSelecionada;
+    })
+  }
 }
 pintar();
 
@@ -47,3 +49,4 @@ document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
 document.getElementsByClassName('color')[2].style.backgroundColor = 'blue';
 document.getElementsByClassName('color')[3].style.backgroundColor = 'yellow';
+$('div').contents().filter(function() { return this.nodeType === 3; }).remove();
