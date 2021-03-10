@@ -18,21 +18,24 @@
   border: 1px solid black;
 }
 
-#black {
-  background-color: black;
+#blue {
+  background-color: blue;
 }
 
 #red {
   background-color: red;
 }
 
-#blue {
-  background-color: blue;
-}
+
 
 #green {
   background-color: green;
 }
+
+#black {
+  background-color: black;
+}
+
 
 #pixel-board {
   width: 400px;
