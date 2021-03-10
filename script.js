@@ -40,6 +40,7 @@ fourthDiv.id = 'yellow';
 document.querySelector('#black').classList = 'color selected';
 
 
+
 // usei como consulta para resolver o problema, a propriedade display do CSS deste site para posicionar os elementos. URL => https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css | Usei a propriedade display do CSS deste site para posicionar os elementos.
 
 // Cria board de pixels
@@ -77,8 +78,15 @@ let idColor = '';
   };
 //pinta os quadradinhos
 const divsPixel = document.querySelectorAll('.pixel')
+
  for (let index = 0; index < divsPixel.length; index += 1) {
+
   divsPixel[index].addEventListener('click', (event) => {
-    event.target.id = idColor
+    if(idColor === ''){
+      event.target.id = 'black';
+    } else {
+    event.target.id = idColor;
+    }
   });
  }
+//  document.getElementsByClassName('color')[0].id += ' black';
