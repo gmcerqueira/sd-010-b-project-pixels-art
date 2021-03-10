@@ -1,9 +1,7 @@
 
 function gerar_cor() {
 	let preencherCor = document.querySelectorAll(".color");
-
 	for (let cont = 1; cont < preencherCor.length; cont += 1) {
-
 		let r = Math.random() * 255;
 		let g = Math.random() * 255;
 		let b = Math.random() * 255;
@@ -15,7 +13,6 @@ function gerar_cor() {
 			b = Math.random() * 255;
 			randomColor = `rgb(${r}, ${g} , ${b})`;
 		}
-
 		preencherCor[cont].style.backgroundColor = randomColor;
 		preencherCor[0].style.backgroundColor = "rgba(0,0,0)";
 		preencherCor[0].className = "color selected";
@@ -45,18 +42,18 @@ function escolheCor() {
 	}
 }
 
-function selecionaCor (event) {
+function selecionaCor(event) {
 	corDaVez[cont].className = "color selected";
 }
 
 escolheCor();
 
-function clear(){
+function clear() {
 	let limpaPixel = document.querySelectorAll(".color");
-	for (let cont = 0; cont < limpaPixel.length; cont += 1){
+	for (let cont = 0; cont < limpaPixel.length; cont += 1) {
 		limpaPixel[cont] = limpaPixel[cont].style.backgroundColor = "rgb(255 , 255 , 255)";
 	}
-	
+
 }
 document.getElementById("clear-board").addEventListener("click", clear());
 
