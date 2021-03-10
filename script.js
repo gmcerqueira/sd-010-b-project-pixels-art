@@ -1,3 +1,4 @@
+const tabelaPixel = document.querySelector('#pixel-board');
 // criar div com classe color
 function criarDiv() {
   const novaDiv = document.createElement('div');
@@ -53,20 +54,27 @@ function criaLinhas() {
 }
 
 function criarTabelaPixel(pixel) {
-  const tabelaPixel = document.querySelector('#pixel-board');
   tabelaPixel.appendChild(pixel);
 }
 
-let pixelTamanho = 5;
-if (pixelTamanho < 5) {
-  pixelTamanho = 5;
-} else if (pixelTamanho > 50) {
-  pixelTamanho = 50;
+function gerarTabela(valor) {
+  let number = valor;
+  if (number < 5) {
+    number = 5;
+  } else if (number > 50) {
+    number = 50;
+  }
+  for (let index = 0; index < number; index += 1) {
+    criarTabelaPixel(criaLinhas());
+    for (let index2 = 0; index2 < number; index2 += 1) {
+      criarTabelaPixel(criarPixels());
+    }
+  }
 }
 
-for (let index = 0; index < pixelTamanho; index += 1) {
+for (let index = 0; index < 5; index += 1) {
   criarTabelaPixel(criaLinhas());
-  for (let index2 = 0; index2 < pixelTamanho; index2 += 1) {
+  for (let index2 = 0; index2 < 5; index2 += 1) {
     criarTabelaPixel(criarPixels());
   }
 }
@@ -97,9 +105,8 @@ function pintaPixel(pixelAtual) {
   const corSelecionada = document.querySelector('.selected');
   selecionarPixel.style.backgroundColor = corSelecionada.style.backgroundColor;
 }
-const escolhePixel = document.querySelector('#pixel-board');
 
-escolhePixel.addEventListener('click', pintaPixel);
+tabelaPixel.addEventListener('click', pintaPixel);
 
 // criar botão de limpeza
 
@@ -130,6 +137,7 @@ function criarInput() {
   novoInput.id = 'board-size';
   novoInput.type = 'number';
   novoInput.min = '1';
+  novoInput.max = '50';
   return novoInput;
 }
 
@@ -144,12 +152,28 @@ function criarBotao() {
 detalhaSessao.appendChild(criarInput());
 detalhaSessao.appendChild(criarBotao());
 
-function aumentarPixels() {
-  const tabelaPixel = document.querySelector('#pixel-board');
-  const tamanhoTabela = document.querySelector('#generate-board');
+// apaga a tabela antiga para quando criar a nova
+
+function apagarTabela(pai) {
+  while (pai.firstChild) {
+    pai.removeChild(pai.lastChild);
+  }
 }
+
+// função que apaga e cria a nova tabela
+
+function aumentarPixels() {
+  const tamanhoTabela = document.querySelector('#board-size').value;
+  if (tamanhoTabela === '') {
+    return alert('Board inválido!');
+  }
+  apagarTabela(tabelaPixel);
+  gerarTabela(tamanhoTabela);
+}
+
+const botaoVqv = document.querySelector('#generate-board');
+botaoVqv.addEventListener('click', aumentarPixels);
 
 window.onload = function () {
   adicionarBgcolor();
-  aumentarPixels();
 };
