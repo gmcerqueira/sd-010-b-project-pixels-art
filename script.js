@@ -10,20 +10,14 @@ function mudandoacorosa() {
 }
 mudandoacorosa();
 
-function mudandoacorazul() {
-  let azul = document.getElementsByClassName("color")[2]
-  azul.style.backgroundColor = "#00BBF9"
-}
-mudandoacorazul();
-
 function mudandoacorverdea() {
-  let verdea = document.getElementsByClassName("color")[3]
-  verdea.style.backgroundColor = "#64dfdf"
+  let verdea = document.getElementsByClassName("color")[2]
+  verdea.style.backgroundColor = "#6fffe9"
 }
 mudandoacorverdea();
 
-/*function mudandoacoroxa() {
-  let roxo = document.getElementsByClassName("color")[4]
+function mudandoacoroxa() {
+  let roxo = document.getElementsByClassName("color")[3]
   roxo.style.backgroundColor = "#9B5DE5"
 }
-mudandoacoroxa();*/
+mudandoacoroxa();

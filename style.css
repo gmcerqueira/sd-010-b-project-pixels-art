@@ -1,5 +1,16 @@
+table.color-palette {
+  margin-bottom: 10px;
+}
+
 td.color {
   border: 1px solid black;
   width: 40px;
   height: 40px;
+}
+
+td.pixel {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  background-color: "white";
 }
