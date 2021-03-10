@@ -27,12 +27,12 @@ const divPixelBoard = document.getElementById('pixel-board');
 
 for (let i = 1; i <= 5; i += 1) {
   const divPixelLine = document.createElement('div');
-  divPixelLine.className = 'pixel tr';
+  divPixelLine.className = 'pixel';
   divPixelBoard.appendChild(divPixelLine);
 
   for (let i2 = 1; i2 <= 5; i2 += 1) {
     const divPixelCol = document.createElement('div');
-    divPixelCol.className = 'pixel td';
+    divPixelCol.className = 'pixel';
     divPixelLine.appendChild(divPixelCol);
   }
 }
