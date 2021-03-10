@@ -4,8 +4,7 @@ function createElement(tagName) {
   return element;
 }
 
-//função para criar paletas de cores
-//fontes usadas: 
+// função para criar paletas de cores
 // classList: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 // forEach: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 // childNodes: https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes
@@ -26,7 +25,7 @@ function setPaletteColor() {
   colors[0].classList.add('selected');
 }
 
-//função para preenchimento dos pixels
+// função para preenchimento dos pixels
 function setPixelBoard() {
   for (let index = 0; index < 5; index += 1) {
     for (let i = 0; i < 5; i += 1) {
@@ -61,7 +60,7 @@ function paintPixel(event) {
 // função para limpar a board dos pixels
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
-  pixels.forEach((index) => { index.style.backgroundColor = ''; }); // troca o que tiver no pixel por ''
+  pixels.forEach((aux) => { aux.style.backgroundColor = ''; }); // troca o que tiver no pixel por ''
 }
 
 // window.load para carregar as funções na página
@@ -71,5 +70,5 @@ window.onload = function init() {
   setPixelBoard(); //  para chamar a função da board dos pixels
   document.getElementById('color-palette').addEventListener('click', getSelected); // adiciona o evento "clique do mouse" à paleta de cores
   document.getElementById('pixel-board').addEventListener('click', paintPixel); // adiciona o evento "clique do mouse" à board de pixels
-  document.getElementById('clear-button').addEventListener('click', clearBoard); // adiciona o evento "clique do mouse" ao botão Limpar
+  document.getElementById('clear-board').addEventListener('click', clearBoard); // adiciona o evento "clique do mouse" ao botão Limpar
 };
