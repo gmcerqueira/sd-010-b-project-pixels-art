@@ -6,6 +6,9 @@ for (let divs = 0; divs < 4; divs += 1) {
   divPallete.className = 'color';
   colorPallete.appendChild(divPallete);
 }
+const blackSelected = document.querySelector('.color');
+blackSelected.classList.add('selected')
+
 
 const boardSquares = [];
 for (let i = 0; i < 5; i += 1) {
@@ -27,4 +30,14 @@ for (let j = 0; j < boardSquares.length; j += 1) {
     createCol.className = 'pixel';
     lineSquare[j].appendChild(createCol);
   }
+}
+
+function backGroundWhite () {
+  const whiteSquares = document.getElementsByClassName('pixel')
+  whiteSquares.style.backGroundColor = 'white';
+} 
+
+function clickBoard () {
+  const clearBoard = document.querySelector('#clear-board');
+  clearBoard.addEventListener('click', backGroundWhite());  
 }
