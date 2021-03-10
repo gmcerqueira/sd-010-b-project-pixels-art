@@ -65,16 +65,31 @@ function printSquare() {
         event.target.style.backgroundColor = 'black';
       } else if (color2.className === 'color selected') {
         event.target.style.backgroundColor = 'blue';
-      } else if( color3.className === 'color selected') {
+      } else if ( color3.className === 'color selected') {
         event.target.style.backgroundColor = 'green';
       } else if (color4.className === 'color selected') {
         event.target.style.backgroundColor = 'red';
       }
-    })
+    });
   }
 }
 
+function createButton() {
+  const button = document.createElement('button');
+  const place = document.getElementById('color-palette');
+  button.id = 'clear-board';
+  button.innerHTML = 'Limpar';
+  document.body.insertBefore(button, place.nextSibling);
+  button.addEventListener('click', function () {
+    const board = document.getElementsByClassName('pixel');
+    for (let index = 0 ; index < board.length; index += 1) {
+      board[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
 createPalette();
+createButton();
 colorSquare();
 createColorBoard();
 reselectColor();

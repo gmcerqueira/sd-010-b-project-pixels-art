@@ -10,3 +10,8 @@
   width: 40px;
   border: 1px solid black;
 }
+
+#clear-board {
+  width: 182px;
+  margin-left: 2px;
+}
