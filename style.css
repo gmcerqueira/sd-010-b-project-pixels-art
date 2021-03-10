@@ -1,3 +1,35 @@
 #title {
   text-align: center;
 }
+
+#color-palette span:nth-child( 1 ) {
+  background-color: black;
+  width: 150px;
+  height: 150px;
+  color: black;
+  border: solid 1px;
+}
+
+#color-palette span:nth-child( 2 ) {
+  background-color: red;
+  width: 150px;
+  height: 100px;
+  color: red;
+  border: solid 1px;
+}
+
+#color-palette span:nth-child( 3 ) {
+  background-color: blue;
+  width: 150px;
+  height: 100px;
+  color: blue;
+  border: solid 1px;
+}
+
+#color-palette span:nth-child( 4 ) {
+  background-color: green;
+  width: 150px;
+  height: 100px;
+  color: green;
+  border: solid 1px;
+}
