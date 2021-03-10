@@ -31,3 +31,7 @@ background-color: yellow;
     width: 40px;
     display: inline-block;
 }
+
+.jellyRows {
+    display: inline-block;
+}

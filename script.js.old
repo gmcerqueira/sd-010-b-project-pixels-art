@@ -1,0 +1,24 @@
+const boxes = 5;
+const rows = 5;
+const pixelB = document.getElementById('pixel-board');
+const jellyRows = document.getElementById('jellyRows');
+
+
+function createBox(boxes) {
+  for (let i = 0; i < boxes; i += 1) {
+    let creationB = document.createElement("td");
+    creationB.className = 'pixel';
+    jellyRows.appendChild(creationB);
+  }
+}
+
+function createRows(rows) {
+  for (let i = 0; i < rows; i += 1) {
+    let creationR = document.createElement("tr");
+    creationR.className = 'jellyRows';
+    pixelB.appendChild(creationR);
+    createBox(boxes);
+  }
+}
+
+createRows(rows);
