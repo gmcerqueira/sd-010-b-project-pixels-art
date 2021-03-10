@@ -21,4 +21,21 @@ function criarCores(){
   blue.style.backgroundColor = 'blue';
 } criarCores()
 
+
+function criarQuadro(){
+  let pai = document.getElementById('pixel-board')
+ 
+  for(i = 0; i < 6; i += 1) {
+    let filho = document.createElement('div')
+    filho.className = 'pixel-linha'  
+    pai.appendChild(filho);
+
+    for(j = 0; j < 6; j += 1) {
+    let filho2 = document.createElement('div')
+    filho2.className = 'pixel'
+    filho.appendChild(filho2); 
+    }   
+  } 
+} criarQuadro()
+
   
