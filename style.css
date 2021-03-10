@@ -1,4 +1,14 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
 #pixel-board {
+  margin: auto;
   width: 210px;
   display: flex;
   flex-wrap: wrap;
@@ -6,9 +16,12 @@
 
 .color, .pixel {
   border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+.color {
+  margin: 5px;
 }
 
 .pixel {

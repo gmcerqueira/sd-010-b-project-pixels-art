@@ -1,21 +1,33 @@
 window.onload = function () {
   localStorage.setItem('backgroundColor', 'black');
 };
-// Functions:
+
 // Cria elementos:
 function createElements(tag) {
   const element = document.createElement(tag);
   return element;
 }
 
+// Color Generator
+// const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+// const r = randomBetween(0, 255);
+// const g = randomBetween(0, 255);
+// const b = randomBetween(0, 255);
+// // const rgb = `rgb(${r},${g},${b})`; // Collect all to a css color string
+
+// const cor1 = `rgb(${r},${g},${b})`;
+// const cor2 = `rgb(${r},${g},${b})`;
+// const cor3 = `rgb(${r},${g},${b})`;
+// const cor4 = `rgb(${r},${g},${b})`;
+
 // Cria paletta:
 function createColorPalette() {
   const palettes = document.getElementById('color-palette').childNodes;
-  const colors = ['black', 'blue', 'red', 'cyan'];
-
+  const colors = ['black', 'purple', 'blue', 'red'];
+  // console.log(colors);
   for (let i = 0; i < 4; i += 1) {
     const element = createElements('div');
-    // element.id.add(colors[i]);
+    element.id = colors[i];
     element.className = 'color';
     document.querySelector('#color-palette').appendChild(element);
   }
@@ -66,24 +78,3 @@ function setColor() {
   }
 }
 setColor();
-
-// Fabricio:
-
-// for (let i = 0; i < ref.length; i++) {
-//   referencias[i].addEventListener('click', (e) => {
-//       selecionada.style.backgroundColor = e.target.style.backgroundColor
-//   });
-// }
-
-// window.onload = () => {
-//   const defaultColorPixels = document.querySelectorAll('.pixel');
-//   const pixelColorStorage = localStorage.setItem('backgroundColor', 'white');
-//   defaultColorPixels.style.backgroundColor = pixelColorStorage;
-
-//   const color1 = document.getElementById('color1');
-//   const colorStorage = localStorage.setItem('backgroundColor', 'black');
-//   color1.style.backgroundColor = colorStorage;
-
-//   const colorSelected = localStorage.setItem('class', 'selected');
-//   color1.className = colorSelected;
-// };
