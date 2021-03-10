@@ -10,19 +10,28 @@
 </head>
 
 <body>
+    <!--1. Adicione à página o título "Paleta de Cores"
+        O título deverá ficar dentro de uma tag h1 com o id denominado title;
+        O texto do título deve ser exatamente "Paleta de Cores". -->
     <header>
         <h1 id="title">Paleta de Cores</h1>
     </header>
 
+    <!--2. A paleta de cores deve ser um elemento com id denominado color-palette, ao passo que cada 
+        cor individual da paleta de cores deve possuir a classe color;
+        3. Adicione a cor preta como a primeira cor da paleta de cores. -->
     <div id="color-palette">
-        <div class="color" class="select" id="black"></div>
+        <!--"https://www.maujor.com/tutorial/sintaxetut.php" A CSS 2 permite declarar mais de uma classe, desde que o nome das classes sejam separados por um espaço. -->
+        <div class="color select" id="black"></div>
         <div class="color" id="red"></div>
         <div class="color" id="green"></div>
         <div class="color" id="blue"></div>
     </div>
 
+    <!--O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
+        O quadro de "pixels" deve possuir o id denominado pixel-board, ao passo que cada "pixel" individual dentro do quadro deve possuir a classe denominada pixel; -->
     <div id="pixel-board">
-        <div class="linha">
+        <!-- <div class="linha">
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
@@ -56,7 +65,7 @@
             <div class="pixel"></div>
             <div class="pixel"></div>
             <div class="pixel"></div>
-        </div>
+        </div> -->
     </div>
 
     <script src="script.js"></script>
