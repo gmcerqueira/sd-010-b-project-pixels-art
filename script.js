@@ -25,20 +25,18 @@ function gerar_cor() {
 gerar_cor();
 
 function geraPixel() {
-	
+
 	let pixels = document.getElementById("pixel-board");
 
 	for (let cont = 0; cont < 5; cont += 1) {
 		let itemPixel = document.createElement('div');
 		pixels.appendChild(itemPixel);
 
-		for (let cont2 = 0; cont2 < 5; cont2 += 1){
+		for (let cont2 = 0; cont2 < 5; cont2 += 1) {
 			let itemPixel2 = document.createElement('div');
 			itemPixel.appendChild(itemPixel2);
 			itemPixel2.className = 'pixel';
-
 		}
-
 	}
 }
 
@@ -46,26 +44,37 @@ geraPixel();
 
 function selecionaCor() {
 	const color = document.querySelector('#color-palette');
-	color.addEventListener('click', (event) => {
-	  const element = event;
-	  document.querySelector('.selected').className = 'color';
-	  element.target.className = 'color selected';
+	color.addEventListener('click', function (event) {
+		document.querySelector('.selected').classList.remove('selected');
+		event.target.classList.add('selected');
 	});
-  }
-  selecionaCor();
+}
+selecionaCor();
 
-
-  function pintar() {
+function pintar() {
 	const quadrados = document.querySelector('#pixel-board');
-	quadrados.addEventListener('click', (event) => {
-	  const abacaxi = event;
-	  const colorSelected = document.querySelector('.selected').style.backgroundColor;
-	  abacaxi.target.style.backgroundColor = colorSelected;
+	quadrados.addEventListener('click', function (event) {
+		const colorSelected = document.querySelector('.selected').style.backgroundColor;
+		event.target.style.backgroundColor = colorSelected;
 	});
-  }
-  pintar();
+}
+pintar();
 
 
-//let botaoLimpar = document.getElementById("clear-board").addEventListener("click", clear)
+function botaoLimpar() {
+	let botaoLimpar = document.querySelector("#clear-board")
+	botaoLimpar.addEventListener('click', clear);
+}
+
+function clear(event) {
+	const descolorir = document.querySelectorAll('.pixel');
+	for (let cont = 0; cont < descolorir.length; cont += 1) {
+		if (descolorir[cont].classList.contains('pixel')) {
+			descolorir[cont].style.backgroundColor = "rgba(255,255,255)";
+		}
+	}
+
+}
+botaoLimpar();
 
 

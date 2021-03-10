@@ -5,6 +5,10 @@
   height: 50px;
 }
 
+#title {
+  text-align: center;
+}
+
 .board {
   height: 13.125em;
   line-height: 0;
@@ -21,5 +25,5 @@
 }
 
 #pixel-board {
-  width: 250px;
+  text-align: center;
 }
