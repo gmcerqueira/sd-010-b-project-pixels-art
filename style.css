@@ -1,8 +1,7 @@
 body {
-  text-align: center;
   background-color: #f6f6f6;
   font-family: Roboto, sans-serif;
-  margin: 50px 0;
+  margin-left: 100px;
 }
 
 #title {
@@ -50,7 +49,8 @@ body {
   color: #979797;
 }
 
-input::-webkit-outer-spin-button , input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
 }
@@ -64,8 +64,8 @@ input::-webkit-outer-spin-button , input::-webkit-inner-spin-button {
   border-radius: 15px;
 }
 
-.row {
-  height: 42px;
+#pixel-board{
+  border-spacing: 0;
 }
 
 .pixel {

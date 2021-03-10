@@ -32,10 +32,10 @@ function drawPixel() {
 
 // Criando quadro
 function createRow(size) {
-  const row = document.createElement('div');
+  const row = document.createElement('tr');
   row.className = 'row';
   for (let i = 0; i < size; i += 1) {
-    const pixel = document.createElement('div');
+    const pixel = document.createElement('td');
     pixel.className = 'pixel';
     pixel.addEventListener('click', drawPixel);
     row.appendChild(pixel);
