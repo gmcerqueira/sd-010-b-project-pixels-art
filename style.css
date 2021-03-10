@@ -4,23 +4,9 @@
   height: 40px;
   display: inline-block;
 }
-#box1 {
-  background-color: black;
-}
-#box2 {
-  background-color: cyan;
-}
-#box3 {
-  background-color: yellow;
-}
-#box4 {
-  background-color: red;
-}
-#pixel-board {
-  margin-top: 25px;
-  width: 210px;
-  height: 210px;
-}
 .pixel {
   background-color:white;
 }
+#pixel-board {
+  width: 250px
+} 
