@@ -1,12 +1,12 @@
 #color-pallete {
-display: flex;
+  display: flex;
 }
 
 .color {
-    border: solid 1px black;
-    height: 150px;
-    width: 150px;
-    display: inline-block;
+  border: solid 1px black;
+  height: 150px;
+  width: 150px;
+  display: inline-block;
 }
 
 #one {
@@ -40,10 +40,10 @@ background-color: yellow;
 }
 
 #button {
-  display:flexbox;
+  display: flexbox;
 }
 
-td, tr {
+td , tr {
   border-collapse: collapse;
   border-spacing: 0;
 }

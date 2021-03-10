@@ -49,12 +49,12 @@ function yellow() {
   yellowP.classList.add('selected');
 }
 
-function clean () {
-    for (let i = 0; i < boxes; i += 1) {
-        for (let i2 = 0; i < boxes; i += 1) {
-            document.getElementById(`cell-${i + 1}-${i2 + 1}`).style.background = '#ffffff';    
-        }
+function clean() {
+  for (let i = 0; i < boxes; i += 1) {
+    for (let i2 = 0; i < boxes; i += 1) {
+      document.getElementById(`cell-${i + 1}-${i2 + 1}`).style.background = '#ffffff';    
     }
+  }
 }
 
 function cleanNow() {
