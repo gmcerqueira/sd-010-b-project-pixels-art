@@ -1,3 +1,10 @@
+window.onload = blackColorSelect;
+
+function blackColorSelect () {
+  const blackColor = document.getElementsByClassName('color')[0];
+  blackColor.className = 'color selected';
+}
+
 function createTable(number) {
   const table = document.getElementById('pixel-board');
   for (let indexLine = 0; indexLine < number; indexLine += 1) {
@@ -41,7 +48,7 @@ function paintPixel() {
       if (selectedColor !== null) {
         const getStyle = window.getComputedStyle(selectedColor);
         pixel[indexPixel].style.backgroundColor = getStyle.getPropertyValue('background-color');
-      } 
+      }
     });
   }
 }
@@ -70,8 +77,7 @@ function boardSize() {
       const tableP = document.getElementById('pixel-board');
       while (tableP.firstChild) {
         tableP.removeChild(tableP.lastChild);
-      }
-      if (input.value > 50) {
+      } if (input.value > 50) {
         input.value = 50;
       } else if (input.value < 5) {
         input.value = 5;
