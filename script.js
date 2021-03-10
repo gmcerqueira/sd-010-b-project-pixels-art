@@ -85,12 +85,34 @@ function buildingBoard (){
         }
     }
  }
+ //Cria Botão Limpa-Pixels
+function ButtonClearPixels (){
+    let localBtnClearPixels = document.querySelector("#btnClearPixels");
+    let btnClearPixels = document.createElement("button");
+    btnClearPixels.innerHTML = "Limpar";
+    btnClearPixels.id = "clear-board";
+    localBtnClearPixels.appendChild(btnClearPixels);
+    btnClearPixels.style.margin = "5px";
+    btnClearPixels.style.padding = "7px 15px";
+    btnClearPixels.style.backgroundColor = "rgba(120, 115, 80, 0.2)";
+    btnClearPixels.style.boxShadow = "1px 1px 1px black";
+    btnClearPixels.style.cursor = "pointer";
+    btnClearPixels.addEventListener("click", clearBoard);
 
+    function clearBoard (){
+        let colorPixel = document.querySelectorAll(".pixel");
+        for (let i = 0; i < colorPixel.length; i += 1){
+            colorPixel[i].style.backgroundColor = "white";
+        }
+    }
+
+}
 
 
 window.onload = function (){
     buildingBoard();
     buildingColorPalletes();
     removeAddClassSelected();
-    colorPixelSelected()    
+    colorPixelSelected();
+    ButtonClearPixels();   
 }
