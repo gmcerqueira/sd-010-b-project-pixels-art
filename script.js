@@ -1,20 +1,28 @@
 let paleta = document.createElement("table");
 paleta.id = "color-palette";
 document.body.appendChild(paleta);
+let colunaPaleta = document.getElementsByClassName("color");
 
 for(index = 0; index < 4; index += 1){
     let criaColuna = document.createElement("td");
     criaColuna.className = "color";
     paleta.appendChild(criaColuna);
+
 }
 
 // criaColuna.style.backgroundColor = "black";
 
-colunaPaleta = document.getElementsByClassName("color");
+// letcolunaPaleta = document.getElementsByClassName("color");
 colunaPaleta[0].style.backgroundColor = "black";
+colunaPaleta[0].className = "select color";
+
 colunaPaleta[1].style.backgroundColor = "green";
 colunaPaleta[2].style.backgroundColor = "blue";
 colunaPaleta[3].style.backgroundColor = "yellow";
+
+// if (colunaPaleta[0].style.backgroundColor == "black"){
+//     colunaPaleta.className = "selected color";
+// }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
