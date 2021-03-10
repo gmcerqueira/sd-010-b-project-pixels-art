@@ -14,12 +14,17 @@ yellow.addEventListener('click', escolheACor);
 red.addEventListener('click', escolheACor);
 // **************Pinta****************
 let pixel = document.querySelectorAll('.pixel');
-  for (let cont = 0; cont < pixel.length; cont += 1) {
+function pinta () {
+  let cor = document.querySelector('.selected').id;//nao era para ser cm o id rs
+ this.style.backgroundColor = cor;
+ } 
+for (let cont = 0; cont < pixel.length; cont += 1) {
   pixel[cont].addEventListener('click', pinta);
 }
-
-function pinta () {
- let cor = document.querySelector('.selected').id
-this.style.backgroundColor = cor
-} 
-
+// **************Limpa****************
+let button = document.querySelector('#clear-board');
+button.addEventListener('click', function(){
+  for (let cont = 0; cont < pixel.length; cont += 1) {
+    pixel[cont].style.backgroundColor= 'white'
+  }
+})
