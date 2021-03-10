@@ -1,3 +1,4 @@
+
 const colorPallete = document.getElementById('color-palette');
 let divPallete = document.createElement('div');
 
@@ -6,14 +7,19 @@ for (let divs = 0; divs < 4; divs += 1) {
   divPallete.className = 'color';
   colorPallete.appendChild(divPallete);
 }
-const blackSelected = document.querySelector('.color');
-blackSelected.classList.add('selected')
 
+// Requesito 6
+
+// https://www.geeksforgeeks.org/how-to-add-a-class-to-dom-element-in-javascript/ --> referência
+const blackSelected = document.querySelector('.color');
+blackSelected.classList.add('selected');
 
 const boardSquares = [];
 for (let i = 0; i < 5; i += 1) {
   boardSquares[i] = i;
 }
+
+// Requesito 4
 
 const bigSquare = document.getElementById('pixel-board');
 let createLines = document.createElement('tr');
@@ -32,12 +38,15 @@ for (let j = 0; j < boardSquares.length; j += 1) {
   }
 }
 
-function backGroundWhite () {
-  const whiteSquares = document.getElementsByClassName('pixel')
-  whiteSquares.style.backGroundColor = 'white';
-} 
+// Requesito 9
 
-function clickBoard () {
-  const clearBoard = document.querySelector('#clear-board');
-  clearBoard.addEventListener('click', backGroundWhite());  
-}
+const buttonClear = document.querySelector('#clear-board');
+const whiteSquare = document.querySelectorAll('.pixel');
+
+function clearBorder () {
+  for (let w = 0; w < whiteSquare.length; w += 1) {
+    whiteSquare[w].style.backgroundColor = 'white';
+  }
+};
+
+buttonClear.addEventListener('click', clearBorder);
