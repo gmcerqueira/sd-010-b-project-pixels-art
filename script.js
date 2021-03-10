@@ -1,21 +1,17 @@
-//Cria divs color
+// Cria divs color
 const paletaDeCores = document.getElementById('color-palette');
 for (let i = 0; i < 4; i += 1) {
-  const criaPaleta = document.createElement("div");
+  const criaPaleta = document.createElement('div');
   criaPaleta.className = 'color';
   paletaDeCores.appendChild(criaPaleta);
 }
 
-//adicionar cor as divs color
+// adicionar cor as divs color
 const cores = document.getElementsByClassName('color');
-const black = cores[0];
-const red = cores[1];
-const green = cores[2];
-const yellow = cores [3];
-black.style.background = 'black';
-red.style.background = 'red';
-green.style.background = 'green';
-yellow.style.background = 'yellow';
+cores[0].style.background = 'black';
+cores[1].style.background = 'red';
+cores[2].style.background = 'green';
+cores[3].style.background = 'yellow';
 
 // cria tabela dos pixels a serem coloridos
 const tableCreate = document.getElementById('pixel-board');
@@ -25,9 +21,16 @@ for (let i = 0; i < 5; i += 1) {
 }
 const tableCreateCells = document.querySelectorAll('pixel-board, tr');
 for (let i = 0; i < tableCreateCells.length; i += 1) {
-    for (let n = 0; n < tableCreateCells.length; n += 1) {
-  const lines = document.createElement('td');
-  lines.className = 'pixel';
+  for (let n = 0; n < tableCreateCells.length; n += 1) {
+    const lines = document.createElement('td');
+    lines.className = 'pixel';
   tableCreateCells[i].appendChild(lines);
+  }
 }
-}
+ let changecolor = document.getElementsByClassName('pixel');
+ changecolor.addEventListener('click', change);
+ function change(){
+     changecolor.style.background = 'black'
+ }
+ // pesquisa realizada no site https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList sobre o classList
+ cores[0].classList.add('.selected') 
