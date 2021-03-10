@@ -28,10 +28,6 @@ for (let i = 0; i < tableCreateCells.length; i += 1) {
     lines.className = 'pixel';
   tableCreateCells[i].appendChild(lines);
   }
-}
- let changecolor = document.getElementsByClassName('pixel');
- changecolor.addEventListener('click', change);
- function change(){
-     changecolor.style.background = 'black'
+
  }
 
