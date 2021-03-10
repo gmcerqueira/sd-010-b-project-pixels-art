@@ -6,7 +6,7 @@ const blue = document.getElementById('blue');
 const palette = [black, orangered, green, blue];
 
 function selectColor(event) {
-  for (index in palette ) {
+  for (let index = 0; index < palette.length; index++ ) {
     if (palette[index].classList.contains('selected')) {
         palette[index].classList.remove('selected');
     }
