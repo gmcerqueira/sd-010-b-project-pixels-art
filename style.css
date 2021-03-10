@@ -1,1 +1,33 @@
 /* Estilização */
+
+#title {
+    text-align: center;
+    color: black;
+}
+
+#color-palette {   
+    height: 40px;
+}
+
+.color {
+    display: inline-block;
+    border: solid black;
+    border-width: 1px; 
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+
+#pixel-board {
+    margin-top: 15px;
+}
+
+.pixel {
+    display: table-cell;
+    border: solid black;
+    background-color: white;
+    border-width: 1px; 
+    height: 40px;
+    width: 40px;    
+}
