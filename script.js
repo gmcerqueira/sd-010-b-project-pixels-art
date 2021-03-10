@@ -40,7 +40,6 @@ function randomColor() {
 }
 
 function setColor(element) {
-    element[0].style.backgroundColor = 'black';
     for (let i = 1; i < element.length; i++) {
         element[i].style.backgroundColor = randomColor();
     }
