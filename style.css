@@ -33,10 +33,10 @@ section{
 }
 .pixel{
 border: black solid 1px;
-width: 70px;
-height: 70px;
+width: 41px;
+height: 41px;
 display: inline-block;
 background-color: white;
-font-size: 41px;
+
 border: 1px solid black 
 }
