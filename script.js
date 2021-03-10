@@ -1,72 +1,48 @@
-function selectBlack(event) {
-  const colorRed = document.getElementById('red');
-  const colorBlue = document.getElementById('blue');
-  const colorGreen = document.getElementById('green');
+const corPaleta = document.querySelectorAll('.color');
+function pintaPaleta() {
+  for (let index = 0; index < corPaleta.length; index += 1) {
+    if (index === 0) {
+      corPaleta[index].style.backgroundColor = 'black';
+      corPaleta[index].className = 'color selected';
+    } else if (index === 1) {
+      corPaleta[index].style.backgroundColor = randomizaPaleta();
+    } else if (index === 2) {
+      corPaleta[index].style.backgroundColor = randomizaPaleta();
+    } else if (index === 3) {
+      corPaleta[index].style.backgroundColor = randomizaPaleta();
+    }
+  }
+}
+pintaPaleta();
 
-  colorRed.className = 'color';
-  colorBlue.className = 'color';
-  colorGreen.className = 'color';
-  event.target.className = 'color selected';
+function randomizaPaleta() {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
-function selectRed(event) {
-  const corPreto = document.getElementById('black');
-  const corAzul = document.getElementById('blue');
-  const corVerde = document.getElementById('green');
-
-  corPreto.className = 'color';
-  corAzul.className = 'color';
-  corVerde.className = 'color';
-  event.target.className = 'color selected';
+function selecionaCor() {
+  for (let index = 0; index < corPaleta.length; index += 1) {
+    corPaleta[index].addEventListener('click', function() {
+      const lastColor = document.querySelector('.selected');
+      lastColor.className = lastColor.className.replace('color selected', 'color');
+      corPaleta[index].className = 'color selected';
+    });
+  }
 }
-
-function selectBlue(event) {
-  const corPreto = document.getElementById('black');
-  const corVermelho = document.getElementById('red');
-  const corVerde = document.getElementById('green');
-  
-  corPreto.className = 'color';
-  corVermelho.className = 'color';
-  corVerde.className = 'color';
-  event.target.className = 'color selected';
-}
-
-function selectGreen(event) {
-  const corPreto = document.getElementById('black');
-  const corVermelho = document.getElementById('red');
-  const corAzul = document.getElementById('blue');
-
-  corPreto.className = 'color';
-  corVermelho.className = 'color';
-  corAzul.className = 'color';
-  event.target.className = 'color selected';
-}
-
-const blackButton = document.getElementById('black');
-blackButton.addEventListener('click', selectBlack);
-
-const redButton = document.getElementById('red');
-redButton.addEventListener('click', selectRed);
-
-const blueButton = document.getElementById('blue');
-blueButton.addEventListener('click', selectBlue);
-
-const greenButton = document.getElementById('green');
-greenButton.addEventListener('click', selectGreen);
+selecionaCor();
 
 const pixelBoard = document.getElementById('pixel-board');
-pixelBoard.addEventListener('click', function (event) {
-  const backgroundColor = document.querySelector('.selected');  
-  const estilo = backgroundColor.getAttribute('id');
-  event.target.style.backgroundColor = estilo;  
-});
+pixelBoard.addEventListener('click', function(event) {
+  const corSelecionada = document.querySelector('.selected');
+  event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
+})
 
-function limpaGrid() {
+const buttonClean = document.getElementById('clear-board');
+buttonClean.addEventListener('click', function() {
   const pixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
   }
-}
-
-const buttonClean = document.getElementById('clear-board');
-buttonClean.addEventListener('click', limpaGrid);
+});
