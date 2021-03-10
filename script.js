@@ -19,39 +19,30 @@ document.getElementsByClassName('color')[0].className += ' selected';
 
 // - Note que os elementos que deverão receber a classe `selected` devem ser os mesmos elementos que possuem a classe `color`, como especificado no **requisito 2**.
 
-box[0].addEventListener('click',function() {
-  box[0].className = 'color selected'
-  box[1].className = 'color'
-  box[2].className = 'color'
-  box[3].className = 'color'
+box[0].addEventListener('click', () => {
+  box[0].className = 'color selected';
+  box[1].className = 'color';
+  box[2].className = 'color';
+  box[3].className = 'color';
+});
 
-})
+box[1].addEventListener('click', () => {
+  box[1].className = 'color selected';
+  box[0].className = 'color';
+  box[2].className = 'color';
+  box[3].className = 'color';
+});
 
-box[1].addEventListener('click',function() {
-  box[1].className = 'color selected'
-  box[0].className = 'color'
-  box[2].className = 'color'
-  box[3].className = 'color'
+box[2].addEventListener('click', () => {
+  box[2].className = 'color selected';
+  box[1].className = 'color';
+  box[0].className = 'color';
+  box[3].className = 'color';
+});
 
-})
-
-
-
-box[2].addEventListener('click',function() {
-  box[2].className = 'color selected'
-  box[1].className = 'color'
-  box[0].className = 'color'
-  box[3].className = 'color'
-
-})
-
-box[3].addEventListener('click',function() {
-  box[3].className = 'color selected'
-  box[1].className = 'color'
-  box[2].className = 'color'
-  box[0].className = 'color'
-
-})
-
-let color = document.getElementsByClassName('.coler selected')
-
+box[3].addEventListener('click', () => {
+  box[3].className = 'color selected';
+  box[1].className = 'color';
+  box[2].className = 'color';
+  box[0].className = 'color';
+});
