@@ -9,4 +9,6 @@ for (let indexLinhas = 0; indexLinhas < n; indexLinhas += 1) {
     linha.appendChild(coluna);
     quadros.appendChild(linha);
   }
-}
+};
+
+document.getElementsByClassName('color')[0].className = 'color selected';
