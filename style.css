@@ -12,6 +12,7 @@ body {
 }
 
 #pixel-board .pixel {
+  background-color: white;
 	border: solid 1px;
   height: 40px;
   width: 40px;
