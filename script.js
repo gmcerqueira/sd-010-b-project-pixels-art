@@ -8,3 +8,15 @@ function Quadro () {
   }
 }
 Quadro();
+//Agradecimentos ao Renato GSolza Turma 10 - Tribo B, por ter me auxiliado a entender melhor o objetivo do desafio
+function clickNasPaletas () {
+let getPixel = document.getElementsByClassName('selected')[0];
+getPixel.classList.remove('selected');
+event.target.classList.add('selected');
+}
+
+let getColor = document.getElementsByClassName('color');
+for(let index = 0; index < getColor.length; index+=1) {
+ 
+  getColor[index].addEventListener('click',clickNasPaletas); 
+}
