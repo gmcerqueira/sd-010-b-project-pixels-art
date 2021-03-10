@@ -7,7 +7,7 @@
   width: 150px;
   height: 150px;
   color: black;
-  border: solid 1px;
+  border: solid 1px black;
 }
 
 #color-palette span:nth-child( 2 ) {
@@ -15,7 +15,7 @@
   width: 150px;
   height: 100px;
   color: red;
-  border: solid 1px;
+  border: solid 1px black;
 }
 
 #color-palette span:nth-child( 3 ) {
@@ -23,7 +23,7 @@
   width: 150px;
   height: 100px;
   color: blue;
-  border: solid 1px;
+  border: solid 1px black;
 }
 
 #color-palette span:nth-child( 4 ) {
@@ -31,5 +31,5 @@
   width: 150px;
   height: 100px;
   color: green;
-  border: solid 1px;
+  border: solid 1px black;
 }
