@@ -57,9 +57,9 @@ function resizeMinMax(parameter) {
 }
 function clearBoard() {
   const pixelList = document.querySelectorAll('.pixel');
-    for (let index = 0; index < pixelList.length; index += 1) {
-      pixelList[index].style.backgroundColor = 'white';
-    }
+  for (let index = 0; index < pixelList.length; index += 1) {
+    pixelList[index].style.backgroundColor = 'white';
+  }
 }
 function paintPixel(pixel) {
   const selected = document.getElementsByClassName('selected');
@@ -92,10 +92,6 @@ window.onload = function () {
       const size = document.getElementById('board-size');
       if (size.value && size.value > 0) {
         recreateBoard(size.value);
-        // size.value = resizeMinMax(size.value);
-        // const parent = document.getElementById('pixel-board');
-        // removeAllChildNodes(parent);
-        // createGrid(Number(size.value));
       } else {
         alert('Board inválido!');
       }
