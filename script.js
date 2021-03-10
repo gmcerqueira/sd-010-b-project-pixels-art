@@ -85,14 +85,9 @@ divsColorPalette[2].addEventListener('click', selecionarCorAzul);
 divsColorPalette[3].addEventListener('click', selecionarCorVerde);
 pixelQuadro.addEventListener('click', pixelColor);
 
-function limparPixels(elementos, cor) {
-  document.querySelector(elementos).style.backgroundColor = cor;
+function limparPixels() {
+  document.querySelector('pixel').style.backgroundColor = 'white';
 }
 
 const buttomLimparCores = document.querySelector('.buttom');
-buttomLimparCores.addEventListener('click', limparPixels('.pixel', 'white'));
-
-// function alteraCor(elementos, cor){
-// document.querySelector(elementos).style.backgroundColor = cor;
-// };
-// alteraCor('#btn-holiday', 'blue');
+buttomLimparCores.addEventListener('click', limparPixels);
