@@ -3,61 +3,42 @@ function createItem(className, type) {
   box.className = className;
   return box;
 }
-function palleteBox (className) {
-  for (let index = 0; index < className.length; index += 1) {
-  document.getElementsByClassName(className)[index].style.backgroundColor = colorArray[index];
-  }
-}
 
 let paletteNumber = 4;
 let boxNumber = 25;
-let colorArray = ['black', 'cyan', 'yellow', 'red'];
+let bgroundColor = ['black', 'cyan', 'red', 'yellow']
+
+function firstColor () {
+  let first = document.getElementsByClassName('color')[0].className = 'color selected';
+  return first;
+}
 
 for (let index = 0; index < paletteNumber; index += 1) {
-  document.getElementById('color-palette').appendChild(createItem('color','td'));
+  document.getElementById('color-palette').appendChild(createItem('color','div'));
   document.getElementsByClassName('color')[index].id = 'box'+[index];
 }
 
+for (index = 0; index < bgroundColor.length; index += 1) {
+  let getBackGroundColor = document.getElementsByClassName('color')[index];
+  getBackGroundColor.style.backgroundColor = bgroundColor[index];
+}
+
 for (let index = 0; index < boxNumber; index += 1) {
-  document.getElementById('pixel-board').appendChild(createItem('pixel','td'));
+  document.getElementById('pixel-board').appendChild(createItem('pixel','div'));
 } 
-
-let box0 = document.getElementById('box0');
-let box1 = document.getElementById('box1');
-let box2 = document.getElementById('box2');
-let box3 = document.getElementById('box3');
-
-function changeClassBox0() {
-  box0.className = 'color selected';
-  box1.className = 'color';
-  box2.className = 'color';
-  box3.className = 'color';
-}
-function changeClassBox1() {
-  box1.className = 'color selected';
-  box0.className = 'color';
-  box2.className = 'color';
-  box3.className = 'color';
-}
-function changeClassBox2() {
-  box2.className = 'color selected';
-  box0.className = 'color';
-  box1.className = 'color';
-  box3.className = 'color';
-}
-function changeClassBox3() {
-  box3.className = 'color selected';
-  box0.className = 'color';
-  box1.className = 'color';
-  box2.className = 'color';
+function changeBoxClass(event) {
+  let puxa = document.getElementsByClassName('selected');
+  for (index = 0; index < puxa.length; index += 1) {
+    puxa[index].classList.remove('selected');
+  }
+  event.target.className = 'color selected';
 }
 
-box0.addEventListener('click', changeClassBox0);
-box1.addEventListener('click', changeClassBox1);
-box2.addEventListener('click', changeClassBox2);
-box3.addEventListener('click', changeClassBox3);
+let palleteArray = document.getElementsByClassName('color');
 
-
+for (let index = 0; index < palleteArray.length; index += 1) {
+  palleteArray[index].addEventListener('click', changeBoxClass);
+}
 
 let boardArray = document.getElementsByClassName('pixel');
 
@@ -78,4 +59,7 @@ function resetBoard () {
 }
 
 document.getElementById('clear-board').addEventListener('click',resetBoard);
-palleteBox('color');
+window.onload = firstColor;
+
+
+
