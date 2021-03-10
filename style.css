@@ -44,12 +44,8 @@ body {
   margin: auto;
 }
 
-.td {
-  display: table-cell;
-  margin: auto;
-}
-
 .pixel {
+  display: table-cell;
   border: 1px solid black;
   width: 40px;
   height: 40px;
