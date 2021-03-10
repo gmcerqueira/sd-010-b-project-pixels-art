@@ -20,23 +20,6 @@ let divs = document.querySelectorAll(".color")
 adicionaCores(["black", "red", "blue", "green"]);
 
 // Requisito 4
-// function adicionaQuadroPixels (div){
-//     let quadroPai = document.getElementById(div)
-    
-//     for (let i = 0; i < 5; i += 1){
-//         let quadroFilho = document.createElement("div");
-//         quadroFilho.className = "pixel divs-class";
-        
-
-//         quadroPai.appendChild(quadroFilho);
-//     }
-// }
-// adicionaQuadroPixels("div-1");
-// adicionaQuadroPixels("div-2");
-// adicionaQuadroPixels("div-3");
-// adicionaQuadroPixels("div-4");
-// adicionaQuadroPixels("div-5");
-
 function adicionaQuadroPixels (tr){
     let trPai = document.getElementById(tr)
 
@@ -52,3 +35,28 @@ adicionaQuadroPixels("linha-2")
 adicionaQuadroPixels("linha-3")
 adicionaQuadroPixels("linha-4")
 adicionaQuadroPixels("linha-5")
+
+//Requisito 6
+window.onload = function (){
+    let colors = document.querySelectorAll(".pixel");
+
+    function adicionaBotaoBlack (){
+        for (let i = 0; i <colors.length; i += 1){
+            colors[i].addEventListener("click", changeColor)
+        }
+    }
+    adicionaBotaoBlack();
+
+    function changeColor (){
+        for (let i = 0; i < colors.length; i += 1){
+            colors[i].style.backgroundColor = "black";
+        }
+    }
+}
+
+
+window.onload = function (){
+    let colorBlack = document.getElementById("color-palette").firstElementChild.className = "color selected";
+
+    
+}
