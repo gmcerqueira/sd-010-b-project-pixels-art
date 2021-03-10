@@ -1,12 +1,13 @@
-let colors = ['black', 'green', 'blue', 'yellow'];
+let colors = ['black', 'tomato', 'green', 'blue', 'yellow', 'red', 'orange', 'pink', 'violet', 'cyan', 'lightblue'];
 let rowsAndCols = 5;
+const numberOfColors = 4;
 let pixelBoard = document.getElementById('pixel-board');
 
 sessionStorage.color = colors[0];
 
 let h1 = document.getElementById('title');
 h1.insertAdjacentHTML('afterend', '<div id="color-palette"></div>');
-fillLineColor();
+fillRowColor();
 
 function currentColorSelected(e) {
   let color = document.querySelector('.selected');
@@ -25,9 +26,9 @@ function clearBoard() {
 let btn = document.getElementById('clear-board');
 btn.addEventListener('click', clearBoard);
 
-function fillLineColor() {
+function fillRowColor() {
   let colorPalette = document.getElementById('color-palette');
-  for (let i = 0; i < colors.length; i += 1) {
+  for (let i = 0; i < numberOfColors; i += 1) {
     let color = document.createElement('div');
     color.className = (i !== 0 ? 'color' : 'color selected');
     colorPalette.appendChild(color);
@@ -38,8 +39,12 @@ function fillLineColor() {
 
 function pixelColor() {
   let bgColor = document.getElementsByClassName('color');
-  for (let i = 0; i < bgColor.length; i += 1) {
-    bgColor[i].style.backgroundColor = colors[i];
+  bgColor[0].style.backgroundColor = colors[0];
+  for (let i = 1; i < numberOfColors; i += 1) {
+    let color = Math.ceil(Math.random() * colors.length); // ceil fará com que a posição 0 nunca seja obtida.
+    bgColor[i].style.backgroundColor = colors[color];
+    console.log(colors[color]);
+    colors.splice(color, 1);
   }
 }
 
