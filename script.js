@@ -1,19 +1,21 @@
-window.onload = function init() {
+window.onload = function () {
   localStorage.setItem('backgroundColor', 'black');
 };
 // Functions:
-
+// Cria elementos:
 function createElements(tag) {
   const element = document.createElement(tag);
   return element;
 }
 
+// Cria paletta:
 function createColorPalette() {
   const palettes = document.getElementById('color-palette').childNodes;
   const colors = ['black', 'blue', 'red', 'cyan'];
 
   for (let i = 0; i < 4; i += 1) {
     const element = createElements('div');
+    // element.id.add(colors[i]);
     element.className = 'color';
     document.querySelector('#color-palette').appendChild(element);
   }
@@ -21,11 +23,11 @@ function createColorPalette() {
     const elements = nodes;
     elements.style.backgroundColor = colors[index];
   });
-
   palettes[0].classList.add('selected');
 }
 createColorPalette();
 
+// Cria board:
 function createPixels() {
   for (let x = 0; x < 5; x += 1) {
     for (let i = 0; i < 5; i += 1) {
@@ -37,46 +39,41 @@ function createPixels() {
 }
 createPixels();
 
-// // Events:
+// Events:
 
-function colorPicker (e) {
-  const ref = document.querySelectorAll('.color');
-  const seletedItem = document.getElementsByClassName('selected');
-  const pixelBoard = document.getElementById('pixel-board').children;
-  const element = e;
-  for (let i = 0; i < ref.length; i += 1) {
-    ref[i].addEventListener('click', (e) => {
-      if (element.selected !== seletedItem[i]) {
-        e.target.className.add('selected');
-      } else {
-        e.target.className.remove('selected');
-      }
+function colorPicker() {
+  const selectedItem = document.getElementsByClassName('selected');
+  const palettes = document.getElementsByClassName('color');
+
+  for (let i = 0; i < palettes.length; i += 1) {
+    palettes[i].addEventListener('click', () => {
+      selectedItem[0].classList.remove('selected');
+      event.target.classList.add('selected');
     });
   }
-  // for (let i = 0; i < ref.length; i += 1) {
-  //   pixelBoard[i].addEventListener('click', (e) => {
-  //     e.target.style.backgroundColor = selceted.style.backgroundColor;
-  //   });
-  // }
 }
 colorPicker();
+
+function setColor() {
+  // const paletteSelected = document.getElementsByClassName('color selected');
+  const pixelsEmBranco = document.getElementsByClassName('pixel');
+
+  for (let i = 0; i < pixelsEmBranco.length; i += 1) {
+    pixelsEmBranco[i].addEventListener('click', () => {
+      const selecionada = document.getElementsByClassName('selected')[0].style.backgroundColor;
+      pixelsEmBranco[i].style.backgroundColor = selecionada;
+    });
+  }
+}
+setColor();
+
+// Fabricio:
 
 // for (let i = 0; i < ref.length; i++) {
 //   referencias[i].addEventListener('click', (e) => {
 //       selecionada.style.backgroundColor = e.target.style.backgroundColor
 //   });
 // }
-
-// for (let i = 0; i < pixels_em_branco.length; i++) {
-//   pixels_em_branco[i].addEventListener('click', (e) => {
-//       e.target.style.backgroundColor = selecionada.style.backgroundColor
-//   })
-// }
-//   for (let i = 0; i < colorPalette.length; i += 1) {
-//     colorPalette[i].addEventListener('click', (event) => {
-
-//     });
-//   }
 
 // window.onload = () => {
 //   const defaultColorPixels = document.querySelectorAll('.pixel');
