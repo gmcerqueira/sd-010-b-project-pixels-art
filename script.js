@@ -8,6 +8,7 @@ let colorsList = [
 let colorItems = document.querySelectorAll('.color'); // color palette
 let pixelBoard = document.querySelector('#pixel-board'); // this gets the whole board
 let colorPalette = document.querySelector('#color-palette'); // get the color-palette section
+let pixels = document.querySelectorAll('.pixel'); //gets all pixels
 
 // set colorItems, from colorsList, to color palette
 function buttonColor() {
@@ -21,6 +22,7 @@ function createPixel(rowNumber) {
   let pixel = document.createElement('td');
   let row = document.querySelectorAll(`#pixel-board>tr`);
   pixel.className = 'pixel';
+  pixel.addEventListener('click', paintPixel); // I  this solution at Gustavo Cerqueira's Project: @gmcerqueira
   row[rowNumber].appendChild(pixel);
 }
 
@@ -46,6 +48,7 @@ function setDefaultColor() {
   colorPalette.firstElementChild.classList.add('selected');
 }
 
+// selects the color to paint pixels
 function changeColorPencil() {
   for (let i = 0; i < colorItems.length; i++) {
     colorItems[i].addEventListener('click', function () {
@@ -54,9 +57,14 @@ function changeColorPencil() {
       }
       let clicked = event.target;
       clicked.classList.add('selected');
-      console.log(clicked.tagName);
     });
   }
+}
+
+// I found this logic on Gustavo Cerqueira's project: @gmcerqueira
+function paintPixel() {
+  let pencil = document.querySelector('.selected').style.backgroundColor; // gets background color style from selected color
+  this.style.backgroundColor = pencil;
 }
 
 window.onload = function () {
@@ -64,4 +72,5 @@ window.onload = function () {
   createBoard();
   setDefaultColor();
   changeColorPencil();
+  paintPixel;
 }
