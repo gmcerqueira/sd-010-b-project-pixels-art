@@ -15,7 +15,7 @@ function selectColor(event) {
   event.target.classList.add('selected');
   console.log(event.target.className)
 }
-const valueFromInput = document.getElementsByTagName('input');
+const valueFromInput = document.getElementsByClassName('input')[0];
 if(valueFromInput.value < 0 ){
     valueFromInput.value = 0;
 }
