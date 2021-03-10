@@ -1,0 +1,46 @@
+body , main {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#title {
+  margin: 2% auto;
+  text-align: center;
+}
+
+#color-palette {
+  margin: 10px auto;
+  border: 1px solid black;
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+
+.color {
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+#black {
+  background-color: black;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#green {
+  background-color: green;
+}
