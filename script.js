@@ -1,8 +1,7 @@
 let paletaCores = document.getElementById("color-palette")
-let pixel = document.getElementById("pixel-board");
-let quadrado = document.getElementById("pixel")
-function cores(){
-
+function trocaCor(){
+let cor = document.getElementById("red").value;
+document.getElementById("black").style.background = "black"
 }
 
 
