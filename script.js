@@ -1,18 +1,32 @@
-function setColorClass() {
-  const colorSelected = document.querySelectorAll('.color');
+let colorBlack = 'black';
+
+function setColorClass(event) {
+  const colorSelected = document.querySelectorAll('.selected');
   for (let item = 0; item < colorSelected.length; item += 1) {
-    colorSelected[item];
-    colorSelected[item].addEventListener('click', function (event) {
-      console.log(event.target);
-      console.log(colorSelected[item].style);
-      // procurar tirar o elemeto que esta selecionado previamente
-      // esta selecionado pela classe
-      // colorSelected[item].classList.add('selected');
-      if (event.target.classList.contains('color')) {
-        event.target.classList.add('selected');
-      }
-    });
+    colorSelected[item].classList.remove('selected');
   }
+
+  let eventTarget = event.target;
+  eventTarget = event.target;
+  colorBlack = eventTarget.style.backgroundColor;
+  target.classList.add('selected');
+
+  /*
+  if (eventTarget.classList.contains('color')) {
+    eventTarget.classList.add('selected');
+  }
+  */
+
+  /*
+  colorSelected[1].addEventListener('click', function (event) {
+    console.log(event.target);
+    console.log(colorSelected[item].style);
+    
+    // procurar tirar o elemeto que esta selecionado previamente
+    // esta selecionado pela classe
+
+    
+  });*/
 }
 
 setColorClass();
