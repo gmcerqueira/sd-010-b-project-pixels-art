@@ -1,24 +1,51 @@
+body {
+  text-align: center;
+  background-image: url('imagens/irmão-do-jorel-reprodução.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#pixel-board {
+  margin-left: 52%;
+  padding: 0px;
+}
+
+#color-palette {
+  margin-left: 52%;
+}
+
+h1 {
+  color: white;
+  font-size: 45px;
+  margin-left: 52%;
+}
+
+.pixel {
+  margin-bottom: -4px;
+  margin-right: -3px;
+}
+
 .color {
-    display: inline-block;
-    border: solid black 1px;
-    width: 40px;
-    height: 40px;
+  display: inline-block;
+  border: solid black 1px;
+  width: 40px;
+  height: 40px;
 }
 
 #colorBlack {
-    background-color: black;
+  background-color: black;
 }
 
 #color1 {
-    background-color: blueviolet;
+  background-color: blueviolet;
 }
 
 #color2 {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 #color3 {
-    background-color: teal;
+  background-color: teal;
 }
 
 .pixel {

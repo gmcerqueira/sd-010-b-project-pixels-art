@@ -43,3 +43,4 @@ function mudaClass () {
     pegaPixelsCores[index].className = 'color';
   }
 }
+
