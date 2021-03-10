@@ -1,5 +1,4 @@
 // Função elaborada com a ajuda da colega de turma MAIARA BORSATTI.
-
 function addBoxPixels() {
     
     let dad = document.getElementById('pixel-board');
