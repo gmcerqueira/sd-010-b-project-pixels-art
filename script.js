@@ -11,9 +11,9 @@ function buildingColorPalletes (){
         let tdTablePallete = document.createElement("td");
         tdTablePallete.className = "color";
         palleteColors.appendChild(tdTablePallete);
-        tdTablePallete.style.border = "1px solid black";
-        tdTablePallete.style.width = "40px";
-        tdTablePallete.style.height = "40px";
+        // tdTablePallete.style.border = "1px solid black";
+        // tdTablePallete.style.width = "40px";
+        // tdTablePallete.style.height = "40px";
     }
 
     //Insere as cores
