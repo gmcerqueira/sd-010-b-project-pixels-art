@@ -33,38 +33,28 @@ cores[cor].addEventListener('click', function(evento){
   sessionStorage.setItem('color', evento.target.style.backgroundColor); // adiciono a cor atual ao session storage
 })
 }
+let tamanhoDoQuadro = 5;
 
+function criaQuadro(tamanhoDoQuadro){
 // Quadro de pixels (linhas)
-const pixelBoard = document.querySelector('#pixel-board');
-for (let i = 0; i < 5; i +=1 ) {
-  const box = document.createElement('tr');
-  pixelBoard.appendChild(box);
-    
-}
-
-// Botao do input
-const button = document.getElementById('generate-board')
-const campoInput = document.querySelector('#board-size')
-button.innerHTML = 'VQV'
-button.addEventListener('click', function(){
-  if (campoInput.nodeType < 5 || campoInput.nodeType > 50) {
-    alert('Board inválido!')
+  const pixelBoard = document.querySelector('#pixel-board');
+  for (let i = 0; i < tamanhoDoQuadro; i +=1 ) {
+    const box = document.createElement('tr');
+    pixelBoard.appendChild(box);    
   }
-})
-
-
-
-
-
-// Quadro de pixels (celulas)
-const pixelTable = document.querySelectorAll('#pixel-board, tr'); // recupero as tr que criei 
-for (let l = 1; l < pixelTable.length; l +=1 ) { // para cada linha 
-  for (let c = 1; c < pixelTable.length; c += 1) { // para cada coluna 
-    const box = document.createElement('td'); // crio uma celula
-    box.className  = 'pixel'; // nomeio a classe
-    pixelTable[c].appendChild(box); // e adiciono a mesma na posição referente a coluna da linha
+  // Quadro de pixels (celulas)
+  const pixelTable = document.querySelectorAll('#pixel-board, tr'); // recupero as tr que criei 
+  for (let l = 1; l <= tamanhoDoQuadro; l +=1 ) { // para cada linha 
+    for (let c = 1; c <= tamanhoDoQuadro; c += 1) { // para cada coluna 
+      const box = document.createElement('td'); // crio uma celula
+      box.className  = 'pixel'; // nomeio a classe
+      pixelTable[c].appendChild(box); // e adiciono a mesma na posição referente a coluna da linha
+    }
   }
 }
+criaQuadro(tamanhoDoQuadro)
+
+
 // pintando o quadro de pixels
 const pixels = document.querySelectorAll('.pixel') // recupero todos elem classe pixel
 for (let p = 0; p < pixels.length; p += 1){ //itero sobre todos eles
@@ -85,4 +75,18 @@ botaoClear.addEventListener('click',function(){
 })
 
 
-
+// Botao do input
+const button = document.getElementById('generate-board')
+const input = document.querySelector('#board-size')
+button.innerHTML = 'VQV'
+button.addEventListener('click', function(){
+  if (input.value === ''){
+    alert('Board inválido!')
+  } else if(input.value < 5){
+      tamanhoDoQuadro = 5;
+  } else if (input.value > 50){
+    tamanhoDoQuadro = 50;
+  } else {
+    criaquadro(input.value);
+  }
+})
