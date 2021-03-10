@@ -1,6 +1,6 @@
 function loadPixelArt() {
   let element = document.getElementsByClassName('color') [0];
-  element.className += 'selected';
+  element.className += 'color';
 }
 window.onload = loadPixelArt();
 
