@@ -27,7 +27,9 @@ function createPixels() {
       line.appendChild(column);
     }
   }
+  return containerQuadro;
 }
+
 createPixels();
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
