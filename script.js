@@ -2,7 +2,7 @@ const paletteDiv = document.getElementById('color-palette');
 const colorsPalette = document.getElementsByClassName('color');
 const colorsPaletteLenght = colorsPalette.length;
 const boardOfPixels = document.getElementById('pixel-board');
-const button = document.getElementById('btn-reset');
+const button = document.getElementById('clear-board');
 
 //create dynamically the class selected
 function firstPaletteSelected() {
