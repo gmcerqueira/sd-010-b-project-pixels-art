@@ -18,21 +18,18 @@ function createColorPalette() {
     elements.style.backgroundColor = colors[index];
   });
 }
-
 createColorPalette();
 
-// function createPixels() {
-//   const array = pixelBoard.childNodes;
-//   for (let x = 0; x < array.length; x += 1) {
-//     for (let i = 0; i < array.length; i += 1) {
-//       const createPixel = document.createElement('div');
-//       createPixel.className = 'pixel td';
-//       array[x].appendChild(createPixel);
-//     }
-//   }
-// }
-// createLinePixel();
-// createPixels();
+function createPixels() {
+  for (let x = 0; x < 5; x += 1) {
+    for (let i = 0; i < 5; i += 1) {
+      const pixels = createElements('div');
+      pixels.className = 'pixel';
+      document.querySelector('#pixel-board').appendChild(pixels);
+    }
+  }
+}
+createPixels();
 
 // // Events:
 // function clickColorPicker() {
