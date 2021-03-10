@@ -43,3 +43,11 @@ for(let pixelIndex = 0; pixelIndex < getPixel.length; pixelIndex += 1){
     }
 })
 }
+
+let getButton = document.getElementById('clear-board');
+getButton.addEventListener('click', function(event){
+  let getPixel = document.getElementsByClassName('pixel');
+  for(let index = 0; index < getPixel.length; index+=1){
+    getPixel[index].style.backgroundColor = 'white';
+  }
+})
