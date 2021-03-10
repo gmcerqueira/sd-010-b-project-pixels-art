@@ -37,5 +37,6 @@ width: 70px;
 height: 70px;
 display: inline-block;
 background-color: white;
-font-size: 2px;
+font-size: 40px;
+border: black solid 1px
 }
