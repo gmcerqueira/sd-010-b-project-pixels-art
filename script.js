@@ -73,13 +73,13 @@ function verificaCoresUm() {
   const pixelCores = document.getElementsByClassName('color');
   const colorUm = getComputedStyle(pixelCores[1]).getPropertyValue('background-color');
   const colorDois = getComputedStyle(pixelCores[2]).getPropertyValue('background-color');
-  const colorTes = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
+  const colorTres = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
   const preto = getComputedStyle(document.getElementById('black')).getPropertyValue('background-color');
   const branco = getComputedStyle(document.getElementById('opcoes')).getPropertyValue('background-color');
   if (colorUm === colorDois) {
     colocaCores();
   }
-  if (colorUm === colorTes) {
+  if (colorUm === colorTres) {
     colocaCores();
   }
   if (colorUm === preto) {
@@ -94,13 +94,13 @@ function verificaCoresDois() {
   const pixelCores = document.getElementsByClassName('color');
   const colorUm = getComputedStyle(pixelCores[1]).getPropertyValue('background-color');
   const colorDois = getComputedStyle(pixelCores[2]).getPropertyValue('background-color');
-  const colorTes = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
+  const colorTres = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
   const preto = getComputedStyle(document.getElementById('black')).getPropertyValue('background-color');
   const branco = getComputedStyle(document.getElementById('opcoes')).getPropertyValue('background-color');
   if (colorDois === colorUm) {
     colocaCores();
   }
-  if (colorDois === colorTes) {
+  if (colorDois === colorTres) {
     colocaCores();
   }
   if (colorDois === preto) {
@@ -115,7 +115,7 @@ function verificaCoresTres() {
   const pixelCores = document.getElementsByClassName('color');
   const colorUm = getComputedStyle(pixelCores[1]).getPropertyValue('background-color');
   const colorDois = getComputedStyle(pixelCores[2]).getPropertyValue('background-color');
-  const colorTes = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
+  const colorTres = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
   const preto = getComputedStyle(document.getElementById('black')).getPropertyValue('background-color');
   const branco = getComputedStyle(document.getElementById('opcoes')).getPropertyValue('background-color');
   if (colorTres === colorDois) {
