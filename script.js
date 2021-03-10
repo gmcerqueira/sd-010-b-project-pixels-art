@@ -25,15 +25,16 @@ function addElementoSection() {
   const sectionAtual = document.querySelector('script');
   document.body.insertBefore(newSection, sectionAtual);
 }
+
 // variavel.setAtribute/getAttibute/removeAtribute
 addElementoSection();
 
 const classColor = document.querySelectorAll('.color');
-classColor[0].className = 'color selected';
+const colorSelected = 'color selected';
 
 // funções para selecionar cores;
 function selecionarCorPreta() {
-  classColor[0].className = 'color selected';
+  classColor[0].className = colorSelected;
   classColor[1].className = 'color';
   classColor[2].className = 'color';
   classColor[3].className = 'color';
@@ -41,7 +42,7 @@ function selecionarCorPreta() {
 }
 function selecionarCorVermelha() {
   classColor[0].className = 'color';
-  classColor[1].className = 'color selected';
+  classColor[1].className = colorSelected;
   classColor[2].className = 'color';
   classColor[3].className = 'color';
   return classColor;
@@ -50,7 +51,7 @@ function selecionarCorVermelha() {
 function selecionarCorAzul() {
   classColor[0].className = 'color';
   classColor[1].className = 'color';
-  classColor[2].className = 'color selected';
+  classColor[2].className = colorSelected;
   classColor[3].className = 'color';
   return classColor;
 }
@@ -59,7 +60,7 @@ function selecionarCorVerde() {
   classColor[0].className = 'color';
   classColor[1].className = 'color';
   classColor[2].className = 'color';
-  classColor[3].className = 'color selected';
+  classColor[3].className = colorSelected;
   return classColor;
 }
 

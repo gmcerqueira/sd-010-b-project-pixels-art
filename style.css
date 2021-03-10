@@ -3,37 +3,47 @@ body {
   width: 90%;
   text-align: center;
 }
+
 #color-palette {
   margin: auto;
 }
+
 .color {
   display: inline-block;
   border: 1px solid black;
   width: 40px;
   height: 40px;
 }
-.color:nth-of-type(1), .selected {
+
+.color:nth-of-type( 1 ) {
   background-color: black;
 }
-.color:nth-of-type(2) {
+
+.color:nth-of-type( 2 ) {
   background-color: red;
 }
-.color:nth-of-type(3) {
+
+.color:nth-of-type( 3 ) {
   background-color: blue;
 }
-.color:nth-of-type(4) {
+
+.color:nth-of-type( 4 ) {
   background-color: green;
 }
+
 .table {
   display: table;
   margin: auto;
 }
+
 .tr {
   display: table-row;
 }
+
 .td {
   display: table-cell;
 }
+
 .pixel {
   border: 1px solid black;
   width: 40px;
@@ -44,7 +54,8 @@ body {
 .pixel .black:hover {
   background-color: black;
 }
-.pixel .red:hover {
+
+/* .pixel .red:hover {
   background-color: red;
 }
 .pixel .blue:hover {
@@ -69,3 +80,4 @@ body {
 .green {
   background-color: green;
 }
+*/
