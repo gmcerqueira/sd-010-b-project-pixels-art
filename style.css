@@ -1,4 +1,4 @@
-.color {
+.color, .selected {
   border: 1px solid black;
   margin: 2px;
   width: 40px;
@@ -6,8 +6,8 @@
   display: inline-block;
 }
 
-.pixel{
-  background-color:white;
+.pixel {
+  background-color: white;
   border: 1px solid black;
   width: 40px;
   height: 40px;
@@ -42,15 +42,13 @@
   background-color: orange;
 }
 
-#yellow{
+#yellow {
   background-color: yellow;
 }
 
 #grey {
   background-color: grey;
 }
-
-
 
 
 /* .flexy {
