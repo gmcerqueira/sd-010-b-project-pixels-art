@@ -9,8 +9,9 @@
 </head>
 <body>
     <main>
+        <!-- cabecalho -->
         <header>
-            <h1 id="title">Paleta de Cores</h1>
+            <h1 id="title" class="title">Paleta de Cores</h1>
         </header>
         <section id="color-palette">
             <div class="color selected" id="preto"></div>
@@ -18,7 +19,13 @@
             <div class="color" id="azul"></div>
             <div class="color" id="verde"></div>
         </section>
+        <!-- botão limpar -->
         <button id="clear-board">Limpar</button>
+        <!-- opção para aumentar ou diminuir o quadro -->
+        <input type="text" id="board-size" placeholder="Tamanho do quadro Ex: 7">
+        <!-- btn VQV -->
+        <button id="generate-board">VQV</button>
+        <!-- tabela -->
         <table id="pixel-board">
             <tr>
                 <td class="pixel" aria-selected="">1</td>

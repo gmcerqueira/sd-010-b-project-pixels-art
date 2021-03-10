@@ -7,9 +7,9 @@ const colorPalette = document.querySelector('#color-palette');
 colorPalette.addEventListener('click', (funcao) => { // https://www.w3schools.com/js/js_htmldom_eventlistener.asp
   const colorPaletteSelected = document.getElementById(funcao.target.id);
   const verify = colorPaletteSelected.className;
-  verify === '#color-palette' ? (funcao.stopPropagation()
-  ) : (document.querySelector('.selected').className = 'color',
-  colorPaletteSelected.className = 'selected');
+  verify === 'color-palette', funcao.stopPropagation();
+  document.querySelector('.selected').className = 'color', 'title';
+  colorPaletteSelected.className = 'selected';
 });
 
 // D8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
@@ -28,5 +28,26 @@ clearBoard.addEventListener('click', () => {
   const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
+  }
+});
+
+// D10 - Quadro de pixels definido pela pessoa usuária.
+const boardSize = document.querySelector('#board-size"');
+const generateBoard = document.querySelector('#generate-board');
+generateBoard.addEventListener('click', () => {
+  const numberRow = pixelBoard.children.length;
+  let number;
+  (boardSize.value === '').replace(number);
+  (boardSize.value < 5) ? (number = 5, boardSize.value = number) :
+  (boardSize.value > 50) ? (number = 50, boardSize.value = number) : (number = parseInt(boardSize.value));
+  if (numberRow > number && number !==  '') {
+      for (let indexRow = 0; index < numberRow; indexRow += 1) {
+        if (indexRow < number) {
+          for (let indexColum = 1; indexColum <= (numberRow - number); indexColum += 1) {
+            let lastRow = numberRow - indexColum;
+            pixelBoard.children[indexRow].removeChild(pixelBoard.children[indexRow].children[lastRow]);
+          }
+        }
+      }
   }
 });
