@@ -1,23 +1,36 @@
 // Captura de elementos HTML
-let colorPalete = document.querySelector('#color-palette');
-let tablePixels = document.querySelector('#pixel-board');
-let selectedColor = null;;
+const colorPalette = document.querySelector('#color-palette');
+const tablePixels = document.querySelector('#pixel-board');
+const colorPaletteItems = document.getElementsByClassName('color');
+let selectedColor;
+// console.log(colorPaletteItems);
+
+// --------------------------------------------------------------------------------------
+
+// Função: Gera cores aleatórias.
+function generateRandomColor() {
+  // Esta função foi adaptada da seguinte fonte: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript#:~:text=Gerando%20cores%20hexadecimais%20com%20Javascript&text=Multiplicamos%20Math.,o%20valor%20n%C3%BAmerico%20para%20hexadecimal.
+  const r = parseInt(Math.random() * 255);
+  const g = parseInt(Math.random() * 255);
+  const b = parseInt(Math.random() * 255);
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
 
 // --------------------------------------------------------------------------------------
 
 // Criação de elementos DIV, class=color, filhos do elemento Section, ID=ColorPalete.
 for (let index = 0; index < 4; index += 1) {
-  let newDiv = document.createElement('div');
+  const newDiv = document.createElement('div');
   newDiv.id = 'palete' + [index];
-  colorPalete.appendChild(newDiv).className = 'color';
-  colorPalete.style.margin = '10px';
+  colorPalette.appendChild(newDiv).className = 'color';
+  colorPalette.style.margin = '10px';
 
   // Regra que garante o backgroundColor da primeira DIV=black, e demais DIVs geradas aleatoriamente via funcão.
-  if (index == 0) {
-      newDiv.style.background = 'black';
+  if (index === 0) {
+    newDiv.style.background = 'black';
   } else {
-      newDiv.style.background = generateRandomColor();
-      // console.log(newDiv.style.background);
+    newDiv.style.background = generateRandomColor();
   }
 
   // Estilização das DIVs colorPalete.
@@ -32,30 +45,18 @@ for (let index = 0; index < 4; index += 1) {
 
 // --------------------------------------------------------------------------------------
 
-// Função: Gera cores aleatórias.
-function generateRandomColor () {
-  // Esta função foi adaptada da seguinte fonte: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript#:~:text=Gerando%20cores%20hexadecimais%20com%20Javascript&text=Multiplicamos%20Math.,o%20valor%20n%C3%BAmerico%20para%20hexadecimal.
-  let r = parseInt(Math.random() * 255);
-  let g = parseInt(Math.random() * 255);
-  let b = parseInt(Math.random() * 255);
-
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
-// --------------------------------------------------------------------------------------
-
 // Criação de elementos DIV, id=line[index1], Height=40px.
 for (let index1 = 0; index1 < 5; index1 += 1) {
-  let newLine = document.createElement('div');
+  const newLine = document.createElement('div');
   tablePixels.appendChild(newLine).id = 'line' + [index1];
   newLine.style.height = '40px';
 
   // Captura do elemento DIV, id=line[index1] (DIV/Linha atual da iteração)
-  let linhaAtual = document.querySelector('#line'+ [index1]);
+  const linhaAtual = document.querySelector('#line' + [index1]);
 
   // Criação de elementos DIV, class=pixel, filhos do elemento DIV, ID=linhaAtual.
   for (let index2 = 0; index2 < 5; index2 += 1) {
-    let newColum = document.createElement('div');
+    const newColum = document.createElement('div');
     linhaAtual.appendChild(newColum).className = 'pixel';
 
     // Estilização das DIVs pixels.
@@ -72,19 +73,33 @@ for (let index1 = 0; index1 < 5; index1 += 1) {
 
 // --------------------------------------------------------------------------------------
 
-function selectBlackColor () {
-  let palete1 = document.querySelector('#palete0');
-  palete1.className = 'color selected'
+// Função que permite alterar selecionar color black no windows.onload e salvar cor black em váriável
+function selectBlackColor() {
+  const palete1 = document.querySelector('#palete0');
+  palete1.className = 'color selected';
   selectedColor = palete1.style.backgroundColor;
+}
+// /* Teste ocasional: */ selectBlackColor ()
+
+// --------------------------------------------------------------------------------------
+
+// Função que permite alterar color atualmente selecionada
+function changeSelectedColor(sourcePalette) {
+  const currentlySelectedColor = document.querySelector('.selected');
+  currentlySelectedColor.className = 'color';
+  const newColorSelected = sourcePalette.target;
+  newColorSelected.className = 'color selected';
+  selectedColor = newColorSelected.style.backgroundColor;
 }
 
 // --------------------------------------------------------------------------------------
 
-function clearPixels() {
-
+// Eventos de escuta
+for (let index = 0; index < colorPaletteItems.length; index += 1) {
+  colorPaletteItems[index].addEventListener('click', changeSelectedColor);
 }
 
 // --------------------------------------------------------------------------------------
 
 // Windows.onload: Chama função que seleciona color black após carregamento da página.
-window.onload = selectBlackColor();
+window.onload = selectBlackColor;
