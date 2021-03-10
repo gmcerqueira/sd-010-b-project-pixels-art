@@ -1,14 +1,13 @@
-.color{
+.color, .selected{
   border: 1px black solid;
   width: 80px;
   height: 40px;
-  display: inline-block; 
+  display: inline-block;
 }
-ul{
+ul {
  padding-inline-start: 0px;
-
 }
-.pixel{
+.pixel {
   border: 1px solid black;
   height: 40px;
   width: 40px;
@@ -18,5 +17,5 @@ ul{
 #pixel-board {
   display: table-cell;
   width: 220px;
-  height: 120px;  
+  height: 120px;
 }

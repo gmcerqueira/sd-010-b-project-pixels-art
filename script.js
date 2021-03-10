@@ -1,7 +1,7 @@
-function criarCores(){
+function criarCores() {
   let pai = document.getElementById('color-palette');
  
-  for(i = 0; i < 4; i += 1 ){
+  for(i = 0; i < 4; i += 1 ) {
     let filho = document.createElement('li');
     filho.className = 'color';
     pai.appendChild(filho);
@@ -17,17 +17,25 @@ function criarCores(){
   green.style.backgroundColor = 'green';
   red.style.backgroundColor = 'red';
   blue.style.backgroundColor = 'blue';
-} criarCores()
+} 
+criarCores()
 
-function setPixelBoard() {
+function criarQuadro() {
   for (let i = 0; i < 5; i += 1) {
     for (let j = 0; j < 5; j += 1) {
       let filho = document.createElement('li');
-      filho.className ='pixel';
+      filho.className = 'pixel';
       document.getElementById('pixel-board').appendChild(filho);
     }
   }
-} setPixelBoard()
+} 
+criarQuadro()
+
+function CorPretaSelected() {
+  let blackColor = document.getElementsByClassName('color')[0];
+  blackColor.className = 'selected';  
+} 
+CorPretaSelected()
 
 
   
