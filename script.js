@@ -24,15 +24,15 @@ function gerar_cor() {
 }
 gerar_cor();
 
-function geraPixel() {
+function geraPixel(numeroPixel) {
 
 	let pixels = document.getElementById("pixel-board");
 
-	for (let cont = 0; cont < 5; cont += 1) {
+	for (let cont = 0; cont < numeroPixel; cont += 1) {
 		let itemPixel = document.createElement('div');
 		pixels.appendChild(itemPixel);
 
-		for (let cont2 = 0; cont2 < 5; cont2 += 1) {
+		for (let cont2 = 0; cont2 < numeroPixel; cont2 += 1) {
 			let itemPixel2 = document.createElement('div');
 			itemPixel.appendChild(itemPixel2);
 			itemPixel2.className = 'pixel';
@@ -40,7 +40,7 @@ function geraPixel() {
 	}
 }
 
-geraPixel();
+geraPixel(5);
 
 function selecionaCor() {
 	const color = document.querySelector('#color-palette');
@@ -66,7 +66,7 @@ function botaoLimpar() {
 	botaoLimpar.addEventListener('click', clear);
 }
 
-function clear(event) {
+function clear() {
 	const descolorir = document.querySelectorAll('.pixel');
 	for (let cont = 0; cont < descolorir.length; cont += 1) {
 		if (descolorir[cont].classList.contains('pixel')) {
@@ -77,4 +77,13 @@ function clear(event) {
 }
 botaoLimpar();
 
+function botaoVqv(){
+	const botaoVQV = document.querySelector("#generate-board");
+	const adicionaPixel = document.querySelector("#board-size").innerHTML;
+
+	botaoVQV.addEventListener('click', geraPixel(numeroPixel)); 
+}
+
+
+botaoVqv();
 

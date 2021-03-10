@@ -9,11 +9,12 @@
   text-align: center;
 }
 
-.board {
-  height: 13.125em;
-  line-height: 0;
-  margin-left: 5px;
-  width: 13.125em;
+#color-palette {
+  text-align: center;
+}
+
+#clear-board {
+  text-align: center;
 }
 
 .pixel {
