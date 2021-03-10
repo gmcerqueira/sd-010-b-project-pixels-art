@@ -1,4 +1,4 @@
-// Adicionando as cores
+//criando a paleta
 
 let paleta = document.querySelector('#color-palette');
 for (let box = 0; box < 4; box += 1){
@@ -6,10 +6,11 @@ for (let box = 0; box < 4; box += 1){
     cor.className = 'color'
     paleta.appendChild(cor);
 }
-
+// Adicionando as cores
 let cores = document.querySelectorAll('.color')
 
 let corBlack = cores[0]
+corBlack.className = 'color selected'
 corBlack.style.backgroundColor = 'black';
 
 let corRed = cores[1]
@@ -20,7 +21,6 @@ corGreen.style.backgroundColor = 'green';
 
 let corBLue = cores[3]
 corBLue.style.backgroundColor = 'blue';
-
 
 // table Row - Criando as cinco linhas
 
@@ -39,3 +39,39 @@ for (let line = 1; line < linhas.length; line += 1) {
         linhas[colum].appendChild(box);
     }
 }
+
+// cor selecionada
+sessionStorage.setItem('color', corBlack.style.backgroundColor);
+
+function corSelecionada(index){
+    if (index === 0){
+        sessionStorage.setItem('color',corBlack.style.backgroundColor);
+        corBlack.className = 'color selected';
+        corRed.className = 'color';
+        corBLue.className = 'color';
+        corGreen.className = 'color';
+    } else if(index === 1){
+        sessionStorage.setItem('color',corRed.style.backgroundColor);
+        corBlack.className = 'color';
+        corRed.className = 'color selected';
+        corBLue.className = 'color';
+        corGreen.className = 'color';
+    }else if(index === 2){
+        sessionStorage.setItem('color',corBLue.style.backgroundColor);
+        corBlack.className = 'color';
+        corRed.className = 'color';
+        corBLue.className = 'color selected';
+        corGreen.className = 'color';
+    }else if(index === 3){
+        sessionStorage.setItem('color',corGreen.style.backgroundColor);
+        corBlack.className = 'color';
+        corRed.className = 'color';
+        corBLue.className = 'color ';
+        corGreen.className = 'color selected';
+    }
+}
+
+corBlack.addEventListener('click',function() {corSelecionada(0)});
+corRed.addEventListener('click', function() {corSelecionada(1)});
+corBLue.addEventListener('click', function() {corSelecionada(2)});
+corGreen.addEventListener('click', function() { corSelecionada(3)});
