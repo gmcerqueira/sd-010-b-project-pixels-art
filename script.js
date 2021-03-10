@@ -15,18 +15,21 @@ function generateRandomColor() {
 
 generateRandomColor();
 
-// Atribuir as cores aleatórias á paleta
-// eslint-disable-next-line sonarjs/no-duplicate-string
-const corValor1 = window.getComputedStyle(colorPalette[1]).getPropertyValue('background-color');
-const corValor2 = window.getComputedStyle(colorPalette[2]).getPropertyValue('background-color');
-const corValor3 = window.getComputedStyle(colorPalette[3]).getPropertyValue('background-color');
+function assigningRandomNumber() {
+  // Atribuir as cores aleatórias á paleta
+  // eslint-disable-next-line sonarjs/no-duplicate-string
+  const corValor1 = window.getComputedStyle(colorPalette[1]).getPropertyValue('background-color');
+  const corValor2 = window.getComputedStyle(colorPalette[2]).getPropertyValue('background-color');
+  const corValor3 = window.getComputedStyle(colorPalette[3]).getPropertyValue('background-color');
+  const trocaCor1 = corValor1.replace(corValor1, generateRandomColor());
+  const trocaCor2 = corValor2.replace(corValor2, generateRandomColor());
+  const trocaCor3 = corValor3.replace(corValor3, generateRandomColor());
+  colorPalette[1].style.backgroundColor = trocaCor1;
+  colorPalette[2].style.backgroundColor = trocaCor2;
+  colorPalette[3].style.backgroundColor = trocaCor3;
+}
 
-const trocaCor1 = corValor1.replace(corValor1, generateRandomColor());
-const trocaCor2 = corValor2.replace(corValor2, generateRandomColor());
-const trocaCor3 = corValor3.replace(corValor3, generateRandomColor());
-colorPalette[1].style.backgroundColor = trocaCor1;
-colorPalette[2].style.backgroundColor = trocaCor2;
-colorPalette[3].style.backgroundColor = trocaCor3;
+assigningRandomNumber();
 
 // Definir o elemento que terá a classe select
 for (let i = 0; i < colorPalette.length; i += 1) {
@@ -59,6 +62,7 @@ for (let i = 0; i < colorPalette.length; i += 1) {
 // eslint-disable-next-line sonarjs/cognitive-complexity
 // eslint-disable-next-line max-lines-per-function
 // eslint-disable-next-line sonarjs/cognitive-complexity
+// Pintar o pixel com a cor selecionada
 function selectedPixel() {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
@@ -82,6 +86,7 @@ function selectedPixel() {
 
 selectedPixel();
 
+// Zerar o quadro de pixels
 function clearPixels() {
   const clearButton = document.getElementById('clear-board');
   const getPixel = document.querySelectorAll('.pixel');
@@ -95,23 +100,24 @@ function clearPixels() {
 
 clearPixels();
 
-function userSetSize() {
-  const inputValue = document.getElementById('board-size').value;
-  const buttonValue = document.getElementById('generate-board');
-
-  const tbody = document.querySelector('tbody');
-  const createTr = document.createElement('tr');
-  const createTd = document.createElement('td');
-
-  createTd.className = 'pixel';
-
-  buttonValue.addEventListener('click', (event) => {
-    for (let i = 0; i <= inputValue; i += 1) {
-      tbody.appendChild(createTr);
-      createTr.appendChild(createTd);
-    }
-    event.preventDefault();
-  });
+// Deleta o board inteiro
+function deleteBoard() {
+  const pixelB = document.getElementById('pixel-board');
+  pixelB.innerHTML = '';
 }
 
-userSetSize();
+// Tamanho entre 5 e 50
+function checkBoardSize(number) {
+  if (number < 5) {
+    return 5;
+  }
+  if (number > 50) {
+    return 50;
+  }
+  return number;
+}
+
+// Criar o quadro de pixel de acordo com a escolha do usuário
+function userSetSize() {
+  deleteBoard();
+}
