@@ -54,7 +54,7 @@ function claerPixels() {
 function clearChildsPixelBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
   const qtt = pixelBoard.childNodes.length;
-  for (let i = qtt; i > 0; i -= 1 ) {
+  for (let i = qtt; i > 0; i -= 1) {
     pixelBoard.lastElementChild.remove();
   }
 }
@@ -63,6 +63,16 @@ function generatePixels() {
   const qttBorderSize = document.querySelector('#board-size').value;
   if (qttBorderSize === '') {
     alert('Board inválido!');
+  } else if(qttBorderSize <= 5) {
+    claerPixels();
+    clearChildsPixelBoard();
+    generatorPixels(5);
+    addEventColorInPixel();
+  } else if(qttBorderSize >= 50) {
+    claerPixels();
+    clearChildsPixelBoard();
+    generatorPixels(50);
+    addEventColorInPixel();
   } else {
     claerPixels();
     clearChildsPixelBoard();
