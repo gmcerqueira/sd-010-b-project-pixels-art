@@ -49,8 +49,7 @@ body {
   color: #979797;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button , input::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
 }
@@ -64,7 +63,7 @@ input::-webkit-inner-spin-button {
   border-radius: 15px;
 }
 
-#pixel-board{
+#pixel-board {
   border-spacing: 0;
 }
 
