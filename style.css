@@ -1,69 +1,64 @@
 * {
-    font-family: 'Handlee';
-    margin: 10px;
-    margin-top: 20px;
+  font-family: 'Handlee';
+  margin: 10px;
+  margin-top: 20px;
 }
 
 #title {
-    font-size: 45px;
-    font-weight: bolder;
-}
-
-#color-palette{
-    
+  font-size: 45px;
+  font-weight: bolder;
 }
 
 #color1 {
-    background-color: black;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    border-style: solid;
-    border-width: 1px;
+  background-color: black;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
 }
 
 #color2 {
-    background-color: blue;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    border-style: solid;
-    border-width: 1px;
+  background-color: blue;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
 }
 
 #color3 {
-    background-color: yellow;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    border-style: solid;
-    border-width: 1px;
+  background-color: yellow;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
 }
 
 #color4 {
-    background-color: red;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    border-style: solid;
-    border-width: 1px;
+  background-color: red;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
 }
 
 #pixel-board {
-    display: table;
-    margin-left: 30px;
+  display: table;
+  margin-left: 30px;
 }
 
 .tr {
-    display: table-row;
-   
+  display: table-row; 
 }
 
 .pixel {
-    display: table-cell;
-    height: 40px;
-    width: 40px;
-    border-style: solid;
-    border-width: 1px;  
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  border-width: 1px;  
 }
    
