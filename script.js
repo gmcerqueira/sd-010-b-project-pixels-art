@@ -53,7 +53,6 @@ function clear() {
 	for (let cont = 0; cont < limpaPixel.length; cont += 1) {
 		limpaPixel[cont] = limpaPixel[cont].style.backgroundColor = "rgb(255 , 255 , 255)";
 	}
-
 }
 
 document.getElementById("clear-board").addEventListener("click", clear());
