@@ -36,7 +36,7 @@ function addEventColorSelected() {
 function addEventColorInPixel() {
   const divPixelBord = document.querySelector('#pixel-board');
   divPixelBord.addEventListener('click', (e) => {
-    if(e.target.className === 'pixel'){
+    if (e.target.className === 'pixel') {
       const divColor = document.querySelector('.selected');
       const color = getComputedStyle(divColor).backgroundColor;
       e.target.style.backgroundColor = color;
