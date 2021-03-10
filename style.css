@@ -16,12 +16,12 @@
 }
 
 #pixel-board {
+  margin-top: 10px;
   display: table;
 }
 
 .pixelLine {
   display: table-row;
-  margin: 5px;
 }
 
 .pixelColumn {

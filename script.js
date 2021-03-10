@@ -1,5 +1,5 @@
-let table = document.getElementById("color-palette");
-let pixel = document.getElementById("pixel-board");
+const table = document.getElementById("color-palette");
+const pixel = document.getElementById("pixel-board");
 
 function structureTable () {
   let line1 = document.createElement("div");
@@ -32,7 +32,7 @@ function pixelStructure () {
     
     for (let columns = 0; columns < 5; columns += 1) {
       let column1 = document.createElement("div");
-      column1.className = "pixelColumn";
+      column1.className = "pixel";
       pixelLine.appendChild(column1);
     }
   }
