@@ -18,16 +18,18 @@ createPalette();
 function createPixels() {
   for (let index = 0; index < 5; index += 1) {
     const line = document.createElement('div');
+    line.className = 'line';
     containerQuadro.appendChild(line);
 
     for (let index2 = 0; index2 < 5; index2 += 1) {
-      const colun = document.createElement('div');
-      colun.className = 'pixel';
-      line.appendChild(colun);
+      const column = document.createElement('div');
+      column.className = 'pixel';
+      line.appendChild(column);
     }
   };
 }
 createPixels();
+
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'red';

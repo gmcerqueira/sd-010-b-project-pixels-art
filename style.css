@@ -28,6 +28,9 @@ body {
   text-align: center;
 }
 
+.line {
+  line-height: 0px;
+}
 
 .pixel {
   display: inline-block;
