@@ -1,3 +1,5 @@
+window.onload = function (){
+   
 function addPaleta (){
     let ul = document.querySelector('#color-palette');
     let cores = ['black', '#92E6A0', 'pink', 'purple'];
@@ -26,5 +28,38 @@ function addGrid() {
         }
     }
 }
-
 addGrid();
+
+//add primeira classe 'selected'
+let selectedClass = document.querySelector('.color');
+selectedClass.classList.add('selected');
+
+//add event listener para todas as classes 'color'
+let select = document.getElementsByClassName('color');
+for(let i = 0; i < select.length; i++){
+    select[i].addEventListener("click", colorSelect, selectedClass);  
+    }
+
+function rmvClass(selectedClass){
+    selectedClass.classList.remove('selected');
+}
+
+
+function colorSelect(elementoEvento, Class){
+    rmvClass(selectedClass);
+    selectedClass = elementoEvento.target;
+    console.log(selectedClass);
+    selectedClass.classList.add('selected');
+
+
+
+
+    // console.log(elementoEvento.target);
+    // console.log(elementoEvento.type);
+
+    // let class2 = document.elementoEvento;
+    // console.log(class2);
+    }
+
+}
+
