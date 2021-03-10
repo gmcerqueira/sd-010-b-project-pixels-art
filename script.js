@@ -34,13 +34,13 @@ function addEventColorSelected() {
 }
 
 function addEventColorInPixel() {
-  const divPixel = document.querySelectorAll('.pixel');
-  divPixel.forEach((element) => {
-    element.addEventListener('click', (event) => {
+  const divPixelBord = document.querySelector('#pixel-board');
+  divPixelBord.addEventListener('click', (e) => {
+    if(e.target.className === 'pixel'){
       const divColor = document.querySelector('.selected');
       const color = getComputedStyle(divColor).backgroundColor;
-      event.target.style.backgroundColor = color;
-    });
+      e.target.style.backgroundColor = color;
+    }
   });
 }
 
