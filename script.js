@@ -3,15 +3,6 @@ window.onload = function () {
   // enter = eventoDeOrigem.target.style.backgroundColor = 'black';
 }
 let cor;
-// let colorPalet = document.getElementById('color-palette');
-// let criarDiv = document.createElement('div');
-// criarDiv.className = 'color';
-// console.log(criarDiv);
-// for (let index = 0; index < 4; index += 1) {
-//   criarDiv;
-//   colorPalet.appendChild(criarDiv);
-// }
-
 
 function palletCollor() { 
   // let pallet = []; 
@@ -46,22 +37,11 @@ function colorPallet() {
 }
 colorPallet();
 
-pegarCor = document.getElementById('color-palette');
-pegarCor.addEventListener('click', getCor);
+let pixelColors = document.getElementById('color-palette');
+pixelColors.addEventListener('click', getCor);
 
-receberColor = document.getElementById('pixel-board');
-receberColor.addEventListener('click', receberCor);
-
-// let cor = document.getElementsByClassName('color')[0];
-// removClass = document.getElementById('color-palette')
-// removClass.addEventListener('click', removClassF);
-
-// function removClassF() {
-//   let tamanhoPaletteColor = document.getElementsByClassName('.color');
-//   for (let index = 0; index < tamanhoPaletteColor.length; index += 1) {
-//     document.getElementsByClassName('color')[index].classList.remove('selected');
-//   }
-// }
+let pixelBoard = document.getElementById('pixel-board');
+pixelBoard.addEventListener('click', receberCor);
 
 function getCor(eventoDeOrigem) {
   let rem = document.getElementsByClassName('color');
@@ -73,10 +53,10 @@ function getCor(eventoDeOrigem) {
 }
 
 function receberCor(eventoDeOrigem) {
-  console.log(eventoDeOrigem.target.style.backgroundColor)
-  // cor = eventoDeOrigem.target.style.backgroundColor = 'black';
+  let selectPai = document.getElementById('pixel-board');
+  if (selectPai == eventoDeOrigem.target){    
+  } else {
   eventoDeOrigem.target.style.backgroundColor = 'black';
   eventoDeOrigem.target.style.backgroundColor = cor;
-  // document.getElementsByClassName('pixel') = document.getElementsByClassName('color')[0];
-  // document.getElementsByClassName('pixel').nextElementSibling.style.backgroundColor = 'yellow';
+}
 }
