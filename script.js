@@ -46,7 +46,7 @@ function addEventColorInPixel() {
 
 function claerPixels() {
   const pixels = document.querySelectorAll('.pixel');
-  pixels.forEach( e => {
+  pixels.forEach((e) => {
     e.style.backgroundColor = 'white';
   });
 }

@@ -64,3 +64,8 @@ body {
   font-size: 20px;
   text-align: center;
 }
+
+#board-size {
+  width: 45px;
+  margin-left: 40px;
+}
