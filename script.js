@@ -1,4 +1,3 @@
- 
 // Cria divs color
 const paletaDeCores = document.getElementById('color-palette');
 for (let i = 0; i < 4; i += 1) {
@@ -31,21 +30,20 @@ for (let i = 0; i < tableCreateCells.length; i += 1) {
   }
 
 function changeColorClass () {
-  const change = document.querySelector('selected');
-  change.classList.remove('selected');
-  this.classList.add('selected');
-}
+const change = document.querySelector('selected');
+    change.classList.remove('selected');
+    this.classList.add('selected');
+  }
 
-
-  const clean =document.getElementById('clear-board');
+  const clean = document.getElementById('clear-board');
   clean.addEventListener('click', clear);
   function clear() {
-const pixel = document.getElementsByClassName('pixel')
-    for (let i = 0; i < pixel.length; i += 1){
+    const pixel = document.getElementsByClassName('pixel');
+    for (let i = 0; i < pixel.length; i += 1) {
       pixel[i].style.background = 'white';
-    }
-    }
-    }
+  }
+  }
+}
   
 //const changeColorClass = document.querySelector('color-palette');
 //changeColorClass.addEventListener('click', (change) => {
