@@ -59,25 +59,23 @@ function clearChildsPixelBoard() {
   }
 }
 
+function bordUpdate(number) {
+  claerPixels();
+  clearChildsPixelBoard();
+  generatorPixels(number);
+  addEventColorInPixel();
+}
+
 function generatePixels() {
   const qttBorderSize = document.querySelector('#board-size').value;
   if (qttBorderSize === '') {
     alert('Board inválido!');
-  } else if(qttBorderSize <= 5) {
-    claerPixels();
-    clearChildsPixelBoard();
-    generatorPixels(5);
-    addEventColorInPixel();
-  } else if(qttBorderSize >= 50) {
-    claerPixels();
-    clearChildsPixelBoard();
-    generatorPixels(50);
-    addEventColorInPixel();
+  } else if (qttBorderSize <= 5) {
+    bordUpdate(5);
+  } else if (qttBorderSize >= 50) {
+    bordUpdate(50);
   } else {
-    claerPixels();
-    clearChildsPixelBoard();
-    generatorPixels(qttBorderSize);
-    addEventColorInPixel();
+    bordUpdate(qttBorderSize);
   }
 }
 
