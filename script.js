@@ -1,42 +1,52 @@
+// colors to set on color-palette section
 let colorsList = [
   'rgb(0, 0, 0)',
   'rgb(214, 40, 40)',
   'rgb(247, 127, 0)',
   'rgb(0, 48, 73)'
 ];
+let colorItems = document.querySelectorAll('.color'); // color palette
+let pixelBoard = document.querySelector('#pixel-board'); // this gets the whole board
+let colorPalette = document.querySelector('#color-palette'); // get the color-palette section
 
-let colorItems = document.querySelectorAll('.color');
-
+// set colors, from colorsList, to color palette
 function buttonColor() {
   for (let i = 0; i < colorItems.length; i++) {
     colorItems[i].style.backgroundColor = colorsList[i];
   }
 }
 
-buttonColor();
-
-let pixelBoard = document.querySelector('#pixel-board'); // All board
-console.log(pixelBoard);
-
-let j = 1
+// creates a single pixel
 function createPixel(rowNumber) {
-	let pixel = document.createElement('td');
-	let row = document.querySelectorAll(`#pixel-board>tr`);
-	console.log(row);
-	pixel.className = 'pixel';
-	row[rowNumber].appendChild(pixel);
+  let pixel = document.createElement('td');
+  let row = document.querySelectorAll(`#pixel-board>tr`);
+  pixel.className = 'pixel';
+  row[rowNumber].appendChild(pixel);
 }
 
-let i = 1;
+// creates a row of pixels
 function createRow(rowNumber) {
-	let row = document.createElement('tr');
-	console.log(i);
-	pixelBoard.appendChild(row);
-	for (let i = 0; i < 5; i++) {
-		createPixel(rowNumber);
-	}
+  let row = document.createElement('tr');
+  pixelBoard.appendChild(row);
+  for (let i = 0; i < 5; i++) {
+    createPixel(rowNumber);
+  }
 }
 
-for (let i = 0; i < 5; i++) {
-	createRow(i);
+// creates the pixel board
+function createBoard() {
+  for (let i = 0; i < 5; i++) {
+    createRow(i);
+  }
+}
+
+// sets black as the selected color
+function setSelectedColor() {
+  colorPalette.firstElementChild.classList.add('selected');
+}
+
+window.onload = () => {
+  buttonColor();
+  createBoard();
+  setSelectedColor();
 }
