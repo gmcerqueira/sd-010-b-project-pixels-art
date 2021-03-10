@@ -9,14 +9,15 @@ colorPalette.addEventListener('click', event => { // https://www.w3schools.com/j
   const verify = colorSelected.className;
   verify === 'color-palette' ? (
   event.stopPropagation()
-  ):(
-  document.querySelector('.selected').className = 'color',
-  colorSelected.className = 'color selected')
+  ) : (
+    document.querySelector('.selected').className = 'color',
+    colorSelected.className = 'color selected')
 }, false);
 
 pixelBoard.addEventListener('click', event => {
   const selectedPixel = event.target;
   const selectedColor = document.querySelector('.selected');
-  const selectedColorRgb = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
+  const selectedColorRgb = window.getComputedStyle(selectedColor, 
+    null).getPropertyValue('background-color');
   selectedPixel.style.backgroundColor = selectedColorRgb;
 });
