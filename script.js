@@ -3,7 +3,7 @@ cor[0].style.backgroundColor = 'black';
 cor[1].style.backgroundColor = 'purple';
 cor[2].style.backgroundColor = 'orange';
 cor[3].style.backgroundColor = 'green';
-
+//gera paleta de cores
 let quant = 25
 function createDivpixel(){
   let divContainer = document.querySelector('#pixel-board');
@@ -15,5 +15,6 @@ function createDivpixel(){
 
   }
 }
-
 createDivpixel()
+
+

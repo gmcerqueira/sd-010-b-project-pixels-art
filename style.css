@@ -2,18 +2,27 @@
   display: inline-block;
   border: 1px black solid;
   padding: 25px;
+  margin-bottom: 10px;
+}
+#botao , #board-size , #entrada {
+display: inline-block;
+width: auto;
+
+}
+
+#configure{
+  display: inline;
+  background-color: white;
+
 }
 
 
 #pixel-board{
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  margin-top: 30px;
-
-
-
-
+  margin-top: 20px;
+  grid-auto-rows: 50px;
+  align-content: center;
 
 }
 
