@@ -4,7 +4,7 @@ window.onload = function () {
 }
 let cor;
 
-function palletCollor() { 
+function palletCollor() {
   // let pallet = []; 
   for (let index = 0; index < 4; index += 1) {
     let criarDiv = document.createElement('div');
@@ -54,9 +54,18 @@ function getCor(eventoDeOrigem) {
 
 function receberCor(eventoDeOrigem) {
   let selectPai = document.getElementById('pixel-board');
-  if (selectPai == eventoDeOrigem.target){    
-  } else {
-  eventoDeOrigem.target.style.backgroundColor = 'black';
-  eventoDeOrigem.target.style.backgroundColor = cor;
+  if (selectPai == eventoDeOrigem.target) {} else {
+    eventoDeOrigem.target.style.backgroundColor = 'black';
+    eventoDeOrigem.target.style.backgroundColor = cor;
+  }
 }
+
+let clearBoard = document.getElementById('clear-board');
+clearBoard.addEventListener('click', button);
+
+function button() {
+  let array = document.getElementsByClassName('pixel');
+  for (let index = 0; index < array.length; index += 1) {
+    array[index].style.backgroundColor = 'white';
+  }
 }
