@@ -106,11 +106,13 @@ function clearAllPixels() {
 
 function setGenerateBoardBtn() {
   generateBoardBtn.addEventListener('click', () => {
-    const size = boardSize.value;
+    let size = boardSize.value;
     if (!size) {
       alert('Board inválido!');
       return;
     }
+    if (size < 5) size = 5;
+    if (size > 50) size = 50;
     setPixelGrid(size);
     clearAllPixels();
   });
