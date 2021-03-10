@@ -35,3 +35,10 @@ body {
   border-spacing: 0px;
   padding: 0px;
 }
+
+#button-align {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 20px;
+}
