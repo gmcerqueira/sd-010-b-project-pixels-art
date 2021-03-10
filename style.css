@@ -1,5 +1,5 @@
 #title {
-  margin: 25px 0;
+  margin: 25px 0px;
   text-align: center;
 }
 
@@ -18,7 +18,7 @@
 #pixel-board {
   border: 1px solid black;
   border-spacing: 0px;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
 .pixel {
@@ -26,5 +26,5 @@
   border: 1px solid black;
   height: 40px;
   width: 40px;
-  padding: 0px;
+  padding: 0;
 }

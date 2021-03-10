@@ -10,7 +10,7 @@ function createPaletteColors() {
 }
 createPaletteColors();
 
-window.onload = function () {
+window.onload = function initializeColorBlack() {
   const boxColorBlack = document.querySelectorAll('.color')[0];
   boxColorBlack.className = 'color selected';
   const boxColorBlackStyle = boxColorBlack.style.backgroundColor;
@@ -19,9 +19,20 @@ window.onload = function () {
 
 function selectedPalette() {
   const color = document.querySelector('#color-palette');
-  color.addEventListener('click', function (event) {
+  color.addEventListener('click', (event) => {
+    const element = event;
     document.querySelector('.selected').className = 'color';
-    event.target.className = 'color selected';
+    element.target.className = 'color selected';
   });
 }
 selectedPalette();
+
+function draw() {
+  const table = document.querySelector('#pixel-board');
+  table.addEventListener('click', (event) => {
+    const element = event;
+    const colorSelected = document.querySelector('.selected').style.backgroundColor;
+    element.target.style.backgroundColor = colorSelected;
+  });
+}
+draw();
