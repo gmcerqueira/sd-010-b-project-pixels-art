@@ -54,10 +54,10 @@ function blackPaint(){
     let buttonBlue =document.querySelector('#azul');
     let buttonGreen =document.querySelector('#verde');
 
-    buttonBlack.classList.add = 'selected';
-    buttonBlue.classList.remove = 'selected';
-    buttonGreen.classList.remove = 'selected';
-    buttonRed.classList.remove = 'selected';
+    buttonBlack.classList.add('selected');
+    buttonBlue.classList.remove('selected');
+    buttonGreen.classList.remove('selected');
+    buttonRed.classList.remove('selected');
 
 
     }
@@ -70,10 +70,10 @@ function redPaint(){
     let buttonBlue =document.querySelector('#azul');
     let buttonGreen =document.querySelector('#verde');
 
-    buttonBlack.classList.remove = 'selected';
-    buttonBlue.classList.remove = 'selected';
-    buttonGreen.classList.remove = 'selected';
-    buttonRed.classList.add = 'selected';
+    buttonBlack.classList.remove('selected');
+    buttonBlue.classList.remove('selected');
+    buttonGreen.classList.remove('selected');
+    buttonRed.classList.add('selected');
     
 }
 function bluePaint(){
@@ -84,10 +84,10 @@ function bluePaint(){
     let buttonBlue =document.querySelector('#azul');
     let buttonGreen =document.querySelector('#verde');
 
-    buttonBlack.classList.remove = 'selected';
-    buttonBlue.classList.add = 'selected';
-    buttonGreen.classList.remove = 'selected';
-    buttonRed.classList.remove = 'selected';
+    buttonBlack.classList.remove('selected');
+    buttonBlue.classList.add('selected');
+    buttonGreen.classList.remove('selected');
+    buttonRed.classList.remove('selected');
     
 }
 function greenPaint(){
@@ -98,10 +98,11 @@ function greenPaint(){
     let buttonBlue =document.querySelector('#azul');
     let buttonGreen =document.querySelector('#verde');
 
-    buttonBlack.classList.remove = 'selected';
-    buttonBlue.classList.remove = 'selected';
-    buttonGreen.classList.add = 'selected';
-    buttonRed.classList.remove = 'selected';
+    buttonBlack.classList.remove('selected');
+    buttonBlue.classList.remove('selected');
+    buttonGreen.classList.add('selected');
+    buttonRed.classList.remove('selected');
+    
     
 }
 
