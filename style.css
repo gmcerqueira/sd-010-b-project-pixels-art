@@ -1,3 +1,4 @@
+window.onload (pixel)
 .color {
 	border: solid;
 	border-width: 1px;
@@ -28,6 +29,5 @@
 	height: 60px;
 	border: black solid 1px;
 	display: inline-block;
-	background-color: white;
 }
 

@@ -1,3 +1,7 @@
+window.onload = function(){
+columns.style.backgroundColor = 'white';
+}
+
 let columns = document.getElementById('pixel-board');
 
 let tableLines = function(){
@@ -7,7 +11,7 @@ let tableLines = function(){
 		columns.appendChild(line);
 		for (let index = 0; index < 5; index +=1 ){
 			container = document.createElement('div')
-			container.classList.add ('pixel');
+			container.className = 'pixel';
 			line.appendChild(container);
 		}
 	}
