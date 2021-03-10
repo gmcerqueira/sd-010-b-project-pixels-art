@@ -78,22 +78,26 @@ function apagaTudo() {
 const botao = document.querySelector('#clear-board');
 botao.addEventListener('click', apagaTudo);
 
-function mudaTamanhoQuadro() {
-  const inputQuadro = document.querySelector('#board-size').value;
-  tamanhoQuadro = inputQuadro;
+function removeQuadro() {
   const quadro = document.querySelector('#pixel-board');
   const quadrofilho = document.querySelectorAll('.pixel-row');
+  for (let index = 0; index < quadrofilho.length; index += 1) {
+    quadro.removeChild(quadrofilho[index]);
+  }
+}
+
+function mudaTamanhoQuadro() {
+  const inputQuadro = document.querySelector('#board-size').value;
   if (inputQuadro === '') {
     alert('Board inválido!');
   } else if (inputQuadro >= 5 && inputQuadro <= 50) {
-    for (let index = 0; index < quadrofilho.length; index += 1) {
-      quadro.removeChild(quadrofilho[index]);
-    }
+    tamanhoQuadro = inputQuadro;
   } else if (inputQuadro < 5) {
     tamanhoQuadro = 5;
   } else if (inputQuadro > 50) {
     tamanhoQuadro = 50;
   }
+  removeQuadro();
   criaQuadro(tamanhoQuadro);
   selecionaPixel();
 }
