@@ -14,21 +14,20 @@ function currentColorSelected(e) {
   sessionStorage.color = e.target.style.backgroundColor;
   e.target.className = 'color selected'; // ou e.target.className.add('selected'); ou ainda: e.target.className += ' selected'
 }
-fillRowColor();
 
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
-  for (const pixel of pixels) {
-    pixel.style.backgroundColor = 'white';
+  for (let i = 0; i < pixels.length; i++) {
+    pixels[i].style.backgroundColor = 'white';
   }
 }
 
-let btn = document.getElementById('clear-board');
+const btn = document.getElementById('clear-board');
 btn.addEventListener('click', clearBoard);
 
 function pixelColor() {
   const bgColor = document.getElementsByClassName('color');
-  bgColor[0].style.backgroundColor = colors[0];
+  [bgColor[0].style.backgroundColor] = colors;
   for (let i = 1; i < numberOfColors; i += 1) {
     const color = Math.ceil(Math.random() * (colors.length - 1)); // ceil fará com que a posição 0 nunca seja obtida.
     bgColor[i].style.backgroundColor = colors[color];
@@ -46,6 +45,7 @@ function fillRowColor() {
   }
   pixelColor();
 }
+fillRowColor();
 
 function pixelColorChange(e) {
   e.target.style.backgroundColor = sessionStorage.color;
