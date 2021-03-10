@@ -52,7 +52,7 @@ function corAleatoria() {
   let r = Math.floor(Math.random() * 255);
   let g = Math.floor(Math.random() * 255);
   let b = Math.floor(Math.random() * 255);
-  document.getElementsByClassName('color')[0].style.backgroundColor = `rgb(${r},${g},${b})`;
+  document.getElementsByClassName('color')[0].style.backgroundColor = 'rgb(0,0,0)';
   document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${g},${b},${r})`;
   document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
   document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
