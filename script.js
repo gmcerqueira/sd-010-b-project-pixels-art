@@ -1,34 +1,34 @@
-let number = 5;
+
 function createTable(number) {
   const table = document.getElementById('pixel-board');
   for (let indexLine = 0; indexLine < number; indexLine += 1) {
     const tableLine = document.createElement('tr');
     table.appendChild(tableLine);
     for (let indexColumn = 0; indexColumn < number; indexColumn += 1) {
-      let tableColumns = document.createElement('td');
+      const tableColumns = document.createElement('td');
       tableColumns.className = 'pixel';
       tableColumns.style.backgroundColor = 'white';
       tableLine.appendChild(tableColumns);
     }
   }
 }
-createTable(number);
+createTable(5);
 
 function selectColor() {
   const pallet = document.getElementsByClassName('color');
   for (let indexPallet = 0; indexPallet < pallet.length; indexPallet += 1) {
-    pallet[indexPallet].addEventListener('click', function() {
+    pallet[indexPallet].addEventListener('click', function () {
       if (pallet[indexPallet].className === 'color') {
         pallet[indexPallet].className = 'color selected';
         for (let index = 0; index < pallet.length; index += 1) {
-            if (pallet[index] !== pallet[indexPallet]) {
-                pallet[index].className = 'color';
-            }
+          if (pallet[index] !== pallet[indexPallet]) {
+            pallet[index].className = 'color';
+          }
         }
-      } else { 
+      } else {
         pallet[indexPallet].className = 'color';
       }
-    })     
+    });
   }
 }
 
@@ -36,48 +36,48 @@ selectColor();
 
 function paintPixel() {
   const pixel = document.getElementsByClassName('pixel');
-    for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
-        pixel[indexPixel].addEventListener('click',function() {
-          let selectedColor = document.querySelector('.selected');
-          pixel[indexPixel].style.backgroundColor = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
-      })
-    }
+  for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
+    pixel[indexPixel].addEventListener('click', function () {
+      const selectedColor = document.querySelector('.selected');
+      pixel[indexPixel].style.backgroundColor = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
+    });
+  }
 }
 
-paintPixel ();
+paintPixel();
 
 function resetColor() {
-  let button = document.getElementById('clear-board');
-  button.addEventListener('click', function() {
-    let pixel = document.getElementsByClassName('pixel');
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', function () {
+    const pixel = document.getElementsByClassName('pixel');
     for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
       pixel[indexPixel].style.backgroundColor = 'white';
     }
-  })
+  });
 }
 
 resetColor();
 
 function boardSize() {
   const vqv = document.getElementById('generate-board');
-  let input = document.getElementById('board-size');
-  vqv.addEventListener('click', function() {
+  const input = document.getElementById('board-size');
+  vqv.addEventListener('click', function () {
     if (input.value === '') {
-      alert ("Board inválido!");
+      alert('Board inválido!');
     } else {
-      let tableP = document.getElementById('pixel-board');
+      const tableP = document.getElementById('pixel-board');
       while (tableP.firstChild) {
         tableP.removeChild(tableP.lastChild);
       }
       if (input.value > 50) {
-          input.value = 50;
-      } else if (input.value < 5){
-          input.value = 5;
+        input.value = 50;
+      } else if (input.value < 5) {
+      input.value = 5;
       }
       createTable(number = input.value);
       paintPixel();
     }
-  })
+  });
 }
 
 boardSize();
@@ -85,8 +85,7 @@ boardSize();
 function palletColors() {
   const colors = document.getElementsByClassName('color');
   for (let indexColor = 1; indexColor < colors.length; indexColor += 1) {
-    const random = Math.ceil(Math.random() * 255)
-    colors[indexColor].style.backgroundColor = `rgb(${random}, ${random}, ${random})`;
+    colors[indexColor].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
   }
 }
 
