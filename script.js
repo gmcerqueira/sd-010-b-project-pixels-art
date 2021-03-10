@@ -17,18 +17,27 @@ document.getElementById('clear-board').onclick = function () {
   board = document.getElementsByClassName('pixel');
   for (let i = 0; i < board.length; i += 1) {
     board[i].style.backgroundColor = 'white';
-  };
-}
+  }
+};
 
 document.getElementById('generate-board').onclick = function () {
-  if (document.querySelector('#board-size').value != '') {
+  let pixelSize = document.querySelector('#board-size').value;
+  if (pixelSize !== '') {
+    if (pixelSize > 50) {
+      pixelSize = 50;
+      document.querySelector('#board-size').value = 50;
+    }
+    else if (pixelSize < 5) {
+      pixelSize = 5;
+      document.querySelector('#board-size').value = 5;
+    }
     board = document.getElementsByClassName('pixel');
     for (let i = 0; i < board.length; i += 1) {
-      board[i].style.width = document.querySelector('#board-size').value + 'px';
-      board[i].style.height = document.querySelector('#board-size').value + 'px';
+      board[i].style.width = pixelSize + 'px';
+      board[i].style.height = pixelSize + 'px';
       board[i].style.backgroundColor = 'white';
-    };
+    }
   } else {
     alert('Board inválido!');
   }
-}
+};
