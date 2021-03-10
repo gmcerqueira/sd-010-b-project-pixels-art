@@ -89,10 +89,13 @@ function mudaTamanhoQuadro() {
     for (let index = 0; index < quadrofilho.length; index += 1) {
       quadro.removeChild(quadrofilho[index]);
     }
-
-    criaQuadro(tamanhoQuadro);
-    selecionaPixel();
+  } else if (inputQuadro < 5) {
+    tamanhoQuadro = 5;
+  } else if (inputQuadro > 50) {
+    tamanhoQuadro = 50;
   }
+  criaQuadro(tamanhoQuadro);
+  selecionaPixel();
 }
 const botaoQuadro = document.querySelector('#generate-board');
 botaoQuadro.addEventListener('click', mudaTamanhoQuadro);
