@@ -22,18 +22,6 @@ function remove(even){
 }
 
 
-let clicar = document.querySelector(".pixel");
-
-clicar.addEventListener("click", troca2)
-
-
-function troca2() {
-
-    let cor = clicar
-    cor.classList.add("preto")
-
-  }
-
 
 //chaaama
-add ()
+
