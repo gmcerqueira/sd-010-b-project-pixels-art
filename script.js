@@ -1,5 +1,7 @@
-/* window.onload = load;
-function load() {
-  return document.querySelectorAll('pixel-board').style.background = 'white';
-} */
-
+function loadPixelArt() {
+  let element = document.querySelector('.color');
+  element.className += ' selected';
+}
+window.onload = loadPixelArt();
+function selected() {
+}
