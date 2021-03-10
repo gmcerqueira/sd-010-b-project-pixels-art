@@ -1,3 +1,9 @@
+window.onload = function () {
+  let getBlack = document.getElementById('color-palette')
+  let newBlack = getBlack.childNodes[0]
+  newBlack.className += ' selected'
+}
+
 function titleContent() { 
   let getBody = document.querySelector('body')
   let title = document.createElement('h1')
@@ -34,6 +40,30 @@ function applyColor() {
 }
 applyColor()
 
+function createInput() {
+  let getBody = document.querySelector('body');
+  let createInput = document.createElement('input')
+  createInput.id = 'board-size'
+  createInput.setAttribute('type', 'number')
+  getBody.appendChild(createInput)
+  let createButton = document.createElement('button')
+  createButton.id = 'generate-board'
+  createButton.innerHTML = '"VQV"'
+  getBody.appendChild(createButton)
+}
+createInput()
+
+  function getEvent() {
+  let getInput= document.querySelector('#board-size');
+  getInput.addEventListener('click', function(evt){
+    console.log(evt.target.value)
+    // if(evt.target.value < 0){
+    //   console.log(evt.preventDefault())
+    // }
+  })
+}
+getEvent()
+
 function createDivs() {
   let getBody = document.querySelector('body')
   let session = document.createElement('section')
@@ -45,15 +75,14 @@ function createDivs() {
   }
 createDivs()
 
+
 function createButton() {
   let getButton = document.querySelector('#clear-board')
   getButton.innerHTML = "Limpar"
   getButton.addEventListener('click', function(){
     let getPixel = document.querySelectorAll('#pixel-board>div')
-    let getPixelBoard = document.querySelector('#pixel-board')
     for(let index =0 ; index < getPixel.length; index += 1){ 
       getPixel[index].style.backgroundColor='white'
-      getPixelBoard.style.backgroundColor='white'
       }
     })
   }
@@ -70,14 +99,6 @@ function createPixel() {
 }
 createPixel()
 
-
-
-window.onload = function () {
-  let getBlack = document.getElementById('color-palette')
-  let newBlack = getBlack.childNodes[0]
-  newBlack.className += ' selected'
-}
-
 function changeSelect() {
   let setPaleta = document.querySelector('#color-palette');
   setPaleta.addEventListener('click', function(evt){
@@ -90,6 +111,21 @@ function changeSelect() {
 }
 changeSelect()
 
+// Facilitação do uso da Arrow Function. 
+// Pesquisa: https://www.w3schools.com/js/js_arrow_function.asp
+function ColorForaChange() {
+  let getPixelBoard = document.querySelector('#pixel-board');
+  getPixelBoard.addEventListener('click', (colorChanges) => {
+    let change = document.querySelector('.selected').style.backgroundColor;
+    let getPixels = document.querySelectorAll('.pixel')
+      for(index = 0; index < getPixels.length; index += 1){
+        if(getPixels[index] == colorChanges.target) {
+          getPixels[index].style.backgroundColor = change;
+        }
+      }
+    })
+  }
+  ColorForaChange();
 
 
 
