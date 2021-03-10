@@ -1,3 +1,6 @@
+const colorPalette = 'color-palette';
+const pixelBoard = 'pixel-board';
+
 // Cria uma tabela de caixas
 function createBoxTable(numOfItems, itemClass, parentId, numOfLines = 1) {
   const paletteBox = document.getElementById(parentId);
@@ -69,14 +72,47 @@ function clearBoardButton() {
   button.addEventListener('click', clearBoard);
 }
 
-const colorPalette = 'color-palette';
+function rangeLimit(size) {
+  let value = parseInt(size, 10);
+  if (value < 5) {
+    value = 5;
+  }
+  if (value > 50) {
+    value = 50;
+  }
+  return value;
+}
+
+function changeBoardSize(inputSize) {
+  const size = rangeLimit(inputSize);
+  if (Number.isInteger(parseInt(size, 10))) {
+    const pixelBoardElement = document.getElementById(pixelBoard);
+    const table = pixelBoardElement.children[0];
+    pixelBoardElement.removeChild(table);
+    createBoxTable(size, 'pixel', pixelBoard, size);
+    addPaletteBoxClickEvent();
+    addPixelClickEvent((event) => {
+      const selectedColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+      changeBgColor(event, selectedColor);
+    });
+  } else {
+    alert('Board inválido!');
+  }
+}
+
+function inputEvent() {
+  const input = document.getElementById('board-size');
+  input.addEventListener('change', () => {
+    changeBoardSize(input.value);
+  });
+}
 
 createBoxTable(4, 'color', colorPalette);
-
-createBoxTable(5, 'pixel', 'pixel-board', 5);
+createBoxTable(5, 'pixel', pixelBoard, 5);
 
 window.onload = () => {
   addClassToPaletteBox();
+  inputEvent();
   addPaletteBoxClickEvent();
   addPixelClickEvent((event) => {
     const selectedColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;

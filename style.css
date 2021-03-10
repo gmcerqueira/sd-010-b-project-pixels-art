@@ -13,9 +13,10 @@ table {
   border-collapse: collapse;
 }
 
+/* width e height com 41px, pois há um border-collapse que "come" 1px */
 .color , .pixel {
   border: 1px solid black;
-  width: 40px;
+  width: 41px;
   height: 41px;
 }
 
@@ -43,6 +44,10 @@ section {
   text-align: center;
 }
 
-#clear-board {
-  margin-bottom: 10px;
+#clear-board , #generate-board , #board-size {
+  margin: 0 5px 10px;
+}
+
+#board-size {
+  width: 50px;
 }
