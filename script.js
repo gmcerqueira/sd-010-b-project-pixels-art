@@ -86,6 +86,40 @@ function btnConfig() {
   btngGnerateboard.addEventListener('click', generatePixels);
 }
 
+function randomcNumber() {
+  return Math.floor(Math.random() * (208 - 87 +1)) + 87;
+}
+
+function generatorColor() {
+  const color = `rgb(${randomcNumber()}, ${randomcNumber()}, ${randomcNumber()})`;
+  return color;
+}
+
+function istrueColor(color) {
+  let divColor  = document.querySelectorAll('.color');
+  divColor.forEach((e)=>{
+    if(e.style.backgroundColor === color) {
+      return false;
+    }
+  })
+  return true;
+}
+
+function addColorPalette(qtt) {
+  let divColorPallete = document.getElementById('color-palette');
+  for (let i = 1; i <= qtt; i += 1) {
+    const divColor = document.createElement('div');
+    let color = generatorColor();
+    let isColorTrue = istrueColor(color);
+    divColor.classList.add('color');
+    if (isColorTrue) {
+      divColor.style.backgroundColor = color;
+    }
+    divColorPallete.appendChild(divColor);
+  }
+}
+
+addColorPalette(3);
 generatorPixels(5);
 addEventColorSelected();
 addEventColorInPixel();

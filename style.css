@@ -25,18 +25,6 @@ body {
   background-color: black;
 }
 
-#green {
-  background-color: green;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#orange {
-  background-color: orange;
-}
-
 #pixel-board {
   display: table;
   margin: 10px auto;
@@ -57,6 +45,7 @@ body {
 #cofigPixelBord {
   width: 500px;
   margin: 5px auto;
+  text-align: center;
 }
 
 #clear-board {
