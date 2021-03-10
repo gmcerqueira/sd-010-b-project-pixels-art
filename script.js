@@ -28,3 +28,13 @@ function setPixelBoard() {
     }
   }
 }
+
+function getSelected(event) {
+  const elem = event.target;
+  if (!elem.id) {
+    const colors = document.querySelectorAll('.color');
+    colors.forEach((element) => element.classList.remove('selected'));
+    elem.classList.add('selected');
+  }
+  sessionStorage.color = elem.style.backgroundColor;
+}
