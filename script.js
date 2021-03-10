@@ -72,7 +72,7 @@ function setColor(element) {
 function reset() {
     const arrayPixels = document.getElementsByClassName('pixel');
     for (let i = 0; i < arrayPixels.length; i++) {
-        arrayPixels[i].style.backgroundColor = '';
+        arrayPixels[i].style.backgroundColor = 'white';
     }
 }
 
