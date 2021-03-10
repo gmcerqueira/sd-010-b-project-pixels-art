@@ -47,7 +47,7 @@ greenBox.addEventListener('click', selectedGreenBox);
 
 
 let cleanPixelButton = document.getElementById('clear-board');
-// let squarePixels = document.getElementsByClassName('pixel');
+let squarePixels = document.getElementsByClassName('pixel');
 
 function cleanPixel() {
   for (let i = 0; i < 25; i += 1) {
@@ -70,6 +70,22 @@ function clickPixel(eventoDeOrigem) {
 
 
 corDivPixel.addEventListener('click', clickPixel);
+
+
+function clickPalette(eventoDeOrigem) {
+  aux = eventoDeOrigem.target;
+  cor[0].className = 'color';
+  cor[1].className = 'color';
+  cor[2].className = 'color';
+  cor[3].className = 'color';
+  if (aux.className === 'color') {
+    aux.className = 'color selected';
+    corSalva = aux.style.backgroundColor;
+  } else {
+    aux.className = 'color';
+  }
+}
+corDivBoard.addEventListener('click', clickPalette);
 
 // function setBackgroundColor(color) {
 //   let content = document.querySelector(".content")
