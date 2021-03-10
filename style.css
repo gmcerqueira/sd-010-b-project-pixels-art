@@ -7,7 +7,7 @@
   display: none;
 } */
 
-#black , #second-color , #third-color , #fourth-color {
+#primary-color , #second-color , #third-color , #fourth-color {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -21,7 +21,7 @@
   border: solid 1px black;
 }
 
-#black {
+#primary-color {
   background-color: black;
 }
 

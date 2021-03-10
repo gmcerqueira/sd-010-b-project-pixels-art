@@ -6,16 +6,19 @@ spanThird = document.getElementById('third-color');
 
 let spanFouth = null;
 spanFouth = document.getElementById('fourth-color');
-
+const dataSetColor = 'data-color';
 function changeSecondColor(element) {
+  spanSecond.setAttribute(dataSetColor, element.target.value);
   spanSecond.style.backgroundColor = element.target.value;
 }
 
 function changeThirdColor(element) {
+  spanThird.setAttribute(dataSetColor, element.target.value);
   spanThird.style.backgroundColor = element.target.value;
 }
 
 function changeFourthColor(element) {
+  spanFouth.setAttribute(dataSetColor, element.target.value);
   spanFouth.style.backgroundColor = element.target.value;
 }
 
@@ -33,9 +36,7 @@ inpSecond.addEventListener('change', changeSecondColor);
 inpThird.addEventListener('change', changeThirdColor);
 inpFourth.addEventListener('change', changeFourthColor);
 
-
-/* Pegado as cores dos inputs: */
-let inpSecondColor = null;
+/* let inpSecondColor = null;
 inpSecondColor = document.getElementById('input-second').value;
 
 let inpThirdColor = null;
@@ -54,9 +55,12 @@ spanThirdColor = '#3970fe';
 
 let spanFouthColor = document.getElementById('fourth-color').style.backgroundColor;
 spanFouthColor = '#438104';
-
-/* Pegando as tags SPANS */
-/* Pegando as SPANS COLORS: */
+ */
+function addColorInPixel() {
+  let color = null;
+  color = document.getElementsByClassName('selected')[0];
+  this.style.backgroundColor = color.dataset.color;
+}
 
 
 /* Criando quadro de pixels dinamicamente: */
@@ -72,6 +76,7 @@ for (let index = 0; index < 25; index += 1) {
   pixel = document.createElement('span');
   pixel.setAttribute('id', index + 1);
   pixel.className = 'pixel';
+  pixel.addEventListener('click', addColorInPixel);
   pixelBoard.appendChild(pixel);
 }
 
