@@ -11,6 +11,7 @@
 <body>
   <header>
     <h1 id = title>Paleta de Cores</h1>
+      
   </header>
   <section>
     <div id = color-palette>
@@ -20,7 +21,11 @@
       <span class = color id = red></span>
     </div>
   </section>
-  <button id = clear-board>Limpar</button>
+  <span class="flexy-s">
+    <input type="text" id = board-size min = 0 class="caixa-texto" placeholder="Escolha um valor entre 5 e 50">
+  </span>
+   <button id = generate-board>VQV</button>
+   <div><button id = clear-board>Limpar</button></div>
   <section id = pixel-board>
     <div>
       <span class = pixel id = '00'></span>
