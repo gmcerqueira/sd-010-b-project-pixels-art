@@ -15,7 +15,8 @@
 
 #pixel-board {
   margin: 20px 0px;
-  display: flex;
+  display: flex inline;
+  border: 1px solid black;
 }
 
 .pixel {

@@ -1,5 +1,3 @@
-document.getElementById('title').innerText = 'Paleta de Cores';
-
 const paletteDiv = document.getElementById('color-palette');
 const colorsPalette = document.getElementsByClassName('color');
 const colorsPaletteLenght = colorsPalette.length;
@@ -11,6 +9,7 @@ createBoardOfPixels();
 
 window.onload = function() {
     firstPaletteSelected();
+    document.addEventListener('click', selectColor);
 }
 
 function firstPaletteSelected() {
@@ -37,6 +36,17 @@ function createBoardOfPixels() {
             line.appendChild(pixel);
         }
     }
+}
+
+function selectColor(event) {
+    //let eventSelect = event.target;
+    // if(eventSelect) {
+    //     let arr = document.getElementsByClassName('color');
+    //     for (let i = 0; i < 4; i++) {
+    //         arr[i].classList.remove('selected');
+    //     }
+    //} alert(event.target.nodeName);
+    alert(event.target.nodeName);
 }
 
 //https:wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
