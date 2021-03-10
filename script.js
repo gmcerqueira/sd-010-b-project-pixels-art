@@ -41,16 +41,21 @@ for (let index = 0; index < colorsPalette.length; index += 1) {
   });
 }
 
-for(let index = 0; index < pixels.length; index+= 1){
-  pixels[index].addEventListener('click', function(){
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', function () {
     let corNova = document.getElementsByClassName('selected')[0].style.backgroundColor;
     pixels[index].style.backgroundColor = corNova;
   })
 }
 
+function corAleatoria() {
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+  document.getElementsByClassName('color')[0].style.backgroundColor = `rgb(${r},${g},${b})`;
+  document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${g},${b},${r})`;
+  document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
+  document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
+}
 
-
-document.getElementsByClassName('color')[0].style.backgroundColor = 'rgb(0,0,0)';
-document.getElementsByClassName('color')[1].style.backgroundColor = 'rgb(18,10,143)';
-document.getElementsByClassName('color')[2].style.backgroundColor = 'rgb(0,128,0)';
-document.getElementsByClassName('color')[3].style.backgroundColor = 'rgb(255,255,0)';
+corAleatoria();
