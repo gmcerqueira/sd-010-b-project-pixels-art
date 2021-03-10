@@ -1,6 +1,6 @@
 window.onload = blackColorSelect;
 
-function blackColorSelect () {
+function blackColorSelect() {
   const blackColor = document.getElementsByClassName('color')[0];
   blackColor.className = 'color selected';
 }
