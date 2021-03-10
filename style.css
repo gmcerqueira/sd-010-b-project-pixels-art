@@ -5,6 +5,12 @@
   padding : 20px;
 }
 
+.pixel{
+  background-color:white;
+  padding : 20px;
+  border: 1px solid black
+}
+
 #black {
   background-color: black;
 }
