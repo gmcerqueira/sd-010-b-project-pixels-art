@@ -1,6 +1,6 @@
+let color = ['black', 'red', 'blue', 'green'];
+const colorPalette = document.querySelector('#color-palette');
 function paleta() {
-  let color = ['black', 'red', 'blue', 'green'];
-  const colorPalette = document.querySelector('#color-palette');
   for (let index = 0; index < color.length; index += 1) {
     let colorGround = color[index];
     let paletteItem = document.createElement('div');
@@ -19,3 +19,9 @@ function quadrado() {
   }
 }
 quadrado();
+function corInicial() {
+  let cores = document.querySelectorAll('.color')[0];
+  let padrao = cores.classList;
+  padrao.add('selected');
+}
+corInicial();
