@@ -1,7 +1,7 @@
 /*
    Essa função cria um element div, altera sua classe para 'pixel' e o retorna.
   */
- function createPixel() {
+function createPixel() {
   const pixel = document.createElement('div'); // cria um element div e armazena em pixel
   pixel.className = 'pixel'; // altera a classe do element para 'pixel'
   return pixel; // retorna o element criado
@@ -24,10 +24,10 @@ function generateBoard(width, height) {
   }
 }
 
-window.onload = function() { // define uma função anômina para carregar valores e gerar board
-  let boardSize = 5; // define o tamanho do board
-  let width = boardSize; // define width a partir de boardSize
-  let height = boardSize; // define height a partir de boardSize
+window.onload = function () { // define uma função anômina para carregar valores e gerar board
+  const boardSize = 5; // define o tamanho do board
+  const width = boardSize; // define width a partir de boardSize
+  const height = boardSize; // define height a partir de boardSize
 
   generateBoard(width, height); // gera o board de dimensão width X height
 };
