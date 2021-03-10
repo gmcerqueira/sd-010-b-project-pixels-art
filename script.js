@@ -2,7 +2,7 @@ function createPixelBoard() {
   const pixelBoard = document.getElementById('pixel-board');
   for (let index = 0; index < 5; index += 1) {
     const pixelLine = document.createElement('div');
-    pixelLine.id = 'pixelLine';
+    pixelLine.className = 'pixelLine';
     pixelLine.style.display = 'inline-block';
     pixelLine.style.marginTop = '70px';
     pixelBoard.appendChild(pixelLine);
