@@ -3,14 +3,21 @@
   padding: 0;
 }
 
+h1 {
+  text-align: center;
+}
 #color-palette {
-  border: 1px solid black;
-  
-  max-width: auto;
+  border: 1px solid black;  
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
 }
 .color {
   border: 1px solid black;
   display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 5px 0px 2px 16px;   
 }
 
 .color:first-child  {
@@ -28,3 +35,23 @@
 .color:nth-child(4) {
   background-color: rgb(107, 58, 199);
 }
+
+.pixel {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  margin-top: 2px;
+  max-width: fit-content;
+}
+
+/* #pixelRow {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+} */
