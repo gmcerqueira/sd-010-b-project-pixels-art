@@ -20,12 +20,12 @@ function SelectColor() {
   const Colors = document.querySelectorAll('#color');
 
   for (let index = 0; index < Colors.length; index += 1) {
-    Colors[index].addEventListener('click', function ( ){
-    Colors[index].classList.add = 'selected';
-    firstColorSelected.className = 'color';
-  });
+    Colors[index].addEventListener('click', function () {
+      Colors[index].classList.add = 'selected';
+      firstColorSelected.className = 'color';
+    });
+  }
+  const SelectedColor = document.querySelector('.selected');
+  return SelectedColor;
 }
-  let SelectedColor = document.getElementsByClassName('selected');
-  return SelectedColor
-}
-SelectColor ();
+SelectColor();
