@@ -1,5 +1,6 @@
 window.onload = function (){
-   
+
+
 function addPaleta (){
     let ul = document.querySelector('#color-palette');
     let cores = ['black'];
@@ -24,9 +25,10 @@ function addPaleta (){
 }
 addPaleta();
 
-function addGrid() {
+function addGrid(side) {
     let table = document.querySelector('#pixel-board');
-    let lado = 5;
+    let lado = side;
+    console.log(lado);
     for(let i = 0; i < lado; i++){
         let tr = document.createElement('div');
         tr.className = 'table-row';
@@ -38,8 +40,20 @@ function addGrid() {
             tr.appendChild(px);
         }
     }
+addEventListener();
 }
-addGrid();
+let side = 5;
+addGrid(side);
+
+function rmvGrid() {
+    let table = document.querySelector('#pixel-board');
+
+    let n = document.querySelectorAll('.table-row').length;
+    while (table.firstChild) {
+        table.removeChild(table.lastChild);
+      }
+//source: https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+}
 
 //add primeira classe 'selected'
 let selectedClass = document.querySelector('.color');
@@ -63,16 +77,17 @@ function colorSelect(elementoEvento, Class){
     }
 
 
-//add event listener para todos os pixels
-let selectPixel = document.getElementsByClassName('pixel');
-for(let i = 0; i < selectPixel.length; i++){
-    selectPixel[i].addEventListener("click", pintar);  
-    }
+function addEventListener (){
+    let selectPixel = document.getElementsByClassName('pixel');
+    for(let i = 0; i < selectPixel.length; i++){
+        selectPixel[i].addEventListener("click", pintar);  
+        }
 
-function pintar(elementoEmQuestao){
-    let cor = document.querySelector('.selected').style.backgroundColor;
-    elementoEmQuestao.srcElement.style.backgroundColor = cor;
-    console.log(cor);
+    function pintar(elementoEmQuestao){
+        let cor = document.querySelector('.selected').style.backgroundColor;
+        elementoEmQuestao.srcElement.style.backgroundColor = cor;
+        console.log(cor);
+        }
 }
 
 //add event listener LIMPAR
@@ -85,6 +100,27 @@ function limparFunction(){
     for(let i = 0; i < pixels.length; i++){
         pixels[i].style.backgroundColor = "white";
     }
+}
+
+function addInput(){ 
+    let x = document.getElementsByTagName("INPUT");
+    x.setAttribute("type", "number");
+   
+}
+//add event listener VQV
+let vqv = document.querySelector('#generate-board');
+vqv.addEventListener('click', genBoard);
+
+function genBoard(){
+let bor = document.querySelector('input').value;
+if((bor) == ''){
+    alert('Board inválido!')
+}else{
+    if(bor < 5){bor = 5}
+    if(bor > 50){bor = 50}
+rmvGrid();
+addGrid(bor);
+}
 }
 
 }//window.onload close

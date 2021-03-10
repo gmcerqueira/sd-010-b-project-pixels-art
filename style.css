@@ -44,4 +44,20 @@
     width: 50px;
     border: solid 1px black;
     background-color: rgb(230, 230, 230);
+    display: inline-block;
+}
+
+input{
+    display: inline-block;
+    width: 40px;
+    margin-left: 170px;
+}
+
+#generate-board{
+    margin-bottom: 10px;
+    text-align: center;
+    width: 50px;
+    border: solid 1px black;
+    background-color: rgb(230, 230, 230);
+    display: inline-block;
 }
