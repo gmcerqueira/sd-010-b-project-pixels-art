@@ -43,6 +43,7 @@ function createBoard() {
 // sets black as the selected color
 function setSelectedColor() {
   colorPalette.firstElementChild.classList.add('selected');
+  colorPallete.firstElementChild.style.backgroundColor = 'black';
 }
 
 window.onload = () => {
