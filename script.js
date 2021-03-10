@@ -78,4 +78,16 @@ function paintingPixel(event) {
 const btGenBoard = document.getElementById('generate-board');
 btGenBoard.addEventListener('click', createTabPixels);
 
+
+function randomColor() {
+    const clrR = Math.floor(Math.random() * 256);
+    const clrG = Math.floor(Math.random() * 256);
+    const clrB = Math.floor(Math.random() * 256);
+    const colorRGB = "rgb(" + clrR + ", " + clrG + ", " + clrB +")";
+    return colorRGB;
+  }
+  
+  orangered.style.backgroundColor = randomColor();
+  green.style.backgroundColor = randomColor();
+  blue.style.backgroundColor = randomColor();
   
