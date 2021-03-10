@@ -38,12 +38,24 @@ function createDivs() {
   let getBody = document.querySelector('body')
   let session = document.createElement('section')
   let sessionButton = document.createElement('button')
-  session.id = "pixel-board"
-  getBody.appendChild(session)
   sessionButton.id = "clear-board"
   getBody.appendChild(sessionButton)
+  session.id = "pixel-board"
+  getBody.appendChild(session)
   }
 createDivs()
+
+function createButton() {
+  let getButton = document.querySelector('#clear-board')
+  getButton.innerHTML = "Limpar"
+  getButton.addEventListener('click', function(){
+    let getPixel = document.querySelectorAll('#pixel-board>div')
+    for(let index =0 ; index < getPixel.length; index += 1){ 
+      getPixel[index].style.backgroundColor='white'
+      }
+    })
+  }
+  createButton()
 
 function createPixel() {
   let getSession = document.querySelector('#pixel-board')
@@ -60,22 +72,16 @@ createPixel()
 //   let get
 // }
 
-function createButton() {
-let getButton = document.querySelector('#clear-board')
-getButton.innerHTML = "Reset"
-getButton.addEventListener('click', function(){
-  let getPixel = document.querySelectorAll('#pixel-board>div')
-  for(let index =0 ; index < getPixel.length; index += 1){ 
-    getPixel[index].style.backgroundColor='white'
-    }
-  })
-}
-createButton()
+
 
 window.onload = function () {
   let getBlack = document.getElementById('color-palette')
   let newBlack = getBlack.childNodes[0]
   newBlack.className += ' selected'
+}
+
+function getPaint() {
+
 }
 
 

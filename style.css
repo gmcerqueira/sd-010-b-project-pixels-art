@@ -10,7 +10,7 @@
 #pixel-board{
     width: 212px;
     height: 233px;
-    background-color: orchid;
+    background-color: white;
 
 }
 
@@ -27,5 +27,6 @@
     width: 40px;
     height: 14px;
     font-size: 6px;
+    margin-bottom: 10px;
 }
 
