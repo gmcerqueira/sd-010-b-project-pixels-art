@@ -13,9 +13,9 @@ function setPaletteColor() {
     elem.classList.add('color'); // adiciona elementos pela id no css, fonte: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
     document.querySelector(colorPalette).appendChild(elem); // cria parentesco com colorPallete (que está recebendo a classe collor-pallete)
   }
-  const cores = ['black', 'red', 'green', 'blue']; // define as cores manualmente. *Nota*: Mais tarde posso inserir Math.random para deixar aleatório
+  const cores = ['black', 'red', 'green', 'blue']; // define as cores manualmente. *Nota*: Mais tarde posso inserir Math.random para deixar aleatório, mas ainda não sei como aplicá-la
   const array = document.getElementById('color-palette').childNodes; // recebe os filhos de color-palette
-  array.forEach((element, index) => { // for loop para definir as cores
+  array.forEach((element, index) => { // for loop para definir as cores usando "arrow function"
     const elem = element; elem.style.backgroundColor = cores[index];
   });
   const colors = document.getElementsByClassName('color'); // pega as cores pela classe
