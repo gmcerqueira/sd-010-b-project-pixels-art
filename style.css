@@ -44,3 +44,32 @@ body , main {
 #green {
   background-color: green;
 }
+
+#pixel-board {
+  margin: 10px auto;
+  border: 0;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  justify-content: center;
+}
+
+.pixel-row {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+
+.pixel {
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  display: inline-block;
+}
