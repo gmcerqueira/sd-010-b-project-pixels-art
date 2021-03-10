@@ -104,8 +104,16 @@ let colorRed = document.getElementById("red").addEventListener("click", adiciona
         }
     }
     adicionaColorGreen();
-    let colorBlack = document.getElementById("black")
+    let colorBlack = document.getElementById("black").addEventListener("click", adicionaColorBlack)
     function adicionaColorBlack (){
+        let selecionaClass = document.querySelectorAll(".color");
+        for (let i = 0; i < selecionaClass.length; i += 1){
+            if (selecionaClass[i].style.backgroundColor == "black"){
+                selecionaClass[i].className="color selected";
+            }else {
+                selecionaClass[i].className="color";
+            }
+        }
         let adicionaClass = document.getElementById("black").className ="color selected";
         for (let i = 0; i <colors.length; i += 1){
             colors[i].addEventListener("click", function(){
