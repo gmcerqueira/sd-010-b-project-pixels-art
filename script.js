@@ -41,6 +41,7 @@ function selecionarCorPreta() {
   classColor[3].className = 'color';
   return classColor;
 }
+// classList.add() classList.remove()
 
 window.onload = selecionarCorPreta;
 
@@ -67,6 +68,14 @@ function selecionarCorVerde() {
   classColor[3].className = colorSelected;
   return classColor;
 }
+const pixelQuadro = document.getElementById('pixel-board');
+
+function pixelColor() {
+  const selected = document.querySelector('.selected');
+  const compStyles = window.getComputedStyle(selected).getPropertyValue('background-color');
+  document.getElementsByClassName('pixel').backgroundColor = compStyles;
+  return pixelQuadro;
+}
 
 // Escutador de eventos
 const divsColorPalette = document.querySelectorAll('.color');
@@ -74,16 +83,16 @@ divsColorPalette[0].addEventListener('click', selecionarCorPreta);
 divsColorPalette[1].addEventListener('click', selecionarCorVermelha);
 divsColorPalette[2].addEventListener('click', selecionarCorAzul);
 divsColorPalette[3].addEventListener('click', selecionarCorVerde);
+pixelQuadro.addEventListener('click', pixelColor);
 
-function limparPixels() {
-  const newSection = document.querySelectorAll('#pixel-board .tr .pixel');
-  for (let index = 0; index < 5; index += 1) {
-    for (let index2 = 0; index2 < 5; index2 += 1) {
-      newSection[index].style.backgroundColor = 'withe';
-    }
-  }
-  return newSection;
+function limparPixels(elementos, cor) {
+  document.querySelector(elementos).style.backgroundColor = cor;
 }
 
 const buttomLimparCores = document.querySelector('.buttom');
-buttomLimparCores.addEventListener('click', limparPixels);
+buttomLimparCores.addEventListener('click', limparPixels('.pixel', 'white'));
+
+// function alteraCor(elementos, cor){
+// document.querySelector(elementos).style.backgroundColor = cor;
+// };
+// alteraCor('#btn-holiday', 'blue');
