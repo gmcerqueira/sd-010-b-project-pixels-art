@@ -24,3 +24,16 @@ function setColor(id) {
   document.getElementById(id).classList.add('selected');
   console.log(selectedColor);
 }
+
+// requisito 8
+const pixels = document.querySelectorAll('.pixel')
+
+for (let i = 0; i < pixels.length; i += 1) {
+  pixels[i].addEventListener('click', function () {
+    setPixelColor(i);
+  })
+}
+// selected color é uma string com o nome da cor
+function setPixelColor(index) {
+  pixels[index].classList.add(selectedColor)
+}
