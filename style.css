@@ -27,3 +27,10 @@
   margin: 0px;
   padding: 0px;
 }
+
+#btn-reset {
+  width: 120px;
+  font-size: 0.65em;
+  display: block;
+  color: #454545
+}
