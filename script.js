@@ -22,7 +22,7 @@ window.onload = function () {
 
   function makeBoard() {
     const pixelBoard = document.createElement('div'); //table
-    pixelBoard.setAttribute('id', 'pixel-board')
+    pixelBoard.setAttribute('id', 'pixel-board');
     document.body.appendChild(pixelBoard);
     for (let i = 0; i < 5; i += 1) {
       const headRow = document.createElement('div') //th
@@ -30,7 +30,7 @@ window.onload = function () {
       pixelBoard.appendChild(headRow);
       for (let j = 0; j < 5; j += 1) {
         const lineElemento = document.createElement('div') //td
-        lineElemento.setAttribute('class', 'pixel')
+        lineElemento.setAttribute('class', 'pixel');
         headRow.appendChild(lineElemento);
       }
     }
@@ -45,7 +45,84 @@ window.onload = function () {
     }
   }
 
-  paletteColour(4);
-  makeBoard();
-  selectedBlack();
+  function selectedPallete() {
+  let allColors = document.querySelectorAll('.color')
+
+  let zeroColor = document.querySelectorAll('.color')[0];
+  zeroColor.addEventListener('click', function (event) {
+    if (zeroColor.className === 'color') {
+      event.target.className = 'color selected'
+      for (let i = 0; i < allColors.length; i += 1) {
+        if (i == 0){
+          continue;
+        } else {
+          allColors[i].className = 'color';
+        }
+      }
+    }
+  })
+  let oneColor = document.querySelectorAll('.color')[1];
+  oneColor.addEventListener('click', function (event) {
+    if (oneColor.className === 'color') {
+      event.target.className = 'color selected'
+      for (let i = 0; i < allColors.length; i += 1) {
+        if (i == 1){
+          continue;
+        } else {
+          allColors[i].className = 'color';
+        }
+      }
+    }
+  })
+  let twoColor = document.querySelectorAll('.color')[2];
+  twoColor.addEventListener('click', function (event) {
+    if (twoColor.className === 'color') {
+      event.target.className = 'color selected'
+      for (let i = 0; i < allColors.length; i += 1) {
+        if (i == 2){
+          continue;
+        } else {
+          allColors[i].className = 'color';
+        }
+      }
+    }
+  })
+  let threeColor = document.querySelectorAll('.color')[3];
+  threeColor.addEventListener('click', function (event) {
+    if (threeColor.className === 'color') {
+      event.target.className = 'color selected'
+      for (let i = 0; i < allColors.length; i += 1) {
+        if (i == 3){
+          continue;
+        } else {
+          allColors[i].className = 'color';
+        }
+      }
+    }
+  })
+
+}
+
+paletteColour(4);
+makeBoard();
+selectedBlack();
+selectedPallete();
 };
+
+
+
+// let oneColor = document.querySelectorAll('.color')
+// for (let i = 0; i < oneColor; i += 1) {
+//   oneColor[i].addEventListener('click', function (event) {
+//     if (oneColor[i].className === 'color') {
+//       event.target.className = 'color selected';
+//       for (let k = 0; k < oneColor.length; k += 1) {
+//         if (oneColor[k].style.backgroundColor === oneColor[i].style.backgroundColor) {
+//           continue
+//         } else {
+//           event.oneColor[k].className = 'color';
+//         }
+//       }
+//     }
+//   })
+// }
