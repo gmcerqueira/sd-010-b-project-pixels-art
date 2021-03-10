@@ -25,30 +25,45 @@ function gerar_cor() {
 gerar_cor();
 
 function geraPixel() {
-	let numeroPixels = 25;
+	
 	let pixels = document.getElementById("pixel-board");
 
-	for (let cont = 0; cont < numeroPixels; cont += 1) {
+	for (let cont = 0; cont < 5; cont += 1) {
 		let itemPixel = document.createElement('div');
-		itemPixel.id = 'teste';
-		itemPixel.className = 'pixel';
 		pixels.appendChild(itemPixel);
+
+		for (let cont2 = 0; cont2 < 5; cont2 += 1){
+			let itemPixel2 = document.createElement('div');
+			itemPixel.appendChild(itemPixel2);
+			itemPixel2.className = 'pixel';
+
+		}
 
 	}
 }
 
 geraPixel();
 
-function escolheCor() {
-	const corDaVez = document.querySelector("#color-palette");
-	color.addEventListener("click", (event) =>{
-		let element = event;
-		document.querySelector(".selected").className = "color";
-		element.target.className = "color selected";
-	})
-}
-escolheCor();
+function selecionaCor() {
+	const color = document.querySelector('#color-palette');
+	color.addEventListener('click', (event) => {
+	  const element = event;
+	  document.querySelector('.selected').className = 'color';
+	  element.target.className = 'color selected';
+	});
+  }
+  selecionaCor();
 
+
+  function pintar() {
+	const quadrados = document.querySelector('#pixel-board');
+	quadrados.addEventListener('click', (event) => {
+	  const abacaxi = event;
+	  const colorSelected = document.querySelector('.selected').style.backgroundColor;
+	  abacaxi.target.style.backgroundColor = colorSelected;
+	});
+  }
+  pintar();
 
 
 //let botaoLimpar = document.getElementById("clear-board").addEventListener("click", clear)
