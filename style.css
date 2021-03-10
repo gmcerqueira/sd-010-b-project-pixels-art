@@ -35,4 +35,9 @@ background-color: yellow;
 
 .jellyRows {
     display: inline-block;
+    border-spacing: 0;
+}
+
+#button {
+    display:flexbox;
 }
