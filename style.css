@@ -27,3 +27,11 @@ table , tr , td {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+#botao , #board-size , #entrada {
+  display: inline-block;
+}
+
+#opcoes {
+  display: inline;
+}

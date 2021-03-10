@@ -1,8 +1,12 @@
 function tamanho() {
   const numero = document.getElementById('board-size');
   const n = numero.value;
-  sessionStorage.setItem('n', n);
-  location.reload();
+  if ((n === null) || (n === '')) {
+    alert('Board inválido!');
+  } else {
+    sessionStorage.setItem('n', n);
+    location.reload();
+  }
 }
 
 function leInput() {
