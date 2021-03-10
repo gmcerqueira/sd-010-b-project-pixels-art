@@ -1,4 +1,4 @@
-//variables
+// variables
 const inputBoard = document.querySelector('#board-size');
 const buttonBoardSize = document.querySelector('#generate-board');
 
@@ -32,7 +32,7 @@ function setPaletteColor() {
 // função para preenchimento dos pixels
 function setPixelBoard() {
   for (let index = 0; index < 5; index += 1) {
-    for (let index = 0; index < 5; index += 1) {
+    for (let index2 = 0; index2 < 5; index2 += 1) {
       const elem = createElement('span');
       elem.classList.add('pixel');
       document.getElementById('pixel-board').appendChild(elem);
@@ -100,7 +100,7 @@ function setSize(value) {
 
 buttonBoardSize.addEventListener('click', () => {
   setSize(inputBoard.value);
-})
+});
 
 // função para limpar a board dos pixels
 function clearBoard() {
