@@ -28,7 +28,7 @@ function addEventColorSelected() {
   colorDivEvent.forEach((element) => {
     element.addEventListener('click', (event) => {
       clearSelected();
-      event.target.className += ' selected';
+      event.target.classList.add('selected');
     });
   });
 }
@@ -44,6 +44,15 @@ function addEventColorInPixel() {
   });
 }
 
+function btnConfig() {
+  const btnclear = document.getElementById('btnClear');
+  const pixels = document.querySelectorAll('.pixel');
+  btnclear.addEventListener('click', () => {
+    pixels.forEach( e => e.style.backgroundColor = "white")
+  });
+}
+
 generatorPixels(5);
 addEventColorSelected();
 addEventColorInPixel();
+btnConfig();

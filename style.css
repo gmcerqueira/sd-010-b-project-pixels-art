@@ -53,3 +53,14 @@ body {
   height: 42px;
   border: 1px solid black;
 }
+
+#cofigPixelBord {
+  width: 500px;
+  margin: 5px auto;
+}
+
+#btnClear {
+  width: 90px;
+  font-size: 20px;
+  text-align: center;
+}
