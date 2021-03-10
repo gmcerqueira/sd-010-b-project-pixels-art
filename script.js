@@ -1,4 +1,4 @@
-
+// Requesito 2
 const colorPallete = document.getElementById('color-palette');
 let divPallete = document.createElement('div');
 
@@ -43,10 +43,10 @@ for (let j = 0; j < boardSquares.length; j += 1) {
 const buttonClear = document.querySelector('#clear-board');
 const whiteSquare = document.querySelectorAll('.pixel');
 
-function clearBorder () {
+function clearBorder() {
   for (let w = 0; w < whiteSquare.length; w += 1) {
     whiteSquare[w].style.backgroundColor = 'white';
   }
-};
-
+}
+// Recebi ajuda do colega Gustavo Cerqueira.
 buttonClear.addEventListener('click', clearBorder);
