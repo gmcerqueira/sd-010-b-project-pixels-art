@@ -50,8 +50,10 @@ function createButton() {
   getButton.innerHTML = "Limpar"
   getButton.addEventListener('click', function(){
     let getPixel = document.querySelectorAll('#pixel-board>div')
+    let getPixelBoard = document.querySelector('#pixel-board')
     for(let index =0 ; index < getPixel.length; index += 1){ 
       getPixel[index].style.backgroundColor='white'
+      getPixelBoard.style.backgroundColor='white'
       }
     })
   }
@@ -69,7 +71,8 @@ function createPixel() {
 createPixel()
 
 // function allWhite() {
-//   let get
+//   let getFirstDiv = document.getElementById('color-palette')
+//   let 
 // }
 
 

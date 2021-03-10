@@ -10,7 +10,7 @@
 #pixel-board{
     width: 212px;
     height: 233px;
-    background-color: white;
+    background-color: olivedrab;
 
 }
 
@@ -20,7 +20,7 @@
     border: 1px solid black;
     display: inline-block;
     margin-top: 1px;    
-    background-color: white;
+    background-color: red;
 }
 
 #clear-board{
