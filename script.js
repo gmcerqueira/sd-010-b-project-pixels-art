@@ -20,6 +20,21 @@ window.onload = function () {
     colourSetUp(colorsDiv);
   }
 
+  function clean() {
+    let btnClear = document.createElement('button');
+    btnClear.setAttribute('id', 'clear-board');
+    btnClear.innerText = 'Limpar'
+    let fatherBtnClear = document.body
+    fatherBtnClear = document.body.appendChild(btnClear);
+    btnClear.addEventListener('click', function(){
+      console.log('clicou');
+      let pixels = document.querySelectorAll('.pixel');
+      for (let i = 0; i < pixels.length; i += 1) {
+        pixels[i].style.backgroundColor = 'white';
+      }
+    })
+  }
+
   function makeBoard() {
     const pixelBoard = document.createElement('div'); //table
     pixelBoard.setAttribute('id', 'pixel-board');
@@ -104,10 +119,7 @@ window.onload = function () {
   }
 
   function setColor() {
-    
     let pixels = document.querySelector('#pixel-board');
-    
-   
     pixels.addEventListener('click', function(event) {
       let colorSelected = document.getElementsByClassName('color selected')[0];
       let color = colorSelected.style.backgroundColor;
@@ -118,9 +130,9 @@ window.onload = function () {
   }
 
 
-
-
+  
   paletteColour(4);
+  clean();
   makeBoard();
   selectedBlack();
   selectedPallete();
