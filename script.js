@@ -25,13 +25,14 @@ for (let index = 0; index < coresPaleta.length; index += 1) {
 }
 
 function corPixel() {
-  if (preto.className === 'color selected') {
+  const claseSelected = 'color selected';
+  if (preto.className === claseSelected) {
     this.style.backgroundColor = 'black';
-  } else if (vermelho.className === 'color selected') {
+  } else if (vermelho.className === claseSelected) {
     this.style.backgroundColor = 'red';
-  } else if (verde.className === 'color selected') {
+  } else if (verde.className === claseSelected) {
     this.style.backgroundColor = 'green';
-  } else if (azul.className === 'color selected') {
+  } else if (azul.className === claseSelected) {
     this.style.backgroundColor = 'blue';
   }
 }
