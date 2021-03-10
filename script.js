@@ -5,20 +5,40 @@ window.onload = function trocaCor() {
 
   let preto = document.getElementById("preto");
   
-  let paleta = document.querySelectorAll(".color")
 
-  paleta.addEventListener("click",clicado)
+  function add(){
+    let paleta = document.querySelectorAll(".color")
+    
 
-function clicado(remover){
+    for (let index = 0; index < paleta.length; index++) {
+
+     paleta[index].addEventListener("click", clicado(index));
+      
+    }
+  }
+
   
+function clicado(i){
 
-   
-for(let i in remover ){
+  let e = document.querySelectorAll(".color")
 
+  let ed = document.getElementsByClassName("selected")
 
-  remover[i].classList.remove("selected")
+for(let i = 0 ; i < ed.length ; i ++ ) {
+
+  ed[i].classList.remove("selected")
+
 }
+
+
+
+  e[i].classList.add("selected")
+
 };
+
+add ()
+
+
 
 
 
