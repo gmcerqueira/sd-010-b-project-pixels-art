@@ -13,11 +13,31 @@ paletteColors[0].style.backgroundColor = (localStorage.getItem('initialColor'));
 paletteColors[0].className += (localStorage.getItem('Selected'));
 
 //funcao que da cor a outros elementos da paleta
-const colorsBackground = ['#fec5bb', '#d8e2dc', '#fec89a'];
+
+let colorsBackground = []
+let hex = '#';
+for (let y = 0; y < 3; y += 1) {
+    for (let x = 0; x < 6; x += 1 ){
+    hex += ((Math.ceil(Math.random() * (9 - 0) + 0)));
+    }
+    colorsBackground.push(hex);
+    hex = '#';
+}
+
 for (let counter = 0; counter < colorsBackground.length; counter += 1) {
   const getColorsClass = document.querySelectorAll('.color');
   getColorsClass[counter + 1].style.backgroundColor = colorsBackground[counter];
 }
+
+
+
+
+
+
+
+
+
+
 
 //funcao que seleciona uma cor
 paletteBoard.addEventListener('click', function (event) {
