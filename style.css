@@ -1,6 +1,9 @@
 #color-palette {
-  padding: 60px;
-  width: 350px;
+  margin: auto;
+}
+
+#pixel-board {
+  margin: auto;
 }
 
 #title {
@@ -42,8 +45,8 @@
 }
 
 .container {
-  width: 70%;
-  border: 7px dotted rgb(0, 191, 255);
+  width: 50%;
+  border: 7px dotted rgb(0, 0, 0);
   margin: auto;
   text-align: center;
   padding: 10px;
