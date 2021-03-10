@@ -21,6 +21,30 @@ function createSquarePixel() {
 }
 createSquarePixel();
 
+function selectPallete() {
+  const selectColor = document.querySelector('#color-palette');
+  selectColor.addEventListener('click', (event) => {
+    const element = event;
+    document.querySelector('.selected').className = 'color';
+    element.target.className = 'color selected';
+  })
+}
+
+selectPallete();
+
+function paint() {
+  const color = document.querySelectorAll('.pixel');
+  for (let index = 0; index < color.length; index += 1) {
+      color[index].addEventListener('click', (event) => {
+      const element = event;
+      const colorSelected = document.querySelector('.selected').style.backgroundColor;
+      element.target.style.backgroundColor = colorSelected;
+    }) 
+  }
+}
+
+paint();
+
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 document.getElementsByClassName('color')[0].className += ' selected';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
