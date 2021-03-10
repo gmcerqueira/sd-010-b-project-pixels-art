@@ -18,14 +18,10 @@ function createPixelGrid(gridSize) {
 
 createPixelGrid(5); 
 
-let colorSection = document.querySelector('#color-palette');
+let colorSelected = document.querySelector('#black-color');
 
-colorSection.addEventListener('click', function(event) {
-  let selectedColor = document.querySelector('.selected');
-
-  if (event.target.className) {
-    selectedColor.classList.remove('selected')
-  } else {
-    event.target.classList.add('selected')
-  }
-});
+function colorSelection(event) {
+  let colorSelected = document.querySelector('selected');
+  colorSelected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
