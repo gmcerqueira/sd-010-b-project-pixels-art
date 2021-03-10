@@ -12,7 +12,7 @@ const pixelList = document.querySelectorAll('.pixel');
 const selected = document.getElementsByClassName('selected');
 //
 window.onload = function () {
-  getFirstColor.className = 'selected';
+  getSecondColor.className = 'selected';
 };
 let colorChange = firstColor;
 getFirstColor.addEventListener('click', function () {
