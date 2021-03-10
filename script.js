@@ -22,11 +22,32 @@ const pixelBox = document.getElementById('pixel-board');
 
 function boardPixel() {
   for (let index = 0; index < 25; index += 1) {
-      const creatPixels = document.createElement('div');
-      creatPixels.className = 'pixel';
-      pixelBox.appendChild(creatPixels);
-    }
+    const creatPixels = document.createElement('div');
+    creatPixels.className = 'pixel';
+    pixelBox.appendChild(creatPixels);
+  }
   return pixelBox;
 }
 
 boardPixel();
+
+function getPalette(event) {
+  let palette = event.target;
+  if (!palette.id) {
+    let pixelColor = document.querySelectorAll('.color');
+    pixelColor.forEach((element) => element.classList.remove('selected'));
+    palette.classList.add('selected');
+  }
+  sessionStorage.color = palette.style.backgroundColor;
+}
+
+function paintBoard(event) {
+  let palette = event.target;
+  if (!palette.id) {
+    const paintPixel = sessionStorage.color;
+    palette.style.backgroundColor = paintPixel;
+  }
+}
+
+document.getElementById('color-palette').addEventListener('click', getPalette);
+document.getElementById('pixel-board').addEventListener('click', paintBoard);
