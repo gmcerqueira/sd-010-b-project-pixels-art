@@ -18,29 +18,20 @@ const quadradoPreto = document.getElementsByClassName('color')[0];
 const quadradoAzul = document.getElementsByClassName('color')[1];
 const quadradoAmarelo = document.getElementsByClassName('color')[2];
 const quadradoVerde = document.getElementsByClassName('color')[3];
-const todasAsCores = document.querySelectorAll('color');
+let todasAsCores = document.querySelectorAll('.color');
 
 function deixarQuadradoPreto() {
   quadradoPreto.className = 'color selected';
 }
 deixarQuadradoPreto();
 
-
-function trocaCor(){
-  for (let i = 0; i < todasAsCores.length; i += 1) {
-    if(todasAsCores[i].classList.contains('selected')) {
-      todasAsCores[i].classList.remove('selected');
-    }
-    event.target.classList.add('selected');
-  }
+//adicionando e removendo a classe selected
+function removeEColocaClasseSelected() {
+  let corComAClasseSelected = document.getElementsByClassName('selected')[0];
+  corComAClasseSelected.classList.remove('selected');
+  event.target.classList.add('selected');
 }
 
-paletaDeCores.addEventListener('click', trocaCor());
-
-
-
-
-
-
-
-
+for (let i = 0; i < todasAsCores.length; i += 1) {
+  todasAsCores[i].addEventListener("click", removeEColocaClasseSelected);
+}
