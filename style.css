@@ -1,26 +1,23 @@
+.color-palette {
+  display: flex;
+}
+.pixel-board {
+  display: flex;
+}
+
 .color {
-  padding: 50px;
+  padding: 40px;
   border: 1px solid black;
-}
-.c1 {
-  background-color: black;
-}
-.c2 {
-  background-color: magenta;
-}
-.c3 {
-  background-color: blue;
-}
-.c4 {
-  background-color: green;
+  display: table-cell;
+  margin: 5px;
 }
 .pixel {
   width: 40px;
   height: 40px; 
+  margin: 5px;
   display: table-cell;
   border: 1px solid black;
   background-color: white;
-
 }
 .divH {
   padding: 50px;

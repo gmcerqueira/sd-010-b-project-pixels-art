@@ -1,47 +1,53 @@
+let chamando = document.querySelectorAll('.color');
+let pixelMuda = document.getElementsByClassName('pixel')
+
+
+
 // Cria os Pixels que vão ser coloridos 
 function criaPixels() {
   let quadro = document.getElementById('pixel-board');
   for (let j = 0; j < 5; j++) {
     let novaLinha =document.createElement('div');    
     for (let i = 0; i < 5; i++) {
-      let divNova = document.createElement("div");
-      divNova.className = 'pixel';
+      let divNova = document.createElement('div');
+      divNova.classList.add('pixel');
       novaLinha.appendChild(divNova);
     }
     quadro.appendChild(novaLinha);
   }
 }
-
-// Evento para ouvir o chamado de pegar a cor
-function chamado() {
-  let remove = document.getElementsByClassName('selected')[0];
-  remove.classList.remove('selected');  
-  event.target.classList.add('selected');
-}
-// adicionando funcao de click
-let chamando = document.querySelectorAll('.color');
-for (let i = 0; i < chamando.length; i++) {
-chamando[i].addEventListener("click", chamado);
-}
-// Pega a cor selecionada para preencher o pixel
-function pegaCor() {
-  
-}
+criaPixels();
 // Inicia com a cor preta para preenchimento dos pixels
 function corInicial() {
-  let corPreta = document.querySelector('.c4');
-  corPreta.className = corPreta.className + ' selected';
+  let corPreta = document.querySelector('.c1');
+  corPreta.classList.add('selected');
 }
-function pintarPixel() {
-  let pintar = document.getElementsByClassName('pixel');
-  for(let i = 0; i < pintar.length; i++) {
-    pintar[i].addEventListener("click", function() {
-      // this.style.backgroundcolor = '';
-    });
-  }
+// Funcao para ouvir o chamado de pegar a cor
+// adicionando funcao de click para pegar a cor
+for (let i = 0; i < chamando.length; i++) {
+  chamando[i].addEventListener('click', function(){
+    let remove = document.getElementsByClassName('selected')[0];
+    remove.classList.remove('selected');  
+    event.target.classList.add('selected');
+  });
 }
-
-
-// Inicialização do site 
 corInicial();
-criaPixels();
+
+
+// função para pintar os pixels 
+for (let index = 0; index < pixelMuda.length; index++) {
+  pixelMuda[index].addEventListener('click', function(){
+    let corNova = document.getElementsByClassName('selected')[0].style.backgroundColor;
+    pixelMuda[index].style.backgroundColor = corNova;
+  });
+}
+// Inicialização do site 
+
+
+
+
+document.getElementsByClassName('color')[0].style.backgroundColor = 'rgb(0,0,0)';
+document.getElementsByClassName('color')[1].style.backgroundColor = 'rgb(20,10,143)';
+document.getElementsByClassName('color')[2].style.backgroundColor = 'rgb(0,128,0)';
+document.getElementsByClassName('color')[3].style.backgroundColor = 'rgb(255,255,0)';
+
