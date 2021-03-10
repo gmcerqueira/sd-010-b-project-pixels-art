@@ -38,10 +38,10 @@ function paintPixel() {
   for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
     pixel[indexPixel].addEventListener('click', function () {
       const selectedColor = document.querySelector('.selected');
-      if (selectedColor !== null){
-      const getStyle =window.getComputedStyle(selectedColor);
-      pixel[indexPixel].style.backgroundColor = getStyle.getPropertyValue('background-color');
-      } return;
+      if (selectedColor !== null) {
+        const getStyle = window.getComputedStyle(selectedColor);
+        pixel[indexPixel].style.backgroundColor = getStyle.getPropertyValue('background-color');
+      } 
     });
   }
 }
