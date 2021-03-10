@@ -1,13 +1,15 @@
 // Captura de elementos HTML
 let colorPalete = document.querySelector('#color-palette');
 let tablePixels = document.querySelector('#pixel-board');
+let selectedColor = null;;
 
 // --------------------------------------------------------------------------------------
 
 // Criação de elementos DIV, class=color, filhos do elemento Section, ID=ColorPalete.
 for (let index = 0; index < 4; index += 1) {
   let newDiv = document.createElement('div');
-  colorPalete.appendChild(newDiv).className = "color";
+  newDiv.id = 'palete' + [index];
+  colorPalete.appendChild(newDiv).className = 'color';
   colorPalete.style.margin = '10px';
 
   // Regra que garante o backgroundColor da primeira DIV=black, e demais DIVs geradas aleatoriamente via funcão.
@@ -15,6 +17,7 @@ for (let index = 0; index < 4; index += 1) {
       newDiv.style.background = 'black';
   } else {
       newDiv.style.background = generateRandomColor();
+      // console.log(newDiv.style.background);
   }
 
   // Estilização das DIVs colorPalete.
@@ -49,7 +52,7 @@ for (let index1 = 0; index1 < 5; index1 += 1) {
 
   // Captura do elemento DIV, id=line[index1] (DIV/Linha atual da iteração)
   let linhaAtual = document.querySelector('#line'+ [index1]);
-  
+
   // Criação de elementos DIV, class=pixel, filhos do elemento DIV, ID=linhaAtual.
   for (let index2 = 0; index2 < 5; index2 += 1) {
     let newColum = document.createElement('div');
@@ -67,6 +70,21 @@ for (let index1 = 0; index1 < 5; index1 += 1) {
   }
 }
 
+// --------------------------------------------------------------------------------------
+
+function selectBlackColor () {
+  let palete1 = document.querySelector('#palete0');
+  palete1.className = 'color selected'
+  selectedColor = palete1.style.backgroundColor;
+}
+
+// --------------------------------------------------------------------------------------
+
 function clearPixels() {
 
 }
+
+// --------------------------------------------------------------------------------------
+
+// Windows.onload: Chama função que seleciona color black após carregamento da página.
+window.onload = selectBlackColor();
