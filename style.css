@@ -9,6 +9,7 @@
 }
 #pixels-board {
   max-width: 300px;
+  font-size: 0px;
 }
 .pixel {
   border-width: 1px;
