@@ -29,17 +29,14 @@ function criaPadrao() {
 }
 criaPadrao();
 
-// document.querySelectorAll('.color')[0].classList.length
 function removePadrao() {
   let remover = document.querySelectorAll('.color')[0];
   for(let index = 0; index < remover.classList.length; index ++) {
-    console.log(remover.classList[index]);
     remover.classList.remove('selected');
   }
 
   remover = document.querySelectorAll('.color')[1];
   for(let index = 0; index < remover.classList.length; index ++) {
-    console.log(remover.classList[index]);
     remover.classList.remove('selected');
   }
 
@@ -53,7 +50,6 @@ function removePadrao() {
     remover.classList.remove('selected');
   }
 }
-
 
 function trocar () {
   let cor = document.querySelectorAll('.color');
@@ -76,3 +72,14 @@ function trocar () {
     });
 }
 trocar();
+
+function aplicarCor() {
+  const pixelItem = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelItem.length; i += 1) {
+    pixelItem[i].addEventListener('click', (evt) => {
+      const { target } = evt;
+      target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    });
+  }
+}
+aplicarCor();
