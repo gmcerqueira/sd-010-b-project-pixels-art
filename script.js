@@ -10,6 +10,7 @@ buttonDiv.appendChild(button);
 button.id = 'clear-board';
 button.innerText = 'Limpar';
 button.addEventListener('click', function () {
+  pixelBoard.style.backgroundColor = 'white' 
   for (let counter = 0; counter < pixel.length; counter += 1) {
     pixel[counter].style.backgroundColor = 'white';
   }
@@ -32,11 +33,6 @@ for (let counter = 0; counter < 25; counter += 1) {
   pixel[counter].style.width = '40px';
   pixel[counter].style.display = 'inline-block';
 }
-
-/* document.getElementById('paletteTwo').style.backgroundColor = '#fec5bb'
-document.getElementById('paletteThree').style.backgroundColor = '#d8e2dc'
-document.getElementById('paletteFour').style.backgroundColor = '#fec89a'
- */
 
 const colorsBackground = ['#fec5bb', '#d8e2dc', '#fec89a'];
 for (let counter = 0; counter < colorsBackground.length; counter += 1) {
