@@ -39,23 +39,32 @@ for (let j = 0; j < boardSquares.length; j += 1) {
 }
 
 // Requesito 7
-const color = document.querySelectorAll('.color')
+const colors = document.querySelectorAll('.color')
 
-function changeColor() {
-  const selectedColor = document.querySelector('.selected')
-  for (sc = 0; sc < color.length; sc += 1) {
-    selectedColor.className = selectedColor.className.remove('selected');
-    color[sc].className.add('selected')
+function pickColor() {
+  for (let pc = 0; index < colors.length; pc += 1) {
+    colors[pc].addEventListener('click', function (){
+      const selectedColor = document.querySelector('.selected');
+      selectedColor.className = selectedColor.classList.remove('selected');
+      colors[pc].className = colors[pc].classList.add('selected');
+    } )
   }
 }
 
+pickColor();
 
-function pickColor() {
-  for (let pc = 0; color.length; pc += 1) {
-    color[pc].addEventListener('click', changeColor)
+
+
+function selecionaCor() {
+  for (let index = 0; index < corPaleta.length; index += 1) {
+    corPaleta[index].addEventListener('click', function () {
+    const lastColor = document.querySelector('.selected');
+    lastColor.className = lastColor.className.replace('color selected', 'color');
+    corPaleta[index].className = 'color selected';
+    })
   }
-} 
-
+}
+  selecionaCor(); 
 
 // Requesito 9
 
@@ -69,3 +78,6 @@ function clearBorder() {
 }
 // Recebi ajuda do colega Gustavo Cerqueira.
 buttonClear.addEventListener('click', clearBorder);
+
+
+
