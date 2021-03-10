@@ -15,8 +15,21 @@
   width: 50px;
 }
 
-.button-container {
+.buttons-container {
   text-align: center;
+}
+.paragraph {
+  display: inline;
+  font-size: 14px;
+}
+
+#board-size {
+  width: 50px;
+}
+
+#clear-board {
+  display: block;
+  margin: 15px auto;
 }
 
 #pixel-board {

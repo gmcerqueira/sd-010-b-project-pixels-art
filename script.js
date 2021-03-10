@@ -47,3 +47,29 @@ function clear() {
   });
 }
 clear();
+
+const generateButton = document.getElementById('generate-board');
+const pixelBoard = document.getElementById('table-body');
+
+generateButton.addEventListener('click', () => {
+  const inputValue = document.getElementById('board-size').value;
+  if (inputValue === '') {
+    alert('Board inválido!');
+  } else {
+    clear();
+    pixelBoard.innerText = '';
+  }
+  const numberValue = parseInt(inputValue);
+  if (numberValue >= 5 && numberValue <= 50) {
+    for (let index = 1; index <= numberValue; index += 1) {
+      const createTr = document.createElement('tr');
+      createTr.className = 'line';
+      pixelBoard.appendChild(createTr);
+      for (let index2 = 1; index2 <= numberValue; index2 += 1) {
+        const createTd = document.createElement('td');
+        createTd.className = 'pixel';
+        createTr.appendChild(createTd);
+      }
+    }
+  }
+});
