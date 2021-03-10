@@ -8,6 +8,24 @@
     width: 100px;
   }
 
+  .caixa1 {
+    display: inline-table;
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+
+  }
+  
+  .caixa2 {
+    display: inline-table;
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+  }
+  .colorpixel {
+      background-color: white;
+  }
+
   #firstbox {
     background-color: black;
   }
