@@ -25,6 +25,7 @@ document.addEventListener("click", function (event) {
   if (event.target.classList.contains("color") && !event.target.classList.contains("selected") ) {
     document.querySelectorAll(".selected")[0].className = "color";
     event.target.className = "color selected";
-  }
+  } if (event.target.classList.contains("pixel")) {
+    event.target.style.backgroundColor = document.querySelectorAll(".selected")[0].style.backgroundColor}
   //Recebi um grande auxílio do Thiago Marchini nessa questão, ele realmente me ajudou a compreender esse código.
 })
