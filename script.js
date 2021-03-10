@@ -23,29 +23,56 @@ window.onload = function () {
     let palette = document.getElementsByClassName('color');
     
     if (palette[0].addEventListener('click', function () {
-        console.log('1');
         changeColor(palette[0]);
+
+        //addClassName
+        palette[0].className = "color color1 selected";
+        //resetClassName
+        palette[1].className = "color color2";
+        palette[2].className = "color color3";
+        palette[3].className = "color color4";
       })
     ) {
       console.log('1 if');
     }
 
     if (palette[1].addEventListener('click', function () {
-        console.log('2');
+      changeColor(palette[1]);
+
+      //addClassName
+      palette[1].className = "color color2 selected";
+      //resetClassName
+      palette[0].className = "color color1";
+      palette[2].className = "color color3";
+      palette[3].className = "color color4";
       })
     ) {
       console.log('2 if');
     }
 
     if (palette[2].addEventListener('click', function () {
-        console.log('3');
+      changeColor(palette[2]);
+
+      //addClassName
+      palette[2].className = "color color3 selected";
+      //resetClassName
+      palette[0].className = "color color1";
+      palette[1].className = "color color2";
+      palette[3].className = "color color4";
       })
     ) {
       console.log('3 if');
     }
 
     if (palette[3].addEventListener('click', function () {
-        console.log('4');
+      changeColor(palette[3]);
+      
+      //addClassName
+      palette[3].className = "color color4 selected";
+      //resetClassName
+      palette[0].className = "color color1";
+      palette[2].className = "color color3";
+      palette[1].className = "color color2";
       })
     ) {
       console.log('4 if');
@@ -53,9 +80,7 @@ window.onload = function () {
   }
 
   function changeColor (palette) {
-    let computedColor = window.getComputedStyle(palette).getPropertyValue("background-color")
-    console.log(palette);
-    console.log(computedColor);
+    window.getComputedStyle(palette).getPropertyValue("background-color");
   }
 
   changeClass();
