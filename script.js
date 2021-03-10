@@ -1,4 +1,5 @@
 window.onload = function(){
+let palette = document.getElementById('color-palette');
 
 let columns = document.getElementById('pixel-board');
 
@@ -19,6 +20,6 @@ let tableLines = function(){
 
 tableLines();
 
-// let boxPixel = document.getElementsByClassName('pixel')
-// 	boxPixel.style.backgroundColor = 'white';
+palette.firstElementChild.classList.add ('selected');
+
 }
