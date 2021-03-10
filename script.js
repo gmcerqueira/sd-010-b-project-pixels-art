@@ -13,8 +13,8 @@ function structureTable () {
   } 
 } structureTable();
 
+let column = document.querySelectorAll(".color");
 function styleTable () {
-  let column = document.querySelectorAll(".color");
   for (let index = 0; index < column.length; index += 1){
     column[0].style.backgroundColor = "black";
     column[1].style.backgroundColor = "green";
@@ -37,3 +37,14 @@ function pixelStructure () {
     }
   }
 } pixelStructure();
+
+function transSelect () {
+  for (let index = 0; index < column.length; index += 1) {
+    column[index].classList.remove("color-selected");
+  }
+  //column[?].classList.add("color-selected");
+}
+
+window.onload = function () {
+  column[0].classList.add("color-selected");
+}
