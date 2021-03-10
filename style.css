@@ -12,3 +12,13 @@
     height: 38px;
     background-color: white;
 }
+#clear-board{
+    border: 1px solid black;
+    border-radius: 10%;
+    display: block;
+    height: 25px;
+    margin-left: 80px;
+    margin-top: 20px;
+    width: 40px;
+    text-align: center;
+}
