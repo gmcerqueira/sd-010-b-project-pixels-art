@@ -2,7 +2,6 @@ function setColorClass() {
   const colorSelected = document.querySelectorAll('.color');
   for (let item = 0; item < colorSelected.length; item += 1) {
     colorSelected[item];
-    colorSelected[0].classList.remove('selected');
     colorSelected[item].addEventListener('click', function (event) {
       console.log(event.target);
       console.log(colorSelected[item].style);
