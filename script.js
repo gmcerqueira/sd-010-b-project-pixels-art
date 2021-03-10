@@ -47,9 +47,9 @@ function seleciona() {
 seleciona();
 
 function trocaCores(cores) {
-  let corSelecionada = document.querySelector('.selected');
-  let novaCorSelecionada = cores.target;
+  const corSelecionada = document.querySelector('.selected');
+  const novaCorSelecionada = cores.target;
   corSelecionada.classList.remove('selected');
   novaCorSelecionada.classList.add('selected');
 }
-console.log(document.querySelector('#color-palette').addEventListener('click', trocaCores));
+document.querySelector('#color-palette').addEventListener('click', trocaCores);
