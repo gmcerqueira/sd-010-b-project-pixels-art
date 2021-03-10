@@ -27,15 +27,17 @@ corBLue.style.backgroundColor = 'blue';
 let pixelBoard = document.querySelector('#pixel-board')
 for(let line = 0; line < 5; line += 1){
     let box = document.createElement('tr');
+    box.className='pixel-table'
     pixelBoard.appendChild(box);
 }
 // celulas da tabela
-
+let contador = 1;
 let linhas = document.querySelectorAll('#pixel-board, tr'); // recupero todos os elem tr criados da id #pixel-board
 for (let line = 1; line < linhas.length; line += 1) {
     for (let colum = 1; colum < linhas.length; colum +=1){
         let box = document.createElement('td')
         box.className = 'pixel';
+        box.id = contador ++;
         linhas[colum].appendChild(box);
     }
 }
@@ -75,3 +77,15 @@ corBlack.addEventListener('click',function() {corSelecionada(0)});
 corRed.addEventListener('click', function() {corSelecionada(1)});
 corBLue.addEventListener('click', function() {corSelecionada(2)});
 corGreen.addEventListener('click', function() { corSelecionada(3)});
+
+// Adicionando cor ao quadrado selecionado
+
+let pixelTable = document.getElementsByClassName('pixel');
+let selectedColor= document.getElementsByClassName(corSelecionada());
+let corAPintar = selectedColor.style.backgroundColor;
+
+//  pixelTable.addEventListener('click', function(evento){
+//     let corDoEvento = evento.target
+//  })
+console.log(pixelTable);
+console.log(selectedColor)
