@@ -13,3 +13,19 @@ for(let indexLine=0;indexLine<n;indexLine+=1){
         getTable.appendChild(line)
     }
 }
+//requisito 6
+window.onload=function(){
+    
+    let allPixels=document.querySelectorAll('.pixel')
+
+    function paintBlack(){
+        for(let index=0;index<allPixels.length;index+=1){
+            allPixels[index].addEventListener('click',function(){
+                if(allPixels[index].style.backgroundColor!='black'){
+                    allPixels[index].style.backgroundColor='black'
+                }
+            })
+        }
+    }
+     paintBlack()
+}
