@@ -23,8 +23,8 @@ for (let quadroIndex = 0; quadroIndex < quadro.length; quadroIndex += 1){
 document.getElementById('clear-board').addEventListener('click', limpar);
 function limpar () {
 let branco = document.getElementsByClassName('pixel');
-for (let key in branco){
-  branco[key].style.backgroundColor = 'white';
+for (let key = 0; key < branco.length; key +=1 ){
+  branco[key].style.background = 'white';
 }
 }
 
