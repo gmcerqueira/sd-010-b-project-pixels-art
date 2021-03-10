@@ -47,7 +47,7 @@ greenBox.addEventListener('click', selectedGreenBox);
 
 
 let cleanPixelButton = document.getElementById('clear-board');
-let squarePixels = document.getElementsByClassName('pixel');
+let squarePixels = document.querySelectorAll('.pixel');
 
 function cleanPixel() {
   for (let i = 0; i < 25; i += 1) {
