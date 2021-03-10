@@ -1,6 +1,7 @@
 #title {
   text-align: center;
 }
+
 #color-palette {
   display: flex;
 }
@@ -14,6 +15,7 @@
 
 #pixel-board {
   max-width: 210px;
+  margin-top: 20px;
 }
 
 .pixel {
@@ -21,6 +23,10 @@
   width: 40px;
   height: 40px;
   display: inline-block;
-  margin: 0;
   background-color: white;
 }
+
+#teste {
+  border: black solid 1px;
+  width: 50px;
+  height: 50px;
