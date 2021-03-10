@@ -14,6 +14,7 @@ function adicionaCores (arrayCores){
 let divs = document.querySelectorAll(".color")
     for (let i = 0; i < divs.length; i += 1){
         divs[i].style.backgroundColor = arrayCores[i];
+        divs[i].id = arrayCores[i];
     }
 }
 
@@ -38,11 +39,73 @@ adicionaQuadroPixels("linha-5")
 
 //Requisito 6
 window.onload = function (){
-    let colorBlack = document.getElementById("color-palette").firstElementChild.className = "color selected";
-    
     let colors = document.querySelectorAll(".pixel");
 
+let colorRed = document.getElementById("red").addEventListener("click", adicionaColorRed)
+    function adicionaColorRed (){
+        let selecionaClass = document.querySelectorAll(".color");
+        for (let i = 0; i < selecionaClass.length; i += 1){
+            if (selecionaClass[i].style.backgroundColor == "red"){
+                selecionaClass[i].className="color selected";
+            }else {
+                selecionaClass[i].className="color";
+            }
+        }
+        for (let i = 0; i <colors.length; i += 1){
+            colors[i].addEventListener("click", function(){
+                if (colors[i].style.backgroundColor != "red"){
+                    colors[i].style.backgroundColor = "red";
+                }
+            })
+        }
+    }
+    adicionaColorRed();
+
+    let colorBlue = document.getElementById("blue").addEventListener("click", adicionaColorBlue)
+    function adicionaColorBlue (){
+        let selecionaClass = document.querySelectorAll(".color");
+        for (let i = 0; i < selecionaClass.length; i += 1){
+            if (selecionaClass[i].style.backgroundColor == "blue"){
+                selecionaClass[i].className="color selected";
+            }else {
+                selecionaClass[i].className="color";
+            }
+        }
+        for (let i = 0; i <colors.length; i += 1){
+            colors[i].addEventListener("click", function(){
+                if (colors[i].style.backgroundColor != "blue"){
+                    colors[i].style.backgroundColor = "blue";
+                }
+            })
+        }
+    }
+    adicionaColorBlue();
+
+    let colorGreen = document.getElementById("green").addEventListener("click", adicionaColorGreen)
+    function adicionaColorGreen (){
+        let selecionaClass = document.querySelectorAll(".color");
+        for (let i = 0; i < selecionaClass.length; i += 1){
+            if (selecionaClass[i].style.backgroundColor == "green"){
+                selecionaClass[i].className="color selected";
+            }else {
+                selecionaClass[i].className="color";
+            }
+        }
+        for (let i = 0; i <colors.length; i += 1){
+            colors[i].addEventListener("click", function(){
+                if (colors[i].style.backgroundColor != "green"){
+                    colors[i].style.backgroundColor = "green";
+                }else {
+                    selecionaClass[i].classList.remove="selected";
+                }
+            })
+        }
+    }
+    adicionaColorGreen();
+
+    let colorBlack = document.getElementById("black").addEventListener("click", adicionaColorBlack)
     function adicionaColorBlack (){
+        let adicionaClass = document.getElementById("black").className ="color selected";
         for (let i = 0; i <colors.length; i += 1){
             colors[i].addEventListener("click", function(){
                 if (colors[i].style.backgroundColor != "black"){
@@ -55,6 +118,8 @@ window.onload = function (){
 }
 
 // Requisito 7
+
+
 
 
 
