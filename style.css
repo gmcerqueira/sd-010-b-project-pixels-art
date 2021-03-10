@@ -1,35 +1,30 @@
+#color-palette {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #c3c3c3;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#color-palette div {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 1px solid black;
+}
+.color {
+  margin-inline: 5px 5px;
+  border: 1px solid black;
+}
 #black {
-  background-color: #080606;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  float: left;
-  border: 1px solid black;
+  background-color: black;
 }
-
-#green {
-  background-color: #ff0800;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  float: left;
-  border: 1px solid black;
-}
-
 #blue {
-  background-color: #60e607;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  float: left;
-  border: 1px solid black;
+  background-color: blue;
 }
-
-#yellom {
-  background-color: #2240eb;
-  width: 100px;
-  height: 100px;
-  position: relative;
-  float: left;
-  border: 1px solid black;
+#red {
+  background-color: red;
+}
+#green{
+  background-color: green;
 }
