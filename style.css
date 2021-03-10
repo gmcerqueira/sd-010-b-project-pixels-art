@@ -26,13 +26,11 @@
   width: 40px;
   height: 40px;
   padding: 5px;
-  display:inline-block;
+  display: inline-block;
   background-color: white;
 }
 
-.cor {
-  
-}
+.cor {}
 
 .preto {
   background-color: black;
@@ -57,4 +55,4 @@
 
 .table {
   display: table-row;
-} 
+}
