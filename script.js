@@ -46,3 +46,16 @@ function paintPixel(event) {
     elem.style.backgroundColor = colorToPaint;
   }
 }
+
+function clearBoard() {
+  const pixels = document.querySelectorAll('.pixel');
+  pixels.forEach((e) => { e.style.backgroundColor = ''; });
+}
+window.onload = function init() {
+  sessionStorage.setItem('color', 'black');
+  setPaletteColor();
+  setPixelBoard();
+  document.getElementById('color-palette').addEventListener('click', getSelected);
+  document.getElementById('pixel-board').addEventListener('click', paintPixel);
+  document.getElementById('clear-board').addEventListener('click', clearBoard);
+};
