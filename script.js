@@ -1,7 +1,9 @@
 let palette = document.getElementById ('color-palette');
 let colors = document.getElementsByClassName('color');
 let columns = document.getElementById('pixel-board');
-
+let pixels = document.getElementsByClassName("pixel");
+console.log(colors);
+//
 let tableLines = function(){
 	for (let index = 0; index < 5; index +=1) {
 		line = document.createElement ('div')
@@ -19,8 +21,10 @@ let tableLines = function(){
 
 tableLines();
 
+//
 palette.firstElementChild.classList.add ('selected');
 
+//
 for (index=0; index<colors.length; index += 1) {
 	colors[index].addEventListener("click", selectColor);
 }
@@ -30,4 +34,21 @@ function selectColor() {
 			colors[index].classList.remove("selected")
 	}
 	this.classList.add("selected");
+}
+
+//
+for (index = 0; index < pixels.length; index += 1){
+    pixels[index].addEventListener("click", paint);
+}
+
+function paint() {
+    if (colors[0].className == "color selected") {
+        this.style.backgroundColor = "black";
+    } else if (colors[1].className == "color selected") {
+        this.style.backgroundColor = "yellow";
+    } else if (colors[2].className == "color selected") {
+        this.style.backgroundColor = "red";
+    } else if (colors[3].className == "color selected") {
+        this.style.backgroundColor = "blue";
+    } 
 }
