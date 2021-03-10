@@ -1,36 +1,13 @@
 body {
 }
 
-#table {
-  width: 210px;
-  /* margin: auto; */
-}
-#color1 {
-  background-color: black;
-}
-#color2 {
-  background-color: blue;
-}
-#color3 {
-  background-color: red;
-}
-#color4 {
-  background-color: yellow;
-}
-
-.tr {
-  display: table;
-}
-
-.td {
-  display: table-cell;
-  width: 40px;
-  height: 40px;
+.color {
   border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
 }
 
-.line{
-}
 .pixel {
   width: 40px;
   height: 40px;

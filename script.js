@@ -11,7 +11,14 @@ function createColorPalette() {
     element.className = 'color';
     document.querySelector('#color-palette').appendChild(element);
   }
+  const colors = ['black', 'blue', 'red', 'cyan'];
+  const palettes = document.getElementById('color-palette').childNodes;
+  palettes.forEach((nodes, index) => {
+    const elements = nodes;
+    elements.style.backgroundColor = colors[index];
+  });
 }
+
 createColorPalette();
 
 // function createPixels() {
@@ -35,20 +42,20 @@ createColorPalette();
 
 //   for (let i = 0; i < colorPalette.length; i += 1) {
 //     colorPalette[i].addEventListener('click', (event) => {
-      
+
 //     });
 //   }
 // }
 
-window.onload = () => {
-  const defaultColorPixels = document.querySelectorAll('.pixel');
-  const pixelColorStorage = localStorage.setItem('backgroundColor', 'white');
-  defaultColorPixels.style.backgroundColor = pixelColorStorage;
+// window.onload = () => {
+//   const defaultColorPixels = document.querySelectorAll('.pixel');
+//   const pixelColorStorage = localStorage.setItem('backgroundColor', 'white');
+//   defaultColorPixels.style.backgroundColor = pixelColorStorage;
 
-  const color1 = document.getElementById('color1');
-  const colorStorage = localStorage.setItem('backgroundColor', 'black');
-  color1.style.backgroundColor = colorStorage;
+//   const color1 = document.getElementById('color1');
+//   const colorStorage = localStorage.setItem('backgroundColor', 'black');
+//   color1.style.backgroundColor = colorStorage;
 
-  const colorSelected = localStorage.setItem('class', 'selected');
-  color1.className = colorSelected;
-};
+//   const colorSelected = localStorage.setItem('class', 'selected');
+//   color1.className = colorSelected;
+// };
