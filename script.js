@@ -24,7 +24,7 @@ function generateBoard(width, height) {
   }
 }
 
-window.onload = function () { // define uma função anômina para carregar valores e gerar board
+window.onload = function init() { // define uma função init para carregar valores e gerar board
   const boardSize = 5; // define o tamanho do board
   const width = boardSize; // define width a partir de boardSize
   const height = boardSize; // define height a partir de boardSize
