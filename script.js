@@ -55,6 +55,7 @@ function clear() {
 	}
 
 }
+
 document.getElementById("clear-board").addEventListener("click", clear());
 
 
