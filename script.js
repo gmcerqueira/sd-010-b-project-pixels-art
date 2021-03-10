@@ -7,6 +7,7 @@ window.onload = function () {
   let targetColor = null;
   let colorChanged = 'cor_1';
   let buttonLimpar = null;
+  let elementButton = null;
 
   const elementHeader = document.createElement('header');
   document.body.appendChild(elementHeader);
@@ -44,6 +45,7 @@ window.onload = function () {
   buttonInput1.id = 'generate-board';
   buttonInput1.innerText = 'VQV';
   sectionBotoes.appendChild(buttonInput1);
+  elementButton = document.getElementById('generate-board');
 
   const elemento2 = document.createElement('section');
   elemento2.id = 'pixel-board';
@@ -96,6 +98,26 @@ window.onload = function () {
     if (defaultClassPixel()) {
       props.target.style.background = colorChanged;
     }
+  });
+
+  elementButton.addEventListener('click', function (props) {
+    let linhas = 0;
+    let colunas =0;
+
+    if (elementInput.value === "") {
+        alert('Board inválido!');
+    } else if (elementInput.value < 5){
+        linhas = 5;
+        colunas =5;
+    } else if (elementInput.value >= 5 && elementInput.value <= 50){
+        linhas = elementInput.value;
+        colunas =elementInput.value;
+    }else{
+        linhas = 50;
+        colunas = 50;
+    }
+
+
   });
 
   button.addEventListener('click', function () {
