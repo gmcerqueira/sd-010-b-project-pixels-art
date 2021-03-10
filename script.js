@@ -51,3 +51,9 @@ function paintBoard(event) {
 
 document.getElementById('color-palette').addEventListener('click', getPalette);
 document.getElementById('pixel-board').addEventListener('click', paintBoard);
+
+window.onload = startBlack;
+
+function startBlack() {
+  document.querySelectorAll('.color')[0].classList.add('selected');
+}
