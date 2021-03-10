@@ -37,8 +37,11 @@ applyColor()
 function createDivs() {
   let getBody = document.querySelector('body')
   let session = document.createElement('section')
-  getBody.appendChild(session)
+  let sessionButton = document.createElement('button')
   session.id = "pixel-board"
+  getBody.appendChild(session)
+  sessionButton.id = "clear-board"
+  getBody.appendChild(sessionButton)
   }
 createDivs()
 
@@ -52,6 +55,26 @@ function createPixel() {
   }
 }
 createPixel()
+
+function allWhite() {
+  let get
+}
+
+function createButton() {
+let getButton = document.querySelector('#clear-board')
+getButton.innerHTML = "Reset"
+getButton.addEventListener('click', function(){
+  let getPixel = document.querySelector('.pixel')
+    getPixel.style.backgroundColor='white'
+})
+}
+createButton()
+
+window.onload = function () {
+  let getBlack = document.getElementById('color-palette')
+  let newBlack = getBlack.childNodes[0]
+  newBlack.className += ' selected'
+}
 
 
 

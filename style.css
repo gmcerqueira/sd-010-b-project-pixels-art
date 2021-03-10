@@ -8,16 +8,27 @@
 }
 
 #pixel-board{
-    width: 220px;
+    width: 212px;
     height: 233px;
     background-color: orchid;
+
 }
 
-.pixel {
+.pixel{
     width: 40px;
     height: 40px;
     border: 1px solid black;
     display: inline-block;
     margin-top: 1px;    
     background-color: white;
+}
+
+#clear-board{
+    width: 40px;
+    height: 14px;
+    font-size: 6px;
+}
+
+#color-palette{
+    margin-right: 50px;
 }
