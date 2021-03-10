@@ -103,18 +103,38 @@ window.onload = function () {
   elementButton.addEventListener('click', function (props) {
     let linhas = 0;
     let colunas =0;
+    let largura = 0;
 
-    if (elementInput.value === "") {
-        alert('Board inválido!');
-    } else if (elementInput.value < 5){
+    let pixelBoard = document.getElementById('pixel-board');
+    let pixels = document.querySelectorAll('.pixel');
+
+    if (elementInput.value === '') {
+      alert('Board inválido!');
+    } else {
+      if (elementInput.value < 5) {
         linhas = 5;
-        colunas =5;
-    } else if (elementInput.value >= 5 && elementInput.value <= 50){
+        colunas = 5;
+      } else if (elementInput.value >= 5 && elementInput.value <= 50) {
         linhas = elementInput.value;
-        colunas =elementInput.value;
-    }else{
+        colunas = elementInput.value;
+      } else {
         linhas = 50;
         colunas = 50;
+      }
+
+        for (let index = 0; index < pixels.length; index++) {
+            pixelBoard.removeChild(pixels[index]);
+        }
+
+        for (let index = 0; index < (linhas*colunas); index++) {
+            const itemOption = document.createElement('div');
+            itemOption.className = 'pixel';
+            itemOption.style.background = "rgb(255, 255, 255)"
+            elemento2.appendChild(itemOption);
+        }
+        largura = linhas*42;
+        elemento2.style.width = largura+'px';
+
     }
 
 
