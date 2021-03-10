@@ -25,7 +25,7 @@ function converter() {
 }
 
 function removeBoard() {
-  let getAllTrs = window.document.getElementById('pixel-board').children;
+  let getAllTrs = window.document.getElementById('pixel-board').innerHTML = ''; //sugestão do colega Gustavo Cerqueira
   console.log(getAllTrs)
   for (let i in getAllTrs) {
     pixelBoard.removeChild(getAllTrs[i]);
