@@ -1,3 +1,7 @@
+//variables
+const inputBoard = document.querySelector('#board-size');
+const buttonBoardSize = document.querySelector('#generate-board');
+
 // função generalista para criação de elementos
 function createElement(tagName) {
   const element = document.createElement(tagName);
@@ -28,7 +32,7 @@ function setPaletteColor() {
 // função para preenchimento dos pixels
 function setPixelBoard() {
   for (let index = 0; index < 5; index += 1) {
-    for (let i = 0; i < 5; i += 1) {
+    for (let index = 0; index < 5; index += 1) {
       const elem = createElement('span');
       elem.classList.add('pixel');
       document.getElementById('pixel-board').appendChild(elem);
@@ -57,13 +61,52 @@ function paintPixel(event) {
   }
 }
 
+// função para criar board personalizada (em construção)
+function checkInvalidBoard(value) {
+  const valueAux = value === '' ? alert('Board inválido!') : null;
+  return valueAux;
+}
+
+function createRow(value) {
+  const board = document.getElementById('pixel-board');
+  board.innetText = '';
+
+  for (let index = 0; index < value; index += 1) {
+    const newRow = document.createElement('div');
+    newRow.className = 'row';
+    board.appendChild(newRow);
+
+    for (let index2 = 0; index2 < value; index2 += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      pixel.style.backgroundColor = 'white';
+      newRow.appendChild(pixel);
+      pixel.addEventListener('click', () => {
+        paintPixel(pixel);
+      });
+    }
+  }
+}
+
+function setSize(value) {
+  checkInvalidBoard(value);
+
+  let valueAux = value;
+  if (value > 50) valueAux = 50;
+  else if (value < 5) valueAux = 5;
+
+  createRow(valueAux);
+}
+
+buttonBoardSize.addEventListener('click', () => {
+  setSize(inputBoard.value);
+})
+
 // função para limpar a board dos pixels
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
   pixels.forEach((e) => { e.style.backgroundColor = 'white'; }); // pinta os pixels de branco
 }
-
-// função para criar board personalizada (em construção)
 
 // window.load para carregar as funções na página
 window.onload = function init() {

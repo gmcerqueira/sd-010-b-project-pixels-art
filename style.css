@@ -31,3 +31,8 @@
   display: inline-block;
   margin-top: 10px;
 }
+
+#generate-board {
+  margin-top: 10px;
+  width: 70px;
+}
