@@ -40,7 +40,7 @@ function geraPixel() {
 geraPixel();
 
 function escolheCor() {
-	let corDaVez = document.querySelector("#color-palette");
+	const corDaVez = document.querySelector("#color-palette");
 	color.addEventListener("click", (event) =>{
 		let element = event;
 		document.querySelector(".selected").className = "color";
@@ -48,7 +48,6 @@ function escolheCor() {
 	})
 }
 
-escolheCor();
 
 function clear(){
 	let limpaPixel = document.querySelectorAll(".color");
