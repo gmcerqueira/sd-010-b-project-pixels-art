@@ -39,9 +39,10 @@ adicionaQuadroPixels("linha-5")
 //Requisito 6
 window.onload = function (){
     let colorBlack = document.getElementById("color-palette").firstElementChild.className = "color selected";
+    
     let colors = document.querySelectorAll(".pixel");
 
-    function adicionaBotaoBlack (){
+    function adicionaColorBlack (){
         for (let i = 0; i <colors.length; i += 1){
             colors[i].addEventListener("click", function(){
                 if (colors[i].style.backgroundColor != "black"){
@@ -50,12 +51,14 @@ window.onload = function (){
             })
         }
     }
-    adicionaBotaoBlack();
+    adicionaColorBlack();
 }
 
+// Requisito 7
 
-// window.onload = function (){
-//     let colorBlack = document.getElementById("color-palette").firstElementChild.className = "color selected";
-    
-    
-// }
+
+
+
+
+
+  
