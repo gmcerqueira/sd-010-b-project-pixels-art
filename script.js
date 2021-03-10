@@ -76,7 +76,7 @@ function reset() {
     }
 }
 
-window.onload = function init() {
+window.onload = function () {
     createColorPaletteDisplay();
     setColor(colorsPalette);
     createBoardOfPixels();
