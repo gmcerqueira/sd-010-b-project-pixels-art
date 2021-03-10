@@ -68,12 +68,10 @@ function setColor(element) {
     }
 }
 
-createColorPaletteDisplay();
-setColor(colorsPalette);
-createBoardOfPixels();
-
-
 window.onload = function init() {
+    createColorPaletteDisplay();
+    setColor(colorsPalette);
+    createBoardOfPixels();
     firstPaletteSelected();
     paletteDiv.addEventListener('click', selectColor);
     boardOfPixels.addEventListener('click', pixelColor);
