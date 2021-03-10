@@ -32,19 +32,20 @@ function pixelStructure() {
     
     for (let columns = 0; columns < 5; columns += 1) {
       let column1 = document.createElement('div');
-      column1.className = "pixel";
+      column1.className = 'pixel';
       pixelLine.appendChild(column1);
+      column1.style.backgroundColor = "white";
     }
   }
 } pixelStructure();
 
 function transSelect() {
   for (let index = 0; index < column.length; index += 1) {
-    column[index].classList.remove('color-selected');
+    column[index].classList.remove('selected');
   }
-  //column[?].classList.add("color-selected");
+  //column[?].classList.add('selected');
 }
 
 window.onload = function() {
-  column[0].classList.add("color-selected");
+  column[0].classList.add('selected');
 }
