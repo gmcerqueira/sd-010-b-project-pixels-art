@@ -18,14 +18,14 @@ function createPixelGrid(gridSize) {
 
 createPixelGrid(5); 
 
-function selectColor() {
-  let colorSelection = document.querySelector('#color-palette');
-  colorSelection.addEventListener('click', function(event) {
-    let selected = event;
-    document.querySelector('.selected').className = 'color';
-    selected.target.event = 'color selected';
-  });
-}
+let colorSection = document.querySelector('#color-palette');
 
-console.log(selectColor());
+colorSection.addEventListener('click', function(event) {
+  let selectedColor = document.querySelector('.selected');
 
+  if (event.target.className) {
+    selectedColor.classList.remove('selected')
+  } else {
+    event.target.classList.add('selected')
+  }
+});
