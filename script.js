@@ -38,16 +38,19 @@ function CorPretaSelected() {
 CorPretaSelected();
 
 function selectedClass() {
-  const pai = document.getElementsByClassName('color');
-  for (i = 0; i = pai.length; i += 1) {
-    pai.addEventListener('click', function(event){
-      pai[i].target.className = 'selected'
+  const pai = document.getElementById('color-palette');
+  pai.addEventListener('click', function(event){ 
+    let filho = document.getElementsByClassName('color');
+    for (i = 0; i < filho.length; i += 1) {
+      if(filho[i].className != 'color'){
+        filho[i].className = 'color'
+      }
+      event.target.className = 'color selected' 
+    }
+  })
+}   
+selectedClass() // 
 
-    })
-
-  }
-  
-}
 
 
 
