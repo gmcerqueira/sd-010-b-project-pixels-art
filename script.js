@@ -81,13 +81,14 @@ window.onload = function () {
   createPalette();
   createGrid(5);
   document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('color') && !event.target.classList.contains('selected')) { selectColor(event.target); }
+    if (event.target.classList.contains('color') && !event.target.classList.contains('selected')) {
+      selectColor(event.target);
+    }
     if (event.target.classList.contains('pixel')) { paintPixel(event.target); }
     if (event.target.id === 'clear-board') { clearBoard(); }
     if (event.target.id === 'generate-board') {
       const size = document.getElementById('board-size');
-      if (size.value && size.value > 0) { recreateBoard(size.value); } 
-      else { alert('Board inválido!'); }
-    }
+      if (size.value && size.value > 0) { recreateBoard(size.value); }
+      else { alert('Board inválido!'); } }
   }, false);
 };
