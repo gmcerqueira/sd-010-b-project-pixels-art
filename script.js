@@ -42,6 +42,8 @@ window.onload = function () {
     const colorOption = document.createElement('div');
     if (index === 0) {
       colorOption.className = 'color selected';
+      colorOption.style.background = 'black';
+      colorChanged = "rgb(0, 0, 0)";
     } else {
       colorOption.className = 'color';
       colorOption.style.background = "rgb("+Math.ceil(Math.random() * 100)+", "+Math.ceil(Math.random() * 150)+", "+Math.ceil(Math.random() * 210)+")";
@@ -74,13 +76,13 @@ window.onload = function () {
   paletOfColors.addEventListener('click', function (props) {
     if (defaultClass()) {
       props.target.className = 'color selected';
-      colorChanged = props.target.id;
+      colorChanged = props.target.style.background;
     }
   });
 
   paletOfPixel.addEventListener('click', function (props) {
     if (defaultClassPixel()) {
-      props.target.id = colorChanged;
+      props.target.style.background = colorChanged;
     }
   });
 
@@ -89,5 +91,6 @@ window.onload = function () {
     paletaDosPixels.forEach((pixel) => {
       pixel.style.backgroundColor = 'white';
     });
+    colorChanged = "rgb(0, 0, 0)";
   });
 };
