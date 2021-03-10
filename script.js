@@ -1,22 +1,5 @@
-function tamanho() {
-  const numero = document.getElementById('board-size');
-  const n = numero.value;
-  if ((n === null) || (n === '')) {
-    alert('Board inválido!');
-  } else {
-    sessionStorage.setItem('n', n);
-    location.reload();
-  }
-}
-
-function leInput() {
-  const botao = document.getElementById('generate-board');
-  botao.addEventListener('click', tamanho);
-}
-leInput();
-
 function recuperaN() {
-  let n = Number(sessionStorage.getItem('n'));
+  const n = Number(sessionStorage.getItem('n'));
   if (n < 5) {
     sessionStorage.setItem('n', '5');
   }
@@ -51,6 +34,31 @@ function criaPixels() {
 
 criaPixels();
 
+function esvaziaTabela() {
+  const tabela = document.getElementById('pixel-board');
+  while (tabela.firstChild) { // esvazia o board para criar novo, tirado do link https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+    tabela.removeChild(tabela.lastChild);
+  }
+}
+
+function tamanho() {
+  const numero = document.getElementById('board-size');
+  const n = numero.value;
+  if ((n === null) || (n === '')) {
+    alert('Board inválido!');
+  } else {
+    sessionStorage.setItem('n', n);
+    esvaziaTabela();
+    criaPixels();
+  }
+}
+
+function leInput() {
+  const botao = document.getElementById('generate-board');
+  botao.addEventListener('click', tamanho);
+}
+leInput();
+
 function colocaCores() {
   const pixelCores = document.getElementsByClassName('color');
   pixelCores[0].style.background = '#000000';
@@ -63,49 +71,64 @@ colocaCores();
 
 function verificaCoresUm() {
   const pixelCores = document.getElementsByClassName('color');
-  if (pixelCores[1].style.background === pixelCores[2].style.background) {
-    location.reload();
+  const colorUm = getComputedStyle(pixelCores[1]).getPropertyValue('background-color');
+  const colorDois = getComputedStyle(pixelCores[2]).getPropertyValue('background-color');
+  const colorTes = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
+  const preto = getComputedStyle(document.getElementById('black')).getPropertyValue('background-color');
+  const branco = getComputedStyle(document.getElementById('opcoes')).getPropertyValue('background-color');
+  if (colorUm === colorDois) {
+    colocaCores();
   }
-  if (pixelCores[1].style.background === pixelCores[3].style.background) {
-    location.reload();
+  if (colorUm === colorTes) {
+    colocaCores();
   }
-  if (String(pixelCores[1].style.background) === '#000000') {
-    location.reload();
+  if (colorUm === preto) {
+    colocaCores();
   }
-  if (String(pixelCores[1].style.background) === '#ffffff') {
-    location.reload();
+  if (colorUm === branco) {
+    colocaCores();
   }
 }
 
 function verificaCoresDois() {
   const pixelCores = document.getElementsByClassName('color');
-  if (pixelCores[2].style.background === pixelCores[1].style.background) {
-    location.reload();
+  const colorUm = getComputedStyle(pixelCores[1]).getPropertyValue('background-color');
+  const colorDois = getComputedStyle(pixelCores[2]).getPropertyValue('background-color');
+  const colorTes = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
+  const preto = getComputedStyle(document.getElementById('black')).getPropertyValue('background-color');
+  const branco = getComputedStyle(document.getElementById('opcoes')).getPropertyValue('background-color');
+  if (colorDois === colorUm) {
+    colocaCores();
   }
-  if (pixelCores[2].style.background === pixelCores[3].style.background) {
-    location.reload();
+  if (colorDois === colorTes) {
+    colocaCores();
   }
-  if (String(pixelCores[2].style.background) === '#000000') {
-    location.reload();
+  if (colorDois === preto) {
+    colocaCores();
   }
-  if (String(pixelCores[2].style.background) === '#ffffff') {
-    location.reload();
+  if (colorDois === branco) {
+    colocaCores();
   }
 }
 
 function verificaCoresTres() {
   const pixelCores = document.getElementsByClassName('color');
-  if (pixelCores[3].style.background === pixelCores[1].style.background) {
-    location.reload();
+  const colorUm = getComputedStyle(pixelCores[1]).getPropertyValue('background-color');
+  const colorDois = getComputedStyle(pixelCores[2]).getPropertyValue('background-color');
+  const colorTes = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
+  const preto = getComputedStyle(document.getElementById('black')).getPropertyValue('background-color');
+  const branco = getComputedStyle(document.getElementById('opcoes')).getPropertyValue('background-color');
+  if (colorTres === colorDois) {
+    colocaCores();
   }
-  if (pixelCores[3].style.background === pixelCores[2].style.background) {
-    location.reload();
+  if (colorTres === colorUm) {
+    colocaCores();
   }
-  if (String(pixelCores[3].style.background) === '#000000') {
-    location.reload();
+  if (colorTres === preto) {
+    colocaCores();
   }
-  if (String(pixelCores[3].style.background) === '#ffffff') {
-    location.reload();
+  if (colorTres === branco) {
+    colocaCores();
   }
 }
 

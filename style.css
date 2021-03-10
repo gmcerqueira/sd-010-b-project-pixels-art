@@ -34,4 +34,5 @@ table , tr , td {
 
 #opcoes {
   display: inline;
+  background-color: white;
 }
