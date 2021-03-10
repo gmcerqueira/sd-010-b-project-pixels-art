@@ -6,12 +6,6 @@
     width: 45px;
   }
 
-.pixel {
-    border: 1px solid black;
-    width: 38px;
-    height: 38px;
-    background-color: white;
-}
 #clear-board{
     border: 1px solid black;
     border-radius: 10%;
@@ -26,7 +20,7 @@
 
 #pixelBoard, .pixel {
     border: 1px solid black;
-    height: 38px;
-    width: 38px;
+    height: 40px;
+    width: 40px;
     background-color: white;
   }

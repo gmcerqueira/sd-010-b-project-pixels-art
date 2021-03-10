@@ -59,12 +59,8 @@ for (let p = 0; p < pixels.length; p += 1){ //itero sobre todos eles
 }
 
 //botao limpar
-// criando o botão
-const body = document.querySelector('body').firstElementChild.nextElementSibling
-const botaoClear = document.createElement('div')
-botaoClear.id = 'clear-board'
+const botaoClear = document.getElementById('clear-board')
 botaoClear.innerHTML = 'Limpar'
-body.appendChild(botaoClear)
 
 //adicionando o evento de limpar ao botão
 botaoClear.addEventListener('click',function(){
