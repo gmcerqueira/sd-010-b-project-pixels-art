@@ -8,19 +8,21 @@ let paletaDasCores = document.createElement('td')
     cores.appendChild(paletaDasCores);
 }
 
-function resetPixel(){
-    for (let i = 0; i < pixels.length; i += 1){
-        pixels[i].style.backgroundColor = 'white';
+let pixels = document.getElementsByClassName('pixel');
+function resetButton(){
+    let botao = document.createElement('button')
+        botao.id = 'clear-board'
+        botao.innerHTML = 'Limpar'
+        document.body.appendChild(botao)
+        botao.addEventListener('click', resetPixel)
+    function resetPixel(){
+        for (let i = 0; i < pixels.length; i += 1){
+            pixels[i].style.backgroundColor = 'white';
+        }
     }
 }
 
-let pixels = document.getElementsByClassName('pixel');
-
-let botao = document.createElement('button')
-botao.id = 'clear-board'
-botao.innerHTML = 'Limpar'
-document.body.appendChild(botao)
-botao.addEventListener('click', resetPixel)
+resetButton()
 
 let paleta = document.getElementsByClassName('color')
 let black = paleta[0];
@@ -64,34 +66,33 @@ function selecionarAoClicar(){
     for (let i = 0; i < paleta.length; i += 1){
         paleta[i].addEventListener('click', changeClass)
     }
-}
-
-function changeClass (){
-    for (let i = 0; i < paleta.length; i += 1){
-        paleta[i].classList.remove('selected')
+        function changeClass (){
+            for (let i = 0; i < paleta.length; i += 1){
+                paleta[i].classList.remove('selected')
+            }
+            this.classList.add('selected')
         }
-        this.classList.add('selected')
-    }
-    
+}
+ 
 function clickToPaint(){
         for(let i = 0; i < pixels.length; i += 1){
         pixels[i].addEventListener('click', pintar)
     }
+    function pintar(){
+        if (black.className == 'color selected'){
+                this.style.backgroundColor = 'black'
+         } else 
+            if (green.className == 'color selected'){
+                this.style.backgroundColor = 'green'
+            } else 
+                if (red.className == 'color selected'){
+                    this.style.backgroundColor = 'red'
+                } else
+                    if (blue.className == 'color selected'){
+                        this.style.backgroundColor = 'blue'
+                    }
+        }
 }
 
 clickToPaint();
     
-function pintar(){
-    if (black.className == 'color selected'){
-            this.style.backgroundColor = 'black'
-     } else 
-        if (green.className == 'color selected'){
-            this.style.backgroundColor = 'green'
-        } else 
-            if (red.className == 'color selected'){
-                this.style.backgroundColor = 'red'
-            } else
-                if (blue.className == 'color selected'){
-                    this.style.backgroundColor = 'blue'
-                }
-    }
