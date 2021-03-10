@@ -1,24 +1,38 @@
 window.onload = function trocaCor() {
     
-    preto.classList.add("selected")
+    box1.classList.add("selected")
   }
 
-  let preto = document.getElementById("preto");
-  
+let box1 = document.querySelector(".preto");
+let box2 = document.querySelector(".vermelho");
+let box3 = document.querySelector(".azul");
+let box4 = document.querySelector(".lilas");
 
+  box1.addEventListener("clicar", remove)
+  box2.addEventListener("clicar", remove)
+  box3.addEventListener("clicar", remove)
+  box4.addEventListener("clicar", remove)
+  
 function remove(even){
+
   let selectebox = document.querySelector(".selected")
   selectebox.classList.remove("selected")
     even.target.classList.add("selected")
 
 }
-function add (){
-  let elemento = document.querySelector(".color")
-  for (let index = 0; index < elemento.length; index++) {
-   elemento[index].addEventListener("click", remove(even))
-  }
-}
 
+
+let clicar = document.querySelector(".pixel");
+
+clicar.addEventListener("click", troca2)
+
+
+function troca2() {
+
+    let cor = clicar
+    cor.classList.add("preto")
+
+  }
 
 
 //chaaama
