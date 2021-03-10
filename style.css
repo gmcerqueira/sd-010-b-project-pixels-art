@@ -10,8 +10,7 @@
   height: 40px;
   width: 40px;
   display: inline-block;
-  padding: 0px;
-  margin: 0px;
+  background-color: white;
 }
 
 #pixel-board {
