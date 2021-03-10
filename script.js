@@ -1,4 +1,4 @@
-// colors to set on color-palette section
+// colorItems to set on color-palette section
 let colorsList = [
   'rgb(0, 0, 0)',
   'rgb(214, 40, 40)',
@@ -9,7 +9,7 @@ let colorItems = document.querySelectorAll('.color'); // color palette
 let pixelBoard = document.querySelector('#pixel-board'); // this gets the whole board
 let colorPalette = document.querySelector('#color-palette'); // get the color-palette section
 
-// set colors, from colorsList, to color palette
+// set colorItems, from colorsList, to color palette
 function buttonColor() {
   for (let i = 0; i < colorItems.length; i++) {
     colorItems[i].style.backgroundColor = colorsList[i];
@@ -42,12 +42,26 @@ function createBoard() {
 
 // sets black as the selected color
 // I took this code block from Gustavo Cerqueira's project at https://github.com/tryber/sd-010-b-project-pixels-art/blob/gmcerqueira-project-pixels-art/script.js
-function setSelectedColor() {
+function setDefaultColor() {
   colorPalette.firstElementChild.classList.add('selected');
 }
 
-window.onload = () => {
+function changeColorPencil() {
+  for (let i = 0; i < colorItems.length; i++) {
+    colorItems[i].addEventListener('click', function () {
+      for (let i = 0; i < colorItems.length; i++) {
+        colorItems[i].classList.remove('selected');
+      }
+      let clicked = event.target;
+      clicked.classList.add('selected');
+      console.log(clicked.tagName);
+    });
+  }
+}
+
+window.onload = function () {
   buttonColor();
   createBoard();
-  setSelectedColor();
+  setDefaultColor();
+  changeColorPencil();
 }
