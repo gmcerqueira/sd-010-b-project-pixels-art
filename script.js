@@ -44,6 +44,9 @@ window.onload = function(){
     buttonRed.addEventListener('click',redPaint);
     buttonBlue.addEventListener('click',bluePaint);
     buttonGreen.addEventListener('click',greenPaint);
+
+    
+
     
 }
 
@@ -58,6 +61,10 @@ function blackPaint(){
     buttonBlue.classList.remove('selected');
     buttonGreen.classList.remove('selected');
     buttonRed.classList.remove('selected');
+
+    document.querySelector('.selected').style.backgroundColor = 'black';
+
+    
 
 
     }
@@ -74,6 +81,8 @@ function redPaint(){
     buttonBlue.classList.remove('selected');
     buttonGreen.classList.remove('selected');
     buttonRed.classList.add('selected');
+
+    document.querySelector('.selected').style.backgroundColor = 'red';
     
 }
 function bluePaint(){
@@ -88,6 +97,8 @@ function bluePaint(){
     buttonBlue.classList.add('selected');
     buttonGreen.classList.remove('selected');
     buttonRed.classList.remove('selected');
+
+    document.querySelector('.selected').style.backgroundColor = 'blue';
     
 }
 function greenPaint(){
@@ -103,6 +114,7 @@ function greenPaint(){
     buttonGreen.classList.add('selected');
     buttonRed.classList.remove('selected');
     
+    document.querySelector('.selected').style.backgroundColor = 'green';
     
 }
 
