@@ -41,6 +41,8 @@ adicionaQuadroPixels("linha-5")
 window.onload = function (){
     let colors = document.querySelectorAll(".pixel");
 
+    
+
 let colorRed = document.getElementById("red").addEventListener("click", adicionaColorRed)
     function adicionaColorRed (){
         let selecionaClass = document.querySelectorAll(".color");
@@ -102,8 +104,7 @@ let colorRed = document.getElementById("red").addEventListener("click", adiciona
         }
     }
     adicionaColorGreen();
-
-    let colorBlack = document.getElementById("black").addEventListener("click", adicionaColorBlack)
+    let colorBlack = document.getElementById("black")
     function adicionaColorBlack (){
         let adicionaClass = document.getElementById("black").className ="color selected";
         for (let i = 0; i <colors.length; i += 1){
@@ -114,7 +115,8 @@ let colorRed = document.getElementById("red").addEventListener("click", adiciona
             })
         }
     }
-    adicionaColorBlack();
+    adicionaColorBlack()
+    
 }
 
 // Requisito 7
