@@ -70,6 +70,19 @@
   //   event.target.classList.add(' selected');
   // }
 
+
+  let pixelBox = document.querySelectorAll('.pixel');
+  let buttonErasedColor = document.querySelector('#clear-board');
+function erasedPixel() {
+  for (let i = 0; i < pixelBox.length; i += 1) {
+    pixelBox[i].style.backgroundColor = 'white';
+  }
+}
+buttonErasedColor.addEventListener('click', erasedPixel);
+
+
+
+
 let classSelected = document.querySelectorAll(".color");
 
 for (i = 0; i < classSelected.length; i+=1) {
