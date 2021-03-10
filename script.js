@@ -35,16 +35,26 @@ function paintingPixel(event) {
   }
   
   function boardListener() {
-    const pixels = document.getElementsByClassName('pixel');
-    for (index in pixels) {
-      pixels[index].addEventListener('click', paintingPixel);
+    const pixel = document.getElementsByClassName('pixel');
+    for (index in pixel) {
+      pixel[index].addEventListener('click', paintingPixel);
     }
   }
 
   boardListener()
 
-function deselectColor() {
-    const currentColor = document.querySelector('.selected');
-    currentColor.className = 'color';
+
+  function clearBoard() {
+    const pixel = document.getElementsByClassName('pixel');
+    console.log('pixel')
+    for (index in pixel) {
+      pixel[index].style.backgroundColor = 'white';
+      
+    }
   }
+  
+  const clickBtn = document.getElementById('clear-board');
+  clickBtn.addEventListener('click', clearBoard);
+
+
   
