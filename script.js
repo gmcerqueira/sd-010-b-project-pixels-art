@@ -38,25 +38,24 @@ adicionaQuadroPixels("linha-5")
 
 //Requisito 6
 window.onload = function (){
+    let colorBlack = document.getElementById("color-palette").firstElementChild.className = "color selected";
     let colors = document.querySelectorAll(".pixel");
 
     function adicionaBotaoBlack (){
         for (let i = 0; i <colors.length; i += 1){
-            colors[i].addEventListener("click", changeColor)
+            colors[i].addEventListener("click", function(){
+                if (colors[i].style.backgroundColor != "black"){
+                    colors[i].style.backgroundColor = "black";
+                }
+            })
         }
     }
     adicionaBotaoBlack();
-
-    function changeColor (){
-        for (let i = 0; i < colors.length; i += 1){
-            colors[i].style.backgroundColor = "black";
-        }
-    }
 }
 
 
-window.onload = function (){
-    let colorBlack = document.getElementById("color-palette").firstElementChild.className = "color selected";
-
+// window.onload = function (){
+//     let colorBlack = document.getElementById("color-palette").firstElementChild.className = "color selected";
     
-}
+    
+// }
