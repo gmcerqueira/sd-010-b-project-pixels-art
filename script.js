@@ -68,17 +68,24 @@ function lines() {
 }
 // lines();
 
+function rowsAndColsDefine() {
+  if (rowsAndCols < 5) {
+    rowsAndCols = 5;
+  } else if (rowsAndCols > 50) {
+    rowsAndCols = 50;
+  }
+}
 
 function generateBoard() {
   rowsAndCols = document.getElementById('board-size').value;
   if (rowsAndCols !== '') {
+    rowsAndColsDefine();
     pixelBoard.innerHTML = '';
     pixelBoard.style.width = (rowsAndCols * 42) + 'px';
     fillLinePixel();
   } else {
     alert('Board inválido!');
   }
-  
 }
 
 let btnVQV = document.getElementById('generate-board');
