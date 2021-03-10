@@ -40,6 +40,16 @@ function selectedColor(event) {
   nextElementColor.classList.add('selected'); // adiciona a classe 'selected' ao futuro elemento color.
 }
 
+/*
+   Essa função executa a function init para carregar valores, gerar board e adicionar escutadores de evento click que dispara a function selectedColor.
+
+   Material consultado sobre o loop forEach
+   https://www.w3schools.com/jsref/jsref_foreach.asp
+
+   Material consultado sobre arrow functions
+   https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+   https://www.w3schools.com/js/js_arrow_function.asp
+  */
 window.onload = function init() { // define uma função init para carregar valores e gerar board
   const boardSize = 5; // define o tamanho do board
   const width = boardSize; // define width a partir de boardSize
@@ -51,7 +61,10 @@ window.onload = function init() { // define uma função init para carregar valo
   initialColor.classList.add('selected'); // define a cor black como inicial
   generateBoard(width, height); // gera o board de dimensão width X height
 
+  // obtem uma lista de elementos da classe color e armazena em colorElementsList
   const colorElementsList = document.querySelectorAll('.color');
+
+  // para cada elemento da lista, adiciona um escutador de eventos click que dispara a function selectedColor
   colorElementsList.forEach((colorElement) => {
     colorElement.addEventListener('click', selectedColor);
   });
