@@ -9,3 +9,14 @@ for(let i=0; i<cores.length; i++){
   colorPalette.appendChild(criarCor);
 }
 
+let pixelize = document.querySelectorAll('.line');
+for(let j = 0; j < 5; j += 1) {
+  pixelize[j];
+    for(let k = 0; k < 5; k += 1) {
+      let criaPixel = document.createElement("div");
+      criaPixel.className = "pixel";
+      criaPixel.backgroundColor = "white";
+      pixelize[j].appendChild(criaPixel);
+    }
+}
+
