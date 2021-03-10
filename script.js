@@ -40,12 +40,12 @@ function geraPixel() {
 geraPixel();
 
 function escolheCor() {
-	let corDaVez = document.querySelectorAll(".color");
-	for (let cont = 0; cont < corDaVez.length; cont += 1) {
-		corDaVez[cont].addEventListener("click", function(event) {
-			corDaVez[cont].className = "color selected";
-		})
-	}
+	let corDaVez = document.querySelector("#color-palette");
+	color.addEventListener("click", (event) =>{
+		let element = event;
+		document.querySelector(".selected").className = "color";
+		element.target.className = "color selected";
+	})
 }
 
 escolheCor();
