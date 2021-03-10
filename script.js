@@ -31,13 +31,11 @@ for(let line = 0; line < 5; line += 1){
     pixelBoard.appendChild(box);
 }
 // celulas da tabela
-let contador = 1;
 let linhas = document.querySelectorAll('#pixel-board, tr'); // recupero todos os elem tr criados da id #pixel-board
 for (let line = 1; line < linhas.length; line += 1) {
     for (let colum = 1; colum < linhas.length; colum +=1){
         let box = document.createElement('td')
         box.className = 'pixel';
-        box.id = contador ++;
         linhas[colum].appendChild(box);
     }
 }
@@ -80,12 +78,16 @@ corGreen.addEventListener('click', function() { corSelecionada(3)});
 
 // Adicionando cor ao quadrado selecionado
 
-let pixelTable = document.getElementsByClassName('pixel');
-let selectedColor= document.getElementsByClassName(corSelecionada());
-let corAPintar = selectedColor.style.backgroundColor;
+let pixelTable = document.querySelectorAll('.pixel'); // pego todos os elem da classe pixel
 
-//  pixelTable.addEventListener('click', function(evento){
-//     let corDoEvento = evento.target
-//  })
-console.log(pixelTable);
-console.log(selectedColor)
+for (let i = 0; i < pixelTable.length; i += 1){ // percorro todos os elem da classe que fora atribuidos a essa variavel
+    pintaOPixel(i); // e mando o indice para a função
+}
+
+function pintaOPixel (i){
+    pixelTable[i].addEventListener('click', function(){ // adiciono o evento de click a todos os elem do array
+        pixelTable[i].style.backgroundColor = sessionStorage.color // atribuo a cor salva no storage ao elemento que recebeu o click
+    });
+}
+
+
