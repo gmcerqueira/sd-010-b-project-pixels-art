@@ -23,8 +23,8 @@ function addElementoSection() {
     newSection.appendChild(newDivLinha);
   }
   // append(preppend antes) coloque depois de todos os elementos
-  const sectionAtual = document.querySelector('script');
-  document.body.insertBefore(newSection, sectionAtual);
+  // const sectionAtual = document.querySelector('script');
+  // document.body.insertBefore(newSection, sectionAtual);
 }
 
 // variavel.setAtribute/getAttibute/removeAtribute

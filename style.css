@@ -6,8 +6,8 @@ body {
   text-align: center;
 }
 
-#color-palette {
-  margin: auto;
+#color-palette #pixel-board {
+  width: auto;
 }
 
 .color {
@@ -36,6 +36,7 @@ body {
 .table {
   display: table;
   margin: auto;
+  width: auto;
 }
 
 .tr {
