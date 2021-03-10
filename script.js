@@ -61,13 +61,24 @@ const setPixelGrid = (size) => {
   }
 };
 
-//
+// select color
+
 function selectColor() {
   palletes.map((pallete) => {
     pallete.addEventListener('click', (event) => {
-      console.log(document.querySelector('.selected'));
       document.querySelector('.selected').classList.remove('selected');
       event.target.classList.add('selected');
+    });
+  });
+}
+
+// paint pixels
+function paintPixels() {
+  const pixels = Array.from(document.querySelectorAll('.pixel'));
+  pixels.map((pixel) => {
+    pixel.addEventListener('click', (event) => {
+      const color = document.querySelector('.selected').style.backgroundColor;
+      event.target.style.backgroundColor = color;
     });
   });
 }
@@ -76,4 +87,5 @@ function start() {
   setPalleteColors();
   setPixelGrid(5);
   selectColor();
+  paintPixels();
 }
