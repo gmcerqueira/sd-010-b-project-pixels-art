@@ -51,13 +51,3 @@ function trocar () {
     trocarCor[2].classList.remove('selected');
   });
 }
-trocar();
-function pintar() {
-  // let selected = document.querySelector('.select');
-  let divCor = document.querySelectorAll('.pixel');
-  let cor;
-  divCor[0] = cor
-  console.log(cor);
-}
-pintar();
-alert(document.getElementsByClassName('color').style.background);
