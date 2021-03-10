@@ -52,7 +52,17 @@ function trocar () {
   });
 }
 trocar();
-function pintar(){
-  
-  document.querySelector("#baba").style.backgroundColor;
+// function pintar(){
+
+//   document.querySelector("#baba").style.backgroundColor;
+// }
+function applySelectedColor() {
+  const allPixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < allPixels.length; i += 1) {
+    allPixels[i].addEventListener('click', (evt) => {
+      const { target } = evt;
+      target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    });
+  }
 }
+applySelectedColor();
