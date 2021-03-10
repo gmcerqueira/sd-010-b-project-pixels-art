@@ -1,13 +1,13 @@
-let getSection=document.getElementById('pixel-board')
-let n=5;
+let getTable=document.getElementById('pixel-board')
+let n=5
+
 for(let indexLine=0;indexLine<n;indexLine+=1){
-    let line=document.createElement('div')
-     line.className='pixel'
-     getSection.appendChild(line)
+    let line= document.createElement('tr')
+    line.className='pixel'
+    getTable.appendChild(line)
     for(let indexColumn=0;indexColumn<n;indexColumn+=1){
-        let container=document.createElement('div')
-        container.className='pixel' //essa div tem class pixel
-        line.appendChild(container)
+        let column=document.createElement('td')
+        column.className='pixel'
+        line.appendChild(column)
     }
 }
-
