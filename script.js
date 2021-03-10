@@ -1,17 +1,41 @@
+function tamanho() {
+  const numero = document.getElementById('board-size');
+  const n = numero.value;
+  sessionStorage.setItem('n', n);
+  location.reload();
+}
+
+function leInput() {
+  const botao = document.getElementById('generate-board');
+  botao.addEventListener('click', tamanho);
+}
+leInput();
+
+function recuperaN() {
+  let n = Number(sessionStorage.getItem('n'));
+  if (n < 5) {
+    sessionStorage.setItem('n', '5');
+  }
+  if (n > 50) {
+    sessionStorage.setItem('n', '50');
+  }
+  return Number(sessionStorage.getItem('n'));
+}
+
 function coresAleatórias() {
   const cor = `#${((1 << 24) * Math.random() | 0).toString(16)}`; // creditos: https://stackoverflow.com/questions/1484506/random-color-generator
   return cor;
 }
 
 function criaPixels() {
-  const n = 5;
+  const n = recuperaN();
   const tabela = document.getElementById('pixel-board');
   for (let linha = 0; linha < n; linha += 1) {
     const criaLinha = document.createElement('tr');
     tabela.appendChild(criaLinha);
     for (let celula = 0; celula < n; celula += 1) {
       const criaCelula = document.createElement('td');
-      let linhaApoio = document.getElementsByTagName('tr');
+      const linhaApoio = document.getElementsByTagName('tr');
       linhaApoio[linhaApoio.length - 1].appendChild(criaCelula).className = 'pixel';
       document.getElementsByClassName('pixel');
       const apoio = document.getElementsByClassName('pixel');
@@ -36,48 +60,48 @@ colocaCores();
 function verificaCoresUm() {
   const pixelCores = document.getElementsByClassName('color');
   if (pixelCores[1].style.background === pixelCores[2].style.background) {
-    document.location.reload(true);
+    location.reload();
   }
   if (pixelCores[1].style.background === pixelCores[3].style.background) {
-    document.location.reload(true);
+    location.reload();
   }
   if (String(pixelCores[1].style.background) === '#000000') {
-    document.location.reload(true);
+    location.reload();
   }
   if (String(pixelCores[1].style.background) === '#ffffff') {
-    document.location.reload(true);
+    location.reload();
   }
 }
 
 function verificaCoresDois() {
   const pixelCores = document.getElementsByClassName('color');
   if (pixelCores[2].style.background === pixelCores[1].style.background) {
-    document.location.reload(true);
+    location.reload();
   }
   if (pixelCores[2].style.background === pixelCores[3].style.background) {
-    document.location.reload(true);
+    location.reload();
   }
   if (String(pixelCores[2].style.background) === '#000000') {
-    document.location.reload(true);
+    location.reload();
   }
   if (String(pixelCores[2].style.background) === '#ffffff') {
-    document.location.reload(true);
+    location.reload();
   }
 }
 
 function verificaCoresTres() {
   const pixelCores = document.getElementsByClassName('color');
   if (pixelCores[3].style.background === pixelCores[1].style.background) {
-    document.location.reload(true);
+    location.reload();
   }
   if (pixelCores[3].style.background === pixelCores[2].style.background) {
-    document.location.reload(true);
+    location.reload();
   }
   if (String(pixelCores[3].style.background) === '#000000') {
-    document.location.reload(true);
+    location.reload();
   }
   if (String(pixelCores[3].style.background) === '#ffffff') {
-    document.location.reload(true);
+    location.reload();
   }
 }
 
@@ -126,7 +150,7 @@ function criarListenerCelulas() {
 criarListenerCelulas();
 
 function limpar() {
-  const n = 5;
+  const n = recuperaN();
   for (let linha = 0; linha < n; linha += 1) {
     for (let celula = 0; celula < n; celula += 1) {
       document.getElementById(`cell-${linha + 1}-${celula + 1}`).style.background = '#ffffff';
