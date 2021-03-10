@@ -36,6 +36,8 @@ function randomColor() {
     color[0].style.backgroundColor = "rgba(0, 0, 0, 1)";
 }
 
+// Dei uma olhada nesse site para as cores aleatórias! src: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+
 function selectColor(selected) {
     let oldColor = document.querySelector(".selected");
     oldColor.classList.remove("selected");
@@ -45,11 +47,23 @@ function selectColor(selected) {
 
 function clear() {
     let pixels = document.querySelectorAll(".pixel");
-    pixels.style.backgroundColor = "white";
+    if(pixels.classList.contains("painted")) {
+        pixels.style.backgroundColor = "rgb(255, 255, 255)";
+    }
+}
+
+function paintColors(pixels) {
+    if(pixels.target.classList.contains("pixel")) {
+        let paint = document.querySelector(".selected").style.backgroundColor;
+        pixels.target.style.backgroundColor = paint;
+        pixels.classList.add("painted");
+    }
 }
 
 window.onload = randomColor;
 createBoard(5);
 document.getElementById("color-palette").addEventListener("click", selectColor);
 document.getElementById("clear-board").addEventListener("click", clear);
-document.getElementById("generate-board").addEventListener("click", createBoard);
+document.getElementById("generate-board").addEventListener("click", createPixels);
+document.querySelectorAll(".pixel").addEventListener("click", paintColors(pixels));
+document.querySelector("#clear-board").addEventListener("click", clear);
