@@ -14,17 +14,19 @@ function buildingColorPalletes (){
     }
 
     //Insere as cores
-    colorPallete = document.querySelectorAll(".color");
-    colorPallete[0].style.backgroundColor = "black";
-    colorPallete[1].style.backgroundColor = "orange";
-    colorPallete[2].style.backgroundColor = "lightblue";
-    colorPallete[3].style.backgroundColor = "salmon"; 
+    let colorPallete = document.querySelectorAll(".color");
+    let arrColorPallete = ["black", "orange", "lightblue", "salmon"];
+    for (let i in arrColorPallete){
+    colorPallete[i].style.backgroundColor = arrColorPallete[i];
+    }
     colorPallete[0].classList.add("selected");
 
-    // let arrColorPallete = ["black", "orange", "lightblue", "salmon"]; // Algoritmo com dinamisco, embora incompleto
-    // for (let i in colorPallete){
-    // colorPallete[i].style.backgroundColor = arrColorPallete[i];
-    // }
+    //Mesmo código de cima embora de forma estática
+    // colorPallete[0].style.backgroundColor = "black";
+    // colorPallete[1].style.backgroundColor = "orange";
+    // colorPallete[2].style.backgroundColor = "lightblue";
+    // colorPallete[3].style.backgroundColor = "salmon"; 
+    // colorPallete[0].classList.add("selected"); 
 }
 
 //Construindo Quadro de Cores a Pintar
@@ -66,7 +68,23 @@ function buildingBoard (){
     }
  }
 
-
+ //Pintando o Pixel com a cor selecionada (class = selected)
+ function colorPixelSelected () {
+     let colorPixel = document.querySelectorAll(".pixel");
+     for (let i = 0; i < colorPixel.length; i += 1){
+         colorPixel[i].addEventListener("click",toPaintPixel )
+     }
+     function toPaintPixel (){
+        let checkPixel = document.querySelectorAll("td");
+            for (let i = 0; i < checkPixel.length; i += 1){
+                if (checkPixel[i].className == "color selected"){
+                    for (let k = 0; k < colorPixel.length; k += 1){
+                    this.style.backgroundColor = checkPixel[i].style.backgroundColor;
+                }
+            }
+        }
+    }
+ }
 
 
 
@@ -74,5 +92,5 @@ window.onload = function (){
     buildingBoard();
     buildingColorPalletes();
     removeAddClassSelected();
-        
+    colorPixelSelected()    
 }
