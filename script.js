@@ -52,10 +52,8 @@ function resizeMinMax(parameter) {
   }
   if (parameter > 50) {
     return 50;
-  } else {
-    return parameter;
   }
-
+  return parameter;
 }
 
 window.onload = function () {
