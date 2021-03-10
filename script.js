@@ -1,4 +1,3 @@
-
 function createTable(number) {
   const table = document.getElementById('pixel-board');
   for (let indexLine = 0; indexLine < number; indexLine += 1) {
@@ -39,7 +38,10 @@ function paintPixel() {
   for (let indexPixel = 0; indexPixel < pixel.length; indexPixel += 1) {
     pixel[indexPixel].addEventListener('click', function () {
       const selectedColor = document.querySelector('.selected');
-      pixel[indexPixel].style.backgroundColor = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
+      if (selectedColor !== null){
+      const getStyle =window.getComputedStyle(selectedColor);
+      pixel[indexPixel].style.backgroundColor = getStyle.getPropertyValue('background-color');
+      } return;
     });
   }
 }
@@ -72,9 +74,9 @@ function boardSize() {
       if (input.value > 50) {
         input.value = 50;
       } else if (input.value < 5) {
-      input.value = 5;
+        input.value = 5;
       }
-      createTable(number = input.value);
+      createTable(input.value);
       paintPixel();
     }
   });
