@@ -7,8 +7,8 @@
   height: 50px;
   margin: 5px;
 }
-#pixels-board {
-  max-width: 300px;
+#pixel-board {
+  max-width: 250px;
   font-size: 0px;
 }
 .pixel {
