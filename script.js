@@ -53,6 +53,7 @@ receberColor.addEventListener('click', receberCor);
 
 function getCor(eventoDeOrigem) {
   console.log(eventoDeOrigem.target.style.backgroundColor);
+  eventoDeOrigem.target.className = "selected";
   cor = eventoDeOrigem.target.style.backgroundColor;
 }
 
