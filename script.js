@@ -44,6 +44,7 @@ window.onload = function () {
       colorOption.className = 'color selected';
     } else {
       colorOption.className = 'color';
+      colorOption.style.background = "rgb("+Math.ceil(Math.random() * 100)+", "+Math.ceil(Math.random() * 150)+", "+Math.ceil(Math.random() * 210)+")";
     }
     colorOption.id = 'cor_' + (index + 1);
     elemento1.appendChild(colorOption);
