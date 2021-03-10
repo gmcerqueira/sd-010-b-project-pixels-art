@@ -1,3 +1,8 @@
+window.onload = function(){
+    selecionarAoClicar();
+    clickToPaint();
+}
+
 let cores = document.createElement('table')
 cores.id = 'color-palette'
 document.body.appendChild(cores)
@@ -58,9 +63,6 @@ for (let i = 0; i < linhas.length; i += 1){
     }
 }
 
-//selecionando a cor
-
-selecionarAoClicar();
 
 function selecionarAoClicar(){
     for (let i = 0; i < paleta.length; i += 1){
@@ -79,20 +81,19 @@ function clickToPaint(){
         pixels[i].addEventListener('click', pintar)
     }
     function pintar(){
-        if (black.className == 'color selected'){
+        if (black.className === 'color selected'){
                 this.style.backgroundColor = 'black'
          } else 
-            if (green.className == 'color selected'){
+            if (green.className === 'color selected'){
                 this.style.backgroundColor = 'green'
             } else 
-                if (red.className == 'color selected'){
+                if (red.className === 'color selected'){
                     this.style.backgroundColor = 'red'
                 } else
-                    if (blue.className == 'color selected'){
+                    if (blue.className === 'color selected'){
                         this.style.backgroundColor = 'blue'
                     }
         }
 }
 
-clickToPaint();
     
