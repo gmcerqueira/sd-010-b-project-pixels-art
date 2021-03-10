@@ -32,6 +32,7 @@ function selectedGreenBox() {
   greenBox.className = 'color selected';
 }
 
+
 blackBox.addEventListener('click', selectedBlackBox);
 blueBox.addEventListener('click', selectedBlueBox);
 redBox.addEventListener('click', selectedRedBox);
@@ -43,7 +44,9 @@ let cleanPixelButton = document.getElementById('clear-board');
 let squarePixels = document.getElementsByClassName('pixel');
 
 function cleanPixel() {
-  squarePixels.style.backgroundColor = "white";
+  for (let i = 0; i < 25; i += 1) {
+    squarePixels[i].style.backgroundColor = 'white';
+  }
 }
 
 cleanPixelButton.addEventListener('click', cleanPixel);
