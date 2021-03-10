@@ -1,14 +1,18 @@
+body {
+  margin: auto;
+  width: 90%;
+  text-align: center;
+}
 #color-palette {
   margin: auto;
 }
 .color {
   display: inline-block;
-  position: left;
   border: 1px solid black;
   width: 40px;
   height: 40px;
 }
-.color:nth-of-type(1) {
+.color:nth-of-type(1), .selected {
   background-color: black;
 }
 .color:nth-of-type(2) {
@@ -20,21 +24,48 @@
 .color:nth-of-type(4) {
   background-color: green;
 }
-table {
-  border-collapse: collapse;
+.table {
+  display: table;
+  margin: auto;
 }
-
-tr, td {
+.tr {
+  display: table-row;
+}
+.td {
+  display: table-cell;
+}
+.pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
   background-color: white;
 }
 
-.pixel:hover {
+.pixel .black:hover {
+  background-color: black;
+}
+.pixel .red:hover {
+  background-color: red;
+}
+.pixel .blue:hover {
+  background-color: blue;
+}
+.pixel .green:hover {
+  background-color: green;
+}
+
+.black {
   background-color: black;
 }
 
-.selected:active {
-  background-color: black;
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
 }
