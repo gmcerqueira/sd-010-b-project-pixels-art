@@ -1,3 +1,4 @@
+//Função de criar o quadro com 25 quadradinhos
 function adicionandoPixels() {
   const quadroPixels = document.getElementById('pixel-board');
   for (let j = 0; j < 5; j += 1) {
@@ -11,3 +12,6 @@ function adicionandoPixels() {
   }
 }
 adicionandoPixels();
+
+let quadradoPreto = document.getElementsByTagName('color')[0];
+quadradoPreto.className = 'color selected';

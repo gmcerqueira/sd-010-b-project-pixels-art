@@ -1,20 +1,25 @@
+body {
+  text-align: center;
+}
+
 .title {
   
 }
 
 .color-palette {
-  margin-bottom: 50px;
+ 
 }
 
 .color {
   border: 1px solid black;
   display: table-cell; 
-  padding: 50px;
+  padding: 30px;
 }
 
 .color:nth-of-type(1) {
   background-color: black;
 }
+
 
 .color:nth-of-type(2) {
   background-color: blue;
