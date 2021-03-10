@@ -1,12 +1,12 @@
-function colourSetUp(colorArray) {
-  let colors = colorArray;
-  colors[0].style.backgroundColor = 'black';
-  colors[1].style.backgroundColor = 'red';
-  colors[2].style.backgroundColor = 'blue';
-  colors[3].style.backgroundColor = 'green';
-}
-
 window.onload = function () {
+  function colourSetUp(colorArray) {
+    let colors = colorArray;
+    colors[0].style.backgroundColor = 'black';
+    colors[1].style.backgroundColor = 'red';
+    colors[2].style.backgroundColor = 'blue';
+    colors[3].style.backgroundColor = 'green';
+  }
+
   function paletteColour(number) {
     const divFather = document.createElement('div');
     divFather.setAttribute('id', 'color-palette');
@@ -46,71 +46,89 @@ window.onload = function () {
   }
 
   function selectedPallete() {
-  let allColors = document.querySelectorAll('.color')
+    let allColors = document.querySelectorAll('.color')
 
-  let zeroColor = document.querySelectorAll('.color')[0];
-  zeroColor.addEventListener('click', function (event) {
-    if (zeroColor.className === 'color') {
-      event.target.className = 'color selected'
-      for (let i = 0; i < allColors.length; i += 1) {
-        if (i == 0){
-          continue;
-        } else {
-          allColors[i].className = 'color';
+    let zeroColor = document.querySelectorAll('.color')[0];
+    zeroColor.addEventListener('click', function (event) {
+      if (zeroColor.className === 'color') {
+        event.target.className = 'color selected'
+        for (let i = 0; i < allColors.length; i += 1) {
+          if (i == 0) {
+            continue;
+          } else {
+            allColors[i].className = 'color';
+          }
         }
       }
-    }
-  })
-  let oneColor = document.querySelectorAll('.color')[1];
-  oneColor.addEventListener('click', function (event) {
-    if (oneColor.className === 'color') {
-      event.target.className = 'color selected'
-      for (let i = 0; i < allColors.length; i += 1) {
-        if (i == 1){
-          continue;
-        } else {
-          allColors[i].className = 'color';
+    })
+    let oneColor = document.querySelectorAll('.color')[1];
+    oneColor.addEventListener('click', function (event) {
+      if (oneColor.className === 'color') {
+        event.target.className = 'color selected'
+        for (let i = 0; i < allColors.length; i += 1) {
+          if (i == 1) {
+            continue;
+          } else {
+            allColors[i].className = 'color';
+          }
         }
       }
-    }
-  })
-  let twoColor = document.querySelectorAll('.color')[2];
-  twoColor.addEventListener('click', function (event) {
-    if (twoColor.className === 'color') {
-      event.target.className = 'color selected'
-      for (let i = 0; i < allColors.length; i += 1) {
-        if (i == 2){
-          continue;
-        } else {
-          allColors[i].className = 'color';
+    })
+    let twoColor = document.querySelectorAll('.color')[2];
+    twoColor.addEventListener('click', function (event) {
+      if (twoColor.className === 'color') {
+        event.target.className = 'color selected'
+        for (let i = 0; i < allColors.length; i += 1) {
+          if (i == 2) {
+            continue;
+          } else {
+            allColors[i].className = 'color';
+          }
         }
       }
-    }
-  })
-  let threeColor = document.querySelectorAll('.color')[3];
-  threeColor.addEventListener('click', function (event) {
-    if (threeColor.className === 'color') {
-      event.target.className = 'color selected'
-      for (let i = 0; i < allColors.length; i += 1) {
-        if (i == 3){
-          continue;
-        } else {
-          allColors[i].className = 'color';
+    })
+    let threeColor = document.querySelectorAll('.color')[3];
+    threeColor.addEventListener('click', function (event) {
+      if (threeColor.className === 'color') {
+        event.target.className = 'color selected'
+        for (let i = 0; i < allColors.length; i += 1) {
+          if (i == 3) {
+            continue;
+          } else {
+            allColors[i].className = 'color';
+          }
         }
       }
-    }
-  })
+    })
 
-}
+  }
 
-paletteColour(4);
-makeBoard();
-selectedBlack();
-selectedPallete();
+  function setColor() {
+    
+    let pixels = document.querySelector('#pixel-board');
+    
+   
+    pixels.addEventListener('click', function(event) {
+      let colorSelected = document.getElementsByClassName('color selected')[0];
+      let color = colorSelected.style.backgroundColor;
+      console.log(color);
+      event.target.style.backgroundColor = color;
+      
+    })
+  }
+
+
+
+
+  paletteColour(4);
+  makeBoard();
+  selectedBlack();
+  selectedPallete();
+  setColor();
 };
 
 
-
+// tentativa
 // let oneColor = document.querySelectorAll('.color')
 // for (let i = 0; i < oneColor; i += 1) {
 //   oneColor[i].addEventListener('click', function (event) {
