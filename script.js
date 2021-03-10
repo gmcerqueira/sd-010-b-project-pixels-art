@@ -23,11 +23,11 @@ const todasAsCores = document.querySelectorAll('color');
 function deixarQuadradoPreto() {
   quadradoPreto.className = 'color selected';
 }
-window.onload = deixarQuadradoPreto();
+deixarQuadradoPreto();
 
 
 function trocaCor(){
-  for (let i = 0; i < todasAsCores.length; i += 1){
+  for (let i = 0; i < todasAsCores.length; i += 1) {
     if(todasAsCores[i].classList.contains('selected')) {
       todasAsCores[i].classList.remove('selected');
     }
