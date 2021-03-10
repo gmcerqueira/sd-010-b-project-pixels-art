@@ -1,3 +1,4 @@
+// Cria uma tabela de caixas
 function createBoxTable(numOfItems, itemClass, parentId, numOfLines = 1) {
   const paletteBox = document.getElementById(parentId);
   const boxTable = document.createElement('table');
@@ -14,6 +15,7 @@ function createBoxTable(numOfItems, itemClass, parentId, numOfLines = 1) {
   }
 }
 
+// Adiciona uma classe para cada box da paleta.
 function addClassToPaletteBox() {
   const boxes = document.getElementsByClassName('color');
   for (let index = 0; index < boxes.length; index += 1) {
@@ -24,12 +26,14 @@ function addClassToPaletteBox() {
   }
 }
 
+// Faz cada box ser clicavel
 function clickPaletteBox(event) {
   const selectedBox = document.querySelector('.selected');
   selectedBox.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
+// Adiciona o evento de click à box.
 function addPaletteBoxClickEvent() {
   const boxes = document.getElementsByClassName('color');
   for (let index = 0; index < boxes.length; index += 1) {
@@ -37,16 +41,32 @@ function addPaletteBoxClickEvent() {
   }
 }
 
+// Muda a cor de fundo do elemento vinculado.
 function changeBgColor(event, color) {
   const element = event;
   element.target.style.backgroundColor = color;
 }
 
+// Adiciona um evento de click para cada pixel
 function addPixelClickEvent(eventFunction) {
   const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener('click', eventFunction);
   }
+}
+
+// Limpa a tabela de pixels
+function clearBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+}
+
+// Cria um evento para o botão que limpa a tabela de pixels
+function clearBoardButton() {
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', clearBoard);
 }
 
 const colorPalette = 'color-palette';
@@ -62,4 +82,5 @@ window.onload = () => {
     const selectedColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
     changeBgColor(event, selectedColor);
   });
+  clearBoardButton();
 };

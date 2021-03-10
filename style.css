@@ -16,7 +16,7 @@ table {
 .color , .pixel {
   border: 1px solid black;
   width: 40px;
-  height: 40px;
+  height: 41px;
 }
 
 .color1 {
@@ -37,4 +37,12 @@ table {
 
 #pixel-board td {
   background-color: white;
+}
+
+section {
+  text-align: center;
+}
+
+#clear-board {
+  margin-bottom: 10px;
 }
