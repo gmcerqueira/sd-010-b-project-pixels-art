@@ -50,16 +50,41 @@ for (let counter = 0; counter < getPixel.length; counter += 1) {
 const buttonPixel = document.getElementById('generate-board');
 const input = document.getElementById('board-size');
 buttonPixel.addEventListener('click', function(){
+  const divMotherOfPixel = document.getElementById('board-container');
  if (input.value === "") {
     alert('Board inválido!')
   }
-
+  if(input.value < 5){
+    document.getElementById('board-container').removeChild(document.querySelector('#pixel-board'));    
+    document.getElementById('board-container').appendChild(document.createElement('div'))
+    document.getElementById('board-container').lastElementChild.id= 'pixel-board';
+    const pixelBoard = document.getElementById('pixel-board');
+    for (let counterDiv = 0; counterDiv < 5; counterDiv += 1) {
+      pixelBoard.appendChild(document.createElement('div'));
+      pixelBoard.lastChild.className = 'inlineDivs';
+      for (let counterPixel = 0; counterPixel < 5; counterPixel += 1) {
+        inlineDivs[counterDiv].appendChild(document.createElement('div'));
+        inlineDivs[counterDiv].lastChild.className = 'pixel';
+      }
+    }
+  } else if (input.value > 50){
+    document.getElementById('board-container').removeChild(document.querySelector('#pixel-board'));    
+    document.getElementById('board-container').appendChild(document.createElement('div'))
+    document.getElementById('board-container').lastElementChild.id= 'pixel-board';
+    const pixelBoard = document.getElementById('pixel-board');
+    for (let counterDiv = 0; counterDiv < 50; counterDiv += 1) {
+      pixelBoard.appendChild(document.createElement('div'));
+      pixelBoard.lastChild.className = 'inlineDivs';
+      for (let counterPixel = 0; counterPixel < 50; counterPixel += 1) {
+        inlineDivs[counterDiv].appendChild(document.createElement('div'));
+        inlineDivs[counterDiv].lastChild.className = 'pixel';
+      }
+    }
+  } else {
   const pixelBoard = document.getElementById('pixel-board');
-  const divMotherOfPixel = document.getElementById('board-container');
   divMotherOfPixel.removeChild(pixelBoard);
-  
-  const createBoard = document.createElement('div')
-  divMotherOfPixel.appendChild(createBoard)
+  const createBoard = document.createElement('div');
+  divMotherOfPixel.appendChild(createBoard);
   createBoard.id = 'pixel-board';
 
   for (let counterInline = 0; counterInline < input.value; counterInline += 1) {
@@ -71,7 +96,7 @@ buttonPixel.addEventListener('click', function(){
       getInlineDiv[counterInline].lastChild.className = 'pixel'
     }
   }
-
+  }
   //funcao que indica o tamanho dos pixels
   const pixel = document.getElementsByClassName('pixel');
   for (let counter = 0; counter < pixel.length; counter += 1) {
@@ -82,6 +107,8 @@ buttonPixel.addEventListener('click', function(){
     pixel[counter].style.border = '1px solid black';
   }
 })
+
+
 
 //funcao que limpa os pixels
 buttonDiv.appendChild(button);
