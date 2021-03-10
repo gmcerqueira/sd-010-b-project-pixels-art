@@ -5,35 +5,31 @@ function setColorClass() {
     colorSelected[item].addEventListener('click', function (event) {
       console.log(event.target);
       console.log(colorSelected[item].style);
-      if (colorSelected[item] !== 'selected') {
-        event.target.classList.add('selected');
-      } else {
+
+      if (colorSelected[item].classList.contains('selected')) {
         event.target.classList.remove('selected');
+      } else {
+        event.target.classList.add('selected');
       }
     });
   }
 }
 
 setColorClass();
-/*
+
 function setPixelColor() {
-  let selectedColor = document.getElementsByClassName('selected color');
+  let selectedColor = document.querySelector('.selected');
   let pixel = document.querySelectorAll('.pixel');
   let color = document.querySelectorAll('.color');
-  let paintColorPixel = color.style.backgroundColor;
+  // let paintColorPixel = color.style.backgroundColor;
 
-  pixel.addEventListener('click', function (event) {
-    let eventTargetColor = event.target.style.color;
-    if (selectedColor.length > 0 && eventTargetColor !== paintColorPixel) {
-      event.target.style.color = selectedColor[0].style.backgroundColor;
-    } else if (
-      eventTargetColor === paintColorPixel &&
-      selectedColor.length !== 0
-    ) {
-      event.target.style.color = 'white';
-    }
-  });
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].addEventListener('click', function (event) {
+      if (selectedColor !== pixel[index].style.color) {
+        pixel[0].style.backgroundColor = 'red';
+      }
+    });
+  }
 }
 
 setPixelColor();
-*/
