@@ -137,7 +137,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
   4. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
   5. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  
+
 ---
 
 # Como desenvolver
@@ -239,7 +239,7 @@ O não cumprimento de um requisito, total ou parcialmente, impactará em sua ava
 
 ### 2 - Adicione à página uma paleta de quatro cores distintas.
 
-- A paleta de cores deve ser um elemento com `id` denominado `color-palette`, ao passo que cada cor individual da paleta de cores deve possuir a `classe` `color`;
+- A paleta de cores deve ser um elemento com `id` denominado `colorclass="color"-palette`, ao passo que cada cor individual da paleta de cores deve possuir a `classe` `color`;
 
 - A cor de fundo de cada elemento da paleta deverá ser a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**;
 

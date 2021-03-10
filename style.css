@@ -1,0 +1,27 @@
+#color-palette div {
+  display: inline-block;
+  border: 1px black solid;
+  padding: 25px;
+}
+
+
+#pixel-board{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-top: 30px;
+
+
+
+
+
+}
+
+.pixel {
+  display: inline-block;
+  background-color: white;
+  border: 1px black solid;
+  height: 40px;
+  width:  40px;
+
+}
