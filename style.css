@@ -23,13 +23,13 @@ body {
 }
 
 #pixel-board {
-  max-width: 20%;
   margin: 0 auto;
   margin-top: 50px;
+  text-align: center;
 }
 
+
 .pixel {
-  margin: 1px;
   display: inline-block;
   width: 40px;
   height: 40px;
