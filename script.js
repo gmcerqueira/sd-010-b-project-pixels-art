@@ -84,6 +84,9 @@ window.onload = function () {
   });
 
   button.addEventListener('click', function () {
-    
+    const pixels = document.querySelectorAll('.pixel');
+    pixels.forEach((pixel) => {
+      pixel.style.backgroundColor = 'white';
+    });
   });
 };
