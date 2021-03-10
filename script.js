@@ -31,3 +31,8 @@ function createPixels() {
 }
 
 createPixels();
+
+document.getElementsByClassName('color')[0].style.backgroundColor = 'rgb(0,0,0)';
+document.getElementsByClassName('color')[1].style.backgroundColor = 'rgb(18,10,143)';
+document.getElementsByClassName('color')[2].style.backgroundColor = 'rgb(0,128,0)';
+document.getElementsByClassName('color')[3].style.backgroundColor = 'rgb(255,255,0)';
