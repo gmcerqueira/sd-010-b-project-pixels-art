@@ -1,6 +1,6 @@
 // Função elaborada com a ajuda da colega de turma MAIARA BORSATTI.
 function addBoxPixels() {
-    
+
     let dad = document.getElementById('pixel-board');
 
     for (let index = 0; index < 5; index++) {
@@ -17,3 +17,19 @@ function addBoxPixels() {
     }
 }
 addBoxPixels()
+
+
+// Requisito 7
+
+let receved = document.getElementsByClassName('color');
+
+for (let index = 0; index < receved.length; index++) {
+    receved[index].addEventListener('click', addSelClass);
+}
+
+function addSelClass() {
+    document.getElementsByClassName('selected')[0].classList.remove('selected');
+    event.target.classList.add('selected');
+    
+}
+
