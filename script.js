@@ -12,12 +12,6 @@ function createDivs() {
 
 createDivs();
 
-document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
-document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
-document.getElementsByClassName('color')[2].style.backgroundColor = 'blue';
-document.getElementsByClassName('color')[3].style.backgroundColor = 'orange';
-document.getElementsByClassName('color')[0].className += ' selected';
-
 const pixelBox = document.getElementById('pixel-board');
 
 function boardPixel() {
@@ -32,9 +26,9 @@ function boardPixel() {
 boardPixel();
 
 function getPalette(event) {
-  let palette = event.target;
+  const palette = event.target;
   if (!palette.id) {
-    let pixelColor = document.querySelectorAll('.color');
+    const pixelColor = document.querySelectorAll('.color');
     pixelColor.forEach((element) => element.classList.remove('selected'));
     palette.classList.add('selected');
   }
@@ -42,18 +36,19 @@ function getPalette(event) {
 }
 
 function paintBoard(event) {
-  let palette = event.target;
-  if (!palette.id) {
-    const paintPixel = sessionStorage.color;
-    palette.style.backgroundColor = paintPixel;
-  }
+const paintPixel = document.querySelector('#pixel-board');
+  paintPixel.addEventListener('click', (event) => {
+    const elem = event;
+    const pintaPixel = document.querySelector('.selected').style.backgroundColor;
+    elem.target.style.backgroundColor = pintaPixel;
+  });
 }
 
+paintBoard();
 document.getElementById('color-palette').addEventListener('click', getPalette);
-document.getElementById('pixel-board').addEventListener('click', paintBoard);
 
-window.onload = startBlack;
-
-function startBlack() {
-  document.querySelectorAll('.color')[0].classList.add('selected');
-}
+document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
+document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
+document.getElementsByClassName('color')[2].style.backgroundColor = 'blue';
+document.getElementsByClassName('color')[3].style.backgroundColor = 'orange';
+document.getElementsByClassName('color')[0].className += ' selected';
