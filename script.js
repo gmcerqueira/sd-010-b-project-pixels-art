@@ -21,7 +21,7 @@ const quadradoVerde = document.getElementsByClassName('color')[3];
 let todasAsCores = document.querySelectorAll('.color');
 
 function deixarQuadradoPreto() {
-  quadradoPreto.className = 'color selected';
+  quadradoPreto.classList.add('selected');
 }
 deixarQuadradoPreto();
 
@@ -34,4 +34,16 @@ function removeEColocaClasseSelected() {
 
 for (let i = 0; i < todasAsCores.length; i += 1) {
   todasAsCores[i].addEventListener("click", removeEColocaClasseSelected);
+}
+
+//colorindo o quadradinhos branco
+function pintandoOQuadradinho () {
+  let selecionaCor = document.getElementsByClassName('selected')[0];
+  
+}
+pintandoOQuadradinho();
+
+let todosOs25Quadradinhos = document.querySelectorAll('.pixel');
+for (let i = 0; i < todosOs25Quadradinhos.length; i += 1) {
+  todosOs25Quadradinhos[i].addEventListener("click", pintandoOQuadradinho);
 }
