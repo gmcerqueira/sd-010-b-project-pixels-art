@@ -18,3 +18,13 @@ function setPaletteColor() {
   const colors = document.getElementsByClassName('color');
   colors[0].classList.add('selected');
 }
+
+function setPixelBoard() {
+  for (let index = 0; index < 5; index += 1) {
+    for (let i = 0; i < 5; i += 1) {
+      const elem = createElement('span');
+      elem.classList.add('pixel');
+      document.getElementById('pixel-board').appendChild(elem);
+    }
+  }
+}
