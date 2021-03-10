@@ -9,9 +9,9 @@
 #clear-board{
     border: 1px solid black;
     border-radius: 10%;
-    display: block;
+    display: inline-block;
     height: 20px;
-    margin-left: 80px;
+    margin-left: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 50px;
@@ -23,4 +23,21 @@
     height: 40px;
     width: 40px;
     background-color: white;
+}
+
+#board-size{
+    width: 50px;
+    display: inline-block;
   }
+  
+  input {
+    margin-top: 8px;
+}
+
+#generate-board{
+    background-color: #eee;
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+  }
+  

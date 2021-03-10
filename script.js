@@ -41,6 +41,21 @@ for (let i = 0; i < 5; i +=1 ) {
   pixelBoard.appendChild(box);
     
 }
+
+// Botao do input
+const button = document.getElementById('generate-board')
+const campoInput = document.querySelector('#board-size')
+button.innerHTML = 'VQV'
+button.addEventListener('click', function(){
+  if (campoInput.nodeType < 5 || campoInput.nodeType > 50) {
+    alert('Board inválido!')
+  }
+})
+
+
+
+
+
 // Quadro de pixels (celulas)
 const pixelTable = document.querySelectorAll('#pixel-board, tr'); // recupero as tr que criei 
 for (let l = 1; l < pixelTable.length; l +=1 ) { // para cada linha 
@@ -68,5 +83,6 @@ botaoClear.addEventListener('click',function(){
     pixels[p].style.backgroundColor = 'white';  // e pra cada pixel atribuo a cor branca
   }
 })
+
 
 
