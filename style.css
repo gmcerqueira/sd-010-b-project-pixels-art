@@ -8,9 +8,8 @@ td {
 }
 
 td.pixel {
-    border: 1px solid black;
     width: 40px;
-    height: 41px; 
+    height: 40px; 
 }
 
 #color-palette table {
