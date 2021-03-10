@@ -51,3 +51,8 @@ function trocar () {
     trocarCor[2].classList.remove('selected');
   });
 }
+trocar();
+function pintar(){
+  
+  document.querySelector("#baba").style.backgroundColor;
+}
