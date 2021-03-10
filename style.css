@@ -13,7 +13,7 @@
   border: 1px solid black;
 }
 
-#blackBox {
+/* #blackBox {
   background-color: black;
 }
 #blueBox {
@@ -24,7 +24,7 @@
 }
 #greenBox {
   background-color: green;
-}
+} */
 
 .pixel{
   display: table-cell;

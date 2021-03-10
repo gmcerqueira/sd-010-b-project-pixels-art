@@ -1,4 +1,5 @@
-
+let corSalva = 'black';
+let aux;
 
 
 let blackBox = document.getElementById('blackBox');
@@ -57,6 +58,19 @@ function cleanPixel() {
 cleanPixelButton.addEventListener('click', cleanPixel);
 
 
+// --------------
+const corDivPixel = document.querySelector('#pixel-board');
+const corPixel = document.querySelectorAll('.pixel');
+function clickPixel(eventoDeOrigem) {
+  aux = eventoDeOrigem.target;
+  if (corPixel.className === 'color') {
+    aux.style.backgroundColor = corSalva;
+  } else {
+    aux.style.backgroundColor = corSalva;
+  }
+}
+
+corDivPixel.addEventListener('click', clickPixel);
 
 // function setBackgroundColor(color) {
 //   let content = document.querySelector(".content")
