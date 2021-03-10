@@ -1,5 +1,5 @@
 #title {
-  margin: 25px 0px;
+  margin: 15px 0px;
   text-align: center;
 }
 
@@ -11,14 +11,19 @@
   border: 1px solid black;
   display: inline-block;
   height: 50px;
-  margin: 50px 10px;
+  margin: 25px 10px;
   width: 50px;
 }
+
+.button-container {
+  text-align: center;
+}
+
 
 #pixel-board {
   border: 1px solid black;
   border-spacing: 0px;
-  margin: 0px auto;
+  margin: 15px auto;
 }
 
 .pixel {
