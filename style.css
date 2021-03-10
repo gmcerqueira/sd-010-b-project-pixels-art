@@ -1,6 +1,6 @@
 #color-palette {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; /* fonte: https://www.w3schools.com/css/css3_flexbox.asp */
+  flex-wrap: wrap; /* fonte: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap */
   width: 168px;
 }
 
@@ -30,4 +30,3 @@
 #clear-board {
   display: inline-block;
 }
-
