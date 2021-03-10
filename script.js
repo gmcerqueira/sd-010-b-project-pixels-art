@@ -87,7 +87,7 @@ function btnConfig() {
 }
 
 function randomcNumber() {
-  return Math.floor(Math.random() * (208 - 87 +1)) + 87;
+  return Math.floor(Math.random() * (208 - 87 + 1)) + 87;
 }
 
 function generatorColor() {
@@ -96,21 +96,21 @@ function generatorColor() {
 }
 
 function istrueColor(color) {
-  let divColor  = document.querySelectorAll('.color');
-  divColor.forEach((e)=>{
-    if(e.style.backgroundColor === color) {
+  const divColor = document.querySelectorAll('.color');
+  divColor.forEach((e) => {
+    if (e.style.backgroundColor === color) {
       return false;
     }
-  })
+  });
   return true;
 }
 
 function addColorPalette(qtt) {
-  let divColorPallete = document.getElementById('color-palette');
+  const divColorPallete = document.getElementById('color-palette');
   for (let i = 1; i <= qtt; i += 1) {
     const divColor = document.createElement('div');
-    let color = generatorColor();
-    let isColorTrue = istrueColor(color);
+    const color = generatorColor();
+    const isColorTrue = istrueColor(color);
     divColor.classList.add('color');
     if (isColorTrue) {
       divColor.style.backgroundColor = color;
