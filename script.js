@@ -65,5 +65,5 @@ createBoard(5);
 document.getElementById("color-palette").addEventListener("click", selectColor);
 document.getElementById("clear-board").addEventListener("click", clear);
 document.getElementById("generate-board").addEventListener("click", createPixels);
-document.querySelectorAll(".pixel").addEventListener("click", paintColors);
-document.querySelector("#clear-board").addEventListener("click", clear);
+document.getElementsByClassName("pixel").addEventListener("click", paintColors);
+document.getElementById("clear-board").addEventListener("click", clear);
