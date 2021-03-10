@@ -27,3 +27,5 @@ for (let brancoIndex = 0; brancoIndex < branco.length; brancoIndex += 1){
   branco[brancoIndex].style.background = 'white';
 }
 }
+
+//Agradeço aos plantões, Raphael Gumieri e Pedro Henrique.
