@@ -89,5 +89,5 @@ function limparPixels() {
   document.querySelector('pixel').style.backgroundColor = 'white';
 }
 
-const buttomLimparCores = document.querySelector('.buttom');
+const buttomLimparCores = document.querySelector('#clear-board');
 buttomLimparCores.addEventListener('click', limparPixels);
