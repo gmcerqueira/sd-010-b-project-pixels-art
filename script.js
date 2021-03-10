@@ -57,3 +57,20 @@ for (let p = 0; p < pixels.length; p += 1){ //itero sobre todos eles
   evento.target.style.backgroundColor = sessionStorage.color; // passo a cor do session storage para o pixel
    })
 }
+
+//botao limpar
+// criando o botão
+const body = document.querySelector('body').firstElementChild.nextElementSibling
+const botaoClear = document.createElement('div')
+botaoClear.id = 'clear-board'
+botaoClear.innerHTML = 'Limpar'
+body.appendChild(botaoClear)
+
+//adicionando o evento de limpar ao botão
+botaoClear.addEventListener('click',function(){
+  for (let p = 0; p < pixels.length; p += 1){  // itero sobre cada pixel da minha lista
+    pixels[p].style.backgroundColor = 'white';  // e pra cada pixel atribuo a cor branca
+  }
+})
+
+
