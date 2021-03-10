@@ -17,21 +17,33 @@ window.onload = function () {
   elementHeader.appendChild(elementTitulo);
 
   const elementos = document.createElement('section');
+    elementos.id = "conteudo";
   document.body.appendChild(elementos);
+
 
   const elemento1 = document.createElement('section');
   elemento1.id = 'color-palette';
   elementos.appendChild(elemento1);
   paletOfColors = document.querySelector('#color-palette');
 
-  const elementoBotao = document.createElement('section');
-  elementos.appendChild(elementoBotao);
+  const sectionBotoes = document.createElement('section');
+  sectionBotoes.id = "section-botoes";
+  elementos.appendChild(sectionBotoes);
 
   const button = document.createElement('button');
   button.id = 'clear-board';
   button.innerText = 'Limpar';
-  elementoBotao.appendChild(button);
+  sectionBotoes.appendChild(button);
   buttonLimpar = button;
+
+  const elementInput = document.createElement('input');
+  elementInput.id = 'board-size';
+  sectionBotoes.appendChild(elementInput);
+
+  const buttonInput1 = document.createElement('button');
+  buttonInput1.id = 'generate-board';
+  buttonInput1.innerText = 'VQV';
+  sectionBotoes.appendChild(buttonInput1);
 
   const elemento2 = document.createElement('section');
   elemento2.id = 'pixel-board';
