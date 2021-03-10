@@ -38,3 +38,11 @@ function getSelected(event) {
   }
   sessionStorage.color = elem.style.backgroundColor;
 }
+
+function paintPixel(event) {
+  const elem = event.target;
+  if (!elem.id) {
+    const colorToPaint = sessionStorage.color;
+    elem.style.backgroundColor = colorToPaint;
+  }
+}
