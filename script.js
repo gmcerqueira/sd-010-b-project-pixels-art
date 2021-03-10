@@ -79,11 +79,11 @@ botaoLimpar();
 
 function botaoVqv(){
 	const botaoVQV = document.querySelector("#generate-board");
-	const adicionaPixel = document.querySelector("#board-size").innerHTML;
+	const adicionaPixel = document.querySelector("#board-size").innerText;
 
-	botaoVQV.addEventListener('click', geraPixel(numeroPixel)); 
+	botaoVQV.addEventListener('click', geraPixel(adicionaPixel)); 
 }
 
 
-botaoVqv();
+//botaoVqv();
 
