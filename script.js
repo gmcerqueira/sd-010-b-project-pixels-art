@@ -46,6 +46,15 @@ function removeAllChildNodes(parent) {
   }
 }
 
+function resizeMinMax(parameter) {
+  if (parameter < 5) {
+    return 5; 
+  }
+  if (parameter > 50) {
+    return 50; 
+  }
+}
+
 window.onload = function () {
   // cria a paleta de cores
   createPalette();
@@ -74,8 +83,7 @@ window.onload = function () {
     if (event.target.id === 'generate-board') {
       const size = document.getElementById('board-size');
       if (size.value && size.value > 0) {
-        if (size.value < 5) { size.value = 5; }
-        if (size.value > 50) { size.value = 50; }
+        size.value = resizeMinMax(size.value);
         const parent = document.getElementById('pixel-board');
         removeAllChildNodes(parent);
         createGrid(Number(size.value));
