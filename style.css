@@ -26,10 +26,9 @@ body {
 
 .pixel {
   background-color: white;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
-  margin: 0px;
   border: 1px solid;
 }
 
