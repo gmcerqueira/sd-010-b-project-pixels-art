@@ -1,5 +1,5 @@
 function loadPixelArt() {
-  let element = document.querySelector('.color');
+  let element = document.querySelector('color1');
   element.className += ' selected';
 }
 window.onload = loadPixelArt();
