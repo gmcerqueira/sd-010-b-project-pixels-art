@@ -15,18 +15,16 @@ matrix();
 // questão resolvida com a ajuda do colega durante grupo de estudos;
 
 function SelectColor() {
-  
   const Colors = document.querySelectorAll('.color');
-  
+
   for (let index = 0; index < Colors.length; index += 1) {
     Colors[index].addEventListener('click', function () {
       const firstColorSelected = document.getElementsByClassName('selected')[0];
-      Colors[index].classList.add('selected');
       firstColorSelected.className = 'color';
+      Colors[index].classList.add('selected');
     });
   }
-  const SelectedColor = document.getElementsByClassName('selected');
-  return SelectedColor;
+  
 }
 SelectColor();
 // Esta questão foi resolvida após ver a postagem de uma colega no Slack da Turma 10/Tribo A.
