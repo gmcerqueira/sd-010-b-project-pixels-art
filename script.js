@@ -17,16 +17,11 @@ function seleçãoDeCor() {
   }
   this.classList.add('selected');
 }
-/*  Entendendo a função do this, site de referencia: https://serfrontend.com/blog/
+/*  Entendendo o objeto  this, site de referencia: https://serfrontend.com/blog/
 diferenca-entre-this-target-e-currenttarget/index.html. Toda vez que da um click, o this vai atribuir a classe selected na origem do evento(O click do mouse) */
 
 for (let index = 0; index < coresPaleta.length; index += 1) {
   coresPaleta[index].addEventListener('click', seleçãoDeCor);
-}
-
-const cor = document.querySelectorAll('.pixel');
-for (let index = 0; index < cor.length; index += 1) {
-  cor[index].addEventListener('click', corPixel);
 }
 
 function corPixel() {
@@ -40,12 +35,17 @@ function corPixel() {
     this.style.backgroundColor = 'blue';
   }
 }
+
+const cor = document.querySelectorAll('.pixel');
+for (let index = 0; index < cor.length; index += 1) {
+  cor[index].addEventListener('click', corPixel);
+}
 /* Resposta: A função criada corPixel esta fazendo comparacões para saber em qual cor o
 usuario clicou e apos o click do usuario ele pode pintar os pixels com a cor que foi feito a comparção. */
 
 /* Da linha 14 a linha 40 foi inspirado no codigo e na logica de Mateus Bodra.
-Alguns sites foi usado para entender melhor o funcionamento de partes do codigo. 
-Todos serão listado abaixo. Entre as funcões darei pequenas explicações do que foi feito.
+Alguns sites foi usado para entender melhor o funcionamento de partes do codigo. Todos
+serão listado abaixo. Entre as funcões darei pequenas explicações do que foi feito.
 
 https://cursos.alura.com.br/forum/topico-duvida-sobre-classlist-add-98950
 https://serfrontend.com/blog/diferenca-entre-this-target-e-currenttarget/index.html.
