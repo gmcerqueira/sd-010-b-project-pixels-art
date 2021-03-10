@@ -43,9 +43,11 @@
 }
 
 .pixel {
-  background-color: beige;
+  background-color: rgb (255, 255, 255);
   width: 40px;
   height: 40px;
   float: left;
   border: 1px solid black;
+}
+.selected {
 }
