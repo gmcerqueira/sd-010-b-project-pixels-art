@@ -44,12 +44,16 @@ function addEventColorInPixel() {
   });
 }
 
-function btnConfig() {
-  const btnclear = document.getElementById('btnClear');
+function claerPixels() {
   const pixels = document.querySelectorAll('.pixel');
-  btnclear.addEventListener('click', () => {
-    pixels.forEach( e => e.style.backgroundColor = "white")
+  pixels.forEach( e => {
+    e.style.backgroundColor = 'white';
   });
+}
+
+function btnConfig() {
+  const btnclear = document.getElementById('clear-board');
+  btnclear.addEventListener('click', claerPixels);
 }
 
 generatorPixels(5);
