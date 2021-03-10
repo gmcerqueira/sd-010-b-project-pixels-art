@@ -47,10 +47,20 @@ function createPixelsBoard() {
     }
   }
 }
-
-window.onload = function onBoard() {
+function applySelectedColor() {
+  const allPixels = document.getElementsByClassName('pixel');
+  console.log(allPixels);
+  console.log(allPixels.length);
+  for (let i = 0; i < allPixels.length; i += 1) {
+    allPixels[i].addEventListener('click', (evt) => {
+      evt.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    });
+  }
+}
+window.onload = function onLoad() {
   blackSquareSelected();
   createPixelsBoard();
+  applySelectedColor();
 };
 
 function selectColor() {
@@ -65,16 +75,6 @@ function selectColor() {
   }
 }
 
-function applySelectedColor() {
-  const allPixels = document.getElementsByClassName('pixel');
-  console.log(allPixels);
-  console.log(allPixels.length);
-  for (let i = 0; i < 25; i += 1) {
-    console.log(allPixels[i]);
-  }
-}
-
 createColorPalette();
 createClearBtn();
 selectColor();
-applySelectedColor();
