@@ -3,7 +3,7 @@
 }
 
 #color-palette {
-  margin-left: 470px;
+  margin-left: 500px;
 }
 
 #color-palette :nth-child( 1 ) {
@@ -44,10 +44,10 @@
 
 .pixel {
   background-color: white;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
-  border: 1px solid;
+  border: 1px solid black;
 }
 
 #pixel-board {
@@ -55,5 +55,5 @@
 }
 
 #table {
-  margin-left: 500px;
+  margin-left: 510px;
 }
