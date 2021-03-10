@@ -52,15 +52,23 @@ function trocaCores(cores) {
   corSelecionada.classList.remove('selected');
   novaCorSelecionada.classList.add('selected');
 }
-document.querySelector('#color-palette').addEventListener('click', trocaCores);
+const paleta = document.querySelector('#color-palette');
+paleta.addEventListener('click', trocaCores);
 
 function pintaPixel(pixel) {
   const pixelSelecionado = pixel.target;
   const corSelecionada = document.querySelector('.selected');
   pixelSelecionado.style.backgroundColor = corSelecionada.style.backgroundColor;
-
 }
 const pixels = document.getElementsByClassName('pixel');
 for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener('click', pintaPixel);
 }
+
+function apagaTudo() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+const botao = document.querySelector('#clear-board');
+botao.addEventListener('click', apagaTudo);
