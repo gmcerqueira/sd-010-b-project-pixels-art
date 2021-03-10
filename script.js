@@ -11,9 +11,19 @@ function criaPixels() {
     quadro.appendChild(novaLinha);
   }
 }
+function click(){
+
+}
 // Pega a cor selecionada para preencher o pixel
 function pegaCor() {
-  let cor = document.getElementsByClassName('color');
+  let cores = document.querySelector('.selected');
+  cores.classList.remove('selected');
+  var divs = document.getElementsByClassName('color');	
+	for(var i=0; i<divs.length; i++) {
+		divs[i].addEventListener("click", function() {
+			this.classList.add("selected");
+    });
+	}
 }
 // Inicia com a cor preta para preenchimento dos pixels
 function corInicial() {
