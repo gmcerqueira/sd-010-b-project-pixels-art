@@ -1,12 +1,12 @@
 let color = ['black', 'red', 'blue', 'green'];
-const colorPalette = document.querySelector('#color-palette');
+const trocarCor = document.querySelector('#color-palette');
 function paleta() {
   for (let index = 0; index < color.length; index += 1) {
     let colorGround = color[index];
     let paletteItem = document.createElement('div');
     paletteItem.className = 'color';
     paletteItem.style.backgroundColor = colorGround;
-    colorPalette.appendChild(paletteItem);
+    trocarCor.appendChild(paletteItem);
   }
 }
 paleta();
@@ -25,3 +25,31 @@ function corInicial() {
   padrao.add('selected');
 }
 corInicial();
+function trocar () {
+  let trocarCor = document.querySelectorAll('.color');
+    trocarCor[0].addEventListener('click', function() {
+      trocarCor[0].classList.add('selected');
+      trocarCor[1].classList.remove('selected');
+      trocarCor[2].classList.remove('selected');
+      trocarCor[3].classList.remove('selected');
+    });
+    trocarCor[1].addEventListener('click', function() {
+      trocarCor[1].classList.add('selected');
+      trocarCor[0].classList.remove('selected');
+      trocarCor[2].classList.remove('selected');
+      trocarCor[3].classList.remove('selected');
+    });
+    trocarCor[2].addEventListener('click', function() {
+      trocarCor[2].classList.add('selected');
+      trocarCor[0].classList.remove('selected');
+      trocarCor[1].classList.remove('selected');
+      trocarCor[3].classList.remove('selected');
+    });
+    trocarCor[3].addEventListener('click', function() {
+      trocarCor[3].classList.add('selected');
+      trocarCor[0].classList.remove('selected');
+      trocarCor[1].classList.remove('selected');
+      trocarCor[2].classList.remove('selected');
+    });
+}
+trocar();
