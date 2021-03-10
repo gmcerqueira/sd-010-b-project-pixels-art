@@ -1,4 +1,4 @@
-const colors = ['black', 'tomato', 'green', 'blue', 'yellow', 'red', 'orange', 'pink', 'violet', 'cyan', 'lightblue'];
+const colors = ['black', 'tomato', 'green', 'blue', 'yellow', 'red', 'orange', 'pink', 'violet'];
 let rowsAndCols = 5;
 const numberOfColors = 4;
 const pixelBoard = document.getElementById('pixel-board');
@@ -17,7 +17,7 @@ function currentColorSelected(e) {
 
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixels.length; i++) {
+  for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
   }
 }
