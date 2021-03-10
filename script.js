@@ -15,6 +15,8 @@ function createColorPaletteDisplay() {
         cel.className = 'color';
         paletteDiv.appendChild(cel);
     }
+    let selectBlackPalette = document.getElementsByClassName('color')[0];
+    selectBlackPalette.classList.add = 'selected';
 }
 
 function createBoardOfPixels() {
@@ -40,6 +42,7 @@ function randomColor() {
 }
 
 function setColor(element) {
+    element[0].style.backgroundColor = 'black';
     for (let i = 1; i < element.length; i++) {
         element[i].style.backgroundColor = randomColor();
     }
