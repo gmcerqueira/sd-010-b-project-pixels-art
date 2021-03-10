@@ -54,6 +54,7 @@ buttonPixel.addEventListener('click', function(){
 })
 
 if (input.value == ""){
+  localStorage.setItem('cor', 'white');
   const getPixel = document.getElementsByClassName('pixel');
   for (let counter = 0; counter < getPixel.length; counter += 1) {
     getPixel[counter].style.backgroundColor = (localStorage.getItem('cor'));
