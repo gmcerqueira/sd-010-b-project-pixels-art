@@ -56,7 +56,6 @@ generateButton.addEventListener('click', () => {
   if (inputValue === '') {
     alert('Board inválido!');
   } else {
-    clear();
     pixelBoard.innerText = '';
     if (inputValue >= 1 && inputValue <= 50) {
       for (let index = 1; index <= inputValue; index += 1) {
@@ -70,5 +69,6 @@ generateButton.addEventListener('click', () => {
         }
       }
     }
+    clear();
   }
 });
