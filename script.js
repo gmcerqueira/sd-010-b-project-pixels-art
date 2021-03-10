@@ -1,3 +1,4 @@
+//Requisito 2 e 3
 function adicionaPaletaCores (){
     let paletaPai = document.getElementById("color-palette");
     
@@ -18,37 +19,36 @@ let divs = document.querySelectorAll(".color")
 
 adicionaCores(["black", "red", "blue", "green"]);
 
-
-
-
-// function adicionaPaletaCores (){
-//     let paletaPai = document.getElementById("color-palette");
-
-//     let paletaFilho = document.createElement("div");
-//     paletaFilho.className = "color";
-//     paletaFilho.style.backgroundColor = "black"
+// Requisito 4
+// function adicionaQuadroPixels (div){
+//     let quadroPai = document.getElementById(div)
+    
+//     for (let i = 0; i < 5; i += 1){
+//         let quadroFilho = document.createElement("div");
+//         quadroFilho.className = "pixel divs-class";
         
 
-//     paletaPai.appendChild(paletaFilho);
-    
-//     let paletaFilho2 = document.createElement("div");
-//     paletaFilho2.className = "color";
-//     paletaFilho2.style.backgroundColor = "red"
-
-//     paletaPai.appendChild(paletaFilho2);
-
-
-//     let paletaFilho3 = document.createElement("div");
-//     paletaFilho3.className = "color";
-//     paletaFilho3.style.backgroundColor = "blue"
-
-//     paletaPai.appendChild(paletaFilho3);
-
-
-//     let paletaFilho4 = document.createElement("div");
-//     paletaFilho4.className = "color";
-//     paletaFilho4.style.backgroundColor = "green"
-
-//     paletaPai.appendChild(paletaFilho4);
+//         quadroPai.appendChild(quadroFilho);
+//     }
 // }
-// adicionaPaletaCores();
+// adicionaQuadroPixels("div-1");
+// adicionaQuadroPixels("div-2");
+// adicionaQuadroPixels("div-3");
+// adicionaQuadroPixels("div-4");
+// adicionaQuadroPixels("div-5");
+
+function adicionaQuadroPixels (tr){
+    let trPai = document.getElementById(tr)
+
+    for (let i = 0; i < 5; i += 1){
+        let tdFilho = document.createElement("td");
+        tdFilho.className = "pixel";
+
+        trPai.appendChild(tdFilho);
+    }
+}
+adicionaQuadroPixels("linha-1")
+adicionaQuadroPixels("linha-2")
+adicionaQuadroPixels("linha-3")
+adicionaQuadroPixels("linha-4")
+adicionaQuadroPixels("linha-5")
