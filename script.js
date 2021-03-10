@@ -67,8 +67,8 @@ generateButton.addEventListener('click', () => {
           const createTd = document.createElement('td');
           createTd.className = 'pixel';
           createTr.appendChild(createTd);
+        }
       }
     }
-  }
   }
 });
