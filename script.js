@@ -1,19 +1,32 @@
 document.getElementById('title').innerText = 'Paleta de Cores';
-let paletteDiv = document.getElementById('color-palette');
+
+const paletteDiv = document.getElementById('color-palette');
+const colorsPalette = document.getElementsByClassName('color');
+const colorsPaletteLenght = colorsPalette.length;
+const boardOfPixels = document.getElementById('pixel-board');
 
 createColorPaletteDisplay();
-
-let colorsPalette = document.getElementsByClassName('color');
-let colorsPaletteLenght = colorsPalette.length;
-
 setColor(colorsPalette);
-
+createBoardOfPixels();
 
 function createColorPaletteDisplay() {
-    for (let i = 0; i < 4; i += 1) {
+    for (let i = 0; i < 4; i++) {
         let cel = document.createElement('div');
         cel.className = 'color';
         paletteDiv.appendChild(cel);
+    }
+}
+
+function createBoardOfPixels() {
+    for (let i = 0; i < 5; i++) {
+        let line = document.createElement('div');
+        line.className = 'line';
+        boardOfPixels.appendChild(line);
+        for (let j = 0; j < 5; j++) {
+            let pixel = document.createElement('div');
+            pixel.className = 'pixel';
+            line.appendChild(pixel);
+        }
     }
 }
 
@@ -28,7 +41,7 @@ function randomColor() {
 
 function setColor(element) {
     element[0].style.backgroundColor = 'black';
-    for (let i = 1; i < element.length; i += 1) {
+    for (let i = 1; i < element.length; i++) {
         element[i].style.backgroundColor = randomColor();
     }
 }
