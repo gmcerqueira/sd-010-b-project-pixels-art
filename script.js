@@ -55,6 +55,27 @@ function paintingPixel(event) {
   clickButton.addEventListener('click', clearBoard);
 
 
-  
+  function createTabPixels() {
+  const valueFromInput = document.getElementById('board-size');
+  if (valueFromInput.value === ''){
+    alert('Board inválido!');
+    return null;
+  }
+  const tabela = document.getElementById('pixel-board');
+  tabela.innerHTML = '';
+  for (let tr = 0; tr < valueFromInput.value; tr+= 1) {
+    const elementByTable = document.createElement('tr');
+    tabela.appendChild(elementByTable);
+    for (let index = 0; index < valueFromInput.value; index += 1) {
+      const td = document.createElement('td');
+      td.classList.add('pixel');
+      elementByTable.appendChild(td);
+    }
+  }
+  boardListener()
+}
+
+const btGenBoard = document.getElementById('generate-board');
+btGenBoard.addEventListener('click', createTabPixels);
 
   
