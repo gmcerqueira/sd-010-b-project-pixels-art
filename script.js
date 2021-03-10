@@ -3,8 +3,7 @@ const colorPalette = document.querySelector('#color-palette');
 const colorPaletteItems = document.getElementsByClassName('color');
 const tablePixels = document.querySelector('#pixel-board');
 const tablePixelsItems = document.getElementsByClassName('pixel');
-
-// let selectedColor;
+const clearBotton = document.querySelector('#clear-board');
 
 // --------------------------------------------------------------------------------------
 
@@ -78,9 +77,7 @@ for (let index1 = 0; index1 < 5; index1 += 1) {
 function selectBlackColor() {
   const palete1 = document.querySelector('#palete0');
   palete1.className = 'color selected';
-  // selectedColor = palete1.style.backgroundColor;
 }
-// /* Teste ocasional: */ selectBlackColor ()
 
 // --------------------------------------------------------------------------------------
 
@@ -90,7 +87,6 @@ function changeSelectedColor(sourcePalette) {
   currentlySelectedColor.className = 'color';
   const newColorSelected = sourcePalette.target;
   newColorSelected.className = 'color selected';
-  // selectedColor = newColorSelected.style.backgroundColor;
 }
 
 // --------------------------------------------------------------------------------------
@@ -100,6 +96,14 @@ function colorsPixel(selectedPixel) {
   const clickedPixel = selectedPixel.target;
   const currentlySelectedColor = document.querySelector('.selected');
   clickedPixel.style.backgroundColor = currentlySelectedColor.style.backgroundColor;
+}
+
+// --------------------------------------------------------------------------------------
+
+function clearBoard() {
+  for (let index = 0; index < tablePixelsItems.length; index += 1) {
+    tablePixelsItems[index].style.backgroundColor = 'white';
+  }
 }
 
 // --------------------------------------------------------------------------------------
@@ -115,6 +119,9 @@ for (let index = 0; index < colorPaletteItems.length; index += 1) {
 for (let index = 0; index < tablePixelsItems.length; index += 1) {
   tablePixelsItems[index].addEventListener('click', colorsPixel);
 }
+
+// Escuta click no botão limpar
+clearBotton.addEventListener('click', clearBoard);
 
 // --------------------------------------------------------------------------------------
 
