@@ -20,3 +20,13 @@
   height: 210px;
   margin-top: 10px;
 }
+
+#color-palette {
+  display: flex;
+  flex-wrap: wrap;
+  width: 168px;
+}
+
+#clear-board {
+  display: inline-block;
+}
