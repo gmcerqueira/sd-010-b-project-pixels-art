@@ -46,7 +46,7 @@ function pickColor() {
     colors[pc].addEventListener('click', function (){
       const selectedColor = document.querySelector('.selected');
       selectedColor.className = selectedColor.classList.remove('selected');
-      colors[pc].className = colors[pc].classList.add('selected');
+      colors[pc].className = colors[pc].classList.add('color, selected');
     } )
   }
 }
