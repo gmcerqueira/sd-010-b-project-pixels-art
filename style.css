@@ -13,16 +13,16 @@
   border: 1px solid black;
 }
 
-#black {
+#blackBox {
   background-color: black;
 }
-#blue {
+#blueBox {
   background-color: blue;
 }
-#red {
+#redBox {
   background-color: red;
 }
-#green {
+#greenBox {
   background-color: green;
 }
 
