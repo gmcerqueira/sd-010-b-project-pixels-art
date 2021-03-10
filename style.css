@@ -1,10 +1,73 @@
 .color {
-  
-  margin: 1%;
-  padding : 5%;
-} 
+  border: 1px solid black;
+  color: blue;
+  margin: 2px;
+  padding : 20px;
+}
 
 #black {
   background-color: black;
 }
 
+#blue {
+  background-color: blue;
+}
+
+#red {
+  background-color: red;
+}
+
+#pink {
+  background-color: pink;
+}
+
+#green {
+  background-color: green;
+}
+
+#purple {
+  background-color: purple;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#yellow{
+  background-color: yellow;
+}
+
+#grey {
+  background-color: grey;
+}
+
+
+
+
+.flexy {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+
+.flexy-s {
+  width: 24%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+}
+.como-usar {
+  border: 1px solid black;
+  width: 74%;
+}
+.caixa1, .caixa2 {
+  border: 2px solid black;
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
