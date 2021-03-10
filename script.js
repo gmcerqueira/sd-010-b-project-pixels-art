@@ -13,7 +13,7 @@
 
         let criaColuna = document.createElement("div");
         criaColuna.className = "pixel";
-        pixelBoard.appendChild(criaColuna);
+        criaLinha.appendChild(criaColuna);
 
       }
 
