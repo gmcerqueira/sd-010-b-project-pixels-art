@@ -28,3 +28,51 @@ function criaPadrao() {
   criaPadrao.add('selected');
 }
 criaPadrao();
+
+// document.querySelectorAll('.color')[0].classList.length
+function removePadrao() {
+  let remover = document.querySelectorAll('.color')[0];
+  for(let index = 0; index < remover.classList.length; index ++) {
+    console.log(remover.classList[index]);
+    remover.classList.remove('selected');
+  }
+
+  remover = document.querySelectorAll('.color')[1];
+  for(let index = 0; index < remover.classList.length; index ++) {
+    console.log(remover.classList[index]);
+    remover.classList.remove('selected');
+  }
+
+  remover = document.querySelectorAll('.color')[2];
+  for(let index = 0; index < remover.classList.length; index ++) {
+    remover.classList.remove('selected');
+  }
+
+  remover = document.querySelectorAll('.color')[3];
+  for(let index = 0; index < remover.classList.length; index ++) {
+    remover.classList.remove('selected');
+  }
+}
+
+
+function trocar () {
+  let cor = document.querySelectorAll('.color');
+    cor[0].addEventListener('click', function() {
+      removePadrao();
+      cor[0].classList.add('selected');
+    });
+    cor[1].addEventListener('click', function() {
+      removePadrao();
+      cor[1].classList.add('selected');
+    });
+    cor[2].addEventListener('click', function() {
+      removePadrao();
+      cor[2].classList.add('selected');
+      
+    });
+    cor[3].addEventListener('click', function() {
+      removePadrao();
+      cor[3].classList.add('selected');
+    });
+}
+trocar();
