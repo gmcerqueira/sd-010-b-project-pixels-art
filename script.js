@@ -63,17 +63,19 @@ function clearBoard() {
 }
 function paintPixel(pixel) {
   const selected = document.getElementsByClassName('selected');
-  pixel.style.backgroundColor = selected[0].style.backgroundColor;
+  const modified = pixel;
+  modified.style.backgroundColor = selected[0].style.backgroundColor;
 }
 function selectColor(selected) {
   document.querySelectorAll('.selected')[0].className = 'color';
-  selected.className = 'color selected';
+  const modified = selected;
+  modified.className = 'color selected';
 }
 function recreateBoard(size) {
-  size = resizeMinMax(size);
+  const newSize = resizeMinMax(size)
   const parent = document.getElementById('pixel-board');
   removeAllChildNodes(parent);
-  createGrid(Number(size));
+  createGrid(Number(newSize));
 }
 window.onload = function () {
   createPalette();
