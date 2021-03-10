@@ -9,7 +9,7 @@ const div = document.querySelector('#pixel-board');
 for (let index = 0; index < 25; index += 1) {
   const newdiv = document.createElement('div');
   newdiv.className = 'pixel';
-  newdiv.style.backgroundColor ='rgb(255,255,255)'
+  newdiv.style.backgroundColor = 'rgb(255,255,255)';
   div.appendChild(newdiv);
 }
 document.getElementsByClassName('color')[0].className += ' selected';
@@ -49,10 +49,10 @@ box[3].addEventListener('click', () => {
 });
 
 // 9
-pixels = document.getElementsByClassName('pixel');
-button = document.querySelector('#clear-board');
-button.addEventListener('click',function() {
-  for (let index = 0; index < pixels.length; index += 1){
-    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';}
+const pixels = document.getElementsByClassName('pixel');
+const button = document.querySelector('#clear-board');
+button.addEventListener('click', () => {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
 });
-
