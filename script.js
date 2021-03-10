@@ -40,6 +40,7 @@ window.onload = function(){
 
     //1. Aguardar o click na paleta com o preto selecionado
     buttonBlack.addEventListener('click',blackPaint());
+    buttonBlack.addEventListener('click',blackPaint);
     buttonRed.addEventListener('click',redPaint);
     buttonBlue.addEventListener('click',bluePaint);
     buttonGreen.addEventListener('click',greenPaint);
@@ -47,25 +48,63 @@ window.onload = function(){
 }
 
 function blackPaint(){
-    //estou escutando
-    console.log('Black');
-    let captureBlack = 'black';
-}
+    console.log('black');    
+    let buttonBlack =document.querySelector('#preto');
+    let buttonRed =document.querySelector('#vermelho');
+    let buttonBlue =document.querySelector('#azul');
+    let buttonGreen =document.querySelector('#verde');
+
+    buttonBlack.classList.add = 'selected';
+    buttonBlue.classList.remove = 'selected';
+    buttonGreen.classList.remove = 'selected';
+    buttonRed.classList.remove = 'selected';
+
+
+    }
 function redPaint(){
     //estou escutando
     console.log('red');
-    let captureRed = 'red';
+
+    let buttonBlack =document.querySelector('#preto');
+    let buttonRed =document.querySelector('#vermelho');
+    let buttonBlue =document.querySelector('#azul');
+    let buttonGreen =document.querySelector('#verde');
+
+    buttonBlack.classList.remove = 'selected';
+    buttonBlue.classList.remove = 'selected';
+    buttonGreen.classList.remove = 'selected';
+    buttonRed.classList.add = 'selected';
+    
 }
 function bluePaint(){
     //estou escutando
     console.log('blue');
-    let captureBlue = 'blue';
+    let buttonBlack =document.querySelector('#preto');
+    let buttonRed =document.querySelector('#vermelho');
+    let buttonBlue =document.querySelector('#azul');
+    let buttonGreen =document.querySelector('#verde');
+
+    buttonBlack.classList.remove = 'selected';
+    buttonBlue.classList.add = 'selected';
+    buttonGreen.classList.remove = 'selected';
+    buttonRed.classList.remove = 'selected';
+    
 }
 function greenPaint(){
     //estou escutando
-    console.log('green')
-    let captureGreen = green
+    console.log('green');
+    let buttonBlack =document.querySelector('#preto');
+    let buttonRed =document.querySelector('#vermelho');
+    let buttonBlue =document.querySelector('#azul');
+    let buttonGreen =document.querySelector('#verde');
+
+    buttonBlack.classList.remove = 'selected';
+    buttonBlue.classList.remove = 'selected';
+    buttonGreen.classList.add = 'selected';
+    buttonRed.classList.remove = 'selected';
+    
 }
+
 
 
 
