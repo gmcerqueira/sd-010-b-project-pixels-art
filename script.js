@@ -52,11 +52,11 @@ function clear() {
     }
 }
 
-function paintColors(pixels) {
-    if(pixels.target.classList.contains("pixel")) {
+function paintColors(notPainted) {
+    if(notPainted.target.classList.contains("pixel")) {
         let paint = document.querySelector(".selected").style.backgroundColor;
-        pixels.target.style.backgroundColor = paint;
-        pixels.classList.add("painted");
+        notPainted.target.style.backgroundColor = paint;
+        notPainted.classList.add("painted");
     }
 }
 
@@ -65,5 +65,5 @@ createBoard(5);
 document.getElementById("color-palette").addEventListener("click", selectColor);
 document.getElementById("clear-board").addEventListener("click", clear);
 document.getElementById("generate-board").addEventListener("click", createPixels);
-document.querySelectorAll(".pixel").addEventListener("click", paintColors(pixels));
+document.querySelectorAll(".pixel").addEventListener("click", paintColors);
 document.querySelector("#clear-board").addEventListener("click", clear);
