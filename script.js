@@ -1,7 +1,6 @@
 const boxes = 5;
 const table = document.getElementById('pixel-board');
 const getIt = document.getElementsByClassName('pixel');
-const createBox = document.createElement('td');
 const blackP = document.getElementById('one');
 const redP = document.getElementById('two');
 const greenP = document.getElementById('three');
@@ -12,6 +11,7 @@ function pixelBoard() {
     const createRow = document.createElement('tr');
     table.appendChild(createRow);
     for (let i2 = 0; i2 < boxes; i2 += 1) {
+      const createBox = document.createElement('td');
       table.appendChild(createBox).className = 'pixel';
       getIt[getIt.length - 1].id = `cell-${i + 1}-${i2 + 1}`;
       getIt[getIt.length - 1].style.background = '#ffffff';

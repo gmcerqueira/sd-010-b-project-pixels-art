@@ -27,8 +27,8 @@ background-color: yellow;
 
 .pixel {
     border: solid 1px black;
-    height: 41px;
-    width: 41px;
+    height: 40px;
+    width: 40px;
     display: inline-block;
     background-color: white;
 }
