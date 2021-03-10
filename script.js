@@ -14,13 +14,13 @@ for (let divs = 0; divs < 4; divs += 1) {
 const blackSelected = document.querySelector('.color');
 blackSelected.classList.add('selected');
 
+
+// Requesito 4
+
 const boardSquares = [];
 for (let i = 0; i < 5; i += 1) {
   boardSquares[i] = i;
 }
-
-// Requesito 4
-
 const bigSquare = document.getElementById('pixel-board');
 let createLines = document.createElement('tr');
 let createCol = document.createElement('td');
@@ -37,6 +37,25 @@ for (let j = 0; j < boardSquares.length; j += 1) {
     lineSquare[j].appendChild(createCol);
   }
 }
+
+// Requesito 7
+const color = document.querySelectorAll('.color')
+
+function changeColor() {
+  const selectedColor = document.querySelector('.selected')
+  for (sc = 0; sc < color.length; sc += 1) {
+    selectedColor.className = selectedColor.className.remove('selected');
+    color[sc].className.add('selected')
+  }
+}
+
+
+function pickColor() {
+  for (let pc = 0; color.length; pc += 1) {
+    color[pc].addEventListener('click', changeColor)
+  }
+} 
+
 
 // Requesito 9
 
