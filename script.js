@@ -39,19 +39,19 @@ for (let j = 0; j < boardSquares.length; j += 1) {
 }
 
 // Requesito 7
-// const colors = document.querySelectorAll('.color')
+const colors = document.querySelectorAll('.color')
 
-// function pickColor() {
-//   for (let pc = 0; index < colors.length; pc += 1) {
-//     colors[pc].addEventListener('click', function (){
-//       const selectedColor = document.querySelector('.selected');
-//       selectedColor.className = selectedColor.classList.remove('selected');
-//       colors[pc].className = colors[pc].classList.add('selected');
-//     } )
-//   }
-// }
+function pickColor() {
+  for (let pc = 0; index < colors.length; pc += 1) {
+    colors[pc].addEventListener('click', function (){
+      const selectedColor = document.querySelector('.selected');
+      selectedColor.className = selectedColor.classList.remove('selected');
+      colors[pc].className = colors[pc].classList.add('selected');
+    } )
+  }
+}
 
-// pickColor();
+
 
 // Requesito 9
 
