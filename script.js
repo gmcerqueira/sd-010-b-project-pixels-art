@@ -24,15 +24,21 @@ box3.style.backgroundColor = getRancomColor();
 
 // criando box central
 const divPixelBoard = document.getElementById('pixel-board');
+let divPixelLine;
+let divPixelCol;
 
 for (let i = 1; i <= 5; i += 1) {
-  const divPixelLine = document.createElement('div');
+  divPixelLine = document.createElement('div');
   divPixelLine.className = 'tr';
   divPixelBoard.appendChild(divPixelLine);
 
   for (let i2 = 1; i2 <= 5; i2 += 1) {
-    const divPixelCol = document.createElement('div');
+    divPixelCol = document.createElement('div');
     divPixelCol.className = 'pixel td';
     divPixelLine.appendChild(divPixelCol);
   }
 }
+
+// criando evento para selecionar as cores
+const getColor = document.getElementById('color-palette').children[0];
+
