@@ -17,22 +17,33 @@ function generatorPixels(qttPixel) {
 }
 
 function clearSelected() {
-  let colorDiv = document.querySelectorAll('.color');
+  const colorDiv = document.querySelectorAll('.color');
   colorDiv.forEach((e) => {
-    if(e.className === 'color selected') e.className = "color";
-  })
+    if (e.className === 'color selected') e.className = 'color';
+  });
 }
 
 function addEventColorSelected() {
-  let colorDivEvent = document.querySelectorAll('.color');
+  const colorDivEvent = document.querySelectorAll('.color');
   colorDivEvent.forEach((element) => {
-    element.addEventListener('click', (event) =>{
-      clearSelected()
-      event.target.className += " selected";
-      console.log(event.target.className);
-    })
-  })
+    element.addEventListener('click', (event) => {
+      clearSelected();
+      event.target.className += ' selected';
+    });
+  });
 }
 
-addEventColorSelected();
+function addEventColorInPixel() {
+  const divPixel = document.querySelectorAll('.pixel');
+  divPixel.forEach((element) => {
+    element.addEventListener('click', (event) => {
+      const divColor = document.querySelector('.selected');
+      const color = getComputedStyle(divColor).backgroundColor;
+      event.target.style.backgroundColor = color;
+    });
+  });
+}
+
 generatorPixels(5);
+addEventColorSelected();
+addEventColorInPixel();
