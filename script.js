@@ -3,15 +3,6 @@ const colorsPalette = document.getElementsByClassName('color');
 const colorsPaletteLenght = colorsPalette.length;
 const boardOfPixels = document.getElementById('pixel-board');
 
-createColorPaletteDisplay();
-setColor(colorsPalette);
-createBoardOfPixels();
-
-window.onload = function() {
-    firstPaletteSelected();
-    document.addEventListener('click', selectColor);
-}
-
 function firstPaletteSelected() {
     const firstPalette = document.getElementsByClassName('color')[0];
     firstPalette.classList.add('selected');
@@ -65,5 +56,11 @@ function setColor(element) {
     }
 }
 
+createColorPaletteDisplay();
+setColor(colorsPalette);
+createBoardOfPixels();
 
-
+window.onload = function() {
+    firstPaletteSelected();
+    document.addEventListener('click', selectColor);
+}
