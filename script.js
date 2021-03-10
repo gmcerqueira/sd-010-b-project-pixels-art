@@ -11,7 +11,7 @@ let selectedColor = 'black';
 let boardSize = "";
 let boardSizeInt = 5;
 let pixelBoard = window.document.getElementById('pixel-board');
-
+createAllPixels(boardSizeInt);
 
 
 let boardSizeLength = window.document.getElementById('board-size');
