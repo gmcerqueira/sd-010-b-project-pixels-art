@@ -53,11 +53,6 @@ function clear() {
 }
 
 function paintColors(notPainted) {
-    if(notPainted.target.classList.contains("pixel")) {
-        let paint = document.querySelector(".selected").style.backgroundColor;
-        notPainted.target.style.backgroundColor = paint;
-        notPainted.classList.add("painted");
-    }
 }
 
 window.onload = randomColor;
@@ -65,5 +60,3 @@ createBoard(5);
 document.getElementById("color-palette").addEventListener("click", selectColor);
 document.getElementById("clear-board").addEventListener("click", clear);
 document.getElementById("generate-board").addEventListener("click", createPixels);
-document.getElementsByClassName("pixel").addEventListener("click", paintColors);
-document.getElementById("clear-board").addEventListener("click", clear);
