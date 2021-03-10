@@ -8,6 +8,8 @@ for (let i = 0; i < 4; i += 1) {
 
 // adicionar cor as divs color
 const cores = document.getElementsByClassName('color');
+ // pesquisa realizada no site https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList sobre o classList
+ cores[0].classList.add('.selected') 
 cores[0].style.background = 'black';
 cores[1].style.background = 'red';
 cores[2].style.background = 'green';
@@ -32,5 +34,4 @@ for (let i = 0; i < tableCreateCells.length; i += 1) {
  function change(){
      changecolor.style.background = 'black'
  }
- // pesquisa realizada no site https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList sobre o classList
- cores[0].classList.add('.selected') 
+
