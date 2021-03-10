@@ -21,7 +21,7 @@ function SelectColor() {
 
   for (let index = 0; index < Colors.length; index += 1) {
     Colors[index].addEventListener('click', function () {
-      Colors[index].classList.add = 'color selected';
+      Colors[index].classList.add = 'selected';
       firstColorSelected.className = 'color';
     });
   }
