@@ -1,5 +1,6 @@
 body {
   margin-left: 50px;
+  background-color: rgb(234, 226, 183);
 }
 
 #color-palette {
@@ -17,5 +18,21 @@ body {
   height: 50px;
   display: flex;
   border: 1px solid rgb(0, 0, 0);
-  /* background-color: aqua; */
+}
+
+#pixel-board {
+  margin: 50px;
+}
+
+.pixel {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 0px;
+  border: 1px solid;
+}
+
+table {
+  border-collapse: collapse;
 }
