@@ -56,17 +56,19 @@ function createPixel() {
 }
 createPixel()
 
-function allWhite() {
-  let get
-}
+// function allWhite() {
+//   let get
+// }
 
 function createButton() {
 let getButton = document.querySelector('#clear-board')
 getButton.innerHTML = "Reset"
 getButton.addEventListener('click', function(){
-  let getPixel = document.querySelector('.pixel')
-    getPixel.style.backgroundColor='white'
-})
+  let getPixel = document.querySelectorAll('#pixel-board>div')
+  for(let index =0 ; index < getPixel.length; index += 1){ 
+    getPixel[index].style.backgroundColor='white'
+    }
+  })
 }
 createButton()
 
