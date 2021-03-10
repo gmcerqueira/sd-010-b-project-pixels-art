@@ -22,6 +22,8 @@ function createBoard(number) {
     }
 }
 
+// Para realizar essas duas primeiras funções, dei uma conferida no pull request do Lucas Henrique da Silva Brito, da turma 9. Valeu, Lucas!
+
 function randomColor() {
     let color = document.querySelectorAll(".color");
     for(let index = 0; index < color.length; index += 1) {
