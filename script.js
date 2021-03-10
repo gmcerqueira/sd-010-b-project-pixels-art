@@ -9,14 +9,21 @@ createColorPaletteDisplay();
 setColor(colorsPalette);
 createBoardOfPixels();
 
+window.onload = function() {
+    firstPaletteSelected();
+}
+
+function firstPaletteSelected() {
+    const firstPalette = document.getElementsByClassName('color')[0];
+    firstPalette.classList.add('selected');
+}
+
 function createColorPaletteDisplay() {
     for (let i = 0; i < 4; i++) {
         let cel = document.createElement('div');
         cel.className = 'color';
         paletteDiv.appendChild(cel);
     }
-    let selectBlackPalette = document.getElementsByClassName('color')[0];
-    selectBlackPalette.classList.add = 'selected';
 }
 
 function createBoardOfPixels() {
