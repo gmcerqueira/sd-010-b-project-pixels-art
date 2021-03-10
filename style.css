@@ -18,11 +18,11 @@ width: auto;
 
 
 #pixel-board{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin-top: 20px;
   grid-auto-rows: 50px;
-  align-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 210px;
 
 }
 
