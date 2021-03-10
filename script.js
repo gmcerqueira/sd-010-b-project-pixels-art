@@ -12,12 +12,6 @@ function createDivs() {
 }
 createDivs();
 
-document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
-document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
-document.getElementsByClassName('color')[2].style.backgroundColor = 'yellow';
-document.getElementsByClassName('color')[3].style.backgroundColor = 'green';
-document.getElementsByClassName('color')[0].className += ' selected';
-
 function createBox() {
   for (let i = 0; i < 25; i += 1) {
     const createDiv = document.createElement('div');
@@ -28,23 +22,28 @@ function createBox() {
 }
 createBox();
 
-function getPallete(event) {
-  const palette = event.target;
-  if (!palette.id) {
-    const pixelColor = document.querySelectorAll('.color');
-    pixelColor.forEach((element) => element.classList.remove('selected'));
-    palette.classList.add('selected');
-  }
-  sessionStorage.color = palette.style.backgroundColor;
+function getPallete() {
+  const palette = document.querySelector('#color-palette');
+  palette.addEventListener('click', (event) => {
+    const item = event;
+    document.querySelector('.selected').className = 'color';
+    item.target.className = 'color selected';
+  });
 }
+getPallete();
 
-function paintBoard(event) {
-  const palette = event.target;
-  if (!palette.id) {
-    const paintPixel = sessionStorage.color;
-    palette.style.backgroundColor = paintPixel;
-  }
+function paint() {
+  const color = document.querySelector('#pixel-board');
+  color.addEventListener('click', (event) => {
+    const item = event;
+    const selectColor = document.querySelector('.selected').style.backgroundColor;
+    item.target.style.backgroundColor = selectColor;
+  });
 }
+paint();
 
-document.getElementById('color-palette').addEventListener('click', getPallete);
-document.getElementById('pixel-board').addEventListener('click', paintBoard);
+document.getElementsByClassName('color')[0].className += ' selected';
+document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
+document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
+document.getElementsByClassName('color')[2].style.backgroundColor = 'yellow';
+document.getElementsByClassName('color')[3].style.backgroundColor = 'green';
