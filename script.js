@@ -22,7 +22,11 @@ const createGenElement = (
 const palletes = Array.from(document.querySelectorAll('.color'));
 const pixelBoard = document.querySelector('#pixel-board');
 const clearBtn = document.querySelector('#clear-board');
+const boardSize = document.querySelector('#board-size');
+const generateBoardBtn = document.querySelector('#generate-board');
+
 // Setting pallete colors
+
 const setPalleteColors = () => {
   let r = Math.ceil(Math.random() * 84);
   let g = Math.ceil(Math.random() * 84);
@@ -42,6 +46,7 @@ const setPalleteColors = () => {
 // Set Pixel Grid by x Amount
 
 const setPixelGrid = (size) => {
+  pixelBoard.innerHTML = '';
   for (let row = 0; row < size; row += 1) {
     const tr = document.createElement('tr');
 
@@ -58,6 +63,7 @@ const setPixelGrid = (size) => {
     }
 
     pixelBoard.appendChild(tr);
+    paintPixels();
   }
 };
 
@@ -84,12 +90,29 @@ function paintPixels() {
 }
 
 // limpar
+
+function setClearAllBtn() {
+  clearBtn.addEventListener('click', () => clearAllPixels());
+}
+
 function clearAllPixels() {
-  clearBtn.addEventListener('click', () => {
-    const pixels = Array.from(document.querySelectorAll('.pixel'));
-    pixels.forEach((pixel) => {
-      pixel.style.backgroundColor = 'white';
-    });
+  const pixels = Array.from(document.querySelectorAll('.pixel'));
+  pixels.forEach((pixel) => {
+    pixel.style.backgroundColor = 'white';
+  });
+}
+
+// board size
+
+function setGenerateBoardBtn() {
+  generateBoardBtn.addEventListener('click', () => {
+    const size = boardSize.value;
+    if (!size) {
+      alert('Board inválido!');
+      return;
+    }
+    setPixelGrid(size);
+    clearAllPixels();
   });
 }
 
@@ -98,5 +121,6 @@ function start() {
   setPixelGrid(5);
   selectColor();
   paintPixels();
-  clearAllPixels();
+  setClearAllBtn();
+  setGenerateBoardBtn();
 }

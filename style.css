@@ -24,12 +24,31 @@ body {
   border: 1px solid black;
 }
 
+.input-container {
+  margin: 40px auto 0;
+}
+
+.input-container div , button , input {
+  display: inline-block;
+}
+
 button {
-  display: block;
-  margin: 20px auto 0;
   padding: 5px 10px;
   cursor: pointer;
+  margin-right: 20px;
 }
+
+#board-size {
+  width: 50px;
+  height: 20px;
+  font-size: 1em;
+  margin-left: 60px;
+}
+
+#generate-board {
+  font-size: 0.8;
+}
+
 
 #pixel-board {
   padding-top: 40px;
