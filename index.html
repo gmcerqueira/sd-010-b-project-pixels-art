@@ -1,59 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixels Art</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-    <h1 id="title">Paleta de Cores</h1>
-</br>
-    <table id="color-palette">
-        <tr>
-            <td class="color" id="black"></td>
-            <td class="color" id="green"></td>
-            <td class="color" id="blue"></td>
-            <td class="color" id="yellow"></td>
-        </tr>
-    </table>
-</br>
-    <table id="pixel-board">
-        <tr>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-        </tr>
-        <tr>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-        </tr>
-        <tr>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-        </tr>
-        <tr>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-        </tr>
-        <tr>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-        </tr>
-    </table>
-    <script> src="script.js"</script>
+    <header>
+        <h1 id="title">Paleta de Cores</h1>
+    </header>
+
+    <section id="color-palette">
+        <div class="color selected black"></div>
+        <div class="color blue"></div>
+        <div class="color red"></div>
+        <div class="color yellow"></div>
+    </section>
+
+    <input id="board-size" min="1" type="number">
+    <button id="generate-board">Generate! VQV!</button>
+
+    <button id="clear-board">Clear</button>
+
+    <section id="pixel-board" class="board"></section>
+
+    <script src="script.js"></script>
+
 </body>
+</html>
