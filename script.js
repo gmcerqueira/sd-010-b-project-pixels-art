@@ -50,3 +50,16 @@ function selectedPixel() {
 }
 
 selectedPixel();
+
+function clearPixels() {
+  const clearButton = document.getElementById('clear-board');
+  const getPixel = document.querySelectorAll('.pixel');
+
+  clearButton.addEventListener('click', () => {
+    for (let i = 0; i < getPixel.length; i += 1) {
+      getPixel[i].style.backgroundColor = 'white';
+    }
+  });
+}
+
+clearPixels();
