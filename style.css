@@ -24,3 +24,10 @@ background-color: green;
 #four {
 background-color: yellow;    
 }
+
+.pixel {
+    border: solid 1px black;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
