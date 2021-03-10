@@ -13,6 +13,7 @@ function createPixelBoard() {
       pixel.style.border = '1px solid black';
       pixel.style.width = '40px';
       pixel.style.height = '40px';
+      pixel.style.backgroundColor = 'white';
       pixelLine.appendChild(pixel);
     }
   }
