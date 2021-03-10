@@ -5,6 +5,11 @@ body {
   width: 210px;
 }
 
+#pixel-board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .color, .pixel {
   border: 1px solid black;
     width: 40px;

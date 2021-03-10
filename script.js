@@ -39,17 +39,32 @@ createPixels();
 
 // // Events:
 
-// function colorPicker () {
-//   const ref = document.querySelectorAll('.color');
+function colorPicker (e) {
+  const ref = document.querySelectorAll('.color');
+  const seletedItem = document.getElementsByClassName('selected');
+  const pixelBoard = document.getElementById('pixel-board').children;
+  const element = e;
+  for (let i = 0; i < ref.length; i += 1) {
+    ref[i].addEventListener('click', (e) => {
+      if (element.selected !== seletedItem[i]) {
+        e.target.className.add('selected');
+      } else {
+        e.target.className.remove('selected');
+      }
+    });
+  }
+  // for (let i = 0; i < ref.length; i += 1) {
+  //   pixelBoard[i].addEventListener('click', (e) => {
+  //     e.target.style.backgroundColor = selceted.style.backgroundColor;
+  //   });
+  // }
+}
+colorPicker();
 
-//   for (let i = 0; i < array.length; i++) {
-//     const element = array[i];
-//   }
-// }
-// for (let i = 0; i < referencias.length; i++) {
+// for (let i = 0; i < ref.length; i++) {
 //   referencias[i].addEventListener('click', (e) => {
 //       selecionada.style.backgroundColor = e.target.style.backgroundColor
-//   })
+//   });
 // }
 
 // for (let i = 0; i < pixels_em_branco.length; i++) {
@@ -57,18 +72,11 @@ createPixels();
 //       e.target.style.backgroundColor = selecionada.style.backgroundColor
 //   })
 // }
-
-// function clickColorPicker() {
-//   let getSelected = colorPalette[i].style.backgroundColor;
-//   const colorPalette = document.querySelector('#color-palette').children;
-//   const pixelBoard = document.getElementById('pixel-board')
-
 //   for (let i = 0; i < colorPalette.length; i += 1) {
 //     colorPalette[i].addEventListener('click', (event) => {
 
 //     });
 //   }
-// }
 
 // window.onload = () => {
 //   const defaultColorPixels = document.querySelectorAll('.pixel');
