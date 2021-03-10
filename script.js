@@ -1,4 +1,4 @@
-document.getElementById("paleta1").className = "color selected";
+selectColor(1);
 
 const pixelBoard = document.getElementById("pixel-board");
 const paleta1 = document.getElementById("paleta1");
