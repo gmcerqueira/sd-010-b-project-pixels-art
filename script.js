@@ -25,13 +25,15 @@ function generateBoard(width, height) {
 }
 
 /*
-   Essa função recebe um elemento da classe color. Caso haja cor selecionada, retira a classe selecionada dela. Por fim, acrescenta a classe color ao elemento recebido por parâmetro.
+   Essa função recebe o evento disparado por um elemento da classe color e obtem esse elemento. Caso haja cor selecionada, retira a classe selected dela. Por fim, acrescenta a classe selected ao elemento que disparou o evento.
   */
-function selectedColor(nextElementColor) {
+function selectedColor(event) {
+  const nextElementColor = event.target; // armazena o elemento color que disparou o evento
+
   // verifica se há elemento da classe color selecionado e armazena em currentElementColor
   const currentElementColor = document.querySelector('.selected');
 
-  if (currentElementColor !== null) { // se há elemento selecionado
+  if (currentElementColor) { // se há elemento selecionado currentElementColor !== null
     currentElementColor.classList.remove('selected'); // remove a classe 'selected' do elemento color atual
   }
 
@@ -46,6 +48,11 @@ window.onload = function init() { // define uma função init para carregar valo
   // armazena o primeiro elemento da classe color (black) e armazena em intialColor
   const initialColor = document.querySelector('.color');
 
-  selectedColor(initialColor); // define a cor black como inicial
+  initialColor.classList.add('selected'); // define a cor black como inicial
   generateBoard(width, height); // gera o board de dimensão width X height
+
+  const colorElementsList = document.querySelectorAll('.color');
+  colorElementsList.forEach((colorElement) => {
+    colorElement.addEventListener('click', selectedColor);
+  });
 };
