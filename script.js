@@ -1,8 +1,3 @@
-const cor = document.querySelectorAll('.color');
-cor[0].style.backgroundColor = 'black';
-cor[1].style.backgroundColor = 'purple';
-cor[2].style.backgroundColor = 'orange';
-cor[3].style.backgroundColor = 'green';
 
 function createDivpixel(){
   let quant = 25
@@ -12,27 +7,42 @@ function createDivpixel(){
     let divs = document.createElement('div');
     divs.className = 'pixel'
     divContainer.appendChild(divs);
+    divs.addEventListener('click', function(event){
+    event.target.style.backgroundColor = currentColor;})
 
   }
 }
 createDivpixel()
+let currentColor ='black';
+
 
 function selectedPaletaCores(){
   let colorSelection = document.querySelector('#color-palette ');
-  cor[0].style.backgroundColor = 'black';
-  cor[1].style.backgroundColor = 'purple';
-  cor[2].style.backgroundColor = 'orange';
-  cor[3].style.backgroundColor = 'green';
 
   colorSelection.addEventListener('click', function(event){
-  let collorSelected =document.querySelector('.selected');
-    if(collorSelected){
-      collorSelected.classList.remove('selected');
+  let colorSelected = '';
+  colorSelected = event.target.className;
+  colorSelected = colorSelected.replace(/color/gi,'');
+  colorSelected = colorSelected.replace(/selected/gi,'');
+  let format = colorSelected + '';
+  currentColor = format;
+  console.log(colorSelected);
+  let atualCollor = document.querySelector('.selected');
+    if(atualCollor){
+      atualCollor.classList.remove('selected');
     }
     event.target.classList.add('selected');
   })
 }
 selectedPaletaCores();
+
+
+
+
+
+
+
+
 
 
 
