@@ -11,6 +11,12 @@
   background-color: black;
 }
 
+.cor_0 {
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
 .cor_1 {
   background-color: black;
   border-width: 1px;

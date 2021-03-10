@@ -6,6 +6,7 @@ window.onload = function () {
   let selectedColor = null;
   let targetColor = null;
   let colorChanged = 'cor_1';
+  let buttonLimpar = null;
 
   const elementHeader = document.createElement('header');
   document.body.appendChild(elementHeader);
@@ -22,6 +23,15 @@ window.onload = function () {
   elemento1.id = 'color-palette';
   elementos.appendChild(elemento1);
   paletOfColors = document.querySelector('#color-palette');
+
+  const elementoBotao = document.createElement('section');
+  elementos.appendChild(elementoBotao);
+
+  const button = document.createElement('button');
+  button.id = 'clear-board';
+  button.innerText = 'Limpar';
+  elementoBotao.appendChild(button);
+  buttonLimpar = button;
 
   const elemento2 = document.createElement('section');
   elemento2.id = 'pixel-board';
@@ -71,5 +81,9 @@ window.onload = function () {
     if (defaultClassPixel()) {
       props.target.id = colorChanged;
     }
+  });
+
+  button.addEventListener('click', function () {
+    
   });
 };
