@@ -27,7 +27,7 @@ function selectPallete() {
     const element = event;
     document.querySelector('.selected').className = 'color';
     element.target.className = 'color selected';
-  })
+  });
 }
 
 selectPallete();
@@ -35,11 +35,11 @@ selectPallete();
 function paint() {
   const color = document.querySelectorAll('.pixel');
   for (let index = 0; index < color.length; index += 1) {
-      color[index].addEventListener('click', (event) => {
+    color[index].addEventListener('click', (event) => {
       const element = event;
       const colorSelected = document.querySelector('.selected').style.backgroundColor;
       element.target.style.backgroundColor = colorSelected;
-    }) 
+    });
   }
 }
 
