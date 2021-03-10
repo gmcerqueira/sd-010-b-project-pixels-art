@@ -60,8 +60,10 @@ function paintPixel(event) {
 // função para limpar a board dos pixels
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
-  pixels.forEach((aux) => { aux.style.backgroundColor = ''; }); // troca o que tiver no pixel por ''
+  pixels.forEach((e) => { e.style.backgroundColor = 'white'; }); // pinta os pixels de branco
 }
+
+// função para criar board personalizada (em construção)
 
 // window.load para carregar as funções na página
 window.onload = function init() {
