@@ -7,3 +7,15 @@
   height: 50px;
   margin: 5px;
 }
+#pixels-board {
+  display: inline-block;
+}
+.pixel {
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+  background-color: white;
+}
