@@ -12,10 +12,10 @@ body {
 }
 
 #pixel-board .pixel {
-  background-color: white;
-	border: solid 1px;
+  border: solid 1px;
   height: 40px;
   width: 40px;
   display: inline-block;
 	margin-left: 5px;
+  background-color: white;
 }
