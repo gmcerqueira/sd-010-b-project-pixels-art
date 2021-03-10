@@ -13,3 +13,4 @@ function matrix() {
 }
 matrix();
 // questão resolvida com a ajuda do colega durante grupo de estudos;
+window.onboard = document.querySelector('#color')[0].classList = 'selected';
