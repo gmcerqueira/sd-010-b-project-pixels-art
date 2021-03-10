@@ -1,10 +1,16 @@
 
-
+let corSalva = 'black';
+let aux;
 
 let blackBox = document.getElementById('blackBox');
 let blueBox = document.getElementById('blueBox');
 let redBox = document.getElementById('redBox');
 let greenBox = document.getElementById('greenBox'); 
+
+blackBox.style.backgroundColor = 'black';
+blueBox.style.backgroundColor = 'blue';
+redBox.style.backgroundColor = 'red';
+greenBox.style.backgroundColor = 'green';
 
 function selectedBlackBox() {
   blackBox.className = 'color selected';
@@ -41,7 +47,7 @@ greenBox.addEventListener('click', selectedGreenBox);
 
 
 let cleanPixelButton = document.getElementById('clear-board');
-let squarePixels = document.getElementsByClassName('pixel');
+// let squarePixels = document.getElementsByClassName('pixel');
 
 function cleanPixel() {
   for (let i = 0; i < 25; i += 1) {
@@ -50,6 +56,20 @@ function cleanPixel() {
 }
 
 cleanPixelButton.addEventListener('click', cleanPixel);
+
+const corDivPixel = document.querySelector('#pixel-board');
+const corPixel = document.querySelectorAll('.pixel');
+function clickPixel(eventoDeOrigem) {
+  aux = eventoDeOrigem.target;
+  if (corPixel.className === 'color') {
+    aux.style.backgroundColor = corSalva;
+  } else {
+    aux.style.backgroundColor = corSalva;
+  }
+}
+
+
+corDivPixel.addEventListener('click', clickPixel);
 
 // function setBackgroundColor(color) {
 //   let content = document.querySelector(".content")
