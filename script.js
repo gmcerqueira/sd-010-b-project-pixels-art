@@ -60,5 +60,20 @@ boardPixel.appendChild(lineDiv);
 }
 injectMain(boardPixel);
 
-const color = document.querySelectorAll('.line').nodeChild;
-const pixel = document.getElementsByClassName('.pixel');
+
+const divsCoorsPalette = document.getElementsByClassName('color');
+  
+  for (let index = 0; index < divsCoorsPalette.length; index += 1) {
+    divsCoorsPalette[index].addEventListener('click', function (event){
+      
+      divsCoorsPalette[0].className = 'color';
+      divsCoorsPalette[1].className = 'color';
+      divsCoorsPalette[2].className = 'color';
+      divsCoorsPalette[3].className = 'color';
+
+      if (event.target.className === 'color'){
+          event.target.className = 'color selected';
+      };
+    });
+  };
+ 
