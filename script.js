@@ -4,8 +4,14 @@ window.onload = function() {
     let pixelBoardBase = 5;
     let colorPalette = document.querySelector("#color-palette");
     let firstPaletteColor = document.querySelector(".color");
-    firstPaletteColor.style.backgroundColor = "black";
+        firstPaletteColor.style.backgroundColor = "black";
     let lines = document.querySelector("#pixel-board");
+    let secondPaletteColor = document.querySelectorAll(".color")[1];
+        secondPaletteColor.style.backgroundColor = "red";
+    let thirdPaletteColor = document.querySelectorAll(".color")[2];
+        thirdPaletteColor.style.backgroundColor = "green"; 
+    let fourthPaletteColor = document.querySelectorAll(".color")[3];
+        fourthPaletteColor.style.backgroundColor = "yellow"; 
 
     createBoardLines(pixelBoardLength);
     // repeatLines(pixelBoardLength);
