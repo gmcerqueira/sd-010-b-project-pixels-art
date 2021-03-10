@@ -31,6 +31,11 @@ tamanhoCoordenadas.addEventListener('keyup', guardaTamanho);
 
 function guardaTamanho () {
   tamanho = tamanhoCoordenadas.value;
+  if (tamanho < 5) {
+    tamanho = 5
+  }else if (tamanho > 50){
+    tamanho = 50
+  }
   indicaTamanho.innerHTML = 'Tamanho atual = ' + tamanho + ' blocos.';
 // criaQuadro ()
 }
@@ -68,7 +73,6 @@ for (let index = 0; index < tamanho; index++) {
     pixel[cont].addEventListener('click', pinta);
   }
 }
-
 // **************Pinta****************
 function pinta () {
   let cor = document.querySelector('.selected').id;// nao era para ser com o id rs
