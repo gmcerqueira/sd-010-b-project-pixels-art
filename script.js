@@ -1,9 +1,10 @@
 // Captura de elementos HTML
 const colorPalette = document.querySelector('#color-palette');
-const tablePixels = document.querySelector('#pixel-board');
 const colorPaletteItems = document.getElementsByClassName('color');
-let selectedColor;
-// console.log(colorPaletteItems);
+const tablePixels = document.querySelector('#pixel-board');
+const tablePixelsItems = document.getElementsByClassName('pixel');
+
+// let selectedColor;
 
 // --------------------------------------------------------------------------------------
 
@@ -77,7 +78,7 @@ for (let index1 = 0; index1 < 5; index1 += 1) {
 function selectBlackColor() {
   const palete1 = document.querySelector('#palete0');
   palete1.className = 'color selected';
-  selectedColor = palete1.style.backgroundColor;
+  // selectedColor = palete1.style.backgroundColor;
 }
 // /* Teste ocasional: */ selectBlackColor ()
 
@@ -89,14 +90,30 @@ function changeSelectedColor(sourcePalette) {
   currentlySelectedColor.className = 'color';
   const newColorSelected = sourcePalette.target;
   newColorSelected.className = 'color selected';
-  selectedColor = newColorSelected.style.backgroundColor;
+  // selectedColor = newColorSelected.style.backgroundColor;
+}
+
+// --------------------------------------------------------------------------------------
+
+// Função que permite colorir pixel com cor atualmente selecionada
+function colorsPixel(selectedPixel) {
+  const clickedPixel = selectedPixel.target;
+  const currentlySelectedColor = document.querySelector('.selected');
+  clickedPixel.style.backgroundColor = currentlySelectedColor.style.backgroundColor;
 }
 
 // --------------------------------------------------------------------------------------
 
 // Eventos de escuta
+
+// Escuta clicks em cada item da paleta de cores
 for (let index = 0; index < colorPaletteItems.length; index += 1) {
   colorPaletteItems[index].addEventListener('click', changeSelectedColor);
+}
+
+// Escuta clicks em cada item do quadro de pixel
+for (let index = 0; index < tablePixelsItems.length; index += 1) {
+  tablePixelsItems[index].addEventListener('click', colorsPixel);
 }
 
 // --------------------------------------------------------------------------------------
