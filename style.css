@@ -1,4 +1,4 @@
-#color-pallet ,.color {
+#color-pallete ,.color {
     border: 1px solid black;
     display: inline-block;
     height: 45px;
@@ -16,9 +16,17 @@
     border: 1px solid black;
     border-radius: 10%;
     display: block;
-    height: 25px;
+    height: 20px;
     margin-left: 80px;
-    margin-top: 20px;
-    width: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
     text-align: center;
 }
+
+#pixelBoard, .pixel {
+    border: 1px solid black;
+    height: 38px;
+    width: 38px;
+    background-color: white;
+  }

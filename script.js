@@ -1,99 +1,51 @@
-// criando a paleta
 
-const paleta = document.querySelector('#color-palette');
-for (let box = 0; box < 4; box += 1) {
-  const cor = document.createElement('div');
-  cor.className = 'color';
-  paleta.appendChild(cor);
+// Paleta de cores
+
+const pallet = document.querySelector('#color-palette');
+
+for (let i = 0; i < 4; i +=1 ){
+  const box = document.createElement('div');
+  box.className  = 'color';
+  pallet.appendChild(box);
 }
-// Adicionando as cores
-const cores = document.querySelectorAll('.color');
 
-const corBlack = cores[0];
-corBlack.className = 'color selected';
-corBlack.style.backgroundColor = 'black';
+// Cores da paleta
+const cores = document.querySelectorAll('.color')
 
-const corRed = cores[1];
-corRed.style.backgroundColor = 'red';
+const corPadrao = cores[0];
+corPadrao.style.backgroundColor = 'black';
+corPadrao.className = 'color selected';
+sessionStorage.setItem('color', corPadrao.style.backgroundColor);
 
-const corGreen = cores[2];
-corGreen.style.backgroundColor = 'green';
+const cor1 = cores[1];
+cor1.style.backgroundColor = 'red';
+const cor2 = cores[2];
+cor2.style.backgroundColor = 'blue';
+const cor3 = cores[3];
+cor3.style.backgroundColor = 'green';
 
-const corBLue = cores[3];
-corBLue.style.backgroundColor = 'blue';
-
-// table Row - Criando as cinco linhas
-
+// Selecionando a cor da paleta
+for (let cor = 0; cor < cores.length; cor += 1){
+cores[cor].addEventListener('click', function(evento){
+    const colorSet = document.getElementsByClassName('selected'); // recupero o elem da classe selected
+    colorSet[0].classList.remove('selected'); // removo a classe selected do elem recuperado 
+    evento.target.classList.add('selected'); // e adiciono a classe ao elem que recebeu o evento
+    sessionStorage.setItem('color', evento.target.style.backgroundColor); // adiciono a cor atual ao session storage
+})
+}
+// Quadro de pixels (linhas)
 const pixelBoard = document.querySelector('#pixel-board');
-for (let line = 0; line < 5; line += 1) {
+for (let i = 0; i < 5; i +=1 ) {
   const box = document.createElement('tr');
-  box.className = 'pixel-table';
   pixelBoard.appendChild(box);
+    
 }
-// celulas da tabela
-const linhas = document.querySelectorAll('#pixel-board, tr'); // recupero todos os elem tr criados da id #pixel-board
-for (let line = 1; line < linhas.length; line += 1) {
-  for (let colum = 1; colum < linhas.length; colum += 1) {
-    const box = document.createElement('td');
-    box.className = 'pixel';
-    linhas[colum].appendChild(box);
+// Quadro de pixels (celulas)
+const pixelTable = document.querySelectorAll('#pixel-board, tr'); // recupero as tr que criei 
+for (let l = 1; l < pixelTable.length; l +=1 ) { // para cada linha 
+  for (let c = 1; c < pixelTable.length; c += 1) { // para cada coluna 
+    const box = document.createElement('td'); // crio uma celula
+    box.className  = 'pixel'; // nomeio a classe
+    pixelTable[c].appendChild(box); // e adiciono a mesma na posição referente a coluna da linha
   }
 }
-
-// cor selecionada
-sessionStorage.setItem('color', corBlack.style.backgroundColor);
-
-function corSelecionada(index) {
-  if (index === 0) {
-    sessionStorage.setItem('color', corBlack.style.backgroundColor);
-    corBlack.className = 'color selected';
-    corRed.className = 'color';
-    corBLue.className = 'color';
-    corGreen.className = 'color';
-  } else if (index === 1) {
-    sessionStorage.setItem('color', corRed.style.backgroundColor);
-    corBlack.className = 'color';
-    corRed.className = 'color selected';
-    corBLue.className = 'color';
-    corGreen.className = 'color';
-  } else if (index === 2) {
-    sessionStorage.setItem('color', corBLue.style.backgroundColor);
-    corBlack.className = 'color';
-    corRed.className = 'color';
-    corBLue.className = 'color selected';
-    corGreen.className = 'color';
-  } else if (index === 3) {
-    sessionStorage.setItem('color', corGreen.style.backgroundColor);
-    corBlack.className = 'color';
-    corRed.className = 'color';
-    corBLue.className = 'color ';
-    corGreen.className = 'color selected';
-  }
-}
-
-corBlack.addEventListener('click', function() { corSelecionada(0) });
-corRed.addEventListener('click', function() { corSelecionada(1) });
-corBLue.addEventListener('click', function() { corSelecionada(2) });
-corGreen.addEventListener('click', function() { corSelecionada(3) });
-
-// Adicionando cor ao quadrado selecionado
-
-const pixelTable = document.querySelectorAll('.pixel'); // pego todos os elem da classe pixel
-
-function pintaOPixel (i) {
-  pixelTable[i].addEventListener('click', function() { // adiciono o evento de click a todos os elem do array
-    pixelTable[i].style.backgroundColor = sessionStorage.color; // atribuo a cor salva no storage ao elemento que recebeu o click
-  });
-}
-
-for (let i = 0; i < pixelTable.length; i += 1) { // percorro todos os elem da classe que fora atribuidos a essa variavel
-  pintaOPixel(i); // e mando o indice para a função
-}
-
-// Botão Limpa a paleta
-const body = document.querySelector('body')
-const botaoClear = document.createElement('div')
-botaoClear.id = 'clear-board'
-botaoClear.innerHTML = 'clear'
-body.appendChild(botaoClear)
-
