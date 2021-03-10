@@ -1,5 +1,3 @@
-window.onload = selectColor(1);
-
 const pixelBoard = document.getElementById("pixel-board");
 const paleta1 = document.getElementById("paleta1");
 const paleta2 = document.getElementById("paleta2");
@@ -12,7 +10,8 @@ let lado = 5;
 let numeroPixels = lado * lado;
 let selectedColor = 0;
 
-
+selectColor("paleta1");
+updateSelectedColor();
 
 for (let index = 1; index <= lado; index++) {
     createLines("linha" + index);
