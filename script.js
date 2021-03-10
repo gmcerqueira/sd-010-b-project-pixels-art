@@ -41,9 +41,9 @@ function createBoard() {
 }
 
 // sets black as the selected color
+// I took this code block from Gustavo Cerqueira's project at https://github.com/tryber/sd-010-b-project-pixels-art/blob/gmcerqueira-project-pixels-art/script.js
 function setSelectedColor() {
   colorPalette.firstElementChild.classList.add('selected');
-  colorPallete.firstElementChild.style.backgroundColor = 'black';
 }
 
 window.onload = () => {
