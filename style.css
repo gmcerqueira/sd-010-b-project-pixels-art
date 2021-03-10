@@ -2,12 +2,10 @@ h1 {
     text-align: center;
 }
 
-table {
-    margin: 0 auto; 
-}
-
 #color-palette {
+    margin: auto; 
     margin-top: 60px;
+    background-color: aqua;
 }
 
 .color {
@@ -15,4 +13,33 @@ table {
     width: 40px;
     height: 40px;
 }
+
+#botão {
+    margin-top: 20px;
+    background-color: aquamarine;
+}
+
+#clear-board {
+    border-radius: 5px;
+    background-color: #C4C4BA;
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 30px;
+    color: #1f743c;
+}
+
+.pixel {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+}
+
+#pixel-board {
+    margin: auto; 
+    margin-top: 20px;
+    background-color: aqua;
+}
+
+
 

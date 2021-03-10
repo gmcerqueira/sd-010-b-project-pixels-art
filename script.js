@@ -1,8 +1,9 @@
-const paletaCores = document.getElementsByClassName("color");
+const paletaCores = document.querySelectorAll('.color'); // Estou capturando a classe color.
+// Selecionando o indice da classe color.
 const preto = paletaCores[0];
-let vermelho = paletaCores[1];
-let verde = paletaCores[2];
-let azul = paletaCores[3];
+const vermelho = paletaCores[1];
+const verde = paletaCores[2];
+const azul = paletaCores[3];
 
 preto.style.backgroundColor = 'black';
 vermelho.style.backgroundColor = 'red';
