@@ -48,18 +48,32 @@ function rmvClass(selectedClass){
 function colorSelect(elementoEvento, Class){
     rmvClass(selectedClass);
     selectedClass = elementoEvento.target;
-    console.log(selectedClass);
     selectedClass.classList.add('selected');
-
-
-
-
-    // console.log(elementoEvento.target);
-    // console.log(elementoEvento.type);
-
-    // let class2 = document.elementoEvento;
-    // console.log(class2);
     }
 
+
+//add event listener para todos os pixels
+let selectPixel = document.getElementsByClassName('pixel');
+for(let i = 0; i < selectPixel.length; i++){
+    selectPixel[i].addEventListener("click", pintar);  
+    }
+
+function pintar(elementoEmQuestao){
+    let cor = document.querySelector('.selected').style.backgroundColor;
+    elementoEmQuestao.srcElement.style.backgroundColor = cor;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}//window.onload close
 
