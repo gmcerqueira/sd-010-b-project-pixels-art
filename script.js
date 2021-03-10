@@ -1,1 +1,1 @@
-changeColor = document.getElementById('black')
+
