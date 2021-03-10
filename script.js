@@ -9,6 +9,7 @@ const div = document.querySelector('#pixel-board');
 for (let index = 0; index < 25; index += 1) {
   const newdiv = document.createElement('div');
   newdiv.className = 'pixel';
+  newdiv.style.backgroundColor ='rgb(255,255,255)'
   div.appendChild(newdiv);
 }
 document.getElementsByClassName('color')[0].className += ' selected';
