@@ -1,5 +1,6 @@
 const containerPalette = document.querySelector('#color-palette');
 const containerQuadro = document.querySelector('#pixel-board');
+const colorsPalette = document.getElementsByClassName('color');
 
 function createPalette() {
   for (let index = 0; index < 4; index += 1) {
@@ -30,6 +31,14 @@ function createPixels() {
 }
 
 createPixels();
+
+for (let index = 0; index < colorsPalette.length; index += 1) {
+  colorsPalette[index].addEventListener('click', function () {
+    let classSelected = document.getElementsByClassName('selected')[0];
+    classSelected.classList.remove('selected');
+    event.target.classList.add('selected');
+  });
+}
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'rgb(0,0,0)';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'rgb(18,10,143)';
