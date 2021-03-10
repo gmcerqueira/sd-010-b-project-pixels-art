@@ -22,8 +22,8 @@ function mudandoacorverdea() {
 }
 mudandoacorverdea();
 
-function mudandoacoroxa() {
+/*function mudandoacoroxa() {
   let roxo = document.getElementsByClassName("color")[4]
   roxo.style.backgroundColor = "#9B5DE5"
 }
-mudandoacoroxa();
+mudandoacoroxa();*/
