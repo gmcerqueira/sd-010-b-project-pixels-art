@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
     text-align: center;
 }
 
@@ -29,17 +29,19 @@ h1 {
     color: #1f743c;
 }
 
+#pixel-board {
+    margin: auto; 
+    margin-top: 20px;
+    background-color: aqua;
+}
+
 .pixel {
     border: 1px solid black;
     width: 40px;
     height: 40px;
 }
 
-#pixel-board {
-    margin: auto; 
-    margin-top: 20px;
-    background-color: aqua;
-}
+ */
 
 
 
