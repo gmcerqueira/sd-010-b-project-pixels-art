@@ -11,8 +11,8 @@ function setPaletteColor() {
     document.querySelector(colorPalette).appendChild(elem);
   }
   const cores = ['black', 'red', 'green', 'blue'];
-  const arr = document.getElementById('color-palette').childNodes;
-  arr.forEach((element, index) => {
+  const array = document.getElementById('color-palette').childNodes;
+  array.forEach((element, index) => {
     const elem = element; elem.style.backgroundColor = cores[index];
   });
   const colors = document.getElementsByClassName('color');
