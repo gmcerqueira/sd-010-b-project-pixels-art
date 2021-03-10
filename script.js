@@ -30,14 +30,14 @@ function createBoardOfPixels() {
 }
 
 function selectColor(event) {
-    //let eventSelect = event.target;
-    // if(eventSelect) {
-    //     let arr = document.getElementsByClassName('color');
-    //     for (let i = 0; i < 4; i++) {
-    //         arr[i].classList.remove('selected');
-    //     }
-    //} alert(event.target.nodeName);
-    alert(event.target.nodeName);
+    let eventSelect = event.target;
+    if(eventSelect) {
+        let arr = document.getElementsByClassName('color');
+        for (let i = 0; i < 4; i++) {
+            arr[i].classList.remove('selected');
+        }
+        eventSelect.classList.add('selected');
+    } 
 }
 
 //https:wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
