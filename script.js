@@ -1,5 +1,6 @@
 let colors = ['black', 'green', 'blue', 'yellow'];
-const rowsAndCols = 5;
+let rowsAndCols = 5;
+let pixelBoard = document.getElementById('pixel-board');
 
 sessionStorage.color = colors[0];
 
@@ -58,7 +59,6 @@ function fillLinePixel() {
 fillLinePixel();
 
 function lines() {
-  let pixelBoard = document.getElementById('pixel-board');
   for (let i = 0; i < rowsAndCols; i += 1) {
     let rowPixel = document.createElement('div');
     rowPixel.className = 'row-pixel';
@@ -67,3 +67,19 @@ function lines() {
   }
 }
 // lines();
+
+
+function generateBoard() {
+  rowsAndCols = document.getElementById('board-size').value;
+  if (rowsAndCols !== '') {
+    pixelBoard.innerHTML = '';
+    pixelBoard.style.width = (rowsAndCols * 42) + 'px';
+    fillLinePixel();
+  } else {
+    alert('Board inválido!');
+  }
+  
+}
+
+let btnVQV = document.getElementById('generate-board');
+btnVQV.addEventListener('click', generateBoard);
