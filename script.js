@@ -15,7 +15,7 @@ function setColorClass() {
 }
 
 setColorClass();
-
+/*
 function setPixelColor() {
   let selectedColor = document.getElementsByClassName('selected color');
   let pixel = document.querySelectorAll('.pixel');
@@ -36,3 +36,4 @@ function setPixelColor() {
 }
 
 setPixelColor();
+*/
