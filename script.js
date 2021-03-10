@@ -39,14 +39,14 @@ function geraPixel() {
 
 geraPixel();
 
-
+function escolheCor() {
 	const corDaVez = document.querySelector("#color-palette");
 	color.addEventListener("click", (event) =>{
 		let element = event;
 		document.querySelector(".selected").className = "color";
 		element.target.className = "color selected";
 	})
-
+}
 
 
 function clear(){
