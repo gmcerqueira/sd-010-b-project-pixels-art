@@ -1,6 +1,5 @@
-window.onload = function(){
-let palette = document.getElementById('color-palette');
-
+let palette = document.getElementById ('color-palette');
+let colors = document.getElementsByClassName('color');
 let columns = document.getElementById('pixel-board');
 
 let tableLines = function(){
@@ -22,4 +21,13 @@ tableLines();
 
 palette.firstElementChild.classList.add ('selected');
 
+for (index=0; index<colors.length; index += 1) {
+	colors[index].addEventListener("click", selectColor);
+}
+
+function selectColor() {
+	for (index =0 ; index < colors.length; index += 1) {
+			colors[index].classList.remove("selected")
+	}
+	this.classList.add("selected");
 }
