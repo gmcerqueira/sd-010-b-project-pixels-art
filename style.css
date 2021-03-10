@@ -14,21 +14,14 @@ body {
   border: black solid 1px;
 }
 
-.selected {
-  display: table-cell;
-  padding: 25px;
-  width: 40px;
-  border: black solid 1px;
-}
+
 
 #firstColor {
   background-color: black;
 }
 
 #secondColor {
-  background-color: black;
-  padding: 0px;
-  width: 0px;
+  background-color: aqua;
 }
 
 #thirdColor {
@@ -37,10 +30,6 @@ body {
 
 #fourthColor {
   background-color: chartreuse;
-}
-
-#fifthColor {
-  background-color: cyan;
 }
 
 .tr {
