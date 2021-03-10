@@ -3,6 +3,7 @@ const colorsPalette = document.getElementsByClassName('color');
 const colorsPaletteLenght = colorsPalette.length;
 const boardOfPixels = document.getElementById('pixel-board');
 
+//create dynamically the class selected
 function firstPaletteSelected() {
     const firstPalette = document.getElementsByClassName('color')[0];
     firstPalette.classList.add('selected');
@@ -15,7 +16,7 @@ function createColorPaletteDisplay() {
         paletteDiv.appendChild(cel);
     }
 }
-
+//create a pixel inside line
 function createBoardOfPixels() {
     for (let i = 0; i < 5; i++) {
         let line = document.createElement('div');
@@ -29,8 +30,12 @@ function createBoardOfPixels() {
     }
 }
 
+//black is the initial color
+let selectedColor = 'black';
 function selectColor(event) {
     let eventSelect = event.target;
+    selectedColor = eventSelect.style.backgroundColor;
+    console.log(selectedColor);
     if(eventSelect) {
         let arr = document.getElementsByClassName('color');
         for (let i = 0; i < 4; i++) {
@@ -38,6 +43,13 @@ function selectColor(event) {
         }
         eventSelect.classList.add('selected');
     } 
+}
+
+function pixelColor(event) {
+    let eventSet = event.target;
+    if(eventSet) {
+        eventSet.style.backgroundColor = selectedColor;
+    }
 }
 
 //https:wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
@@ -60,7 +72,9 @@ createColorPaletteDisplay();
 setColor(colorsPalette);
 createBoardOfPixels();
 
-window.onload = function() {
+
+window.onload = function init() {
     firstPaletteSelected();
-    document.addEventListener('click', selectColor);
+    paletteDiv.addEventListener('click', selectColor);
+    boardOfPixels.addEventListener('click', pixelColor);
 }
