@@ -60,20 +60,25 @@ boardPixel.appendChild(lineDiv);
 }
 injectMain(boardPixel);
 
-
-const divsCoorsPalette = document.getElementsByClassName('color');
-  
-  for (let index = 0; index < divsCoorsPalette.length; index += 1) {
-    divsCoorsPalette[index].addEventListener('click', function (event){
-      
-      divsCoorsPalette[0].className = 'color';
-      divsCoorsPalette[1].className = 'color';
-      divsCoorsPalette[2].className = 'color';
-      divsCoorsPalette[3].className = 'color';
-
+//Estutador de evento da paleta de cores
+const divsColorsPalette = document.getElementsByClassName('color');
+let idColor = '';
+  for (let index = 0; index < divsColorsPalette.length; index += 1) {
+    divsColorsPalette[index].addEventListener('click', (event) => {
+      divsColorsPalette[0].className = 'color';
+      divsColorsPalette[1].className = 'color';
+      divsColorsPalette[2].className = 'color';
+      divsColorsPalette[3].className = 'color';
       if (event.target.className === 'color'){
           event.target.className = 'color selected';
+          idColor = event.target.id
       };
     });
   };
- 
+//pinta os quadradinhos
+const divsPixel = document.querySelectorAll('.pixel')
+ for (let index = 0; index < divsPixel.length; index += 1) {
+  divsPixel[index].addEventListener('click', (event) => {
+    event.target.id = idColor
+  });
+ }
