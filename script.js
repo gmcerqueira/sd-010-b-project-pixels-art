@@ -21,6 +21,7 @@ window.onload = function () {
 
 const boxPixel = document.getElementById('pixel-board');
 const paletaCores = document.getElementById('color-palette').getElementsByTagName('th');
+const quadradoPixels = boxPixel.getElementsByTagName('td');
 
 function addQuadradoPixels() {
   const table = document.createElement('table');
@@ -59,7 +60,6 @@ function addClassSelected() {
 addClassSelected();
 
 function colorPixels() {
-  const quadradoPixels = boxPixel.getElementsByTagName('td');
   for (let i = 0; i < quadradoPixels.length; i += 1) {
     quadradoPixels[i].addEventListener('click', function (){
       for (let j = 0; j < paletaCores.length; j += 1) {
@@ -73,9 +73,8 @@ function colorPixels() {
 colorPixels();
 
 function buttonClear() {
-
-  const body = document.getElementById('sectionButton');
   const criaButton = document.createElement('button');
+  const body = document.getElementById('painelControle');
   criaButton.type = 'button';
   criaButton.innerText = 'Limpar';
   criaButton.id = 'clear-board';
@@ -83,7 +82,6 @@ function buttonClear() {
 
   const button = document.getElementById('clear-board');
   button.addEventListener('click', function (){
-    const quadradoPixels = boxPixel.getElementsByTagName('td');
     for (let i = 0; i < quadradoPixels.length; i += 1) {
       quadradoPixels[i].style.background = button.style.background;
     }
@@ -91,3 +89,48 @@ function buttonClear() {
   
 }
 buttonClear();
+
+function criaInput() {
+  const sectionInput = document.getElementById('painelControle');
+  const criaInput = document.createElement('input');
+  const criaButton = document.createElement('button');
+  criaInput.type = 'number';
+  criaInput.id = 'board-size';
+  criaInput.min = '5';
+  criaInput.max = '50';
+  criaButton.type = 'button';
+  criaButton.id = 'generate-board';
+  criaButton.innerText = 'VQV';
+  sectionInput.appendChild(criaInput);
+  sectionInput.appendChild(criaButton);
+
+  const button = document.getElementById('generate-board');
+  const input = document.getElementById('board-size');
+  button.addEventListener('click', function (){
+    if (input.value === '') {
+      alert('Board inválido!');
+    } else {
+      if (input.value < 5) {
+        input.value = 5;
+      } 
+      if (input.value > 50) {
+        input.value = 50;
+      } 
+      const valueInput = input.value * input.value;
+      for (let i = 0; i < paletaCores.length; i +=1) {
+        paletaCores[i].style.height = valueInput + 'px';
+        paletaCores[i].style.width = valueInput + 'px';
+      }
+      for (let i = 0; i < quadradoPixels.length; i +=1) {
+        quadradoPixels[i].style.height = valueInput + 'px';
+        quadradoPixels[i].style.width = valueInput + 'px'; 
+        for (let j = 0; j < quadradoPixels.length; j += 1) {
+          quadradoPixels[j].style.background = button.style.background;
+        }
+      }
+     
+    }
+  })
+
+}
+criaInput();
