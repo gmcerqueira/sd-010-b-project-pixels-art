@@ -113,7 +113,7 @@ changeSelect()
 
 // Facilitação do uso da Arrow Function. 
 // Pesquisa: https://www.w3schools.com/js/js_arrow_function.asp
-function ColorForaChange() {
+function ColorPixelChange() {
   let getPixelBoard = document.querySelector('#pixel-board');
   getPixelBoard.addEventListener('click', (colorChanges) => {
     let change = document.querySelector('.selected').style.backgroundColor;
@@ -125,7 +125,7 @@ function ColorForaChange() {
       }
     })
   }
-  ColorForaChange();
+  ColorPixelChange();
 
 
 
