@@ -13,7 +13,7 @@ for (let cont = 1; cont <= 5; cont+=1) {
 let btnGenerate = document.querySelector("#generate-board")
 let input = document.querySelector("#board-size");
 btnGenerate.addEventListener("click", function() {
-  if (input.value >= 5 && input.value <= 50 && input.value > 0) {
+  if (input.value >= 5 && input.value <= 50) {
     let rowPixel = document.querySelectorAll(".tr")
     for (index = 0; index < rowPixel.length; index += 1) {
       element = rowPixel[index]
