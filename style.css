@@ -41,10 +41,11 @@
 }
 
 #pixel-board {
-  display:flex;
+  display: flex;
 }
 
 .pixel {
+  display: table;
   height: 40px;
   width: 40px;
   background-color: white;
