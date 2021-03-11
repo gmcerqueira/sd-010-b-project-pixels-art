@@ -8,11 +8,11 @@ for (let index = 0; index < palleteColors.length; index += 1) {
   });
 }
 
-let colorPixels = document.querySelectorAll('.pixel');
+let colorPixels = document.getElementsByClassName('pixel');
 
-for(let indexPixel = 0; indexPixel < colorPixels.length; indexPixel += 1){
+for (let indexPixel = 0; indexPixel < colorPixels.length; indexPixel += 1) {
   colorPixels[indexPixel].addEventListener('click', function(){
     let newColor = document.getElementsByClassName('selected')[0].style.backgroundColor;
     colorPixels[indexPixel].style.backgroundColor = newColor;
-  })
+  });
 }
