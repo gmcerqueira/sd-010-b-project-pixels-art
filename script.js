@@ -84,8 +84,7 @@ function selectColorOnClick() {
   const colors = document.querySelector('#color-palette');
 
   // Condição para mudar a cor:
-  colors.addEventListener('click', function(event){
-
+  colors.addEventListener('click', function(event) {
     const colorToSelect = document.getElementsByClassName('color');
     const colorSelected = document.querySelector('.selected');
 
@@ -103,7 +102,7 @@ selectColorOnClick();
 function paintWithPixels() {
   const paintPixels = document.querySelector('#pixel-board');
   paintPixels.addEventListener('click', function(event) {
-    
+
     const selectColor = document.querySelector('.selected').style.backgroundColor;
     event.target.style.backgroundColor = selectColor;
     event.stopPropagation();
