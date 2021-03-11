@@ -26,5 +26,10 @@
 }
 
 #pixel-board {
+  margin: 0;
+  text-align: center;
+}
+
+.todos-botoes {
   text-align: center;
 }

@@ -79,9 +79,11 @@ botaoLimpar();
 
 function botaoVqv() {
 	const botaoVQV = document.querySelector("#generate-board");
-	
-	
 	botaoVQV.addEventListener('click', function (event) {
+		const listaPixels = document.querySelectorAll('.pixel')
+		for (i = 0; i < listaPixels.length; i += 1){
+			listaPixels[i].parentNode.removeChild(listaPixels[i]);
+		}
 		const adicionaPixel = document.querySelector("#board-size").value;
 		if (adicionaPixel === '') {
 			alert('Board inválido!');
@@ -95,7 +97,5 @@ function botaoVqv() {
 	
 	});
 }
-
-
 botaoVqv();
 
