@@ -6,6 +6,9 @@
   font-size: 45px;
   font-weight: bolder;
 }
+#color-palette {
+  box-sizing: border-box;
+}
 
 #color1 {
   height: 40px;
