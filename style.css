@@ -1,43 +1,45 @@
+body {
+ text-align: center;
+ align-items: center;
+ background-color: rgb(5, 5, 117);
+}
+#title {
+  white-space: nowrap;
+  font: 500 Impact;
+  font-size: 50px; 
+}
 #color-palette {
-  display: table;
+  position: relative;
+  margin-left: 36%;
+  margin-bottom: 10px;
 }
-
-.palette {
-  display: table-row;
-  margin: 5px;
-}
-
 .color {
-  width: 50px;
-  height: 50px;
+  padding: 30px;
   border: 1px solid black;
-  display: table-cell;
-  margin: 5px;
 }
-
 #pixel-board {
-  margin-top: 10px;
-  display: table;
+  margin-top: 20px;
+  margin-left: 30%;
 }
-
-.pixelLine {
-  display: table-row;
-  margin: 5px;
-}
-
 .pixel {
-  width: 40px;
-  height: 40px;
+  padding: 20px;
   border: 1px solid black;
-  display: table-cell;
 }
 #clear-board {
-  margin-left: 70px;
   padding: 5px;
-  margin-top: 5px;
+  margin-left: 10px;
   background-color: cornsilk;
   border-radius: 5px; 
 }
 #clear-board:hover {
   background-color: cyan;
+}
+#board-size{
+  width: 100px;
+  border: 2px solid gray;  
+  margin-top: 10px;
+  margin-left: 20px;
+}
+#generate-board{
+  border-radius: 4px;
 }
