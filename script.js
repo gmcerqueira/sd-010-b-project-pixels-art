@@ -1,4 +1,5 @@
 let palleteColors = document.querySelectorAll('.color');
+let buttonClear = document.getElementById('clear-board');
 
 function pixelCreate() {
   let quadro = document.getElementById('pixel-board');
@@ -32,6 +33,16 @@ function colorPixels() {
   board.addEventListener('click', selectColor);
 }
 colorPixels();
+
+function clear() {
+  let pixelsBoard = document.querySelectorAll('.pixel');
+  buttonClear.addEventListener('click', () => {
+    for (let index = 0; index < pixelsBoard.length; index += 1) {
+      pixelsBoard[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clear();
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'rgb(0,0,0)';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'rgb(200,56,154)';
