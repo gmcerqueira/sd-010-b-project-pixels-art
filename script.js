@@ -66,17 +66,19 @@ function addColorInPixel() {
 
 function generateBoard(number) {
   const pixelBoard = document.getElementById('pixel-board');
+  pixelBoard.style.width = `${(number * 43)}px`;
   pixelBoard.innerHTML = '';
   for (let index = 0; index < number * number; index += 1) {
-    if (index % number === 0) {
+    /* if (index % number === 0) {
       let breakRow = null;
       breakRow = document.createElement('br');
       pixelBoard.appendChild(breakRow);
-    }
+    } */
     let pixel = null;
     pixel = document.createElement('span');
     pixel.setAttribute('id', index + 1);
     pixel.className = 'pixel';
+    pixel.style.backgroundColor = 'rgb(255, 255, 255)';
     pixel.addEventListener('click', addColorInPixel);
     pixelBoard.appendChild(pixel);
   }
