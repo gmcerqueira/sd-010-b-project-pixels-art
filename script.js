@@ -7,7 +7,6 @@ color[0].style.backgroundColor = 'black';
 color[1].style.backgroundColor = 'tomato';
 color[2].style.backgroundColor = 'teal';
 color[3].style.backgroundColor = 'SpringGreen';
-color[4].style.backgroundColor = 'Sienna';
 // Function paleta de 4 cores
 function palletteColor(event) {
   letAuxiliar = event.target;
