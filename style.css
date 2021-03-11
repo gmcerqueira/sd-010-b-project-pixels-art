@@ -1,10 +1,10 @@
 /* Estilização */
 .body {
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0;
   text-align: center;
-  vertical-align: middle;
-  table-layout: auto;
+}
+
+.table {
   margin: auto;
 }
 
@@ -18,21 +18,14 @@
 }
 
 .color {
-    display: inline-block;
     border: solid black;
     border-width: 1px; 
     height: 40px;
-    width: 40px;
-    margin-right: 10px;
+    width: 40px;    
 }
 
 #pixel-board {  
-  display: table-cell;
-}
-
-.table {
-  margin: auto;
-  text-align: center;
+  /* display: table-cell; */
 }
 
 .pixel {   
@@ -41,7 +34,7 @@
     border-width: 1px; 
     height: 40px;
     width: 40px;  
-    display: table-cell;    
+    /* display: table-cell;     */
 }
 
 #clear-board {

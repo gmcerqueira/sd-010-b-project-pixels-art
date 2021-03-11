@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
     <h1 id="title">Paleta de Cores</h1>
-    <div id="color-palette">
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-    </div>
+    <table><tr id="color-palette">
+        <td class="color"></td>
+        <td class="color"></td>
+        <td class="color"></td>
+        <td class="color"></td>
+    </tr></table>
+  </header>
     <input type="text" id="board-size">
     <button id="generate-board">VQV</button>
     <table id="pixel-board">
-      <!-- <tr class="tableRow">
+      <tr class="tableRow">
         <td class="pixel"></td>
         <td class="pixel"></td>
         <td class="pixel"></td>
@@ -52,7 +54,7 @@
         <td class="pixel"></td>
         <td class="pixel"></td>
         <td class="pixel"></td>
-      </tr> -->
+      </tr>
     </table>
     <button id="clear-board">Limpar</button> 
 </body>
