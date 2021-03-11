@@ -6,8 +6,10 @@ body {
 }
 
 #pixel-board {
-  margin-left: 52%;
-  padding: 0px;
+  margin-left: 920px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 251px;
 }
 
 #color-palette {
@@ -18,11 +20,6 @@ h1 {
   color: white;
   font-size: 45px;
   margin-left: 52%;
-}
-
-.pixel {
-  margin-bottom: -4px;
-  margin-right: -3px;
 }
 
 .color {
@@ -48,10 +45,36 @@ h1 {
   background-color: teal;
 }
 
+.colorBlack {
+  background-color: black;
+}
+
+.color1 {
+  background-color: blueviolet;
+}
+
+.color2 {
+  background-color: yellow;
+}
+
+.color3 {
+  background-color: teal;
+}
+
+.color4 {
+  background-color: white;
+}
+
 .pixel {
   display: inline-block;
   border: solid black 1px;
   width: 40px;
   height: 40px;
-  background-color: white;
+}
+
+#clear-board {
+  display: flex;
+  margin-left: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

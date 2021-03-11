@@ -1,29 +1,30 @@
 function criaPixels () {
   let containerPix = document.querySelector('#pixel-board');
   
-  let contador = 1;
   for (let index = 0; index < 25; index += 1) {
     let divPixel = document.createElement('div')
-    let pulalinha =  document.createElement('br');
-    divPixel.className = 'pixel';
+    divPixel.className = 'pixel color4';
     containerPix.appendChild(divPixel);
-    contador += 1;
-    if (contador === 6) {
-      containerPix.appendChild(pulalinha);
-      contador = 1;
-    };
   };
 }
 criaPixels();
 
+function criaBotão (text) {
+  let containerBotao = document.querySelector('#color-palette')
+  let botao = document.createElement('button');
+  let idBotao = 'clear-board';
+
+  botao.innerHTML = text;
+  botao.id = idBotao;
+  containerBotao.appendChild(botao);
+}
+criaBotão ('Limpar');
+
 let cor = 'white';
 function pegaCor () {
   let pegaPixelsCores = document.querySelectorAll('.color')
-  console.log(pegaPixelsCores)
   for (index = 0; index < pegaPixelsCores.length; index += 1){
-    console.log(pegaPixelsCores[index])
     pegaPixelsCores[index].addEventListener('click', function(event){
-      console.log('oii')
       mudaClass();
       mudaSelected(event.target)
     });
@@ -37,10 +38,33 @@ function mudaSelected (elemento) {
 
 function mudaClass () {
   let pegaPixelsCores = document.querySelectorAll('.color')
-  console.log(pegaPixelsCores)
   for (index = 0; index < pegaPixelsCores.length; index += 1){
-    console.log('mudaclass')
     pegaPixelsCores[index].className = 'color';
   }
 }
 
+function coloriPaleta () {
+  let pegaPixel = document.querySelectorAll('.pixel');
+
+  for (i = 0; i < pegaPixel.length; i += 1){
+    pegaPixel[i].addEventListener('click', function(evt){
+      let pegaCorDiv = document.querySelector('.selected').id;
+      evt.target.className = 'pixel ' + pegaCorDiv;
+    });
+  }
+}
+coloriPaleta();
+
+function botaoLimpar () {
+  let pegarBotao = document.querySelector('#clear-board');
+  pegarBotao.addEventListener('click', limparPixel)
+}
+botaoLimpar();
+
+function limparPixel () {
+  let pegaPixel = document.querySelectorAll('.pixel');
+
+  for (i = 0; i < pegaPixel.length; i += 1){
+      pegaPixel[i].className = 'pixel color4';
+  }
+}
