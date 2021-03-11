@@ -4,28 +4,27 @@ body {
   padding: 0;
 }
 
-.title {
-  
+#title {
+  margin-bottom: 70px;
 }
 
-.color-palette {
-  
+#color-palette {
+  margin-bottom: 70px;
 }
 
 .color {
   border: 1px solid black;
-  display: table-cell; 
+  display: inline-block; 
   padding: 40px;
 }
 
-.pixel-board {
-  display: table;
+#pixel-board {
 }
 
 .pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  display: table-cell;
+  display: inline-block;
   background-color: white;
 }
