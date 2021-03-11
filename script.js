@@ -50,6 +50,22 @@ document.addEventListener("click", function (event) {
     }
   whitePixels()
   }
+  if (event.target.id === "generate-board" && parseInt(document.getElementById("board-size").value) > 50) {
+    let clearTable = document.getElementById("pixel-board");
+    clearTable.innerHTML = "";
+    let valueInput = parseInt(document.getElementById("board-size").value);
+    for (let i = 1; i <= 50; i += 1) {
+      let table = document.getElementById("pixel-board");
+      let row = document.createElement("TR");
+      for (let j = 1; j <= 50; j += 1) {
+        let pixelTable = document.createElement("TD");
+        pixelTable.setAttribute("class", "pixel");
+        row.appendChild(pixelTable);
+      }
+    table.appendChild(row)
+    }
+    whitePixels()
+  }
   if (event.target.id === "generate-board" && document.getElementById("board-size").value.length === 0) {
     alert("Board inválido!");
   }
