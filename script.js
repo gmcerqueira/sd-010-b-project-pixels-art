@@ -58,11 +58,6 @@ function applySelectedColor() {
     });
   }
 }
-window.onload = function onLoad() {
-  blackSquareSelected();
-  createPixelsBoard();
-  applySelectedColor();
-};
 
 function selectColor() {
   const allColors = document.getElementsByClassName('color');
@@ -76,7 +71,50 @@ function selectColor() {
     });
   }
 }
+function createInput() {
+  const input = document.createElement('input');
+  input.id = 'board-size';
+  input.type = 'number';
+  input.min = '1';
+  input.max = '50';
+  document.body.appendChild(input);
+}
 
+function newBoard() {
+  const board = document.getElementById('pixel-board');
+  const input = document.getElementById('board-size');
+  board.innerHTML = '';
+  for (let i = 0; i < input.value; i += 1) {
+    const tableRow = document.createElement('div');
+    tableRow.className = 'board-tr';
+    board.appendChild(tableRow);
+  }
+  const tableRows = document.getElementsByClassName('board-tr');
+  for (let i2 = 0; i2 < tableRows.length; i2 += 1) {
+    for (let i3 = 0; i3 < input.value; i3 += 1) {
+      const pixel = document.createElement('li');
+      pixel.className = 'pixel';
+      pixel.style.backgroundColor = 'white';
+      tableRows[i2].appendChild(pixel);
+    }
+  }
+  applySelectedColor();
+}
+function createInputBtn() {
+  const inputBtn = document.createElement('button');
+  inputBtn.id = 'generate-board';
+  inputBtn.innerText = 'VQV';
+  document.body.appendChild(inputBtn);
+  inputBtn.addEventListener('click', newBoard);
+}
 createColorPalette();
 createClearBtn();
 selectColor();
+createInput();
+createInputBtn();
+
+window.onload = function onLoad() {
+  blackSquareSelected();
+  createPixelsBoard();
+  applySelectedColor();
+};
