@@ -14,42 +14,26 @@
   display: inline-block;
 }
 
-.linha {
- 
+#seilah {
+  display: inline-block;
+}
+
+#color-palette {
+  display: inline-block;
 }
 
 #black {
-  background-color: black;
+  background: black;
 }
 
 #blue {
-  background-color: blue;
+  background: blue;
 }
 
 #red {
-  background-color: red;
-}
-
-#pink {
-  background-color: pink;
-}
-
-#green {
-  background-color: green;
-}
-
-#purple {
-  background-color: purple;
-}
-
-#orange {
-  background-color: orange;
+  background: red;
 }
 
 #yellow {
-  background-color: yellow;
-}
-
-#grey {
-  background-color: grey;
+  background: yellow;
 }
