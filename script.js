@@ -42,7 +42,6 @@ let numberOfPixels = 5;
 const boardFather = document.querySelector('body');
 
 function pixelsBoardFather() {
-  
   const fatherCreator = document.createElement('div');
   fatherCreator.id = 'pixel-board';
   boardFather.append(fatherCreator);
@@ -56,9 +55,9 @@ function pixelsForBoard() {
     const createLines = document.createElement('div');
     pixelsFather.appendChild(createLines);
 
-    // Crias as colunas com N de pixels:
+    // Criar as colunas com N de pixels:
     for (let column = 0; column < numberOfPixels; column += 1) {
-      const createRows = document.createElement('div')
+      const createRows = document.createElement('div');
       createRows.className = 'pixel';
       createRows.style.backgroundColor = 'white';
       pixelsFather.appendChild(createRows);
@@ -67,6 +66,6 @@ function pixelsForBoard() {
 }
 
 pixelsBoardFather();
-pixelsForBoard(numberOfPixels);
+pixelsForBoard();
 
 console.log(document.querySelector('body'));
