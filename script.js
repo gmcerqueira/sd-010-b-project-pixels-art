@@ -51,3 +51,34 @@ function setPixelColor() {
 }
 
 setPixelColor();
+
+function createButtonClear() {
+  let buttonDiv = document.querySelector('.button-div');
+
+  let createButton = document.createElement('button');
+
+  createButton.id = 'clear-board';
+
+  createButton.innerText = 'Limpar';
+
+  buttonDiv.appendChild(createButton);
+}
+
+createButtonClear();
+
+function clearButton() {
+  let buttonClear = document.querySelector('#clear-board');
+  let pixels = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index];
+
+    buttonClear.addEventListener('click', function () {
+      if (pixels[index].style.backgroundColor !== 'white') {
+        pixels[index].style.backgroundColor = 'white';
+      }
+    });
+  }
+}
+
+clearButton();

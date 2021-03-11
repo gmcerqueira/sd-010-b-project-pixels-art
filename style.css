@@ -72,7 +72,15 @@ section > .color-palette {
   margin-top: 30px;
 }
 
+.button-div {
+  display: flex;
+  justify-content: center;
+  margin: 20px ;
+}
+ 
 .clear-board {
   margin-left: 20px;
   margin-top: 20px;
+  
+  
 }
