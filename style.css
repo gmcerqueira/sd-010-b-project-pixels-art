@@ -5,7 +5,7 @@
 
 body {
   width: auto;
-  background-image: url(images/art-pencil-color-school-education-isolated-1588939-pxhere.com.jpg);
+  background-image: url('images/art-pencil-color-school-education-isolated-1588939-pxhere.com.jpg');
   background-position: 30% 45%;
   background-size: cover;
   font-family: monospace;
