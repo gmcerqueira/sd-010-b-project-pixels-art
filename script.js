@@ -78,3 +78,21 @@ function defaultColor() {
   const setDefaultColor = document.querySelector('#black');
   setDefaultColor.className = 'color selected';
 }
+
+// 7. Ao clicar numa cor, a classe da mesma muda para selected:
+function selectColorOnClick() {
+  const colors = document.querySelector('#color-palette');
+
+  // Condição para mudar a cor:
+  colors.addEventListener('click', function (event){
+    const colorToSelect = document.getElementsByClassName('color');
+    const colorSelected = document.querySelector('.selected');
+
+    if(colorToSelect.className !== 'color selected') {
+       event.target.className = 'color selected';
+       colorSelected.className = 'color';
+    }
+  });
+}
+
+selectColorOnClick();
