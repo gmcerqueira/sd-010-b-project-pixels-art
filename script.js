@@ -26,17 +26,26 @@ function selectColor() {
     pallet[indexPallet].addEventListener('click', function () {
       if (pallet[indexPallet].className === 'color') {
         pallet[indexPallet].className = 'color selected';
-        for (let index = 0; index < pallet.length; index += 1) {
-          if (pallet[index] !== pallet[indexPallet]) {
-            pallet[index].className = 'color';
-          }
-        }
       } else {
         pallet[indexPallet].className = 'color';
       }
     });
   }
 }
+
+function classReset () {
+  const itemList = document.getElementsByClassName('color');
+  for (let index = 0; index < itemList.length; index += 1) {
+    itemList[index].addEventListener('click', function () {
+      for (let index2 = 0; index2 < itemList.length; index2 += 1) {
+        if (index2 !== index) {
+          itemList[index2].className = 'color';
+        }
+      }
+    });
+  }
+}
+classReset();
 
 selectColor();
 
