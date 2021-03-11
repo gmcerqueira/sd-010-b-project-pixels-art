@@ -1,3 +1,5 @@
+let compStyles = 'black';
+
 function addElementoDiv() {
   const sectionAtual = document.querySelector('#color-palette');
   for (let index = 0; index < 4; index += 1) {
@@ -39,6 +41,8 @@ function selecionarCorPreta() {
   classColor[1].className = 'color';
   classColor[2].className = 'color';
   classColor[3].className = 'color';
+  compStyles = 'black';
+  console.log(compStyles);
   return classColor;
 }
 // classList.add() classList.remove()
@@ -50,6 +54,7 @@ function selecionarCorVermelha() {
   classColor[1].className = colorSelected;
   classColor[2].className = 'color';
   classColor[3].className = 'color';
+  compStyles = 'red';
   return classColor;
 }
 
@@ -58,6 +63,7 @@ function selecionarCorAzul() {
   classColor[1].className = 'color';
   classColor[2].className = colorSelected;
   classColor[3].className = 'color';
+  compStyles = 'blue';
   return classColor;
 }
 
@@ -66,17 +72,10 @@ function selecionarCorVerde() {
   classColor[1].className = 'color';
   classColor[2].className = 'color';
   classColor[3].className = colorSelected;
+  compStyles = 'green';
   return classColor;
 }
 const pixelQuadro = document.getElementById('pixel-board');
-
-function pixelColor() {
-  const selected = document.querySelector('div.color.selected');
-  const compStyles = window.getComputedStyle(selected).getPropertyValue.backgroundColor;
-  document.getElementsByClassName('pixel').backgroundColor = compStyles;
-  console.log(pixelQuadro);
-  return pixelQuadro;
-}
 
 // Escutador de eventos
 const divsColorPalette = document.querySelectorAll('.color');
@@ -84,14 +83,15 @@ divsColorPalette[0].addEventListener('click', selecionarCorPreta);
 divsColorPalette[1].addEventListener('click', selecionarCorVermelha);
 divsColorPalette[2].addEventListener('click', selecionarCorAzul);
 divsColorPalette[3].addEventListener('click', selecionarCorVerde);
-pixelQuadro.addEventListener('click', pixelColor);
+pixelQuadro.addEventListener('click', function (elemento) {
+  elemento.target.style.background = compStyles;
+});
 
 function limparPixels() {
-  for (let index = 0; index < 30; index += 1) {
-    for (let index2 = 0; index2 < 30; index2 += 1) {
-      document.querySelectorAll('div.pixel')[index].style.backgroundColor = 'white';
-    }
-  }
+  const limpar = document.querySelectorAll('.pixel');
+  limpar.forEach((count) => {
+    count.style.backgroundColor = 'white';
+  });
 }
 
 const buttomLimparCores = document.querySelector('#clear-board');
