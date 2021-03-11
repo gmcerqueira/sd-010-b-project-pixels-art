@@ -8,7 +8,7 @@ function headerMaker() {
 }
 headerMaker();
 
-// 2. Adiciona a paleta de cores:
+// 2. e 3. Adiciona a paleta de cores:
 function tablesFatherCreator() {
   const generateTable = document.querySelector('body');
   const tablesFather = document.createElement('div');
@@ -37,5 +37,17 @@ function colorsTableMaker() {
 }
 
 colorsTableMaker();
+
+// 4. Adicionar à página um quadro com N pixels:
+let numberOfPixels = 5;
+
+function pixelsBoardFather() {
+  const boardFather = document.querySelector('body');
+  const fatherCreator = document.createElement('div');
+  fatherCreator.id = "pixel-board";
+  boardFather.append(fatherCreator);
+}
+
+pixelsBoardFather();
 
 console.log(document.querySelector('body'));
