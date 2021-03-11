@@ -15,40 +15,45 @@ function tableMaker() {
 }
 tableMaker();
 
+let backButton = document.getElementById('clear-btn');
+backButton.addEventListener('click', resetButton);
 
+function resetButton(buttonReaction) {
+ buttonReaction.target.reset('#pixel-board') ;
+}
 
-let listCollors = document.querySelectorAll('.color')
+let listCollors = document.querySelectorAll('.color');
 let black = document.querySelector('.color');
-black.classList.add('selected')
-let fullColors = document.getElementsByClassName('pixel')
-let selectedColor = document.getElementsByClassName('selected')
+black.classList.add('selected');
+let fullColors = document.getElementsByClassName('pixel');
+let selectedColor = document.getElementsByClassName('selected');
 
 //para a função de pegar cor e repassar para o pixel contei com a aula/ajuda de Luiz Paulo 'LP' T10B para entender sobre addEventlistener e seu acompanhamento para a elaboração das funções
 function selection() {
-  for (index = 0; index < listCollors.length; index += 1) {
-    listCollors[index].addEventListener('click', changeClass)
+  for (let index = 0; index < listCollors.length; index += 1) {
+    listCollors[index].addEventListener('click', changeClass);
   }
 }
-selection()
+selection();
 
 function changeClass(styleClass) {
-  for (index = 0; index < listCollors.length; index += 1) {
+  for (let index = 0; index < listCollors.length; index += 1) {
     if (listCollors[index].classList.contains('selected')) {
-      listCollors[index].classList.remove('selected')
+      listCollors[index].classList.remove('selected');
     }
   }
-  styleClass.target.classList.add('selected')
+  styleClass.target.classList.add('selected');
 }
 
 function colorAcquire() {
 
   for (let index = 0; index < fullColors.length; index += 1) {
-    fullColors[index].addEventListener('click', colorSelector)
+    fullColors[index].addEventListener('click', colorSelector);
   }
 }
 colorAcquire();
 
 function colorSelector(clickar) {
 
-  clickar.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor
+  clickar.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
 }

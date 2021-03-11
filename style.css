@@ -7,6 +7,10 @@ table {
   margin: auto;
 }
 
+nav {
+  margin: 10px;
+}
+
 tr {
   margin: 0;
 }
