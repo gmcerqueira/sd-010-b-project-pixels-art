@@ -4,21 +4,22 @@
 
 // D7 - Clicar em uma das cores da paleta, faz com que ela seja selecionada
 const colorPalette = document.querySelector('#color-palette');
-colorPalette.addEventListener('click', (funcao) => { // https://www.w3schools.com/js/js_htmldom_eventlistener.asp
-  const colorPaletteSelected = document.getElementById(funcao.target.id);
+colorPalette.addEventListener('click', (event) => { // https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+  const colorPaletteSelected = document.getElementById(event.target.id);
   const verify = colorPaletteSelected.className;
-  verify === 'color-palette', funcao.stopPropagation();
-  document.querySelector('.selected').className = 'color', 'title';
-  colorPaletteSelected.className = 'selected';
+  verify === ['#color-palette',
+  event.stopPropagation(),
+  document.querySelector('.selected').className = '.color',
+  colorPaletteSelected.className = 'color selected'];
 });
 
 // D8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
 const pixelBoard = document.querySelector('#pixel-board');
-pixelBoard.addEventListener('click', (funcao) => {
-  const selectedPixel = funcao.target;
+pixelBoard.addEventListener('click', (event) => {
+  const selectedPixel = event.target;
   const selectedColor = document.querySelector('.selected');
   const selectedColorRgb = window.getComputedStyle(selectedColor,
-    null).getPropertyValue('background-color');
+  null).getPropertyValue('background-color');
   selectedPixel.style.backgroundColor = selectedColorRgb;
 });
 
@@ -37,9 +38,10 @@ const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', () => {
   const numberRow = pixelBoard.children.length;
   let number = 0;
-  (boardSize.value === '') ? number = '':
-  (boardSize.value < 5) ? (number = 5, boardSize.value = number) :
-  (boardSize.value > 50) ? (number = 50, boardSize.value = number) : (number = parseInt(boardSize.value));
+  (boardSize.value === '') ? (number = ''):
+  (boardSize.value < 5) ? (number = 5, boardSize.value = number):
+  (boardSize.value > 50) ? (number = 50, boardSize.value = number) : 
+  (number = parseInt(boardSize.value));
   if (numberRow > number && number !== '') {
     for (let indexRow = 0; indexRow < numberRow; indexRow += 1) {
       if (indexRow < number) {
@@ -49,7 +51,7 @@ generateBoard.addEventListener('click', () => {
         }
       } else {
         let remove = pixelBoard.lastChild;
-        pixelBoard.removeChild(remove);
+          pixelBoard.removeChild(remove);
       }
     }
     pixelBoard.style.width = `${(number * 41)}px`;
@@ -58,20 +60,20 @@ generateBoard.addEventListener('click', () => {
     for (let indexRow = 0; indexRow < number; indexRow += 1) {
       if (indexRow < numberRow) {
         for (let pixels = numberRow; pixels < number; pixels += 1) {
-          const pixelNew = document.createElement('table');
+          const pixelNew = document.createElement('tr');
           pixelNew.className = 'pixel';
           pixelBoard.children[indexRow].appendChild(pixelNew);
         }
       } else {
         for (let indexNewRow = numberRow; indexNewRow <= number; indexNewRow += 1) {
           const rowNew = document.createElement('tr');
-          rowNew.className = 'tr';
+          rowNew.className = '.tr';
           pixelBoard.appendChild(rowNew);
           break;
         }
         for (let pixels = 0; pixels < number; pixels += 1) {
           let index = indexRow;
-          const pixelNew = document.createElement('table');
+          const pixelNew = document.createElement('td');
           pixelNew.className = 'pixel';
           pixelBoard.children[index].appendChild(pixelNew);
         }
@@ -80,7 +82,7 @@ generateBoard.addEventListener('click', () => {
     pixelBoard.style.width = `${(number * 41)}px`;
     pixelBoard.style.height = `${(number * 41)}px`;
   } else {
-    number === '' ?
-    document.alert('Board inválido!') : document.alert('Números iguais.');
+    number === '',
+    document.alert('Board inválido!'), document.alert('Números iguais.');
   }
 });
