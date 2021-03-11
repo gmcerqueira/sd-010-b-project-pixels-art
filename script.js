@@ -18,9 +18,9 @@ function selectColor() {
   for (let indexPallet = 0; indexPallet < pallet.length; indexPallet += 1) {
     pallet[indexPallet].addEventListener('click', function () {
       if (pallet[indexPallet].className === 'color') {
-        pallet[indexPallet].className = 'color selected';
+        pallet[indexPallet].classList.add('selected');
       } else {
-        pallet[indexPallet].className = 'color';
+        pallet[indexPallet].classList.remove('selected');
       }
     });
   }
@@ -28,13 +28,13 @@ function selectColor() {
 
 function classReset () {
   const blackColor = document.getElementsByClassName('color')[0];
-  blackColor.className = 'color selected';
+  blackColor.classList.add('selected');
   const itemList = document.getElementsByClassName('color');
   for (let index = 0; index < itemList.length; index += 1) {
     itemList[index].addEventListener('click', function () {
       for (let index2 = 0; index2 < itemList.length; index2 += 1) {
         if (index2 !== index) {
-          itemList[index2].className = 'color';
+          itemList[index2].classList.remove('selected');
         }
       }
     });
