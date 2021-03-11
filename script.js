@@ -103,3 +103,16 @@ for (let index = 0; index < paletterItems.length; index += 1) {
   paletterItems[index].addEventListener('click', markSelected);
 }
 console.log(getPaletteItems());
+
+/* Criando botão para limpar todo o quadro de pixels: */
+
+const buttonClearBoard = document.getElementById('clear-board');
+
+function clearBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+}
+
+buttonClearBoard.addEventListener('click', clearBoard);
