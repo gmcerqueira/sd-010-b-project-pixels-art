@@ -62,24 +62,29 @@ function addColorInPixel() {
   this.style.backgroundColor = color.dataset.color;
 }
 
-
 /* Criando quadro de pixels dinamicamente: */
-let pixelBoard = null;
-pixelBoard = document.getElementById('pixel-board');
-for (let index = 0; index < 25; index += 1) {
-  if (index % 5 === 0) {
-    let breakRow = null;
-    breakRow = document.createElement('br');
-    pixelBoard.appendChild(breakRow);
+
+function generateBoard(number) {
+  const pixelBoard = document.getElementById('pixel-board');
+  pixelBoard.innerHTML = '';
+  for (let index = 0; index < number * number; index += 1) {
+    if (index % number === 0) {
+      let breakRow = null;
+      breakRow = document.createElement('br');
+      pixelBoard.appendChild(breakRow);
+    }
+    let pixel = null;
+    pixel = document.createElement('span');
+    pixel.setAttribute('id', index + 1);
+    pixel.className = 'pixel';
+    pixel.addEventListener('click', addColorInPixel);
+    pixelBoard.appendChild(pixel);
   }
-  let pixel = null;
-  pixel = document.createElement('span');
-  pixel.setAttribute('id', index + 1);
-  pixel.className = 'pixel';
-  pixel.addEventListener('click', addColorInPixel);
-  pixelBoard.appendChild(pixel);
 }
 
+window.onload = () => {
+  generateBoard(5);
+};
 /* Fazendo com que um elemento da palheta de cores marque selected caso um deles for clicado */
 
 function getPaletteItems() {
@@ -116,3 +121,17 @@ function clearBoard() {
 }
 
 buttonClearBoard.addEventListener('click', clearBoard);
+
+/* Desafio 10: */
+const buttonGenerateBoard = document.getElementById('generate-board');
+function generateBoardByInput() {
+  const inputBoardSize = document.getElementById('board-size');
+  if (inputBoardSize.value === '' || parseInt(inputBoardSize.value, 10) <= 0) {
+    alert('Board inválido!');
+  } else {
+    const number = parseInt(inputBoardSize.value, 10);
+    generateBoard(number);
+  }
+}
+
+buttonGenerateBoard.addEventListener('click', generateBoardByInput);
