@@ -1,10 +1,3 @@
-// window.onload = blackColorSelect;
-
-function blackColorSelect() {
-  const blackColor = document.getElementsByClassName('color')[0];
-  blackColor.className = 'color selected';
-}
-
 function createTable(number) {
   const table = document.getElementById('pixel-board');
   for (let indexLine = 0; indexLine < number; indexLine += 1) {
@@ -34,6 +27,8 @@ function selectColor() {
 }
 
 function classReset () {
+  const blackColor = document.getElementsByClassName('color')[0];
+  blackColor.className = 'color selected';
   const itemList = document.getElementsByClassName('color');
   for (let index = 0; index < itemList.length; index += 1) {
     itemList[index].addEventListener('click', function () {
