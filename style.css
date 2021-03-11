@@ -1,4 +1,11 @@
+body {
+  margin: 0px;
+ text-align: center;
+}
 table {
+ margin: auto;
+}
+tr {
   margin: 0px;
 }
 
@@ -20,6 +27,7 @@ table {
 .green{
   background-color: green;
 }
+
 .pixel {
   background-color: white;
   width: 40px;
