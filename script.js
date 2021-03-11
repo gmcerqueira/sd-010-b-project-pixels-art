@@ -161,3 +161,15 @@ function pegaCorTres() {
   elemento.classList.remove('selected');
   pixelCorTres.classList.add('selected');
 }
+
+pixelPreto.addEventListener('click', pegaCorPreta);
+pixelCorUm.addEventListener('click', pegaCorUm);
+pixelCorDois.addEventListener('click', pegaCorDois);
+pixelCorTres.addEventListener('click', pegaCorTres);
+
+function criarListenerCelulas() {
+  const quadro = document.getElementById('pixel-board');
+  quadro.addEventListener('click', function (event) {
+    event.target.style.background = document.getElementsByClassName('selected')[0].style.background;
+  });
+}
