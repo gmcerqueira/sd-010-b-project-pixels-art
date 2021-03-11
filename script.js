@@ -21,15 +21,15 @@ classList.remove('selected');
 event.target.classList.add('selected');
 }
 //8
-  /*  let cor = document.querySelector('.selected');
-   let pixels =querySelectorAll('pixel')
+   let cor = document.querySelector('.selected');
+   let pixels =document.querySelectorAll('.pixel')
    for(let index = 0; index < pixels.length; index+=1){
-     pixels[index].sddEventListener('click', colorize);
+     pixels[index].addEventListener('click', colorize);
    }
      function colorize(event){
        let selectedCor = document.querySelector('.selected').id;
        event.target.style.backgroundColor =  selectedCor ;
      }
- */
+
  
 
