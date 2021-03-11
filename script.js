@@ -82,7 +82,15 @@ generateBoard.addEventListener('click', () => {
     pixelBoard.style.width = `${(number * 41)}px`;
     pixelBoard.style.height = `${(number * 41)}px`;
   } else {
-    number === '',
-    document.alert('Board inválido!'), document.alert('Números iguais.');
+    if (number == ''){
+      alert('Board inválido!');
+  } else {
+    if (number < 5) {
+      number = 5;
+    }
+    if (number > 50) {
+      number = 50;
+    }
+  }
   }
 });
