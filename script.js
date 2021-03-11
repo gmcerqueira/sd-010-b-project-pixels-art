@@ -1,3 +1,11 @@
+function criaCor() {
+  const cor1 = (Math.ceil(Math.random() * 255));
+  const cor2 = (Math.ceil(Math.random() * 255));
+  const cor3 = (Math.ceil(Math.random() * 255));
+
+  return `rgb(${cor1}, ${cor2}, ${cor3})`;
+}
+
 function criaPaleta() {
   const paletaDeCores = document.querySelector('#color-palette');
 
@@ -102,11 +110,3 @@ function mudaTamanhoQuadro() {
 }
 const botaoQuadro = document.querySelector('#generate-board');
 botaoQuadro.addEventListener('click', mudaTamanhoQuadro);
-
-function criaCor() {
-  const cor1 = (Math.ceil(Math.random() * 255));
-  const cor2 = (Math.ceil(Math.random() * 255));
-  const cor3 = (Math.ceil(Math.random() * 255));
-
-  return `rgb(${cor1}, ${cor2}, ${cor3})`;
-}
