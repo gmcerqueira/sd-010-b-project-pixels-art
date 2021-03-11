@@ -100,4 +100,7 @@ btnVQV.addEventListener('click', () => {
     pixelMatriz(sizePixel);
     colorPixel();
   }
+  // for (let a = 0; a < cPixel.length; a += 1) {
+  //   cPixel[a].style.backgroundColor = 'white';
+  // }
 });
