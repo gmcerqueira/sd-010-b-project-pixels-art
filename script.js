@@ -6,8 +6,8 @@ function pixelCreate() {
   for (let j = 0; j < 5; j += 1) {
     let line = document.createElement('div');
     for (let h = 0; h < 5 ; h += 1) {
-      let column = document.createElement('div');  
-      column.classList.add('.pixel');
+      let column = document.createElement('div.pixel');  
+      column.classList.add('pixel');
       line.appendChild(column);
     } 
       quadro.appendChild(line);
