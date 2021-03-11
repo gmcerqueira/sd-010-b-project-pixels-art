@@ -30,7 +30,7 @@
   background-color: green;
 }
 
-#black {
+.selected {
   background-color: black;
 }
 
@@ -48,7 +48,4 @@
   height: 40px;
   float: left;
   border: 1px solid black;
-}
-.selected {
-
 }
