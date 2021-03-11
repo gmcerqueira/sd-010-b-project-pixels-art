@@ -49,8 +49,6 @@ function createPixelsBoard() {
 }
 function applySelectedColor() {
   const allPixels = document.getElementsByClassName('pixel');
-  console.log(allPixels);
-  console.log(allPixels.length);
   for (let i = 0; i < allPixels.length; i += 1) {
     allPixels[i].addEventListener('click', (evt) => {
       const { target } = evt;
@@ -100,13 +98,31 @@ function newBoard() {
   }
   applySelectedColor();
 }
+
+function valueChecker() {
+  const input = document.getElementById('board-size');
+  console.log(input.value);
+  if (input.value === '') {
+    alert('Board inválido!');
+  } else if (input.value < 5) {
+    input.value = 5;
+    newBoard();
+  } else if (input.value > 50) {
+    input.value = 50;
+    newBoard();
+  } else {
+    newBoard();
+  }
+}
+
 function createInputBtn() {
   const inputBtn = document.createElement('button');
   inputBtn.id = 'generate-board';
   inputBtn.innerText = 'VQV';
   document.body.appendChild(inputBtn);
-  inputBtn.addEventListener('click', newBoard);
+  inputBtn.addEventListener('click', valueChecker);
 }
+
 createColorPalette();
 createClearBtn();
 selectColor();
