@@ -1,12 +1,11 @@
 window.onload = function () {
-  document.getElementById('black').classList.add('selected');
+  document.getElementById('black').classList.add('selected')
 }
 
 //Paleta de Cores
 let colorPalette = ['black', 'green', 'red', 'blue'];
-// let nonSelected = document.getElementsByClassName('color');
-// let selectedPalette = document.querySelector('.selected');
-let heldColor = [];
+let heldColor = 'black';
+
 //Botões da paleta de cores
 let getPaletteList = document.querySelector('#color-palette');
 
@@ -32,10 +31,6 @@ for (index = 0; index < 4; index += 1) {
   });
 }
 
-let selectedPalette = document.getElementsByClassName('color selected');
-// let paletteColor = document.querySelector('.selected');
-
-
 //Número de Pixels
 let pixelsList = [];
 for (index = 0; index < 25; index += 1) {
@@ -58,3 +53,12 @@ for (let row = 0; row < 5; row += 1) {
     });
   };
 };
+
+//Botão de limpar o quadro de pixels
+let getPixelsBoxes = document.getElementsByClassName('pixel');
+let clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', function () {
+  for (index = 0; index < getPixelsBoxes.length; index += 1) {
+    getPixelsBoxes[index].style.backgroundColor = 'white';
+  }
+})

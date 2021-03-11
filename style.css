@@ -54,3 +54,7 @@
   display: inline-block;
   margin-right: 0.5%
 }
+
+#clear-board {
+  vertical-align: auto;
+}
