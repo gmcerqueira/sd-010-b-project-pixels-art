@@ -23,23 +23,17 @@ h1 {
   color: white;
 }
 
-#div-palete {
-  text-align: center;
-  background-color: white;
-  width: auto;
-  margin-top: 500px;
 
-}
 
 #color-palette {
   text-align: center;
-  margin-top: 400px;
+  margin-top: 350px;
 }
 
 .color {
   width: 40px;
   height: 40px;
-  border: white solid 3px;
+  border: black solid 1px;
   display: inline-block;
   margin: 10px;
   border-radius: 50%;
@@ -68,7 +62,7 @@ h1 {
 .selected {
   width: 40px;
   height: 40px;
-  border: white solid 3px;
+  border: black solid 1px;
   display: inline-block;
   margin: 10px;
 }
