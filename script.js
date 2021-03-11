@@ -88,7 +88,7 @@ const btnVQV = document.getElementById('generate-board');
 const inputBoardSize = document.getElementById('board-size');
 
 function clearMatriz() {
-  divPixelBoard.replaceChildren();
+  divPixelBoard.innerHTML = '';
 }
 
 btnVQV.addEventListener('click', () => {
@@ -100,7 +100,4 @@ btnVQV.addEventListener('click', () => {
     pixelMatriz(sizePixel);
     colorPixel();
   }
-  // for (let a = 0; a < cPixel.length; a += 1) {
-  //   cPixel[a].style.backgroundColor = 'white';
-  // }
 });
