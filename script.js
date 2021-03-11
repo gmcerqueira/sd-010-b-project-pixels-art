@@ -8,29 +8,19 @@ const paleta4 = document.getElementById("paleta4");
 const selected = document.getElementsByClassName("selected");
 const pixels = document.getElementsByClassName("pixel");
 const botaoLimpa = document.getElementById("clear-board");
+const botaoCriar = document.getElementById("generate-board");
+const userValue = document.getElementById("board-size");
 
-let lado = 5;
+
+let lado = userValue.value;
 let numeroPixels = lado * lado;
 let selectedColor = 0;
 
 selectColor("paleta1");
 updateSelectedColor();
 
-for (let index = 1; index <= lado; index++) {
-    createLines("linha" + index);
-}
 
-for (let index = 1; index <= lado; index++) {
-    let pai = "linha" + index;
-    pai = document.getElementById(pai);
-    for (let index = 1; index <= lado; index++) {
-        createPixel(pai); 
-    }
-}
-
-for (let index = 0; index < pixels.length; index++) {
-    pixels[index].id = (index + 1);
-}
+botaoCriar.addEventListener("click", criarQuadro);
 
 botaoLimpa.addEventListener("click", clear);
 
@@ -58,6 +48,30 @@ paleta4.addEventListener("click", function() {
     selectColor("paleta4");
     updateSelectedColor()
 })
+
+function criarQuadro() {
+    pixelBoard.innerHTML = "";
+    lado = userValue.value;
+    if (lado == "") {
+         alert("Board inválido!")
+    }
+    
+    for (let index = 1; index <= lado; index++) {
+        createLines("linha" + index);
+    }
+
+    for (let index = 1; index <= lado; index++) {
+        let pai = "linha" + index;
+        pai = document.getElementById(pai);
+        for (let index = 1; index <= lado; index++) {
+            createPixel(pai); 
+        }
+    }
+
+    for (let index = 0; index < pixels.length; index++) {
+        pixels[index].id = (index + 1);
+    }
+}
 
 function selectColor(corPaleta) {
     if (corPaleta == "paleta1") {
