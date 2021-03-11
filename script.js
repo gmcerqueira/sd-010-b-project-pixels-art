@@ -33,60 +33,87 @@ cores[cor].addEventListener('click', function(evento){
   sessionStorage.setItem('color', evento.target.style.backgroundColor); // adiciono a cor atual ao session storage
 })
 }
-let tamanhoDoQuadro = 5;
 
-function criaQuadro(tamanhoDoQuadro){
-// Quadro de pixels (linhas)
+// Cria um quadro dado um parametro de entrada
+function criaQuadro(elementoEntrada){
   const pixelBoard = document.querySelector('#pixel-board');
-  for (let i = 0; i < tamanhoDoQuadro; i +=1 ) {
-    const box = document.createElement('tr');
-    pixelBoard.appendChild(box);    
+
+  for (let i = 0; i < elementoEntrada; i +=1 ) {
+    const linha = document.createElement('tr');
+    pixelBoard.appendChild(linha);    
   }
   // Quadro de pixels (celulas)
   const pixelTable = document.querySelectorAll('#pixel-board, tr'); // recupero as tr que criei 
-  for (let l = 1; l <= tamanhoDoQuadro; l +=1 ) { // para cada linha 
-    for (let c = 1; c <= tamanhoDoQuadro; c += 1) { // para cada coluna 
+  for (let l = 1; l <= elementoEntrada; l +=1 ) { // para cada linha 
+    for (let c = 1; c <= elementoEntrada; c += 1) { // para cada coluna 
       const box = document.createElement('td'); // crio uma celula
       box.className  = 'pixel'; // nomeio a classe
       pixelTable[c].appendChild(box); // e adiciono a mesma na posição referente a coluna da linha
     }
   }
 }
-criaQuadro(tamanhoDoQuadro)
 
+function tamanhoPadrao(){
+  criaQuadro(5);
+  
+}
+tamanhoPadrao()
 
-// pintando o quadro de pixels
-const pixels = document.querySelectorAll('.pixel') // recupero todos elem classe pixel
-for (let p = 0; p < pixels.length; p += 1){ //itero sobre todos eles
-  pixels[p].addEventListener('click', function(evento){ //pego o pixel na posiçao p e adiciono o evento de click
-  evento.target.style.backgroundColor = sessionStorage.color; // passo a cor do session storage para o pixel
-   })
+function limpaQuadro(){
+  const pixels = document.querySelectorAll('tr, .pixel') // Removendo o quadro atual
+    for (let i = pixels.length -1 ; i >= 0; i -= 1){
+      pixels[i].remove();
+    }
 }
 
-//botao limpar
-const botaoClear = document.getElementById('clear-board')
-botaoClear.innerHTML = 'Limpar'
-
-//adicionando o evento de limpar ao botão
-botaoClear.addEventListener('click',function(){
-  for (let p = 0; p < pixels.length; p += 1){  // itero sobre cada pixel da minha lista
-    pixels[p].style.backgroundColor = 'white';  // e pra cada pixel atribuo a cor branca
-  }
-})
-
-
-// Botao do input
+// Botao do input e verificação do tamanho do quadro dinamico
 const button = document.getElementById('generate-board')
 const input = document.querySelector('#board-size')
 button.innerHTML = 'VQV'
 button.addEventListener('click', function(){
   if (input.value === ''){
     alert('Board inválido!')
-  } else if(input.value < 5){
-      tamanhoDoQuadro = 5;
+   } else if(input.value < 5){
+    tamanhoDoQuadro = 5;
+    quadroDinamico(tamanhoDoQuadro);
   } else if (input.value > 50){
     tamanhoDoQuadro = 50;
+    quadroDinamico(tamanhoDoQuadro);
   } else {
-    criaquadro(input.value);
+    quadroDinamico(input.value)
   }
 })
+
+function quadroDinamico(tamanhoDoQuadro){
+  limpaQuadro();
+  criaQuadro(tamanhoDoQuadro);
+  pintaOQuadro();
+  botaoLimpar();
+}
+
+// pintando o quadro de pixels
+function pintaOQuadro(){
+  const pixels = document.querySelectorAll('.pixel') // recupero todos elem classe pixel
+    for (let p = 0; p < pixels.length; p += 1){ //itero sobre todos eles
+      pixels[p].addEventListener('click', function(evento){ //pego o pixel na posiçao p e adiciono o evento de click
+      evento.target.style.backgroundColor = sessionStorage.color; // passo a cor do session storage para o pixel
+      })
+  }
+}
+pintaOQuadro();
+
+//botao limpar
+const botaoClear = document.getElementById('clear-board')
+botaoClear.innerHTML = 'Limpar'
+
+//Limpando o quadro de pixels
+function botaoLimpar(){
+  const pixels = document.querySelectorAll('.pixel') 
+  botaoClear.addEventListener('click',function(){
+    for (let p = 0; p < pixels.length; p += 1){  // itero sobre cada pixel da minha lista
+      pixels[p].style.backgroundColor = 'white';  // e pra cada pixel atribuo a cor branca
+    }
+  })
+}
+botaoLimpar();
+
