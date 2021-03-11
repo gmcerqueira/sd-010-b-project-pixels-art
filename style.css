@@ -14,16 +14,16 @@ display: flex;
     background-color:white;
     border: solid 1px black;
 }
-.vermelho {
+#vermelho {
     background-color: red;
 }
-.azul {
+#azul {
     background-color: blue;
 }
-.lilas {
-    background-color:violet;
+#verde {
+    background-color:green;
 }
-.preto {
+#preto {
     background-color: black;
 }
 #pixel-board {
@@ -34,3 +34,6 @@ display: flex;
     margin-left: 20px;
 }
 
+.selected{
+
+}
