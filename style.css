@@ -14,8 +14,8 @@
 }
 #pixel-board div .pixel {
   display: table-cell;
-  background-color: rgb(255, 255, 255);
-  border: 1px rgb(0, 0, 0) solid;
+  background-color: white;
+  border: 1px black solid;
   height: 40px;
   width: 40px;
 }

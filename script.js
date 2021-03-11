@@ -11,10 +11,25 @@ color[4].style.backgroundColor = 'yellow';
 // Function paleta de 4 cores
 function palletteColor(event) {
   letAuxiliar = event.target;
-  color.getElementsByClassName = 'color';
+  for(let index = 0; index <= color.length; index +=1 ){ 
   if(letAuxiliar.className === 'color'){
     letAuxiliar.className = 'color selected';
     colorInicial = letAuxiliar.style.backgroundColor;
-  }
+  } else {
+    letAuxiliar.className = 'color';
+  }  
+}
 }
 colorDivPallette.addEventListener('click', palletteColor)
+// Function Paleta de 5 cores
+let divPixel = document.querySelector('#pixel-board');
+let corPixel = document.querySelectorAll('.pixel');
+function clickPixel(event) {
+  letAuxiliar = event.target;
+  if(corPixel.getElementsByClassName === 'color') {
+    letAuxiliar.style.backgroundColor = colorInicial;
+  } else {
+    letAuxiliar.style.backgroundColor = colorInicial
+  }
+}
+divPixel.addEventListener('click', clickPixel)
