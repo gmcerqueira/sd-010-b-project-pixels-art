@@ -40,5 +40,12 @@ for (let i = 1; i <= 5; i += 1) {
 }
 
 // criando evento para selecionar as cores
-const getColor = document.getElementById('color-palette').children[0];
+const paletteLine = document.getElementById('palette-line');
+const color = document.getElementsByClassName('color');
 
+for (let item = 0; item < color.length; item += 1) {
+  color[item].addEventListener('click', function () {
+    paletteLine.querySelector('.selected').classList.remove('selected');
+    this.classList.add('selected');
+  });
+}
