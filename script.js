@@ -38,7 +38,7 @@ tablesFatherCreator();
 colorsTableMaker();
 
 // 4. Adicionar à página um quadro com N pixels:
-let numberOfPixels = 5;
+const numberOfPixels = 5;
 const boardFather = document.querySelector('body');
 
 function pixelsBoardFather() {
