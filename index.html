@@ -19,16 +19,17 @@
     <input id="input-fourth" class="input-colors" type="color" value="#438104">
 
     <div id='color-palette'>
-        <span id='primary-color' data-color="#000000" class='color selected'></span>
+        <span id='primary-color' class='color selected'></span>
 
-        <span id='second-color' data-color="#FF0000" class='color'></span>
+        <span id='second-color' class='color'></span>
 
-        <span id='third-color' data-color="#0000FF" class='color'></span>
+        <span id='third-color' class='color'></span>
 
-        <span id='fourth-color' data-color="#008000" class='color'></span>
+        <span id='fourth-color' class='color'></span>
     </div>
+
     <label for="board-size">Defina um tamanho para o quadro de pixels: </label>
-    <input type="number" id="board-size">
+    <input type="number" id="board-size" min='1'>
     <button id="generate-board">VQV</button> <br>
     <button id="clear-board">Limpar</button>
 

@@ -1,11 +1,28 @@
-let spanSecond = null;
-spanSecond = document.getElementById('second-color');
+/* Criado cores randomicas para a paleta */
 
-let spanThird = null;
-spanThird = document.getElementById('third-color');
+function getRandomRGB() {
+  let rgb = 'rgb(';
+  for (let index = 0; index < 3; index += 1) {
+    rgb += Math.ceil(Math.random() * 255);
+    if (index === 2) {
+      rgb += ')';
+    } else {
+      rgb += ',';
+    }
+  }
+  return rgb;
+}
 
-let spanFouth = null;
-spanFouth = document.getElementById('fourth-color');
+const spanSecond = document.getElementById('second-color');
+
+const spanThird = document.getElementById('third-color');
+
+const spanFouth = document.getElementById('fourth-color');
+
+spanSecond.style.backgroundColor = getRandomRGB();
+spanThird.style.backgroundColor = getRandomRGB();
+spanFouth.style.backgroundColor = getRandomRGB();
+
 const dataSetColor = 'data-color';
 function changeSecondColor(element) {
   spanSecond.setAttribute(dataSetColor, element.target.value);
@@ -35,10 +52,13 @@ inpSecond.addEventListener('change', changeSecondColor);
 inpThird.addEventListener('change', changeThirdColor);
 inpFourth.addEventListener('change', changeFourthColor);
 
+function getPaletteItems() {
+  return document.getElementsByClassName('color');
+}
+
 function addColorInPixel() {
-  let color = null;
-  color = document.getElementsByClassName('selected')[0];
-  this.style.backgroundColor = color.dataset.color;
+  const colorPalette = document.getElementsByClassName('selected')[0];
+  this.style.backgroundColor = colorPalette.style.backgroundColor;
 }
 
 /* Criando quadro de pixels dinamicamente: */
@@ -48,11 +68,6 @@ function generateBoard(number) {
   pixelBoard.style.width = `${(number * 43)}px`;
   pixelBoard.innerHTML = '';
   for (let index = 0; index < number * number; index += 1) {
-    /* if (index % number === 0) {
-      let breakRow = null;
-      breakRow = document.createElement('br');
-      pixelBoard.appendChild(breakRow);
-    } */
     let pixel = null;
     pixel = document.createElement('span');
     pixel.setAttribute('id', index + 1);
@@ -64,13 +79,11 @@ function generateBoard(number) {
 }
 
 window.onload = () => {
+  const primaryColor = document.getElementsByClassName('selected')[0];
+  primaryColor.style.backgroundColor = 'rgb(0, 0, 0)';
   generateBoard(5);
 };
 /* Fazendo com que um elemento da palheta de cores marque selected caso um deles for clicado */
-
-function getPaletteItems() {
-  return document.getElementsByClassName('color');
-}
 let paletterItems = [];
 paletterItems = getPaletteItems();
 
