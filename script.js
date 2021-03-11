@@ -25,13 +25,33 @@ document.addEventListener("click", function (event) {
   if (event.target.classList.contains("color") && !event.target.classList.contains("selected") ) {
     document.querySelectorAll(".selected")[0].className = "color";
     event.target.className = "color selected";}
-    if (event.target.classList.contains("pixel")) {
+  if (event.target.classList.contains("pixel")) {
     event.target.style.backgroundColor = document.querySelectorAll(".selected")[0].style.backgroundColor}
-    if (event.target.id === "clear-board") {
-      let pixelsWhiteAgain = document.querySelectorAll(".pixel");
-      for (let i = 0; i < pixelsWhiteAgain.length; i += 1) {
-        pixelsWhiteAgain[i].style.backgroundColor = "white"
-      }
+  if (event.target.id === "clear-board") {
+    let pixelsWhiteAgain = document.querySelectorAll(".pixel");
+    for (let i = 0; i < pixelsWhiteAgain.length; i += 1) {
+      pixelsWhiteAgain[i].style.backgroundColor = "white"
     }
+  }
   //Recebi um grande auxílio do Thiago Marchini nessa questão, ele realmente me ajudou a compreender esse código.
+  if (event.target.id === "generate-board" && parseInt(document.getElementById("board-size").value) >= 5 && parseInt(document.getElementById("board-size").value) <= 50) {
+    let clearTable = document.getElementById("pixel-board");
+    clearTable.innerHTML = "";
+    let valueInput = parseInt(document.getElementById("board-size").value);
+    for (let i = 1; i <= valueInput; i += 1) {
+      let table = document.getElementById("pixel-board");
+      let row = document.createElement("TR");
+      for (let j = 1; j <= valueInput; j += 1) {
+        let pixelTable = document.createElement("TD");
+        pixelTable.setAttribute("class", "pixel");
+        row.appendChild(pixelTable);
+      }
+    table.appendChild(row)
+    }
+  whitePixels()
+  }
+  if (event.target.id === "generate-board" && document.getElementById("board-size").value.length === 0) {
+    alert("Board inválido!");
+  }
 })
+
