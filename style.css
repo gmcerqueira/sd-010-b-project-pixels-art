@@ -11,6 +11,10 @@
   background-color: black;
 }
 
+.selected {
+  background-color: black;
+}
+
 .color:nth-of-type( 2 ) {
   border: 1px solid black;
   height: 30px;
