@@ -93,7 +93,7 @@ function clearMatriz() {
 
 btnVQV.addEventListener('click', () => {
   const sizePixel = inputBoardSize.value;
-  if (sizePixel === 0 || sizePixel < 5) {
+  if (sizePixel === 0 || sizePixel < 5 || sizePixel > 50) {
     alert('Board inválido!');
   } else {
     clearMatriz();
