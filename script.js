@@ -47,7 +47,7 @@ for(j = 0;j < 5;j += 1){
     quadrado.appendChild(linhaTabela);
  }
 }
-
+//////////////////////////////////////////////////////////////////////////
 // for (let index = 0; index < colunaPaleta.length; index += 1){
 //     colunaPaleta[index].addEventListener("click", function (){
 //         colunaPaleta[index].style.backgroundColor = "blue";
@@ -82,10 +82,27 @@ function addBoxClickEvent() {
 
 // const colorPalette = 'color-palette';
 
-window.onload = () => {
+window.onload = 
     // addClassToPaletteBox();
     addBoxClickEvent();
     
     // let selectedColor = document.querySelector('.selected').style.backgroundColor;
+  
+/////////////////////////////////////////////////////////////////////////////////////////////
+//pinta pixel
+  function paint() {
+    const color = document.querySelectorAll('.pixel');
+    for (let index = 0; index < color.length; index += 1) {
+        color[index].addEventListener('click', function (event)  {
+        // const element = event;
+        const colorSelected = document.querySelector('.selected').style.backgroundColor;
+        event.target.style.backgroundColor = colorSelected;
+      }) 
+    }
   }
+  
+  paint();
 
+// document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
+// document.getElementsByClassName('color')[0].className += ' selected';
+// document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
