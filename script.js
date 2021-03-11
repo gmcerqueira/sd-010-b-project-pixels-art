@@ -11,9 +11,7 @@ for (let indexLinhas = 0; indexLinhas < n; indexLinhas += 1) {
   }
 }
 
-// document.getElementsByClassName('color')[0].className = 'color selected';
-
-//requisito 7
+// requisito 7
 let cor = document.getElementsByClassName('color');
 let colorPalette = document.getElementById('color-palette');
 function corTroca() {
@@ -21,7 +19,7 @@ function corTroca() {
     cor[corIndex].addEventListener('click', function () {
       colorPalette.querySelector('.selected').classList.remove('selected');
       this.classList.add('selected');
-    })
+    });
   }
 }
 
