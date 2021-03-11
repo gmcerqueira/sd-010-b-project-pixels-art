@@ -33,15 +33,15 @@ clearBoard.addEventListener('click', () => {
 });
 
 // D10 - Quadro de pixels definido pela pessoa usuária.
-const boardSize = document.querySelector('#board-size');
+const inputSize = document.querySelector('#board-size');
 const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', () => {
   const numberRow = pixelBoard.children.length;
   let number = 0;
-  (boardSize.value === '') ? (number = ''):
-  (boardSize.value < 5) ? (number = 5, boardSize.value = number):
-  (boardSize.value > 50) ? (number = 50, boardSize.value = number) : 
-  (number = parseInt(boardSize.value));
+  (inputSize.value === '') ? (number = ''):
+  (inputSize.value < 5) ? (number = 5, inputSize.value = number):
+  (inputSize.value > 50) ? (number = 50, inputSize.value = number) : 
+  (number = parseInt(inputSize.value));
   if (numberRow > number && number !== '') {
     for (let indexRow = 0; indexRow < numberRow; indexRow += 1) {
       if (indexRow < number) {
