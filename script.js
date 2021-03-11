@@ -1,9 +1,13 @@
 function createPaletteColors() {
   const createBoxColor = document.createElement('div');
   createBoxColor.className = 'color';
-  const colors = ['black', 'blue', 'green', 'red'];
+  const color2 = parseInt(Math.random() * 255, 0);
+  const color3 = parseInt(Math.random() * 255, 0);
+  const color4 = parseInt(Math.random() * 255, 0);
+  const colors = ['black', `rgba(${color2}, ${color3}, ${color4})`,
+    `rgba(${color2}, ${color4}, ${color3})`,
+    `rgba(${color4}, ${color2}, ${color3})`];
   const boxColor = document.getElementsByClassName('color');
-
   for (let index = 0; index < boxColor.length; index += 1) {
     boxColor[index].style.backgroundColor = colors[index];
   }
@@ -55,20 +59,18 @@ generateButton.addEventListener('click', () => {
   const inputValue = document.getElementById('board-size').value;
   if (inputValue === '') {
     alert('Board inválido!');
-  } else {
+  } else if ((inputValue >= 1 && inputValue <= 50)) {
     pixelBoard.innerText = '';
-    if (inputValue >= 1 && inputValue <= 50) {
-      for (let index = 1; index <= inputValue; index += 1) {
-        const createTr = document.createElement('tr');
-        createTr.className = 'line';
-        pixelBoard.appendChild(createTr);
-        for (let index2 = 1; index2 <= inputValue; index2 += 1) {
-          const createTd = document.createElement('td');
-          createTd.className = 'pixel';
-          createTr.appendChild(createTd);
-        }
+    for (let index = 1; index <= inputValue; index += 1) {
+      const createTr = document.createElement('tr');
+      createTr.className = 'line';
+      pixelBoard.appendChild(createTr);
+      for (let index2 = 1; index2 <= inputValue; index2 += 1) {
+        const createTd = document.createElement('td');
+        createTd.className = 'pixel';
+        createTr.appendChild(createTd);
       }
     }
-    clear();
   }
+  clear();
 });
