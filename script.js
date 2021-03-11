@@ -17,7 +17,8 @@ const userValue = document.getElementById("board-size");
 let selectedColor = 0;
 
 criarQuadro(5);
-selectColor("paleta1");
+paleta1.classList.add("selected");
+//selectColor("paleta1");
 updateSelectedColor();
 
 
