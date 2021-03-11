@@ -19,6 +19,17 @@ function pixelBoard() {
   }
 }
 
+function storage() {
+  const num = Number(sessionStorage.getItem('num'));
+  if (num < 5) {
+    sessionStorage.setItem('num', '5');
+  }
+  if (num > 50) {
+    sessionStorage.setItem('num', '50');
+  }
+  return Number(sessionStorage.getItem('num'));
+}
+
 function listen() {
   table.addEventListener('click', function (event) {
     event.target.style.background = document.getElementsByClassName('selected')[0].style.background;
@@ -50,16 +61,17 @@ function yellow() {
 }
 
 function clean() {
-  for (let i = 0; i < boxes; i += 1) {
-    for (let i2 = 0; i < boxes; i += 1) {
-      document.getElementById(`cell-${i + 1}-${i2 + 1}`).style.background = '#ffffff';    
+  const sto = storage();
+  for (let i = 0; i < sto; i += 1) {
+    for (let i2 = 0; i < sto; i += 1) {
+      document.getElementById(`cell-${i + 1}-${i2 + 1}`).style.background = '#ffffff';
     }
   }
 }
 
 function cleanNow() {
-    const button = document.getElementById('clean');
-    button.addEventListener('click', clean);
+  const button = document.getElementById('clean');
+  button.addEventListener('click', clean);
 }
 
 blackP.addEventListener('click', black);
