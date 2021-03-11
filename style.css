@@ -73,3 +73,12 @@ body , main {
   background-color: white;
   display: inline-block;
 }
+
+#clear-board {
+  margin: 10px auto;
+  padding: 15px;
+  font-weight: 900;
+  display: flex;
+
+  /* justify-content: center; */
+}

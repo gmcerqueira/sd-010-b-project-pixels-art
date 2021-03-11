@@ -60,6 +60,21 @@ function fillPixelWithSelectedColor(event) {
 }
 
 /*
+   Essa função obtem uma lista de elementos 'pixel' e para cada um altera o backgroundColor para 'white'
+  */
+function clearBoard() {
+  // obtem uma lista de elementos 'pixel' e armazena em elementsList
+  const pixelElementsList = document.querySelectorAll('.pixel');
+
+  // para cada pixel da lista
+  pixelElementsList.forEach((pixel) => {
+    const px = pixel; // atribui o parâmetro pixel a uma variavel const
+    // altera backgroundColor do elemento
+    px.style.backgroundColor = 'white';
+  });
+}
+
+/*
    Essa função adiciona um escutador de eventos eventName que dispara a function functionName para cada elemento que tenha o cssSelector.
 
    Material consultado sobre o loop forEach
@@ -79,6 +94,7 @@ function forEachElemAddEventListener(cssSelector, eventName, functionName) {
     element.addEventListener(eventName, functionName);
   });
 }
+
 /*
    Essa função executa a function init para carregar valores, gerar board e adicionar escutadores de evento click que dispara a function selectedColor.
   */
@@ -95,4 +111,10 @@ window.onload = function init() { // define uma função init para carregar valo
 
   // adiciona um escutador de eventos click que dispara a function fillPixelWithSelectedColor para cada elemento pixel
   forEachElemAddEventListener('.pixel', 'click', fillPixelWithSelectedColor);
+
+  // obtem o elemento de id clear-board e armazena em button
+  const button = document.querySelector('#clear-board');
+
+  // adiciona um escutador de evento click que dispara a function clearBoard para elemento de id clear-board
+  button.addEventListener('click', clearBoard);
 };
