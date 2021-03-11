@@ -21,6 +21,8 @@ for (let index = 0; index < pixelSelected.length; index += 1) {
   pixelSelected[index].addEventListener("click", changeColor);
 }
 
+
+
 function changeSelected(event) {
   let selectElement = document.querySelector(".selected")
   selectElement.classList.remove("selected")
@@ -38,7 +40,7 @@ let buttonClear = document.getElementById("clear-board");
 buttonClear.addEventListener("click", clearPixels);
 
 function clearPixels() {
-  for (index = 0; index <= pixelSelected.length; index+=1) {
+  for (index = 0; index < pixelSelected.length; index+=1) {
     pixelSelected[index].style.backgroundColor = "white";
   }
 }
