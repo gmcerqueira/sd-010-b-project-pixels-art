@@ -8,7 +8,6 @@ for (let divs = 0; divs < 4; divs += 1) {
   colorPallete.appendChild(divPallete);
 }
 
-
 // Requesito 4
 
 const boardSquares = [];
@@ -40,10 +39,11 @@ for (let j = 0; j < boardSquares.length; j += 1) {
 
 const blackColor = document.querySelector('.color');
 blackColor.classList.add('selected');
-// Requesito 7
+
+// Requesito 7 --> Recebi ajuda dos colegas Jonathan Souza e Alessandra Rezende
 
 const allColors = document.getElementsByClassName('color');
-const pickColor = document.querySelector('.selected');
+
 
 for (let index = 0; index < allColors.length; index += 1) {
     allColors[index].addEventListener('click', function() {
@@ -52,12 +52,20 @@ for (let index = 0; index < allColors.length; index += 1) {
     })    
 }
 
+// Requesito 8
+const whiteSquare = document.querySelectorAll('.pixel');
+
+for (let index = 0; index < whiteSquare.length; index += 1) {
+  whiteSquare[index].addEventListener('click', function() {
+    const pickColor = document.querySelector('.selected');
+    whiteSquare[index].style.backgroundColor = getComputedStyle(pickColor).backgroundColor
+  })
+}
 
 
 // Requesito 9
 
 const buttonClear = document.querySelector('#clear-board');
-const whiteSquare = document.querySelectorAll('.pixel');
 
 function clearBorder() {
   for (let w = 0; w < whiteSquare.length; w += 1) {
