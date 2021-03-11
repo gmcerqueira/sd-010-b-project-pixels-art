@@ -115,6 +115,16 @@ function inputButtonEvent() {
   });
 }
 
+function randomizeColorBox() {
+  const boxes = document.getElementsByClassName('color');
+  for (let index = 1; index < boxes.length; index += 1) {
+    const red = Math.floor(Math.random() * 254);
+    const green = Math.floor(Math.random() * 254);
+    const blue = Math.floor(Math.random() * 254);
+    boxes[index].style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+  }
+}
+
 createBoxTable(4, 'color', colorPalette);
 createBoxTable(5, 'pixel', pixelBoard, 5);
 
@@ -128,4 +138,5 @@ window.onload = () => {
   });
   clearBoardButton();
   inputButtonEvent();
+  randomizeColorBox();
 };

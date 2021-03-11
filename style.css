@@ -18,6 +18,7 @@ table {
   border: 1px solid black;
   width: 41px;
   height: 41px;
+  min-width: 41px;
 }
 
 .color1 {
