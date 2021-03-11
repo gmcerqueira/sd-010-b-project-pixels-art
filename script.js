@@ -12,15 +12,19 @@ const botaoCriar = document.getElementById("generate-board");
 const userValue = document.getElementById("board-size");
 
 
-let lado = userValue.value;
-let numeroPixels = lado * lado;
+//let lado;
+//let numeroPixels = lado * lado;
 let selectedColor = 0;
 
+criarQuadro(5);
 selectColor("paleta1");
 updateSelectedColor();
 
 
-botaoCriar.addEventListener("click", criarQuadro);
+
+botaoCriar.addEventListener("click", function() {
+    criarQuadro(userValue.value);
+});
 
 botaoLimpa.addEventListener("click", clear);
 
@@ -49,11 +53,15 @@ paleta4.addEventListener("click", function() {
     updateSelectedColor()
 })
 
-function criarQuadro() {
+function criarQuadro(lado) {
     pixelBoard.innerHTML = "";
-    lado = userValue.value;
+    
     if (lado == "") {
          alert("Board inválido!")
+    } else if (lado < 5) {
+        lado = 5;
+    } else if (lado > 50) {
+        lado = 50;
     }
     
     for (let index = 1; index <= lado; index++) {
