@@ -6,27 +6,34 @@ window.onload = function () {
 let colorPalette = ['black', 'green', 'red', 'blue'];
 // let nonSelected = document.getElementsByClassName('color');
 // let selectedPalette = document.querySelector('.selected');
-let heldColor = '';
+let heldColor = [];
 //Botões da paleta de cores
 let getPaletteList = document.querySelector('#color-palette');
 
 for (index = 0; index < 4; index += 1) {
   let paletteBox = document.createElement('div');
-  paletteBox.id = colorPalette[index];
   paletteBox.className = 'color';
+  paletteBox.id = colorPalette[index];
   getPaletteList.appendChild(paletteBox);
-  paletteBox.addEventListener('click', function () {
+  paletteBox.addEventListener('click', function (event) {
     for (child = 0; child < getPaletteList.children.length; child += 1){
     getPaletteList.children[child].classList.remove('selected');
     }
     paletteBox.classList.add('selected');
-    heldColor = paletteBox.style.backgroundColor;
-      // console.log(paletteBox.style.backgroundColor.toString());
+    if (paletteBox.id === 'black') {
+      heldColor = 'black';
+    } else if (paletteBox.id === 'green') {
+      heldColor = 'green';
+    } else if (paletteBox.id === 'red') {
+      heldColor = 'red';
+    } else if (paletteBox.id === 'blue') {
+      heldColor = 'blue';
+    }
   });
 }
 
 let selectedPalette = document.getElementsByClassName('color selected');
-let paletteColor = document.querySelector('.color.selected');
+// let paletteColor = document.querySelector('.selected');
 
 
 //Número de Pixels
