@@ -1,4 +1,4 @@
-#color-palette div{
+#color-palette div {
   display: inline-block;
   border: 1px black solid;
   padding: 30px;
@@ -8,14 +8,17 @@
   display: table;
   border: 1px black solid;
 }
-#pixel-board > div {
+#pixel-board div {
   display: table-row;
-  padding: 20px;
+  padding: 10px;
 }
 #pixel-board div .pixel {
   display: table-cell;
-  background-color: brown;
-  border: 1px black solid;
+  background-color: rgb(255, 255, 255);
+  border: 1px rgb(0, 0, 0) solid;
   height: 40px;
   width: 40px;
+}
+#clear-board {
+  margin: 10px;
 }
