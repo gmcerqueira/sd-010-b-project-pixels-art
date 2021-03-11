@@ -32,12 +32,12 @@ clearBoard.addEventListener('click', () => {
 });
 
 // D10 - Quadro de pixels definido pela pessoa usuária.
-const boardSize = document.querySelector('#board-size"');
+const boardSize = document.querySelector('#board-size');
 const generateBoard = document.querySelector('#generate-board');
 generateBoard.addEventListener('click', () => {
   const numberRow = pixelBoard.children.length;
-  let number;
-  (boardSize.value === '').replace(number);
+  let number = 0;
+  (boardSize.value === '') ? number = '':
   (boardSize.value < 5) ? (number = 5, boardSize.value = number) :
   (boardSize.value > 50) ? (number = 50, boardSize.value = number) : (number = parseInt(boardSize.value));
   if (numberRow > number && number !== '') {
@@ -60,9 +60,27 @@ generateBoard.addEventListener('click', () => {
         for (let pixels = numberRow; pixels < number; pixels += 1) {
           const pixelNew = document.createElement('table');
           pixelNew.className = 'pixel';
-          pixelBoard.children[indexRow].appendChild();
+          pixelBoard.children[indexRow].appendChild(pixelNew);
+        }
+      } else {
+        for (let indexNewRow = numberRow; indexNewRow <= number; indexNewRow += 1) {
+          const rowNew = document.createElement('table');
+          rowNew.className = 'table tr';
+          pixelBoard.appendChild(rowNew);
+          break;
+        }
+        for (let pixels = 0; pixels < number; pixels += 1) {
+          let index = indexRow;
+          const pixelNew = document.createElement('table');
+          pixelNew.className = 'pixel';
+          pixelBoard.children[index].appendChild(pixelNew);
         }
       }
     }
+    pixelBoard.style.width = `${(number * 41)}px`;
+    pixelBoard.style.height = `${(number * 41)}px`;
+  } else {
+    number === '' ?
+    document.alert('Board inválido!') : document.alert('Números iguais.');
   }
 });
