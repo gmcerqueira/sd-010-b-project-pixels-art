@@ -19,7 +19,7 @@ for(let indexLine=0;indexLine<n;indexLine+=1){
 window.onload=function(){
     
     let allPixels=document.querySelectorAll('.pixel')
-
+    let changeClassFirstLi = document.getElementById("color-palette").firstElementChild.className = "color selected";
     function paintBlack(){
         for(let index=0;index<allPixels.length;index+=1){
             allPixels[index].addEventListener('click',function(){
@@ -46,18 +46,3 @@ function removeClass(){
     squares[indice].classList.add('selected')
 }
 
-allPixels// variável do conjunto dos 25 pixels
-for(let ind=0;ind<allPixels.length;ind+=1){
-    allPixels[ind].addEventListener('click',paint)
-}
-function paint(){
-    if( squares[0].className='color selected'){
-        allPixels[ind].style.backgroundColor='black'
-    } else if(squares[1].className='color selected'){
-        allPixels[ind].style.backgroundColor='red'
-    } else if(squares[2].className='color selected'){
-        allPixels[ind].style.backgroundColor='slateblue'
-    } else if(squares[3].className='color selected'){
-        allPixels[ind.style.backgroundColor='pink']
-    }
-}
