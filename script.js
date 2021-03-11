@@ -126,12 +126,15 @@ buttonClearBoard.addEventListener('click', clearBoard);
 const buttonGenerateBoard = document.getElementById('generate-board');
 function generateBoardByInput() {
   const inputBoardSize = document.getElementById('board-size');
-  if (inputBoardSize.value === '' || parseInt(inputBoardSize.value, 10) <= 0) {
+  let number = parseInt(inputBoardSize.value, 10);
+  if (inputBoardSize.value === '' || number <= 0) {
     alert('Board inválido!');
-  } else {
-    const number = parseInt(inputBoardSize.value, 10);
-    generateBoard(number);
+  } else if (number < 5) {
+    number = 5;
+  } else if (number > 50) {
+    number = 50;
   }
+  generateBoard(number);
 }
 
 buttonGenerateBoard.addEventListener('click', generateBoardByInput);
