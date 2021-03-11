@@ -3,7 +3,7 @@ const boxBlack = colorPalette.children[0].children[0];
 const box1 = colorPalette.children[0].children[1];
 const box2 = colorPalette.children[0].children[2];
 const box3 = colorPalette.children[0].children[3];
-const main = document.querySelector('.main');
+// const main = document.querySelector('.main');
 
 // código retirado do forum https://stackoverflow.com/questions/1484506/random-color-generator
 // função que gera cores aleatórias para cada box da paleta de cor
@@ -59,9 +59,9 @@ const bgSelected = document.getElementsByClassName('selected');
 const cPixel = document.getElementsByClassName('pixel');
 
 function colorPixel() {
-  for (let itemColor = 0; itemColor < bgSelected.length; itemColor += 1) {   
+  for (let itemColor = 0; itemColor < bgSelected.length; itemColor += 1) {
     for (let i = 0; i < cPixel.length; i += 1) {
-      cPixel[i].addEventListener('click', function() {
+      cPixel[i].addEventListener('click', function () {
         this.style.backgroundColor = bgSelected[itemColor].style.backgroundColor;
       });
     }
