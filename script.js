@@ -40,14 +40,19 @@ generateBoard.addEventListener('click', () => {
   (boardSize.value === '').replace(number);
   (boardSize.value < 5) ? (number = 5, boardSize.value = number) :
   (boardSize.value > 50) ? (number = 50, boardSize.value = number) : (number = parseInt(boardSize.value));
-  if (numberRow > number && number !==  '') {
-      for (let indexRow = 0; index < numberRow; indexRow += 1) {
-        if (indexRow < number) {
-          for (let indexColum = 1; indexColum <= (numberRow - number); indexColum += 1) {
-            let lastRow = numberRow - indexColum;
-            pixelBoard.children[indexRow].removeChild(pixelBoard.children[indexRow].children[lastRow]);
-          }
+  if (numberRow > number && number !== '') {
+    for (let indexRow = 0; indexRow < numberRow; indexRow += 1) {
+      if (indexRow < number) {
+        for (let indexColum = 1; indexColum <= (numberRow - number); indexColum += 1) {
+          let lastRow = numberRow - indexColum;
+          pixelBoard.children[indexRow].removeChild(pixelBoard.children[indexRow].children[lastRow]);
         }
+      } else {
+        let remove = pixelBoard.lastChild;
+        pixelBoard.removeChild(remove);
       }
+    }
+    pixelBoard.style.width = `${(number * 41)}px`;
+    pixelBoard.style.height = `${(number * 41)}px`;
   }
 });
