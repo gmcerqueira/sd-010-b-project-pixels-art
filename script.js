@@ -1,3 +1,5 @@
+const boardSize = 'board-size';
+
 function createColorPalette() {
   const pallet = document.createElement('ul');
   pallet.id = 'color-palette';
@@ -71,7 +73,7 @@ function selectColor() {
 }
 function createInput() {
   const input = document.createElement('input');
-  input.id = 'board-size';
+  input.id = boardSize;
   input.type = 'number';
   input.min = '1';
   input.max = '50';
@@ -80,7 +82,7 @@ function createInput() {
 
 function newBoard() {
   const board = document.getElementById('pixel-board');
-  const input = document.getElementById('board-size');
+  const input = document.getElementById(boardSize);
   board.innerHTML = '';
   for (let i = 0; i < input.value; i += 1) {
     const tableRow = document.createElement('div');
@@ -100,7 +102,7 @@ function newBoard() {
 }
 
 function valueChecker() {
-  const input = document.getElementById('board-size');
+  const input = document.getElementById(boardSize);
   console.log(input.value);
   if (input.value === '') {
     alert('Board inválido!');
