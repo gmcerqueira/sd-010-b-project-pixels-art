@@ -10,7 +10,6 @@
 }
 
 #color1 {
-  background-color: black;
   height: 40px;
   width: 40px;
   display: inline-block;
@@ -19,7 +18,6 @@
 }
 
 #color2 {
-  background-color: blue;
   height: 40px;
   width: 40px;
   display: inline-block;
@@ -28,7 +26,6 @@
 }
 
 #color3 {
-  background-color: yellow;
   height: 40px;
   width: 40px;
   display: inline-block;
@@ -37,7 +34,6 @@
 }
 
 #color4 {
-  background-color: red;
   height: 40px;
   width: 40px;
   display: inline-block;
@@ -46,7 +42,7 @@
 }
 
 #pixel-board {
-  display: table;
+  display:flex;
   margin-left: 50px;
 }
 
@@ -54,10 +50,8 @@
   background-color: white;
   height: 40px;
   width: 40px;
-}
-
-td , tr {
   border: 1px solid black;
 }
+
 
    
