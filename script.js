@@ -20,16 +20,37 @@ addBoxPixels()
 
 
 // Requisito 7
-
 let receved = document.getElementsByClassName('color');
 
 for (let index = 0; index < receved.length; index++) {
     receved[index].addEventListener('click', addSelClass);
 }
 
-function addSelClass() {
+function addSelClass(event) { //Há necessidade de colocar 'event' dentro dos parenteses?
     document.getElementsByClassName('selected')[0].classList.remove('selected');
     event.target.classList.add('selected');
-    
 }
+
+// Requisito 8
+let pixSelected = document.querySelectorAll('.pixel');
+for (let index = 0; index < pixSelected.length; index++) {
+    pixSelected[index].addEventListener('click', colorize);
+}
+
+function colorize(event) { //Há necessidade de colocar 'event' dentro dos parenteses?
+    let colorReserved = document.querySelector('.selected').id;
+    event.target.style.backgroundColor = colorReserved;
+}
+
+// Requisito 9
+let clearButton = document.getElementById('clear-board');
+
+clearButton.addEventListener('click', clearBoard);
+
+function clearBoard(event) {
+    let clearPixel = document.querySelectorAll('.pixel');
+    clearPixel.style.backgroundColor = " ";
+    event.target.style.backgroundColor = clearPixel;
+}
+
 
