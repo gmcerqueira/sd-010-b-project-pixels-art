@@ -83,25 +83,25 @@ function criarQuadro(lado) {
 
 function selectColor(corPaleta) {
     if (corPaleta == "paleta1") {
-        paleta1.className = "color selected";
-        paleta2.className = "color";
-        paleta3.className = "color";
-        paleta4.className = "color";
+        paleta1.classList.add("selected");
+        paleta2.classList.remove("selected");
+        paleta3.classList.remove("selected");
+        paleta4.classList.remove("selected");
     } else if (corPaleta == "paleta2") {
-        paleta1.className = "color";
-        paleta2.className = "color selected";
-        paleta3.className = "color";
-        paleta4.className = "color";
+        paleta1.classList.remove("selected");
+        paleta2.classList.add("selected");
+        paleta3.classList.remove("selected");
+        paleta4.classList.remove("selected");
     } else if (corPaleta == "paleta3") {
-        paleta1.className = "color";
-        paleta2.className = "color";
-        paleta3.className = "color selected";
-        paleta4.className = "color";
+        paleta1.classList.remove("selected");
+        paleta2.classList.remove("selected");
+        paleta3.classList.add("selected");
+        paleta4.classList.remove("selected");
     } else if (corPaleta == "paleta4") {
-        paleta1.className = "color";
-        paleta2.className = "color";
-        paleta3.className = "color";
-        paleta4.className = "color selected";
+        paleta1.classList.remove("selected");
+        paleta2.classList.remove("selected");
+        paleta3.classList.remove("selected");
+        paleta4.classList.add("selected");
     }
 }
 
