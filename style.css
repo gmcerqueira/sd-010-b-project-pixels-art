@@ -4,6 +4,7 @@
   width: 40px;
   height: 40px;
   margin: 10px;
+  border-radius: 50%;
 }
 
 #pixel-board { 
@@ -18,4 +19,5 @@
   background-color: white;
   margin: 0;
   display: inline-block;
+  border-radius: 4px;
 }

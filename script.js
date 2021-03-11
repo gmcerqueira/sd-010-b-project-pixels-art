@@ -1,5 +1,5 @@
 function criarPaleta() {
-  let cores = ['black', 'red', 'blue', 'green'];
+  let cores = ['black', '#411F8A', '#F5A201', '#FF600D'];
   let colorPalette = document.querySelector('#color-palette');
 
   for(let i = 0; i<cores.length; i += 1) {
@@ -83,3 +83,12 @@ function aplicarCor() {
   }
 }
 aplicarCor();
+
+const limpar = document.getElementById("clear-board");
+limpar.addEventListener("click", evento => {
+  const pixelItem = document.querySelectorAll('.pixel');
+  for(let i = 0; i < pixelItem.length; i++){
+    pixelItem[i].style.backgroundColor = 'white';
+  }
+});
+
