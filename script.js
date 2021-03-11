@@ -13,25 +13,11 @@ for (let cont = 1; cont <= 5; cont+=1) {
 let btnGenerate = document.querySelector("#generate-board")
 let input = document.querySelector("#board-size");
 btnGenerate.addEventListener("click", function() {
-  if (input.value >= 5 && input.value <= 50) {
-    let rowPixel = document.querySelectorAll(".tr")
-    for (index = 0; index < rowPixel.length; index += 1) {
-      element = rowPixel[index]
-      pixelBoard.removeChild(element)
-    }
-    for (let cont = 1; cont <= input.value; cont+=1) {
-      let div = document.createElement("div");
-      div.classList.add("tr")
-      for (let cont2 = 1; cont2 <= input.value; cont2+=1){
-        let div2 = document.createElement("div");
-        div2.classList.add("pixel");
-        div2.style.backgroundColor = "white";
-        div.appendChild(div2);
-      }  
-      pixelBoard.appendChild(div);
-    }
+  if (input.value > 5 && input.value < 50) {
+    removeChild()
+    createNewBoard()
   } else {
-    alert("Board inválido!")
+    compareValue(input.value)
   }
 
   let pixelSelected = document.querySelectorAll(".pixel");
@@ -77,5 +63,57 @@ function changeColor(event) {
   let selectElement = document.querySelector(".selected")
   let color = window.getComputedStyle(selectElement).backgroundColor
   event.target.style.backgroundColor = color    
+}
+
+function removeChild() {
+  let rowPixel = document.querySelectorAll(".tr")
+  for (index = 0; index < rowPixel.length; index += 1) {
+    element = rowPixel[index]
+    pixelBoard.removeChild(element)
+  }
+}
+
+function createNewBoard() {
+  for (let cont = 1; cont <= input.value; cont+=1) {
+    let div = document.createElement("div");
+    div.classList.add("tr")
+    for (let cont2 = 1; cont2 <= input.value; cont2+=1){
+      let div2 = document.createElement("div");
+      div2.classList.add("pixel");
+      div2.style.backgroundColor = "white";
+      div.appendChild(div2);
+    }  
+    pixelBoard.appendChild(div);
+  }
+}
+
+function compareValue(value) {
+  if (value > 0 && value <= 5) {
+    removeChild()
+    for (let cont = 1; cont <= 5; cont+=1) {
+      let div = document.createElement("div");
+      div.className = "tr"
+      for (let cont2 = 1; cont2 <= 5; cont2+=1){
+        let div2 = document.createElement("div");
+        div2.classList.add("pixel");
+        div.appendChild(div2);
+      }  
+      pixelBoard.appendChild(div);
+    }
+  } else if (value >= 50) {
+    removeChild()
+    for (let cont = 1; cont <= 50; cont+=1) {
+      let div = document.createElement("div");
+      div.className = "tr"
+      for (let cont2 = 1; cont2 <= 50; cont2+=1){
+        let div2 = document.createElement("div");
+        div2.classList.add("pixel");
+        div.appendChild(div2);
+      }  
+      pixelBoard.appendChild(div);
+    }
+  } else {
+    alert("Board inválido!")
+  }
 }
 
