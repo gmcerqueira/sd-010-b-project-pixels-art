@@ -9,9 +9,9 @@ function criaPaleta() {
 
   const caixasPaleta = document.querySelectorAll('.color');
   caixasPaleta[0].style.backgroundColor = 'black';
-  caixasPaleta[1].style.backgroundColor = 'red';
-  caixasPaleta[2].style.backgroundColor = 'green';
-  caixasPaleta[3].style.backgroundColor = 'blue';
+  caixasPaleta[1].style.backgroundColor = criaCor();
+  caixasPaleta[2].style.backgroundColor = criaCor();
+  caixasPaleta[3].style.backgroundColor = criaCor();
 
   caixasPaleta[0].id = 'box1';
   caixasPaleta[1].id = 'box2';
@@ -56,7 +56,6 @@ paleta.addEventListener('click', trocaCoresPaleta);
 
 function pintaPixel(pixel) {
   const pixelSelecionado = pixel.target;
-  console.log(pixelSelecionado);
   const corSelecionada = document.querySelector('.selected');
   pixelSelecionado.style.backgroundColor = corSelecionada.style.backgroundColor;
 }
@@ -103,3 +102,11 @@ function mudaTamanhoQuadro() {
 }
 const botaoQuadro = document.querySelector('#generate-board');
 botaoQuadro.addEventListener('click', mudaTamanhoQuadro);
+
+function criaCor() {
+  const cor1 = (Math.ceil(Math.random() * 255));
+  const cor2 = (Math.ceil(Math.random() * 255));
+  const cor3 = (Math.ceil(Math.random() * 255));
+
+  return `rgb(${cor1}, ${cor2}, ${cor3})`;
+}
