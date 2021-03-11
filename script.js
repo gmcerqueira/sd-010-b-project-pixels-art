@@ -173,3 +173,21 @@ function criarListenerCelulas() {
     event.target.style.background = document.getElementsByClassName('selected')[0].style.background;
   });
 }
+
+criarListenerCelulas();
+
+function limpar() {
+  const n = recuperaN();
+  for (let linha = 0; linha < n; linha += 1) {
+    for (let celula = 0; celula < n; celula += 1) {
+      document.getElementById(`cell-${linha + 1}-${celula + 1}`).style.background = '#ffffff';
+    }
+  }
+}
+
+function adicionaLimpar() {
+  const botao = document.getElementById('clear-board');
+  botao.addEventListener('click', limpar);
+}
+
+adicionaLimpar();
