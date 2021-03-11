@@ -56,10 +56,15 @@ const generateButton = document.getElementById('generate-board');
 const pixelBoard = document.getElementById('table-body');
 
 generateButton.addEventListener('click', () => {
-  const inputValue = document.getElementById('board-size').value;
+  let inputValue = document.getElementById('board-size').value;
   if (inputValue === '') {
     alert('Board inválido!');
-  } else if ((inputValue >= 1 && inputValue <= 50)) {
+  } else if (inputValue > 50) {
+    inputValue = 50;
+  } else if (inputValue < 5) {
+    inputValue = 5;
+  }
+  if ((inputValue >= 1 && inputValue <= 50)) {
     pixelBoard.innerText = '';
     for (let index = 1; index <= inputValue; index += 1) {
       const createTr = document.createElement('tr');
