@@ -102,11 +102,7 @@ function limparFunction(){
     }
 }
 
-function addInput(){ 
-    let x = document.getElementsByTagName("INPUT");
-    x.min = 1;
-   }
-addInput();
+
 //add event listener VQV
 let vqv = document.querySelector('#generate-board');
 vqv.addEventListener('click', genBoard);
