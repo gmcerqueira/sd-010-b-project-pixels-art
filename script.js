@@ -24,3 +24,16 @@ function corTroca() {
 }
 
 corTroca();
+
+// requisito 8 
+let pixelItem = document.getElementsByClassName('pixel');
+function pintar() {
+  for (let pi = 0; pi < pixelItem.length; pi += 1) {
+    pixelItem[pi].addEventListener('click', function (event) {
+      let selectColor = document.getElementsByClassName('selected')[0];
+      let backg = window.getComputedStyle(selectColor).backgroundColor; //getComputedStyle --> recupera o style do objeto.
+      event.target.style.backgroundColor = backg; // event.target --> pixelItem[pi], nesse caso.
+    });
+  }
+}
+pintar();
