@@ -1,5 +1,4 @@
 let palleteColors = document.querySelectorAll('.color');
-let colorPixels = document.querySelectorAll('.pixel');
 
 function pixelCreate() {
   let quadro = document.getElementById('pixel-board');
@@ -23,12 +22,17 @@ for (let index = 0; index < palleteColors.length; index += 1) {
   });
 }
 
-for (let indexPixel = 0; indexPixel < colorPixels.length; indexPixel += 1) {
-  colorPixels[indexPixel].addEventListener('click', function(){
-    let newColor = document.getElementsByClassName('selected')[0].style.backgroundColor;
-    colorPixels[indexPixel].style.backgroundColor = newColor;
-  });
+function selectColor() {
+  let color = document.getElementsByClassName('selected')[0].style.backgroundColor;
+  event.target.style.backgroundColor = color;
 }
+
+function colorPixels() {
+  let board = document.querySelector('#pixel-board');
+  board.addEventListener('click', selectColor);
+}
+colorPixels();
+
 document.getElementsByClassName('color')[0].style.backgroundColor = 'rgb(0,0,0)';
 document.getElementsByClassName('color')[1].style.backgroundColor = 'rgb(200,56,154)';
 document.getElementsByClassName('color')[2].style.backgroundColor = 'rgb(101,255,173)';
