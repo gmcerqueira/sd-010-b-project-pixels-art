@@ -5,17 +5,13 @@ function randomizaPaleta() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-let corPaleta = document.querySelectorAll('.color');
+const corPaleta = document.querySelectorAll('.color');
 function pintaPaleta() {
   for (let index = 0; index < corPaleta.length; index += 1) {
     if (index === 0) {
       corPaleta[index].style.backgroundColor = 'black';
       corPaleta[index].className = 'color selected';
-    } else if (index === 1) {
-      corPaleta[index].style.backgroundColor = randomizaPaleta();
-    } else if (index === 2) {
-      corPaleta[index].style.backgroundColor = randomizaPaleta();
-    } else if (index === 3) {
+    } else if (index === 1 || index === 2 || index === 3) {
       corPaleta[index].style.backgroundColor = randomizaPaleta();
     }
   }
@@ -36,15 +32,16 @@ function createBoard(height, width) {
     }
   }
 }
+createBoard(5,5);
 
-const generateBoard = document.querySelector("#generate-board");
-const boardSize = document.querySelector("#board-size");
+const generateBoard = document.querySelector('#generate-board');
+const boardSize = document.querySelector('#board-size');
 
 function randomicGrid() {
-  generateBoard.addEventListener("click", function () {
-    if (boardSize.value != "") {
+  generateBoard.addEventListener('click', function () {
+    if (boardSize.value !== "") {
       const removeGrid = pixelBoard.childElementCount;
-      for (let i = 0; i < removeGrid; i++) {
+      for (let i = 0; i < removeGrid; i += 1) {
         pixelBoard.removeChild(pixelBoard.lastElementChild);
       }
       if (boardSize.value < 5) {
@@ -56,7 +53,7 @@ function randomicGrid() {
       createBoard(boardSize.value, boardSize.value);
     } else {
       alert('Board inválido!');
-    }
+    };
   });
 }
 randomicGrid();
@@ -67,21 +64,21 @@ function selecionaCor() {
       const lastColor = document.querySelector('.selected');
       lastColor.className = lastColor.className.replace('color selected', 'color');
       corPaleta[index].className = 'color selected';
-    })
-  }
+    });
+  };
 }
 selecionaCor();
 
 pixelBoard.addEventListener('click', function (event) {
   const corSelecionada = document.querySelector('.selected');
-  let evento = event.target;
+  const evento = event.target;
   evento.style.backgroundColor = corSelecionada.style.backgroundColor;
 })
 
 const buttonClean = document.getElementById('clear-board');
-buttonClean.addEventListener('click', function() {
+buttonClean.addEventListener('click', function () {
   const pixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
-  }
+  };
 })
