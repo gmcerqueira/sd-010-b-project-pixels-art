@@ -1,10 +1,23 @@
+body {
+  background-color:antiquewhite;
+}
 .colorPalette {
   margin: 5px;
+  text-align: center;
 }
 
 .pixelBoard {
+  text-align: center;
   margin: 5px;
   display: table;
+}
+
+#title {
+  text-align: center;
+}
+
+#board {
+  margin-left: 40%;
 }
 
 .color {
