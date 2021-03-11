@@ -1,3 +1,15 @@
+body {
+  background-color: #efefef;
+}
+
+.main {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .palette-table {
   display: inline;
 }
@@ -16,6 +28,7 @@
 #pixel-board {
   display: table;
   background-color: white;
+  margin: 15px auto;
 }
 
 .pixel {
@@ -35,4 +48,9 @@
 
 .corInicio {
   background-color: black;
+}
+
+#clear-board {
+  display: block;
+  margin: 15px auto;
 }

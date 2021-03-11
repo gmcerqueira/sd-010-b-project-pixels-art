@@ -68,3 +68,11 @@ function colorPixel() {
   }
 }
 colorPixel();
+
+// apaga todos quadros pintados
+const btnClear = document.getElementById('clear-board');
+btnClear.addEventListener('click', () => {
+  for (let itemPinted = 0; itemPinted < cPixel.length; itemPinted += 1) {
+    cPixel[itemPinted].style.backgroundColor = 'white';
+  }
+});
