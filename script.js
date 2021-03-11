@@ -31,13 +31,7 @@ for (index = 0; index < 4; index += 1) {
   });
 }
 
-//Número de Pixels
-let pixelsList = [];
-for (index = 0; index < 25; index += 1) {
-  pixelsList.push(index);
-};
-
-//Criando a tabela: 
+//Criando a tabela de pixels: 
 let getPixelsList = document.querySelector('#pixel-row');
 
 for (let row = 0; row < 5; row += 1) {
