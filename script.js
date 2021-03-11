@@ -31,7 +31,7 @@ function geraPixel(numeroPixel) {
 	for (let cont = 0; cont < numeroPixel; cont += 1) {
 		let itemPixel = document.createElement('div');
 		pixels.appendChild(itemPixel);
-		itemPixel.className = 'pixel';
+		itemPixel.className = 'li';
 
 		for (let cont2 = 0; cont2 < numeroPixel; cont2 += 1) {
 			let itemPixel2 = document.createElement('div');
@@ -81,19 +81,21 @@ botaoLimpar();
 function botaoVqv() {
 	const botaoVQV = document.querySelector("#generate-board");
 	botaoVQV.addEventListener('click', function (event) {
-		const listaPixels = document.querySelectorAll('.pixel')
+		const listaPixels = document.querySelectorAll('.li')
 		for (i = 0; i < listaPixels.length; i += 1){
 			listaPixels[i].parentNode.removeChild(listaPixels[i]);
 		}
 		const adicionaPixel = document.querySelector("#board-size").value;
 		if (adicionaPixel === '') {
 			alert('Board inválido!');
-		  } else if (adicionaPixel < 5) {
+		  }
+		if (adicionaPixel < 5) {
 			adicionaPixel = 5;
-		  } else if (adicionaPixel > 50) {
+		  } 
+		if (adicionaPixel > 50) {
 			adicionaPixel = 50;
 		  }
-		numeroPixel = adicionaPixel;
+		  	numeroPixel = adicionaPixel
 		geraPixel(numeroPixel);
 	
 	});
