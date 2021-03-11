@@ -38,10 +38,9 @@ for (let i = 0; i < todasAsCores.length; i += 1) {
 
 //colorindo o quadradinhos branco
 function pintandoOQuadradinho () {
-  let selecionaCor = document.getElementsByClassName('selected')[0];
-  
+  let selecionaCor = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = selecionaCor;
 }
-pintandoOQuadradinho();
 
 let todosOs25Quadradinhos = document.querySelectorAll('.pixel');
 for (let i = 0; i < todosOs25Quadradinhos.length; i += 1) {
