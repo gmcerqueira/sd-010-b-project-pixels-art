@@ -1,22 +1,8 @@
-function randomColor() {
-  let color = document.querySelectorAll(".color");
-  for(let index = 0; index < color.length; index += 1) {
-    let r = Math.random() * 255;
-    let g = Math.random() * 255;
-    let b = Math.random() * 255;
-    let generatedColor = `rgb(${r}, ${g}, ${b})`;
-      color[index].style.backgroundColor = generatedColor;
-  }
-    color[0].style.backgroundColor = "rgba(0, 0, 0, 1)";
-}
-
-// Dei uma olhada nesse site para as cores aleatórias! src: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
-
 function selectColor(selected) {
-  let oldColor = document.querySelector(".selected");
-  oldColor.classList.remove("selected");
+  let oldColor = document.querySelector('.selected');
+  oldColor.classList.remove('selected');
   let newColor = selected.target;
-  newColor.classList.add("selected");
+  newColor.classList.add('selected');
 }
 
 function clear() {
@@ -45,14 +31,12 @@ function paintPixels() {
   } else if (colorGreen.className === fullClass) {
     this.style.backgroundColor = 'green';
   }
+  this.classList.add('painted');
+} 
+const pixelColor = document.querySelectorAll('.pixel');
+for (let index = 0; index < pixelColor.length; index += 1) {
+  pixelColor[index].addEventListener('click', paintPixels);
 }
-
-  const pixelColor = document.querySelectorAll('.pixel');
-  for (let index = 0; index < pixelColor.length; index += 1) {
-    pixelColor[index].classList.add('painted');
-    pixelColor[index].addEventListener('click', paintPixels);
-}
-
-
+// Para resolver esse requisito (8), dei uma conferida no Pull Request dos meus colegas Fioravante e Mateus Bodra, que me fez entender a lógica por trás desse requisito
 
 document.getElementById("color-palette").addEventListener("click", selectColor);
