@@ -66,7 +66,7 @@ for(j = 0;j < 5;j += 1){
 //     }
 // }
 
-
+// adiciona e remove classe
 function clickPaletteBox(event) {
     const pegaSelected = document.querySelector('.selected');
     pegaSelected.classList.remove('selected');
@@ -90,18 +90,18 @@ window.onload =
   
 /////////////////////////////////////////////////////////////////////////////////////////////
 //pinta pixel
-  function paint() {
-    const color = document.querySelectorAll('.pixel');
-    for (let index = 0; index < color.length; index += 1) {
-        color[index].addEventListener('click', function (event)  {
+  function pinta() {
+    const cor = document.querySelectorAll('.pixel');
+    for (let index = 0; index < cor.length; index += 1) {
+        cor[index].addEventListener('click', function (event)  {
         // const element = event;
-        const colorSelected = document.querySelector('.selected').style.backgroundColor;
-        event.target.style.backgroundColor = colorSelected;
+        const corSelecionada = document.querySelector('.selected').style.backgroundColor;
+        event.target.style.backgroundColor = corSelecionada;
       }) 
     }
   }
   
-  paint();
+  pinta();
 
 // document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 // document.getElementsByClassName('color')[0].className += ' selected';
