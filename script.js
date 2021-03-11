@@ -19,7 +19,7 @@ for(let indexLine=0;indexLine<n;indexLine+=1){
 window.onload=function(){
     
     let allPixels=document.querySelectorAll('.pixel')
-    let changeClassFirstLi = document.getElementById("color-palette").firstElementChild.className = "color selected";
+    
     function paintBlack(){
         for(let index=0;index<allPixels.length;index+=1){
             allPixels[index].addEventListener('click',function(){
