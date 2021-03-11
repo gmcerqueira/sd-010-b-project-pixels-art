@@ -1,19 +1,15 @@
 // Requesito 2
-function createPallete (x) {  
-  const colorPallete = document.getElementById('color-palette');
-  let divPallete = document.createElement('div');
+const colorPallete = document.getElementById('color-palette');
+let divPallete = document.createElement('div');
 
-  for (let divs = 0; divs < 4; divs += 1) {
-    divPallete = document.createElement('div');
-    divPallete.className = 'color';
-    colorPallete.appendChild(divPallete);
-  }
+for (let divs = 0; divs < 4; divs += 1) {
+  divPallete = document.createElement('div');
+  divPallete.className = 'color';
+  colorPallete.appendChild(divPallete);
 }
 
-createPallete(4)
-
 // Requesito 4
-function createBoard (y) {
+function createBoard (x) {
   const boardSquares = [];
   for (let i = 0; i < x; i += 1) {
     boardSquares[i] = i;
