@@ -44,14 +44,11 @@ body {
   margin: auto;
 }
 
-.td {
-  display: table-cell;
-  margin: auto;
-}
-
 .pixel {
   width: 40px;
   height: 40px;
+  display: table-cell;
+  margin: auto;
   background-color: white;
   border: 1px solid black;
 }
