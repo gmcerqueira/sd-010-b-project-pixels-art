@@ -69,3 +69,4 @@ yellowP.addEventListener('click', yellow);
 
 pixelBoard();
 listen();
+cleanNow();
