@@ -1,7 +1,8 @@
 // Tabela 1
+let maeTabela1 = document.getElementById("tabela1");
 let paleta = document.createElement("table");
 paleta.id = "color-palette";
-document.body.appendChild(paleta);
+maeTabela1.appendChild(paleta);
 
 for(index = 0; index < 4; index += 1){
     let criaColuna = document.createElement("td");
@@ -32,9 +33,10 @@ colunaPaleta[3].style.backgroundColor = "yellow";
 // colunaPaleta2[3].style.backgroundColor = "white";
 
 // Tabela 2
+let maeTabela2 = document.getElementById("tabela2");
 let quadrado = document.createElement("table");
 quadrado.id = "pixel-board";
-document.body.appendChild(quadrado);
+maeTabela2.appendChild(quadrado);
 
 for(i = 0;i < 5;i += 1){
     let linhaTabela = document.createElement("tr");
@@ -108,9 +110,11 @@ window.onload =
 // document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
 
 
+let maeBotao = document.getElementById("botao-limpa");
 let botaoLimpa = document.createElement("button");
-botaoLimpa.innerText = "Clique para Limpar";
-document.body.appendChild(botaoLimpa);
+botaoLimpa.id = "clear-board";
+botaoLimpa.innerText = "Limpar";
+maeBotao.appendChild(botaoLimpa);
 
 
 botaoLimpa.addEventListener("click", function () {
