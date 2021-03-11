@@ -1,12 +1,12 @@
 body {
- text-align: center;
- align-items: center;
- background-color: rgb(5, 5, 117);
+  text-align: center;
+  align-items: center;
+  background-color: rgb(5, 5, 117);
 }
 #title {
   white-space: nowrap;
   font: 500 Impact;
-  font-size: 50px; 
+  font-size: 50px;
 }
 #color-palette {
   position: relative;
@@ -22,24 +22,25 @@ body {
   margin-left: 30%;
 }
 .pixel {
-  padding: 20px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
 }
 #clear-board {
   padding: 5px;
   margin-left: 10px;
   background-color: cornsilk;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 #clear-board:hover {
   background-color: cyan;
 }
-#board-size{
+#board-size {
   width: 100px;
-  border: 2px solid gray;  
+  border: 2px solid gray;
   margin-top: 10px;
   margin-left: 20px;
 }
-#generate-board{
+#generate-board {
   border-radius: 4px;
 }
