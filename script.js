@@ -1,15 +1,15 @@
 let pixel;
 // **************Escolhe a cor****************  
-let black = document.querySelector('#black');
-let blue = document.querySelector('#blue');
-let yellow = document.querySelector('#yellow');
-let red = document.querySelector('#red');
-let cor1 = document.querySelector('#cor1');
-let cor2 = document.querySelector('#cor2');
-let cor3 = document.querySelector('#cor3');
-let cor4 = document.querySelector('#cor4');
-function escolheACor () {
-  let escolhida = document.querySelector('.selected');
+const black = document.querySelector('#black');
+const blue = document.querySelector('#blue');
+const yellow = document.querySelector('#yellow');
+const red = document.querySelector('#red');
+const cor1 = document.querySelector('#cor1');
+const cor2 = document.querySelector('#cor2');
+const cor3 = document.querySelector('#cor3');
+const cor4 = document.querySelector('#cor4');
+function escolheACor() {
+  const escolhida = document.querySelector('.selected');
   escolhida.classList.remove('selected');
   this.classList.add('selected');
 }
@@ -21,20 +21,21 @@ cor1.addEventListener('click', escolheACor);
 cor2.addEventListener('click', escolheACor);
 cor3.addEventListener('click', escolheACor);
 cor4.addEventListener('click', escolheACor);
-let button1 = document.querySelector('#gerar');
-button1.addEventListener('click', function gerar () {
-  cor1.style.backgroundColor = rgb()
-  cor2.style.backgroundColor = rgb()
-  cor3.style.backgroundColor = rgb()
-  cor4.style.backgroundColor = rgb()
+const button1 = document.querySelector('#gerar');
+function rgb () {
+  return 'rgb('+ Math.floor(Math.random() * 255)+','+Math.floor(Math.random() * 255)+','+Math.floor(Math.random() * 255)+')';
+}
+button1.addEventListener('click', function gerar() {
+  cor1.style.backgroundColor = rgb();
+  cor2.style.backgroundColor = rgb();
+  cor3.style.backgroundColor = rgb();
+  cor4.style.backgroundColor = rgb();
   black.style.backgroundColor = 'rgb(0,0,0)';
-  blue.style.backgroundColor = 'rgb(0,0,255)' ;
-  red.style.backgroundColor = 'rgb(255,0,0)' ;
-  yellow.style.backgroundColor = 'rgb(255,255,0)' ;
+  blue.style.backgroundColor = 'rgb(0,0,255)';
+  red.style.backgroundColor = 'rgb(255,0,0)';
+  yellow.style.backgroundColor = 'rgb(255,255,0)';
   });
-  function rgb () {
-    return 'rgb('+ Math.floor(Math.random() * 255)+','+Math.floor(Math.random() * 255)+','+Math.floor(Math.random() * 255)+')'
-  }
+  
 //  color: rgb(255, 227, 194)
 // **************Limpa****************
 let button = document.querySelector('#clear-board');
@@ -52,9 +53,9 @@ tamanhoCoordenadas.addEventListener('keyup', guardaTamanho);
 function guardaTamanho () {
   tamanho = tamanhoCoordenadas.value;
   if (tamanho < 5) {
-    tamanho = 5
+    tamanho = 5;
   }else if (tamanho > 50){
-    tamanho = 50
+    tamanho = 50;
   }
   indicaTamanho.innerHTML = 'Tamanho atual = ' + tamanho + ' blocos.';
 // criaQuadro ()
@@ -72,10 +73,10 @@ function apaga () {
 criaQuadro ();
 function criaQuadro () {
   let quadro = document.querySelector('#pixel-board');
-  for (let index = 0; index < tamanho; index++) {
+  for (let index = 0; index < tamanho; index += 1) {
     let div = document.createElement('div');
     div.className = 'linha';
-    for (let cont = 0; cont < tamanho; cont++) {
+    for (let cont = 0; cont < tamanho; cont += 1) {
         let span = document.createElement('span');
         let id = (index) + '-' + (cont);
         span.id = id;
