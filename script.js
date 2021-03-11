@@ -43,9 +43,28 @@ for (let i = 1; i <= 5; i += 1) {
 const paletteLine = document.getElementById('palette-line');
 const color = document.getElementsByClassName('color');
 
-for (let item = 0; item < color.length; item += 1) {
-  color[item].addEventListener('click', function () {
-    paletteLine.querySelector('.selected').classList.remove('selected');
-    this.classList.add('selected');
-  });
+function getColor() {
+  for (let item = 0; item < color.length; item += 1) {
+    color[item].addEventListener('click', function () {
+      paletteLine.querySelector('.selected').classList.remove('selected');
+      this.classList.add('selected');
+    });
+  }
 }
+getColor();
+
+// criação da função que ira pintar os quadros pixel
+
+const bgSelected = document.getElementsByClassName('selected');
+const cPixel = document.getElementsByClassName('pixel');
+
+function colorPixel() {
+  for (let itemColor = 0; itemColor < bgSelected.length; itemColor += 1) {   
+    for (let i = 0; i < cPixel.length; i += 1) {
+      cPixel[i].addEventListener('click', function() {
+        this.style.backgroundColor = bgSelected[itemColor].style.backgroundColor;
+      });
+    }
+  }
+}
+colorPixel();
