@@ -3,11 +3,13 @@
   display: inline-block;
   width: 45px;
   height: 45px;
+  margin-bottom: 5px;
 }
 
 .board {
-  margin-top: 15px;
   width: 230px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .pixel {
@@ -18,7 +20,7 @@
   background-color: white;
   margin-top: -4px;
   margin-left: -4px;
-  }
+}
 
 #black {
   background-color: black;
@@ -34,4 +36,11 @@
 
 #green {
   background-color: green;
+}
+
+body {
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    background-color: pink;
 }
