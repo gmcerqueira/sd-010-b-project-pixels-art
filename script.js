@@ -82,29 +82,29 @@ function criarQuadro(lado) {
     }
 }
 
-function selectColor(corPaleta) {
-    if (corPaleta == "paleta1") {
-        paleta1.classList.add("selected");
-        paleta2.classList.remove("selected");
-        paleta3.classList.remove("selected");
-        paleta4.classList.remove("selected");
-    } else if (corPaleta == "paleta2") {
-        paleta1.classList.remove("selected");
-        paleta2.classList.add("selected");
-        paleta3.classList.remove("selected");
-        paleta4.classList.remove("selected");
-    } else if (corPaleta == "paleta3") {
-        paleta1.classList.remove("selected");
-        paleta2.classList.remove("selected");
-        paleta3.classList.add("selected");
-        paleta4.classList.remove("selected");
-    } else if (corPaleta == "paleta4") {
-        paleta1.classList.remove("selected");
-        paleta2.classList.remove("selected");
-        paleta3.classList.remove("selected");
-        paleta4.classList.add("selected");
-    }
-}
+// function selectColor(corPaleta) {
+//     if (corPaleta == "paleta1") {
+//         paleta1.classList.add("selected");
+//         paleta2.classList.remove("selected");
+//         paleta3.classList.remove("selected");
+//         paleta4.classList.remove("selected");
+//     } else if (corPaleta == "paleta2") {
+//         paleta1.classList.remove("selected");
+//         paleta2.classList.add("selected");
+//         paleta3.classList.remove("selected");
+//         paleta4.classList.remove("selected");
+//     } else if (corPaleta == "paleta3") {
+//         paleta1.classList.remove("selected");
+//         paleta2.classList.remove("selected");
+//         paleta3.classList.add("selected");
+//         paleta4.classList.remove("selected");
+//     } else if (corPaleta == "paleta4") {
+//         paleta1.classList.remove("selected");
+//         paleta2.classList.remove("selected");
+//         paleta3.classList.remove("selected");
+//         paleta4.classList.add("selected");
+//     }
+// }
 
 function updateSelectedColor() {
     selectedColor = window.getComputedStyle(selected[0]).getPropertyValue("background-color");
