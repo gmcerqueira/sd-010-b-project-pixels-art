@@ -2,6 +2,7 @@ const containerPalette = document.querySelector('#color-palette');
 const containerQuadro = document.querySelector('#pixel-board');
 const colorsPalette = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
+const botao = document.querySelector('#clear-board');
 
 function createPalette() {
   for (let index = 0; index < 4; index += 1) {
@@ -47,6 +48,12 @@ for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = corNova;
   })
 }
+
+botao.addEventListener('click', function () {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+})
 
 function corAleatoria() {
   let r = Math.floor(Math.random() * 255);
