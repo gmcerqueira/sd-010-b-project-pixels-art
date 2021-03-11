@@ -89,3 +89,54 @@ function verificaCoresUm() {
     colocaCores();
   }
 }
+
+function verificaCoresDois() {
+  const pixelCores = document.getElementsByClassName('color');
+  const colorUm = getComputedStyle(pixelCores[1]).getPropertyValue('background-color');
+  const colorDois = getComputedStyle(pixelCores[2]).getPropertyValue('background-color');
+  const colorTres = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
+  const preto = getComputedStyle(document.getElementById('black')).getPropertyValue('background-color');
+  const branco = getComputedStyle(document.getElementById('opcoes')).getPropertyValue('background-color');
+  if (colorDois === colorUm) {
+    colocaCores();
+  }
+  if (colorDois === colorTres) {
+    colocaCores();
+  }
+  if (colorDois === preto) {
+    colocaCores();
+  }
+  if (colorDois === branco) {
+    colocaCores();
+  }
+}
+
+function verificaCoresTres() {
+  const pixelCores = document.getElementsByClassName('color');
+  const colorUm = getComputedStyle(pixelCores[1]).getPropertyValue('background-color');
+  const colorDois = getComputedStyle(pixelCores[2]).getPropertyValue('background-color');
+  const colorTres = getComputedStyle(pixelCores[3]).getPropertyValue('background-color');
+  const preto = getComputedStyle(document.getElementById('black')).getPropertyValue('background-color');
+  const branco = getComputedStyle(document.getElementById('opcoes')).getPropertyValue('background-color');
+  if (colorTres === colorDois) {
+    colocaCores();
+  }
+  if (colorTres === colorUm) {
+    colocaCores();
+  }
+  if (colorTres === preto) {
+    colocaCores();
+  }
+  if (colorTres === branco) {
+    colocaCores();
+  }
+}
+
+verificaCoresUm();
+verificaCoresDois();
+verificaCoresTres();
+
+const pixelPreto = document.getElementById('black');
+const pixelCorUm = document.getElementById('corUm');
+const pixelCorDois = document.getElementById('corDois');
+const pixelCorTres = document.getElementById('corTres');
