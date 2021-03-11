@@ -1,3 +1,6 @@
+window.onload = function(){
+    document.getElementById('black').classList.add = "selected"   
+    }
 ///////////////////////////////////////////////////////////
 
 // Quadrado de pixels 
@@ -31,12 +34,6 @@ for (let index = 0; index < 5; index += 1){
 
 //////////////////////////////////////////////////////////
 
-// Cor preta como cor inicial
-
-window.onload = function(){
-let corPreta = document.getElementById('black')    
-corPreta.classList.add = "selected"   
-}
 
 //////////////////////////////////////////////////////////
 //Selecionando a cor
