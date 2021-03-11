@@ -3,10 +3,16 @@
 window.onload = whitePixels()
 window.onload = blackColorSelected()
 
+function randomColorGenerator() {
+  let randomColor = Math.floor(Math.random()*16777215).toString(16);
+  return randomColor
+}
+//Para resolver essa questão, pesquisei e encontrei um artigo muito bom na CSS Tricks, que instruiu como gerar uma cor aleatória. Segue o link: https://css-tricks.com/snippets/javascript/random-hex-color/
+
 document.querySelectorAll(".color")[0].style.backgroundColor = "black"
-document.querySelectorAll(".color")[1].style.backgroundColor = "red"
-document.querySelectorAll(".color")[2].style.backgroundColor = "lightgreen"
-document.querySelectorAll(".color")[3].style.backgroundColor = "blue"
+document.querySelectorAll(".color")[1].style.backgroundColor = "#" + randomColorGenerator();
+document.querySelectorAll(".color")[2].style.backgroundColor = "#" + randomColorGenerator();
+document.querySelectorAll(".color")[3].style.backgroundColor = "#" + randomColorGenerator();
 
 function whitePixels () {
   let pixels = document.querySelectorAll(".pixel");
