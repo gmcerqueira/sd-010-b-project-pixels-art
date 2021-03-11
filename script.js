@@ -1,3 +1,22 @@
+window.onload = function() {
+  let arrayBackground = ["red", "blue", "green", "gray", "yellow", "brown"]
+  let paletteColor = document.querySelector("#color-palette")
+  // console.log(paletteColor)
+  let color = 0;
+  for (index = 1; index <= 3; index += 1){
+    cor = Math.floor(Math.random() * arrayBackground.length)
+    let div = document.createElement("div");
+    div.className = "color";
+    div.style.backgroundColor = arrayBackground[cor]
+    paletteColor.appendChild(div);    
+  }  
+
+  let selected = document.querySelectorAll(".color");
+  for (let index = 0; index < selected.length; index+=1) {
+    selected[index].addEventListener("click", changeSelected)
+  } 
+}
+
 let pixelBoard = document.getElementById("pixel-board");
 for (let cont = 1; cont <= 5; cont+=1) {
   let div = document.createElement("div");
@@ -34,10 +53,7 @@ btnGenerate.addEventListener("click", function() {
   }
 })
 
-let selected = document.querySelectorAll(".color");
-for (let index = 0; index < selected.length; index+=1) {
-  selected[index].addEventListener("click", changeSelected)
-} 
+
 
 function changeSelected(event) {
   let selectElement = document.querySelector(".selected")
