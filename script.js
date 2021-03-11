@@ -58,7 +58,7 @@ generateBoard.addEventListener('click', () => {
     for (let indexRow = 0; indexRow < number; indexRow += 1) {
       if (indexRow < numberRow) {
         for (let pixels = numberRow; pixels < number; pixels += 1) {
-          const pixelNew = document.createElement('td');
+          const pixelNew = document.createElement('table');
           pixelNew.className = 'pixel';
           pixelBoard.children[indexRow].appendChild(pixelNew);
         }
@@ -71,7 +71,7 @@ generateBoard.addEventListener('click', () => {
         }
         for (let pixels = 0; pixels < number; pixels += 1) {
           let index = indexRow;
-          const pixelNew = document.createElement('td');
+          const pixelNew = document.createElement('table');
           pixelNew.className = 'pixel';
           pixelBoard.children[index].appendChild(pixelNew);
         }
