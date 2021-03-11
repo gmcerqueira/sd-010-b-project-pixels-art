@@ -1,11 +1,9 @@
 body {
-  background-color: #efefef;
+  background-color: white;
 }
 
 .main {
   background-color: white;
-  width: 500px;
-  height: 500px;
   text-align: center;
   margin: 0 auto;
 }
@@ -50,7 +48,10 @@ body {
   background-color: black;
 }
 
-#clear-board {
-  display: block;
+.btn-section {
   margin: 15px auto;
+}
+
+#board-size {
+  text-align: center;
 }

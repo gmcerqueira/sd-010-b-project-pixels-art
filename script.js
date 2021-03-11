@@ -27,17 +27,21 @@ const divPixelBoard = document.getElementById('pixel-board');
 let divPixelLine;
 let divPixelCol;
 
-for (let i = 1; i <= 5; i += 1) {
-  divPixelLine = document.createElement('div');
-  divPixelLine.className = 'tr';
-  divPixelBoard.appendChild(divPixelLine);
+function pixelMatriz(nl) {
+  for (let i = 1; i <= nl; i += 1) {
+    divPixelLine = document.createElement('div');
+    divPixelLine.className = 'tr';
+    divPixelBoard.appendChild(divPixelLine);
 
-  for (let i2 = 1; i2 <= 5; i2 += 1) {
-    divPixelCol = document.createElement('div');
-    divPixelCol.className = 'pixel td';
-    divPixelLine.appendChild(divPixelCol);
+    for (let i2 = 1; i2 <= nl; i2 += 1) {
+      divPixelCol = document.createElement('div');
+      divPixelCol.className = 'pixel td';
+      divPixelLine.appendChild(divPixelCol);
+    }
   }
 }
+pixelMatriz(5);
+
 
 // criando evento para selecionar as cores
 const paletteLine = document.getElementById('palette-line');
@@ -54,7 +58,6 @@ function getColor() {
 getColor();
 
 // criação da função que ira pintar os quadros pixel
-
 const bgSelected = document.getElementsByClassName('selected');
 const cPixel = document.getElementsByClassName('pixel');
 
@@ -69,10 +72,33 @@ function colorPixel() {
 }
 colorPixel();
 
-// apaga todos quadros pintados
+// pinta todos os quadrados de branco
 const btnClear = document.getElementById('clear-board');
-btnClear.addEventListener('click', () => {
-  for (let itemPinted = 0; itemPinted < cPixel.length; itemPinted += 1) {
-    cPixel[itemPinted].style.backgroundColor = 'white';
+
+function clearPixel() {
+  btnClear.addEventListener('click', () => {
+    for (let itemPinted = 0; itemPinted < cPixel.length; itemPinted += 1) {
+      cPixel[itemPinted].style.backgroundColor = 'white';
+    }
+  });
+}
+clearPixel();
+
+// altera o tamanho da matriz
+const btnVQV = document.getElementById('generate-board');
+const inputBoardSize = document.getElementById('board-size');
+
+function clearMatriz() {
+  divPixelBoard.replaceChildren();
+}
+
+btnVQV.addEventListener('click', () => {
+  const sizePixel = inputBoardSize.value;
+  if (sizePixel === 0 || sizePixel < 5) {
+    alert('Board inválido!');
+  } else {
+    clearMatriz();
+    pixelMatriz(sizePixel);
+    colorPixel();
   }
 });
