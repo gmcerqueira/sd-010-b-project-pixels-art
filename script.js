@@ -42,7 +42,6 @@ function pixelMatriz(nl) {
 }
 pixelMatriz(5);
 
-
 // criando evento para selecionar as cores
 const paletteLine = document.getElementById('palette-line');
 const color = document.getElementsByClassName('color');
