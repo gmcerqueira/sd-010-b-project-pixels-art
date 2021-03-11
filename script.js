@@ -15,6 +15,8 @@ function tableMaker() {
 }
 tableMaker();
 
+
+
 let listCollors = document.querySelectorAll('.color')
 let black = document.querySelector('.color');
 black.classList.add('selected')
