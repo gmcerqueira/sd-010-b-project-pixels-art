@@ -76,7 +76,7 @@ console.log(document.querySelector('body'));
 // 6. Definir a cor preta como a cor selecionada ao carregar a página:
 function defaultColor() {
   const setDefaultColor = document.querySelector('#black');
-  setDefaultColor.className = 'color selected';
+  setDefaultColor.className = 'selected color';
 }
 
 // 7. Ao clicar numa cor, a classe da mesma muda para selected:
@@ -84,15 +84,30 @@ function selectColorOnClick() {
   const colors = document.querySelector('#color-palette');
 
   // Condição para mudar a cor:
-  colors.addEventListener('click', function (event){
+  colors.addEventListener('click', function(event){
+
     const colorToSelect = document.getElementsByClassName('color');
     const colorSelected = document.querySelector('.selected');
 
-    if(colorToSelect.className !== 'color selected') {
-       event.target.className = 'color selected';
-       colorSelected.className = 'color';
+    if(colorToSelect.className !== 'selected color') {
+
+      event.target.className = 'selected color';
+      colorSelected.className = 'color';
     }
   });
 }
 
 selectColorOnClick();
+
+// 8. Pintar o pixel dentro do quadro após selecionar uma cor na paleta:
+function paintWithPixels() {
+  const paintPixels = document.querySelector('#pixel-board');
+  paintPixels.addEventListener('click', function(event) {
+    
+    const selectColor = document.querySelector('.selected').style.backgroundColor;
+    event.target.style.backgroundColor = selectColor;
+    event.stopPropagation();
+  });
+}
+
+paintWithPixels();
