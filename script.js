@@ -18,6 +18,7 @@ function createPixelGrid(gridSize) {
 
 createPixelGrid(5); 
 
+
 const colorSelected = document.querySelectorAll('.color');
 
 function selectColor() {
@@ -33,3 +34,21 @@ function selectColor() {
 }
 
 selectColor();
+
+// sites usados para pesquisa https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp, https://www.javascripttutorial.net/javascript-dom/javascript-getcomputedstyle/
+
+function pixelColor() {
+  let pixels = document.querySelectorAll('.pixel');
+  for (index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', changeColor);
+  } 
+
+}
+
+function changeColor(event) {
+  let selectedColor = document.querySelector('.selected');
+  let pixelColor = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
+  event.target.style.backgroundColor = pixelColor;
+}
+
+pixelColor();
