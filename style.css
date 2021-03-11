@@ -7,6 +7,7 @@
 
 #color-palette {   
     height: 40px;
+    margin-bottom: 10px;
 }
 
 .color {
@@ -18,9 +19,13 @@
     margin-right: 10px;
 }
 
+#pixel-board {  
+  display: table-cell;
+}
 
-#pixel-board {
-    margin-top: 15px;
+.table {
+  margin: auto;
+  text-align: center;
 }
 
 .pixel {   
@@ -28,6 +33,16 @@
     background-color: white;
     border-width: 1px; 
     height: 40px;
-    width: 40px; 
-    display: table-cell;
+    width: 40px;  
+    display: table-cell;    
+}
+
+#clear-board {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.body {
+  margin-right: auto;
+  margin-left: auto;
 }

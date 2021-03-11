@@ -1,68 +1,64 @@
-window.onload = function() {
-    let pixelPalette = 4;
-    // let pixelBoardLength = window.prompt("Enter the number of elements you want for the Pixel-board");
-    let pixelBoardLength = 5;
-    let pixelBoardBase = 5;    
-    let paletteColor = document.querySelectorAll(".color")
-    let firstPaletteColor = document.querySelector(".color");
-        firstPaletteColor.style.backgroundColor = "black";
+  let input = 5;
 
-    randomColors();    
-    function randomColors() {
-        for (let index = 1; index < paletteColor.length; index += 1) {
-            paletteColor[index].style.backgroundColor = getRandomColor()
-        }
+  let paletteColor = document.querySelectorAll(".color")
+  let firstPaletteColor = document.querySelector(".color");
+      firstPaletteColor.style.backgroundColor = "black";
+      firstPaletteColor.classList.add('selected');    
+
+  let selectedColor = document.getElementsByClassName("color selected");
+  let colors = document.querySelectorAll(".color");
+  let pixels = document.querySelectorAll('.pixel');
+
+  function colorSelection(){
+    for (let index = 0; index < colors.length; index += 1) {
+      colors[index].addEventListener('click', seletionChange)
     }
+  }
+  colorSelection()
 
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
+  function seletionChange(picked) {
+    for (let index = 0; index < colors.length; index += 1) {
+      if (colors[index].classList.contains('selected')) {
+        colors[index].classList.remove('selected');
       }
-        // let secondPaletteColor = document.querySelectorAll(".color")[1];
-        //     secondPaletteColor.style.backgroundColor = "red";
-        // let thirdPaletteColor = document.querySelectorAll(".color")[2];
-        //     thirdPaletteColor.style.backgroundColor = "green"; 
-        // let fourthPaletteColor = document.querySelectorAll(".color")[3];
-        //     fourthPaletteColor.style.backgroundColor = "yellow"; 
-
-    let boarFathers = document.querySelector("#pixel-board")
-    let lines = document.querySelectorAll(".lines");
-    fillBoard(lines);    
-
-    function fillBoard(lines)  {
-        for (let i = 0; i < pixelBoardLength; i += 1) {
-            createBoardLines(lines[i]);            
-        }
     }
-
-    function createBoardFathers(className){
-        let lines = createElement("div");
-        lines.className = className;
-        return lines
+    picked.target.classList.add('selected');
+  };
+  
+  function colorPainting() {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].addEventListener('click', colorChange);
     }
+  };
+  colorPainting()
 
-    function createBoardPixel(className) {
-        let pixel = document.createElement("div");
-        pixel.className = className;
-        return pixel;
-        }   
+  function colorChange(painting) {
+    painting.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+  }
 
-    function createBoardLines(divLine) {
-        for (let n = 0; n < pixelBoardLength; n += 1) {
-            if (pixelBoardLength >= 0 && pixelBoardLength <= 50) {
-                let pixel = createBoardPixel("pixel");
-                divLine.appendChild(pixel);
-            } else {
-                alert ("Board inválido");
-                break;
-            }
-        }
-    }   
+
+  
+
+  // let clearButton = document.getElementById("clear-board").addEventListener("click", clearBoard)
+  // function clearBoard(clearing) {
+  //     let clear = document.querySelectorAll(".pixel");
+  //     for (let i = 0; i < clear.length; i += 1){
+  //         clearing.clear[i].style.backgroundColor = "white";
+  //     }
+  // }
+
+  function randomColors() {
+    for (let index = 1; index < paletteColor.length; index += 1) {
+        paletteColor[index].style.backgroundColor = getRandomColor()
+    }
 }
-   
-
-
+randomColors();
+// Esse código de gerar cores aleatórias retirei do stackoverflow: https://stackoverflow.com/questions/1484506/random-color-generator
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
