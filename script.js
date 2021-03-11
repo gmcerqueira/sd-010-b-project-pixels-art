@@ -8,7 +8,28 @@ function criarDivs() {
     pixel.appendChild(cd); //pixel é adicionado na variavel cd
   }
 }
-   
-     
+criarDivs();
 
- window.onload = criarDivs();
+//7
+let receved = document.getElementsByClassName('color');
+for(let index =0; index < receved.length; index++){
+  receved[index].addEventListener('click', addSelClass);
+}
+function addSelClass(event){
+document.getElementsByClassName('selected')[0].
+classList.remove('selected');
+event.target.classList.add('selected');
+}
+//8
+  /*  let cor = document.querySelector('.selected');
+   let pixels =querySelectorAll('pixel')
+   for(let index = 0; index < pixels.length; index+=1){
+     pixels[index].sddEventListener('click', colorize);
+   }
+     function colorize(event){
+       let selectedCor = document.querySelector('.selected').id;
+       event.target.style.backgroundColor =  selectedCor ;
+     }
+ */
+ 
+
