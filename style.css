@@ -49,4 +49,13 @@
 #clear-board {
   margin-top: 5px;
   margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#generate-board {
+  border-radius: 5px;
+}
+
+#board-size {
+  margin-top: 10px;
 }
