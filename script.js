@@ -37,7 +37,8 @@ function paintPixel() {
     boardPaint[index].addEventListener('click', function (){
       const ColorPicked = document.querySelector('.selected');
       const sty = getComputedStyle(ColorPicked);
-      boardPaint[index].style = "sty.background";
+      const backgroundColor = sty.backgroundColor;
+      boardPaint[index].style.backgroundColor = backgroundColor;
     });
   }
 }
