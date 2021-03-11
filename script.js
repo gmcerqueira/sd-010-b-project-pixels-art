@@ -106,3 +106,16 @@ window.onload =
 // document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 // document.getElementsByClassName('color')[0].className += ' selected';
 // document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
+
+
+let botaoLimpa = document.createElement("button");
+botaoLimpa.innerText = "Clique para Limpar";
+document.body.appendChild(botaoLimpa);
+
+
+botaoLimpa.addEventListener("click", function () {
+  let pegaQuadro = document.querySelectorAll(".pixel");
+  for  (let index = 0; index < pegaQuadro.length; index += 1){ 
+    pegaQuadro[index].style.backgroundColor = "white";
+  }
+});
