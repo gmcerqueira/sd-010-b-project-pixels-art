@@ -52,7 +52,6 @@ function clear() {
     for (let index = 0; index < pixelsBoard.length; index += 1) {
       pixelsBoard[index].style.backgroundColor = 'white';
     }
-
   });
 }
 clear();

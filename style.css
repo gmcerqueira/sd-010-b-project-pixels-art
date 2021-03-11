@@ -1,7 +1,8 @@
 body {
-  font-family: 'Pacifico', cursive;
   background-image: url('/background-image.png');
+  font-family: 'Pacifico', cursive;
 }
+
 #title {
   font-size: 50px;
   font-weight: 400;
