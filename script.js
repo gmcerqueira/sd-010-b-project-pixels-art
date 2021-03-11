@@ -31,6 +31,7 @@ function geraPixel(numeroPixel) {
 	for (let cont = 0; cont < numeroPixel; cont += 1) {
 		let itemPixel = document.createElement('div');
 		pixels.appendChild(itemPixel);
+		itemPixel.className = 'pixel';
 
 		for (let cont2 = 0; cont2 < numeroPixel; cont2 += 1) {
 			let itemPixel2 = document.createElement('div');
