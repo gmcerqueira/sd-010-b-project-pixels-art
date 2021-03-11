@@ -1,7 +1,14 @@
 /* Estilização */
+.body {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  vertical-align: middle;
+  table-layout: auto;
+  margin: auto;
+}
 
 #title {
-    text-align: center;
     color: black;
 }
 
@@ -38,11 +45,6 @@
 }
 
 #clear-board {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.body {
   margin-right: auto;
   margin-left: auto;
 }
