@@ -1,4 +1,4 @@
-//1. Adiciona o título:
+// 1. Adiciona o título:
 function headerMaker() {
   const generateHeader = document.querySelector('body');
   const headerGenerator = document.createElement('h1');
@@ -8,7 +8,7 @@ function headerMaker() {
 }
 headerMaker();
 
-//2. Adiciona a paleta de cores:
+// 2. Adiciona a paleta de cores:
 function tablesFatherCreator() {
   const generateTable = document.querySelector('body');
   const tablesFather = document.createElement('div');
@@ -23,7 +23,7 @@ function colorsTableMaker() {
     'black',
     'crimson',
     'darkgoldenrod',
-    'yellow'
+    'yellow',
   ];
 
   for (let index = 0; index < colors.length; index += 1) {
@@ -32,7 +32,6 @@ function colorsTableMaker() {
     tables.id = colors[index];
     tables.className = 'color';
     tables.style.backgroundColor = colors[index];
-    ;
     allTables.appendChild(tables);
   }
 }
