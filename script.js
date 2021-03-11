@@ -41,6 +41,25 @@ function selectedColor(event) {
 }
 
 /*
+   Essa função recebe o evento disparado por um elemento da classe pixel e obtém esse elemento. Obtem também o backgroundColor do elemento color que está selecionado e atribui ao backgroundColor de pixel.
+
+   Material consultado sobre obter estilo Inline vs obter estilo pelo CSS
+   https://zellwk.com/blog/css-values-in-js/
+  */
+function fillPixelWithSelectedColor(event) {
+  const pixel = event.target; // armazena o elemento pixel que disparou o evento
+
+  // armazena em currentElementColor o elemento da classe color que está selecionado
+  const currentElementColor = document.querySelector('.selected');
+
+  // armazena style do elemento da classe color que está selecionado
+  const style = getComputedStyle(currentElementColor);
+
+  // armazena em pixel backgroundColor do elemento da classe color que está selecionado
+  pixel.style.backgroundColor = style.backgroundColor;
+}
+
+/*
    Essa função executa a function init para carregar valores, gerar board e adicionar escutadores de evento click que dispara a function selectedColor.
 
    Material consultado sobre o loop forEach
@@ -54,18 +73,19 @@ window.onload = function init() { // define uma função init para carregar valo
   const boardSize = 5; // define o tamanho do board
   const width = boardSize; // define width a partir de boardSize
   const height = boardSize; // define height a partir de boardSize
-
-  // armazena o primeiro elemento da classe color (black) e armazena em intialColor
-  const initialColor = document.querySelector('.color');
-
+  const initialColor = document.querySelector('.color');// obtém o primeiro elemento da classe color (black) e armazena em intialColor
   initialColor.classList.add('selected'); // define a cor black como inicial
   generateBoard(width, height); // gera o board de dimensão width X height
 
   // obtem uma lista de elementos da classe color e armazena em colorElementsList
   const colorElementsList = document.querySelectorAll('.color');
+  colorElementsList.forEach((colorElement) => { // para cada elemento da lista color
+    colorElement.addEventListener('click', selectedColor); // adiciona um escutador de eventos click que dispara a function selectedColor
+  });
 
-  // para cada elemento da lista, adiciona um escutador de eventos click que dispara a function selectedColor
-  colorElementsList.forEach((colorElement) => {
-    colorElement.addEventListener('click', selectedColor);
+  // obtem uma lista de elementos da classe pixel e armazena em pixelElementsList
+  const pixelElementsList = document.querySelectorAll('.pixel');
+  pixelElementsList.forEach((pixelElement) => { // para cada elemento da lista pixel
+    pixelElement.addEventListener('click', fillPixelWithSelectedColor); // adiciona um escutador de eventos click que dispara a function fillPixelWithSelectedColor
   });
 };
