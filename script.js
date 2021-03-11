@@ -58,20 +58,20 @@ generateBoard.addEventListener('click', () => {
     for (let indexRow = 0; indexRow < number; indexRow += 1) {
       if (indexRow < numberRow) {
         for (let pixels = numberRow; pixels < number; pixels += 1) {
-          const pixelNew = document.createElement('table');
+          const pixelNew = document.createElement('td');
           pixelNew.className = 'pixel';
           pixelBoard.children[indexRow].appendChild(pixelNew);
         }
       } else {
         for (let indexNewRow = numberRow; indexNewRow <= number; indexNewRow += 1) {
-          const rowNew = document.createElement('table');
-          rowNew.className = 'table tr';
+          const rowNew = document.createElement('tr');
+          rowNew.className = 'tr';
           pixelBoard.appendChild(rowNew);
           break;
         }
         for (let pixels = 0; pixels < number; pixels += 1) {
           let index = indexRow;
-          const pixelNew = document.createElement('table');
+          const pixelNew = document.createElement('td');
           pixelNew.className = 'pixel';
           pixelBoard.children[index].appendChild(pixelNew);
         }
