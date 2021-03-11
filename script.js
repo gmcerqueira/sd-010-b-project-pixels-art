@@ -140,3 +140,24 @@ const pixelPreto = document.getElementById('black');
 const pixelCorUm = document.getElementById('corUm');
 const pixelCorDois = document.getElementById('corDois');
 const pixelCorTres = document.getElementById('corTres');
+
+function pegaCorPreta() {
+  const elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  pixelPreto.classList.add('selected');
+}
+function pegaCorUm() {
+  const elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  pixelCorUm.classList.add('selected');
+}
+function pegaCorDois() {
+  const elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  pixelCorDois.classList.add('selected');
+}
+function pegaCorTres() {
+  const elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  pixelCorTres.classList.add('selected');
+}
