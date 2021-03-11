@@ -26,12 +26,11 @@ event.target.classList.add('selected');
    for(let index = 0; index < pixels.length; index+=1){
      pixels[index].addEventListener('click', colorize);
    }
-     function colorize(event){
+function colorize(event){
        let selectedCor = document.querySelector('.selected').id;
        event.target.style.backgroundColor =  selectedCor ;
-     }
 
- function limparPixel(){
+function limparPixel(){
   
    for (let index = 0; index < pixels.length; index++){
     pixels[index].style.backgroundColor = 'white';
@@ -39,5 +38,5 @@ event.target.classList.add('selected');
 }
    let butao = document.getElementById('clear-board');
    butao.addEventListener("click", limparPixel);
-  
+}
 
