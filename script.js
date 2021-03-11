@@ -93,8 +93,18 @@ function clearMatriz() {
 
 btnVQV.addEventListener('click', () => {
   const sizePixel = inputBoardSize.value;
-  if (sizePixel === 0 || sizePixel < 5 || sizePixel > 50) {
+  if (sizePixel === 0) {
     alert('Board inválido!');
+  } else if (inputBoardSize.value < 5) {
+    inputBoardSize.value = '5';
+    clearMatriz();
+    pixelMatriz(5);
+    colorPixel();
+  } else if (inputBoardSize.value > 50) {
+    inputBoardSize.value = '50';
+    clearMatriz();
+    pixelMatriz(50);
+    colorPixel();
   } else {
     clearMatriz();
     pixelMatriz(sizePixel);
