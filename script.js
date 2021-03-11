@@ -13,12 +13,71 @@ for(let indexLine=0;indexLine<n;indexLine+=1){
         getTable.appendChild(line)
     }
 }
-//requisito 6
-//esse requisito eu aprendi a fazer com meu colega Alexandre Damasceno
-//link do PR: https://github.com/tryber/sd-010-b-project-pixels-art/pull/111/commits/fcaeee4424653d9d14e8074b7e12ec6e3e33b866
+//requisitos 6,7 e 8 
+//esses requisitos eu aprendi a fazer com a ajuda do meu colega Alexandre Damasceno
+//link do PR dele:  https://github.com/tryber/sd-010-b-project-pixels-art/pull/111/commits
 window.onload=function(){
     
     let allPixels=document.querySelectorAll('.pixel')
+
+    let clickPink=document.getElementById('pink').addEventListener('click',paintPink)
+   
+    
+    function paintPink(){
+        for(let index=0;index<allPixels.length;index+=1){
+            allPixels[index].addEventListener('click',function(){
+                if(allPixels[index].style.backgroundColor!='pink'){
+                    allPixels[index].style.backgroundColor='pink'
+                }
+            })
+        }
+    }
+     paintPink()
+
+    let clickBlue=document.getElementById('slateblue').addEventListener('click',paintBlue)
+   
+    
+    function paintBlue(){
+        for(let index=0;index<allPixels.length;index+=1){
+            allPixels[index].addEventListener('click',function(){
+                if(allPixels[index].style.backgroundColor!='slateblue'){
+                    allPixels[index].style.backgroundColor='slateblue'
+                }
+            })
+        }
+    }
+     paintBlue()
+    
+    let clickRed=document.getElementById('red').addEventListener('click',paintRed)
+   
+    
+    function paintRed(){
+        for(let index=0;index<allPixels.length;index+=1){
+            allPixels[index].addEventListener('click',function(){
+                if(allPixels[index].style.backgroundColor!='red'){
+                    allPixels[index].style.backgroundColor='red'
+                }
+            })
+        }
+    }
+     paintRed()
+
+    
+     function clean(){
+        let button=document.getElementById('button')
+        button.innerHTML='Limpar'
+        
+        button.addEventListener('click',function(){
+            for(let index=0;index<allPixels.length;index+=1){
+                allPixels[index].style.backgroundColor='white'
+            }
+        })
+     }
+     clean()
+
+       
+    let clickBlack=document.getElementById('black').addEventListener('click',paintBlack)
+   
     
     function paintBlack(){
         for(let index=0;index<allPixels.length;index+=1){
@@ -30,44 +89,12 @@ window.onload=function(){
         }
     }
      paintBlack()
-}
 
-//requisito 7 e 8
-
-let squares= document.getElementById('color-palette')
-for(let indice=0;indice<squares.length;indice+=1){
-    squares[indice].addEventListener('click',removeClass)
-}
-function removeClass(){
-    squares[0].classList.remove("selected")
-    squares[1].classList.remove("selected")
-    squares[2].classList.remove("selected")
-    squares[3].classList.remove("selected")
-    squares[indice].classList.add('selected')
+     
 }
 
 
-let allPixels=document.querySelectorAll('.pixel')
-for(let ind=0;ind<allPixels.length;ind+=1){
-    allPixels[ind].addEventListener('click',paint)
-}
-function paint(){
-    let firstSquare=squares[0]
-    let secondSquare=squares[1]
-    let thirdSquare=squares[2]
-    let fourthSquare=squares[3]
 
-    if(firstSquare.className='color selected'){
-        allPixels[ind].style.backgroundColor='black'
-    } else if(secondSquare.className='color selected'){
-        allPixels[ind].style.backgroundColor='red'
-    } else if(thirdSquare.className='color selected'){
-        allPixels[ind].style.backgroundColor='slateblue'
-    } else if(fourthSquare.className='color selected'){
-        allPixels[ind.style.backgroundColor='pink']
-    }
-}
-paint()
 
 
 
