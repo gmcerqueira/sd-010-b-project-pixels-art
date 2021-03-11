@@ -58,3 +58,13 @@
 
     console.log(corSelecionada);
   }
+
+  function limparPixels() {
+    
+    let pixels = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixels.length; index ++) {
+
+      pixels[index].style.backgroundColor = 'white';
+
+    }
+  }
