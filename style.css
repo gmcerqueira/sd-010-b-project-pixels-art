@@ -6,8 +6,8 @@
     height: 45px;
 }
 .board {
-    margin-top: 10px;
-    width: 220px;
+    margin-top: 15px;
+    width: 230px;
 }
 .pixel {
     border: 1px solid black;
@@ -15,6 +15,18 @@
     width: 40px;
     height: 40px;
     background-color: white;
-    margin-top: -5px;
-    margin-left: -1px;
+    margin-top: -4px;
+    margin-left: -4px;
   }
+#black {
+    background-color: black;
+}
+#blue {
+    background-color: blue;
+}
+#red {
+    background-color: red;
+}
+#green {
+    background-color: green;
+}

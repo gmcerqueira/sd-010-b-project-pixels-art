@@ -1,29 +1,3 @@
-function createPixels() {
-  const board = document.querySelector(".board");
-  const size = document.getElementById("board-size");
-  if (size.value < 5) {
-    size.value = 5;
-  } else if (size.value > 50) {
-    size.value = 50;
-  } else if (size.value === "") {
-    alert("Board inválido!");
-  }
-  createBoard(size.value);
-}
-
-function createBoard(number) {
-  let board = document.getElementById("pixel-board");
-  for(let index = 0; index < number; index += 1) {
-    for(let index2 = 0; index2 < number; index2 += 1) {
-      let pixels = document.createElement("div");
-        pixels.className = "pixel";
-        board.appendChild(pixels);
-    }
-  }
-}
-
-// Para realizar essas duas primeiras funções, dei uma conferida no pull request do Lucas Henrique da Silva Brito, da turma 9. Valeu, Lucas!
-
 function randomColor() {
   let color = document.querySelectorAll(".color");
   for(let index = 0; index < color.length; index += 1) {
@@ -41,22 +15,44 @@ function randomColor() {
 function selectColor(selected) {
   let oldColor = document.querySelector(".selected");
   oldColor.classList.remove("selected");
-  let newColor = selected.target
+  let newColor = selected.target;
   newColor.classList.add("selected");
 }
 
 function clear() {
-  let pixels = document.querySelectorAll(".pixel");
-  if(pixels.classList.contains("painted")) {
-    pixels.style.backgroundColor = "rgb(255, 255, 255)";
+  const paintedPixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < paintedPixels.length; index += 1) {
+    if (paintedPixels[index].classList.contains('painted')) {
+    paintedPixels[index].style.backgroundColor = 'white';
+    paintedPixels[index].classList.remove('painted');
+  }
+}
+}
+document.getElementById("clear-board").addEventListener("click", clear);
+
+function paintPixels() {
+  const colorBlack = document.getElementById('black');
+  const colorBlue = document.getElementById('blue');
+  const colorRed = document.getElementById('red');
+  const colorGreen = document.getElementById('green');
+  const fullClass = 'color selected'
+  if (colorBlack.className === fullClass) {
+    this.style.backgroundColor = 'black';
+  } else if (colorBlue.className === fullClass) {
+    this.style.backgroundColor = 'blue';
+  } else if (colorRed.className === fullClass) {
+    this.style.backgroundColor = 'red';
+  } else if (colorGreen.className === fullClass) {
+    this.style.backgroundColor = 'green';
   }
 }
 
-function paintColors(notPainted) {
+  const pixelColor = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelColor.length; index += 1) {
+    pixelColor[index].classList.add('painted');
+    pixelColor[index].addEventListener('click', paintPixels);
 }
 
-window.onload = randomColor;
-createBoard(5);
+
+
 document.getElementById("color-palette").addEventListener("click", selectColor);
-document.getElementById("clear-board").addEventListener("click", clear);
-document.getElementById("generate-board").addEventListener("click", createPixels);
