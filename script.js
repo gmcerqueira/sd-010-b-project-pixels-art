@@ -1,3 +1,6 @@
+// Executa o requisito 6 quando a página é carregada totalmente:
+window.addEventListener('load', defaultColor);
+
 // 1. Adiciona o título:
 function headerMaker() {
   const generateHeader = document.querySelector('body');
@@ -37,7 +40,7 @@ function colorsTableMaker() {
 tablesFatherCreator();
 colorsTableMaker();
 
-// 4. Adicionar à página um quadro com N pixels:
+// 4. e 5. Adicionar à página um quadro com N pixels com 40*40px e 1px de borda:
 const numberOfPixels = 5;
 const boardFather = document.querySelector('body');
 
@@ -69,3 +72,9 @@ pixelsBoardFather();
 pixelsForBoard();
 
 console.log(document.querySelector('body'));
+
+// 6. Definir a cor preta como a cor selecionada ao carregar a página:
+function defaultColor() {
+  const setDefaultColor = document.querySelector('#black');
+  setDefaultColor.className = 'color selected';
+}
