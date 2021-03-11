@@ -1,11 +1,12 @@
 //variaveis
-let todosOs25Quadradinhos = document.querySelectorAll('.pixel');
+let todosOs25Quadradinhos = document.getElementsByClassName('pixel');
 const paletaDeCores = document.getElementById('color-palette');
 const quadradoPreto = document.getElementsByClassName('color')[0];
 const quadradoAzul = document.getElementsByClassName('color')[1];
 const quadradoAmarelo = document.getElementsByClassName('color')[2];
 const quadradoVerde = document.getElementsByClassName('color')[3];
 let todasAsCores = document.querySelectorAll('.color');
+
 //cores da paleta de cores
 quadradoPreto.style.backgroundColor = 'black';
 quadradoAzul.style.backgroundColor = 'blue';
@@ -51,9 +52,10 @@ function pintandoOQuadradinho() {
   event.target.style.backgroundColor = selecionaCor;
 }
 
-function pintarTabela() {
-  let tabelaToda = document.getElementById('pixel-board');
-    tabelaToda.addEventListener("click", pintandoOQuadradinho);
+function pintandoTabela() {
+  for (let j = 0; j < todosOs25Quadradinhos.length; j += 1) {
+    todosOs25Quadradinhos[j].addEventListener("click", pintandoOQuadradinho);
+  }
 }
-pintarTabela();
+pintandoTabela();
 
