@@ -22,7 +22,6 @@ function changeFourthColor(element) {
   spanFouth.style.backgroundColor = element.target.value;
 }
 
-
 let inpSecond = null;
 inpSecond = document.getElementById('input-second');
 
@@ -36,26 +35,6 @@ inpSecond.addEventListener('change', changeSecondColor);
 inpThird.addEventListener('change', changeThirdColor);
 inpFourth.addEventListener('change', changeFourthColor);
 
-/* let inpSecondColor = null;
-inpSecondColor = document.getElementById('input-second').value;
-
-let inpThirdColor = null;
-inpThirdColor = document.getElementById('input-third').value;
-
-let inpFourthColor = null;
-inpFourthColor = document.getElementById('input-fourth').value;
-
-let spanSecondColor = null;
-spanSecondColor = document.getElementById('second-color').style.backgroundColor;
-spanSecondColor = '#ed4e23';
-
-let spanThirdColor = null;
-spanThirdColor = document.getElementById('third-color').style.backgroundColor;
-spanThirdColor = '#3970fe';
-
-let spanFouthColor = document.getElementById('fourth-color').style.backgroundColor;
-spanFouthColor = '#438104';
- */
 function addColorInPixel() {
   let color = null;
   color = document.getElementsByClassName('selected')[0];
