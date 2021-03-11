@@ -54,5 +54,15 @@ generateBoard.addEventListener('click', () => {
     }
     pixelBoard.style.width = `${(number * 41)}px`;
     pixelBoard.style.height = `${(number * 41)}px`;
+  } else if (numberRow < number && number !== '') {
+    for (let indexRow = 0; indexRow < number; indexRow += 1) {
+      if (indexRow < numberRow) {
+        for (let pixels = numberRow; pixels < number; pixels += 1) {
+          const pixelNew = document.createElement('table');
+          pixelNew.className = 'pixel';
+          pixelBoard.children[indexRow].appendChild();
+        }
+      }
+    }
   }
 });
