@@ -4,3 +4,14 @@
   height: 40px;
   width: 40px;
 }
+
+#pixel.board {
+  display: table;
+}
+
+.pixel {
+  border: 1px solid black;
+  display: table-cell;
+  height: 100px;
+  width: 100px;
+}
