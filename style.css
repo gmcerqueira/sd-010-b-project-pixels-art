@@ -18,23 +18,6 @@ body {
   padding: 40px;
 }
 
-.preto {
-  background-color: black;
-}
-
-
-.azul {
-  background-color: blue;
-}
-
-.amarelo {
-  background-color: yellow;
-}
-
-.verde {
-  background-color: green;
-}
-
 .pixel-board {
   display: table;
 }

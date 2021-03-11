@@ -1,3 +1,12 @@
+//variaveis
+let todosOs25Quadradinhos = document.querySelectorAll('.pixel');
+const paletaDeCores = document.getElementById('color-palette');
+const quadradoPreto = document.getElementsByClassName('color')[0];
+const quadradoAzul = document.getElementsByClassName('color')[1];
+const quadradoAmarelo = document.getElementsByClassName('color')[2];
+const quadradoVerde = document.getElementsByClassName('color')[3];
+let todasAsCores = document.querySelectorAll('.color');
+
 //Função de criar o quadro com 25 quadradinhos
 function adicionandoPixels() {
   const quadroPixels = document.getElementById('pixel-board');
@@ -13,12 +22,7 @@ function adicionandoPixels() {
 }
 adicionandoPixels();
 //Definindo variaveis as cores
-const paletaDeCores = document.getElementById('color-palette');
-const quadradoPreto = document.getElementsByClassName('color')[0];
-const quadradoAzul = document.getElementsByClassName('color')[1];
-const quadradoAmarelo = document.getElementsByClassName('color')[2];
-const quadradoVerde = document.getElementsByClassName('color')[3];
-let todasAsCores = document.querySelectorAll('.color');
+
 
 function deixarQuadradoPreto() {
   quadradoPreto.classList.add('selected');
@@ -37,12 +41,16 @@ for (let i = 0; i < todasAsCores.length; i += 1) {
 }
 
 //colorindo o quadradinhos branco
-function pintandoOQuadradinho () {
-  let selecionaCor = document.querySelector('.selected').style.backgroundColor;
+function pintandoOQuadradinho() {
+  let selecionaCor = document.getElementsByClassName('selected')[0].style.backgroundColor;
   event.target.style.backgroundColor = selecionaCor;
 }
 
-let todosOs25Quadradinhos = document.querySelectorAll('.pixel');
-for (let i = 0; i < todosOs25Quadradinhos.length; i += 1) {
-  todosOs25Quadradinhos[i].addEventListener("click", pintandoOQuadradinho);
+for (let j = 0; j < todosOs25Quadradinhos.length; j += 1) {
+  todosOs25Quadradinhos[j].addEventListener("click", pintandoOQuadradinho);
 }
+
+quadradoPreto.style.backgroundColor = 'black';
+quadradoAzul.style.backgroundColor = 'blue';
+quadradoAmarelo.style.backgroundColor = 'yellow';
+quadradoVerde.style.backgroundColor = 'green';
