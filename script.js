@@ -64,7 +64,7 @@ window.onload=function(){
 
     
      function clean(){
-        let button=document.getElementById('button')
+        let button=document.getElementById('clear-board')
         button.innerHTML='Limpar'
         
         button.addEventListener('click',function(){
@@ -75,6 +75,20 @@ window.onload=function(){
      }
      clean()
 
+//      let squares= document.querySelectorAll('color')
+//      for(let indice=0;indice<squares.length;indice+=1){
+//     squares[indice].addEventListener('click',removeClass)
+//      } 
+//     function removeClass(){
+//     for (let index=0;index<squares.length;index+=1){
+//         squares[0].classList.remove("selected")
+//         squares[1].classList.remove("selected")
+//         squares[2].classList.remove("selected")
+//         squares[3].classList.remove("selected")
+//         squares[indice].classList.add('selected')
+//     }
+    
+//    }
        
     let clickBlack=document.getElementById('black').addEventListener('click',paintBlack)
    
