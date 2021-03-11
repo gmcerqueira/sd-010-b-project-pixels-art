@@ -8,12 +8,6 @@ for (let divs = 0; divs < 4; divs += 1) {
   colorPallete.appendChild(divPallete);
 }
 
-// Requesito 6
-
-// https://www.geeksforgeeks.org/how-to-add-a-class-to-dom-element-in-javascript/ --> referência
-const blackSelected = document.querySelector('.color');
-blackSelected.classList.add('selected');
-
 
 // Requesito 4
 
@@ -38,17 +32,24 @@ for (let j = 0; j < boardSquares.length; j += 1) {
   }
 }
 
-// Requesito 7
-const colors = document.querySelectorAll('.color')
+// Requesito 6
 
-function pickColor() {
-  for (let pc = 0; index < colors.length; pc += 1) {
-    colors[pc].addEventListener('click', function (){
-      const selectedColor = document.querySelector('.selected');
-      selectedColor.className = selectedColor.classList.remove('selected');
-      colors[pc].className = colors[pc].classList.add('color, selected');
-    } )
-  }
+// https://www.geeksforgeeks.org/how-to-add-a-class-to-dom-element-in-javascript/ --> referência
+// const firstColor = document.querySelector('.color');
+// firstColor.classList.add('selected');
+
+const blackColor = document.querySelector('.color');
+blackColor.classList.add('selected');
+// Requesito 7
+
+const allColors = document.getElementsByClassName('color');
+const pickColor = document.querySelector('.selected');
+
+for (let index = 0; index < allColors.length; index += 1) {
+    allColors[index].addEventListener('click', function() {
+      colorPallete.querySelector('.selected').classList.remove('selected');
+      this.classList.add('selected');
+    })    
 }
 
 
@@ -65,6 +66,3 @@ function clearBorder() {
 }
 // Recebi ajuda do colega Gustavo Cerqueira.
 buttonClear.addEventListener('click', clearBorder);
-
-
-
