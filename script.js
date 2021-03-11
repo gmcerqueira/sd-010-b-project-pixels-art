@@ -17,7 +17,7 @@ function addElementoSection() {
       const newDivCelula = document.createElement('div');
       newDivCelula.className = 'pixel';
       newDivLinha.appendChild(newDivCelula);
-      newDivLinha.className = 'tr pixel';
+      newDivLinha.className = 'tr';
     }
     newSection.className = 'table';
     newSection.appendChild(newDivLinha);
