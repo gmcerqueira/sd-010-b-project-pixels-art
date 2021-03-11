@@ -4,10 +4,10 @@ let color = document.querySelectorAll('.color');
 let colorInicial = 'black';
 let letAuxiliar = 0;
 color[0].style.backgroundColor = 'black';
-color[1].style.backgroundColor = 'pink';
+color[1].style.backgroundColor = 'tomato';
 color[2].style.backgroundColor = 'teal';
-color[3].style.backgroundColor = 'green';
-color[4].style.backgroundColor = 'yellow';
+color[3].style.backgroundColor = 'SpringGreen';
+color[4].style.backgroundColor = 'Sienna';
 // Function paleta de 4 cores
 function palletteColor(event) {
   letAuxiliar = event.target;
@@ -33,3 +33,11 @@ function clickPixel(event) {
   }
 }
 divPixel.addEventListener('click', clickPixel)
+// Function Botão que limpa a Paleta
+let buttonLimpar = document.querySelector('#clear-board');
+function button() {
+  for(let index = 0; index < 25; index += 1) {
+    corPixel[index].style.backgroundColor = 'rgb(265, 265, 265)';
+  }
+}
+buttonLimpar.addEventListener('click', button);
