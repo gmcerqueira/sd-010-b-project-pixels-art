@@ -93,11 +93,14 @@ function removeQuadro() {
   }
 }
 
+function campoVazio(conteudo) {
+  if (conteudo === '') alert('Board inválido!');
+}
+
 function mudaTamanhoQuadro() {
   const inputQuadro = document.querySelector('#board-size').value;
-  if (inputQuadro === '') {
-    alert('Board inválido!');
-  } else if (inputQuadro >= 5 && inputQuadro <= 50) {
+  campoVazio(inputQuadro);
+  if (inputQuadro >= 5 && inputQuadro <= 50) {
     tamanhoQuadro = inputQuadro;
   } else if (inputQuadro < 5) {
     tamanhoQuadro = 5;
