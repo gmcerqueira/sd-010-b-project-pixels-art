@@ -28,7 +28,7 @@ function selectColor() {
 }
 
 function colorPixels() {
-  let board = document.querySelector('#pixel-board');
+  let board = document.getElementsById ('pixel-board');
   board.addEventListener('click', selectColor);
 }
 colorPixels();
