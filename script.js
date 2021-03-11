@@ -23,7 +23,7 @@ cor3.addEventListener('click', escolheACor);
 cor4.addEventListener('click', escolheACor);
 const button1 = document.querySelector('#gerar');
 function rgb () {
-  return 'rgb('+ Math.floor(Math.random() * 255)+','+Math.floor(Math.random() * 255)+','+Math.floor(Math.random() * 255)+')';
+  return 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
 }
 button1.addEventListener('click', function gerar() {
   cor1.style.backgroundColor = rgb();
@@ -34,18 +34,16 @@ button1.addEventListener('click', function gerar() {
   blue.style.backgroundColor = 'rgb(0,0,255)';
   red.style.backgroundColor = 'rgb(255,0,0)';
   yellow.style.backgroundColor = 'rgb(255,255,0)';
-  });
-  
-//  color: rgb(255, 227, 194)
+});
 // **************Limpa****************
-let button = document.querySelector('#clear-board');
+const button = document.querySelector('#clear-board');
 button.addEventListener('click', function () {
   for (let cont = 0; cont < pixel.length; cont += 1) {
     pixel[cont].style.backgroundColor = 'white';
   }
 });
 // **************Tamanho da Pixel Art****************
-let tamanho = 5;
+const tamanho = 5;
 let indicaTamanho = document.querySelector('#valor-atual');
 indicaTamanho.innerHTML = 'Tamanho atual = ' + tamanho + ' blocos.';
 let tamanhoCoordenadas = document.querySelector('#board-size');
@@ -77,14 +75,14 @@ function criaQuadro () {
     let div = document.createElement('div');
     div.className = 'linha';
     for (let cont = 0; cont < tamanho; cont += 1) {
-        let span = document.createElement('span');
-        let id = (index) + '-' + (cont);
-        span.id = id;
-        span.className = 'pixel';
-        div.appendChild(span);
-      }
-    quadro.appendChild(div);
+      const span = document.createElement('span');
+      const id = (index) + '-' + (cont);
+      pan.id = id;
+      span.className = 'pixel';
+      div.appendChild(span);
     }
+    quadro.appendChild(div);
+  }
   pixel = document.querySelectorAll('.pixel');
   for (let cont = 0; cont < pixel.length; cont += 1) {
     pixel[cont].addEventListener('click', pinta);
@@ -92,9 +90,9 @@ function criaQuadro () {
 }
 // **************Pinta****************
 function pinta() {
-  let cor = document.querySelector('.selected').style.backgroundColor;
+  const cor = document.querySelector('.selected').style.backgroundColor;
   this.style.backgroundColor = cor;
 }
-for (const cont = 0; cont < pixel.length; cont += 1) {
+for (let cont = 0; cont < pixel.length; cont += 1) {
   pixel[cont].addEventListener('click', pinta);
 }
