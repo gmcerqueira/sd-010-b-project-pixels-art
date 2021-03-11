@@ -32,9 +32,9 @@ window.onload=function(){
      paintBlack()
 }
 
-//requisito 7
-let squares= document.getElementById('color-palette')
+//requisito 7 e 8
 
+let squares= document.getElementById('color-palette')
 for(let indice=0;indice<squares.length;indice+=1){
     squares[indice].addEventListener('click',removeClass)
 }
@@ -45,4 +45,29 @@ function removeClass(){
     squares[3].classList.remove("selected")
     squares[indice].classList.add('selected')
 }
+
+
+let allPixels=document.querySelectorAll('.pixel')
+for(let ind=0;ind<allPixels.length;ind+=1){
+    allPixels[ind].addEventListener('click',paint)
+}
+function paint(){
+    let firstSquare=squares[0]
+    let secondSquare=squares[1]
+    let thirdSquare=squares[2]
+    let fourthSquare=squares[3]
+
+    if(firstSquare.className='color selected'){
+        allPixels[ind].style.backgroundColor='black'
+    } else if(secondSquare.className='color selected'){
+        allPixels[ind].style.backgroundColor='red'
+    } else if(thirdSquare.className='color selected'){
+        allPixels[ind].style.backgroundColor='slateblue'
+    } else if(fourthSquare.className='color selected'){
+        allPixels[ind.style.backgroundColor='pink']
+    }
+}
+paint()
+
+
 
