@@ -9,7 +9,6 @@ function palette() {
     trocarCor.appendChild(paletteItem);
   }
 }
-palette();
 function quadrado() {
   const pixelsBoard = document.querySelector('#pixel-board');
   for (let index = 0; index < 25; index += 1) {
@@ -18,12 +17,10 @@ function quadrado() {
     pixelsBoard.appendChild(pixelcreate);
   }
 }
-quadrado();
 function corInicial() {
   let cores = document.querySelectorAll('.color')[0];
   cores.classList.add('selected');
 }
-corInicial();
 function trocar () {
   let trocarCor = document.querySelectorAll('.color');
   trocarCor[0].addEventListener('click', function() {
@@ -51,18 +48,36 @@ function trocar () {
     trocarCor[2].classList.remove('selected');
   });
 }
-trocar();
-// function pintar(){
-
-//   document.querySelector("#baba").style.backgroundColor;
+// function trocar(){
+//   Let pexels = document.querySelectorAll(“.pixel”)
+//   For (let i = 0; i < pexels.length; i += 1){
+//     pexels[i].addEventListener(“click”, function(){
+//     })
+//   }
 // }
 function applySelectedColor() {
-  const allPixels = document.querySelectorAll('.pixel');
-  for (let i = 0; i < allPixels.length; i += 1) {
-    allPixels[i].addEventListener('click', (evt) => {
-      const { target } = evt;
+  const pixelItem = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelItem.length; i += 1) {
+    pixelItem[i].addEventListener('click', (evento) => {
+      const { target } = evento;
       target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
     });
   }
 }
-applySelectedColor();
+function white() {
+  const clear = document.getElementById("clear-board");
+  clear.addEventListener("click", evento => {
+  const pixelItem= document.querySelectorAll('.pixel');
+  for(let i = 0; i < pixelItem.length; i++){
+    pixelItem[i].style.backgroundColor = 'white';
+  }
+});
+}
+window.onload = function () {
+  palette();
+  quadrado();
+  corInicial();
+  trocar();
+  applySelectedColor();
+  white();
+}
