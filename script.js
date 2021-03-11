@@ -19,12 +19,12 @@ function selectColor() {
     pallet[indexPallet].addEventListener('click', function () {
       if (pallet[indexPallet].className === 'color') {
         pallet[indexPallet].classList.add('selected');
-      } else {
-        pallet[indexPallet].classList.remove('selected');
       }
     });
   }
 }
+
+selectColor();
 
 function classReset () {
   const blackColor = document.getElementsByClassName('color')[0];
@@ -40,9 +40,8 @@ function classReset () {
     });
   }
 }
-classReset();
 
-selectColor();
+classReset();
 
 function paintPixel() {
   const pixel = document.getElementsByClassName('pixel');
