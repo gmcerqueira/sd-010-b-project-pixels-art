@@ -15,9 +15,9 @@ function addElementoSection() {
     const newDivLinha = document.createElement('div');
     for (let index2 = 0; index2 < 5; index2 += 1) {
       const newDivCelula = document.createElement('div');
-      newDivCelula.className = 'pixel';
+      newDivCelula.className = 'pixel td';
       newDivLinha.appendChild(newDivCelula);
-      newDivLinha.className = 'tr';
+      newDivLinha.className = 'pixel tr';
     }
     newSection.className = 'table';
     newSection.appendChild(newDivLinha);
@@ -71,9 +71,10 @@ function selecionarCorVerde() {
 const pixelQuadro = document.getElementById('pixel-board');
 
 function pixelColor() {
-  const selected = document.querySelector('.selected');
-  const compStyles = window.getComputedStyle(selected).getPropertyValue('background-color');
+  const selected = document.querySelector('div.color.selected');
+  const compStyles = window.getComputedStyle(selected).getPropertyValue.backgroundColor;
   document.getElementsByClassName('pixel').backgroundColor = compStyles;
+  console.log(pixelQuadro);
   return pixelQuadro;
 }
 
@@ -86,7 +87,11 @@ divsColorPalette[3].addEventListener('click', selecionarCorVerde);
 pixelQuadro.addEventListener('click', pixelColor);
 
 function limparPixels() {
-  document.querySelector('pixel').style.backgroundColor = 'white';
+  for (let index = 0; index < 30; index += 1) {
+    for (let index2 = 0; index2 < 30; index2 += 1) {
+      document.querySelectorAll('div.pixel')[index].style.backgroundColor = 'white';
+    }
+  }
 }
 
 const buttomLimparCores = document.querySelector('#clear-board');
