@@ -39,6 +39,7 @@ function colorsTableMaker() {
 
 tablesFatherCreator();
 colorsTableMaker();
+createButton();
 
 // 4. e 5. Adicionar à página um quadro com N pixels com 40*40px e 1px de borda:
 const numberOfPixels = 5;
@@ -84,12 +85,11 @@ function selectColorOnClick() {
   const colors = document.querySelector('#color-palette');
 
   // Condição para mudar a cor:
-  colors.addEventListener('click', function(event) {
+  colors.addEventListener('click', function (event) {
     const colorToSelect = document.getElementsByClassName('color');
     const colorSelected = document.querySelector('.selected');
 
-    if(colorToSelect.className !== 'selected color') {
-
+    if (colorToSelect.className !== 'selected color') {
       event.target.className = 'selected color';
       colorSelected.className = 'color';
     }
@@ -101,8 +101,7 @@ selectColorOnClick();
 // 8. Pintar o pixel dentro do quadro após selecionar uma cor na paleta:
 function paintWithPixels() {
   const paintPixels = document.querySelector('#pixel-board');
-  paintPixels.addEventListener('click', function(event) {
-
+  paintPixels.addEventListener('click', function (event) {
     const selectColor = document.querySelector('.selected').style.backgroundColor;
     event.target.style.backgroundColor = selectColor;
     event.stopPropagation();
@@ -110,3 +109,27 @@ function paintWithPixels() {
 }
 
 paintWithPixels();
+
+// 9. Cria um botão que reseta as cores dos pixels.
+// Criar o botão:
+function createButton() {
+  const buttonSibling = document.querySelector('body');
+  const buttonMaker = document.createElement('button');
+  buttonMaker.id = 'clear-board';
+  buttonMaker.innerText = 'Limpar';
+  buttonSibling.append(buttonMaker);
+}
+
+// Funcionalidade do botão:
+function buttonOnClick() {
+  const button = document.querySelector('#clear-board');
+  button.addEventListener('click', function () {
+    const elementsToReset = document.getElementsByClassName('pixel');
+
+    for (let index = 0; index < elementsToReset.length; index += 1) {
+      elementsToReset[index].style.backgroundColor = 'white';
+    } 
+  });
+}
+
+buttonOnClick();
