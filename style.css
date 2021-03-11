@@ -1,6 +1,6 @@
 body {
   background-image: url('/background-image.png');
-  font-family: 'Pacifico', cursive;
+  font-family: cursive;
 }
 
 #title {
@@ -36,6 +36,7 @@ body {
 #board-size {
   margin: 10px;
   padding-top: 10px;
+  width: 50px;
 }
 
 #generate-board {
@@ -50,17 +51,10 @@ body {
   background-color: black;
   border-radius: 40%;
   color: white;
-  font-size: 20px;
-  padding: 5px 10px; 
-}
-
-#board-size {
-  width: 50px;
-}
-
-#clear-board {
   display: block;
+  font-size: 20px;
   margin: 15px auto;
+  padding: 5px 10px;
 }
 
 #pixel-board {
