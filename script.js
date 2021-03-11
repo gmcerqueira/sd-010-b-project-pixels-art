@@ -1,4 +1,4 @@
-
+let numeroPixel = 5;
 function gerar_cor() {
 	let preencherCor = document.querySelectorAll(".color");
 
@@ -40,7 +40,7 @@ function geraPixel(numeroPixel) {
 	}
 }
 
-geraPixel(5);
+geraPixel(numeroPixel);
 
 function selecionaCor() {
 	const color = document.querySelector('#color-palette');
@@ -77,13 +77,25 @@ function clear() {
 }
 botaoLimpar();
 
-function botaoVqv(){
+function botaoVqv() {
 	const botaoVQV = document.querySelector("#generate-board");
-	const adicionaPixel = document.querySelector("#board-size").innerText;
-
-	botaoVQV.addEventListener('click', geraPixel(adicionaPixel)); 
+	
+	
+	botaoVQV.addEventListener('click', function (event) {
+		const adicionaPixel = document.querySelector("#board-size").value;
+		if (adicionaPixel === '') {
+			alert('Board inválido!');
+		  } else if (adicionaPixel < 5) {
+			adicionaPixel = 5;
+		  } else if (adicionaPixel > 50) {
+			adicionaPixel = 50;
+		  }
+		numeroPixel = adicionaPixel;
+		geraPixel(numeroPixel);
+	
+	});
 }
 
 
-//botaoVqv();
+botaoVqv();
 
