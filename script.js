@@ -4,10 +4,9 @@ window.onload = function () {
 
 //Paleta de Cores
 let colorPalette = ['black', 'green', 'red', 'blue'];
-let nonSelected = document.getElementsByClassName('color');
-let heldColor = 'red';
+// let nonSelected = document.getElementsByClassName('color');
 // let selectedPalette = document.querySelector('.selected');
-
+let heldColor = '';
 //Botões da paleta de cores
 let getPaletteList = document.querySelector('#color-palette');
 
@@ -17,9 +16,18 @@ for (index = 0; index < 4; index += 1) {
   paletteBox.className = 'color';
   getPaletteList.appendChild(paletteBox);
   paletteBox.addEventListener('click', function () {
+    for (child = 0; child < getPaletteList.children.length; child += 1){
+    getPaletteList.children[child].classList.remove('selected');
+    }
     paletteBox.classList.add('selected');
+    heldColor = paletteBox.style.backgroundColor;
+      // console.log(paletteBox.style.backgroundColor.toString());
   });
 }
+
+let selectedPalette = document.getElementsByClassName('color selected');
+let paletteColor = document.querySelector('.color.selected');
+
 
 //Número de Pixels
 let pixelsList = [];
