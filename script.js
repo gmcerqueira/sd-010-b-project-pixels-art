@@ -1,4 +1,5 @@
-// Função elaborada com a ajuda da colega de turma MAIARA BORSATTI.
+// Requisito 4
+// Colaboração da colega MAIARA BORSATTI.
 function addBoxPixels() {
 
     let dad = document.getElementById('pixel-board');
@@ -20,10 +21,11 @@ addBoxPixels()
 
 
 // Requisito 7
-let receved = document.getElementsByClassName('color');
+//Colaboração do colega RENATO SOUZA.
+let received = document.getElementsByClassName('color');
 
-for (let index = 0; index < receved.length; index++) {
-    receved[index].addEventListener('click', addSelClass);
+for (let index = 0; index < received.length; index++) {
+    received[index].addEventListener('click', addSelClass);
 }
 
 function addSelClass(event) { //Há necessidade de colocar 'event' dentro dos parenteses?
@@ -31,7 +33,9 @@ function addSelClass(event) { //Há necessidade de colocar 'event' dentro dos pa
     event.target.classList.add('selected');
 }
 
+
 // Requisito 8
+//Colaboração do colega LUCAS MARTINS.
 let pixSelected = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixSelected.length; index++) {
     pixSelected[index].addEventListener('click', colorize);
@@ -42,15 +46,16 @@ function colorize(event) { //Há necessidade de colocar 'event' dentro dos paren
     event.target.style.backgroundColor = colorReserved;
 }
 
+
 // Requisito 9
-let clearButton = document.getElementById('clear-board');
+//Colaboração do FERNANDO SOARES durante um plantão.
+let clearBox = document.getElementById('clear-board');
 
-clearButton.addEventListener('click', clearBoard);
+clearBox.addEventListener('click', changeForWhite);
 
-function clearBoard(event) {
+function changeForWhite() {
     let clearPixel = document.querySelectorAll('.pixel');
-    clearPixel.style.backgroundColor = " ";
-    event.target.style.backgroundColor = clearPixel;
+    for (let index = 0; index < clearPixel.length; index++) {
+        clearPixel[index].style.backgroundColor = 'white';
+    }
 }
-
-
