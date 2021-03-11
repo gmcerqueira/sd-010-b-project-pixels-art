@@ -31,5 +31,13 @@ event.target.classList.add('selected');
        event.target.style.backgroundColor =  selectedCor ;
      }
 
- 
+ function limparPixel(){
+  
+   for (let index = 0; index < pixels.length; index++){
+    pixels[index].style.backgroundColor = 'white';
+   }
+}
+   let butao = document.getElementById('clear-board');
+   butao.addEventListener("click", limparPixel);
+  
 
