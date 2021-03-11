@@ -1,29 +1,5 @@
 let pixel;
-// **************cores aleatorias****************
-let quantidadeDeCores = 4;
-let cores = ['brown', 'aquamarine', 'slateblue', 'pink', 'green', 'purple', 'orange', 'darkblue', 'grey', 'aqua']//rgb(255, 255, 255)
-// let numeros = []
-// function numero_aleatorio() { 
-//   while (numeros.length < quantidadeDeCores) {
-//     let aleatorio = Math.floor(Math.random() * 10);
-
-//     if (numeros.indexOf(aleatorio) == -1)
-//       numeros.push(aleatorio);
-//   }
-// //https://pt.stackoverflow.com/questions/214412/sortear-n%C3%BAmeros-sem-repetir-no-javascript#:~:text=time('Sorteando')%3B%20%2F%2F,%2F%2F%20Ordena%20randomicamente%20%7D)%3B%20console.
-// }
-// numero_aleatorio()
-// for (let index = 0; index < quantidadeDeCores ; index++) {
-// let span = document.createElement('span')
-// span.style.color = cores[numeros[index]]
-// span.className = 'color'
-// span.id = cores[numeros[index]]
-// span.style.backgroundColor = cores[numeros[index]]
-// span.style.border = '1px solid black';
-// section.appendChild(span)
-// }
-
-// **************Escolhe a cor****************  Math.floor(Math.random() * 10)
+// **************Escolhe a cor****************  
 let black = document.querySelector('#black');
 let blue = document.querySelector('#blue');
 let yellow = document.querySelector('#yellow');
@@ -45,7 +21,6 @@ cor1.addEventListener('click', escolheACor);
 cor2.addEventListener('click', escolheACor);
 cor3.addEventListener('click', escolheACor);
 cor4.addEventListener('click', escolheACor);
-
 let button1 = document.querySelector('#gerar');
 button1.addEventListener('click', function gerar () {
   cor1.style.backgroundColor = rgb()
@@ -56,14 +31,10 @@ button1.addEventListener('click', function gerar () {
   blue.style.backgroundColor = 'rgb(0,0,255)' ;
   red.style.backgroundColor = 'rgb(255,0,0)' ;
   yellow.style.backgroundColor = 'rgb(255,255,0)' ;
-
-
-
   });
   function rgb () {
     return 'rgb('+ Math.floor(Math.random() * 255)+','+Math.floor(Math.random() * 255)+','+Math.floor(Math.random() * 255)+')'
   }
-
 //  color: rgb(255, 227, 194)
 // **************Limpa****************
 let button = document.querySelector('#clear-board');
@@ -74,13 +45,10 @@ button.addEventListener('click', function () {
 });
 // **************Tamanho da Pixel Art****************
 let tamanho = 5;
-
 let indicaTamanho = document.querySelector('#valor-atual');
 indicaTamanho.innerHTML = 'Tamanho atual = ' + tamanho + ' blocos.';
-
 let tamanhoCoordenadas = document.querySelector('#board-size');
 tamanhoCoordenadas.addEventListener('keyup', guardaTamanho);
-
 function guardaTamanho () {
   tamanho = tamanhoCoordenadas.value;
   if (tamanho < 5) {
@@ -91,20 +59,16 @@ function guardaTamanho () {
   indicaTamanho.innerHTML = 'Tamanho atual = ' + tamanho + ' blocos.';
 // criaQuadro ()
 }
-
 let buttonTamanho = document.querySelector('#generate-board');
 buttonTamanho.addEventListener('click', apaga);
-
 function apaga () {
   let quadro = document.querySelector('#pixel-board');
   let apagaDiv = document.querySelector('#pixel-board').childNodes;
   for (let i = 0; i !== apagaDiv.length; i){
     quadro.lastChild.remove();
   }
-
   criaQuadro();
 }
-
 criaQuadro ();
 function criaQuadro () {
   let quadro = document.querySelector('#pixel-board');
@@ -130,6 +94,6 @@ function pinta() {
   let cor = document.querySelector('.selected').style.backgroundColor;
   this.style.backgroundColor = cor;
 }
-for (let cont = 0; cont < pixel.length; cont += 1) {
+for (const cont = 0; cont < pixel.length; cont += 1) {
   pixel[cont].addEventListener('click', pinta);
 }
