@@ -1,19 +1,24 @@
 let pixelBoard = document.getElementById("pixel-board");
-/* for (let cont = 1; cont <= 5; cont+=1) {
+for (let cont = 1; cont <= 5; cont+=1) {
   let div = document.createElement("div");
-  div.classList.add("tr")
+  div.className = "tr"
   for (let cont2 = 1; cont2 <= 5; cont2+=1){
     let div2 = document.createElement("div");
     div2.classList.add("pixel");
     div.appendChild(div2);
   }  
   pixelBoard.appendChild(div);
-} */
+}
 
 let btnGenerate = document.querySelector("#generate-board")
 let input = document.querySelector("#board-size");
 btnGenerate.addEventListener("click", function() {
-  if (input.value >= 5 && input.value <= 50) {
+  if (input.value >= 5 && input.value <= 50 && input.value > 0) {
+    let rowPixel = document.querySelectorAll(".tr")
+    for (index = 0; index < rowPixel.length; index += 1) {
+      element = rowPixel[index]
+      pixelBoard.removeChild(element)
+    }
     for (let cont = 1; cont <= input.value; cont+=1) {
       let div = document.createElement("div");
       div.classList.add("tr")
@@ -53,6 +58,20 @@ function changeSelected(event) {
   selectElement.classList.remove("selected")
   event.target.classList.add("selected")
 }
+
+
+let pixelSelected = document.querySelectorAll(".pixel");
+  for (let index = 0; index < pixelSelected.length; index += 1) {
+    pixelSelected[index].addEventListener("click", changeColor);
+  }
+  
+  let buttonClear = document.getElementById("clear-board");
+  buttonClear.addEventListener("click", clearPixels);
+  function clearPixels() {
+    for (index = 0; index < pixelSelected.length; index+=1) {
+      pixelSelected[index].style.backgroundColor = "white";
+    }
+  }
 
 function changeColor(event) {
   let selectElement = document.querySelector(".selected")
