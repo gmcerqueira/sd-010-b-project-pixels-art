@@ -26,8 +26,8 @@ const createColor = () => {
 };
 
 const paint = (event) => {
-  const element = event.target;
-  element.style.backgroundColor = selected.style.backgroundColor;
+  const elem = event.target;
+  elem.style.backgroundColor = selected.style.backgroundColor;
 };
 
 const createPixel = (number) => {
