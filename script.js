@@ -1,7 +1,7 @@
 window.onload = function () {
   function colorPalette() {
     const ul = document.querySelector('#color-palette');
-    const cores = ['black'];
+    const cores = ['rgb(0, 0, 0)'];
     for (let index = 0; index < 3; index += 1) {
       let cor = 'rgb(';
       for (let indexNum = 0; indexNum < 3; indexNum += 1) {

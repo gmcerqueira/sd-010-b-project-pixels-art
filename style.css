@@ -35,14 +35,15 @@ table {
   border-radius: 50%;
   margin-left: 10px;
   display: inline-block;
-  border: solid 1px rgb(168, 163, 163);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .pixel {
   width: 40px;
   height: 40px;
   display: inline-block;
-  border: solid 1px rgb(76, 78, 78);
+  border: 1px solid rgb(0, 0, 0);
+  max-width: 40px;
 }
 
 #pixel-board {
@@ -50,10 +51,10 @@ table {
 }
 
 .table-row {
-  height: 42px;
+  height: 40px;
 }
 
-#clear-board {
+#clear-board { /*Btn limpar*/
   margin-top: 20px;
   text-align: center;
   width: 80px;
@@ -64,15 +65,15 @@ table {
   margin-left: 40%;
 }
 
-input {
+input { /*Area digitavel*/
   display: inline-block;
-  width: 50px;
+  width: 100px;
   margin-left: 50px;
   border-radius: 10px;
   padding: 2px;
 }
 
-#generate-board {
+#generate-board {  /*Btn VQV*/
   margin-bottom: 10px;
   text-align: center;
   width: 50px;
