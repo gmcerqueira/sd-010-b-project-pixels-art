@@ -16,7 +16,7 @@ body {
 #title {
   font-family: 'Bungee Shade', cursive;
   font-size: 50px;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 
@@ -40,7 +40,7 @@ body {
 
 #center {
   border: 10px solid rgb(97, 113, 207);
-  border-style:groove;
+  border-style: groove;
   width: 50%;
   padding: 50px;
   text-align: center;
@@ -49,17 +49,17 @@ body {
 }
 #generate-board {
   border-color: #46a7f5;
-  background:linear-gradient(to bottom, #86c6f8 5%, #46a7f5 100%);
-  box-shadow:inset 0px 1px 0px 0px #d7ecfd;
-  color:#fff;
-  text-shadow:0px 1px 0px #528009;  
+  background: linear-gradient(to bottom, #86c6f8 5%, #46a7f5 100%);
+  box-shadow: inset 0px 1px 0px 0px #d7ecfd;
+  color: white;
+  text-shadow: 0px 1px 0px #528009;  
 }
 
 #clear-board {
-  border-color:#46a7f5;
-  background:linear-gradient(to bottom, #86c6f8 5%, #46a7f5 100%);
-  box-shadow:inset 0px 1px 0px 0px #d7ecfd;
-  color:#fff;
-  text-shadow:0px 1px 0px #528009;  
+  border-color: rgb(70, 156, 236);
+  background: linear-gradient(to bottom, #86c6f8 5%, #46a7f5 100%);
+  box-shadow: inset 0px 1px 0px 0px #d7ecfd;
+  color: white;
+  text-shadow: 0px 1px 0px #528009;  
 }
  
