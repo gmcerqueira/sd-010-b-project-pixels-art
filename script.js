@@ -1,5 +1,13 @@
 // Executa o requisito 6 quando a página é carregada totalmente:
 // window.addEventListener('load', defaultColor);
+// Função que verifica se existe dados no localStorage para criar um defaultSize:
+function checkLocalStorage() {
+  if (localStorage.getItem('number') === null) {
+  const defaultLocalStorage = localStorage.setItem('number', '5');
+  }
+}
+
+checkLocalStorage();
 
 // 1. Adiciona o título:
 function headerMaker() {
@@ -48,7 +56,7 @@ InputData();
 inputButton();
 
 // 4. e 5. Adicionar à página um quadro com N pixels com 40*40px e 1px de borda:
-let numberOfPixels = 5;
+let numberOfPixels = localStorage.getItem('number');
 const boardFather = document.querySelector('body');
 
 function pixelsBoardFather() {
@@ -77,6 +85,7 @@ function pixelsForBoard() {
 
 pixelsBoardFather();
 pixelsForBoard();
+
 
 // 6. Definir a cor preta como a cor selecionada ao carregar a página:
 /* function defaultColor() {
@@ -146,9 +155,10 @@ function InputData() {
   const inputFather = document.querySelector('body');
   const inputAreaMaker = document.createElement('input');
   inputAreaMaker.id = 'board-size';
+  inputAreaMaker.placeholder = 'Insira um número entre 5 e 50:'
   inputAreaMaker.type = 'text';
   inputAreaMaker.maxLength = '2';
-  inputAreaMaker.size = '10';
+  inputAreaMaker.size = '21';
   inputAreaMaker.min = '5';
   inputAreaMaker.max = '50';
   inputFather.appendChild(inputAreaMaker);
@@ -159,11 +169,45 @@ function inputButton() {
   const inputFather = document.querySelector('body');
   const inputButtonMaker = document.createElement('button');
   inputButtonMaker.id = 'generate-board';
-  inputButtonMaker.type = 'submit';
   inputButtonMaker.innerText = 'VQV';
   inputFather.appendChild(inputButtonMaker);
 }
 
 // Função que adiciona funcionalidades ao input e ao botão do input:
+function inputAndButton() {
+  const onButtonClick = document.querySelector('#generate-board');
+
+  // Função para armazenar novo valor para a pixel-board:
+  function storeNewData() {
+    const storeData = document.querySelector('#board-size');
+    const value = storeData.value;
+
+    if (value === '') {
+      alert('Board inválido!');
+    } else if (value >= 5 && value <= 50) {
+      localStorage.number = value;
+    } else if (value < 5) {
+      localStorage.number = '5';
+    } else if (value > 50) {
+      localStorage.number = '50';
+    } else {
+      alert('Board inválido!');
+    }
+  }
+
+  // Função para limpar a pixel board anterior:
+  function refreshPixelBoard() {
+    const getPixels = document.querySelector('#pixel-board');
+    const elementsToRemove = document.querySelectorAll('#pixel-board div');
+
+    for (index = 0; index < elementsToRemove.length; index += 1) {
+      getPixels.removeChild(elementsToRemove[index]);
+    }
+  }
+  onButtonClick.addEventListener('click', refreshPixelBoard);
+  onButtonClick.addEventListener('click', storeNewData);
+  onButtonClick.addEventListener('click', pixelsForBoard);
+}
+inputAndButton();
 
 console.log(document.querySelector('body'));
