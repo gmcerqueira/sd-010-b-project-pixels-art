@@ -34,9 +34,9 @@ function colorsTableMaker() {
     tables.className = 'color';
     tables.style.backgroundColor = colors[index];
 
-      if (colors[index] === 'black') {
-        tables.className = 'selected color';
-      }
+    if (colors[index] === 'black') {
+      tables.className = 'selected color';
+    }
     allTables.appendChild(tables);
   }
 }
@@ -95,8 +95,8 @@ function selectColorOnClick() {
     for (let index = 0; index < colorToSelect.length; index += 1) {
       const colorSelected = document.querySelector('.selected');
       if (colorToSelect.className !== 'selected color') {
-      event.target.className = 'selected color';
-      colorSelected.className = 'color';
+        event.target.className = 'selected color';
+        colorSelected.className = 'color';
       }
     }
   });
@@ -133,7 +133,7 @@ function buttonOnClick() {
 
     for (let index = 0; index < elementsToReset.length; index += 1) {
       elementsToReset[index].style.backgroundColor = 'white';
-    } 
+    }
   });
 }
 
@@ -156,10 +156,10 @@ function InputData() {
 // Função para criar o input button:
 function inputButton() {
   const inputFather = document.querySelector('body');
-  const inputButtonMaker = document.createElement('input');
+  const inputButtonMaker = document.createElement('button');
   inputButtonMaker.id = 'generate-board';
   inputButtonMaker.type = 'submit';
-  inputButtonMaker.value = 'VQV';
+  inputButtonMaker.innerText = 'VQV';
   inputFather.appendChild(inputButtonMaker);
 }
 
