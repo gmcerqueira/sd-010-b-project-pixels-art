@@ -43,23 +43,23 @@ function clearBoard() {
   }
 }
 
-let inputButton = document.getElementById('generate-board');
-inputButton.addEventListener('click',testInput)
+// let inputButton = document.getElementById('generate-board');
+// inputButton.addEventListener('click',testInput)
 
-function testInput () {  
-  let inputText = parseInt(document.getElementById('board-size').innerText,10);
-  if (inputText >= 5 && inputText <= 50) {
-    console.log("teste");
-    // let boardButton = document.getElementById('generate-board');
-    // boardButton.addEventListener('click',generateBoard(inputText));
-  } else {
-    alert('Board inválido!');
-  }
-}
+// function testInput () {  
+//   let inputText = parseInt(document.getElementById('board-size').innerText,10);
+//   if (inputText >= 5 && inputText <= 50) {
+//     console.log("teste");
+//     // let boardButton = document.getElementById('generate-board');
+//     // boardButton.addEventListener('click',generateBoard(inputText));
+//   } else {
+//     alert('Board inválido!');
+//   }
+// }
 
-function generateBoard(){
-  console.log("teste");
-}
+// function generateBoard(){
+//   console.log("teste");
+// }
 // let rowFather = document.getElementById('pixel-board');
 // function tableRows(inputText) {
 //   for (let i = 0; i < inputText; i += 1) {
@@ -96,12 +96,12 @@ function generateBoard(){
 // }
 // tableConstruction(rowFather,5)
 
-// function randomColors() {
-//   for (let index = 1; index < paletteColor.length; index += 1) {
-//     paletteColor[index].style.backgroundColor = getRandomColor()
-//   }
-// }
-// randomColors();
+function randomColors() {
+  for (let index = 1; index < paletteColor.length; index += 1) {
+    paletteColor[index].style.backgroundColor = getRandomColor()
+  }
+}
+randomColors();
 
 // Esse código abaixo, de gerar cores aleatórias retirei do stackoverflow: https://stackoverflow.com/questions/1484506/random-color-generator //
 
