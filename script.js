@@ -3,29 +3,39 @@ const inputBoard = document.querySelector('#board-size');
 const buttonBoardSize = document.querySelector('#generate-board');
 const getPixelBoard = document.getElementById('pixel-board');
 
-// função generalista para criação de elementos
-function createElement(tagName) {
-  const element = document.createElement(tagName);
-  return element;
-}
-
 // função para criar paletas de cores
 // classList: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 // forEach: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 // childNodes: https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes
 // Arrow Functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
 function setPaletteColor() {
-  const colorPalette = '#color-palette';
+  const colorPalette = document.querySelector('#color-palette');
+
   for (let index = 0; index < 4; index += 1) {
-    const elem = createElement('span');
+    const elem = document.createElement('span');
+    
     elem.classList.add('color');
-    document.querySelector(colorPalette).appendChild(elem);
+    colorPalette.appendChild(elem);
   }
-  const cores = ['black', 'red', 'green', 'blue'];
+
+  const cor1 = Math.floor(Math.random() * 256);
+  const cor2 = Math.floor(Math.random() * 256);
+  const cor3 = Math.floor(Math.random() * 256);
+  const corRGB = 'rgb(' + cor1 + ', ' + cor2 + ', ' + cor3 + ')';
+  const cores = ['black'];
+
+  for (let index = 1; index < 4; index += 1) {
+    cores[index] = corRGB;
+  }
+  
   const array = document.getElementById('color-palette').childNodes;
-  array.forEach((element, index) => {
-    const elem = element; elem.style.backgroundColor = cores[index];
+
+  array.forEach((aux, index) => {
+    const elem = aux; 
+    elem.style.backgroundColor = cores[index];
   });
+
   const colors = document.getElementsByClassName('color');
   colors[0].classList.add('selected');
 }
@@ -34,7 +44,7 @@ function setPaletteColor() {
 function setPixelBoard() {
   for (let index = 0; index < 5; index += 1) {
     for (let index2 = 0; index2 < 5; index2 += 1) {
-      const elem = createElement('span');
+      const elem = document.createElement('span');
       elem.classList.add('pixel');
       getPixelBoard.appendChild(elem);
     }
@@ -47,7 +57,7 @@ function getSelected(event) {
   const elem = event.target;
   if (!elem.id) { // if abreviado para especificar algo "se for diferente", onde '!' significa 'não'
     const colors = document.querySelectorAll('.color');
-    colors.forEach((element) => element.classList.remove('selected'));
+    colors.forEach((aux) => aux.classList.remove('selected'));
     elem.classList.add('selected');
   }
   sessionStorage.color = elem.style.backgroundColor; // define a nova cor
