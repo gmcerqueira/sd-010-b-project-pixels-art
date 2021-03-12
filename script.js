@@ -10,10 +10,20 @@ const btnErase = document.querySelector('#clear-board');
 
 let atualNumber = 5;
 
+function randomColor() {
+  const r = Math.ceil(Math.random() * 256);
+  const g = Math.ceil(Math.random() * 256);
+  const b = Math.ceil(Math.random() * 256);
+
+  const rgb = `rgb(${r}, ${g}, ${b})`;
+
+  return rgb;
+}
+
 function setColor() {
-  document.querySelector('#red').style.backgroundColor = 'red';
-  document.querySelector('#blue').style.backgroundColor = 'blue';
-  document.querySelector('#green').style.backgroundColor = 'green';
+  document.querySelector('#red').style.backgroundColor = randomColor();
+  document.querySelector('#blue').style.backgroundColor = randomColor();
+  document.querySelector('#green').style.backgroundColor = randomColor();
 }
 
 function linePixels(line, numbers) {
