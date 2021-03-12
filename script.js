@@ -1,5 +1,4 @@
 let selected;
-const arrayColors = ['black', 'red', 'blue', 'green'];
 const paleta = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 const clearButton = document.querySelector('#clear-board');
@@ -15,19 +14,18 @@ const selectPaleta = (event) => {
 const rand = () => Math.floor(Math.random() * 255);
 
 const createColor = () => {
-  arrayColors.map((color) => {
+  for (let index = 1; index <= 4; index += 1) {
     const elem = document.createElement('div');
     paleta.appendChild(elem);
     elem.style.backgroundColor = `rgb(${rand()}, ${rand()}, ${rand()})`;
     elem.classList.add('color');
     elem.addEventListener('click', selectPaleta);
-    return color;
-  });
+  }
 };
 
 const paint = (event) => {
-  const element = event.target;
-  element.style.backgroundColor = selected.style.backgroundColor;
+  const elem = event.target;
+  elem.style.backgroundColor = selected.style.backgroundColor;
 };
 
 const createPixel = (number) => {
