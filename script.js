@@ -136,20 +136,19 @@ function randomizePalette() {
   const colors = document.querySelectorAll('.color');
   console.log(colors);
   for (let i = 0; i < colors.length; i += 1) {
-    const randomRGB = generateRandomRGB();
-    colors[i].style.backgroundColor = randomRGB;
+    colors[i].style.backgroundColor = generateRandomRGB();
     // console.log(generateRandomRGB());
     console.log(colors[i].style.backgroundColor);
   }
 }
 
+createColorPalette();
 createClearBtn();
 selectColor();
 createInput();
 createInputBtn();
 
 window.onload = function onLoad() {
-  createColorPalette();
   blackSquareSelected();
   createPixelsBoard();
   applySelectedColor();
