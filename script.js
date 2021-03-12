@@ -11,6 +11,7 @@ const btnErase = document.querySelector('#clear-board');
 let atualNumber = 5;
 
 function setColor() {
+  document.querySelector('#black').style.backgroundColor = 'black';
   document.querySelector('#red').style.backgroundColor = 'red';
   document.querySelector('#blue').style.backgroundColor = 'blue';
   document.querySelector('#green').style.backgroundColor = 'green';
