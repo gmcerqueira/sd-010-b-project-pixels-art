@@ -1,3 +1,8 @@
-#title {
-  
+body {
+  margin: 15px;
+}
+
+#color-palette {
+  box-sizing:border-box;
+  font-family: sans-serif;
 }
