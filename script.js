@@ -1,5 +1,5 @@
 // Executa o requisito 6 quando a página é carregada totalmente:
-window.addEventListener('load', defaultColor);
+// window.addEventListener('load', defaultColor);
 
 // 1. Adiciona o título:
 function headerMaker() {
@@ -33,6 +33,10 @@ function colorsTableMaker() {
     tables.id = colors[index];
     tables.className = 'color';
     tables.style.backgroundColor = colors[index];
+
+      if (colors[index] === 'black') {
+        tables.className = 'selected color';
+      }
     allTables.appendChild(tables);
   }
 }
@@ -40,9 +44,11 @@ function colorsTableMaker() {
 tablesFatherCreator();
 colorsTableMaker();
 createButton();
+InputData();
+inputButton();
 
 // 4. e 5. Adicionar à página um quadro com N pixels com 40*40px e 1px de borda:
-const numberOfPixels = 5;
+let numberOfPixels = 5;
 const boardFather = document.querySelector('body');
 
 function pixelsBoardFather() {
@@ -72,13 +78,11 @@ function pixelsForBoard() {
 pixelsBoardFather();
 pixelsForBoard();
 
-console.log(document.querySelector('body'));
-
 // 6. Definir a cor preta como a cor selecionada ao carregar a página:
-function defaultColor() {
+/* function defaultColor() {
   const setDefaultColor = document.querySelector('#black');
   setDefaultColor.className = 'selected color';
-}
+} */
 
 // 7. Ao clicar numa cor, a classe da mesma muda para selected:
 function selectColorOnClick() {
@@ -87,11 +91,13 @@ function selectColorOnClick() {
   // Condição para mudar a cor:
   colors.addEventListener('click', function (event) {
     const colorToSelect = document.getElementsByClassName('color');
-    const colorSelected = document.querySelector('.selected');
 
-    if (colorToSelect.className !== 'selected color') {
+    for (let index = 0; index < colorToSelect.length; index += 1) {
+      const colorSelected = document.querySelector('.selected');
+      if (colorToSelect.className !== 'selected color') {
       event.target.className = 'selected color';
       colorSelected.className = 'color';
+      }
     }
   });
 }
@@ -104,7 +110,6 @@ function paintWithPixels() {
   paintPixels.addEventListener('click', function (event) {
     const selectColor = document.querySelector('.selected').style.backgroundColor;
     event.target.style.backgroundColor = selectColor;
-    event.stopPropagation();
   });
 }
 
@@ -133,3 +138,31 @@ function buttonOnClick() {
 }
 
 buttonOnClick();
+
+// 10. Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária:
+// Função para criar o imput:
+function InputData() {
+  const inputFather = document.querySelector('body');
+  const inputAreaMaker = document.createElement('input');
+  inputAreaMaker.id = 'board-size';
+  inputAreaMaker.type = 'text';
+  inputAreaMaker.maxLength = '2';
+  inputAreaMaker.size = '10';
+  inputAreaMaker.min = '5';
+  inputAreaMaker.max = '50';
+  inputFather.appendChild(inputAreaMaker);
+}
+
+// Função para criar o input button:
+function inputButton() {
+  const inputFather = document.querySelector('body');
+  const inputButtonMaker = document.createElement('input');
+  inputButtonMaker.id = 'generate-board';
+  inputButtonMaker.type = 'submit';
+  inputButtonMaker.value = 'VQV';
+  inputFather.appendChild(inputButtonMaker);
+}
+
+// Função que adiciona funcionalidades ao input e ao botão do input:
+
+console.log(document.querySelector('body'));
