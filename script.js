@@ -96,7 +96,23 @@ function clearFunction() {
     pixelsAll[index].style.backgroundColor = 'white';
   }
 }
-// fuction VQV
-
 // D10 - Quadro de pixels definido pela pessoa usuária.
+let btnVqv = document.querySelector('#generate-board');
+btnVqv.addEventListener('click', btnUser);
+
+function btnUser() {
+  let valor = document.querySelector('input').value;
+  if (valor === '') {
+    alert('Board inválido!');
+  } else {
+    if (valor < 5) {
+      valor = 5;
+    }
+    if (valor > 50) {
+      valor = 50;
+    }
+    clearBoard();
+    pixelBoard(valor);
+  }
+}
 }
