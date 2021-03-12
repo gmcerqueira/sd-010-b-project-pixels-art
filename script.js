@@ -103,7 +103,6 @@ function newBoard() {
 
 function valueChecker() {
   const input = document.getElementById(boardSize);
-  console.log(input.value);
   if (input.value === '') {
     alert('Board inválido!');
   } else if (input.value < 5) {
@@ -126,16 +125,16 @@ function createInputBtn() {
 }
 
 function generateRandomRGB() {
-  const num1 = Math.ceil((Math.random() * 128));
-  const num2 = Math.ceil(Math.random() * 128);
-  const num3 = Math.ceil(Math.random() * 128);
-  return `rgb (${num1} , ${num2} , ${num3})`;
+  const num1 = Math.ceil((Math.random() * 254));
+  const num2 = Math.ceil(Math.random() * 254);
+  const num3 = Math.ceil(Math.random() * 254);
+  return `rgb(${num1} , ${num2} , ${num3})`;
 }
 
 function randomizePalette() {
   const colors = document.querySelectorAll('.color');
   console.log(colors);
-  for (let i = 0; i < colors.length; i += 1) {
+  for (let i = 1; i < colors.length; i += 1) {
     colors[i].style.backgroundColor = generateRandomRGB();
     // console.log(generateRandomRGB());
     console.log(colors[i].style.backgroundColor);
