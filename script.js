@@ -1,6 +1,7 @@
 // variables
 const inputBoard = document.querySelector('#board-size');
 const buttonBoardSize = document.querySelector('#generate-board');
+const getPixelBoard = document.getElementById('pixel-board');
 
 // função generalista para criação de elementos
 function createElement(tagName) {
@@ -35,7 +36,7 @@ function setPixelBoard() {
     for (let index2 = 0; index2 < 5; index2 += 1) {
       const elem = createElement('span');
       elem.classList.add('pixel');
-      document.getElementById('pixel-board').appendChild(elem);
+      getPixelBoard.appendChild(elem);
     }
   }
 }
@@ -68,7 +69,7 @@ function checkInvalidBoard(value) {
 }
 
 function createRow(value) {
-  const board = document.getElementById('pixel-board');
+  const board = getPixelBoard;
   board.innetText = '';
 
   for (let index = 0; index < value; index += 1) {
@@ -114,6 +115,6 @@ window.onload = function init() {
   setPaletteColor(); // para chamar a função das paletas de cores
   setPixelBoard(); //  para chamar a função da board dos pixels
   document.getElementById('color-palette').addEventListener('click', getSelected); // adiciona o evento "clique do mouse" à paleta de cores
-  document.getElementById('pixel-board').addEventListener('click', paintPixel); // adiciona o evento "clique do mouse" à board de pixels
+  getPixelBoard.addEventListener('click', paintPixel); // adiciona o evento "clique do mouse" à board de pixels
   document.getElementById('clear-board').addEventListener('click', clearBoard); // adiciona o evento "clique do mouse" ao botão Limpar
 };
