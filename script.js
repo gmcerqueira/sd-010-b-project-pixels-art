@@ -86,6 +86,17 @@ function addEventListener () {
     console.log(cores);
   }
 }
+// limpar quadros pintados
+let clear = document.querySelector('#clear-board');
+clear.addEventListener('click', clearFunction);
+function clearFunction() {
+  let pixelsAll = document.querySelectorAll('.pixel');
+  colorPixel = 'white';
+  for (let index = 0; index < pixelsAll.length; index += 1) {
+    pixelsAll[index].style.backgroundColor = 'white';
+  }
+}
+// fuction VQV
 
 // D10 - Quadro de pixels definido pela pessoa usuária.
 }
