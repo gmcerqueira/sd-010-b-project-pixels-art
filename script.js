@@ -47,8 +47,45 @@ addEventListener();
 }
 let side = 5;
 pixelBoard(side);
+
 // D9 - botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
-// const clearBoard = document.querySelector('#clear-board');
+function clearBoard() { 
+let table = document.querySelector('#pixel-board');
+let pixel = document.querySelectorAll('.table-row').length;
+while (table.firstChild) {
+  table.removeChild(table.lastChild);
+}
+}
+// add o select
+let selectedClass = document.querySelector('.color');
+selectedClass.classList.add('selected');
+// add cor em todos os itens
+let select = document.getElementsByClassName('color');
+for (let index = 0; index < select.length; index += 1) {
+  select[index].addEventListener('click', colorSelect, selectedClass);
+}
+
+function removeClass(selectedClass) {
+  selectedClass.classList.remove('selected')
+}
+
+function colorSelect(elementEvent, Class) {
+  removeClass(selectedClass);
+  selectedClass = elementEvent.target;
+  selectedClass.classList.add('selected');
+}
+
+function addEventListener () {
+  let selectPixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < selectPixels; index += 1) {
+    selectPixels[index].addEventListener('click', paint);
+  }
+  function paint(pixels) {
+    let cores = document.querySelectorA('.selected').style.backgroundColor;
+    pixels.srcElement.style.backgroundColor = cores;
+    console.log(cores);
+  }
+}
 
 // D10 - Quadro de pixels definido pela pessoa usuária.
 }
