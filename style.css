@@ -2,8 +2,13 @@
     box-sizing: border-box;
 }
 
-.selected{
-    
+ul{
+    padding: 0;
+    display: flex;
+}
+
+ul li{
+    list-style: none;
 }
 
 .color{

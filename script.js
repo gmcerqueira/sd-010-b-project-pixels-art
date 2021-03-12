@@ -1,5 +1,7 @@
+// Inicia com a cor preta selecionada
+
 window.onload = function(){
-    document.getElementById('black').classList.toggle('selected')   
+    document.getElementById('black').classList.add('selected')   
     }
 ///////////////////////////////////////////////////////////
 
@@ -19,20 +21,22 @@ for (let index = 0; index < 5; index += 1){
         elementoPixel.className = 'pixel'    
 }
 }
-///////////////////////////////////////////////////////////
-
-// Atribui a clase 'selected'
-
-// let colorClass = document.querySelectorAll('.color')
-
-// colorClass.addEventListener('click', classAtributte)
-
-// function classAtributte(evento){
-// evento.target.className = "selected"
-// }
-
 
 //////////////////////////////////////////////////////////
+
+// Atribui a classe 'selected' a outras cores
+
+let ul = document.querySelector('ul')
+let li = document.querySelectorAll('li')
+
+li.forEach(el => {
+    el.addEventListener('click', function(){
+       ul.querySelector('.selected').classList.remove('selected');
+       
+       el.classList.add('selected');
+    });
+});
+
 
 
 //////////////////////////////////////////////////////////
@@ -50,10 +54,6 @@ for (let index = 0; index < 5; index += 1){
 
 ///////////////////////////////////////////////////////////
 
-
-
-
-//////////////////////////////////////////////////////////
 
 // Aplicando as cores
 
