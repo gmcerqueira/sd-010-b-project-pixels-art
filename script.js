@@ -1,8 +1,5 @@
 window.onload = function () {
-// const title = document.querySelector('#title');
-// const color = document.querySelector('.color');
-// const pixel = document.querySelector('.pixel');
-// D7 - Clicar em uma das cores da paleta, faz com que ela seja selecionada
+
   function colorPalette() {
   const ul = document.querySelector('#color-palette');
   let cores = ['black'];
@@ -19,9 +16,9 @@ window.onload = function () {
     cores.push(cor);
   }
   for (let indexCor = 0; indexCor < cores.length; indexCor += 1) {
-    let listaCor = document.createElement('li');
-    listaCor.className = 'color';
-    listaCor.style.backgroundColor = cores[indexCor];
+    let li = document.createElement('li');
+    li.className = 'color';
+    li.style.backgroundColor = cores[indexCor];
     ul.appendChild(li); 
   }
 }
@@ -33,14 +30,14 @@ let table = document.querySelector('#pixel-board');
 let colum = side;
 console.log(colum);
 for (let indexColum = 0; indexColum < colum; indexColum += 1) {
-  let div = document.createElement('div');
-  div.className = 'table-row';
+  let tr = document.createElement('div');
+  tr.className = 'table-row';
   table.appendChild(tr);
   for (let indexRow = 0; indexRow < colum; indexRow += 1) {
     let pixel = document.createElement('div');
     pixel.className = 'pixel';
     pixel.style.backgroundColor = 'white';
-    div.appendChild(pixel);
+    tr.appendChild(pixel);
   }
 }
 addEventListener();
@@ -51,7 +48,7 @@ pixelBoard(side);
 // D9 - botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
 function clearBoard() { 
 let table = document.querySelector('#pixel-board');
-let pixel = document.querySelectorAll('.table-row').length;
+let n = document.querySelectorAll('.table-row').length;
 while (table.firstChild) {
   table.removeChild(table.lastChild);
 }
@@ -77,11 +74,11 @@ function colorSelect(elementEvent, Class) {
 
 function addEventListener () {
   let selectPixels = document.getElementsByClassName('pixel');
-  for (let index = 0; index < selectPixels; index += 1) {
+  for (let index = 0; index < selectPixels.length; index += 1) {
     selectPixels[index].addEventListener('click', paint);
   }
   function paint(pixels) {
-    let cores = document.querySelectorA('.selected').style.backgroundColor;
+    let cores = document.querySelector('.selected').style.backgroundColor;
     pixels.srcElement.style.backgroundColor = cores;
     console.log(cores);
   }
