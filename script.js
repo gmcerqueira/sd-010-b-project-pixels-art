@@ -125,14 +125,33 @@ function createInputBtn() {
   inputBtn.addEventListener('click', valueChecker);
 }
 
-createColorPalette();
+function generateRandomRGB() {
+  const num1 = Math.ceil((Math.random() * 128));
+  const num2 = Math.ceil(Math.random() * 128);
+  const num3 = Math.ceil(Math.random() * 128);
+  return `rgb (${num1} , ${num2} , ${num3})`;
+}
+
+function randomizePalette() {
+
+  const colors = document.querySelectorAll('.color');
+  console.log(colors);
+  for (let i = 0; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = generateRandomRGB();
+    // console.log(generateRandomRGB());
+    console.log(colors[i].style.backgroundColor);
+  }
+}
+
 createClearBtn();
 selectColor();
 createInput();
 createInputBtn();
 
 window.onload = function onLoad() {
+  createColorPalette();
   blackSquareSelected();
   createPixelsBoard();
   applySelectedColor();
+  randomizePalette();
 };
