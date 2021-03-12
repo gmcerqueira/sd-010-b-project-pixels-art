@@ -11,31 +11,24 @@ const getPixelBoard = document.getElementById('pixel-board');
 
 function setPaletteColor() {
   const colorPalette = document.querySelector('#color-palette');
-
   for (let index = 0; index < 4; index += 1) {
     const elem = document.createElement('span');
-    
     elem.classList.add('color');
     colorPalette.appendChild(elem);
   }
-
   const cor1 = Math.floor(Math.random() * 256);
   const cor2 = Math.floor(Math.random() * 256);
   const cor3 = Math.floor(Math.random() * 256);
   const corRGB = 'rgb(' + cor1 + ', ' + cor2 + ', ' + cor3 + ')';
   const cores = ['black'];
-
   for (let index = 1; index < 4; index += 1) {
     cores[index] = corRGB;
   }
-  
   const array = document.getElementById('color-palette').childNodes;
-
   array.forEach((aux, index) => {
-    const elem = aux; 
+    const elem = aux;
     elem.style.backgroundColor = cores[index];
   });
-
   const colors = document.getElementsByClassName('color');
   colors[0].classList.add('selected');
 }
