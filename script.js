@@ -110,7 +110,7 @@ function clearBoard() {
 
 // window.load para carregar as funções na página
 window.onload = function init() {
-  sessionStorage.setItem('color', 'black'); // para definir a cor padrão
+  sessionStorage.setItem('color', 'black'); // para definir a cor padrão (Fonte: https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)
   setPaletteColor(); // para chamar a função das paletas de cores
   setPixelBoard(); //  para chamar a função da board dos pixels
   document.getElementById('color-palette').addEventListener('click', getSelected); // adiciona o evento "clique do mouse" à paleta de cores
