@@ -155,10 +155,8 @@ function InputData() {
   const inputFather = document.querySelector('body');
   const inputAreaMaker = document.createElement('input');
   inputAreaMaker.id = 'board-size';
-  inputAreaMaker.placeholder = 'Insira um número entre 5 e 50:'
-  inputAreaMaker.type = 'text';
+  inputAreaMaker.type = 'number';
   inputAreaMaker.maxLength = '2';
-  inputAreaMaker.size = '21';
   inputAreaMaker.min = '5';
   inputAreaMaker.max = '50';
   inputFather.appendChild(inputAreaMaker);
