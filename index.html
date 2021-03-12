@@ -11,57 +11,29 @@
     <main>
         <!-- cabecalho -->
         <header>
-            <h1 id="title" class="title">Paleta de Cores</h1>
+            <h1 id="title" class="title">
+                Paleta de Cores
+            </h1>
         </header>
-        <section id="color-palette">
-            <div class="color selected" id="preto"></div>
-            <div class="color" id="vermelho"></div>
-            <div class="color" id="azul"></div>
-            <div class="color" id="verde"></div>
+        <!-- Paleta de cores -->
+        <section class="paleta-container">
+            <ul id="color-palette">
+                
+            </ul>
         </section>
         <!-- botão limpar -->
-        <button id="clear-board">Limpar</button>
+        <button id="clear-board">
+            Limpar
+        </button>
         <!-- opção para aumentar ou diminuir o quadro -->
-        <input type="number" id="board-size" placeholder="Tamanho do quadro Ex: 7">
+        <input type="number" id="board-size" min="1" minplaceholder="Tamanho do quadro Ex: 7">
         <!-- btn VQV -->
-        <button id="generate-board">VQV</button>
+        <button id="generate-board">
+            VQV
+        </button>
         <!-- tabela -->
-        <table id="pixel-board" class="pixel-board">
-            <tr class="tr">
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-            </tr>
-            <tr class="tr">
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-            </tr>
-            <tr class="tr">
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-            </tr>
-            <tr class="tr">
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-            </tr>
-            <tr class="tr">
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-                <td class="pixel td"></td>
-            </tr>
+        <table id="pixel-board">
+
         </table>
     </main>
     <script src="script.js"></script>
