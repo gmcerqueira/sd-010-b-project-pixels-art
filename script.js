@@ -1,44 +1,44 @@
-let palleteColors = document.querySelectorAll('.color');
-let buttonClear = document.getElementById('clear-board');
+const palleteColors = document.querySelectorAll('.color');
+const buttonClear = document.getElementById('clear-board');
 
 function pixelCreate() {
-  let quadro = document.getElementById('pixel-board');
-  for (let j = 0; j < 5; j += 1) {
-    let line = document.createElement('div');
+  const boardCreate = document.getElementById('pixel-board');
+  for (let indexCreate = 0; indexCreate < 5; indexCreate += 1) {
+    const line = document.createElement('div');
     for (let h = 0; h < 5 ; h += 1) {
-      let column = document.createElement('div.pixel');  
+      const column = document.createElement('div.pixel');  
       column.classList.add('pixel');
       line.appendChild(column);
-    } 
-      quadro.appendChild(line);
+  } 
+  boardCreate.appendChild(line);
   }
 }
 pixelCreate();
 
 for (let index = 0; index < palleteColors.length; index += 1) {
   palleteColors[index].addEventListener('click', function () {
-    let selectedClass = document.getElementsByClassName('selected')[0];
+    const selectedClass = document.getElementsByClassName('selected')[0];
     selectedClass.classList.remove('selected');
     event.target.classList.add('selected');
   });
 }
 
 function selectColor() {
-  let color = document.getElementsByClassName('selected')[0].style.backgroundColor;
+  const color = document.getElementsByClassName('selected')[0].style.backgroundColor;
   event.target.style.backgroundColor = color;
 }
 
 function colorPixels() {
-  let board =  document.getElementById('pixel-board');
+  const board = document.getElementById('pixel-board');
   board.addEventListener('click', selectColor);
 }
 colorPixels();
 
 function clear() {
-  let pixelsBoard = document.querySelectorAll('.pixel');
+  const pixelsBoard = document.querySelectorAll('.pixel');
   buttonClear.addEventListener('click', () => {
-    for (let index = 0; index < pixelsBoard.length; index += 1) {
-      pixelsBoard[index].style.backgroundColor = 'white';
+    for (let indexClear = 0; indexClear < pixelsBoard.length; indexClear+= 1) {
+      pixelsBoard[indexClear].style.backgroundColor = 'white';
     }
   });
 }
