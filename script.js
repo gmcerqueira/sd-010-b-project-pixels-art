@@ -1,6 +1,7 @@
 let chamando = document.querySelectorAll('.color');
-let pixelMuda = document.getElementsByClassName('pixel')
-
+let pixelMuda = document.getElementsByClassName('pixel');
+let btnLimpar = document.getElementById('clear-board');
+let pixelBorder = document.getElementById('pixel-board');
 
 
 // Cria os Pixels que vão ser coloridos 
@@ -41,7 +42,12 @@ for (let index = 0; index < pixelMuda.length; index++) {
     pixelMuda[index].style.backgroundColor = corNova;
   });
 }
-// Inicialização do site 
+
+btnLimpar.addEventListener('click', function(){
+  for (let i = 0; i < pixelMuda.length; i++) {
+  pixelMuda[i].style.backgroundColor = 'white';
+  }
+});
 
 
 
