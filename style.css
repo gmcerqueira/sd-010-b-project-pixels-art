@@ -1,5 +1,5 @@
 body {
-  background-image: url(https://wallpaperaccess.com/full/2107255.jpg);
+  background-image: url('https://wallpaperaccess.com/full/2107255.jpg');
 }
 
 .colorPalette {
@@ -14,7 +14,7 @@ body {
 }
 
 #title {
-  font-family: 'Bungee Shade', cursive;
+  font-family: Bungee Shade, cursive;
   font-size: 50px;
   color: white;
 }
@@ -47,19 +47,3 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-#generate-board {
-  border-color: #46a7f5;
-  background: linear-gradient(to bottom, #86c6f8 5%, #46a7f5 100%);
-  box-shadow: inset 0px 1px 0px 0px #d7ecfd;
-  color: white;
-  text-shadow: 0px 1px 0px #528009;  
-}
-
-#clear-board {
-  border-color: rgb(70, 156, 236);
-  background: linear-gradient(to bottom, #86c6f8 5%, #46a7f5 100%);
-  box-shadow: inset 0px 1px 0px 0px #d7ecfd;
-  color: white;
-  text-shadow: 0px 1px 0px #528009;  
-}
- 
