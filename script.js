@@ -38,10 +38,10 @@ for (let nColor = 1; nColor < 4; nColor += 1){
 
     colors.push (colorHex);
 }
-console.log (colors);
+
 /*----------------------Paleta de Cores---------------------------------- */
 
-for (let color = 0; color < 4; color += 1) {
+for (let color = 0; color < colors.length; color += 1) {
     let colorElement = document.createElement ('div');
     
     colorElement.className = color == 0 ? 'color selected': 'color';
@@ -145,6 +145,8 @@ function killQuadro(){
 //Criando o Quadro de Pixels
 function criarQuadro (){
     body.appendChild(pixelBoard);
+    pixelBoard.style.boxShadow = '5px 5px grey';
+   
     
     for (let linhas = 0; linhas < N; linhas += 1){
         const line = document.createElement('div');
@@ -156,14 +158,12 @@ function criarQuadro (){
             pixel.className = 'pixel';
             pixel.style.backgroundColor = 'white';
     
-            pixel.style.width = '40px';
+            pixel.style.minWidth = '40px';
             pixel.style.height = '40px';
     
             line.appendChild(pixel);
         }
     }
-
-
 }
 
 //Lógica para Preenchimento dos pixels
@@ -175,3 +175,32 @@ function fillColor(event){
 }
 
 pixelBoard.addEventListener('click',fillColor,false)
+
+
+pixelBoard.addEventListener('mouseover',function(event){
+    const obj = event.target.style
+   
+    obj.transform = 'translateX(2px)';
+    obj.transform = 'translateY(-2px)';
+
+    obj.width = '40px';
+    obj.height = '40px';
+
+    obj.boxShadow = '2px 2px 2px grey';
+   
+})
+
+pixelBoard.addEventListener('mouseout',function(event){
+    const obj = event.target.style
+    obj.transform = 'translateX(0px)';
+    obj.transform = 'translateY(0px)';
+
+    obj.width = '40px'
+    obj.height = '40px'
+   
+    obj.boxShadow = '0px 0px 0px grey';
+    console.log('to aqui')
+   
+
+})
+
