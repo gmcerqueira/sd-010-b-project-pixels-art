@@ -1,4 +1,4 @@
-let inputText = 5;
+const inputText = 5;
 // let inputButton = document.getElementById('generate-board');
 // let inputText = document.getElementById('board-size');
 // function testInput () {
@@ -52,8 +52,9 @@ function colorSelection() {
 }
 colorSelection();
 
-function colorChange(paint) {
-  paint.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+function colorChange(x) {
+  const pix = x.target;
+  pix.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
 }
 
 function colorPainting() {
