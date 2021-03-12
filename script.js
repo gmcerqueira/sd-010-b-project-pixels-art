@@ -133,7 +133,7 @@ function buttonOnClick() {
 
     for (let index = 0; index < elementsToReset.length; index += 1) {
       elementsToReset[index].style.backgroundColor = 'white';
-    }
+    } 
   });
 }
 
