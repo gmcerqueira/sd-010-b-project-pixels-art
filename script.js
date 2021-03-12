@@ -133,11 +133,11 @@ function generateRandomRGB() {
 }
 
 function randomizePalette() {
-
   const colors = document.querySelectorAll('.color');
   console.log(colors);
   for (let i = 0; i < colors.length; i += 1) {
-    colors[i].style.backgroundColor = generateRandomRGB();
+    const randomRGB = generateRandomRGB();
+    colors[i].style.backgroundColor = randomRGB;
     // console.log(generateRandomRGB());
     console.log(colors[i].style.backgroundColor);
   }
