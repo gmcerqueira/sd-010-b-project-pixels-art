@@ -59,3 +59,16 @@ function pintandoTabela() {
 }
 pintandoTabela();
 
+//criando o botão de limpar o quadro
+let buttonClean = document.getElementsByTagName('button')[0];
+buttonClean.id = 'clear-board';
+buttonClean.innerText = 'Limpar';
+paletaDeCores.appendChild(buttonClean);
+
+buttonClean.addEventListener('click', function() {
+  for (let j = 0; j < todosOs25Quadradinhos.length; j += 1) {
+    todosOs25Quadradinhos[j].style.backgroundColor = 'white';
+  }
+});
+
+//
