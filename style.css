@@ -35,3 +35,7 @@ body {
 table {
   border-collapse: collapse;
 }
+
+#clear-board {
+  margin-top: 30px;
+}

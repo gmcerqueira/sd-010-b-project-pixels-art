@@ -8,7 +8,8 @@ let colorsList = [
 let colorItems = document.querySelectorAll('.color'); // color palette
 let pixelBoard = document.querySelector('#pixel-board'); // this gets the whole board
 let colorPalette = document.querySelector('#color-palette'); // get the color-palette section
-let pixels = document.querySelectorAll('.pixel'); //gets all pixels
+
+const clearButton = document.querySelector('#clear-board'); // gets Limpar button
 
 // set colorItems, from colorsList, to color palette
 function buttonColor() {
@@ -61,11 +62,24 @@ function changeColorPencil() {
   }
 }
 
+// Paints the single pixel selected
 // I found this logic on Gustavo Cerqueira's project: @gmcerqueira
 function paintPixel() {
   let pencil = document.querySelector('.selected').style.backgroundColor; // gets background color style from selected color
   this.style.backgroundColor = pencil;
 }
+
+//cle
+function clearBoard() {
+  const pixels = document.querySelectorAll('.pixel'); //gets all pixels
+  clearButton.addEventListener('click', function () {
+    console.log(pixels);
+    for (let i = 0; i < pixels.length; i++) {
+      pixels[i].style.backgroundColor = 'white';
+    }
+  });
+}
+
 
 window.onload = function () {
   buttonColor();
@@ -73,4 +87,5 @@ window.onload = function () {
   setDefaultColor();
   changeColorPencil();
   paintPixel;
+  clearBoard();
 }
