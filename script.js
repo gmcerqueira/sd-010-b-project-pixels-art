@@ -1,9 +1,7 @@
-
-
 let paletteColor = document.querySelectorAll(".color");
 let firstPaletteColor = document.querySelector(".color");
-    firstPaletteColor.style.backgroundColor = "black";
-    firstPaletteColor.classList.add('selected');
+  firstPaletteColor.style.backgroundColor = "black";
+  firstPaletteColor.classList.add('selected');
 
 let colors = document.querySelectorAll(".color");
 let pixels = document.querySelectorAll('.pixel');
@@ -80,21 +78,23 @@ function clearBoard() {
 //     tableCellsFathers.appendChild(tableCells);
 //   }
 // }
-// let rowFather = document.querySelectorAll('#pixel-board');
-// function tableConstruction(rowFather,inputText) {  
-//   for (let i = 0; i < inputText; i += 1) {
-//     let tableRow = rowFather.insertRow([i]);    
-//     tableRow.className = 'tableRow';    
-//     let tableDataFathers = document.getElementsByClassName('tableRow');
-//     for (let j = 0; j < inputText; j += 1) {
-//       let tableCell = tableRow[i].insertCell([j]);      
-//       tableDataFathers.appendChild(tableCell);
-//       tableCell.className = 'pixel';
-//     }
-//     rowFather.appendChild(tableRow[i])
-//   }
-// }
-// tableConstruction(rowFather,5)
+let inputText = 5; 
+
+let rowFather = document.querySelector('#pixel-board');
+function tableConstruction() {  
+  for (let i = 0; i < inputText; i += 1) {
+    let tableRow = document.createElement('tr');      
+    // let tableDataFathers = document.getElementsByClassName('tableRow');
+    for (let j = 0; j < inputText; j += 1) {
+      let tableCell = document.createElement('td');
+      tableRow.appendChild(tableCell);
+      tableCell.className = 'pixel';
+    }
+    tableRow.className = 'tableRow';
+    rowFather.appendChild(tableRow);
+  }
+}
+tableConstruction();
 
 function randomColors() {
   for (let index = 1; index < paletteColor.length; index += 1) {
@@ -106,9 +106,9 @@ randomColors();
 // Esse código abaixo, de gerar cores aleatórias retirei do stackoverflow: https://stackoverflow.com/questions/1484506/random-color-generator //
 
 function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
