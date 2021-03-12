@@ -118,10 +118,25 @@ window.onload = function () {
     }
   }
 
+  function clearBoard () {
+    let clearButton = document.getElementById('clear-board');
+    if (clearButton.addEventListener('click', function () {
+      for (let indice = 0; indice < 25; indice++) {
+        let pixel = document.getElementsByClassName('pixel');
+        pixel[indice].setAttribute('class', 'pixel color5');
+      }
+    })
+    ) {
+      console.log('3 if');
+    }
+  }
+
   addPixel();
 
   changeClass();
 
   paintPixel();
+
+  clearBoard();
 }
 
