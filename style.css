@@ -54,7 +54,7 @@ table {
   height: 40px;
 }
 
-#clear-board { /*Btn limpar*/
+#clear-board { /* Btn limpar */
   margin-top: 20px;
   text-align: center;
   width: 80px;
@@ -65,7 +65,7 @@ table {
   margin-left: 40%;
 }
 
-input { /*Area digitavel*/
+input { /* Area digitavel */
   display: inline-block;
   width: 100px;
   margin-left: 50px;
@@ -73,7 +73,7 @@ input { /*Area digitavel*/
   padding: 2px;
 }
 
-#generate-board {  /*Btn VQV*/
+#generate-board {  /* Btn VQV */
   margin-bottom: 10px;
   text-align: center;
   width: 50px;
