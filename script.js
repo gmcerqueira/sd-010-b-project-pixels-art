@@ -95,8 +95,9 @@ function selectColorOnClick() {
     for (let index = 0; index < colorToSelect.length; index += 1) {
       const colorSelected = document.querySelector('.selected');
       if (colorToSelect.className !== 'selected color') {
-        event.target.className = 'selected color';
+        // O Allan Tanaka deu-me uma ajuda nesse ponto com a lógica do meu código, pois mesmo funcionando, eu  precisava de inverter a ordem dos dois comandos abaixo para resolver o erro que aparecia no console.
         colorSelected.className = 'color';
+        event.target.className = 'selected color';
       }
     }
   });
