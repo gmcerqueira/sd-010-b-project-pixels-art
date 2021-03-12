@@ -28,8 +28,25 @@ window.onload = function () {
 colorPalette();
 
 // D8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
-// const pixelBoard = document.querySelector('#pixel-board');
-
+function pixelBoard(side) {
+let table = document.querySelector('#pixel-board');
+let colum = side;
+console.log(colum);
+for (let indexColum = 0; indexColum < colum; indexColum += 1) {
+  let div = document.createElement('div');
+  div.className = 'table-row';
+  table.appendChild(tr);
+  for (let indexRow = 0; indexRow < colum; indexRow += 1) {
+    let pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixel.style.backgroundColor = 'white';
+    div.appendChild(pixel);
+  }
+}
+addEventListener();
+}
+let side = 5;
+pixelBoard(side);
 // D9 - botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
 // const clearBoard = document.querySelector('#clear-board');
 
