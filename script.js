@@ -50,3 +50,9 @@ function pintarOQuadro(cor){
     })
     
 }
+function limpar() {
+    encontraPixel2 = document.getElementsByClassName("pixel");
+    for (let index  in encontraPixel2){
+        encontraPixel2[index].style.backgroundColor = "white"
+    }
+}
