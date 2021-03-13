@@ -32,7 +32,3 @@ function clearColor() {
         clearGrid[i].style.backgroundColor = 'white';
     }
   }
-
-  
-
-
