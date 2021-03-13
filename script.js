@@ -19,12 +19,9 @@ window.onload = function () {
   }
 createScreen();
 
-
-
 // Função utilizada pelo colega Trybe Nikolas Silva
 
 let clearGrid= document.getElementById('clear-board');
-
 clearGrid.addEventListener('click', clearColor);
 
 function clearColor() {
@@ -33,6 +30,15 @@ function clearColor() {
         clearPixel[i].style.backgroundColor = 'white';
     }
   }
-clearColor(); 
- 
+
+//Função utilizada pela colega Trybe Aline Barbosa
+  let setColor = document.getElementsByClassName('color');
+  for(let i =0; i < setColor.length; i+=1){
+  setColor[i].addEventListener('click', selectColor);
+}
+function selectColor(event){
+document.getElementsByClassName('selected')[0].
+classList.remove('selected');
+event.target.classList.add('selected');
+ }
 } 
