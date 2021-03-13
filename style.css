@@ -9,7 +9,7 @@ h1 {
   text-transform: uppercase;
 }
 
-#board-size, #generate-board {
+#board-size ,#generate-board {
   margin: 10px;
 }
 
@@ -21,7 +21,7 @@ h1 {
   width: 5%;
 }
 
-#clear-board, #generate-board  {
+#clear-board ,#generate-board {
   font-size: 15px;
   border: 0;
   padding: 5px 20px;
@@ -36,7 +36,7 @@ h1 {
   display: flex;
 }
 
-#clear-board:focus, #generate-board:focus, #board-size  {
+#clear-board:focus ,#generate-board:focus ,#board-size {
   outline: none;
 }
 
