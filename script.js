@@ -28,11 +28,20 @@ function tablesFatherCreator() {
 }
 
 function colorsTableMaker() {
+  const rgbGenerator = {
+    a: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
+    b: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
+    c: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
+    d: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
+    e: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
+  };
   const colors = [
     'black',
-    'crimson',
-    'darkgoldenrod',
-    'yellow',
+    rgbGenerator.a,
+    rgbGenerator.b,
+    rgbGenerator.c,
+    rgbGenerator.d,
+    rgbGenerator.e,
   ];
 
   for (let index = 0; index < colors.length; index += 1) {
@@ -70,7 +79,7 @@ function pixelsForBoard() {
 
   // Criar as linhas com N de pixels:
   for (let line = 0; line < numberOfPixels; line += 1) {
-    const createLines = document.createElement('div');
+    const createLines = document.createElement('section');
     pixelsFather.appendChild(createLines);
 
     // Criar as colunas com N de pixels:
@@ -82,6 +91,7 @@ function pixelsForBoard() {
     }
   }
 }
+
 
 pixelsBoardFather();
 pixelsForBoard();
@@ -192,20 +202,11 @@ function inputAndButton() {
       alert('Board inválido!');
     }
   }
-
-  // Função para limpar a pixel board anterior:
-  function refreshPixelBoard() {
-    const getPixels = document.querySelector('#pixel-board');
-    const elementsToRemove = document.querySelectorAll('#pixel-board div');
-
-    for (index = 0; index < elementsToRemove.length; index += 1) {
-      getPixels.removeChild(elementsToRemove[index]);
-    }
-  }
-  onButtonClick.addEventListener('click', refreshPixelBoard);
+  
   onButtonClick.addEventListener('click', storeNewData);
-  onButtonClick.addEventListener('click', pixelsForBoard);
+
 }
+
 inputAndButton();
 
 console.log(document.querySelector('body'));
