@@ -170,12 +170,12 @@ function defineSize () {
   buttonSize.addEventListener('click', function () {
     let sizeValue = size.value
 
-    if (sizeValue < 5) {
-      sizingPixel(5);
+    if (sizeValue == "") {
+      alert('Board inválido!')
     } else if (sizeValue > 50) {
       sizingPixel(50);
-    } else if (sizeValue == "") {
-      alert('Board inválido!')
+    } else if (sizeValue < 5) {
+      sizingPixel(5);
     } else {
       sizingPixel(sizeValue)
     }
