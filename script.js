@@ -4,6 +4,7 @@ let btnLimpar = document.getElementById('clear-board');
 let pixelBorder = document.getElementById('pixel-board');
 let nPixel = document.getElementById('board-size');
 let btnTamanho = document.getElementById('generate-board');
+let number = 5;
 
 // Variaveis para criar o rgb aleatoriamente
 let r = Math.floor(Math.random()*255);
@@ -14,9 +15,9 @@ let b = Math.floor(Math.random()*255);
 // Cria os Pixels que vão ser coloridos 
 function criaPixels() {
   let quadro = document.getElementById('pixel-board');
-  for (let j = 0; j < 5; j++) {
+  for (let j = 0; j < number; j++) {
     let novaLinha =document.createElement('div');    
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < number; i++) {
       let divNova = document.createElement('div');
       divNova.classList.add('pixel');
       novaLinha.appendChild(divNova);
@@ -42,12 +43,11 @@ corInicial();
 
 
 // Pinta os pixels com a cor selecionada
-for (let index = 0; index < pixelMuda.length; index++) {
-  pixelMuda[index].addEventListener('click', function(){
-    let corNova = document.getElementsByClassName('selected')[0].style.backgroundColor;
-    pixelMuda[index].style.backgroundColor = corNova;
+  pixelBorder.addEventListener('click', function(){
+  let corNova = document.getElementsByClassName('selected')[0].style.backgroundColor;
+  event.target.style.backgroundColor = corNova;    
   });
-}
+
 // Transforma todos os pixels em branco
 btnLimpar.addEventListener('click', function(){
   for (let i = 0; i < pixelMuda.length; i++) {
@@ -66,12 +66,13 @@ btnTamanho.addEventListener('click', function() {
     nPixel.value = '';  
     nPixel.focus();
   } else {
+    number = parseInt(nPixel.value);
+    pixelBorder.innerHTML = '';
+    criaPixels();
+    nPixel.value = '';
     for (let i = 0; i < pixelMuda.length; i++) {
-      pixelMuda[i].style.height = parseInt(nPixel.value) + 'px';
-      pixelMuda[i].style.width = parseInt(nPixel.value) + 'px';
       pixelMuda[i].style.backgroundColor = 'white';
     }
-    nPixel.value = '';
   }
 });
 
@@ -79,6 +80,6 @@ btnTamanho.addEventListener('click', function() {
 // criando cores aleatorias
 document.getElementsByClassName('color')[0].style.backgroundColor = 'rgb(0,0,0)';
 document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${r},${g},${b})`;
-document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
+document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${b},${r})`;
 document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${g},${r},${g})`;
 
