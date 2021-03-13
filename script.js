@@ -1,5 +1,6 @@
 window.onload = () => {
   localStorage.setItem('backgroundColor', 'black');
+  sessionStorage.getItem('value', '5');
 };
 
 // Cria elementos:
@@ -14,24 +15,25 @@ function colorGenerator() {
   const r = randomBetween(0, 255);
   const g = randomBetween(0, 255);
   const b = randomBetween(0, 255);
-  const rgb = `rgb(${r},${g},${b})`;
+  const rgb = `rgb(${r} , ${g} , ${b})`;
   return rgb;
 }
-const cor1 = colorGenerator();
+// const cor1 = colorGenerator();
 const cor2 = colorGenerator();
 const cor3 = colorGenerator();
 const cor4 = colorGenerator();
 
 // Cria paletta:
+const boardPalettes = document.getElementById('color-palette');
 function createColorPalette() {
   const palettes = document.getElementById('color-palette').childNodes;
-  const colors = [cor1, cor2, cor3, cor4];
+  const colors = ['black', cor2, cor3, cor4];
 
   for (let i = 0; i < 4; i += 1) {
     const element = createElements('div');
     element.id = colors[i];
     element.className = 'color';
-    document.querySelector('#color-palette').appendChild(element);
+    boardPalettes.appendChild(element);
   }
   palettes.forEach((nodes, index) => {
     const elements = nodes;
@@ -41,22 +43,44 @@ function createColorPalette() {
 }
 createColorPalette();
 
-function refreshBtn() {
-  const btn = createElements('button');
-  btn.id = 'clear-board';
-  btn.innerText = 'Reset';
-  document.querySelector('#color-palette').appendChild(btn);
-  btn.addEventListener('click', () => {
-    window.location.reload();
-    // document.getElementsByClassName('pixel').style.backgroundColor = 'white';
-  });
-}
-refreshBtn();
+boardPalettes.appendChild(createElements('br'));
+
+// Definir o tamanho do quadro:
+const inputSize = createElements('input');
+inputSize.id = 'board-size';
+inputSize.min = '5';
+inputSize.max = '50';
+inputSize.type = 'number';
+inputSize.value = '5';
+inputSize.required = 'Board inválido!';
+boardPalettes.appendChild(inputSize);
+sessionStorage.setItem('value', '5');
+
+const sizeBtn = createElements('button');
+sizeBtn.id = 'generate-board';
+sizeBtn.innerText = 'VQV';
+boardPalettes.appendChild(sizeBtn);
+sizeBtn.addEventListener('click', () => {
+  // window.location.reload();
+  if (inputSize.value < 5 || inputSize.value > 50) {
+    inputSize.alert = 'Board inválido!';
+  }
+});
+const sizeValue = document.getElementById('board-size').value;
+
+// Botão de limpar o quadro:
+const clearBtn = createElements('button');
+clearBtn.id = 'clear-board';
+clearBtn.innerText = 'Limpar';
+boardPalettes.appendChild(clearBtn);
+clearBtn.addEventListener('click', () => {
+  window.location.reload();
+});
 
 // Cria board:
 function createPixels() {
-  for (let x = 0; x < 5; x += 1) {
-    for (let i = 0; i < 5; i += 1) {
+  for (let x = 0; x < sizeValue; x += 1) {
+    for (let i = 0; i < sizeValue; i += 1) {
       const pixels = createElements('div');
       pixels.className = 'pixel';
       document.querySelector('#pixel-board').appendChild(pixels);

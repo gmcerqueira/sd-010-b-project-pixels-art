@@ -1,5 +1,7 @@
 body {
   text-align: center;
+  background-image: linear-gradient(to bottom, rgb(73, 122, 212), rgb(61, 190, 199));
+  height: 870px;
 }
 
 h1 {
@@ -7,11 +9,22 @@ h1 {
   text-transform: uppercase;
 }
 
-#clear-board {
+#board-size, #generate-board {
+  margin: 10px;
+}
+
+#board-size {
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 50px;
+  border: 0;
+  width: 5%;
+}
+
+#clear-board, #generate-board  {
   font-size: 15px;
   border: 0;
   padding: 5px 20px;
-  display: flex;
   margin: auto;
   margin-bottom: 10px;
   border-radius: 20px;
@@ -19,7 +32,11 @@ h1 {
   color: white;
 }
 
-#clear-board:focus {
+#clear-board {
+  display: flex;
+}
+
+#clear-board:focus, #generate-board:focus, #board-size  {
   outline: none;
 }
 
@@ -34,7 +51,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-.color ,.pixel {
+.color , .pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
@@ -43,10 +60,6 @@ h1 {
 
 .color {
   margin: 5px;
-}
-
-.selected {
-  border: 2px solid gold;
 }
 
 .pixel {
