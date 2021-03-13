@@ -39,12 +39,6 @@ function colorsTableMaker() {
 const numberOfPixels = localStorage.getItem('number');
 const boardFather = document.querySelector('body');
 
-function pixelsBoardFather() {
-  const fatherCreator = document.createElement('div');
-  fatherCreator.id = 'pixel-board';
-  boardFather.append(fatherCreator);
-}
-
 function pixelsForBoard() {
   const pixelsFather = document.getElementById('pixel-board');
 
@@ -137,7 +131,6 @@ onButtonClick.addEventListener('click', storeNewData);
 
 checkLocalStorage();
 colorsTableMaker();
-pixelsBoardFather();
 pixelsForBoard();
 InputData();
 selectColorOnClick();
