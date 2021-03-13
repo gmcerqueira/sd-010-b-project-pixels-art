@@ -30,7 +30,7 @@ clearGrid.addEventListener('click', clearColor);
 function clearColor() {
     let clearPixel = document.querySelectorAll('div.pixel');
     for (let i = 0; i < clearPixel.length; i +=1) {
-        clearPixel[i].style.backgroundColor = '#ffffff';
+        clearPixel[i].style.background = 'rgb(255, 255, 255)';
     }
   }
 }
