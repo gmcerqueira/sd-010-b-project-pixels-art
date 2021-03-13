@@ -176,13 +176,9 @@ function defineSize () {
 }
 
 function sizingPixel (size) {
-  let pixels = document.getElementsByClassName('pixel');
+  let root = document.documentElement;
 
-  for (let indice = 0; indice < 25; indice++) {
-    console.log(size)
-    pixels[indice].style.width = size + 'px';
-    pixels[indice].style.height = size + 'px';
-  }
+  root.style.setProperty('--sizePixel', `${size}px`);
 }
 
 function ramdomizeColor () {
@@ -197,7 +193,7 @@ function ramdomizeColor () {
 
 //https://pt.stackoverflow.com/questions/348981/como-colocar-valor-da-variavel-javascript-no-css
 function randomizePalette () {
-  var root = document.documentElement;
+  let root = document.documentElement;
 
   root.style.setProperty('--color2', ramdomizeColor());
   root.style.setProperty('--color3', ramdomizeColor());
