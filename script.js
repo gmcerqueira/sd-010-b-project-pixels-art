@@ -89,9 +89,18 @@ buttonGenerateBoard.addEventListener('click', function() {
   quadroDePixels.innerHTML = '';
 });
 
-buttonGenerateBoard.addEventListener('click', function() {
-  number = inputNumeroPixels.value;
-});
+function verificaNumero() {
+  if (inputNumeroPixels.value < 5) {
+    number = 5;
+  } else if (inputNumeroPixels.value > 50) {
+    number = 50;
+  } else {
+    number = inputNumeroPixels.value;
+  }
+}
+verificaNumero();
+
+buttonGenerateBoard.addEventListener('click', verificaNumero);
 
 buttonGenerateBoard.addEventListener('click', adicionandoPixels);
 
