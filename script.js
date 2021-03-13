@@ -186,6 +186,7 @@ function defineSize () {
     let pixels = document.getElementsByClassName('pixel');
 
     for (let indice = 0; indice < 25; indice++) {
+      console.log(size)
       pixels[indice].style.width = size + 'px';
       pixels[indice].style.height = size + 'px';
     }
