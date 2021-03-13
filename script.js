@@ -43,11 +43,12 @@ createColorPalette();
 
 function refreshBtn() {
   const btn = createElements('button');
-  btn.id = 'btn';
+  btn.id = 'clear-board';
   btn.innerText = 'Reset';
   document.querySelector('#color-palette').appendChild(btn);
   btn.addEventListener('click', () => {
-    document.getElementsByClassName('pixel').style.backgroundColor = 'white';
+    window.location.reload();
+    // document.getElementsByClassName('pixel').style.backgroundColor = 'white';
   });
 }
 refreshBtn();

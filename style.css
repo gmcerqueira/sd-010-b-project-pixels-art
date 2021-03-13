@@ -7,7 +7,7 @@ h1 {
   text-transform: uppercase;
 }
 
-#btn {
+#clear-board {
   font-size: 15px;
   border: 0;
   padding: 5px 20px;
@@ -19,11 +19,11 @@ h1 {
   color: white;
 }
 
-#btn:focus {
+#clear-board:focus {
   outline: none;
 }
 
-#btn:active {
+#clear-board:active {
   background-color: rgb(37, 80, 158);
 }
 
@@ -43,6 +43,10 @@ h1 {
 
 .color {
   margin: 5px;
+}
+
+.selected {
+  border: 2px solid gold;
 }
 
 .pixel {
