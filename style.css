@@ -22,6 +22,7 @@ body {
 }
 
 #pixel-board {
+  line-height: 0;
 }
 
 .pixel {
@@ -38,4 +39,8 @@ body {
  margin-left: 47.5%;
  margin-top: 25px;
  margin-bottom: 30px;
+}
+
+#board-size {
+  margin-bottom: 25px;
 }

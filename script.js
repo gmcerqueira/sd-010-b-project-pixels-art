@@ -23,7 +23,7 @@ function adicionandoPixels() {
     for (let i = 0; i < number; i += 1) {
       const pixels = document.createElement('div');
       linhasQuadro.appendChild(pixels);
-      pixels.className = 'pixel';
+      pixels.classList.add('pixel');
     }
   }
 }
@@ -47,8 +47,8 @@ for (let i = 0; i < todasAsCores.length; i += 1) {
 }
 
 //colorindo o quadradinhos branco
-function pintandoOQuadradinho() {
-  const selecionaCor = document.getElementsByClassName('selected')[0].style.backgroundColor;
+function pintandoOQuadradinho(event) {
+  let selecionaCor = document.getElementsByClassName('selected')[0].style.backgroundColor;
   event.target.style.backgroundColor = selecionaCor;
 }
 
@@ -85,9 +85,8 @@ buttonGenerateBoard.addEventListener('click', function() {
 });
 
 buttonGenerateBoard.addEventListener('click', function() {
-  while(document.querySelector('.pixel')) {
-    document.querySelector('.pixel').remove();
-  }
+  const quadroDePixels = document.getElementById('pixel-board');
+  quadroDePixels.innerHTML = '';
 });
 
 buttonGenerateBoard.addEventListener('click', function() {
@@ -95,3 +94,5 @@ buttonGenerateBoard.addEventListener('click', function() {
 });
 
 buttonGenerateBoard.addEventListener('click', adicionandoPixels);
+
+buttonGenerateBoard.addEventListener('click', pintandoTabela);
