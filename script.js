@@ -31,7 +31,7 @@ function colorsTableMaker() {
 let numberOfPixels;
 const defaultNumber = 5;
 function pixelsForBoard() {
-  if (localStorage.getItem('number') == '' || localStorage.getItem('number') == null) {
+  if (localStorage.getItem('number') === '' || localStorage.getItem('number') == null) {
     numberOfPixels = defaultNumber;
   } else {
     numberOfPixels = localStorage.getItem('number');
