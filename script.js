@@ -8,8 +8,8 @@ let colorsList = [
 let colorItems = document.querySelectorAll('.color'); // color palette
 let pixelBoard = document.querySelector('#pixel-board'); // this gets the whole board
 let colorPalette = document.querySelector('#color-palette'); // get the color-palette section
-
 const clearButton = document.querySelector('#clear-board'); // gets Limpar button
+const vqvButton = document.querySelector('#generate-board');
 
 // set colorItems, from colorsList, to color palette
 function buttonColor() {
@@ -28,19 +28,29 @@ function createPixel(rowNumber) {
 }
 
 // creates a row of pixels
-function createRow(rowNumber) {
+function createRow(rowNumber, colNumber) {
   let row = document.createElement('tr');
   pixelBoard.appendChild(row);
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < colNumber; i++) {
     createPixel(rowNumber);
   }
 }
 
 // creates the pixel board
 function createBoard() {
-  for (let i = 0; i < 5; i++) {
-    createRow(i);
-  }
+  vqvButton.addEventListener('click', function () {
+    const boardSize = document.querySelector('#board-size').value;
+    if (boardSize === '') {
+      alert('Board inválido!');
+    } else if (boardSize < 5 || boardSize > 50) {
+      alert('O valor inserido deve estar entre 5 e 50!');
+    } else {
+      pixelBoard.innerHTML = '';
+      for (let i = 0; i < boardSize; i++) {
+        createRow(i, boardSize);
+      }
+    }
+  });
 }
 
 // sets black as the selected color
@@ -69,16 +79,18 @@ function paintPixel() {
   this.style.backgroundColor = pencil;
 }
 
-//cle
+// clears all painted pixels
 function clearBoard() {
-  const pixels = document.querySelectorAll('.pixel'); //gets all pixels
   clearButton.addEventListener('click', function () {
+    const pixels = document.querySelectorAll('.pixel'); //gets all pixels
     console.log(pixels);
     for (let i = 0; i < pixels.length; i++) {
-      pixels[i].style.backgroundColor = 'white';
+      // pixels[i].style.backgroundColor = 'white';
+      pixels[i].style = '';
     }
   });
 }
+
 
 
 window.onload = function () {
