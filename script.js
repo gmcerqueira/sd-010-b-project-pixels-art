@@ -65,10 +65,10 @@ function pixelsForBoard() {
 
 // 7. Ao clicar numa cor, a classe da mesma muda para selected:
 function selectColorOnClick() {
-  const colors = document.querySelector('#color-palette');
+  const colorsPalette = document.querySelector('#color-palette');
 
   // Condição para mudar a cor:
-  colors.addEventListener('click', function (event) {
+  colorsPalette.addEventListener('click', function (event) {
     const colorToSelect = document.getElementsByClassName('color');
 
     for (let index = 0; index < colorToSelect.length; index += 1) {
@@ -137,9 +137,9 @@ onButtonClick.addEventListener('click', storeNewData);
 
 checkLocalStorage();
 colorsTableMaker();
-InputData();
 pixelsBoardFather();
 pixelsForBoard();
+InputData();
 selectColorOnClick();
 paintWithPixels();
 buttonOnClick();
