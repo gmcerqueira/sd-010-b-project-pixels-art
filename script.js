@@ -3,6 +3,9 @@ const containerQuadro = document.querySelector('#pixel-board');
 const colorsPalette = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
 const botao = document.querySelector('#clear-board');
+const textoInput = document.querySelector('#board-size');
+const botaoGerarPixels = document.querySelector('#generate-board');
+let quadroPixelInicial = 5;
 
 function createPalette() {
   for (let index = 0; index < 4; index += 1) {
@@ -19,11 +22,11 @@ function createPalette() {
 createPalette();
 
 function createPixels() {
-  for (let index = 0; index < 5; index += 1) {
+  for (let index = 0; index < quadroPixelInicial; index += 1) {
     const line = document.createElement('div');
     containerQuadro.appendChild(line);
 
-    for (let index2 = 0; index2 < 5; index2 += 1) {
+    for (let index2 = 0; index2 < quadroPixelInicial; index2 += 1) {
       const column = document.createElement('div');
       column.className = 'pixel';
       line.appendChild(column);
@@ -42,18 +45,39 @@ for (let index = 0; index < colorsPalette.length; index += 1) {
   });
 }
 
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', function () {
-    let corNova = document.getElementsByClassName('selected')[0].style.backgroundColor;
-    pixels[index].style.backgroundColor = corNova;
-  })
+function pintaPixels() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', function () {
+      let corNova = document.getElementsByClassName('selected')[0].style.backgroundColor;
+      pixels[index].style.backgroundColor = corNova;
+    })
+  }
 }
+pintaPixels();
 
 botao.addEventListener('click', function () {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 })
+
+
+function verificaBoard() {
+  if (textoInput.value == '') {
+    alert('Board inválido!');
+  } else {
+    limpaBoard();
+  }
+}
+
+function limpaBoard() {
+  containerQuadro.innerHTML = '';
+}
+
+function criaBoard() {
+  quadroPixelInicial = textoInput.value;
+}
+
 
 function corAleatoria() {
   let r = Math.floor(Math.random() * 255);
@@ -66,3 +90,9 @@ function corAleatoria() {
 }
 
 corAleatoria();
+
+botaoGerarPixels.addEventListener('click', verificaBoard);
+botaoGerarPixels.addEventListener('click', criaBoard);
+botaoGerarPixels.addEventListener('click', createPixels);
+botaoGerarPixels.addEventListener('click', pintaPixels);
+
