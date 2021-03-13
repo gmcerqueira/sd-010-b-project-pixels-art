@@ -8,11 +8,15 @@ const quadradoVerde = document.getElementsByClassName('color')[3];
 let todasAsCores = document.querySelectorAll('.color');
 let number = 5;
 
+let r = Math.floor(Math.random() * 255);
+let g = Math.floor(Math.random() * 255);
+let b = Math.floor(Math.random() * 255);
+
 //cores da paleta de cores
 quadradoPreto.style.backgroundColor = 'black';
-quadradoAzul.style.backgroundColor = 'blue';
-quadradoAmarelo.style.backgroundColor = 'yellow';
-quadradoVerde.style.backgroundColor = 'green';
+quadradoAzul.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+quadradoAmarelo.style.backgroundColor = `rgb(${g}, ${b}, ${r})`;
+quadradoVerde.style.backgroundColor = `rgb(${b}, ${r}, ${g})`;
 
 //Função de criar o quadro com 25 quadradinhos
 function adicionandoPixels() {
@@ -85,7 +89,7 @@ buttonGenerateBoard.addEventListener('click', function() {
 });
 
 buttonGenerateBoard.addEventListener('click', function() {
-  const quadroDePixels = document.getElementById('pixel-board');
+  let quadroDePixels = document.getElementById('pixel-board');
   quadroDePixels.innerHTML = '';
 });
 
