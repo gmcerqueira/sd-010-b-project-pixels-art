@@ -11,11 +11,15 @@
 }
 
 #pixel.board {
-  display: table;
+  display: inline-block;
+  text-align: center;
+  margin: 580px;
 }
 
 .pixel {
   display: table-cell;
+  table-layout: fixed;
+  overflow-x: auto;
   border: 1px solid black;
   height: 40px;
   width: 40px;

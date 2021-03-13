@@ -7,26 +7,7 @@ function checkLocalStorage() {
   }
 }
 
-checkLocalStorage();
-
-// 1. Adiciona o título:
-function headerMaker() {
-  const generateHeader = document.querySelector('body');
-  const headerGenerator = document.createElement('h1');
-  headerGenerator.id = 'title';
-  headerGenerator.innerText = 'Paleta de Cores';
-  generateHeader.appendChild(headerGenerator);
-}
-headerMaker();
-
 // 2. e 3. Adiciona a paleta de cores:
-function tablesFatherCreator() {
-  const generateTable = document.querySelector('body');
-  const tablesFather = document.createElement('div');
-  tablesFather.id = 'color-palette';
-  generateTable.appendChild(tablesFather);
-}
-
 function colorsTableMaker() {
   const rgbGenerator = {
     a: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
@@ -56,12 +37,6 @@ function colorsTableMaker() {
   }
 }
 
-tablesFatherCreator();
-colorsTableMaker();
-createButton();
-InputData();
-inputButton();
-
 // 4. e 5. Adicionar à página um quadro com N pixels com 40*40px e 1px de borda:
 let numberOfPixels = localStorage.getItem('number');
 const boardFather = document.querySelector('body');
@@ -77,7 +52,7 @@ function pixelsForBoard() {
 
   // Criar as linhas com N de pixels:
   for (let line = 0; line < numberOfPixels; line += 1) {
-    const createLines = document.createElement('section');
+    const createLines = document.createElement('div');
     pixelsFather.appendChild(createLines);
 
     // Criar as colunas com N de pixels:
@@ -89,17 +64,6 @@ function pixelsForBoard() {
     }
   }
 }
-
-
-pixelsBoardFather();
-pixelsForBoard();
-
-
-// 6. Definir a cor preta como a cor selecionada ao carregar a página:
-/* function defaultColor() {
-  const setDefaultColor = document.querySelector('#black');
-  setDefaultColor.className = 'selected color';
-} */
 
 // 7. Ao clicar numa cor, a classe da mesma muda para selected:
 function selectColorOnClick() {
@@ -120,8 +84,6 @@ function selectColorOnClick() {
   });
 }
 
-selectColorOnClick();
-
 // 8. Pintar o pixel dentro do quadro após selecionar uma cor na paleta:
 function paintWithPixels() {
   const paintPixels = document.querySelector('#pixel-board');
@@ -131,18 +93,7 @@ function paintWithPixels() {
   });
 }
 
-paintWithPixels();
-
 // 9. Cria um botão que reseta as cores dos pixels.
-// Criar o botão:
-function createButton() {
-  const buttonSibling = document.querySelector('body');
-  const buttonMaker = document.createElement('button');
-  buttonMaker.id = 'clear-board';
-  buttonMaker.innerText = 'Limpar';
-  buttonSibling.append(buttonMaker);
-}
-
 // Funcionalidade do botão:
 function buttonOnClick() {
   const button = document.querySelector('#clear-board');
@@ -155,28 +106,14 @@ function buttonOnClick() {
   });
 }
 
-buttonOnClick();
-
 // 10. Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária:
-// Função para criar o imput:
+// Função para adicionar elementos ao input:
 function InputData() {
-  const inputFather = document.querySelector('body');
-  const inputAreaMaker = document.createElement('input');
-  inputAreaMaker.id = 'board-size';
-  inputAreaMaker.type = 'number';
-  inputAreaMaker.maxLength = '2';
-  inputAreaMaker.min = '5';
-  inputAreaMaker.max = '50';
-  inputFather.appendChild(inputAreaMaker);
-}
-
-// Função para criar o input button:
-function inputButton() {
-  const inputFather = document.querySelector('body');
-  const inputButtonMaker = document.createElement('button');
-  inputButtonMaker.id = 'generate-board';
-  inputButtonMaker.innerText = 'VQV';
-  inputFather.appendChild(inputButtonMaker);
+  const inputArea = document.querySelector('#board-size');
+  inputArea.type = 'number';
+  inputArea.maxLength = '2';
+  inputArea.min = '5';
+  inputArea.max = '50';
 }
 
 // Função que adiciona funcionalidades ao input e ao botão do input:
@@ -204,7 +141,16 @@ function inputAndButton() {
   onButtonClick.addEventListener('click', storeNewData);
 
 }
-
+window.onload = function() {
+checkLocalStorage();
+colorsTableMaker();
+InputData();
+pixelsBoardFather();
+pixelsForBoard();
+selectColorOnClick();
+paintWithPixels();
+buttonOnClick();
 inputAndButton();
+};
 
 console.log(document.querySelector('body'));
