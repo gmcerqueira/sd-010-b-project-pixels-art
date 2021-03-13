@@ -99,9 +99,9 @@ function buttonOnClick() {
 function InputData() {
   const inputArea = document.querySelector('#board-size');
   inputArea.type = 'number';
-  inputArea.maxLength = '2';
-  inputArea.min = '5';
+    inputArea.min = '1';
   inputArea.max = '50';
+  inputArea.maxLength = '2';
 }
 
 // Reset quadro de pixels:
@@ -128,7 +128,6 @@ function storeNewData() {
 
   resetPixelBoard();
   pixelsForBoard();
-
 }
 
 onButtonClick.addEventListener('click', storeNewData);
