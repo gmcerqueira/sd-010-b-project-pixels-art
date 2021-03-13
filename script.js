@@ -18,7 +18,7 @@ window.onload = function () {
     }
   }
 createScreen();
-}
+
 
 
 // Função utilizada pelo colega Trybe Nikolas Silva
@@ -32,3 +32,4 @@ function clearColor() {
         clearGrid[i].style.backgroundColor = 'white';
     }
   }
+}
