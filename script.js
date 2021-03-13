@@ -106,18 +106,36 @@ function deleteBoard() {
   pixelB.innerHTML = '';
 }
 
-// Tamanho entre 5 e 50
-function checkBoardSize(number) {
-  if (number < 5) {
-    return 5;
-  }
-  if (number > 50) {
-    return 50;
-  }
-  return number;
+// Criar o quadro de pixel de acordo com a escolha do usuário
+// eslint-disable-next-line max-lines-per-function
+function userSetSize() {
+  const generateBoardButton = document.getElementById('generate-board');
+
+  // eslint-disable-next-line max-lines-per-function
+  generateBoardButton.addEventListener('click', (event) => {
+    deleteBoard();
+    const inputValue = document.getElementById('board-size').value;
+    const table = document.getElementById('pixel-board');
+
+    for (let i = 0; i < inputValue; i += 1) {
+      const createTr = document.createElement('tr');
+
+      table.appendChild(createTr);
+    }
+
+    for (let i = 0; i < inputValue; i += 1) {
+      const getTr = document.querySelectorAll('tr');
+
+      getTr.forEach((e) => {
+        const createTd = document.createElement('td');
+        createTd.className = 'pixel';
+        e.appendChild(createTd);
+      });
+    }
+    event.preventDefault();
+    selectedPixel();
+    clearPixels();
+  });
 }
 
-// Criar o quadro de pixel de acordo com a escolha do usuário
-function userSetSize() {
-  deleteBoard();
-}
+userSetSize();
