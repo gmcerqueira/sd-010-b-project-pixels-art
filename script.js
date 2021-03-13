@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = () => {
   localStorage.setItem('backgroundColor', 'black');
 };
 
@@ -9,22 +9,24 @@ function createElements(tag) {
 }
 
 // Color Generator
-// const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
-// const r = randomBetween(0, 255);
-// const g = randomBetween(0, 255);
-// const b = randomBetween(0, 255);
-// // const rgb = `rgb(${r},${g},${b})`; // Collect all to a css color string
-
-// const cor1 = `rgb(${r},${g},${b})`;
-// const cor2 = `rgb(${r},${g},${b})`;
-// const cor3 = `rgb(${r},${g},${b})`;
-// const cor4 = `rgb(${r},${g},${b})`;
+function colorGenerator() {
+  const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+  const r = randomBetween(0, 255);
+  const g = randomBetween(0, 255);
+  const b = randomBetween(0, 255);
+  const rgb = `rgb(${r},${g},${b})`;
+  return rgb;
+}
+const cor1 = colorGenerator();
+const cor2 = colorGenerator();
+const cor3 = colorGenerator();
+const cor4 = colorGenerator();
 
 // Cria paletta:
 function createColorPalette() {
   const palettes = document.getElementById('color-palette').childNodes;
-  const colors = ['black', 'purple', 'blue', 'red'];
-  // console.log(colors);
+  const colors = [cor1, cor2, cor3, cor4];
+
   for (let i = 0; i < 4; i += 1) {
     const element = createElements('div');
     element.id = colors[i];
@@ -38,6 +40,17 @@ function createColorPalette() {
   palettes[0].classList.add('selected');
 }
 createColorPalette();
+
+function refreshBtn() {
+  const btn = createElements('button');
+  btn.id = 'btn';
+  btn.innerText = 'Reset';
+  document.querySelector('#color-palette').appendChild(btn);
+  btn.addEventListener('click', () => {
+    document.getElementsByClassName('pixel').style.backgroundColor = 'white';
+  });
+}
+refreshBtn();
 
 // Cria board:
 function createPixels() {
@@ -58,9 +71,9 @@ function colorPicker() {
   const palettes = document.getElementsByClassName('color');
 
   for (let i = 0; i < palettes.length; i += 1) {
-    palettes[i].addEventListener('click', () => {
+    palettes[i].addEventListener('click', (e) => {
       selectedItem[0].classList.remove('selected');
-      event.target.classList.add('selected');
+      e.target.classList.add('selected');
     });
   }
 }

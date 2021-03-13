@@ -7,6 +7,26 @@ h1 {
   text-transform: uppercase;
 }
 
+#btn {
+  font-size: 15px;
+  border: 0;
+  padding: 5px 20px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+#btn:focus {
+  outline: none;
+}
+
+#btn:active {
+  background-color: rgb(37, 80, 158);
+}
+
 #pixel-board {
   margin: auto;
   width: 210px;
@@ -14,12 +34,13 @@ h1 {
   flex-wrap: wrap;
 }
 
-.color, .pixel {
+.color ,.pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
   display: inline-block;
 }
+
 .color {
   margin: 5px;
 }
