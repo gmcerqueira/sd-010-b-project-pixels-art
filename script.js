@@ -40,8 +40,6 @@ function colorsTableMaker() {
     rgbGenerator.a,
     rgbGenerator.b,
     rgbGenerator.c,
-    rgbGenerator.d,
-    rgbGenerator.e,
   ];
 
   for (let index = 0; index < colors.length; index += 1) {
