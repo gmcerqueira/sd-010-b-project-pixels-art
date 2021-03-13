@@ -16,11 +16,12 @@ function colorsTableMaker() {
   for (let index = 0; index < colors.length; index += 1) {
     const allTables = document.querySelector('#color-palette');
     const tables = document.createElement('div');
-    tables.id = colors[index];
+    const identifier = colors[index]
+    tables.id = identifier;
     tables.className = 'color';
     tables.style.backgroundColor = colors[index];
 
-    if (colors[index] === 'black') {
+    if (identifier === 'black') {
       tables.className = 'selected color';
     }
     allTables.appendChild(tables);
@@ -30,12 +31,10 @@ function colorsTableMaker() {
 // 4. e 5. Adicionar à página um quadro com N pixels com 40*40px e 1px de borda:
 let numberOfPixels;
 const defaultNumber = 5;
+
 function pixelsForBoard() {
-  if (localStorage.getItem('number') === '' || localStorage.getItem('number') == null) {
-    numberOfPixels = defaultNumber;
-  } else {
-    numberOfPixels = localStorage.getItem('number');
-  }
+  if (localStorage.getItem('number') === '' || localStorage.getItem('number') == null) numberOfPixels = defaultNumber;
+  else numberOfPixels = localStorage.getItem('number');
 
   const pixelsFather = document.getElementById('pixel-board');
   // Criar as linhas com N de pixels:
@@ -107,30 +106,27 @@ function InputData() {
 
 // Função para armazenar novo valor para a pixel-board:
 const onButtonClick = document.querySelector('#generate-board');
+
 function storeNewData() {
   const storeData = document.querySelector('#board-size');
   const value = storeData.value;
 
-  if (value === '') {
-    alert('Board inválido!');
-  } else if (value >= 5 && value <= 50) {
-    localStorage.number = value;
-  } else if (value < 5) {
-    localStorage.number = '5';
-  } else if (value > 50) {
-    localStorage.number = '50';
-  } else {
-    alert('Board inválido!');
-  }
+  if (value === '') alert('Board inválido!');
+  else if (value >= 5 && value <= 50) localStorage.number = value;
+  else if (value < 5) localStorage.number = '5';
+  else if (value > 50) localStorage.number = '50';
+  else alert('Board inválido!');
 }
 
 onButtonClick.addEventListener('click', storeNewData);
 
-colorsTableMaker();
-pixelsForBoard();
-InputData();
-selectColorOnClick();
-paintWithPixels();
-buttonOnClick();
+window.onload = function () {
+  colorsTableMaker();
+  pixelsForBoard();
+  InputData();
+  selectColorOnClick();
+  paintWithPixels();
+  buttonOnClick();
+}
 
 console.log(document.querySelector('body'));
