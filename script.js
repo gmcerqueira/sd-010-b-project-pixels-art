@@ -1,23 +1,34 @@
-const inputText = 5;
-// let inputButton = document.getElementById('generate-board');
-// let inputText = document.getElementById('board-size');
-// function testInput () {
-//     if (parseInt(inputText.innerText, 10) >= 5 && parseInt(inputText.innerText, 10) <= 50) {
-//     console.log("teste");
-//     // let boardButton = document.getElementById('generate-board');
-//     boardButton.addEventListener('click',generateBoard(inputText));
-//   } else {
+// const inputButton = document.getElementById('generate-board');
+// const inputText = document.getElementById('board-size');
+// const inputText = 5;
+// let n = 5;
+
+// function testInput() {  
+//   if (inputText.value <= 5 && inputText.value !== "") {
+//     n = 5;
+//     // boardButton.addEventListener('click', tableConstruction(5));
+//   }
+//   if (inputText.value > 5 && inputText.value < 50) {
+//     n = 50;
+//     // boardButton.addEventListener('click', tableConstruction(inputText.value));
+//   }
+//   if (inputText.value >= 50) {
+//     n = inputText.value;
+//     // boardButton.addEventListener('click', tableConstruction(50));
+//   }
+//   if (inputText.value === "") {
 //     alert('Board inválido!');
 //   }
+//   return n
 // }
 // inputButton.addEventListener('click', testInput);
+// inputButton.addEventListener('click',tableConstruction);
 
 const rowFather = document.querySelector('#pixel-board');
-function tableConstruction() {
-  for (let i = 0; i < inputText; i += 1) {
+function tableConstruction(n) {
+  for (let i = 0; i < n; i += 1) {
     const tableRow = document.createElement('tr');
-    // let tableDataFathers = document.getElementsByClassName('tableRow');
-    for (let j = 0; j < inputText; j += 1) {
+    for (let j = 0; j < n; j += 1) {
       const tableCell = document.createElement('td');
       tableRow.appendChild(tableCell);
       tableCell.className = 'pixel';
@@ -26,7 +37,7 @@ function tableConstruction() {
     rowFather.appendChild(tableRow);
   }
 }
-tableConstruction();
+tableConstruction(5);
 
 const paletteColor = document.querySelectorAll('.color');
 const firstPaletteColor = document.querySelector('.color');
