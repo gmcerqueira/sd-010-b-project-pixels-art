@@ -57,13 +57,21 @@ btnLimpar.addEventListener('click', function(){
 
 // Altera o tamanho dos pixels conforme o usario decide
 btnTamanho.addEventListener('click', function() {
-  if (parseInt(nPixel.value) < 5 || parseInt(nPixel.value) > 50){
+  if (nPixel.value == '') {
+    alert('Board inválido!');
+    nPixel.value = '';  
+    nPixel.focus();
+  } else if (parseInt(nPixel.value) < 5 || parseInt(nPixel.value) > 50){
     alert('Digite um valor entre 5 a 50 para ser aceito');  
+    nPixel.value = '';  
+    nPixel.focus();
   } else {
     for (let i = 0; i < pixelMuda.length; i++) {
       pixelMuda[i].style.height = parseInt(nPixel.value) + 'px';
       pixelMuda[i].style.width = parseInt(nPixel.value) + 'px';
+      pixelMuda[i].style.backgroundColor = 'white';
     }
+    nPixel.value = '';
   }
 });
 
