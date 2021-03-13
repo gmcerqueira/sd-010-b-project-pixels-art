@@ -3,26 +3,24 @@
 // Função que verifica se existe dados no localStorage para criar um defaultSize:
 function checkLocalStorage() {
   if (localStorage.getItem('number') === null) {
-  const defaultLocalStorage = localStorage.setItem('number', '5');
+    localStorage.setItem('number', '5');
   }
 }
 
 // 2. e 3. Adiciona a paleta de cores:
-function colorsTableMaker() {
-  const rgbGenerator = {
-    a: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
-    b: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
-    c: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
-    d: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
-    e: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
-  };
-  const colors = [
-    'black',
-    rgbGenerator.a,
-    rgbGenerator.b,
-    rgbGenerator.c,
-  ];
+const rgbGenerator = {
+  a: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
+  b: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
+  c: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
+};
+const colors = [
+  'black',
+  rgbGenerator.a,
+  rgbGenerator.b,
+  rgbGenerator.c,
+];
 
+function colorsTableMaker() {
   for (let index = 0; index < colors.length; index += 1) {
     const allTables = document.querySelector('#color-palette');
     const tables = document.createElement('div');
@@ -38,7 +36,7 @@ function colorsTableMaker() {
 }
 
 // 4. e 5. Adicionar à página um quadro com N pixels com 40*40px e 1px de borda:
-let numberOfPixels = localStorage.getItem('number');
+const numberOfPixels = localStorage.getItem('number');
 const boardFather = document.querySelector('body');
 
 function pixelsBoardFather() {
@@ -102,7 +100,7 @@ function buttonOnClick() {
 
     for (let index = 0; index < elementsToReset.length; index += 1) {
       elementsToReset[index].style.backgroundColor = 'white';
-    } 
+    }
   });
 }
 
@@ -116,32 +114,27 @@ function InputData() {
   inputArea.max = '50';
 }
 
-// Função que adiciona funcionalidades ao input e ao botão do input:
-function inputAndButton() {
-  const onButtonClick = document.querySelector('#generate-board');
+// Função para armazenar novo valor para a pixel-board:
+const onButtonClick = document.querySelector('#generate-board');
+function storeNewData() {
+  const storeData = document.querySelector('#board-size');
+  const value = storeData.value;
 
-  // Função para armazenar novo valor para a pixel-board:
-  function storeNewData() {
-    const storeData = document.querySelector('#board-size');
-    const value = storeData.value;
-
-    if (value === '') {
-      alert('Board inválido!');
-    } else if (value >= 5 && value <= 50) {
-      localStorage.number = value;
-    } else if (value < 5) {
-      localStorage.number = '5';
-    } else if (value > 50) {
-      localStorage.number = '50';
-    } else {
-      alert('Board inválido!');
-    }
+  if (value === '') {
+    alert('Board inválido!');
+  } else if (value >= 5 && value <= 50) {
+    localStorage.number = value;
+  } else if (value < 5) {
+    localStorage.number = '5';
+  } else if (value > 50) {
+    localStorage.number = '50';
+  } else {
+    alert('Board inválido!');
   }
-  
-  onButtonClick.addEventListener('click', storeNewData);
-
 }
-window.onload = function() {
+
+onButtonClick.addEventListener('click', storeNewData);
+
 checkLocalStorage();
 colorsTableMaker();
 InputData();
@@ -150,7 +143,5 @@ pixelsForBoard();
 selectColorOnClick();
 paintWithPixels();
 buttonOnClick();
-inputAndButton();
-};
 
 console.log(document.querySelector('body'));
