@@ -5,7 +5,7 @@ body {
 }
 #title {
   white-space: nowrap;
-  font: 500 Impact;
+  font: 500 monospace;
   font-size: 50px;
 }
 #color-palette {
