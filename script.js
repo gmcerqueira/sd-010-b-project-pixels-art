@@ -59,11 +59,12 @@ btnLimpar.addEventListener('click', function(){
 btnTamanho.addEventListener('click', function() {
   if (parseInt(nPixel.value) < 5 || parseInt(nPixel.value) > 50){
     alert('Digite um valor entre 5 a 50 para ser aceito');  
-  } 
+  } else {
     for (let i = 0; i < pixelMuda.length; i++) {
       pixelMuda[i].style.height = parseInt(nPixel.value) + 'px';
       pixelMuda[i].style.width = parseInt(nPixel.value) + 'px';
     }
+  }
 });
 
 
