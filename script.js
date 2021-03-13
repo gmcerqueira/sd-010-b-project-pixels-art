@@ -163,12 +163,13 @@ function defineSize () {
 
     if (sizeValue == "") {
       alert('Board inválido!')
-    } else if (sizeValue > 50) {
-      size.value = 50
-      sizingPixel(size.value);
     } else if (sizeValue < 5) {
-      sizingPixel(5);
-    } else {
+      size.value = 5;
+      sizingPixel(size.value);
+    } else if (sizeValue > 50) {
+      size.value = 50;
+      sizingPixel(size.value);
+    } else if ((sizeValue > 5) && (sizeValue < 50)){
       sizingPixel(sizeValue)
     }
   })
