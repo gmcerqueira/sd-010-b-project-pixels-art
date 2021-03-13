@@ -164,7 +164,8 @@ function defineSize () {
     if (sizeValue == "") {
       alert('Board inválido!')
     } else if (sizeValue > 50) {
-      sizingPixel(50);
+      size.value = 50
+      sizingPixel(size.value);
     } else if (sizeValue < 5) {
       sizingPixel(5);
     } else {
@@ -187,7 +188,7 @@ function ramdomizeColor () {
   let rgb = [];
 
   for (let indice = 0; indice < 3; indice++){
-    rgb.push(Math.random() * 255);
+    rgb.push((Math.random()) * 255);
   }
 
   return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`
