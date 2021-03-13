@@ -78,6 +78,14 @@ function criaBoard() {
   quadroPixelInicial = textoInput.value;
 }
 
+function verificaInput() {
+  if (textoInput.value < 5) {
+    quadroPixelInicial = 5;
+  } else if (textoInput.value > 50) {
+    quadroPixelInicial = 50;
+  }
+}
+
 
 function corAleatoria() {
   let r = Math.floor(Math.random() * 255);
@@ -93,6 +101,7 @@ corAleatoria();
 
 botaoGerarPixels.addEventListener('click', verificaBoard);
 botaoGerarPixels.addEventListener('click', criaBoard);
+botaoGerarPixels.addEventListener('click', verificaInput);
 botaoGerarPixels.addEventListener('click', createPixels);
 botaoGerarPixels.addEventListener('click', pintaPixels);
 
