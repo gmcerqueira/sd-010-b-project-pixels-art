@@ -104,6 +104,15 @@ function InputData() {
   inputArea.max = '50';
 }
 
+// Reset quadro de pixels:
+// Conteúdo de apoio foi encontrado no link 'https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript'.
+function resetPixelBoard() {
+  const board = document.querySelector('#pixel-board');
+  while (board.firstChild) {
+    board.removeChild(board.firstChild);
+  }
+}
+
 // Função para armazenar novo valor para a pixel-board:
 const onButtonClick = document.querySelector('#generate-board');
 
@@ -116,6 +125,10 @@ function storeNewData() {
   else if (value < 5) localStorage.number = '5';
   else if (value > 50) localStorage.number = '50';
   else alert('Board inválido!');
+
+  resetPixelBoard();
+  pixelsForBoard();
+
 }
 
 onButtonClick.addEventListener('click', storeNewData);
