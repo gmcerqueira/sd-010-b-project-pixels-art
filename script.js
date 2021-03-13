@@ -1,10 +1,10 @@
-// Função feita baseada no código do colega Trybe Renan Braga e 
+// Função feita baseada no código do colega Trybe Renan Braga e
 // orientações para correção pela colega Trybe Duda Wiltiner
-window.onload = function() {
+// eslint-disable-next-line func-names
+window.onload = function () {
   pixelBoardContainer = document.getElementById('pixel-board');
 
-
-function createScreen() {
+  function createScreen() {
     let lines = columns = 5;
     for (let i = 0; i < lines; i += 1) {
       criaLinha = document.createElement('div');
