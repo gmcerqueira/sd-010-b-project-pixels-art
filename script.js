@@ -1,5 +1,6 @@
 const pallete = document.getElementById('color-palette');
 const squearePixel = document.getElementById('pixel-board');
+const clearButton = document.querySelector('#clear-board');
 
 function viewPallete() {
   for (let index = 0; index < 4; index += 1) {
@@ -44,6 +45,15 @@ function paint() {
 }
 
 paint();
+
+function clear() {
+  const allDivs = squearePixel.children;
+  for (let index = 0; index < allDivs.length; index += 1) {
+    allDivs[index].style.backgroundColor = 'white';
+  }
+}
+
+clearButton.addEventListener('click', clear);
 
 document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
 document.getElementsByClassName('color')[0].className += ' selected';
