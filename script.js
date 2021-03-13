@@ -28,9 +28,9 @@ let clearGrid= document.getElementById('clear-board');
 clearGrid.addEventListener('click', clearColor);
 
 function clearColor() {
-    let clearPixel = document.querySelectorAll('.pixel');
+    let clearPixel = document.querySelectorAll('div.pixel');
     for (let i = 0; i < clearPixel.length; i +=1) {
-        clearPixel[i].style.backgroundColor = 'rgb(255, 255, 255)';
+        clearPixel[i].style.backgroundColor = 'white';
     }
   }
 }
