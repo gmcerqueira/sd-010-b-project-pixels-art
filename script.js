@@ -6,6 +6,7 @@ const quadradoAzul = document.getElementsByClassName('color')[1];
 const quadradoAmarelo = document.getElementsByClassName('color')[2];
 const quadradoVerde = document.getElementsByClassName('color')[3];
 let todasAsCores = document.querySelectorAll('.color');
+let number = 5;
 
 //cores da paleta de cores
 quadradoPreto.style.backgroundColor = 'black';
@@ -16,10 +17,10 @@ quadradoVerde.style.backgroundColor = 'green';
 //Função de criar o quadro com 25 quadradinhos
 function adicionandoPixels() {
   const quadroPixels = document.getElementById('pixel-board');
-  for (let j = 0; j < 5; j += 1) {
+  for (let j = 0; j < number; j += 1) {
     const linhasQuadro = document.createElement('div');
     quadroPixels.appendChild(linhasQuadro);
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < number; i += 1) {
       const pixels = document.createElement('div');
       linhasQuadro.appendChild(pixels);
       pixels.className = 'pixel';
@@ -27,9 +28,8 @@ function adicionandoPixels() {
   }
 }
 adicionandoPixels();
+
 //Definindo variaveis as cores
-
-
 function deixarQuadradoPreto() {
   quadradoPreto.classList.add('selected');
 }
@@ -71,4 +71,27 @@ buttonClean.addEventListener('click', function() {
   }
 });
 
-//
+//Quadro de pixel definido pela pessoa usuária
+let inputNumeroPixels = document.getElementsByTagName('input')[0];
+inputNumeroPixels.id = 'board-size';
+let buttonGenerateBoard = document.getElementsByTagName('button')[1];
+buttonGenerateBoard.id = 'generate-board';
+buttonGenerateBoard.innerText = 'VQV';
+
+buttonGenerateBoard.addEventListener('click', function() {
+  if (inputNumeroPixels.value.length === 0) {
+    alert('Board inválido!');
+  }
+});
+
+buttonGenerateBoard.addEventListener('click', function() {
+  while(document.querySelector('.pixel')) {
+    document.querySelector('.pixel').remove();
+  }
+});
+
+buttonGenerateBoard.addEventListener('click', function() {
+  number = inputNumeroPixels.value;
+});
+
+buttonGenerateBoard.addEventListener('click', adicionandoPixels);
