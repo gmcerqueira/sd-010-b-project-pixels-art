@@ -1,77 +1,71 @@
-// Inicia com a cor preta selecionada
+// Inicia a página com a cor preta selecionada
 
 window.onload = function(){
     document.getElementById('black').classList.add('selected')   
     }
-///////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////
 
 // Quadrado de pixels 
+let div = document.createElement('div')
+document.body.appendChild(div)
 
-let paleta = document.createElement('table')
-document.body.appendChild(paleta) 
-paleta.id = 'pixel-board'
+let bigSquare = document.createElement('table')
+div.appendChild(bigSquare) 
+bigSquare.id = 'pixel-board'
 
 for (let index = 0; index < 5; index += 1){
-    let linhaPaleta = document.createElement('tr')
-    paleta.appendChild(linhaPaleta)
+    let lineSquare = document.createElement('tr')
+    bigSquare.appendChild(lineSquare)
 
     for (let index = 0; index < 5; index += 1){
-        let elementoPixel = document.createElement('td')
-        linhaPaleta.appendChild(elementoPixel)
-        elementoPixel.className = 'pixel'    
+        let element = document.createElement('td')
+        lineSquare.appendChild(element)
+        element.className = 'pixel'    
 }
 }
 
 //////////////////////////////////////////////////////////
 
-// Atribui a classe 'selected' a outras cores
+// Alterna a atribuição da classe 'selected' à outras cores
 
 let ul = document.querySelector('ul')
 let li = document.querySelectorAll('li')
 
-li.forEach(el => {
-    el.addEventListener('click', function(){
+li.forEach(event => {
+    event.addEventListener('click', function(){
        ul.querySelector('.selected').classList.remove('selected');
        
-       el.classList.add('selected');
+       event.classList.add('selected');
     });
 });
 
-
-
-//////////////////////////////////////////////////////////
-//Selecionando a cor
-
-// let cor = document.querySelectorAll('.color')
-
-// function select(){
-//     for (let index = 0; index < cor.length; index += 1){
-//        cor[index].addEventListener('click', function(){
-//            localStorage.setItem('colorSelected', JSON.stringify(cor[index]))
-//        }) 
-//     }
-// }
-
-///////////////////////////////////////////////////////////
-
-
-// Aplicando as cores
-
-// let pintarPixel = document.getElementById('pixel-board')
-
-// pintarPixel.addEventListener('click', pintar)
-
-// function pintar(evento){
-//     let cor = JSON.parse(localStorage.getItem('cores'))
-//     if (cor === blackColor){
-//         evento.target = blackColor
-//     }
-// }
-
 //////////////////////////////////////////////////////////
 
-// Botão 'Limpar'
+// Inicia com a cor preta selecionada para pintar e possibilita escolher outras cores para pintar também
 
-// let botaoLimpar = document.createElement('button')
-// document.body.appendChild(botaoLimpar)
-// botaoLimpar.innerHTML = "Limpar"
+bigSquare.addEventListener('click', painting)
+
+function painting(e) {
+    let selectedColor = document.querySelector('.selected');
+    let change = getComputedStyle(selectedColor);
+    e.target.style.backgroundColor = change.backgroundColor;
+  }
+
+/////////////////////////////////////////////////////////
+
+// Insere o botão 'Limpar' que apaga cores previamente preenchidas entre a paleta de cores e o quadrado de pixels
+
+let clearButton = document.createElement('button')
+div.insertBefore(clearButton, div.firstElementChild);
+clearButton.id = 'clear-board'
+clearButton.innerHTML = "Limpar"
+
+let clearing = document.getElementById('clear-board')
+
+clearing.addEventListener('click', clear)
+
+function clear() {
+    let clear = document.querySelectorAll('.pixel');
+    clear.forEach((event) => { event.style.backgroundColor = 'white'})
+  }
