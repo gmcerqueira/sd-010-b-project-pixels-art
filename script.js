@@ -1,6 +1,6 @@
 // Função feita baseada no código do colega Trybe Renan Braga e
-// orientações para correção pela colega Trybe Duda Wiltiner
-// eslint-disable-next-line func-names
+// correções realizadas junto com a colega Trybe Duda Wiltiner
+
 window.onload = function () {
   pixelBoardContainer = document.getElementById('pixel-board');
 
@@ -22,14 +22,15 @@ createScreen();
 
 
 // Função utilizada pelo colega Trybe Nikolas Silva
+
 let clearGrid= document.getElementById('clear-board');
 
 clearGrid.addEventListener('click', clearColor);
 
 function clearColor() {
-    let clearGrid = document.querySelectorAll('.pixel');
-    for (let i = 0; i < clearGrid.length; i +=1) {
-        clearGrid[i].style.backgroundColor = 'white';
+    let clearPixel = document.querySelectorAll('.pixel');
+    for (let i = 0; i < clearPixel.length; i +=1) {
+        clearPixel[i].style.backgroundColor = 'rgb(255, 255, 255)';
     }
   }
 }

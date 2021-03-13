@@ -27,10 +27,3 @@
   display: table-cell;
 }
 
-.clear-board {
-  height: 40px;
-  width: 40px;
-  border: black solid 1px;
-  background-color:red;
-  display: table-cell;
-}
