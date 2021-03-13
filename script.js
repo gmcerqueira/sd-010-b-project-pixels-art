@@ -1,12 +1,4 @@
 // Executa o requisito 6 quando a página é carregada totalmente:
-// window.addEventListener('load', defaultColor);
-// Função que verifica se existe dados no localStorage para criar um defaultSize:
-function checkLocalStorage() {
-  if (localStorage.getItem('number') === null) {
-    localStorage.setItem('number', '5');
-  }
-}
-
 // 2. e 3. Adiciona a paleta de cores:
 const rgbGenerator = {
   a: 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')',
@@ -36,20 +28,25 @@ function colorsTableMaker() {
 }
 
 // 4. e 5. Adicionar à página um quadro com N pixels com 40*40px e 1px de borda:
-const numberOfPixels = localStorage.getItem('number');
-const boardFather = document.querySelector('body');
-
+let numberOfPixels;
+const defaultNumber = 5;
 function pixelsForBoard() {
-  const pixelsFather = document.getElementById('pixel-board');
+  if (localStorage.getItem('number') == '' || localStorage.getItem('number') == null) {
+    numberOfPixels = defaultNumber;
+  } else {
+    numberOfPixels = localStorage.getItem('number');
+  }
 
+  const pixelsFather = document.getElementById('pixel-board');
   // Criar as linhas com N de pixels:
   for (let line = 0; line < numberOfPixels; line += 1) {
-    const createLines = document.createElement('div');
+    const createLines = document.createElement('tr');
+    createLines.id = 'lines';
     pixelsFather.appendChild(createLines);
 
     // Criar as colunas com N de pixels:
     for (let column = 0; column < numberOfPixels; column += 1) {
-      const createRows = document.createElement('div');
+      const createRows = document.createElement('td');
       createRows.className = 'pixel';
       createRows.style.backgroundColor = 'white';
       pixelsFather.appendChild(createRows);
@@ -129,7 +126,6 @@ function storeNewData() {
 
 onButtonClick.addEventListener('click', storeNewData);
 
-checkLocalStorage();
 colorsTableMaker();
 pixelsForBoard();
 InputData();

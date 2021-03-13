@@ -10,10 +10,9 @@
   width: 50px;
 }
 
-#pixel.board {
-  display: inline-block;
-  text-align: center;
-  margin: 580px;
+table , tr , td {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .pixel {
@@ -23,4 +22,8 @@
   border: 1px solid black;
   height: 40px;
   width: 40px;
+}
+
+#lines {
+  width: 0;
 }
