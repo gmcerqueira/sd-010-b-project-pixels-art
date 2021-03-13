@@ -2,8 +2,8 @@ let chamando = document.querySelectorAll('.color');
 let pixelMuda = document.getElementsByClassName('pixel');
 let btnLimpar = document.getElementById('clear-board');
 let pixelBorder = document.getElementById('pixel-board');
-let nPixel = document.getElementById('hW');
-let btnTamanho = document.getElementById('tamanho');
+let nPixel = document.getElementById('board-size');
+let btnTamanho = document.getElementById('generate-board');
 
 // Variaveis para criar o rgb aleatoriamente
 let r = Math.floor(Math.random()*255);
