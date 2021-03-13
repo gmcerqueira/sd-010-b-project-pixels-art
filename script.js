@@ -33,4 +33,6 @@ function clearColor() {
         clearPixel[i].style.backgroundColor = 'white';
     }
   }
+clearColor(); 
+ 
 } 
