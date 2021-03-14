@@ -1,8 +1,36 @@
 // exercicio 4
 function criarPixel() {
+  let encontraPixelBoard = document.getElementById('pixel-board');
+  encontraPixelBoard.innerText = '';
+  let valorDigitado = document.getElementById('board-size').value
+  if(valorDigitado >= 5 && valorDigitado <= 50){
+    console.log('entrou no if');
+    criarPrimeiraVez(valorDigitado);
+  }
+  else if(valorDigitado == 0){
+    console.log("entrou no 0")
+    alert("Board inválido!")
+    criarPrimeiraVez(5);
+  }
+  else if (valorDigitado < 5) {
+    console.log("entrou no 5")
+    valorDigitado = 5;
+    criarPrimeiraVez(valorDigitado);
+  }
+  else if (valorDigitado > 50){
+    console.log("entrou no 50")
+    valorDigitado = 50;
+    criarPrimeiraVez(valorDigitado);
+  }
+  else if(valorDigitado == 0){
+    console.log("entrou no 0")
+    alert("Board inválido!")
+  }
+}
+function criarPrimeiraVez(valor) {
   const encotraQuadro = document.getElementById('pixel-board');
-  for (let colona = 0; colona < 5; colona+=1) {
-    for (let linha = 0; linha < 5; linha+=1) {
+  for (let colona = 0; colona < valor; colona+=1) {
+    for (let linha = 0; linha < valor; linha+=1) {
       const criarDiv = document.createElement('div');
       criarDiv.classList.add('pixel');
       criarDiv.style.backgroundColor = 'white';
@@ -12,7 +40,7 @@ function criarPixel() {
     encotraQuadro.appendChild(criaBr);
   }
 }
-criarPixel();
+window.onload = criarPrimeiraVez(5);
 window.onload = selecionaPreto();
 
 function selecionaPreto() {
