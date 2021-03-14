@@ -20,3 +20,18 @@
 .color-green {
   background-color: green;
 }
+
+.pixelBoard {
+  display: table;
+}
+
+.pixelLine {
+  display: table-row;
+}
+
+.pixel {
+  border: 1px solid black;
+  display: table-cell;
+  height: 40px;
+  width: 40px;
+}
