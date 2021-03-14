@@ -45,5 +45,13 @@ function selectColor() {
   })
 }
 
+function selectPixel() {
+  pixelBoard.addEventListener('click', function(event) {
+    const color = document.querySelector('.selected').style.backgroundColor;
+    event.target.style.backgroundColor = color;
+  })
+}
+
+selectPixel()
 selectColor();
 createBox();
