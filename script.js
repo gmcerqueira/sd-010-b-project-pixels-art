@@ -8,15 +8,18 @@ const cores = ['black'];
 // childNodes: https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes
 // Arrow Functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
+// define cores aleatórias
 function randomColor() {
-for (let index = 1; index < 4; index += 1) {
-  const cor1 = Math.floor(Math.random() * 256);
-  const cor2 = Math.floor(Math.random() * 256);
-  const cor3 = Math.floor(Math.random() * 256);
-  const corRGB = `rgb(${cor1} ${cor2} ${cor3})`;
-  cores[index] = corRGB;
-}}
+  for (let index = 1; index < 4; index += 1) {
+    const cor1 = Math.floor(Math.random() * 256);
+    const cor2 = Math.floor(Math.random() * 256);
+    const cor3 = Math.floor(Math.random() * 256);
+    const corRGB = `rgb(${cor1} ${cor2} ${cor3})`;
+    cores[index] = corRGB; 
+  }
+}
 
+// define a paleta de cores
 function setPaletteColor() {
   const colorPalette = document.querySelector('#color-palette');
   for (let index = 0; index < 4; index += 1) {
