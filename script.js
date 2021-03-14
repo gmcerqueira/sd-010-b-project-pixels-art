@@ -1,28 +1,7 @@
-// const inputButton = document.getElementById('generate-board');
-// const inputText = document.getElementById('board-size');
+const inputButton = document.getElementById('generate-board');
+const inputText = document.getElementById('board-size');
 // const inputText = 5;
 // let n = 5;
-
-// function testInput() {  
-//   if (inputText.value <= 5 && inputText.value !== "") {
-//     n = 5;
-//     // boardButton.addEventListener('click', tableConstruction(5));
-//   }
-//   if (inputText.value > 5 && inputText.value < 50) {
-//     n = 50;
-//     // boardButton.addEventListener('click', tableConstruction(inputText.value));
-//   }
-//   if (inputText.value >= 50) {
-//     n = inputText.value;
-//     // boardButton.addEventListener('click', tableConstruction(50));
-//   }
-//   if (inputText.value === "") {
-//     alert('Board inválido!');
-//   }
-//   return n
-// }
-// inputButton.addEventListener('click', testInput);
-// inputButton.addEventListener('click',tableConstruction);
 
 const rowFather = document.querySelector('#pixel-board');
 function tableConstruction(n) {
@@ -37,7 +16,27 @@ function tableConstruction(n) {
     rowFather.appendChild(tableRow);
   }
 }
-tableConstruction(5);
+// tableConstruction();
+
+function testInput() {
+  if (inputText.value <= 5 && inputText.value !== "") {
+    document.getElementById('pixel-board').innerHTML = ''
+    tableConstruction(5);
+  }
+  if (inputText.value > 5 && inputText.value < 50) {
+    document.getElementById('pixel-board').innerHTML = ''
+    tableConstruction(inputText.value);
+  }
+  if (inputText.value >= 50) {
+    document.getElementById('pixel-board').innerHTML = ''
+    tableConstruction(50);
+  }
+  if (inputText.value === "") {
+    alert('Board inválido!');
+  }
+}
+inputButton.addEventListener('click', testInput);
+inputButton.addEventListener('click', tableConstruction);
 
 const paletteColor = document.querySelectorAll('.color');
 const firstPaletteColor = document.querySelector('.color');
@@ -45,7 +44,7 @@ firstPaletteColor.style.backgroundColor = 'black';
 firstPaletteColor.classList.add('selected');
 
 const colors = document.querySelectorAll('.color');
-const pixels = document.querySelectorAll('.pixel');
+// const pixels = document.querySelectorAll('.pixel');
 
 function seletionChange(picked) {
   for (let index = 0; index < colors.length; index += 1) {
@@ -61,19 +60,21 @@ function colorSelection() {
     colors[index].addEventListener('click', seletionChange);
   }
 }
-colorSelection();
+// colorSelection();
 
-function colorChange(x) {
-  const pix = x.target;
-  pix.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
-}
+// function colorChange(x) {
+//   const pix = x.target;
+//   pix.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+// }
 
 function colorPainting() {
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].addEventListener('click', colorChange);
-  }
+  const board = document.querySelector('#pixel-board');
+  board.addEventListener('click', (e) => {
+    const p = e.target;
+    p.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+  });
 }
-colorPainting();
+// colorPainting();
 
 function clearBoard() {
   const clear = document.querySelectorAll('.pixel');
@@ -93,9 +94,17 @@ function getRandomColor() {
   }
   return color;
 }
+
 function randomColors() {
   for (let index = 1; index < paletteColor.length; index += 1) {
     paletteColor[index].style.backgroundColor = getRandomColor();
   }
 }
-randomColors();
+// randomColors();
+
+window.onload = function init() {
+  tableConstruction(5);
+  randomColors();
+  colorPainting();
+  colorSelection();
+};
