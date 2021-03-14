@@ -4,5 +4,17 @@ body {
 
 #color-palette {
   box-sizing:border-box;
-  font-family: sans-serif;
+  display: grid;
+  gap: 15px;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.color {
+  height: 100px;
+  background-color: black;
+  position: relative;
+  size: 75px;
+  width: 90px;
+  display: inline-block;
+
 }
