@@ -4,7 +4,7 @@ let paleta = document.createElement("table");
 paleta.id = "color-palette";
 maeTabela1.appendChild(paleta);
 
-for(index = 0; index < 5; index += 1){
+for(index = 0; index < 4; index += 1){
     let criaColuna = document.createElement("td");
     criaColuna.className = "color";
     paleta.appendChild(criaColuna);
@@ -38,7 +38,7 @@ colunaPaleta[3].style.backgroundColor = "yellow";
 let maeBotaoAdd = document.getElementById("botao-add");
 let input = document.createElement("input");
 input.id = "board-size";
-input.type = "number";
+// input.type = "number";
 let botaoAdd = document.createElement("button");
 botaoAdd.id = "generate-board";
 botaoAdd.innerText = "#VQV";
@@ -175,7 +175,7 @@ window.onload =
 // document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
 
 
-let maeBotao = document.getElementById("botao-limpa");
+let maeBotao = document.getElementById("botao-add");
 let botaoLimpa = document.createElement("button");
 botaoLimpa.id = "clear-board";
 botaoLimpa.innerText = "Limpar";
