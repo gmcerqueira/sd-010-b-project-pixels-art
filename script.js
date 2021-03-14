@@ -1,4 +1,5 @@
 //exercicio 4
+function criarPixel() {
     let encotraQuadro = document.getElementById("pixel-board");
     for(let colona = 0;colona < 5;colona++){
    for(let linha = 0;linha < 5;linha++){
@@ -10,6 +11,8 @@
     let criaBr = document.createElement("br");
     encotraQuadro.appendChild(criaBr);
 }
+}
+criarPixel();
 window.onload = selecionaPreto;
 
 function selecionaPreto(){
@@ -51,8 +54,33 @@ function pintarOQuadro(cor){
     
 }
 function limpar() {
-    encontraPixel2 = document.getElementsByClassName("pixel");
-    for (let index  in encontraPixel2){
-        encontraPixel2[index].style.backgroundColor = "white"
-    }
+    let encontraPixel2 = document.querySelectorAll('.pixel');
+
+        encontraPixel2[0].style.backgroundColor = "white";
+        encontraPixel2[1].style.backgroundColor = "white";
+        encontraPixel2[2].style.backgroundColor = "white";
+        encontraPixel2[3].style.backgroundColor = "white";
+        encontraPixel2[4].style.backgroundColor = "white";
+        encontraPixel2[5].style.backgroundColor = "white";
+        encontraPixel2[6].style.backgroundColor = "white";
+        encontraPixel2[7].style.backgroundColor = "white";
+        encontraPixel2[8].style.backgroundColor = "white";
+        encontraPixel2[9].style.backgroundColor = "white";
+        encontraPixel2[10].style.backgroundColor = "white";
+        encontraPixel2[11].style.backgroundColor = "white";
+        encontraPixel2[12].style.backgroundColor = "white";
+        encontraPixel2[13].style.backgroundColor = "white";
+        encontraPixel2[14].style.backgroundColor = "white";
+        encontraPixel2[15].style.backgroundColor = "white";
+        encontraPixel2[16].style.backgroundColor = "white";
+        encontraPixel2[17].style.backgroundColor = "white";
+        encontraPixel2[18].style.backgroundColor = "white";
+        encontraPixel2[19].style.backgroundColor = "white";
+        encontraPixel2[20].style.backgroundColor = "white";
+        encontraPixel2[21].style.backgroundColor = "white";
+        encontraPixel2[22].style.backgroundColor = "white";
+        encontraPixel2[23].style.backgroundColor = "white";
+        encontraPixel2[23].style.backgroundColor = "white";
+        encontraPixel2[24].style.backgroundColor = "white";
+    
 }
