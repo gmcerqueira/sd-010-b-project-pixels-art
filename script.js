@@ -135,6 +135,10 @@ function userSetSize() {
     event.preventDefault();
     selectedPixel();
     clearPixels();
+    
+    if (inputValue === '') {
+      return alert('Board inválido!');
+    }
   });
 }
 
