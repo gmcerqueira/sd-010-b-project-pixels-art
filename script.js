@@ -16,12 +16,12 @@ function setPaletteColor() {
     elem.classList.add('color');
     colorPalette.appendChild(elem);
   }
-  const cor1 = Math.floor(Math.random() * 256);
-  const cor2 = Math.floor(Math.random() * 256);
-  const cor3 = Math.floor(Math.random() * 256);
-  const corRGB = 'rgb(' + cor1 + ', ' + cor2 + ', ' + cor3 + ')';
   const cores = ['black'];
   for (let index = 1; index < 4; index += 1) {
+    const cor1 = Math.floor(Math.random() * 256);
+    const cor2 = Math.floor(Math.random() * 256);
+    const cor3 = Math.floor(Math.random() * 256);
+    const corRGB = 'rgb(' + cor1 + ', ' + cor2 + ', ' + cor3 + ')';
     cores[index] = corRGB;
   }
   const array = document.getElementById('color-palette').childNodes;
@@ -70,41 +70,6 @@ function checkInvalidBoard(value) {
   const valueAux = value === '' ? alert('Board inválido!') : null;
   return valueAux;
 }
-
-function createRow(value) {
-  const board = getPixelBoard;
-  board.innetText = '';
-
-  for (let index = 0; index < value; index += 1) {
-    const newRow = document.createElement('div');
-    newRow.className = 'row';
-    board.appendChild(newRow);
-
-    for (let index2 = 0; index2 < value; index2 += 1) {
-      const pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      pixel.style.backgroundColor = 'white';
-      newRow.appendChild(pixel);
-      pixel.addEventListener('click', () => {
-        paintPixel(pixel);
-      });
-    }
-  }
-}
-
-function setSize(value) {
-  checkInvalidBoard(value);
-
-  let valueAux = value;
-  if (value > 50) valueAux = 50;
-  else if (value < 5) valueAux = 5;
-
-  createRow(valueAux);
-}
-
-buttonBoardSize.addEventListener('click', () => {
-  setSize(inputBoard.value);
-});
 
 // função para limpar a board dos pixels
 function clearBoard() {
