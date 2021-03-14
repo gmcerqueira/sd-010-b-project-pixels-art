@@ -5,12 +5,12 @@ body {
 }
 
 #color-palete {
-    
-    border-spacing: 1px;
-    
+    display: table-row;
+    border-spacing: 1px;    
 }
 
 #color {
-    display: inline-block;
+    display: table-cell;
     border: 1px solid #000;
+
 }
