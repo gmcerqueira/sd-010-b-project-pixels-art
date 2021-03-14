@@ -21,10 +21,6 @@ body {
   border: 1px solid rgb(0, 0, 0);
 }
 
-.color:first-child {
-  background-color: black;
-}
-
 #pixel-board {
   margin: 50px;
 }

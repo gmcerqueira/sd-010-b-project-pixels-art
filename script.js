@@ -14,7 +14,7 @@ function randomRGB() {
 
 // set colorItems, from colorsList, to color palette
 function buttonColor() {
-  // console.log(randomRGB(
+  colorItems[0].style.backgroundColor = 'black';
   for (let i = 1; i < colorItems.length; i++) {
     let rgb = randomRGB();
     colorItems[i].style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
@@ -95,7 +95,6 @@ function paintPixel() {
 function clearBoard() {
   clearButton.addEventListener('click', function () {
     const pixels = document.querySelectorAll('.pixel'); //gets all pixels
-    console.log(pixels);
     for (let i = 0; i < pixels.length; i++) {
       // pixels[i].style.backgroundColor = 'white';
       pixels[i].style = '';
