@@ -1,11 +1,9 @@
 // Inicia a página com a cor preta selecionada
-
 window.onload = function () {
   document.getElementById('black').classList.add('selected');   
   };
 
 // Quadrado de pixels 
-
 let div = document.createElement('div');
 document.body.appendChild(div);
 div.id = "numOfBlocks";
@@ -44,10 +42,8 @@ for (let index = 0; index < lineXcolumn; index += 1) {
 }
 
 // Alterna a atribuição da classe 'selected' à outras cores
-
 let ul = document.querySelector('ul');
 let li = document.querySelectorAll('li');
-
 li.forEach(event => {
   event.addEventListener('click', function() {
   ul.querySelector('.selected').classList.remove('selected');
@@ -56,7 +52,6 @@ li.forEach(event => {
 });
 
 // Inicia com a cor preta selecionada para pintar e possibilita escolher outras cores para pintar também
-
 bigSquare.addEventListener('click', painting);
 
 function painting(e) {
@@ -66,7 +61,6 @@ function painting(e) {
   }
 
 // Insere o botão 'Limpar' que apaga cores previamente preenchidas entre a paleta de cores e o quadrado de pixels
-
 let clearButton = document.createElement('button');
 div.insertBefore(clearButton, div.firstElementChild);
 clearButton.id = 'clear-board';
