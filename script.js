@@ -19,7 +19,7 @@ colunaPaleta[0].className = "selected color";
 colunaPaleta[1].style.backgroundColor = "green";
 colunaPaleta[2].style.backgroundColor = "blue";
 colunaPaleta[3].style.backgroundColor = "yellow";
-colunaPaleta[4].style.backgroundColor = "white";
+// colunaPaleta[4].style.backgroundColor = "white";
 
 // if (colunaPaleta[0].style.backgroundColor == "black"){
 //     colunaPaleta.className = "selected color";
