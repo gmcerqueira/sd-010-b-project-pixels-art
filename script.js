@@ -36,19 +36,27 @@ function createRow(rowNumber, colNumber) {
   }
 }
 
+function createBoard(boardSize) {
+  pixelBoard.innerHTML = '';
+  for (let i = 0; i < boardSize; i++) {
+    createRow(i, boardSize);
+  }
+}
+
 // creates the pixel board
-function createBoard() {
+function setBoardSize() {
   vqvButton.addEventListener('click', function () {
     const boardSize = document.querySelector('#board-size').value;
     if (boardSize === '') {
       alert('Board inválido!');
-    } else if (boardSize < 5 || boardSize > 50) {
-      alert('O valor inserido deve estar entre 5 e 50!');
+    } else if (boardSize < 5) {
+      createBoard(5);
+      alert('Valor mínimo do board: 5');
+    } else if (boardSize > 50) {
+      createBoard(50);
+      alert('Valor máximo do board: 50');
     } else {
-      pixelBoard.innerHTML = '';
-      for (let i = 0; i < boardSize; i++) {
-        createRow(i, boardSize);
-      }
+      createBoard(boardSize);
     }
   });
 }
@@ -95,7 +103,7 @@ function clearBoard() {
 
 window.onload = function () {
   buttonColor();
-  createBoard();
+  setBoardSize();
   setDefaultColor();
   changeColorPencil();
   paintPixel;
