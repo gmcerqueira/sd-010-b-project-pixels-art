@@ -1,25 +1,26 @@
+const colorPalete = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
 const pixelBlack = document.getElementById('black');
-const colors = document.getElementsByClassName('color');
-// const pixelRandomOne = document.getElementById('colorOne');
-// const pixelRandomTwo = document.getElementById('colorTwo');
-// const pixelRandomThree = document.getElementById('colorThree');
+// const colors = document.getElementsByClassName('color');
+const pixelRandomOne = document.getElementById('colorOne');
+const pixelRandomTwo = document.getElementById('colorTwo');
+const pixelRandomThree = document.getElementById('colorThree');
 
 function randomColor() {
-  let R = Math.floor(Math.random() * 255);
-  let G = Math.floor(Math.random() * 255);
-  let B = Math.floor(Math.random() * 255);
+  const R = Math.floor(Math.random() * 255);
+  const G = Math.floor(Math.random() * 255);
+  const B = Math.floor(Math.random() * 255);
   return `rgb(${R}, ${G}, ${B})`;
 }
 
-pixelBlack.style.backgroundColor = "black";
-for (let index = 1; index < 4; index += 1) {
-  colors[index].style.backgroundColor = randomColor();
-}
+// for (let index = 1; index < 4; index += 1) {
+//   colors[index].style.backgroundColor = randomColor();
+// }
 
-// pixelRandomOne.style.backgroundColor = randomColor();
-// pixelRandomTwo.style.backgroundColor = randomColor();
-// pixelRandomThree.style.backgroundColor = randomColor();
+pixelBlack.style.backgroundColor = 'black';
+pixelRandomOne.style.backgroundColor = randomColor();
+pixelRandomTwo.style.backgroundColor = randomColor();
+pixelRandomThree.style.backgroundColor = randomColor();
 
 function createBox() {
   for (let i = 0; i < 5; i += 1) {
@@ -34,4 +35,15 @@ function createBox() {
   }
 }
 
+function selectColor() {
+  colorPalete.addEventListener('click', function(event) {
+    pixelBlack.className = 'color';
+    pixelRandomOne.className = 'color';
+    pixelRandomTwo.className = 'color';
+    pixelRandomThree.className = 'color';
+    event.target.className = 'color selected';
+  })
+}
+
+selectColor();
 createBox();
