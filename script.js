@@ -15,7 +15,7 @@ function randomColor() {
     const cor2 = Math.floor(Math.random() * 256);
     const cor3 = Math.floor(Math.random() * 256);
     const corRGB = `rgb(${cor1} ${cor2} ${cor3})`;
-    cores[index] = corRGB; 
+    cores[index] = corRGB;
   }
 }
 
