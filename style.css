@@ -4,13 +4,25 @@ body {
 	text-align: center;
 }
 
-#color-palete {
-    display: table-row;
-    border-spacing: 1px;    
+section #color {
+    display: inline-block;
+
 }
 
-#color {
-    display: table-cell;
-    border: 1px solid #000;
+section #pixel-board {
+    display: table;
+    border-spacing: 1px;
+    background-color: #000;
+    border: 3px solid #000;
+}
 
+section .row {
+    display: table-row;
+}
+
+section .pixel {
+    display: table-cell;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
 }
