@@ -36,6 +36,7 @@ function createRow(rowNumber, colNumber) {
   }
 }
 
+// creates the pixel board
 function createBoard(boardSize) {
   pixelBoard.innerHTML = '';
   for (let i = 0; i < boardSize; i++) {
@@ -43,7 +44,7 @@ function createBoard(boardSize) {
   }
 }
 
-// creates the pixel board
+// sets the board to the size the user wants
 function setBoardSize() {
   vqvButton.addEventListener('click', function () {
     const boardSize = document.querySelector('#board-size').value;
@@ -103,6 +104,7 @@ function clearBoard() {
 
 window.onload = function () {
   buttonColor();
+  createBoard(5);
   setBoardSize();
   setDefaultColor();
   changeColorPencil();
