@@ -1,20 +1,23 @@
-// colorItems to set on color-palette section
-let colorsList = [
-  'rgb(0, 0, 0)',
-  'rgb(214, 40, 40)',
-  'rgb(247, 127, 0)',
-  'rgb(0, 48, 73)'
-];
 let colorItems = document.querySelectorAll('.color'); // color palette
 let pixelBoard = document.querySelector('#pixel-board'); // this gets the whole board
 let colorPalette = document.querySelector('#color-palette'); // get the color-palette section
 const clearButton = document.querySelector('#clear-board'); // gets Limpar button
-const vqvButton = document.querySelector('#generate-board');
+const vqvButton = document.querySelector('#generate-board'); // gets VQV button
+
+function randomRGB() {
+  r = Math.ceil(Math.random() * 256);
+  g = Math.ceil(Math.random() * 256);
+  b = Math.ceil(Math.random() * 256);
+
+  return [r, g, b];
+}
 
 // set colorItems, from colorsList, to color palette
 function buttonColor() {
-  for (let i = 0; i < colorItems.length; i++) {
-    colorItems[i].style.backgroundColor = colorsList[i];
+  // console.log(randomRGB(
+  for (let i = 1; i < colorItems.length; i++) {
+    let rgb = randomRGB();
+    colorItems[i].style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
   }
 }
 
@@ -99,8 +102,6 @@ function clearBoard() {
     }
   });
 }
-
-
 
 window.onload = function () {
   buttonColor();
