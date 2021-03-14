@@ -1,3 +1,33 @@
 .color-pallete {
-    list-style: none;
+  list-style: none;
+}
+#color-palette span:nth-child( 1 ) {
+  background-color: black;
+  width: 150px;
+  height: 150px;
+  border: solid 1px;
+  color: black;
+}
+#color-palette span:nth-child( 2 ) {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+  border: solid 1px;
+  color: red;
+}
+  
+#color-palette span:nth-child( 3 ) {
+  background-color: blue;
+  width: 150px;
+  height: 150px;
+  border: solid 1px;
+  color: blue;
+}
+  
+#color-palette span:nth-child( 4 ) {
+  background-color: green;
+  width: 150px;
+  height: 150px;
+  border: solid 1px;
+  color: green;
 }
