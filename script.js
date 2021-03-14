@@ -1,9 +1,7 @@
 window.onload = function () {
   randomizePalette();
 
-  generateBoard();
-
-  addPixel();
+  addPixel(5);
 
   changeClass();
 
@@ -15,29 +13,50 @@ window.onload = function () {
 }
 
 let palette = document.getElementsByClassName('color');
+let pixel = document.getElementsByClassName('pixel');
 let selectedColor = 1;
 
-function createPixel () {
-//seleciona a classe "corpo", 
-//x será um array pois pode haver mais de uma classe
-let pixelBoard = document.getElementById("pixel-board");
-let newPixel = document.createElement("div");
+//https://pt.stackoverflow.com/questions/187803/como-criar-div-com-javascript
 
-newPixel.setAttribute('class', 'pixel color5');
-
-pixelBoard.appendChild(newPixel)
+function addPixel (size) {
+  for (let indice = 0; indice < size; indice++) {
+    createLine();
+    for (let index = 0; index < size; index++) {
+      populingLines(indice);
+    }
+  }
+  pixelBoardSize (size);
 }
 
-function addPixel () {
-for (let indice = 0; indice < 25; indice++) {
-  createPixel();
+function pixelBoardSize (size) {
+  let root = document.documentElement;
+  let sizeTotal = (size * 40) + (size * 2)
+
+  root.style.setProperty('--sizeTotal', `${sizeTotal}px`);
 }
+
+function populingLines (index) {
+  let pixelBoard = document.getElementsByClassName("line");
+  let newPixel = document.createElement("div");
+
+  newPixel.setAttribute('class', 'pixel color5');
+
+  pixelBoard[index].appendChild(newPixel);
+}
+
+function createLine () {
+  let pixelBoard = document.getElementById("pixel-board");
+  let line = document.createElement("div");
+
+  line.setAttribute('class', 'line');
+
+  pixelBoard.appendChild(line);
 }
 
 function changeClass () {
-if (palette[0].addEventListener('click', function () {
+  palette[0].addEventListener('click', function () {
     changeColor(palette[0]);
-
+    
     //addClassName
     palette[0].className = "color color1 selected";
     selectedColor = 1;
@@ -46,67 +65,55 @@ if (palette[0].addEventListener('click', function () {
     palette[2].className = "color color3";
     palette[3].className = "color color4";
   })
-) {
-  console.log('1 if');
-}
 
-if (palette[1].addEventListener('click', function () {
-  changeColor(palette[1]);
+  palette[1].addEventListener('click', function () {
+    changeColor(palette[1]);
 
-  //addClassName
-  palette[1].className = "color color2 selected";
-  selectedColor = 2;
-  //resetClassName
-  palette[0].className = "color color1";
-  palette[2].className = "color color3";
-  palette[3].className = "color color4";
+    //addClassName
+    palette[1].className = "color color2 selected";
+    selectedColor = 2;
+    //resetClassName
+    palette[0].className = "color color1";
+    palette[2].className = "color color3";
+    palette[3].className = "color color4";
   })
-) {
-  console.log('2 if');
-}
 
-if (palette[2].addEventListener('click', function () {
-  changeColor(palette[2]);
+  palette[2].addEventListener('click', function () {
+    changeColor(palette[2]);
 
-  //addClassName
-  palette[2].className = "color color3 selected";
-  selectedColor = 3;
-  //resetClassName
-  palette[0].className = "color color1";
-  palette[1].className = "color color2";
-  palette[3].className = "color color4";
+    //addClassName
+    palette[2].className = "color color3 selected";
+    selectedColor = 3;
+    //resetClassName
+    palette[0].className = "color color1";
+    palette[1].className = "color color2";
+    palette[3].className = "color color4";
   })
-) {
-  console.log('3 if');
-}
 
-if (palette[3].addEventListener('click', function () {
-  changeColor(palette[3]);
-  
-  //addClassName
-  palette[3].className = "color color4 selected";
-  selectedColor = 4;
-  //resetClassName
-  palette[0].className = "color color1";
-  palette[2].className = "color color3";
-  palette[1].className = "color color2";
+  palette[3].addEventListener('click', function () {
+    changeColor(palette[3]);
+    
+    //addClassName
+    palette[3].className = "color color4 selected";
+    selectedColor = 4;
+    //resetClassName
+    palette[0].className = "color color1";
+    palette[2].className = "color color3";
+    palette[1].className = "color color2";
   })
-) {
-  console.log('4 if');
-}
 }
 
 function changeColor (palette) {
   window.getComputedStyle(palette).getPropertyValue("background-color");
+  paintPixel () 
 }
 
 function paintPixel () {
-  let pixel = document.getElementsByClassName('pixel');
-
-  for (let index = 0; index < 25; index ++) {
+  for (let index = 0; index < pixel.length; index ++) {
     pixel[index].addEventListener('click', function () {
       switch (selectedColor) {
         case 1:
+          console.log(pixel.length)
           pixel[index].className = "pixel color1"
           break;
         
@@ -134,21 +141,8 @@ function clearBoard () {
   let clearButton = document.getElementById('clear-board');
 
   clearButton.addEventListener('click', function () {
-    for (let indice = 0; indice < 25; indice++) {
-      let pixel = document.getElementsByClassName('pixel');
+    for (let indice = 0; indice < pixel.length; indice++) {
 
-      pixel[indice].setAttribute('class', 'pixel color5');
-    }
-  })
-}
-
-function generateBoard () {
-  let generateButton = document.getElementById('generate-board');
-
-  generateButton.addEventListener('click', function () {
-    for (let indice = 0; indice < 25; indice++) {
-      let pixel = document.getElementsByClassName('pixel');
-      
       pixel[indice].setAttribute('class', 'pixel color5');
     }
   })
@@ -164,21 +158,18 @@ function defineSize () {
     if (sizeValue == "") {
       alert('Board inválido!')
     } else if (sizeValue < 5) {
+      removePixels();
       size.value = 5;
-      sizingPixel(size.value);
+      addPixel(size.value);
     } else if (sizeValue > 50) {
+      removePixels()
       size.value = 50;
-      sizingPixel(size.value);
-    } else if ((sizeValue > 5) && (sizeValue < 50)){
-      sizingPixel(sizeValue)
+      addPixel(size.value);
+    } else if ((sizeValue >= 5) && (sizeValue <= 50)){
+      removePixels()
+      addPixel(sizeValue)
     }
   })
-}
-
-function sizingPixel (size) {
-  let root = document.documentElement;
-
-  root.style.setProperty('--sizePixel', `${size}px`);
 }
 
 function ramdomizeColor () {
@@ -198,4 +189,10 @@ function randomizePalette () {
   root.style.setProperty('--color2', ramdomizeColor());
   root.style.setProperty('--color3', ramdomizeColor());
   root.style.setProperty('--color4', ramdomizeColor());
+}
+
+function removePixels() {
+  let remove = document.getElementById('pixel-board');
+
+  remove.innerText = "";
 }

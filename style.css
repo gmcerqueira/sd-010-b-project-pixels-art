@@ -6,6 +6,8 @@
   --color5: #fff;
 
   --sizePixel: 40px;
+  --floatPixel: left;
+  --sizeTotal: 210px;
 }
 
 #color-palette {
@@ -48,13 +50,18 @@
   display: block;
   float: left;
   position: absolute;
-  width: 210px;
+  width: var(--sizeTotal);
+  padding: 16px;
 }
 
 .pixel {
   border: solid black 1px;
   width: var(--sizePixel);
   height: var(--sizePixel);
-  display: block;
+  float: var(--floatPixel);
+}
+
+.line {
+  height: var(--sizePixel);
   float: left;
 }
