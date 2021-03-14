@@ -1,11 +1,21 @@
 // variables
 const getPixelBoard = document.getElementById('pixel-board');
+const cores = ['black'];
 
 // função para criar paletas de cores
 // classList: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 // forEach: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 // childNodes: https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes
 // Arrow Functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+function randomColor() {
+for (let index = 1; index < 4; index += 1) {
+  const cor1 = Math.floor(Math.random() * 256);
+  const cor2 = Math.floor(Math.random() * 256);
+  const cor3 = Math.floor(Math.random() * 256);
+  const corRGB = `rgb(${cor1} ${cor2} ${cor3})`;
+  cores[index] = corRGB;
+}}
 
 function setPaletteColor() {
   const colorPalette = document.querySelector('#color-palette');
@@ -14,14 +24,7 @@ function setPaletteColor() {
     elem.classList.add('color');
     colorPalette.appendChild(elem);
   }
-  const cores = ['black'];
-  for (let index = 1; index < 4; index += 1) {
-    const cor1 = Math.floor(Math.random() * 256);
-    const cor2 = Math.floor(Math.random() * 256);
-    const cor3 = Math.floor(Math.random() * 256);
-    const corRGB = `rgb(${cor1} ${cor2} ${cor3})`;
-    cores[index] = corRGB;
-  }
+  randomColor();
   const array = document.getElementById('color-palette').childNodes;
   array.forEach((aux, index) => {
     const elem = aux;
