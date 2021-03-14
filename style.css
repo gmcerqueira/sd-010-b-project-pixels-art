@@ -19,7 +19,7 @@ body {
 }
 #pixel-board {
   margin-top: 20px;
-  margin-left: 30%;
+  margin-left: 20%;
 }
 .pixel {
   width: 40px;
@@ -36,7 +36,6 @@ body {
   background-color: cyan;
 }
 #board-size {
-  width: 100px;
   border: 2px solid gray;
   margin-top: 10px;
   margin-left: 20px;
