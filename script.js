@@ -1,6 +1,4 @@
 // variables
-const inputBoard = document.querySelector('#board-size');
-const buttonBoardSize = document.querySelector('#generate-board');
 const getPixelBoard = document.getElementById('pixel-board');
 
 // função para criar paletas de cores
@@ -21,7 +19,7 @@ function setPaletteColor() {
     const cor1 = Math.floor(Math.random() * 256);
     const cor2 = Math.floor(Math.random() * 256);
     const cor3 = Math.floor(Math.random() * 256);
-    const corRGB = 'rgb(' + cor1 + ', ' + cor2 + ', ' + cor3 + ')';
+    const corRGB = `rgb(${cor1} ${cor2} ${cor3})`;
     cores[index] = corRGB;
   }
   const array = document.getElementById('color-palette').childNodes;
@@ -63,12 +61,6 @@ function paintPixel(event) {
     const colorToPaint = sessionStorage.color;
     elem.style.backgroundColor = colorToPaint;
   }
-}
-
-// função para criar board personalizada (em construção)
-function checkInvalidBoard(value) {
-  const valueAux = value === '' ? alert('Board inválido!') : null;
-  return valueAux;
 }
 
 // função para limpar a board dos pixels
