@@ -37,7 +37,6 @@ colunaPaleta[4].style.backgroundColor = "white";
 
 let maeBotaoAdd = document.getElementById("botao-add");
 let input = document.createElement("input");
-input.type = "number";
 let botaoAdd = document.createElement("button");
 botaoAdd.id = "btn-add";
 botaoAdd.innerText = "#VQV";
@@ -72,19 +71,12 @@ for(j = 0;j < 5;j += 1){
     // console.log("xablis")
     // let pegaValorInput = document.getElementsByTagName("input");
     
-    let inputInicial = input.value
-
-    if ( input.value < 5){
-      inputInicial = 5;
-    } else if (input.value > 50){
-      inputInicial = 50;
-    }
-    for(i = 0;i < inputInicial;i += 1){
+    for(i = 0;i < input.value;i += 1){
       console.log("xablis")
       let linhaTabela = document.createElement("tr");
       linhaTabela.className = "linha descendo";
   
-    for(j = 0;j < inputInicial;j += 1){
+    for(j = 0;j < input.value;j += 1){
       let criaColuna2 = document.createElement("td");
       criaColuna2.className = "pixel";
       linhaTabela.appendChild(criaColuna2);
@@ -92,10 +84,28 @@ for(j = 0;j < 5;j += 1){
       }
     }
   })
-
- 
-
   
+      
+//   let inputInicial = input.value
+
+//   if ( input.value < 5){
+//     inputInicial = 5;
+//   } else if (input.value > 50){
+//     inputInicial = 50;
+//   }
+//   for(i = 0;i < inputInicial;i += 1){
+//     console.log("xablis")
+//     let linhaTabela = document.createElement("tr");
+//     linhaTabela.className = "linha descendo";
+
+//   for(j = 0;j < inputInicial;j += 1){
+//     let criaColuna2 = document.createElement("td");
+//     criaColuna2.className = "pixel";
+//     linhaTabela.appendChild(criaColuna2);
+//     quadrado.appendChild(linhaTabela);
+//     }
+//   }
+// })
 
   // function clickPixel(eventoDeOrigem) {
   //   aux = eventoDeOrigem.target;
