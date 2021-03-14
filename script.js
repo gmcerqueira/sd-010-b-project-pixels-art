@@ -37,8 +37,10 @@ colunaPaleta[4].style.backgroundColor = "white";
 
 let maeBotaoAdd = document.getElementById("botao-add");
 let input = document.createElement("input");
+input.id = "board-size";
+input.type = "number";
 let botaoAdd = document.createElement("button");
-botaoAdd.id = "btn-add";
+botaoAdd.id = "generate-board";
 botaoAdd.innerText = "#VQV";
 maeBotaoAdd.appendChild(input);
 maeBotaoAdd.appendChild(botaoAdd);
@@ -64,49 +66,37 @@ for(j = 0;j < 5;j += 1){
 
 //quantidade de quadrado pelo input
 
-  let pegaBotao = document.getElementById("btn-add");
+  let pegaBotao = document.getElementById("generate-board");
   pegaBotao.addEventListener("click", function () { 
     const corDivPixel = document.querySelector('#pixel-board');
     corDivPixel.innerHTML = '';
     // console.log("xablis")
     // let pegaValorInput = document.getElementsByTagName("input");
-    
-    for(i = 0;i < input.value;i += 1){
+    let inputInicial = input.value
+
+    if(input.value == 0){
+      alert("Board inválido!"); 
+    } else if ( input.value < 5){
+      console.log("pita")
+      inputInicial = 5;
+    } else if (input.value > 50){
+      inputInicial = 50;
+    } 
+
+    for(i = 0;i < inputInicial;i += 1){
       console.log("xablis")
       let linhaTabela = document.createElement("tr");
       linhaTabela.className = "linha descendo";
-  
-    for(j = 0;j < input.value;j += 1){
+
+    for(j = 0;j < inputInicial;j += 1){
       let criaColuna2 = document.createElement("td");
       criaColuna2.className = "pixel";
       linhaTabela.appendChild(criaColuna2);
       quadrado.appendChild(linhaTabela);
       }
     }
+
   })
-  
-      
-//   let inputInicial = input.value
-
-//   if ( input.value < 5){
-//     inputInicial = 5;
-//   } else if (input.value > 50){
-//     inputInicial = 50;
-//   }
-//   for(i = 0;i < inputInicial;i += 1){
-//     console.log("xablis")
-//     let linhaTabela = document.createElement("tr");
-//     linhaTabela.className = "linha descendo";
-
-//   for(j = 0;j < inputInicial;j += 1){
-//     let criaColuna2 = document.createElement("td");
-//     criaColuna2.className = "pixel";
-//     linhaTabela.appendChild(criaColuna2);
-//     quadrado.appendChild(linhaTabela);
-//     }
-//   }
-// })
-
   // function clickPixel(eventoDeOrigem) {
   //   aux = eventoDeOrigem.target;
   //   if (corPixel.className === 'color') {
@@ -120,6 +110,24 @@ for(j = 0;j < 5;j += 1){
 
 
 //////////////////////////////////////////////////////////////////////////
+// for (let index = 0; index < colunaPaleta.length; index += 1){
+//     colunaPaleta[index].addEventListener("click", function (){
+//         colunaPaleta[index].style.backgroundColor = "blue";
+//     });
+// }
+
+
+// function addClassToPaletteBox() {
+//     let pegaPaleta = document.getElementsByClassName("color"); 
+//     for (let index = 0; index < pegaPaleta.length; index += 1){
+//         // pegaPaleta[index].classList.add(`color${index + 1}`);
+
+//         if (getComputedStyle(pegaPaleta[index]).backgroundColor === 'rgb(0, 0, 0)') {
+//             pegaPaleta[index].classList.add('selected');
+//           }
+//     }
+// }
+
 // adiciona e remove classe
 function clickPaletteBox(event) {
     const pegaSelected = document.querySelector('.selected');
@@ -158,7 +166,7 @@ window.onload =
       }) 
     }
   }
-  const botaoo = document.getElementById("btn-add");
+  const botaoo = document.getElementById("generate-board");
   botaoo.addEventListener('click', pinta);
 
 
