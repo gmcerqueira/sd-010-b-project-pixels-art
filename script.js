@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 const colorPalette = document.querySelectorAll('#color-palette li');
 
 // Gerar corer aleatórias
@@ -114,13 +115,20 @@ function userSetSize() {
   // eslint-disable-next-line max-lines-per-function
   generateBoardButton.addEventListener('click', (event) => {
     deleteBoard();
-    const inputValue = document.getElementById('board-size').value;
+    let inputValue = document.getElementById('board-size').value;
     const table = document.getElementById('pixel-board');
 
     for (let i = 0; i < inputValue; i += 1) {
       const createTr = document.createElement('tr');
 
       table.appendChild(createTr);
+
+      if (inputValue < 5) {
+        inputValue = 5;
+      }
+      if (inputValue > 50) {
+        inputValue = 50;
+      }
     }
 
     for (let i = 0; i < inputValue; i += 1) {
@@ -135,10 +143,12 @@ function userSetSize() {
     event.preventDefault();
     selectedPixel();
     clearPixels();
-    
+
     if (inputValue === '') {
       return alert('Board inválido!');
     }
+
+    console.log(inputValue);
   });
 }
 
