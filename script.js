@@ -73,7 +73,7 @@ for(j = 0;j < 5;j += 1){
     // let pegaValorInput = document.getElementsByTagName("input");
     let inputInicial = input.value
 
-    if(input.value == 0){
+    if(input.value <= 0){
       alert("Board inválido!"); 
     } else if ( input.value < 5){
       console.log("pita")
