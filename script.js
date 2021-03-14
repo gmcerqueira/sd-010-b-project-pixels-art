@@ -37,3 +37,15 @@ function pintar() {
   }
 }
 pintar();
+
+// requisito 9
+function limparQuadro() {
+  const botao = document.getElementById('clear-board');
+  botao.addEventListener('click', function limpar(event) {
+    const quadroPixels = document.getElementsByClassName('pixel');
+    for(let boardIndex = 0; boardIndex < quadroPixels.length; boardIndex += 1){
+      quadroPixels[boardIndex].style.backgroundColor = 'white';
+    }
+  });
+}
+limparQuadro();
