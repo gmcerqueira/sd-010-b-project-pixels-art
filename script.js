@@ -52,7 +52,7 @@ maeTabela2.appendChild(quadrado);
 // let pegaValorInput = document.getElementsByTagName("input");
 
 //quantidade de quadrado
-/* for(i = 0;i < 5;i += 1){
+for(i = 0;i < 5;i += 1){
     let linhaTabela = document.createElement("tr");
     linhaTabela.className = "linha descendo";
 
@@ -62,10 +62,9 @@ for(j = 0;j < 5;j += 1){
     linhaTabela.appendChild(criaColuna2);
     quadrado.appendChild(linhaTabela);
  }
-}  */
+}
 
 //quantidade de quadrado pelo input
-
   let pegaBotao = document.getElementById("generate-board");
   pegaBotao.addEventListener("click", function () { 
     const corDivPixel = document.querySelector('#pixel-board');
@@ -166,6 +165,7 @@ window.onload =
       }) 
     }
   }
+  pinta();
   const botaoo = document.getElementById("generate-board");
   botaoo.addEventListener('click', pinta);
 
