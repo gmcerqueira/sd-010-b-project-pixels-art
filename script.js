@@ -10,3 +10,12 @@ for (let index = 0; index < colorsList.length; index += 1) {
 
   palletColors.appendChild(palletColorItem);
 }
+
+const pixelBoard = document.querySelector('#pixel-board')
+
+for (let index = 0; index < 25; index += 1) {
+  const pixel = document.createElement('span');
+  pixel.classList.add('pixel');
+
+  pixelBoard.appendChild(pixel);
+}
