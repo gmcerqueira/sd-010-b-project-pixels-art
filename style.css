@@ -4,15 +4,35 @@
   height: 50px;
   width: 50px;
 }
+
 #color-one {
   background-color: black;
 }
+
 #color-two {
   background-color: red;
 }
+
 #color-tree {
   background-color: cyan;
 }
+
 #color-four {
   background-color: magenta;
 }
+
+#pixel-board {
+  background-color: white;
+  display: inline-block;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: white;
+}
+
+
+
