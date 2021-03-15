@@ -5,11 +5,9 @@
   text-align: center;
 }
 
-.table {
-  border: 0;
-  border-spacing: 0;
+/* .table {
   border-collapse: collapse;
-}
+} */
 
 #title {
   color: black;
@@ -29,14 +27,14 @@
 
 #pixel-board {
   margin-top: 10px;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   margin-bottom: 10px;
 }
 
-#pixel-board td {
+/* #pixel-board td {
   padding: 0;
   margin: 0;
-}
+} */
 
 .pixel {
   border: solid black;
