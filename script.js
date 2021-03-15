@@ -3,10 +3,9 @@ const generateBoard = document.getElementById('generate-board');
 const pixelBoard = document.getElementById('pixel-board');
 const boardSize = document.getElementById('board-size');
 const clearButton = document.getElementById('clear-board');
-const pixelClass = document.querySelectorAll('.pixel');
 
 function randomColors() {
-  for (let index = 1; index < colors.length; index += 1) {
+  for (let index = 0; index < colors.length; index += 1) {
     const random = `rgb(${Math.random() * 254},${Math.random() * 254},${Math.random() * 254})`;
     colors[index].style.background = random;
   }
@@ -69,4 +68,4 @@ window.onload = function init() {
   pixelsClass.forEach((px) => px.addEventListener('click', (e) => newPixel(e.target)));
   generateBoard.addEventListener('click', generateNewBoard);
   clearButton.addEventListener('click', clearBoard);
-}
+};
