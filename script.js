@@ -31,8 +31,11 @@ function testInput() {
     document.getElementById('pixel-board').innerHTML = ''
     tableConstruction(50);
   }
-  if (inputText.value <= 0) {
+  if (inputText.value === '') {
     alert('Board inválido!');
+  }
+  if (inputText.value < 0) {
+    inputText.value = '';
   }
 }
 inputButton.addEventListener('click', testInput);
