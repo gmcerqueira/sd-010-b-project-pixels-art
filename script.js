@@ -11,7 +11,6 @@ for (let index = 0; index < colorsList.length; index += 1) {
   if (index === 0) {
     palletColorItem.classList.add('selected');
     ativo = 0;
-    cor = 0;
   }
   palletColorItem.style.background = color;
 
@@ -41,7 +40,7 @@ for (
   });
 }
 
-let quadradosPintar = document.getElementsByClassName('pixel');
+const quadradosPintar = document.getElementsByClassName('pixel');
 
 for (
   let indexPixels = 0;
@@ -51,4 +50,14 @@ for (
   quadradosPintar[indexPixels].addEventListener('click', function () {
     quadradosPintar[indexPixels].style.background = colorsList[ativo];
   });
+}
+
+const clearBoard = document.getElementById('clear-board');
+
+clearBoard.addEventListener('click', limpar);
+
+function limpar() {
+  for (let indexClear = 0; indexClear < quadradosPintar.length; indexClear++) {
+    quadradosPintar[indexClear].style.background = 'white';
+  }
 }
