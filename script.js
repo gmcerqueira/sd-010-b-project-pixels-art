@@ -10,15 +10,16 @@ for (let i = 0; i < 4; i += 1) {
 // Cores da paleta
 const cores = document.querySelectorAll('.color');
 
-// função que gera cor rgb aleatória 
+// função que gera cor rgb aleatória
 // https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
 function geraCorAleatoria(opacidade = 1) { // por padrão opacidade é igual a 1 para não ter opacidade
-  let r = parseInt(Math.random() * 255); // gero um numero aleatório entre zero e um multiplico por 255 
-  let g = parseInt(Math.random() * 255);
-  let b = parseInt(Math.random() * 255);
+  const r = parseInt(Math.random() * 255); // gero um numero aleatório entre zero e um multiplico por 255
+  const g = parseInt(Math.random() * 255);
+  const b = parseInt(Math.random() * 255);
   return `rgba(${r}, ${g}, ${b}, ${opacidade})`;
 }
 
+// cor preta padrão
 const corPadrao = cores[0];
 corPadrao.style.backgroundColor = 'black';
 corPadrao.className = 'color selected';
@@ -27,9 +28,9 @@ sessionStorage.setItem('color', corPadrao.style.backgroundColor);
 const cor1 = cores[1];
 cor1.style.backgroundColor = geraCorAleatoria(opacidade = 1);
 const cor2 = cores[2];
-cor2.style.backgroundColor = geraCorAleatoria(opacidade = 1)
+cor2.style.backgroundColor = geraCorAleatoria(opacidade = 1);
 const cor3 = cores[3];
-cor3.style.backgroundColor = geraCorAleatoria(opacidade = 1)
+cor3.style.backgroundColor = geraCorAleatoria(opacidade = 1);
 
 // Selecionando a cor da paleta
 for (let cor = 0; cor < cores.length; cor += 1) {
