@@ -1,7 +1,24 @@
 .color {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    border: 1px solid;
-    margin-right: 5px;
-  }
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid;
+  margin-right: 5px;
+}
+
+#pixel-board {
+  display: table;
+  padding: 5px;
+}
+
+.tableRow {
+  display: table-row;
+  padding: 5px;
+}
+
+.pixel {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  border: black solid 1px;
+}
