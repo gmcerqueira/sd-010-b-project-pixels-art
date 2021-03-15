@@ -2,7 +2,7 @@ const containerPalette = document.querySelector('#color-palette');
 const containerQuadro = document.querySelector('#pixel-board');
 const colorsPalette = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
-const botao = document.querySelector('#clear-board');
+const botaoLimparCores = document.querySelector('#clear-board');
 const textoInput = document.querySelector('#board-size');
 const botaoGerarPixels = document.querySelector('#generate-board');
 let quadroPixelInicial = 5;
@@ -16,8 +16,7 @@ function createPalette() {
       selectors.className += ' selected';
     }
   }
-  return containerPalette;
-}
+};
 
 createPalette();
 
@@ -32,18 +31,21 @@ function createPixels() {
       line.appendChild(column);
     }
   }
-  return containerQuadro;
-}
+};
 
 createPixels();
 
-for (let index = 0; index < colorsPalette.length; index += 1) {
-  colorsPalette[index].addEventListener('click', function () {
-    let classSelected = document.getElementsByClassName('selected')[0];
-    classSelected.classList.remove('selected');
-    event.target.classList.add('selected');
-  });
-}
+function adicionaERemoveClasse() {
+  for (let index = 0; index < colorsPalette.length; index += 1) {
+    colorsPalette[index].addEventListener('click', function () {
+      let classSelected = document.getElementsByClassName('selected')[0];
+      classSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  }
+};
+
+adicionaERemoveClasse();
 
 function pintaPixels() {
   for (let index = 0; index < pixels.length; index += 1) {
@@ -52,39 +54,39 @@ function pintaPixels() {
       pixels[index].style.backgroundColor = corNova;
     })
   }
-}
+};
+
 pintaPixels();
 
-botao.addEventListener('click', function () {
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = 'white';
-  }
-})
+function limparCores() {
+  botaoLimparCores.addEventListener('click', function () {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  })
+};
+
+limparCores();
 
 
 function verificaBoard() {
-  if (textoInput.value == '') {
+  if (textoInput.value < 5) {
     alert('Board inválido!');
   } else {
-    limpaBoard();
+    containerQuadro.innerHTML = '';
   }
-}
-
-function limpaBoard() {
-  containerQuadro.innerHTML = '';
-}
-
-function criaBoard() {
-  quadroPixelInicial = textoInput.value;
-}
+};
 
 function verificaInput() {
   if (textoInput.value < 5) {
     quadroPixelInicial = 5;
   } else if (textoInput.value > 50) {
     quadroPixelInicial = 50;
+  } else {
+    quadroPixelInicial = textoInput.value;
+    createPixels();
   }
-}
+};
 
 
 function corAleatoria() {
@@ -95,13 +97,12 @@ function corAleatoria() {
   document.getElementsByClassName('color')[1].style.backgroundColor = `rgb(${g},${b},${r})`;
   document.getElementsByClassName('color')[2].style.backgroundColor = `rgb(${b},${g},${r})`;
   document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
-}
+};
 
 corAleatoria();
 
 botaoGerarPixels.addEventListener('click', verificaBoard);
-botaoGerarPixels.addEventListener('click', criaBoard);
 botaoGerarPixels.addEventListener('click', verificaInput);
-botaoGerarPixels.addEventListener('click', createPixels);
 botaoGerarPixels.addEventListener('click', pintaPixels);
+
 
