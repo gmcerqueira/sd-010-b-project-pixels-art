@@ -1,0 +1,13 @@
+table, tr, td {
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+
+/* #color-palette {
+
+} */
+
+/* .color {
+  width: 25px;
+  height: 25px;
+} */
