@@ -1,7 +1,6 @@
 const colorsList = ['black', 'red', 'green', 'blue'];
 
 let ativo;
-
 const palletColors = document.querySelector('#color-palette');
 
 for (let index = 0; index < colorsList.length; index += 1) {
@@ -12,6 +11,7 @@ for (let index = 0; index < colorsList.length; index += 1) {
   if (index === 0) {
     palletColorItem.classList.add('selected');
     ativo = 0;
+    cor = 0;
   }
   palletColorItem.style.background = color;
 
@@ -27,12 +27,28 @@ for (let index = 0; index < 25; index += 1) {
   pixelBoard.appendChild(pixel);
 }
 
-let quadradosCores = document.getElementsByClassName('color');
+const quadradosCores = document.getElementsByClassName('color');
 
-for (let indexEvent = 0; indexEvent < quadradosCores.length; indexEvent += 1) {
-  quadradosCores[indexEvent].addEventListener('click', function (evento) {
+for (
+  let indexPallet = 0;
+  indexPallet < quadradosCores.length;
+  indexPallet += 1
+) {
+  quadradosCores[indexPallet].addEventListener('click', function () {
     quadradosCores[ativo].classList.remove('selected');
-    quadradosCores[indexEvent].classList.add('selected');
-    ativo = indexEvent;
+    quadradosCores[indexPallet].classList.add('selected');
+    ativo = indexPallet;
+  });
+}
+
+let quadradosPintar = document.getElementsByClassName('pixel');
+
+for (
+  let indexPixels = 0;
+  indexPixels < quadradosPintar.length;
+  indexPixels += 1
+) {
+  quadradosPintar[indexPixels].addEventListener('click', function () {
+    quadradosPintar[indexPixels].style.background = colorsList[ativo];
   });
 }
