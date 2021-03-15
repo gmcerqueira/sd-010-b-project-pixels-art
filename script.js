@@ -35,7 +35,9 @@ function testInput() {
     alert('Board inválido!');
   }
   if (inputText.value < 0) {
-    inputText.value = '';
+    document.getElementById('pixel-board').innerHTML = ''
+    inputText.value = Math.min(5,50);
+    tableConstruction(inputText.value);
   }
 }
 inputButton.addEventListener('click', testInput);
