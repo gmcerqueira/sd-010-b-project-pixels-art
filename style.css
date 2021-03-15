@@ -26,3 +26,8 @@
   background-color: white;
   display: table-cell;
 }
+
+#board-size {
+  border: black solid 1px;
+  width: 65px;
+}
