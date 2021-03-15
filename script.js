@@ -70,7 +70,7 @@ limparCores();
 
 
 function verificaBoard() {
-  if (textoInput.value < 5) {
+  if (textoInput.value < 5 || textoInput.value > 50) {
     alert('Board inválido!');
   } else {
     containerQuadro.innerHTML = '';
