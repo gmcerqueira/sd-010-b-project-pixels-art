@@ -70,11 +70,9 @@ limparCores();
 
 
 function verificaBoard() {
-  if (textoInput.value < 5 || textoInput.value > 50) {
+  if (textoInput.value == '') {
     alert('Board inválido!');
-  } else {
-    containerQuadro.innerHTML = '';
-  }
+  } 
 };
 
 function verificaInput() {
@@ -83,11 +81,11 @@ function verificaInput() {
   } else if (textoInput.value > 50) {
     quadroPixelInicial = 50;
   } else {
+    containerQuadro.innerHTML = '';
     quadroPixelInicial = textoInput.value;
     createPixels();
   }
 };
-
 
 function corAleatoria() {
   let r = Math.floor(Math.random() * 255);
