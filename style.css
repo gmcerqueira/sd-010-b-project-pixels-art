@@ -3,11 +3,16 @@ table, tr, td {
   border-collapse: collapse;
 }
 
-/* #color-palette {
+#color-palette {
+  margin-bottom: 5px;
+} 
 
-} */
-
-/* .color {
+.color { 
   width: 25px;
   height: 25px;
-} */
+} 
+
+.pixel {
+  width: 25px;
+  height: 25px;
+}
