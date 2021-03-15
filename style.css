@@ -14,12 +14,15 @@ body {
   justify-content: center;
 }
 
+
 .color {
   width: 40px;
   height: 40px;
   margin: 2px;
   border: 1px solid black;
   cursor: pointer;
+  border-radius: 100%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 #pixel-board {
@@ -43,5 +46,13 @@ body {
 }
 
 #clear-board{
+  cursor: pointer;
+}
+
+button{
+  border: 0;
+  background-color: #206B53;
+  width: 60px;
+  height: 20px;
   cursor: pointer;
 }
