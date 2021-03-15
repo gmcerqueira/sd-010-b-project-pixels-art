@@ -24,7 +24,7 @@ const divPixelBoard = document.getElementById('pixel-board');
 let divPixelLine;
 let divPixelCol;
 
-function pixelMatriz(nl) {
+function matriz(nl) {
   for (let i = 1; i <= nl; i += 1) {
     divPixelLine = document.createElement('div');
     divPixelLine.className = 'tab';
@@ -37,7 +37,7 @@ function pixelMatriz(nl) {
     }
   }
 }
-pixelMatriz(5);
+matriz(5);
 
 const paletteLine = document.getElementById('palette-line');
 const color = document.getElementsByClassName('color');
