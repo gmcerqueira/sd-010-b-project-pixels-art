@@ -4,37 +4,25 @@ let paleta = document.createElement("table");
 paleta.id = "color-palette";
 maeTabela1.appendChild(paleta);
 
-for(index = 0; index < 4; index += 1){
+for(index = 0; index < 5; index += 1){
     let criaColuna = document.createElement("td");
     criaColuna.className = "color";
     paleta.appendChild(criaColuna);
 
 }
+
 // Edita tabela 1
-// criaColuna.style.backgroundColor = "black";
 let colunaPaleta = document.getElementsByClassName("color");
-// letcolunaPaleta = document.getElementsByClassName("color");
 colunaPaleta[0].style.backgroundColor = "black";
 colunaPaleta[0].className = "selected color";
 colunaPaleta[1].style.backgroundColor = "green";
 colunaPaleta[2].style.backgroundColor = "blue";
 colunaPaleta[3].style.backgroundColor = "yellow";
-// colunaPaleta[4].style.backgroundColor = "white";
-
-// if (colunaPaleta[0].style.backgroundColor == "black"){
-//     colunaPaleta.className = "selected color";
-// }
+colunaPaleta[4].style.backgroundColor = "white";
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-// colunaPaleta2 = document.getElementsByClassName("pixel");
-// colunaPaleta2[0].style.backgroundColor = "white";
-// colunaPaleta2[1].style.backgroundColor = "white";
-// colunaPaleta2[2].style.backgroundColor = "white";
-// colunaPaleta2[3].style.backgroundColor = "white";
-
 // Tabela 2
-
 let maeBotaoAdd = document.getElementById("botao-add");
 let input = document.createElement("input");
 input.id = "board-size";
@@ -51,7 +39,7 @@ let maeTabela2 = document.getElementById("tabela2");
 let quadrado = document.createElement("table");
 quadrado.id = "pixel-board";
 maeTabela2.appendChild(quadrado);
-// let pegaValorInput = document.getElementsByTagName("input");
+
 
 //quantidade de quadrado
 for(i = 0;i < 5;i += 1){
@@ -71,8 +59,7 @@ for(j = 0;j < 5;j += 1){
   pegaBotao.addEventListener("click", function () { 
     const corDivPixel = document.querySelector('#pixel-board');
     corDivPixel.innerHTML = '';
-    // console.log("xablis")
-    // let pegaValorInput = document.getElementsByTagName("input");
+    
     let inputInicial = input.value
 
     if(input.value <= 0){
@@ -98,36 +85,10 @@ for(j = 0;j < 5;j += 1){
     }
 
   })
-  // function clickPixel(eventoDeOrigem) {
-  //   aux = eventoDeOrigem.target;
-  //   if (corPixel.className === 'color') {
-  //     aux.style.backgroundColor = corSalva;
-  //   } else {
-  //     aux.style.backgroundColor = corSalva;
-  //   }
-  // }
-  // corDivPixel.addEventListener('click', clickPixel);
 
 
 
 //////////////////////////////////////////////////////////////////////////
-// for (let index = 0; index < colunaPaleta.length; index += 1){
-//     colunaPaleta[index].addEventListener("click", function (){
-//         colunaPaleta[index].style.backgroundColor = "blue";
-//     });
-// }
-
-
-// function addClassToPaletteBox() {
-//     let pegaPaleta = document.getElementsByClassName("color"); 
-//     for (let index = 0; index < pegaPaleta.length; index += 1){
-//         // pegaPaleta[index].classList.add(`color${index + 1}`);
-
-//         if (getComputedStyle(pegaPaleta[index]).backgroundColor === 'rgb(0, 0, 0)') {
-//             pegaPaleta[index].classList.add('selected');
-//           }
-//     }
-// }
 
 // adiciona e remove classe
 function clickPaletteBox(event) {
@@ -143,15 +104,11 @@ function addBoxClickEvent() {
   }
 }
 
-// const colorPalette = 'color-palette';
 
-window.onload = 
-    // addClassToPaletteBox();
-    addBoxClickEvent();
+window.onload = addBoxClickEvent();
     
-    // let selectedColor = document.querySelector('.selected').style.backgroundColor;
-  
 /////////////////////////////////////////////////////////////////////////////////////////////
+
 //pinta pixel
   function pinta() {
 
@@ -170,11 +127,6 @@ window.onload =
   pinta();
   const botaoo = document.getElementById("generate-board");
   botaoo.addEventListener('click', pinta);
-
-
-// document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
-// document.getElementsByClassName('color')[0].className += ' selected';
-// document.getElementsByClassName('color')[1].style.backgroundColor = 'red';
 
 
 let maeBotao = document.getElementById("botao-add");
@@ -201,17 +153,3 @@ function corAleatoria() {
   document.getElementsByClassName('color')[3].style.backgroundColor = `rgb(${r},${b},${g})`;
 }
 corAleatoria();
-
-// let pegaParagrafo =  document.getElementsByName("p");
-
-// for (let index = 0; index < pegaParagrafo.length; index += 1){
-//     let textoParagrafo = pegaParagrafo[index]. innerText;
-// }
-
-// let maeBotaoAdd = document.getElementById("botao-add");
-// let input = document.createElement("input");
-// let botaoAdd = document.createElement("button");
-// botaoAdd.innerText = "#VQV";
-// maeBotaoAdd.appendChild(input);
-// maeBotaoAdd.appendChild(botaoAdd);
-
