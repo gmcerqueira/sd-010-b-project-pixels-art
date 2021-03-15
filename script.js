@@ -19,7 +19,7 @@ function tableConstruction(n) {
 // tableConstruction();
 
 function testInput() {
-  if (inputText.value <= 5 && inputText.value !== "") {
+  if (inputText.value <= 5) {
     document.getElementById('pixel-board').innerHTML = ''
     tableConstruction(5);
   }
@@ -31,7 +31,7 @@ function testInput() {
     document.getElementById('pixel-board').innerHTML = ''
     tableConstruction(50);
   }
-  if (inputText.value === "") {
+  if (inputText.value <= 0) {
     alert('Board inválido!');
   }
 }
