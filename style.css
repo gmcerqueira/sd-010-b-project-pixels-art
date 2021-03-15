@@ -5,12 +5,9 @@
 
 body {
   display: flex;
+  flex-direction: column;
   align-items: left;
   padding: 3%;
-}
-
-header {
-  padding: 10px;
 }
 
 #color-palette {
