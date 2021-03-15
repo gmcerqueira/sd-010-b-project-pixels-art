@@ -1,5 +1,7 @@
 // variables
 const getPixelBoard = document.getElementById('pixel-board');
+const buttonGT = document.getElementById('generate-board');
+const buttonIT = document.getElementById('board-size');
 const cores = ['black'];
 
 // função para criar paletas de cores
@@ -39,8 +41,8 @@ function setPaletteColor() {
 
 // função para preenchimento dos pixels
 function setPixelBoard() {
-  for (let index = 0; index < 5; index += 1) {
-    for (let index2 = 0; index2 < 5; index2 += 1) {
+  for (let i = 0; i < 5; i += 1) {
+    for (let j = 0; j < 5; j += 1) {
       const elem = document.createElement('span');
       elem.classList.add('pixel');
       getPixelBoard.appendChild(elem);
@@ -75,6 +77,46 @@ function clearBoard() {
   pixels.forEach((e) => { e.style.backgroundColor = 'white'; }); // pinta os pixels de branco
 }
 
+// condicional de tamanho mínimo e máximo
+function tableInputs() {
+  if (buttonIT.value <= 5) {
+    document.getElementById('pixel-board').innerHTML = ''
+    tableSize(5);
+  }
+  if (buttonIT.value > 5 && buttonIT.value < 50) {
+    document.getElementById('pixel-board').innerHTML = ''
+    tableSize(buttonIT.value);
+  }
+  if (buttonIT.value >= 50) {
+    document.getElementById('pixel-board').innerHTML = ''
+    tableSize(50);
+  }
+  if (buttonIT.value === '') {
+    alert('Board inválido!');
+  }
+  if (buttonIT.value < 0) {
+    document.getElementById('pixel-board').innerHTML = ''
+    buttonIT.value = Math.min(5,50);
+    tableSize(buttonIT.value);
+  }
+}
+
+// função para criar tabela //criada com ajuda da colega Fernanda Porto
+const mainRow = document.querySelector('#pixel-board');
+
+function tableSize(n) {
+    for (let i = 0; i < n; i += 1) {
+      const tableRow = document.createElement('tr');
+      for (let j = 0; j < n; j += 1) {
+        const cell = document.createElement('td');
+        tableRow.appendChild(cell);
+        cell.className = 'pixel';
+      }
+      tableRow.className = 'tableRow';
+      mainRow.appendChild(tableRow);
+    }
+}
+
 // window.load para carregar as funções na página
 window.onload = function init() {
   sessionStorage.setItem('color', 'black'); // para definir a cor padrão (Fonte: https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)
@@ -83,4 +125,7 @@ window.onload = function init() {
   document.getElementById('color-palette').addEventListener('click', getSelected); // adiciona o evento "clique do mouse" à paleta de cores
   getPixelBoard.addEventListener('click', paintPixel); // adiciona o evento "clique do mouse" à board de pixels
   document.getElementById('clear-board').addEventListener('click', clearBoard); // adiciona o evento "clique do mouse" ao botão Limpar
+  buttonGT.addEventListener('click', tableInputs); // 
+  buttonGT.addEventListener('click', tableSize); // 
+  tableSize(5);
 };
