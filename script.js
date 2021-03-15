@@ -38,3 +38,42 @@ function pixelMatriz(nl) {
   }
 }
 pixelMatriz(5);
+
+const paletteLine = document.getElementById('palette-line');
+const color = document.getElementsByClassName('color');
+
+function cor() {
+  for (let item = 0; item < color.length; item += 1) {
+    color[item].addEventListener('click', function () {
+      paletteLine.querySelector('.selected').classList.remove('selected');
+      this.classList.add('selected');
+    });
+  }
+}
+cor();
+
+const bgSelected = document.getElementsByClassName('selected');
+const cPixel = document.getElementsByClassName('pixel');
+
+function colorir() {
+  for (let itemColor = 0; itemColor < bgSelected.length; itemColor += 1) {
+    for (let i = 0; i < cPixel.length; i += 1) {
+      cPixel[i].addEventListener('click', function () {
+        this.style.backgroundColor = bgSelected[itemColor].style.backgroundColor;
+      });
+    }
+  }
+}
+colorir();
+
+// pinta todos os quadrados de branco
+const btnClear = document.getElementById('clear-board');
+
+function clearPixel() {
+  btnClear.addEventListener('click', () => {
+    for (let itemPinted = 0; itemPinted < cPixel.length; itemPinted += 1) {
+      cPixel[itemPinted].style.backgroundColor = 'white';
+    }
+  });
+}
+clearPixel();
