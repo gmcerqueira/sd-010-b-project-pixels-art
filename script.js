@@ -1,17 +1,17 @@
 const palletes = Array.from(document.querySelectorAll('.color'));
 
 const palleteColors = () => {
-  let r = 250;
-  let g = 0;
-  let b = 0;
+  let r = Math.ceil(Math.random() * 100);
+  let g = Math.ceil(Math.random() * 30);
+  let b = Math.ceil(Math.random() * 0);
   palletes.map((pallete, index) => {
     if (!index) {
       pallete.style.backgroundColor = 'black';
     } else {
       pallete.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-      r += 0;
-      g += 125;
-      b += 35;
+      r += 55;
+      g += 75;
+      b += 105;
     }
   });
 };
