@@ -7,19 +7,18 @@
 }
 
 #pixel-board {
-  display: table;
-  padding: 5px;
-}
-
-.tableRow {
-  display: table-row;
-  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 215px;
+  height: 210px;
+  margin-top: 5px;
 }
 
 .pixel {
-  display: table-cell;
-  background-color: white;
-  width: 40px;
+  border: 1px solid black;
   height: 40px;
-  border: black solid 1px;
+  width: 40px;
+  display: inline-block;
+  margin-right: -1px;
+  background-color: #fff;
 }
