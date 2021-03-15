@@ -1,5 +1,5 @@
 table, tr, td {
-  border: 1px black solid;
+  border: 1px solid black;
   border-collapse: collapse;
 }
 
@@ -13,6 +13,7 @@ table, tr, td {
 } 
 
 .pixel {
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
 }
