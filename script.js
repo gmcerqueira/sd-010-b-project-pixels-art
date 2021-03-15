@@ -9,3 +9,5 @@ let pixelColour = 'black';
   {
     pixel.style.backgroundColor = pixelColour;
   }
+
+  

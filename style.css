@@ -23,3 +23,7 @@ border: 1px solid black;
   height: 40px;
   border: 1px solid black;
 }
+
+clear-board {
+  display: inline-block;
+}
