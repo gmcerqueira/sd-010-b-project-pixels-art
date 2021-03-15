@@ -36,25 +36,21 @@ function selecionandocores (){
 }selecionandocores()
 
 function mudandoDeCor() {
-  let quadro = document.querySelector("#pixel-board");
-  quadro.addEventListener("click", function(e) {
+ let pixels = document.querySelectorAll(".pixel")
+for (index = 0; index<pixels.length; index++){
+ let quadro = pixels[index];
+    quadro.addEventListener("click", function(e) {
     let corselecionada= document.querySelector(".selected");
     let cor = corselecionada.style.backgroundColor
     e.target.style.backgroundColor = cor;
 
   })
+}
 } 
 mudandoDeCor()
 function botaolimpar(){
-  let criandoBotao= document.createElement("button");
-  let pai = document.querySelector("#color-palette");
-  pai.appendChild(criandoBotao);
-  criandoBotao.innerHTML="Limpar"
-  criandoBotao.id="clear-board"
-  criandoBotao.style.display="block"
-  criandoBotao.style.marginTop="20px"
-  criandoBotao.style.marginLeft="60px";
-  criandoBotao.addEventListener("click", function(){
+  let btlimpar=document.querySelector("#clear-board")
+  btlimpar.addEventListener("click", function(){
     let pixels = document.querySelectorAll(".pixel")
 
     for (index = 0; index<pixels.length; index++){
