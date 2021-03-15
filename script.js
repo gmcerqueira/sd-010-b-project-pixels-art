@@ -53,27 +53,25 @@ function cor() {
 cor();
 
 const bgSelected = document.getElementsByClassName('selected');
-const cPixel = document.getElementsByClassName('pixel');
+const clearPixel = document.getElementsByClassName('pixel');
 
 function colorir() {
   for (let itemColor = 0; itemColor < bgSelected.length; itemColor += 1) {
-    for (let i = 0; i < cPixel.length; i += 1) {
-      cPixel[i].addEventListener('click', function () {
+    for (let i = 0; i < clearPixel.length; i += 1) {
+      clearPixel[i].addEventListener('click', function () {
         this.style.backgroundColor = bgSelected[itemColor].style.backgroundColor;
       });
     }
   }
 }
 colorir();
-
-// pinta todos os quadrados de branco
 const btnClear = document.getElementById('clear-board');
 
-function clearPixel() {
+function clear() {
   btnClear.addEventListener('click', () => {
-    for (let itemPinted = 0; itemPinted < cPixel.length; itemPinted += 1) {
-      cPixel[itemPinted].style.backgroundColor = 'white';
+    for (let colorido = 0; colorido < clearPixel.length; colorido += 1) {
+      clearPixel[colorido].style.backgroundColor = 'white';
     }
   });
 }
-clearPixel();
+clear();
