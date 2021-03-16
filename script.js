@@ -1,4 +1,4 @@
-const cores = ["black","red","blue","green"];
+const cores = ["black" ,"red" ,"blue" ,"green"];
 const pixelBoard = document.querySelector("#pixel-board");
 const caixa = document.querySelectorAll(".color");
 const limpaPixels = document.getElementById("clear-board");
