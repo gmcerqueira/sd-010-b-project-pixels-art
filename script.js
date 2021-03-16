@@ -72,7 +72,6 @@ btnRandom.addEventListener('click', () => {
   resetPixel();
   if(generateSize.value === ''){
     alert('Board inválido!');
-    generateSize.value = 5;
   }
   else if(generateSize.value < 5){
     generateSize.value = 5;

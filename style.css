@@ -4,6 +4,7 @@ body {
   background-color: rgb(5, 5, 117);
 }
 #title {
+  color: aliceblue;
   white-space: nowrap;
   font: 500 monospace;
   font-size: 50px;
@@ -19,7 +20,7 @@ body {
 }
 #pixel-board {
   margin-top: 20px;
-  margin-left: 20%;
+  margin-left: 25%;
 }
 .pixel {
   width: 40px;
