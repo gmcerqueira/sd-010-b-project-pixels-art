@@ -18,11 +18,11 @@ function tableConstruction(n) {
 
 function testInputOverRange() {
   const pixelsFather = document.getElementById('pixel-board');
-  if (inputText.value <= 5) {
+  if (inputText.value < 5) {
     pixelsFather.innerHTML = '';
     tableConstruction(5);
   }
-  if (inputText.value >= 50) {
+  if (inputText.value > 50) {
     pixelsFather.innerHTML = '';
     tableConstruction(50);
   }
@@ -33,7 +33,7 @@ function testInputOverRange() {
 
 function testInputInRange() {
   const pixelsFather = document.getElementById('pixel-board');
-  if (inputText.value > 0 && inputText.value < 50) {
+  if (inputText.value >= 0 && inputText.value <= 50) {
     pixelsFather.innerHTML = '';
     tableConstruction(inputText.value);
   }
