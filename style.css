@@ -1,12 +1,17 @@
 body {
   margin: 0;
   text-align: center;
+  background-color:#BABFD1 ;
 }
 
 table {
   margin: auto;
 }
+.boxes{
+  background-color: #cccccc;
+  border: solid, 5px, #dddddd;
 
+}
 nav {
   margin: 10px;
 }
@@ -17,6 +22,7 @@ tr {
 
 .color {
   border: 1px solid black;
+  border-radius: 10px;
   width: 40px;
   height: 40px;
 }
@@ -25,7 +31,7 @@ tr {
   background-color: black;
 }
 
-.red {
+/* .red {
  background-color: red;  
 }
 
@@ -35,7 +41,7 @@ tr {
 
 .green{
   background-color: green;
-}
+} */
 
 .pixel {
   background-color: white;

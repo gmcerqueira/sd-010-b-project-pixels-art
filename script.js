@@ -3,7 +3,7 @@ let userText = 5;
 sizeButton.addEventListener('click', function () {
   userText = document.getElementById('board-size').value;
   if (userText === '') {
-    alert('Board inválido');
+    alert('Board inválido!');
   }
   if (userText <= 5) {
     document.getElementById('pixel-board').innerHTML = ''; //contei com Fernanda Porto - T10B para me explicar como fazer apagar a tabela existente e colocar a nova redimensionada
@@ -36,7 +36,6 @@ function tableMaker(userText) {
   }
 }
 tableMaker(userText);
-
 
 let backButton = document.getElementById('clear-board');
 backButton.addEventListener('click', resetButton);
@@ -81,3 +80,21 @@ colorAcquire();
 function colorSelector(clickar) {
   clickar.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
 }
+
+//função retirada do site https://stackoverflow.com/questions/1484506/random-color-generator e editada para incorporar ao código
+
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function randomColors() {
+  for (let index = 1; index < listCollors.length; index += 1) {
+    listCollors[index].style.backgroundColor = getRandomColor();
+  }
+}
+randomColors();
