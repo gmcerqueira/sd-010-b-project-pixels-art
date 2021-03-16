@@ -16,7 +16,7 @@ function tableMaker() {
 tableMaker();
 
 
-let backButton = document.getElementById('clear-btn');
+let backButton = document.getElementById('clear-board');
 backButton.addEventListener('click', resetButton);
 
 function resetButton() {
