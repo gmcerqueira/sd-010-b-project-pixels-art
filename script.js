@@ -16,17 +16,13 @@ function tableConstruction(n) {
 }
 // tableConstruction();
 
-function testInput() {
+function testInputOverRange() {
   const pixelsFather = document.getElementById('pixel-board');
-  if (inputText.value <= 5) {
+  if (inputText.value <= 5 && inputText > 0) {
     pixelsFather.innerHTML = '';
     tableConstruction(5);
   }
-  if (inputText.value < 50) {
-    pixelsFather.innerHTML = '';
-    tableConstruction(inputText.value);
-  }
-  if (inputText.value > 50) {
+  if (inputText.value >= 50) {
     pixelsFather.innerHTML = '';
     tableConstruction(50);
   }
@@ -35,7 +31,16 @@ function testInput() {
   }
 }
 
-inputButton.addEventListener('click', testInput);
+function testInputInRange() {
+  const pixelsFather = document.getElementById('pixel-board');
+  if (inputText.value > 0 && inputText.value <50) {
+    pixelsFather.innerHTML = '';
+    tableConstruction(inputText.value);
+  }
+}
+
+inputButton.addEventListener('click', testInputOverRange);
+inputButton.addEventListener('click', testInputInRange);
 inputButton.addEventListener('click', tableConstruction);
 
 const paletteColor = document.querySelectorAll('.color');
