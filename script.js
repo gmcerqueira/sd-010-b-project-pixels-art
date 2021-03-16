@@ -33,13 +33,15 @@ function testInputOverRange() {
 
 function testInputInRange() {
   const pixelsFather = document.getElementById('pixel-board');
-  if (inputText.value >= 0 && inputText.value <= 50) {
+  if (inputText.value >= 5 && inputText.value <= 50) {
     pixelsFather.innerHTML = '';
     tableConstruction(inputText.value);
+  } else {
+    testInputOverRange();
   }
 }
 
-inputButton.addEventListener('click', testInputOverRange);
+// inputButton.addEventListener('click', testInputOverRange);
 inputButton.addEventListener('click', testInputInRange);
 inputButton.addEventListener('click', tableConstruction);
 
