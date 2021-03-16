@@ -1,6 +1,8 @@
+const cores = ["black","red","blue","green"];
 const pixelBoard = document.querySelector("#pixel-board");
 const caixa = document.querySelectorAll(".color");
 const limpaPixels = document.getElementById("clear-board");
+let numeroPaleta = 0;
 
 function criacaoPixels() {
   for (let i = 0; i < 5; i += 1) {
@@ -20,6 +22,7 @@ function selecaoPixelCor(){
   for(let i = 0; i < caixa.length; i += 1){
     caixa[i].addEventListener("click", function(){
       if(caixa[i].getAttribute("class") === "selected color"){
+        numeroPaleta = i;
       }else{
         for(let x = 0; x < caixa.length; x += 1){
           if(caixa[x].getAttribute("class") === "selected color"){
@@ -27,21 +30,22 @@ function selecaoPixelCor(){
           }
         }
         caixa[i].setAttribute("class", "selected color");
+        numeroPaleta = i;
       }
     });
   }
 }
 selecaoPixelCor();
 
-/*function pintarPixels(){
+function pintarPixels(){
   quadro = document.querySelectorAll(".pixel");
   for(let i = 0; i < quadro.length; i+= 1){
-    quadro.addEventListener("click", function(){
-      console.log(quadro[i]);
+    quadro[i].addEventListener("click", function(){
+      quadro[i].style.background = cores[numeroPaleta];
     });
   }
 }
-pintarPixels();*/
+pintarPixels();
 
 limpaPixels.addEventListener("click", limparPixels);
 function limparPixels() {
