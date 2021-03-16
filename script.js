@@ -49,10 +49,17 @@ for (let cl = 0; cl < 5; cl += 1 ){
     colBlue.classList.remove('selected');
   });
    
+  let colInitial = document.querySelectorAll('.pixel');
+
+      for(let index = 0; index < colInitial.length; index += 1 ){
+      colInitial[index].addEventListener('click', function() {
+      colInitial[index].style.backgroundColor = 'black';
+       
+      });      
   
-  
-    
-  
+    }
+
+
     
   
 
