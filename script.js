@@ -49,18 +49,18 @@ for (let cl = 0; cl < 5; cl += 1 ){
     colBlue.classList.remove('selected');
   });
    
-  let colInitial = document.querySelectorAll('.pixel');
-
+      let colInitial = document.querySelectorAll('.pixel');
       for(let index = 0; index < colInitial.length; index += 1 ){
-      colInitial[index].addEventListener('click', function() {
+      colInitial[index].addEventListener('click', function(col) {
       colInitial[index].style.backgroundColor = 'black';
-       
+      let selected = document.getElementsByClassName('selected')[0];
+      let restore = window.getComputedStyle(selected).backgroundColor;
+      col.target.style.backgroundColor = restore; 
       });      
   
     }
 
 
-    
   
 
 
