@@ -15,11 +15,15 @@ function tableMaker() {
 }
 tableMaker();
 
+
 let backButton = document.getElementById('clear-btn');
 backButton.addEventListener('click', resetButton);
 
-function resetButton(buttonReaction) {
- buttonReaction.target.reset('#pixel-board') ;
+function resetButton() {
+  const clear = document.querySelectorAll('.pixel');
+  for (let index = 0; index < clear.length; index += 1) {
+    clear[index].style.backgroundColor = 'white';
+  }
 }
 
 let listCollors = document.querySelectorAll('.color');
