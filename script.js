@@ -1,7 +1,14 @@
+const sizeButton = document.getElementById('generate-board');
+let tamanho = 5;
+sizeButton.addEventListener('click', function () {
+  tamanho = document.getElementById('userText').value;
+  document.getElementById('pixel-board').innerHTML = ''; //a colega Fernanda Porto - T10B me explicou como fazer desligar a tabela e colocar a nova redimensionada
+  tableMaker(tamanho);
+})
+
 //criando a tabela com disponibilidade para alteração de tamanho
-function tableMaker() {
+function tableMaker(tamanho) {
   const tabela = document.querySelector("#pixel-board")//chamada tabela
-  let tamanho = 5;
   for (let index = 1; index <= tamanho; index += 1) {
     let linha = document.createElement('tr');
     for (let index2 = 1; index2 <= tamanho; index2 += 1) {
@@ -13,7 +20,7 @@ function tableMaker() {
     tabela.appendChild(linha);
   }
 }
-tableMaker();
+tableMaker(tamanho);
 
 
 let backButton = document.getElementById('clear-board');
