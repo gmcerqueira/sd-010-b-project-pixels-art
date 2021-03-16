@@ -1,7 +1,5 @@
 const inputButton = document.getElementById('generate-board');
 const inputText = document.getElementById('board-size');
-// const inputText = 5;
-// let n = 5;
 
 const rowFather = document.querySelector('#pixel-board');
 function tableConstruction(n) {
@@ -19,27 +17,24 @@ function tableConstruction(n) {
 // tableConstruction();
 
 function testInput() {
+  const pixelsFather = document.getElementById('pixel-board');
   if (inputText.value <= 5) {
-    document.getElementById('pixel-board').innerHTML = ''
+    pixelsFather.innerHTML = '';
     tableConstruction(5);
   }
-  if (inputText.value > 5 && inputText.value < 50) {
-    document.getElementById('pixel-board').innerHTML = ''
+  if (inputText.value < 50) {
+    pixelsFather.innerHTML = '';
     tableConstruction(inputText.value);
   }
-  if (inputText.value >= 50) {
-    document.getElementById('pixel-board').innerHTML = ''
+  if (inputText.value > 50) {
+    pixelsFather.innerHTML = '';
     tableConstruction(50);
   }
   if (inputText.value === '') {
     alert('Board inválido!');
   }
-  // if (inputText.value < 0) {
-  //   document.getElementById('pixel-board').innerHTML = ''
-  //   inputText.value = Math.min(5,50);
-  //   tableConstruction(inputText.value);
-  // }
 }
+
 inputButton.addEventListener('click', testInput);
 inputButton.addEventListener('click', tableConstruction);
 
