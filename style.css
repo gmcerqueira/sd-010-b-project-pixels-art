@@ -10,11 +10,27 @@ body {
 }
 
 .color {
-  height: 100px;
-  
+  height: 80px;
+  pointer-events: painted;
   position: relative;
   size: 75px;
   width: 90px;
   display: inline-block;
-
+  border: solid 1px black;
 }
+
+table {
+  width: 380px;
+  height: 40px;
+  border:solid black;
+  background-color: white;
+  
+}
+
+ td {
+   width: 100px;
+   height: 55px;
+   border-width: 1px;
+   background-color: white; 
+   
+ }
