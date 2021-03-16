@@ -15,14 +15,12 @@ function criacaoPixels() {
 };
 criacaoPixels();
 
-
 function selecaoPixelCor(){
   for(let i = 0; i < caixa.length; i += 1){
     caixa[i].addEventListener("click", function(){
       if(caixa[i].getAttribute("class") === "selected color"){
-        console.log("Deu certo");
       }else{
-        for(let x = 0; x < caixa.length; x +=1){
+        for(let x = 0; x < caixa.length; x += 1){
           if(caixa[x].getAttribute("class") === "selected color"){
             caixa[x].setAttribute("class", "color");
           }
@@ -33,3 +31,20 @@ function selecaoPixelCor(){
   }
 }
 selecaoPixelCor();
+
+function pintarPixels(){
+  quadro = document.querySelectorAll(".pixel");
+  for(let i = 0; i < quadro.length; i+= 1){
+    quadro.addEventListener("click", function(){
+      console.log(quadro[i]);
+    });
+  }
+}
+pintarPixels();
+
+function limparPixels() {
+  quadro = document.querySelectorAll(".pixel");
+  for (let i = 0; i < quadro.length; i++) {
+    quadro[i].style.background = "white";
+  }
+}
