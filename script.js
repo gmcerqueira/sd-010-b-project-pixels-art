@@ -1,5 +1,6 @@
 const pixelBoard = document.querySelector("#pixel-board");
 const caixa = document.querySelectorAll(".color");
+const limpaPixels = document.getElementById("clear-board");
 
 function criacaoPixels() {
   for (let i = 0; i < 5; i += 1) {
@@ -32,7 +33,7 @@ function selecaoPixelCor(){
 }
 selecaoPixelCor();
 
-function pintarPixels(){
+/*function pintarPixels(){
   quadro = document.querySelectorAll(".pixel");
   for(let i = 0; i < quadro.length; i+= 1){
     quadro.addEventListener("click", function(){
@@ -40,11 +41,12 @@ function pintarPixels(){
     });
   }
 }
-pintarPixels();
+pintarPixels();*/
 
+limpaPixels.addEventListener("click", limparPixels);
 function limparPixels() {
-  quadro = document.querySelectorAll(".pixel");
-  for (let i = 0; i < quadro.length; i++) {
-    quadro[i].style.background = "white";
+  limpar = document.querySelectorAll(".pixel");
+  for (let i = 0; i < limpar.length; i++) {
+    limpar[i].style.background = "white";
   }
 }
