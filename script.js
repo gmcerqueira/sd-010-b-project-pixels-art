@@ -1,19 +1,32 @@
 const sizeButton = document.getElementById('generate-board');
-let tamanho = 5;
+let userText = 5;
 sizeButton.addEventListener('click', function () {
-  tamanho = document.getElementById('userText').value;
-  document.getElementById('pixel-board').innerHTML = ''; //a colega Fernanda Porto - T10B me explicou como fazer desligar a tabela e colocar a nova redimensionada
-  tableMaker(tamanho);
+  userText = document.getElementById('board-size').value;
+  if (userText === '') {
+    alert('Board inválido');
+  }
+  if (userText <= 5) {
+    document.getElementById('pixel-board').innerHTML = ''; //contei com Fernanda Porto - T10B para me explicar como fazer apagar a tabela existente e colocar a nova redimensionada
+    tableMaker(5);
+  }
+  if (userText > 5 && userText <= 50) {
+    document.getElementById('pixel-board').innerHTML = '';
+    tableMaker(userText);
+  }
+  if (userText > 50) {
+    document.getElementById('pixel-board').innerHTML = '';
+    tableMaker(50);
+  }
   selection();
   colorAcquire();
 })
 
-//criando a tabela com disponibilidade para alteração de tamanho
-function tableMaker(tamanho) {
+//criando a tabela com disponibilidade para alteração de userText
+function tableMaker(userText) {
   const tabela = document.querySelector("#pixel-board")//chamada tabela
-  for (let index = 1; index <= tamanho; index += 1) {
+  for (let index = 1; index <= userText; index += 1) {
     let linha = document.createElement('tr');
-    for (let index2 = 1; index2 <= tamanho; index2 += 1) {
+    for (let index2 = 1; index2 <= userText; index2 += 1) {
       let pixel = document.createElement('td');
       pixel.className = 'pixel';
       linha.appendChild(pixel);
@@ -22,7 +35,7 @@ function tableMaker(tamanho) {
     tabela.appendChild(linha);
   }
 }
-tableMaker(tamanho);
+tableMaker(userText);
 
 
 let backButton = document.getElementById('clear-board');
@@ -59,7 +72,6 @@ function changeClass(styleClass) {
 }
 
 function colorAcquire() {
-
   for (let index = 0; index < fullColors.length; index += 1) {
     fullColors[index].addEventListener('click', colorSelector);
   }
@@ -67,6 +79,5 @@ function colorAcquire() {
 colorAcquire();
 
 function colorSelector(clickar) {
-
   clickar.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
 }
