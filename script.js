@@ -4,6 +4,8 @@ sizeButton.addEventListener('click', function () {
   tamanho = document.getElementById('userText').value;
   document.getElementById('pixel-board').innerHTML = ''; //a colega Fernanda Porto - T10B me explicou como fazer desligar a tabela e colocar a nova redimensionada
   tableMaker(tamanho);
+  selection();
+  colorAcquire();
 })
 
 //criando a tabela com disponibilidade para alteração de tamanho
