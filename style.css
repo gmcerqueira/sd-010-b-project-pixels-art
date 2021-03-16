@@ -10,7 +10,21 @@ table {
 .boxes{
   background-color: #cccccc;
   border: solid, 5px, #dddddd;
-
+}
+#clear-board{
+  background-color: #ff3c3c;
+}
+#generate-board{
+  background-color: forestgreen;
+}
+input{
+  border-color: seashell;
+  border-radius: 20px;
+}
+button{
+  border-color: seashell;
+  color: #ffffff;
+  border-radius: 20px;
 }
 nav {
   margin: 10px;
@@ -22,7 +36,7 @@ tr {
 
 .color {
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 40px;
   height: 40px;
 }
