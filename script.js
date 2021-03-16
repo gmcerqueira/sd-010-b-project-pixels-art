@@ -53,8 +53,8 @@ for (let cl = 0; cl < 5; cl += 1 ){
       for(let index = 0; index < colInitial.length; index += 1 ){
       colInitial[index].addEventListener('click', function(col) {
       colInitial[index].style.backgroundColor = 'black';
-      let selected = document.getElementsByClassName('selected')[0];
-      let restore = window.getComputedStyle(selected).backgroundColor;
+      let selected = document.getElementsByClassName('selected')[0]; // variavel para guardar o elemento selecionado da paleta
+      let restore = window.getComputedStyle(selected).backgroundColor; // restaura o valor guardado no caso a cor selecionado na paleta
       col.target.style.backgroundColor = restore; 
       });      
   
