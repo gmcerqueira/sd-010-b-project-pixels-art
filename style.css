@@ -7,15 +7,13 @@ body {
   background-color: rgb(205, 209, 212);
 }
 
-
-
-header, #color-palette, #painelControle, #pixel-board {
-  width: 70%;  
+header , #color-palette , #painelControle , #pixel-board {
+  width: 70%;
   margin: auto;
   margin-bottom: 15px;
 }
 
-input, button {
+input , button {
   margin: 5px;
 }
 

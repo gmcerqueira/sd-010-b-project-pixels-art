@@ -17,30 +17,30 @@ window.onload = function () {
     corRGB[0].style.background = 'rgb(000, 000, 000)';
     RGB = '';
   }
+  addQuadradoPixels(5);
 };
 
 const boxPixel = document.getElementById('pixel-board');
 const paletaCores = document.getElementById('color-palette').getElementsByTagName('th');
 const quadradoPixels = boxPixel.getElementsByTagName('td');
 
-function addQuadradoPixels() {
+function addQuadradoPixels(x) {  
   const table = document.createElement('table');
   boxPixel.appendChild(table);
   const rowPixel = boxPixel.getElementsByTagName('table');
-  for (let index = 0; index < 5; index += 1) {
+  for (let index = 0; index < x; index += 1) {
     const tr = document.createElement('tr');
     rowPixel[0].appendChild(tr);
   }
   const columnPixel = boxPixel.getElementsByTagName('tr');
-  for (let i = 0; i < 5; i += 1) {
-    for (let j = 0; j < 5; j += 1) {
+  for (let i = 0; i < x; i += 1) {
+    for (let j = 0; j < x; j += 1) {
       const td = document.createElement('td');
       td.className = 'pixel';
       columnPixel[i].appendChild(td);
     }
   }
 }
-addQuadradoPixels();
 
 function addClassSelected() {
   // Relembrando: Nesse trexo de codigo e iniciado um loop para encontrar o evento click, encontrado a add na tag clicada um class e removida da que ja tinha a class selected.
@@ -110,25 +110,15 @@ function criaInput() {
     if (input.value === '') {
       alert('Board inválido!');
     } else {
+      document.getElementsByTagName('table')[1].remove();
       if (input.value < 5) {
         input.value = 5;
       } 
       if (input.value > 50) {
         input.value = 50;
       } 
-      const valueInput = input.value * input.value;
-      for (let i = 0; i < paletaCores.length; i +=1) {
-        paletaCores[i].style.height = valueInput + 'px';
-        paletaCores[i].style.width = valueInput + 'px';
-      }
-      for (let i = 0; i < quadradoPixels.length; i +=1) {
-        quadradoPixels[i].style.height = valueInput + 'px';
-        quadradoPixels[i].style.width = valueInput + 'px'; 
-        for (let j = 0; j < quadradoPixels.length; j += 1) {
-          quadradoPixels[j].style.background = button.style.background;
-        }
-      }
-     
+      const valueInput = input.value;
+      addQuadradoPixels(valueInput);     
     }
   })
 
