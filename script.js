@@ -3,7 +3,6 @@ window.onload = function () {
   const corRGB = document.querySelectorAll('.color');
   let RGB = '';
   const virgula = ', ';
-
   for (let j = 1; j < corRGB.length; j += 1) {
     for (let i = 0; i < 3; i += 1) {
       cor = Math.floor(Math.random() * 255);
@@ -17,7 +16,7 @@ window.onload = function () {
     corRGB[0].style.background = 'rgb(000, 000, 000)';
     RGB = '';
   }
-  addQuadradoPixels(5);
+  
 };
 
 const boxPixel = document.getElementById('pixel-board');
@@ -41,7 +40,7 @@ function addQuadradoPixels(x) {
     }
   }
 }
-
+addQuadradoPixels(5);
 function addClassSelected() {
   // Relembrando: Nesse trexo de codigo e iniciado um loop para encontrar o evento click, encontrado a add na tag clicada um class e removida da que ja tinha a class selected.
   for (let i = 0; i < paletaCores.length; i += 1) {
@@ -118,7 +117,9 @@ function criaInput() {
         input.value = 50;
       } 
       const valueInput = input.value;
-      addQuadradoPixels(valueInput);     
+      addQuadradoPixels(valueInput);    
+      addClassSelected();
+      colorPixels(); 
     }
   })
 

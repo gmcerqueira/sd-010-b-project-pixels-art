@@ -30,7 +30,7 @@ input , button {
   background-color: white;
 }
 
-#clear-board, #generate-board {
+#clear-board , #generate-board {
   background-color: white;
   padding: 5px;
 }
