@@ -4,16 +4,22 @@
   border: 1px;
   border-style: solid;
   display: inline-block;
+  cursor: pointer;
 }
-#c1{
-  background-color: blueviolet;
+.pixel {
+  width: 40px;
+  height: 40px;
+  border-style: solid;
 }
-#c2{
+#c1 {
+  background-color: black;
+}
+#c2 {
   background-color: crimson;
 }
-#c3{
+#c3 {
   background-color: darkgreen;
 }
-#c4{
+#c4 {
   background-color: yellow;
 }
