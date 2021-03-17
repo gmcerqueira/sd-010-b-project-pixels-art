@@ -13,7 +13,6 @@ let quadro = document.querySelector('#pixel-board');
 
   for (i = 0; i < 5; i++) {
   quadroLinha = document.createElement('tr');
-  quadroLinha.className = 'pixel';
   quadro.appendChild(quadroLinha);
   
     for (ii = 0; ii < 5; ii++) {
@@ -22,6 +21,6 @@ let quadro = document.querySelector('#pixel-board');
     quadroLinha.appendChild(quadroColuna);
     }
   }
-  console.log(quadro)
+  console.log(quadro);
 }
 quadroColorir();
