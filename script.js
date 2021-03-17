@@ -64,10 +64,7 @@ function pintandoTabela() {
 pintandoTabela();
 
 //criando o botão de limpar o quadro
-let buttonClean = document.getElementsByTagName('button')[0];
-buttonClean.id = 'clear-board';
-buttonClean.innerText = 'Limpar';
-paletaDeCores.appendChild(buttonClean);
+let buttonClean = document.getElementById('clear-board');
 
 buttonClean.addEventListener('click', function() {
   for (let j = 0; j < todosOs25Quadradinhos.length; j += 1) {
@@ -77,10 +74,7 @@ buttonClean.addEventListener('click', function() {
 
 //Quadro de pixel definido pela pessoa usuária
 let inputNumeroPixels = document.getElementsByTagName('input')[0];
-inputNumeroPixels.id = 'board-size';
-let buttonGenerateBoard = document.getElementsByTagName('button')[1];
-buttonGenerateBoard.id = 'generate-board';
-buttonGenerateBoard.innerText = 'VQV';
+let buttonGenerateBoard = document.getElementById('generate-board')
 
 buttonGenerateBoard.addEventListener('click', function() {
   if (inputNumeroPixels.value.length === 0) {
@@ -102,7 +96,6 @@ function verificaNumero() {
     number = inputNumeroPixels.value;
   }
 }
-verificaNumero();
 
 buttonGenerateBoard.addEventListener('click', verificaNumero);
 
