@@ -1,7 +1,11 @@
-#color-palette {
+.color {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black; 
 }
 
-.color {
+.pixel {
   display: inline-block;
   width: 40px;
   height: 40px;
