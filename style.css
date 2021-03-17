@@ -9,19 +9,18 @@ h1 {
   text-transform: uppercase;
 }
 
-#board-size ,#generate-board {
+#board-size , #generate-board {
   margin: 10px;
 }
 
 #board-size {
-  outline: none;
   padding: 5px 10px;
   border-radius: 50px;
   border: 0;
-  width: 5%;
+  width: 3%;
 }
 
-#clear-board ,#generate-board {
+#clear-board , #generate-board {
   font-size: 15px;
   border: 0;
   padding: 5px 20px;
@@ -33,14 +32,14 @@ h1 {
 }
 
 #clear-board {
-  display: flex;
+  margin: 0 10px;
 }
 
-#clear-board:focus ,#generate-board:focus ,#board-size {
+#clear-board:focus , #generate-board:focus , #board-size {
   outline: none;
 }
 
-#clear-board:active {
+#clear-board:active , #generate-board:active {
   background-color: rgb(37, 80, 158);
 }
 

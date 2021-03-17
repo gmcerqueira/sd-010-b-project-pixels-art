@@ -1,6 +1,6 @@
 window.onload = () => {
   localStorage.setItem('backgroundColor', 'black');
-  sessionStorage.getItem('value', '5');
+  localStorage.getItem('value', '5');
 };
 
 // Cria elementos:
@@ -9,7 +9,8 @@ function createElements(tag) {
   return element;
 }
 
-// Color Generator
+// Color Generator:
+// Feito com a ajuda do Thiago Filipe T10 - Tribo B
 function colorGenerator() {
   const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
   const r = randomBetween(0, 255);
@@ -24,6 +25,7 @@ const cor3 = colorGenerator();
 const cor4 = colorGenerator();
 
 // Cria paletta:
+// Feito com a ajuda do Alan Tanaka T10 - Tribo B
 const boardPalettes = document.getElementById('color-palette');
 function createColorPalette() {
   const palettes = document.getElementById('color-palette').childNodes;
@@ -54,7 +56,7 @@ inputSize.type = 'number';
 inputSize.value = '5';
 inputSize.required = 'Board inválido!';
 boardPalettes.appendChild(inputSize);
-sessionStorage.setItem('value', '5');
+localStorage.setItem('value', '5');
 
 const sizeBtn = createElements('button');
 sizeBtn.id = 'generate-board';
@@ -65,8 +67,10 @@ sizeBtn.addEventListener('click', () => {
   if (inputSize.value < 5 || inputSize.value > 50) {
     inputSize.alert = 'Board inválido!';
   }
+  return inputSize.value;
 });
-const sizeValue = document.getElementById('board-size').value;
+
+// const sizeValue = document.getElementById('board-size').value;
 
 // Botão de limpar o quadro:
 const clearBtn = createElements('button');
@@ -79,8 +83,8 @@ clearBtn.addEventListener('click', () => {
 
 // Cria board:
 function createPixels() {
-  for (let x = 0; x < sizeValue; x += 1) {
-    for (let i = 0; i < sizeValue; i += 1) {
+  for (let x = 0; x < inputSize.value; x += 1) {
+    for (let i = 0; i < inputSize.value; i += 1) {
       const pixels = createElements('div');
       pixels.className = 'pixel';
       document.querySelector('#pixel-board').appendChild(pixels);
