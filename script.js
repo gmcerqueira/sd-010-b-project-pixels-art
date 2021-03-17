@@ -41,7 +41,7 @@ document.addEventListener('click', (e) => {
 });
 
 document.getElementById('clear-board').onclick = () => {
-  const board = getBoard();
+  const board = document.getElementsByClassName('pixel');
   for (let i = 0; i < board.length; i += 1) {
     board[i].style.backgroundColor = 'white';
   }
@@ -60,7 +60,9 @@ document.getElementById('generate-board').onclick = () => {
     }
     delBoard();
     genBoard(boardSize);
-  } else alert('Board inválido!');
+  } else {
+    alert('Board inválido!');
+  }
 };
 
 genBoard(5);
