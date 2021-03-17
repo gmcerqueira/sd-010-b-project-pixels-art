@@ -9,6 +9,7 @@
 .pixel {
   width: 40px;
   height: 40px;
+  border: 1px;
   border-style: solid;
 }
 #c1 {
