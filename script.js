@@ -38,11 +38,11 @@ colorPixel();
   })
 
 }
-buttonClear();  
- */
+buttonClear();   */
 
 
-/* let box1 = document.getElementById("color1");
+
+/* /* let box1 = document.getElementById("color1");
 let box2 = document.getElementById("color2");
 let box3 = document.getElementById("color3");
 let box4 = document.getElementById("color4");
@@ -66,7 +66,6 @@ function colorPixel () {
     }
 }
 colorPixel(); 
-
 */
 //Botão Limpar Pixels 
  function buttonClear(){
@@ -78,4 +77,4 @@ colorPixel();
     }
   })
 }
-buttonClear(); 
+buttonClear();  
