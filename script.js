@@ -14,22 +14,23 @@ document.addEventListener('click', (e) => {
   }
 });
 
-document.getElementById('clear-board').onclick = function () {
+document.getElementById('clear-board').onclick = () => {
   board = document.getElementsByClassName('pixel');
   for (let i = 0; i < board.length; i += 1) {
     board[i].style.backgroundColor = 'white';
   }
 };
 
-document.getElementById('generate-board').onclick = function () {
-  let pixelSize = document.querySelector('#board-size').value;
+document.getElementById('generate-board').onclick = () => {
+  const sizeInput = document.querySelector('#board-size')
+  let pixelSize = sizeInput.value;
   if (pixelSize !== '') {
     if (pixelSize > 50) {
       pixelSize = 50;
-      document.querySelector('#board-size').value = 50;
+      sizeInput.value = 50;
     } else if (pixelSize < 5) {
       pixelSize = 5;
-      document.querySelector('#board-size').value = 5;
+      sizeInput.value = 5;
     }
     board = document.getElementsByClassName('pixel');
     for (let i = 0; i < board.length; i += 1) {
