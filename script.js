@@ -28,26 +28,25 @@ for (let i = 0; i < tableCreateCells.length; i += 1) {
     lines.className = 'pixel';
     tableCreateCells[i].appendChild(lines);
   }
+  };
 
-function changeColorClass () {
-const change = document.querySelector('selected');
-    change.classList.remove('selected');
-    this.classList.add('selected');
-  }
-
-  const clean = document.getElementById('clear-board');
-  clean.addEventListener('click', clear);
+ //botão limpar
+  const clean = document.getElementById('clear-board')
+  clean.addEventListener('click', clear)
   function clear() {
     const pixel = document.getElementsByClassName('pixel');
     for (let i = 0; i < pixel.length; i += 1) {
-      pixel[i].style.background = 'white';
+      pixel[i].remove('selected');
+    }
   }
+
+function mudaCor(event) {
+  const itens = document.querySelectorAll('.color');
+  for (let i = 0; i < itens.length; i += 1) {
+    if (itens[i].classList.contains('selected')) {
+      itens[i].classList.remove('selected');
+    }
+    event.target.classList.add('selected');
   }
-}
-  
-//const changeColorClass = document.querySelector('color-palette');
-//changeColorClass.addEventListener('click', (change) => {
-//        onload.querySelector('selected').classList.remove('selected');
-//        change.target.classList.add('selected')
-        
- //   })
+};
+paletaDeCores.addEventListener('click', mudaCor)
