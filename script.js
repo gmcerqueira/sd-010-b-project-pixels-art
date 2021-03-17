@@ -2,7 +2,8 @@ let selectedColor = 'black';
 let oldColor;
 let board;
 
-document.addEventListener('click', (event) => {
+document.addEventListener('click', (e) => {
+  const event = e;
   if (event.target.classList.contains('color')) {
     oldColor = document.getElementById(selectedColor);
     oldColor.classList.remove('selected');
@@ -26,8 +27,7 @@ document.getElementById('generate-board').onclick = function () {
     if (pixelSize > 50) {
       pixelSize = 50;
       document.querySelector('#board-size').value = 50;
-    }
-    else if (pixelSize < 5) {
+    } else if (pixelSize < 5) {
       pixelSize = 5;
       document.querySelector('#board-size').value = 5;
     }
