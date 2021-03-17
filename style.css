@@ -7,15 +7,14 @@ table, tr, td {
 } 
 
 .color { 
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
 } 
 
 .pixel {
   width: 40px;
   height: 40px;
-  margin: 0;
-  padding: 0;
   background-color: white;
   border: 1px solid black;
 }
