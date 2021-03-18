@@ -5,17 +5,25 @@ clickb.addEventListener("click", recebeclick);
 function recebeclick(eventodeorigem) {
 
     let botaoClicado = eventodeorigem.target;
-    
-for (let index = 0; index<4; index +=1) {
-   if (document.getElementsByClassName("caixa")[index] = botaoClicado) {
-    botaoClicado.className = "caixa color selected";
-   }
+    let classe = document.querySelectorAll(".caixa");
+for(let index = 0; index < classe.length; index +=1) {
+let corClicada = classe[index];
+
+if (corClicada = botaoClicado){
+corClicada.className = "caixa color selected";
+}
 else {
-    botaoClicado.className = "caixa color";
+corClicada.className = "caixa color";
 }
+}
+
+    
+    botaoClicado.className = "caixa color selected";
+    console.log (botaoClicado);
+    console.log (classe);
+
 
 }
 
-console.log (botaoClicado);
-console.log (document.querySelectorAll(".caixa"));
-}
+
+
