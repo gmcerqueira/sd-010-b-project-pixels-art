@@ -28,17 +28,17 @@ for (let i = 0; i < tableCreateCells.length; i += 1) {
     lines.className = 'pixel';
     tableCreateCells[i].appendChild(lines);
   }
-  };
+}
 
- //botão limpar
-  const clean = document.getElementById('clear-board')
-  clean.addEventListener('click', clear)
-  function clear() {
-    const pixel = document.getElementsByClassName('pixel');
-    for (let i = 0; i < pixel.length; i += 1) {
-      pixel[i].remove('selected');
-    }
-  }
+// // botão limpar
+// const clean = document.getElementById('clear-board');
+// clean.addEventListener('click', clear);
+// function clear() {
+//   const pixel = document.getElementsByClassName('pixel');
+//   for (let i = 0; i < pixel.length; i += 1) {
+//     pixel[i].remove('selected');
+//   }
+// }
 
 function mudaCor(event) {
   const itens = document.querySelectorAll('.color');
@@ -48,5 +48,14 @@ function mudaCor(event) {
     }
     event.target.classList.add('selected');
   }
-};
+}
 paletaDeCores.addEventListener('click', mudaCor)
+ {
+ 
+// Requisito realizado com ajuda de colegas, revisão e plantão extra.
+const table = document.querySelector('#pixel-board')
+table.addEventListener('click', (event) => {
+  const colorSelected = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor= colorSelected;    
+});
+}
