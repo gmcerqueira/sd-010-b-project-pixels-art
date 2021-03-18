@@ -24,3 +24,25 @@ let quadro = document.querySelector('#pixel-board');
   console.log(quadro);
 }
 quadroColorir();
+
+function tirandoSelected () {
+let colorDiv = document.querySelectorAll('.color');
+colorDiv.forEach( function (c) {
+  if (c.className === 'color selected') {
+    c.className = 'color';
+  }
+})
+}
+
+function AplicandoSelected () {
+let colorDivEvent = document.querySelectorAll('.color');
+colorDivEvent.forEach( function (quadrado) {
+  quadrado.addEventListener('click', function (evento) {
+    tirandoSelected();
+    evento.target.className += " selected";
+    console.log(event.target.className);
+  })
+  })
+}
+
+AplicandoSelected();
