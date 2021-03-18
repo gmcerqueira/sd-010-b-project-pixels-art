@@ -11,17 +11,11 @@ const botaoLimpa = document.getElementById("clear-board");
 const botaoCriar = document.getElementById("generate-board");
 const userValue = document.getElementById("board-size");
 
-
-//let lado;
-//let numeroPixels = lado * lado;
 let selectedColor = 0;
 
 criarQuadro(5);
-//paleta1.classList.add("selected");
-//selectColor("paleta1");
 updateSelectedColor();
-
-
+aplicaCoresAleatorias();
 
 botaoCriar.addEventListener("click", function() {
     criarQuadro(userValue.value);
@@ -131,4 +125,32 @@ function clear() {
     for (let index = 0; index < pixels.length; index += 1) {
         pixels[index].style.backgroundColor = "white";
     }
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min); //retorna o menor número inteiro maior ou igual;
+    max = Math.floor(max); //retorna o menor número inteiro dentre o número;
+    return Math.floor(Math.random() * (max - min)) + min; 
+  }
+// Função de números aleatórios inteiros;
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+function generateColor() {
+    let numero = "";
+    for (let index = 0; index < 3; index += 1) {
+        if (index === 0) {
+            numero += "rgb(" + getRandomInt(0, 255);
+        } else if (index === 1) {
+            numero += ", " + getRandomInt(0, 255);
+        } else {
+            numero += ", " + getRandomInt(0, 255) + ")";
+        }
+    }
+    return numero;
+}
+
+function aplicaCoresAleatorias() {
+    paleta2.style.backgroundColor = generateColor();
+    paleta3.style.backgroundColor = generateColor();
+    paleta4.style.backgroundColor = generateColor();
 }
