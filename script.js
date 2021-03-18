@@ -39,9 +39,20 @@ let colorDivEvent = document.querySelectorAll('.color');
 colorDivEvent.forEach( function (quadrado) {
   quadrado.addEventListener('click', function (evento) {
     tirandoSelected();
-    evento.target.className += 'selected';
-  })
-  })
+    evento.target.className += ' selected';
+  });
+  });
 }
-
 AplicandoSelected();
+
+function colorindoQuadro () {
+let quadradoPixel = document.querySelectorAll('.pixel');
+quadradoPixel.forEach( function (quadrado) {
+  quadrado.addEventListener('click', (evento) => {
+    let quadradoCor = document.querySelector('.selected');
+    let cor = getComputedStyle(quadradoCor).backgroundColor;
+    evento.target.style.backgroundColor = cor;
+    });
+  });
+}
+colorindoQuadro();
