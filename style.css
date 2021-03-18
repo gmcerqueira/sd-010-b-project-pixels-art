@@ -20,6 +20,15 @@ body {
   margin: 2px;
 }
 
+.btn{
+
+  text-align: center;
+
+  padding: 20px;
+
+}
+
+
 #pixel-board {
   margin: 0 auto;
   text-align: center;

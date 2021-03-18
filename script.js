@@ -36,6 +36,35 @@ function createPixels() {
 
 createPixels();
 
+function addAndRemoveClass() {
+  for (let index = 0; index < colorsPalette.length; index += 1) {
+
+    colorsPalette[index].addEventListener('click', function() {
+      let classSelected = document.getElementsByClassName('selected')[0];
+
+      classSelected.classList.remove('selected');
+
+      event.target.classList.add('selected');
+    
+      
+    });
+  }
+};
+addAndRemoveClass();
+
+function pixelsPaint() {
+  for (let i = 0; i < pixels.length; i += 1) {
+
+    pixels[i].addEventListener('click', function() {
+      let newColor = document.getElementsByClassName('selected')[0].style.backgroundColor;
+
+      pixels[i].style.backgroundColor = newColor
+    })
+  }
+}
+
+pixelsPaint()
+
 
 
 document.getElementsByClassName('color')[0].style.backgroundColor = "black"
