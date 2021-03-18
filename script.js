@@ -18,5 +18,17 @@ else {
 }
 
 
+let button = document.getElementById('clear-board');
+button.addEventListener("click", pintarBranco);
+
+function pintarBranco() {
+    let classe = document.querySelectorAll(".colorpixel");
+    for(let index = 0; index < classe.length; index +=1) {
+    let branco = classe[index];
+    branco.style.backgroundColor = 'white'; 
+    
+    }
+}
+    
 
 
