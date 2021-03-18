@@ -39,8 +39,7 @@ let colorDivEvent = document.querySelectorAll('.color');
 colorDivEvent.forEach( function (quadrado) {
   quadrado.addEventListener('click', function (evento) {
     tirandoSelected();
-    evento.target.className += " selected";
-    console.log(event.target.className);
+    evento.target.className += 'selected';
   })
   })
 }
