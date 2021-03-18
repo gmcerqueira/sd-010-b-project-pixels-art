@@ -12,3 +12,15 @@ function colorPicker() {
 }
 
 colorPicker();
+
+const pixel = document.getElementsByClassName('pixel');
+function brush() {
+  for (let pix = 0; pix < pixel.length; pix += 1) {
+    pixel[pix].addEventListener('click', function (event) {
+      let selectColor = document.getElementsByClassName('selected')[0];
+      let paint = window.getComputedStyle(selectColor).backgroundColor;
+      event.target.style.backgroundColor = paint;
+    });
+  }
+}
+brush();
