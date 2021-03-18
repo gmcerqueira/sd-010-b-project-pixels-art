@@ -1,7 +1,5 @@
 let clickb = document.getElementById("color-palette");
-
 clickb.addEventListener("click", recebeclick);
-
 function recebeclick(eventodeorigem) {
 
     let botaoClicado = eventodeorigem.target;
@@ -18,6 +16,7 @@ else {
 }
 }
 }
+
 
 
 
