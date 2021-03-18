@@ -1,16 +1,18 @@
-function criaPixels () {
+console.log('inicio')
+function criaPixels (tamanho) {
   let containerPix = document.querySelector('#pixel-board');
   
-  for (let index = 0; index < 25; index += 1) {
+  for (let index = 0; index < tamanho; index += 1) {
     let divPixel = document.createElement('div')
     divPixel.className = 'pixel color4';
     containerPix.appendChild(divPixel);
   };
 }
-criaPixels();
+generatePixel (5);
+// criaPixels(25);
 
 function criaBotão (text) {
-  let containerBotao = document.querySelector('#color-palette')
+  let containerBotao = document.querySelector('.btn-clear')
   let botao = document.createElement('button');
   let idBotao = 'clear-board';
 
@@ -66,5 +68,23 @@ function limparPixel () {
 
   for (i = 0; i < pegaPixel.length; i += 1){
       pegaPixel[i].className = 'pixel color4';
+  }
+}
+
+function generatePixel () {
+  let pixelBoard = document.querySelector('#pixel-board');
+  pixelBoard.innerHTML = "";
+  let inputValue = document.querySelector('#board-size').value;
+  console.log(inputValue)
+
+  if(inputValue === "") {
+    alert('Board inválido!')
+  }
+
+  for(i = 0; i < inputValue; i += 1) {
+    let pixelBoard = document.querySelector('#pixel-board');
+    let criaBr = document.createElement('br');
+    criaPixels(inputValue)
+    pixelBoard.append(criaBr)
   }
 }
